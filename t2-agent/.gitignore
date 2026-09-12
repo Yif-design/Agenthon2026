@@ -1,0 +1,26 @@
+# ---- run outputs (large parquet, regenerable) ----
+runs/
+runs_*/
+runs_*.log
+out/
+submissions/
+
+# ---- DEV ONLY: reconstructed practice answers. NEVER commit. ----
+# Rebuild locally with: python scripts/build_realized.py
+# Competition rules §7 forbid sharing non-public test material; keep this out of
+# the repo and out of the submission image (it is in .dockerignore too).
+dev/
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv*/
+
+# ---- local / editor ----
+.DS_Store
+.env
+*.local
+.idea/
+.vscode/

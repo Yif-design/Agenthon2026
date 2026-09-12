@@ -1,0 +1,10 @@
+runs/
+runs_*/
+out/
+dev/
+__pycache__/
+*.egg-info/
+.git/
+scripts/
+README.md
+submissions/

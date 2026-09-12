@@ -1,0 +1,31 @@
+# ---- 主办方的仓库：每人自己克隆，不进我们的仓库 ----
+# 307 MB，而且自带 .git（嵌套仓库会出问题）。见 README.md 的"环境准备"。
+starter-repos/
+
+# ---- 各赛道的运行产物（parquet 很大，且可重新生成）----
+*/runs/
+*/runs_*/
+*/runs_*.log
+*/out/
+*/submissions/
+
+# ---- DEV ONLY：重建出来的练习答案，绝对不要提交 ----
+# 各赛道自己在本地用脚本生成（T2: python scripts/build_realized.py）。
+# 竞赛规则 §7 禁止分享非公开测试材料。同时也在各赛道的 .dockerignore 里。
+*/dev/
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv*/
+
+# ---- 本地杂物 ----
+.DS_Store
+.env
+*.local
+.idea/
+.vscode/
+Claude outputs/
+*.pdf
