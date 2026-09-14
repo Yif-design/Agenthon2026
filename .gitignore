@@ -24,6 +24,7 @@ venv*/
 # ---- 本地杂物 ----
 .DS_Store
 .env
+.secrets/
 *.local
 .idea/
 .vscode/
