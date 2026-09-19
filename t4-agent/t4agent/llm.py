@@ -22,10 +22,13 @@ class LLM:
     def __init__(self, root_dir: Path | None = None) -> None:
         self.endpoint = (os.environ.get("MODEL_ENDPOINT") or "").rstrip("/")
         self.model = os.environ.get("MODEL_NAME") or "qwen/qwen-2.5-7b-instruct"
-        self.api_key = os.environ.get("MODEL_API_KEY") or self._read_local_key(root_dir) or "unused"
+        self.model_token = os.environ.get("MODEL_TOKEN") or ""
+        self.api_key = self.model_token or os.environ.get("MODEL_API_KEY") or self._read_local_key(root_dir) or "unused"
         self.temperature = float(os.environ.get("T4_TEMPERATURE", "0.0"))
         self.seed = int(os.environ.get("T4_SEED", "1234"))
         self.timeout = float(os.environ.get("T4_MODEL_TIMEOUT_S", "90"))
+        self.max_calls = min(25, max(0, int(os.environ.get("T4_MODEL_MAX_CALLS", "25"))))
+        self.max_retries = max(1, int(os.environ.get("T4_MODEL_RETRIES", "2")))
         self.usage = Usage()
         self.enabled = bool(self.endpoint)
 
@@ -47,37 +50,49 @@ class LLM:
     def chat_json(self, system: str, user: str, max_tokens: int = 700) -> dict | None:
         if not self.enabled:
             return None
+        if self.usage.calls >= self.max_calls:
+            self.usage.errors.append("house request budget exhausted")
+            return None
         body = {
             "model": self.model,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
             "temperature": self.temperature,
-            "max_tokens": max_tokens,
+            "max_tokens": min(4000, max(1, int(max_tokens))),
             "seed": self.seed,
             "stream": False,
-            "response_format": {"type": "json_object"},
         }
         if "openrouter.ai" in self.endpoint:
+            body["response_format"] = {"type": "json_object"}
             body["provider"] = {
                 "allow_fallbacks": False,
                 "require_parameters": True,
                 "data_collection": "deny",
             }
-        req = urllib.request.Request(
-            self.endpoint + "/chat/completions",
-            data=json.dumps(body).encode("utf-8"),
-            headers={
-                "Content-Type": "application/json",
-                "Authorization": "Bearer " + self.api_key,
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + self.api_key,
+        }
+        if "openrouter.ai" in self.endpoint:
+            headers.update({
                 "HTTP-Referer": "https://github.com/Yif-design/Agenthon2026",
                 "X-Title": "Agenthon2026 t4-agent",
-            },
-            method="POST",
-        )
-        for attempt in range(2):
+            })
+        for attempt in range(self.max_retries):
+            if self.usage.calls >= self.max_calls:
+                self.usage.errors.append("house request budget exhausted")
+                return None
+            req = urllib.request.Request(
+                chat_completions_url(self.endpoint),
+                data=json.dumps(body).encode("utf-8"),
+                headers=headers,
+                method="POST",
+            )
+            # Count attempts conservatively. The House route charges an admitted
+            # request before forwarding, so an upstream failure may still consume it.
+            self.usage.calls += 1
             try:
                 with urllib.request.urlopen(req, timeout=self.timeout) as resp:
                     payload = json.loads(resp.read().decode("utf-8"))
-                self.usage.calls += 1
                 usage = payload.get("usage") or {}
                 self.usage.prompt_tokens += int(usage.get("prompt_tokens") or 0)
                 self.usage.completion_tokens += int(usage.get("completion_tokens") or 0)
@@ -87,14 +102,21 @@ class LLM:
             except urllib.error.HTTPError as exc:
                 detail = exc.read().decode("utf-8", "replace")[:240]
                 self.usage.errors.append(f"HTTP {exc.code}: {detail}")
-                if "response_format" in body and attempt == 0:
+                if "response_format" in body and attempt + 1 < self.max_retries:
                     body.pop("response_format", None)
-                    req.data = json.dumps(body).encode("utf-8")
                     continue
             except Exception as exc:  # noqa: BLE001
                 self.usage.errors.append(f"{type(exc).__name__}: {str(exc)[:180]}")
             time.sleep(1)
         return None
+
+
+def chat_completions_url(model_endpoint: str) -> str:
+    """Resolve both the injected House origin and local ``.../v1`` endpoints."""
+    base = model_endpoint.rstrip("/")
+    if not base.endswith("/v1"):
+        base += "/v1"
+    return base + "/chat/completions"
 
 
 def parse_json_object(text: str) -> dict | None:

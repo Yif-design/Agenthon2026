@@ -1,6 +1,6 @@
 # t4-agent - Track 4 design note
 
-This directory holds our Track 4 agent. The current implementation uses cutoff-safe lexical retrieval, minimal observable deterministic models, optional Qwen 7B coarse-signal extraction, exact-span citation grounding, and local validation.
+This directory holds our Track 4 agent. The current implementation uses cutoff-safe lexical retrieval, minimal observable deterministic models, optional House-model coarse-signal extraction, exact-span citation grounding, and local validation. Qwen 7B is retained only as a local behavioral approximation.
 
 Detailed design notes:
 
@@ -115,7 +115,7 @@ answer.json
 
 `Baseline And History Calculator` computes values from task rows and parseable frozen tables. Macro revisions, auction history, CPI component history, and COT baselines do not require a model call.
 
-`Optional Signal Extractor` calls the 7B model only for families that need simple text judgment or when a family parser cannot extract an explicit number. It returns named signals from `-2` to `+2`; the bank EPS parser normally extracts its two same-table EPS values without a model call. Every non-zero signal or extracted model value needs an entity-scoped quote. Historical-only, ambiguous, or missing evidence must return `0` or `null`. Shared task-level signals, such as FOMC policy direction, are extracted once and reused across rows.
+`Optional Signal Extractor` calls the organizer-injected House model only for families that need simple text judgment or when a family parser cannot extract an explicit number. It returns named signals from `-2` to `+2`; the bank EPS parser normally extracts its two same-table EPS values without a model call. Every non-zero signal or extracted model value needs an entity-scoped quote. Historical-only, ambiguous, or missing evidence must return `0` or `null`. Shared task-level signals, such as FOMC policy direction, are extracted once and reused across rows.
 
 `EvidenceFact Validator` turns model and deterministic extractions into typed facts carrying `entity_id`, value, `doc_id`, exact source span, quote, and extractor. Whitespace-only formatting differences may be normalized and mapped back to the original span. A foreign document, invented quote, or ungrounded number is rejected before the solver runs; rejected non-zero signals become neutral and rejected numbers become missing.
 
@@ -127,9 +127,19 @@ answer.json
 
 `Validator + Fallback` prevents whole-unit failure. It checks exact roster coverage, legal labels, finite points, ordered intervals containing the point, non-empty claims, resolvable spans, cutoff compliance, and entity/document scope. If the model fails, use the family baseline and entity-scoped factual context rather than a generic cross-entity claim.
 
-## Model Configuration For Local Experiments
+## Model Configuration
 
-Design for Qwen 7B first.
+Official evaluation injects the House route. Do not set or package participant credentials:
+
+```bash
+MODEL_ENDPOINT=http://model:8443
+MODEL_NAME=house
+MODEL_TOKEN=<injected per-unit bearer>
+```
+
+The client calls `$MODEL_ENDPOINT/v1/chat/completions`, caps itself at 25 attempted calls per unit and caps `max_tokens` at 4,000. When the endpoint is unavailable it falls back to the deterministic family solvers and still writes a schema-valid answer.
+
+Qwen 7B remains a local behavioral approximation only. It is not an eligible submitted model.
 
 OpenRouter local experiment:
 
@@ -155,9 +165,9 @@ Use low randomness:
 - no model-side retrieval;
 - one row per call.
 
-## Token Budget Assumption
+## Token Budget
 
-The official budget is per unit: `1,000,000` input tokens and `100,000` output tokens. This is not a single-call context window.
+The official budget is per unit: `1,000,000` input tokens, 25 admitted requests, and at most 4,000 output tokens per call. This is not a single-call context window. A retry can consume another request slot.
 
 For 7B local simulation, target roughly:
 
@@ -174,7 +184,7 @@ V0: model-free skeleton. Parse a public unit, index corpus chunks, output schema
 
 V1: BM25 retrieval. Improve entity queries and cutoff filtering. Record retrieved chunks for debugging. First version done.
 
-V2: Qwen 7B coarse-signal extractor with strict JSON and verbatim evidence. Done.
+V2: OpenAI-compatible coarse-signal extractor with strict JSON and verbatim evidence. Done.
 
 V3: minimal observable family specifications and deterministic solvers. Done.
 

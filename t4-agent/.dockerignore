@@ -1,0 +1,14 @@
+.git
+.github
+.pytest_cache
+.secrets
+__pycache__
+*.py[cod]
+*.egg-info
+.venv
+tests
+docs
+evaluation
+submissions
+*.json
+*.zip
