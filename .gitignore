@@ -14,6 +14,9 @@ starter-repos/
 # 竞赛规则 §7 禁止分享非公开测试材料。同时也在各赛道的 .dockerignore 里。
 */dev/
 
+# ---- 本地 realized outcomes：仅用于赛后评估，不进入预测包 ----
+*/evaluation/realized/
+
 # ---- python ----
 __pycache__/
 *.py[cod]

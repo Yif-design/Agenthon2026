@@ -73,11 +73,31 @@ def build_index(corpus_dir: str | Path, cutoff_date: str) -> IndexedCorpus:
         offset = 0
         for text in parts:
             if text.strip():
-                chunks.append(Chunk(doc_id, str(doc_date) if doc_date else None, offset, offset + len(text), text))
+                chunks.extend(_chunks_for_text(doc_id, str(doc_date) if doc_date else None, text, offset))
             offset += len(text) + 1
         doc_texts[doc_id] = " ".join(parts)
         doc_dates[doc_id] = str(doc_date) if doc_date else None
     return IndexedCorpus(chunks, doc_texts, doc_dates)
+
+
+def _chunks_for_text(doc_id: str, doc_date: str | None, text: str, base_offset: int) -> list[Chunk]:
+    if len(text) <= 2400:
+        return [Chunk(doc_id, doc_date, base_offset, base_offset + len(text), text)]
+    out: list[Chunk] = []
+    start = 0
+    while start < len(text):
+        end = min(start + 2200, len(text))
+        if end < len(text):
+            boundary = max(text.rfind("\n", start + 1200, end), text.rfind(". ", start + 1200, end))
+            if boundary > start:
+                end = boundary + 1
+        piece = text[start:end]
+        if piece.strip():
+            out.append(Chunk(doc_id, doc_date, base_offset + start, base_offset + end, piece))
+        if end >= len(text):
+            break
+        start = max(start + 1, end - 250)
+    return out
 
 
 class BM25:
@@ -94,13 +114,18 @@ class BM25:
         self.idf = {tok: math.log(1 + (n - count + 0.5) / (count + 0.5)) for tok, count in df.items()}
         self.tfs = [Counter(toks) for toks in self.tokens]
 
-    def search(self, query: str, top_k: int = 8) -> list[ScoredChunk]:
+    def search(
+        self, query: str, top_k: int = 8, allowed_doc_ids: set[str] | None = None
+    ) -> list[ScoredChunk]:
         q = tokenize(query)
         if not q:
-            return [ScoredChunk(c, 0.0) for c in self.chunks[:top_k]]
+            candidates = [c for c in self.chunks if allowed_doc_ids is None or c.doc_id in allowed_doc_ids]
+            return [ScoredChunk(c, 0.0) for c in candidates[:top_k]]
         scores: list[ScoredChunk] = []
         k1, b = 1.5, 0.75
         for chunk, tf, length in zip(self.chunks, self.tfs, self.lengths, strict=True):
+            if allowed_doc_ids is not None and chunk.doc_id not in allowed_doc_ids:
+                continue
             score = 0.0
             for tok in q:
                 freq = tf.get(tok, 0)
@@ -111,7 +136,70 @@ class BM25:
             if score > 0:
                 scores.append(ScoredChunk(chunk, score))
         scores.sort(key=lambda x: (-x.score, x.chunk.doc_id, x.chunk.span_start))
-        return scores[:top_k] or [ScoredChunk(c, 0.0) for c in self.chunks[:top_k]]
+        if scores:
+            return scores[:top_k]
+        candidates = [c for c in self.chunks if allowed_doc_ids is None or c.doc_id in allowed_doc_ids]
+        return [ScoredChunk(c, 0.0) for c in candidates[:top_k]]
+
+
+def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> set[str]:
+    """Return the hard document scope for one roster entity before lexical retrieval."""
+    all_ids = set(corpus.doc_texts)
+    target = getattr(task, "target", {}) or {}
+    family_text = f"{getattr(task, 'family', '')} {target.get('name', '')}".lower()
+    cik = "".join(ch for ch in str(entity.get("cik") or "") if ch.isdigit()).zfill(10)
+    if cik.strip("0"):
+        scoped = {doc_id for doc_id in all_ids if cik in doc_id}
+        if scoped:
+            return scoped
+    if "revision" in family_text:
+        series_id = str(entity.get("series_id") or "").upper()
+        scoped = {doc_id for doc_id in all_ids if series_id and series_id in doc_id.upper()}
+        if series_id == "PAYEMS":
+            scoped |= {doc_id for doc_id in all_ids if "CES_PRELIM_BENCHMARK" in doc_id.upper()}
+        return scoped or all_ids
+    if "auction" in family_text or "bid_to_cover" in family_text:
+        tenor_text = str(entity.get("tenor") or "").upper()
+        digits = "".join(ch for ch in tenor_text if ch.isdigit())
+        tenor = f"{digits}Y" if digits else tenor_text.replace("-", "").replace(" ", "")
+        scoped = {
+            doc_id
+            for doc_id in all_ids
+            if "TDIRECT_UPCOMING" in doc_id.upper()
+            or ("TDIRECT_AUCTIONS" in doc_id.upper() and tenor in doc_id.upper().replace("-", "").replace("_", ""))
+        }
+        return scoped or all_ids
+    if "position" in family_text or "cot" in family_text:
+        entity_id = str(entity.get("entity_id") or "").upper()
+        scoped = {
+            doc_id
+            for doc_id in all_ids
+            if entity_id in doc_id.upper()
+            or "COT_METHODOLOGY" in doc_id.upper()
+            or "MKT_SNAPSHOT" in doc_id.upper()
+        }
+        return scoped or all_ids
+    if "cpi" in family_text:
+        return {
+            doc_id
+            for doc_id in all_ids
+            if any(token in doc_id.upper() for token in ("CPI", "GASREG", "EIA"))
+        } or all_ids
+    if "yield" in family_text or "rate_curve" in family_text:
+        return {
+            doc_id
+            for doc_id in all_ids
+            if any(token in doc_id.upper() for token in ("FOMC", "RATES_SNAPSHOT"))
+        } or all_ids
+    return all_ids
+
+
+def scoped_corpus(corpus: IndexedCorpus, allowed_doc_ids: set[str]) -> IndexedCorpus:
+    return IndexedCorpus(
+        chunks=[chunk for chunk in corpus.chunks if chunk.doc_id in allowed_doc_ids],
+        doc_texts={doc_id: text for doc_id, text in corpus.doc_texts.items() if doc_id in allowed_doc_ids},
+        doc_dates={doc_id: value for doc_id, value in corpus.doc_dates.items() if doc_id in allowed_doc_ids},
+    )
 
 
 def query_for(task: object, entity: dict) -> str:
@@ -123,7 +211,6 @@ def query_for(task: object, entity: dict) -> str:
     target = getattr(task, "target", {}) or {}
     parts.append(str(target.get("name", "")))
     parts.append(str(getattr(task, "family", "")))
-    parts.append(str(getattr(task, "prompt", ""))[:400])
     parts.append(rubric_keywords(str(getattr(task, "family", "")), str(target.get("name", ""))))
     return " ".join(parts)
 

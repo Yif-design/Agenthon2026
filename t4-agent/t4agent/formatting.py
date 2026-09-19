@@ -16,15 +16,19 @@ def build_answer(task: Task, results: list[RowResult], corpus: IndexedCorpus, us
         "target_type": task.target_type,
         "entity_predictions": [r.prediction for r in results],
         "evidence_trace": (
-            "t4-agent: cutoff-safe BM25 retrieval, deterministic calculations, "
-            "Qwen-7B row predictor when MODEL_ENDPOINT is configured, exact-span citation grounding. "
+            "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, "
+            "Qwen-7B coarse signal extraction only when required, exact-span citation grounding. "
             f"model_calls={usage.calls}, prompt_tokens={usage.prompt_tokens}, "
             f"completion_tokens={usage.completion_tokens}."
         ),
         "notes": {
             "agent": "t4-agent",
             "fallback_rows": [r.prediction.get("entity_id") for r in results if r.fallback_reason],
+            "methods": {str(r.prediction.get("entity_id")): r.method for r in results},
             "model_errors": usage.errors[:5],
+            "rejected_fact_counts": {
+                str(r.prediction.get("entity_id")): len(r.rejected_facts) for r in results if r.rejected_facts
+            },
         },
     }
     errors = validate_answer(answer, task, corpus)

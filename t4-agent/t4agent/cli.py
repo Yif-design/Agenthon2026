@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import argparse
+import json
+import hashlib
 import pathlib
 import sys
+from dataclasses import asdict
 
 from .formatting import build_answer
 from .llm import LLM
@@ -18,6 +21,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--corpus", type=pathlib.Path, required=True)
     parser.add_argument("--out", type=pathlib.Path, required=True)
     parser.add_argument("--top-k", type=int, default=8)
+    parser.add_argument("--trace-dir", type=pathlib.Path)
     args = parser.parse_args(argv)
 
     task = load_task(args.task)
@@ -28,6 +32,8 @@ def main(argv: list[str] | None = None) -> int:
     results = predict_rows(task, bm25, corpus, llm, max(1, args.top_k))
     answer = build_answer(task, results, corpus, llm.usage)
     write_json(args.out, answer)
+    trace_dir = args.trace_dir or (args.out.parent / "trace")
+    _write_trace(trace_dir, task, results, llm)
 
     errors = answer.get("notes", {}).get("validation_errors") or []
     if errors:
@@ -35,6 +41,42 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print(f"wrote {args.out}")
     return 0
+
+
+def _write_trace(trace_dir: pathlib.Path, task, results, llm: LLM) -> None:
+    trace_dir.mkdir(parents=True, exist_ok=True)
+    route = {
+        "task_id": task.task_id,
+        "family": task.family,
+        "target": task.target,
+        "cutoff_date": task.cutoff_date,
+    }
+    (trace_dir / "route.json").write_text(json.dumps(route, ensure_ascii=False, indent=2) + "\n")
+    rows = []
+    for result in results:
+        rows.append({
+            "entity_id": result.prediction.get("entity_id"),
+            "allowed_doc_ids": list(result.allowed_doc_ids),
+            "retrieved_chunks": [asdict(chunk) for chunk in result.retrieved],
+            "raw_model_output": result.raw_model,
+            "validated_facts": [fact.as_dict() for fact in result.facts],
+            "used_fact_ids": list(result.used_fact_ids),
+            "rejected_facts": [fact.as_dict() for fact in result.rejected_facts],
+            "method": result.method,
+            "derivation": result.derivation or {},
+            "calculator_inputs": result.calculator_inputs or {},
+            "model_prompt_sha256": (
+                hashlib.sha256(result.model_prompt.encode("utf-8")).hexdigest()
+                if result.model_prompt is not None
+                else None
+            ),
+            "fallback_reason": result.fallback_reason,
+            "prediction": result.prediction,
+        })
+    (trace_dir / "rows.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
+    usage = asdict(llm.usage)
+    usage.update({"model": llm.model, "temperature": llm.temperature, "seed": llm.seed, "enabled": llm.enabled})
+    (trace_dir / "usage.json").write_text(json.dumps(usage, ensure_ascii=False, indent=2) + "\n")
 
 
 if __name__ == "__main__":

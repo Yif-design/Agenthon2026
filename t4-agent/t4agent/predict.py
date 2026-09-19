@@ -4,11 +4,19 @@ import json
 from dataclasses import dataclass
 from typing import Any
 
-from .calc import default_point, interval_for, numeric_facts
-from .eps import eps_interval, eps_label_from_forecast, is_eps_beat_task, safe_eps_forecast
+from .calc import numeric_facts
+from .calculators import extract_parameters as extract_calculator_parameters
+from .evidence import (
+    EvidenceFact,
+    RejectedFact,
+    fact_from_quote,
+    validate_model_output,
+    validated_context_fact,
+)
+from .family_specs import FamilySpec, family_spec, project_entity
 from .llm import LLM
-from .retrieve import BM25, Chunk, IndexedCorpus, query_for
-from .rubrics import select_rubric
+from .minimal_models import solve_minimal
+from .retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, query_for, scoped_corpus
 from .taskio import Task
 
 
@@ -18,26 +26,70 @@ class RowResult:
     raw_model: dict[str, Any] | None
     retrieved: list[Chunk]
     fallback_reason: str | None = None
+    method: str = ""
+    allowed_doc_ids: tuple[str, ...] = ()
+    facts: tuple[EvidenceFact, ...] = ()
+    used_fact_ids: tuple[str, ...] = ()
+    rejected_facts: tuple[RejectedFact, ...] = ()
+    derivation: dict[str, Any] | None = None
+    calculator_inputs: dict[str, Any] | None = None
+    model_prompt: str | None = None
 
 
-SYSTEM = """You are a careful financial prediction module.
-Use only the provided entity fields, calculated facts, rubric, and evidence excerpts.
-Return one JSON object and no prose. Evidence quotes must be copied verbatim from excerpts."""
+SYSTEM = """You extract a few coarse evidence signals and explicitly reported numbers for a deterministic financial prediction workflow.
+Use only the provided entity fields and evidence excerpts. Never invent missing numbers or facts.
+Return one JSON object and no prose. Every non-neutral signal and every reported number must include one verbatim quote from the excerpts.
+Use level -2, -1, 0, 1, or 2. Use 0 when evidence is missing, ambiguous, historical-only, or not comparable."""
 
 
 def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k: int) -> list[RowResult]:
     results: list[RowResult] = []
+    spec = family_spec(task.family, str(task.target.get("name", "")))
+    shared_model_output: dict[str, Any] | None = None
+    shared_model_prompt: str | None = None
     for i, entity in enumerate(task.entities):
-        scores = index.search(query_for(task, entity), top_k=top_k)
+        allowed = allowed_document_ids(task, entity, corpus)
+        entity_corpus = scoped_corpus(corpus, allowed)
+        scores = index.search(query_for(task, entity), top_k=top_k, allowed_doc_ids=allowed)
         chunks = [s.chunk for s in scores]
-        parsed = llm.chat_json(SYSTEM, _prompt(task, entity, chunks), max_tokens=800)
-        result = _prediction_from_model(task, entity, parsed, chunks, corpus, i, len(task.entities))
+        extracted, extracted_evidence = extract_calculator_parameters(project_entity(entity, spec), spec, entity_corpus)
+        extracted_facts, extracted_rejected = _facts_from_items(
+            extracted_evidence, str(entity.get("entity_id", "")), entity_corpus, allowed, "deterministic_extractor"
+        )
+        if extracted and not extracted_facts:
+            extracted = {}
+        needs_model = spec.model_required and (
+            bool(spec.signals) or any(parameter.name not in extracted for parameter in spec.numeric_parameters)
+        )
+        if needs_model and spec.key == "rates" and shared_model_output is not None:
+            parsed = shared_model_output
+            prompt_text = shared_model_prompt
+        else:
+            prompt_text = _prompt(task, entity, chunks, spec) if needs_model else None
+            parsed = llm.chat_json(SYSTEM, prompt_text, max_tokens=600) if prompt_text is not None else None
+            if needs_model and spec.key == "rates":
+                shared_model_output = parsed
+                shared_model_prompt = prompt_text
+        result = _prediction_from_model(
+            task,
+            entity,
+            parsed,
+            chunks,
+            entity_corpus,
+            spec,
+            i,
+            len(task.entities),
+            extracted,
+            extracted_facts,
+            extracted_rejected,
+            allowed,
+            prompt_text,
+        )
         results.append(result)
     return _normalize_ranking(task, results)
 
 
-def _prompt(task: Task, entity: dict, chunks: list[Chunk]) -> str:
-    rubric = select_rubric(task.family, str(task.target.get("name", "")), task.prompt)
+def _prompt(task: Task, entity: dict, chunks: list[Chunk], spec: FamilySpec) -> str:
     evidence = []
     for idx, chunk in enumerate(chunks, 1):
         evidence.append(
@@ -50,53 +102,58 @@ def _prompt(task: Task, entity: dict, chunks: list[Chunk]) -> str:
                 "text": chunk.text[:1400],
             }
         )
-    schema = {
-        "label": "one allowed label for classification, else null",
-        "point_forecast": "number for regression/ranking; optional useful number for classification",
-        "interval": {"lo": "number", "hi": "number"},
-        "evidence": [
-            {
-                "doc_id": "one provided doc_id",
-                "quote": "verbatim substring copied from evidence text",
-                "claim": "short factual claim supported by quote",
+    schema: dict[str, Any] = {
+        "context": {
+            "doc_id": "provided entity-scoped doc_id",
+            "quote": "one verbatim factual passage relevant to this entity and target",
+            "claim": "short factual statement supported by the quote",
+        },
+        "signals": {
+            signal.name: {
+                "level": "integer -2, -1, 0, 1, or 2",
+                "doc_id": "provided doc_id or null when level is 0",
+                "quote": "verbatim evidence substring or empty when level is 0",
+                "claim": "short fact supported by quote or empty when level is 0",
             }
-        ],
+            for signal in spec.signals
+        }
     }
+    if spec.numeric_parameters:
+        schema["parameters"] = {
+            parameter.name: {
+                "value": "number copied from evidence, or null",
+                "doc_id": "provided doc_id or null",
+                "quote": "verbatim table text containing the value, or empty",
+                "claim": "identify the period and GAAP diluted EPS value, or empty",
+            }
+            for parameter in spec.numeric_parameters
+        }
+    signal_rules = [{"name": signal.name, "meaning": signal.description} for signal in spec.signals]
+    parameter_rules = [
+        {"name": parameter.name, "meaning": parameter.description} for parameter in spec.numeric_parameters
+    ]
     lines = [
         f"TASK_ID: {task.task_id}",
         f"PROMPT: {task.prompt}",
         f"CUTOFF_DATE: {task.cutoff_date}",
         f"TARGET_NAME: {task.target.get('name', '')}",
         f"TARGET_TYPE: {task.target_type}",
-        f"ALLOWED_LABELS: {', '.join(task.labels)}",
-        f"INTERVAL_LEVEL: {task.interval_level}",
-        f"RUBRIC: {rubric}",
-        _target_guardrail(task, entity),
+        f"FAMILY_MODEL: {spec.key}",
+        "SIGNAL_RULES_JSON:",
+        json.dumps(signal_rules, ensure_ascii=False),
+        "NUMERIC_PARAMETER_RULES_JSON:",
+        json.dumps(parameter_rules, ensure_ascii=False),
         "ENTITY_JSON:",
-        json.dumps(entity, ensure_ascii=False, sort_keys=True),
+        json.dumps(project_entity(entity, spec), ensure_ascii=False, sort_keys=True),
         "CALCULATED_FACTS_JSON:",
-        json.dumps(numeric_facts(entity), ensure_ascii=False, sort_keys=True),
+        json.dumps(numeric_facts(project_entity(entity, spec)), ensure_ascii=False, sort_keys=True),
         "EVIDENCE_JSON:",
         json.dumps(evidence, ensure_ascii=False),
         "OUTPUT_SCHEMA_JSON:",
         json.dumps(schema, ensure_ascii=False),
-        "Rules: choose 1-3 evidence items. Use null when a field does not apply. Do not cite unavailable documents.",
+        "Rules: return one entity-specific context passage, every named signal, and every numeric parameter. Level 0 needs no signal citation. Non-zero signals and non-null numeric parameters require a provided doc_id and an exact quote. Numeric parameters must be copied from evidence, never estimated. Do not output a label, forecast, probability, interval, beta, or confidence.",
     ]
     return "\n".join(lines)
-
-
-def _target_guardrail(task: Task, entity: dict) -> str:
-    target_name = str(task.target.get("name", ""))
-    if is_eps_beat_task(target_name, task.target_type, task.labels):
-        consensus = entity.get("consensus_eps")
-        threshold = entity.get("threshold_pct")
-        return (
-            "EPS_TARGET_GUARDRAIL: This task asks for the target quarter EPS outcome, not a prior "
-            f"quarter already reported before cutoff. consensus_eps={consensus}, threshold_pct={threshold}. "
-            "Return point_forecast as your forecast for the target quarter EPS. Do not copy Q1 or prior-year "
-            "reported EPS as the target forecast unless the prompt explicitly asks for that same period."
-        )
-    return "TARGET_GUARDRAIL: Predict the target described in PROMPT, not any historical number that merely appears in evidence."
 
 
 def _prediction_from_model(
@@ -105,54 +162,82 @@ def _prediction_from_model(
     parsed: dict[str, Any] | None,
     chunks: list[Chunk],
     corpus: IndexedCorpus,
+    spec: FamilySpec,
     row_index: int,
     row_count: int,
+    extracted_parameters: dict[str, float] | None = None,
+    extracted_facts: list[EvidenceFact] | None = None,
+    extracted_rejected: list[RejectedFact] | None = None,
+    allowed_doc_ids: set[str] | None = None,
+    model_prompt: str | None = None,
 ) -> RowResult:
-    target_name = str(task.target.get("name", ""))
     fallback_reason = None
-    if parsed is None:
-        parsed = {}
+    entity_id = str(entity.get("entity_id", ""))
+    allowed_doc_ids = allowed_doc_ids or set(corpus.doc_texts)
+    signals, parameters, model_facts, rejected = validate_model_output(
+        parsed, spec, entity_id, corpus, allowed_doc_ids
+    )
+    parameters.update(extracted_parameters or {})
+    still_needs_model = bool(spec.signals) or any(value is None for value in parameters.values())
+    if parsed is None and spec.model_required and still_needs_model:
         fallback_reason = "model_unavailable_or_bad_json"
+    solver_entity = project_entity(entity, spec)
+    output = solve_minimal(task, solver_entity, spec, signals, corpus, row_index, row_count, parameters)
+    replay = solve_minimal(task, solver_entity, spec, signals, corpus, row_index, row_count, parameters)
+    if (replay.point, replay.label, replay.interval, replay.method) != (
+        output.point,
+        output.label,
+        output.interval,
+        output.method,
+    ):
+        raise RuntimeError(f"non-deterministic calculator result for {entity_id}")
+    has_model_value = any(signals.values()) or any(value is not None for value in parameters.values())
+    if spec.model_required and not has_model_value:
+        fallback_reason = fallback_reason or "neutral_or_missing_signals"
 
-    label = parsed.get("label")
-
-    point = _safe_float(parsed.get("point_forecast"))
-    if point is None:
-        point = default_point(task.target_type, target_name, entity, row_index, row_count)
-        fallback_reason = fallback_reason or "default_point"
-
-    if is_eps_beat_task(target_name, task.target_type, task.labels):
-        guarded_point, guard_reason = safe_eps_forecast(point, entity, parsed.get("evidence"))
-        point = guarded_point
-        consensus = _safe_float(entity.get("consensus_eps")) or 0.0
-        threshold = _safe_float(entity.get("threshold_pct")) or 0.05
-        label = eps_label_from_forecast(point, consensus, threshold)
-        fallback_reason = fallback_reason or guard_reason
-    elif task.target_type == "classification":
-        label = _safe_label(label, task.labels)
-    else:
-        label = None
-
-    if is_eps_beat_task(target_name, task.target_type, task.labels):
-        interval = eps_interval(point, entity, task.interval_level)
-    else:
-        interval = _safe_interval(parsed.get("interval"), point, target_name, task.interval_level)
-    claims = _ground_claims(parsed.get("evidence"), chunks, corpus)
-    if fallback_reason == "eps_historical_number_guardrail":
-        claims = [_eps_guidance_claim(chunks, task, entity)]
-    if not claims and chunks:
-        claims = [_claim_from_chunk(chunks[0], task, entity)]
-        fallback_reason = fallback_reason or "fallback_claim"
+    output_facts, output_rejected = _facts_from_items(
+        output.evidence, entity_id, corpus, allowed_doc_ids, "deterministic_calculator"
+    )
+    if output_rejected:
+        reasons = ", ".join(item.reason for item in output_rejected)
+        raise RuntimeError(f"calculator emitted ungrounded evidence for {entity_id}: {reasons}")
+    facts = list(extracted_facts or []) + model_facts + output_facts
+    used_fact_ids = tuple(fact.fact_id for fact in facts)
+    context_fact, context_rejected = validated_context_fact(parsed, entity_id, corpus, allowed_doc_ids)
+    if context_fact is not None:
+        facts.append(context_fact)
+    elif not facts:
+        context_fact = _context_fact_from_chunks(chunks, entity_id, corpus)
+        if context_fact is not None:
+            facts.append(context_fact)
+            fallback_reason = fallback_reason or "scoped_context_only"
+    all_rejected = list(extracted_rejected or []) + rejected + output_rejected
+    if context_rejected is not None:
+        all_rejected.append(context_rejected)
+    claims = _claims_from_facts(facts)
 
     pred: dict[str, Any] = {
-        "entity_id": str(entity.get("entity_id", "")),
-        "point_forecast": float(point),
-        "interval": interval,
+        "entity_id": entity_id,
+        "point_forecast": float(output.point),
+        "interval": output.interval,
         "claims": claims,
     }
     if task.target_type == "classification":
-        pred["label"] = label
-    return RowResult(pred, parsed if parsed else None, chunks, fallback_reason)
+        pred["label"] = _safe_label(output.label, task.labels)
+    return RowResult(
+        prediction=pred,
+        raw_model=parsed if parsed else None,
+        retrieved=chunks,
+        fallback_reason=fallback_reason,
+        method=output.method,
+        allowed_doc_ids=tuple(sorted(allowed_doc_ids)),
+        facts=tuple(facts),
+        used_fact_ids=used_fact_ids,
+        rejected_facts=tuple(all_rejected),
+        derivation={**output.derivation, "replay_verified": True},
+        calculator_inputs={"entity": solver_entity, "signals": signals, "parameters": parameters},
+        model_prompt=model_prompt,
+    )
 
 
 def _safe_label(value: object, labels: list[str]) -> str | None:
@@ -163,86 +248,78 @@ def _safe_label(value: object, labels: list[str]) -> str | None:
     return labels[0]
 
 
-def _safe_float(value: object) -> float | None:
-    if isinstance(value, bool):
-        return None
-    if isinstance(value, (int, float)):
-        return float(value)
-    if isinstance(value, str):
-        try:
-            return float(value.strip())
-        except ValueError:
-            return None
-    return None
-
-
-def _safe_interval(value: object, point: float, target_name: str, level: float) -> dict[str, float]:
-    if isinstance(value, dict):
-        lo = _safe_float(value.get("lo"))
-        hi = _safe_float(value.get("hi"))
-        if lo is not None and hi is not None:
-            if lo > hi:
-                lo, hi = hi, lo
-            if lo <= point <= hi:
-                return {"level": float(level), "lo": float(lo), "hi": float(hi)}
-    return interval_for(point, target_name, level)
-
-
-def _ground_claims(value: object, chunks: list[Chunk], corpus: IndexedCorpus) -> list[dict[str, Any]]:
+def _facts_from_items(
+    value: object,
+    entity_id: str,
+    corpus: IndexedCorpus,
+    allowed_doc_ids: set[str],
+    extractor: str,
+) -> tuple[list[EvidenceFact], list[RejectedFact]]:
     if not isinstance(value, list):
-        return []
-    out: list[dict[str, Any]] = []
-    by_doc = {c.doc_id: c for c in chunks}
-    for item in value:
+        return [], []
+    facts: list[EvidenceFact] = []
+    rejected: list[RejectedFact] = []
+    for index, item in enumerate(value):
         if not isinstance(item, dict):
             continue
         doc_id = str(item.get("doc_id") or "")
         quote = str(item.get("quote") or "")
         claim = str(item.get("claim") or "").strip()
-        if not doc_id or not claim:
+        name = str(item.get("name") or f"extracted_{index}")
+        if doc_id not in allowed_doc_ids:
+            rejected.append(RejectedFact(entity_id, name, "doc_not_in_entity_scope", item))
             continue
-        doc_text = corpus.doc_texts.get(doc_id)
-        if not doc_text:
+        fact = fact_from_quote(
+            entity_id=entity_id,
+            name=name,
+            kind="computed_input",
+            value=item.get("value", "computed"),
+            doc_id=doc_id,
+            quote=quote,
+            claim=claim,
+            extractor=extractor,
+            corpus=corpus,
+        )
+        if fact is None:
+            rejected.append(RejectedFact(entity_id, name, "quote_not_exact_substring", item))
+        else:
+            facts.append(fact)
+    return facts, rejected
+
+
+def _claims_from_facts(facts: list[EvidenceFact]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    seen: set[tuple[str, int, int]] = set()
+    for fact in facts:
+        key = (fact.doc_id, fact.span_start, fact.span_end)
+        if key in seen:
             continue
-        start = doc_text.find(quote) if quote else -1
-        if start >= 0:
-            out.append({"doc_id": doc_id, "span_start": start, "span_end": start + len(quote), "claim": claim[:500]})
-        elif doc_id in by_doc:
-            chunk = by_doc[doc_id]
-            out.append({"doc_id": doc_id, "span_start": chunk.span_start, "span_end": chunk.span_end, "claim": claim[:500]})
+        seen.add(key)
+        out.append(fact.as_claim())
     return out[:3]
 
 
-def _claim_from_chunk(chunk: Chunk, task: Task, entity: dict) -> dict[str, Any]:
-    target = task.target.get("name", "target")
-    name = entity.get("name") or entity.get("entity_id")
-    return {
-        "doc_id": chunk.doc_id,
-        "span_start": chunk.span_start,
-        "span_end": chunk.span_end,
-        "claim": f"Retrieved pre-cutoff evidence for {name} related to {target}.",
-    }
-
-
-def _eps_guidance_claim(chunks: list[Chunk], task: Task, entity: dict) -> dict[str, Any]:
-    keywords = ("guidance", "outlook", "march quarter", "gross margin", "revenue is expected", "services")
-    best = None
-    for chunk in chunks:
-        lowered = chunk.text.lower()
-        score = sum(1 for keyword in keywords if keyword in lowered)
-        if best is None or score > best[0]:
-            best = (score, chunk)
-    chunk = best[1] if best else chunks[0]
-    name = entity.get("name") or entity.get("entity_id")
-    return {
-        "doc_id": chunk.doc_id,
-        "span_start": chunk.span_start,
-        "span_end": chunk.span_end,
-        "claim": (
-            f"Pre-cutoff company guidance and outlook for {name} inform the target-quarter EPS "
-            "forecast; historical EPS in the same document is treated as context rather than the target result."
-        ),
-    }
+def _context_fact_from_chunks(
+    chunks: list[Chunk], entity_id: str, corpus: IndexedCorpus
+) -> EvidenceFact | None:
+    if not chunks:
+        return None
+    chunk = chunks[0]
+    quote = chunk.text.strip()
+    if len(quote) > 500:
+        boundary = max(quote.rfind(". ", 0, 500), quote.rfind("\n", 0, 500))
+        quote = quote[: boundary + 1 if boundary > 80 else 500].strip()
+    return fact_from_quote(
+        entity_id=entity_id,
+        name="scoped_context",
+        kind="context",
+        value="context",
+        doc_id=chunk.doc_id,
+        quote=quote,
+        claim=quote,
+        extractor="deterministic_context",
+        corpus=corpus,
+    )
 
 
 def _normalize_ranking(task: Task, results: list[RowResult]) -> list[RowResult]:

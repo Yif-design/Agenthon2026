@@ -1,6 +1,13 @@
 # t4-agent - Track 4 design note
 
-This directory holds our Track 4 agent. The current implementation is a first working skeleton: cutoff-safe lexical retrieval, deterministic fallback calculations, optional Qwen 7B row prediction through an OpenAI-compatible endpoint, exact-span citation grounding, and local validation.
+This directory holds our Track 4 agent. The current implementation uses cutoff-safe lexical retrieval, minimal observable deterministic models, optional Qwen 7B coarse-signal extraction, exact-span citation grounding, and local validation.
+
+Detailed design notes:
+
+- [Track 4 题型模型契约](docs/family-model-contracts-zh.md)：当前实现的权威设计；逐题定义输入白名单、计算方法、LLM 判断和缺失 fallback。
+- [Track 4 最小可观测预测模型 V1](docs/t4-minimal-observable-model-v1-zh.md)：形成当前契约前的总体精简原则。
+- [Track 4 各题型解法与工具设计](docs/t4-problem-solving-guide-zh.md)：逐一说明 11 个公开 unit 的输入、预测目标、解题步骤、参数和待实现工具，并包含隐藏题型通用解题器。
+- [Track 4 family tool plan](docs/family-tool-plan.md)：面向代码实现的英文参数抽取与工具契约草稿。
 
 ## Decision
 
@@ -38,14 +45,14 @@ Do not let the model freely call tools in version 1.
 Use deterministic routing and fixed tool calls:
 
 - the workflow reads `task.json` and decides the target type;
-- the workflow chooses a short rubric based on target name, prompt text, and row fields;
+- the workflow chooses a minimal family specification based on target name, prompt text, and row fields;
 - the workflow always runs retrieval;
-- the workflow always runs the cheap table calculations that apply;
-- the model receives the retrieved evidence, table facts, calculated facts, and rubric;
-- the model returns a small intermediate JSON object;
-- the workflow validates, repairs, grounds citations, and writes final `answer.json`.
+- the workflow computes baselines directly from task fields and historical tables;
+- when text judgment is needed, the model returns only named signals on a five-level scale with verbatim evidence;
+- the deterministic family tool turns baselines and signals into labels, points, intervals, and ranks;
+- the workflow validates, grounds citations, and writes final `answer.json`.
 
-Rubrics replace heavy skills. A rubric is a short prompt block, usually 300-800 tokens, such as "credit-event checks liquidity, debt maturities, covenant waivers, going concern language, ratings, and payment default language." The model does not choose external tools from the rubric.
+The model cannot return a final label, probability, interval, beta, or confidence. Missing or ambiguous evidence becomes a neutral signal, and the deterministic baseline remains in place.
 
 ## Workflow
 
@@ -59,16 +66,25 @@ Task Loader
 Schema Planner
         |
         v
-Family Router + Short Rubric
+Family Router + Minimal Signal Spec
         |
         v
 Cutoff-Safe Retriever
         |
         v
-Deterministic Calculator
+Entity / Series / Tenor Document Scope
         |
         v
-Row Predictor, one model call per entity
+Baseline And History Calculator
+        |
+        v
+Optional Signal Extractor
+        |
+        v
+EvidenceFact Validator
+        |
+        v
+Deterministic Family Solver
         |
         v
 Citation Grounder
@@ -93,21 +109,23 @@ answer.json
 - Regression needs `point_forecast`, `interval`, and `claims`.
 - Ranking needs `point_forecast`, `interval`, and `claims`. Optional `rank` is produced only after all rows are scored.
 
-`Family Router` uses target name, prompt, family slug when present, and entity fields to choose a short rubric. Known routes include EPS direction, EPS growth, credit event, post-earnings reaction, rate curve, CPI component, macro revision, auction demand, and positioning shift. Unknown tasks use a generic tabular prediction rubric.
+`Family Router` uses target name and family slug to choose the permitted input fields and text signals. Unknown tasks use a generic one-signal baseline.
 
-`Cutoff-Safe Retriever` indexes the frozen corpus into chunks with exact offsets. It must filter `doc_date <= cutoff_date` before scoring chunks. A stale document must never reach the model.
+`Cutoff-Safe Retriever` indexes the frozen corpus into chunks with exact offsets. It filters `doc_date <= cutoff_date` before scoring chunks, then applies a hard entity scope before BM25: CIK for company filings, series ID for macro vintages, tenor for auctions, market ID for COT, and a documented shared-file scope for CPI and FOMC units. A stale or foreign-entity document must never reach the model.
 
-`Deterministic Calculator` computes simple values from task rows and extracted numbers. First-version tools should stay basic: `diff`, `pct_change`, `growth_rate`, `rank_values`, `safe_interval`, unit normalization, and label mapping. The model may see the results, but it should not be trusted to perform these calculations.
+`Baseline And History Calculator` computes values from task rows and parseable frozen tables. Macro revisions, auction history, CPI component history, and COT baselines do not require a model call.
 
-EPS beat/miss/inline tasks use a stricter tool path: the model may propose a target-quarter EPS forecast, but the workflow computes `beat`, `miss`, or `inline` from `consensus_eps` and `threshold_pct`. A guardrail rejects the common error of copying a pre-cutoff historical EPS number, such as a prior quarter EPS, into the target-quarter forecast.
+`Optional Signal Extractor` calls the 7B model only for families that need simple text judgment or when a family parser cannot extract an explicit number. It returns named signals from `-2` to `+2`; the bank EPS parser normally extracts its two same-table EPS values without a model call. Every non-zero signal or extracted model value needs an entity-scoped quote. Historical-only, ambiguous, or missing evidence must return `0` or `null`. Shared task-level signals, such as FOMC policy direction, are extracted once and reused across rows.
 
-`Row Predictor` calls the 7B model once per entity. The prompt contains task summary, entity fields, short rubric, calculated facts, and top evidence chunks. It asks for a strict intermediate JSON object, not the final answer.
+`EvidenceFact Validator` turns model and deterministic extractions into typed facts carrying `entity_id`, value, `doc_id`, exact source span, quote, and extractor. Whitespace-only formatting differences may be normalized and mapped back to the original span. A foreign document, invented quote, or ungrounded number is rejected before the solver runs; rejected non-zero signals become neutral and rejected numbers become missing.
 
-`Citation Grounder` requires model evidence to include a verbatim quote. The workflow maps the quote back to exact `doc_id`, `span_start`, and `span_end`. If the quote cannot be found, the claim is dropped or replaced with the retrieved chunk's known span.
+`Deterministic Family Solver` combines the baseline with a capped signal adjustment. It owns final points, labels, intervals, and ranking. EPS uses consensus or prior-year EPS; credit uses explicit risk-flag tiers; rates use one policy-direction signal and fixed maturity sensitivity; post-earnings reaction defaults to flat without explicit forward guidance.
+
+`Citation Grounder` uses the facts actually consumed by the solver. Structured calculators return the historical rows used in their computation, and model-derived facts already carry their validated source span. A quote that cannot be mapped to the source is rejected; it is never replaced with an unrelated retrieved chunk. A scoped factual context passage is used only when the deterministic neutral fallback has no non-neutral fact, so output remains schema-valid without fabricating a prediction claim.
 
 `Cross-Row Normalizer` enforces consistency after all rows are predicted. For ranking, it sorts rows by `point_forecast` and optionally assigns a full rank permutation. For classification, it maps off-vocabulary labels to allowed labels. For regression, it ensures point forecasts and intervals use the target's units.
 
-`Validator + Fallback` prevents whole-unit failure. It checks exact roster coverage, legal labels, numeric points, interval bounds, interval level, non-empty claims, resolvable spans, and cutoff compliance. If the model fails, use conservative defaults and top retrieved evidence rather than emitting invalid JSON.
+`Validator + Fallback` prevents whole-unit failure. It checks exact roster coverage, legal labels, finite points, ordered intervals containing the point, non-empty claims, resolvable spans, cutoff compliance, and entity/document scope. If the model fails, use the family baseline and entity-scoped factual context rather than a generic cross-entity claim.
 
 ## Model Configuration For Local Experiments
 
@@ -156,13 +174,13 @@ V0: model-free skeleton. Parse a public unit, index corpus chunks, output schema
 
 V1: BM25 retrieval. Improve entity queries and cutoff filtering. Record retrieved chunks for debugging. First version done.
 
-V2: Qwen 7B row predictor. Add strict intermediate JSON prompts and parsing. First version done.
+V2: Qwen 7B coarse-signal extractor with strict JSON and verbatim evidence. Done.
 
-V3: short rubrics. Add compact domain rubrics for known public families and a generic fallback.
+V3: minimal observable family specifications and deterministic solvers. Done.
 
-V4: local evaluation harness. Save prompt hashes, model id, retrieved chunks, raw model output, parsed output, final answer, token usage, and smoke/schema results.
+V4: local evaluation harness. Each run writes `trace/route.json`, `trace/rows.json`, and `trace/usage.json`; row traces contain allowed documents, retrieved chunks, raw model output, validated and rejected facts, used fact IDs, derivation, fallback reason, and final prediction. Done.
 
-V5: parameter-extraction tools. Generalize the EPS guardrail pattern: model extracts parameters, deterministic tools compute labels or numeric transforms, and final answer generation uses tool outputs rather than raw model labels.
+V5: improve table parsers and calibrate model constants when labeled development outcomes become available.
 
 ## Core Principle
 
@@ -203,5 +221,23 @@ Smoke-tested on 2026-09-15:
 - Qwen 7B API mode ran on the EPS example plus representative regression, ranking, and classification multi-row units;
 - official smoke verifier admitted those Qwen 7B outputs too.
 - EPS example was corrected after adding the EPS tool path: the first raw model output copied Q1 FY2024 EPS `2.18` and labeled `beat`; the guarded tool path returns `point_forecast=1.53` and `label=inline` for the Q2 FY2024 target.
+
+Family-isolated model update tested on 2026-09-17:
+
+- all 11 public units generated locally valid answers in model-free mode;
+- the official smoke verifier admitted all 11 outputs;
+- Qwen 7B signal extraction ran successfully on every public family that requires text judgment: EPS consensus, EPS YoY, credit event, post-earnings reaction, and the 2024 rate curve;
+- deterministic same-table parsing extracted both bank EPS values for all eight public rows, so that family needs no model call on those documents;
+- the official smoke verifier admitted all six representative API/parser-mode outputs;
+- thirteen unit tests cover routing, strict and generic field whitelists, parameter extraction, EPS thresholds and bank arithmetic, credit tiers, rate maturity sensitivity, and CPI component identification.
+
+Evidence-chain hardening tested on 2026-09-19:
+
+- all 11 public units and all 78 rows completed with entity/series/tenor/market document scopes;
+- the Qwen 7B API path completed every model-using family, while each FOMC unit used one shared policy call rather than six maturity calls;
+- auction, COT, CPI, macro-revision and bank calculators cite the exact historical tables used in their derivations;
+- all 11 API outputs passed the official smoke verifier;
+- 21 tests cover cross-entity isolation, scoped BM25, rejection of foreign documents and invented quotes, whitespace-normalized quote-to-source mapping, deterministic replay, shared FOMC extraction, routing and family calculations;
+- every local run writes complete ignored traces, and all 78 offline rows reproduced their calculator output exactly from recorded inputs.
 
 Public units generally do not include resolved outcomes, so local smoke score is `null`; it checks admissibility, schema, roster, cutoff, and citation plumbing rather than leaderboard predictive quality.
