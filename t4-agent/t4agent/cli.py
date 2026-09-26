@@ -3,8 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 import hashlib
+import os
 import pathlib
 import sys
+import time
 from dataclasses import asdict
 
 from .formatting import build_answer
@@ -28,12 +30,37 @@ def main(argv: list[str] | None = None) -> int:
     corpus = build_index(args.corpus, task.cutoff_date)
     bm25 = BM25(corpus.chunks)
     repo_root = pathlib.Path(__file__).resolve().parents[2]
-    llm = LLM(root_dir=repo_root)
-    results = predict_rows(task, bm25, corpus, llm, max(1, args.top_k))
-    answer = build_answer(task, results, corpus, llm.usage)
+    # Materialize a complete deterministic answer before making any network
+    # request. If the model route stalls or the process is interrupted later,
+    # the evaluator still receives a schema-valid answer file.
+    baseline_llm = LLM(root_dir=repo_root, enabled=False)
+    baseline_results = predict_rows(task, bm25, corpus, baseline_llm, max(1, args.top_k))
+    answer = build_answer(task, baseline_results, corpus, baseline_llm.usage)
     write_json(args.out, answer)
+
+    budget = min(450.0, max(0.0, float(os.environ.get("T4_MODEL_BUDGET_S", "420"))))
+    llm = LLM(root_dir=repo_root, deadline_monotonic=time.monotonic() + budget)
+    results = baseline_results
+    if llm.enabled:
+        try:
+            enhanced_results = predict_rows(task, bm25, corpus, llm, max(1, args.top_k))
+            enhanced_answer = build_answer(task, enhanced_results, corpus, llm.usage)
+            if not (enhanced_answer.get("notes", {}).get("validation_errors") or []):
+                results = enhanced_results
+                answer = enhanced_answer
+            else:
+                llm.usage.errors.append("model-enhanced answer failed local validation; retained baseline")
+                answer = build_answer(task, baseline_results, corpus, llm.usage)
+        except Exception as exc:  # noqa: BLE001
+            llm.usage.errors.append(f"model enhancement failed: {type(exc).__name__}: {str(exc)[:180]}")
+            answer = build_answer(task, baseline_results, corpus, llm.usage)
+        write_json(args.out, answer)
+
     trace_dir = args.trace_dir or (args.out.parent / "trace")
-    _write_trace(trace_dir, task, results, llm)
+    try:
+        _write_trace(trace_dir, task, results, llm)
+    except Exception as exc:  # noqa: BLE001
+        print(f"trace write failed after answer was saved: {exc}", file=sys.stderr)
 
     errors = answer.get("notes", {}).get("validation_errors") or []
     if errors:

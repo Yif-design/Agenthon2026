@@ -113,6 +113,22 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(mild.label, "inline")
         self.assertEqual(strong.label, "beat")
 
+    def test_generic_regression_uses_grounded_direction_as_small_adjustment(self) -> None:
+        current = task("unknown_metric", "regression")
+        neutral = solve_minimal(current, {"latest_value": 12.0}, SPECS["generic"], {}, EMPTY_CORPUS, 0, 1)
+        positive = solve_minimal(
+            current,
+            {"latest_value": 12.0},
+            SPECS["generic"],
+            {"directional_signal": 1},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        self.assertEqual(neutral.point, 12.0)
+        self.assertGreater(positive.point, neutral.point)
+        self.assertEqual(positive.method, "generic_evidence_adjusted")
+
     def test_credit_default_uses_high_risk_tier(self) -> None:
         current = task("credit_event_12m", "classification", ["credit_event", "no_event"])
         result = solve_minimal(

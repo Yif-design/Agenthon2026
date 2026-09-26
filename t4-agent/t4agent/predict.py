@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import dataclass
 from typing import Any
 
@@ -36,6 +37,19 @@ class RowResult:
     model_prompt: str | None = None
 
 
+@dataclass
+class PreparedRow:
+    index: int
+    entity: dict[str, Any]
+    allowed_doc_ids: set[str]
+    corpus: IndexedCorpus
+    chunks: list[Chunk]
+    extracted_parameters: dict[str, float]
+    extracted_facts: list[EvidenceFact]
+    extracted_rejected: list[RejectedFact]
+    needs_model: bool
+
+
 SYSTEM = """You extract a few coarse evidence signals and explicitly reported numbers for a deterministic financial prediction workflow.
 Use only the provided entity fields and evidence excerpts. Never invent missing numbers or facts.
 Return one JSON object and no prose. Every non-neutral signal and every reported number must include one verbatim quote from the excerpts.
@@ -43,10 +57,8 @@ Use level -2, -1, 0, 1, or 2. Use 0 when evidence is missing, ambiguous, histori
 
 
 def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k: int) -> list[RowResult]:
-    results: list[RowResult] = []
     spec = family_spec(task.family, str(task.target.get("name", "")))
-    shared_model_output: dict[str, Any] | None = None
-    shared_model_prompt: str | None = None
+    prepared: list[PreparedRow] = []
     for i, entity in enumerate(task.entities):
         allowed = allowed_document_ids(task, entity, corpus)
         entity_corpus = scoped_corpus(corpus, allowed)
@@ -61,47 +73,179 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
         needs_model = spec.model_required and (
             bool(spec.signals) or any(parameter.name not in extracted for parameter in spec.numeric_parameters)
         )
-        if needs_model and spec.key == "rates" and shared_model_output is not None:
-            parsed = shared_model_output
-            prompt_text = shared_model_prompt
-        else:
-            prompt_text = _prompt(task, entity, chunks, spec) if needs_model else None
-            parsed = llm.chat_json(SYSTEM, prompt_text, max_tokens=600) if prompt_text is not None else None
-            if needs_model and spec.key == "rates":
-                shared_model_output = parsed
-                shared_model_prompt = prompt_text
+        prepared.append(
+            PreparedRow(
+                i,
+                entity,
+                allowed,
+                entity_corpus,
+                chunks,
+                extracted,
+                extracted_facts,
+                extracted_rejected,
+                needs_model,
+            )
+        )
+
+    model_outputs: dict[int, dict[str, Any] | None] = {}
+    model_prompts: dict[int, str] = {}
+    candidates = [row for row in prepared if row.needs_model]
+    if candidates and spec.key == "rates":
+        # The yield-curve task has one macro evidence set shared by every tenor.
+        # One extraction call is more consistent and preserves the request budget.
+        prompt_text = _prompt(task, candidates[0].entity, candidates[0].chunks, spec)
+        parsed = llm.chat_json(SYSTEM, prompt_text, max_tokens=700)
+        for row in candidates:
+            model_outputs[row.index] = parsed
+            model_prompts[row.index] = prompt_text
+    else:
+        batch_size = min(6, max(1, int(os.environ.get("T4_MODEL_BATCH_SIZE", "3"))))
+        for start in range(0, len(candidates), batch_size):
+            batch = candidates[start : start + batch_size]
+            if len(batch) == 1:
+                prompt_text = _prompt(task, batch[0].entity, batch[0].chunks, spec)
+                parsed = llm.chat_json(SYSTEM, prompt_text, max_tokens=700)
+                unpacked = {batch[0].index: parsed}
+            else:
+                prompt_text = _batch_prompt(task, batch, spec)
+                parsed = llm.chat_json(SYSTEM, prompt_text, max_tokens=350 * len(batch) + 300)
+                unpacked = _unpack_batch(parsed, batch)
+            for row in batch:
+                model_outputs[row.index] = unpacked.get(row.index)
+                model_prompts[row.index] = prompt_text
+
+    results: list[RowResult] = []
+    for row in prepared:
         result = _prediction_from_model(
             task,
-            entity,
-            parsed,
-            chunks,
-            entity_corpus,
+            row.entity,
+            model_outputs.get(row.index),
+            row.chunks,
+            row.corpus,
             spec,
-            i,
+            row.index,
             len(task.entities),
-            extracted,
-            extracted_facts,
-            extracted_rejected,
-            allowed,
-            prompt_text,
+            row.extracted_parameters,
+            row.extracted_facts,
+            row.extracted_rejected,
+            row.allowed_doc_ids,
+            model_prompts.get(row.index),
         )
         results.append(result)
     return _normalize_ranking(task, results)
 
 
-def _prompt(task: Task, entity: dict, chunks: list[Chunk], spec: FamilySpec) -> str:
-    evidence = []
-    for idx, chunk in enumerate(chunks, 1):
-        evidence.append(
+def _batch_prompt(task: Task, rows: list[PreparedRow], spec: FamilySpec) -> str:
+    items = []
+    for row in rows:
+        items.append(
             {
-                "n": idx,
-                "doc_id": chunk.doc_id,
-                "doc_date": chunk.doc_date,
-                "span_start": chunk.span_start,
-                "span_end": chunk.span_end,
-                "text": chunk.text[:1400],
+                "item_id": row.index,
+                "entity_id": str(row.entity.get("entity_id", "")),
+                "entity": project_entity(row.entity, spec),
+                "calculated_facts": numeric_facts(project_entity(row.entity, spec)),
+                "evidence": _evidence_json(row.chunks),
             }
         )
+    request = {
+        "task_id": task.task_id,
+        "prompt": task.prompt,
+        "cutoff_date": task.cutoff_date,
+        "target": task.target,
+        "target_type": task.target_type,
+        "family_model": spec.key,
+        "signal_rules": [{"name": item.name, "meaning": item.description} for item in spec.signals],
+        "numeric_parameter_rules": [
+            {"name": item.name, "meaning": item.description} for item in spec.numeric_parameters
+        ],
+        "items": items,
+    }
+    schema = {
+        "entities": [
+            {
+                "item_id": "copy the integer item_id",
+                "entity_id": "copy the entity_id",
+                **_output_schema(spec),
+            }
+        ]
+    }
+    return "\n".join(
+        [
+            "Extract every item independently. Evidence is scoped to its own item.",
+            "REQUEST_JSON:",
+            json.dumps(request, ensure_ascii=False, sort_keys=True),
+            "OUTPUT_SCHEMA_JSON:",
+            json.dumps(schema, ensure_ascii=False),
+            _output_rules(),
+        ]
+    )
+
+
+def _unpack_batch(parsed: dict[str, Any] | None, rows: list[PreparedRow]) -> dict[int, dict[str, Any] | None]:
+    output: dict[int, dict[str, Any] | None] = {row.index: None for row in rows}
+    if not isinstance(parsed, dict) or not isinstance(parsed.get("entities"), list):
+        return output
+    by_entity = {str(row.entity.get("entity_id", "")): row.index for row in rows}
+    allowed_indexes = set(output)
+    used: set[int] = set()
+    for value in parsed["entities"]:
+        if not isinstance(value, dict):
+            continue
+        item_id = value.get("item_id")
+        index = item_id if isinstance(item_id, int) and item_id in allowed_indexes else by_entity.get(str(value.get("entity_id", "")))
+        if index is None or index in used:
+            continue
+        output[index] = value
+        used.add(index)
+    return output
+
+
+def _prompt(task: Task, entity: dict, chunks: list[Chunk], spec: FamilySpec) -> str:
+    signal_rules = [{"name": signal.name, "meaning": signal.description} for signal in spec.signals]
+    parameter_rules = [
+        {"name": parameter.name, "meaning": parameter.description} for parameter in spec.numeric_parameters
+    ]
+    lines = [
+        f"TASK_ID: {task.task_id}",
+        f"PROMPT: {task.prompt}",
+        f"CUTOFF_DATE: {task.cutoff_date}",
+        f"TARGET_NAME: {task.target.get('name', '')}",
+        f"TARGET_TYPE: {task.target_type}",
+        "TARGET_SCHEMA_JSON:",
+        json.dumps(task.target, ensure_ascii=False, sort_keys=True),
+        f"FAMILY_MODEL: {spec.key}",
+        "SIGNAL_RULES_JSON:",
+        json.dumps(signal_rules, ensure_ascii=False),
+        "NUMERIC_PARAMETER_RULES_JSON:",
+        json.dumps(parameter_rules, ensure_ascii=False),
+        "ENTITY_JSON:",
+        json.dumps(project_entity(entity, spec), ensure_ascii=False, sort_keys=True),
+        "CALCULATED_FACTS_JSON:",
+        json.dumps(numeric_facts(project_entity(entity, spec)), ensure_ascii=False, sort_keys=True),
+        "EVIDENCE_JSON:",
+        json.dumps(_evidence_json(chunks), ensure_ascii=False),
+        "OUTPUT_SCHEMA_JSON:",
+        json.dumps(_output_schema(spec), ensure_ascii=False),
+        _output_rules(),
+    ]
+    return "\n".join(lines)
+
+
+def _evidence_json(chunks: list[Chunk]) -> list[dict[str, Any]]:
+    return [
+        {
+            "n": idx,
+            "doc_id": chunk.doc_id,
+            "doc_date": chunk.doc_date,
+            "span_start": chunk.span_start,
+            "span_end": chunk.span_end,
+            "text": chunk.text[:1400],
+        }
+        for idx, chunk in enumerate(chunks, 1)
+    ]
+
+
+def _output_schema(spec: FamilySpec) -> dict[str, Any]:
     schema: dict[str, Any] = {
         "context": {
             "doc_id": "provided entity-scoped doc_id",
@@ -128,32 +272,16 @@ def _prompt(task: Task, entity: dict, chunks: list[Chunk], spec: FamilySpec) -> 
             }
             for parameter in spec.numeric_parameters
         }
-    signal_rules = [{"name": signal.name, "meaning": signal.description} for signal in spec.signals]
-    parameter_rules = [
-        {"name": parameter.name, "meaning": parameter.description} for parameter in spec.numeric_parameters
-    ]
-    lines = [
-        f"TASK_ID: {task.task_id}",
-        f"PROMPT: {task.prompt}",
-        f"CUTOFF_DATE: {task.cutoff_date}",
-        f"TARGET_NAME: {task.target.get('name', '')}",
-        f"TARGET_TYPE: {task.target_type}",
-        f"FAMILY_MODEL: {spec.key}",
-        "SIGNAL_RULES_JSON:",
-        json.dumps(signal_rules, ensure_ascii=False),
-        "NUMERIC_PARAMETER_RULES_JSON:",
-        json.dumps(parameter_rules, ensure_ascii=False),
-        "ENTITY_JSON:",
-        json.dumps(project_entity(entity, spec), ensure_ascii=False, sort_keys=True),
-        "CALCULATED_FACTS_JSON:",
-        json.dumps(numeric_facts(project_entity(entity, spec)), ensure_ascii=False, sort_keys=True),
-        "EVIDENCE_JSON:",
-        json.dumps(evidence, ensure_ascii=False),
-        "OUTPUT_SCHEMA_JSON:",
-        json.dumps(schema, ensure_ascii=False),
-        "Rules: return one entity-specific context passage, every named signal, and every numeric parameter. Level 0 needs no signal citation. Non-zero signals and non-null numeric parameters require a provided doc_id and an exact quote. Numeric parameters must be copied from evidence, never estimated. Do not output a label, forecast, probability, interval, beta, or confidence.",
-    ]
-    return "\n".join(lines)
+    return schema
+
+
+def _output_rules() -> str:
+    return (
+        "Rules: return one entity-specific context passage, every named signal, and every numeric parameter. "
+        "Level 0 needs no signal citation. Non-zero signals and non-null numeric parameters require a provided "
+        "doc_id and an exact quote. Numeric parameters must be copied from evidence, never estimated. Do not "
+        "output a label, forecast, probability, interval, beta, or confidence."
+    )
 
 
 def _prediction_from_model(

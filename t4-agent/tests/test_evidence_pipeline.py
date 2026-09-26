@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from t4agent.evidence import validate_model_output
 from t4agent.family_specs import SPECS
 from t4agent.predict import predict_rows
@@ -178,3 +180,47 @@ def test_rates_extract_shared_policy_signal_once() -> None:
     assert llm.calls == 1
     assert [row.prediction["point_forecast"] for row in results] == [15.0, 6.0]
     assert all(row.derivation and row.derivation["replay_verified"] for row in results)
+
+
+def test_generic_entities_are_batched_and_mapped_by_item_id(monkeypatch) -> None:
+    entities = [{"entity_id": f"E{i}", "latest_value": float(i + 1)} for i in range(7)]
+    task = Task(
+        raw={},
+        task_id="unknown",
+        schema_version="3",
+        target={"name": "unknown_metric", "type": "regression"},
+        target_type="regression",
+        labels=[],
+        entities=entities,
+        cutoff_date="2024-01-01",
+        interval_level=0.9,
+        prompt="forecast the unknown metric",
+        family="unseen_family",
+    )
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "3")
+
+    class FakeLLM:
+        calls = 0
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> dict:
+            self.calls += 1
+            if "REQUEST_JSON:\n" not in user:
+                return {"signals": {"directional_signal": {"level": 0}}}
+            request = json.loads(user.split("REQUEST_JSON:\n", 1)[1].split("\nOUTPUT_SCHEMA_JSON:", 1)[0])
+            return {
+                "entities": [
+                    {
+                        "item_id": item["item_id"],
+                        "entity_id": item["entity_id"],
+                        "signals": {"directional_signal": {"level": 0}},
+                    }
+                    for item in reversed(request["items"])
+                ]
+            }
+
+    llm = FakeLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+    assert llm.calls == 3
+    assert [row.prediction["entity_id"] for row in results] == [f"E{i}" for i in range(7)]
+    assert [row.prediction["point_forecast"] for row in results] == [float(i + 1) for i in range(7)]

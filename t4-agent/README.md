@@ -137,7 +137,9 @@ MODEL_NAME=house
 MODEL_TOKEN=<injected per-unit bearer>
 ```
 
-The client calls `$MODEL_ENDPOINT/v1/chat/completions`, caps itself at 25 attempted calls per unit and caps `max_tokens` at 4,000. When the endpoint is unavailable it falls back to the deterministic family solvers and still writes a schema-valid answer.
+The client calls `$MODEL_ENDPOINT/v1/chat/completions`, batches up to three entities per request, defaults to 18 attempted calls per unit (with a hard maximum of 25), and caps `max_tokens` at 4,000. It first atomically writes a complete deterministic answer, then spends at most 420 seconds on model enhancement. Endpoint timeouts, rejected credentials, invalid model JSON, and trace failures therefore leave a schema-valid answer in place. In the official House environment it sends `chat_template_kwargs.enable_thinking=false` because the model is only extracting bounded evidence signals.
+
+The safety limits can be tuned locally with `T4_MODEL_BATCH_SIZE`, `T4_MODEL_MAX_CALLS`, `T4_MODEL_TIMEOUT_S`, and `T4_MODEL_BUDGET_S`. Submission defaults stay below the official 25-call and 600-second ceilings.
 
 Qwen 7B remains a local behavioral approximation only. It is not an eligible submitted model.
 
@@ -163,11 +165,11 @@ Use low randomness:
 - no vendor tools;
 - no web search;
 - no model-side retrieval;
-- one row per call.
+- up to three entity rows per extraction call, with entity IDs checked when the response is unpacked.
 
 ## Token Budget
 
-The official budget is per unit: `1,000,000` input tokens, 25 admitted requests, and at most 4,000 output tokens per call. This is not a single-call context window. A retry can consume another request slot.
+The official budget is per unit: 25 admitted requests and at most 4,000 output tokens per request. The organizers withdrew the former aggregate input/output token allowance and did not replace it with a published total-token quota. A retry can consume another request slot.
 
 For 7B local simulation, target roughly:
 
@@ -251,3 +253,10 @@ Evidence-chain hardening tested on 2026-09-19:
 - every local run writes complete ignored traces, and all 78 offline rows reproduced their calculator output exactly from recorded inputs.
 
 Public units generally do not include resolved outcomes, so local smoke score is `null`; it checks admissibility, schema, roster, cutoff, and citation plumbing rather than leaderboard predictive quality.
+
+Submission hardening tested on 2026-09-26 with `qfbench2-common==2.4.4` and the current official Track 4 checkout:
+
+- 29 unit tests pass, including batching, deadline, request-budget, missing-credential, and authorization-failure paths;
+- all 11 public units produce schema-valid, smoke-admissible answers without a model endpoint;
+- all 11 also remain schema-valid and smoke-admissible when the official House variables are present but the endpoint refuses the connection;
+- the CLI atomically writes a deterministic answer before any model request, then replaces it only with a locally valid enhanced answer.
