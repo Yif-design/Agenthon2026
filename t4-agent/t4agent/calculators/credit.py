@@ -31,6 +31,8 @@ def solve(
     else:
         point = 0.05
     label = "credit_event" if point >= 0.5 else "no_event"
-    half = 0.15 if point in (0.05, 0.85) else 0.25
-    interval = {"level": task.interval_level, "lo": max(0.0, point - half), "hi": min(1.0, point + half)}
+    # The target is a Bernoulli event probability, so its fixed mathematical
+    # support is the most defensible interval when no calibrated probability
+    # history is available for the entity population.
+    interval = {"level": task.interval_level, "lo": 0.0, "hi": 1.0}
     return ModelOutput(point, label, interval, "explicit_credit_flags")

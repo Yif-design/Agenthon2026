@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-26",
+  "models": [
+    {
+      "id": "official-house",
+      "name": "nvidia/nemotron-3-super-120b-a12b",
+      "revision": "rl-030326-fp8",
+      "parameters_total": "120B",
+      "parameters_active": "12B",
+      "tokenizer_max_length_metadata": 262144,
+      "serving_context_limit": null,
+      "training_cutoff": "unpublished",
+      "access": "organizer House API",
+      "development_available": false
+    },
+    {
+      "id": "openrouter-nemotron-free",
+      "name": "nvidia/nemotron-3-super-120b-a12b:free",
+      "catalog_context_length": 262144,
+      "prompt_price": 0,
+      "completion_price": 0,
+      "supports_json": true,
+      "supports_reasoning_control": true,
+      "equivalent_to_official_snapshot": false,
+      "notes": "Closest free development analogue found; provider may collect opted-in public prompts."
+    }
+  ]
+}

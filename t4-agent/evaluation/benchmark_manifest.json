@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-26",
+  "baseline_commit": "f46b39b991f1376159a95f142f6b8076178d7fde",
+  "official_toolkit_version": "2.4.4",
+  "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+  "practice_outcomes": {
+    "path": "evaluation/realized/public_all_realized.json",
+    "tracked": false,
+    "sha256": "0cd90a6caec80c6edf21cb4ff461baaa8588e9940c21bd1dffef69aa093fe5bf",
+    "units": 11,
+    "entities": 78,
+    "role": "diagnostic_only"
+  },
+  "configurations": [
+    {
+      "id": "offline",
+      "model": null,
+      "calls": 0,
+      "mean_predictive_quality": 0.31216828775534206,
+      "mean_interval_coverage": 0.5454447068083431,
+      "mean_composite_before_faithfulness_gate": 0.105787577107606
+    },
+    {
+      "id": "nemotron-free-nothink-signal",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "mean_predictive_quality": 0.3803501059371603,
+      "mean_interval_coverage": 0.5605962219598584,
+      "mean_composite_before_faithfulness_gate": 0.15806030438033328
+    }
+  ]
+}

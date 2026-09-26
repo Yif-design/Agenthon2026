@@ -1,0 +1,255 @@
+{
+  "annual_file_sha256": {
+    "2000.csv": "a8cde4c7a757ac74f7b6257d3778db73a215483002317e19ee9e3f3c524a8a24",
+    "2001.csv": "bc48181de2b452d19b159bc12354653f64ce3b119d7072dbf4aa92fa6998799c",
+    "2002.csv": "33f84b7c6f50bf3ea0ca4703cb51c8d469bbb93dad92f181d42132b7e2359bf7",
+    "2003.csv": "0c255188cf596e5bc42a4e00b9a60649df01fb95a58a3382d7586da83e5cc0e0",
+    "2004.csv": "0f0561773c7a3220fe1eded9a7ba0645790e9239fd3cf569158171fedf2dc969",
+    "2005.csv": "ecf2ab3d1ca1b6ee8e916fee90474028c2d1221b8d236131621ad58020db0552",
+    "2006.csv": "cdbdcd8b32735caa453e00280232ff70c7012c055b7daf7b8cf1d9aaa8c66bfe",
+    "2007.csv": "297f6be4059a605b1ec0f266eb7b8467c3d40504a0dd53341746223276e6e6d8",
+    "2008.csv": "686db01584dd45f67addc243ee0c42339d491171a0e947c8f88ecac78ee0e9ea",
+    "2009.csv": "3c9294cfa71136e1d5330b09a00bf996ecf86c865d593d7ee954d11984a5bdb1",
+    "2010.csv": "f973bd3988989d3e408655cbc7fed89faefbaa8a1c111ec313241fb47fc75e2d",
+    "2011.csv": "224eaf29d6fe7cbccc746c7a8c845f189cf91424bab43f46ca386a74e98d81f7",
+    "2012.csv": "9c889b6e3cb87f40f3760bddb69f05f7525800ac480ef5712b2cf318765fa184",
+    "2013.csv": "1e1a98426d9274afcc68467962f9238104db775b8765e48f45ac7488b33ff338",
+    "2014.csv": "8d560698e03e4c0d8d22ff8be7f5f7c5c0d472b1e33a22b6a75373a57e84aa0f",
+    "2015.csv": "b7665d1ce46d6ed6d08fbda34aae1831de38e274e3c7caed81904042aac9b5bc",
+    "2016.csv": "b4d0a8d86e2734bc64d84d9a9824434d841737621582daeac58f13c7129f325c",
+    "2017.csv": "56074da7c32103a28cf4ba2bdf5eaa12f98fd49852047aef1a6eb16e64bd6e83",
+    "2018.csv": "e8375524a7a8d3e8091bbe7690d0378b9365be09efff5b18b8eefddc25f718d3",
+    "2019.csv": "83fc47c17325e222c45fd3a1eb26c69ae01f62d33b793030b4b8b350ca0a290b",
+    "2020.csv": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7",
+    "2021.csv": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"
+  },
+  "artifact": "fomc_35td_interval_v1",
+  "candidate_battery": [
+    {
+      "dev_calibration_loss": 0.012208504801097364,
+      "dev_coverage": 0.9122085048010974,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 0.897119341563786,
+        "UST2Y": 0.9300411522633745,
+        "UST30Y": 0.8847736625514403,
+        "UST3Y": 0.9382716049382716,
+        "UST5Y": 0.9218106995884774,
+        "UST7Y": 0.9012345679012346
+      },
+      "quantile": 0.8,
+      "widths_bps": {
+        "UST10Y": 41.000000000000014,
+        "UST2Y": 35.999999999999986,
+        "UST30Y": 37.000000000000014,
+        "UST3Y": 39.00000000000006,
+        "UST5Y": 42.99999999999999,
+        "UST7Y": 43.000000000000014
+      }
+    },
+    {
+      "dev_calibration_loss": 0.037585733882030126,
+      "dev_coverage": 0.9375857338820301,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 0.9300411522633745,
+        "UST2Y": 0.9506172839506173,
+        "UST30Y": 0.9053497942386831,
+        "UST3Y": 0.9465020576131687,
+        "UST5Y": 0.9547325102880658,
+        "UST7Y": 0.9382716049382716
+      },
+      "quantile": 0.85,
+      "widths_bps": {
+        "UST10Y": 46.0,
+        "UST2Y": 42.000000000000036,
+        "UST30Y": 41.000000000000014,
+        "UST3Y": 46.499999999999986,
+        "UST5Y": 50.0,
+        "UST7Y": 49.00000000000002
+      }
+    },
+    {
+      "dev_calibration_loss": 0.06433470507544581,
+      "dev_coverage": 0.9643347050754458,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 0.9588477366255144,
+        "UST2Y": 0.9629629629629629,
+        "UST30Y": 0.9547325102880658,
+        "UST3Y": 0.9711934156378601,
+        "UST5Y": 0.9711934156378601,
+        "UST7Y": 0.9670781893004116
+      },
+      "quantile": 0.9,
+      "widths_bps": {
+        "UST10Y": 52.0,
+        "UST2Y": 52.99999999999998,
+        "UST30Y": 49.00000000000002,
+        "UST3Y": 58.99999999999994,
+        "UST5Y": 60.00000000000001,
+        "UST7Y": 56.00000000000001
+      }
+    },
+    {
+      "dev_calibration_loss": 0.06913580246913575,
+      "dev_coverage": 0.9691358024691358,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 0.9670781893004116,
+        "UST2Y": 0.9711934156378601,
+        "UST30Y": 0.9629629629629629,
+        "UST3Y": 0.9711934156378601,
+        "UST5Y": 0.9711934156378601,
+        "UST7Y": 0.9711934156378601
+      },
+      "quantile": 0.925,
+      "widths_bps": {
+        "UST10Y": 59.99999999999997,
+        "UST2Y": 62.999999999999986,
+        "UST30Y": 55.99999999999996,
+        "UST3Y": 67.0,
+        "UST5Y": 65.99999999999999,
+        "UST7Y": 62.000000000000014
+      }
+    },
+    {
+      "dev_calibration_loss": 0.07599451303155003,
+      "dev_coverage": 0.97599451303155,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 0.9794238683127572,
+        "UST2Y": 0.9711934156378601,
+        "UST30Y": 0.9835390946502057,
+        "UST3Y": 0.9711934156378601,
+        "UST5Y": 0.9711934156378601,
+        "UST7Y": 0.9794238683127572
+      },
+      "quantile": 0.95,
+      "widths_bps": {
+        "UST10Y": 71.0,
+        "UST2Y": 74.0,
+        "UST30Y": 64.44999999999996,
+        "UST3Y": 77.00000000000003,
+        "UST5Y": 73.0,
+        "UST7Y": 74.5
+      }
+    },
+    {
+      "dev_calibration_loss": 0.08422496570644722,
+      "dev_coverage": 0.9842249657064472,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 0.9876543209876543,
+        "UST2Y": 0.9711934156378601,
+        "UST30Y": 0.9958847736625515,
+        "UST3Y": 0.9794238683127572,
+        "UST5Y": 0.9794238683127572,
+        "UST7Y": 0.9917695473251029
+      },
+      "quantile": 0.975,
+      "widths_bps": {
+        "UST10Y": 84.74999999999997,
+        "UST2Y": 89.99999999999999,
+        "UST30Y": 78.17500000000007,
+        "UST3Y": 87.0,
+        "UST5Y": 87.50000000000003,
+        "UST7Y": 88.74999999999997
+      }
+    },
+    {
+      "dev_calibration_loss": 0.09451303155006852,
+      "dev_coverage": 0.9945130315500685,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 1.0,
+        "UST2Y": 0.9835390946502057,
+        "UST30Y": 1.0,
+        "UST3Y": 0.9876543209876543,
+        "UST5Y": 1.0,
+        "UST7Y": 0.9958847736625515
+      },
+      "quantile": 0.99,
+      "widths_bps": {
+        "UST10Y": 110.99999999999997,
+        "UST2Y": 102.49999999999999,
+        "UST30Y": 96.98000000000002,
+        "UST3Y": 102.0,
+        "UST5Y": 106.0,
+        "UST7Y": 101.5
+      }
+    },
+    {
+      "dev_calibration_loss": 0.09862825788751717,
+      "dev_coverage": 0.9986282578875172,
+      "dev_coverage_by_tenor": {
+        "UST10Y": 1.0,
+        "UST2Y": 0.9958847736625515,
+        "UST30Y": 1.0,
+        "UST3Y": 0.9958847736625515,
+        "UST5Y": 1.0,
+        "UST7Y": 1.0
+      },
+      "quantile": 0.995,
+      "widths_bps": {
+        "UST10Y": 124.75000000000003,
+        "UST2Y": 119.25000000000001,
+        "UST30Y": 110.49000000000002,
+        "UST3Y": 111.50000000000001,
+        "UST5Y": 120.0,
+        "UST7Y": 124.75
+      }
+    }
+  ],
+  "fit_period": "2000-01-01/2016-12-31",
+  "holdout_not_read": [
+    "t4-fomc-curve-20220728",
+    "t4-fomc-curve-20240918"
+  ],
+  "horizon_trading_days": 35,
+  "origin_step_trading_days": 5,
+  "sample_counts": {
+    "UST10Y": {
+      "dev": 243,
+      "train": 851
+    },
+    "UST2Y": {
+      "dev": 243,
+      "train": 851
+    },
+    "UST30Y": {
+      "dev": 243,
+      "train": 652
+    },
+    "UST3Y": {
+      "dev": 243,
+      "train": 851
+    },
+    "UST5Y": {
+      "dev": 243,
+      "train": 851
+    },
+    "UST7Y": {
+      "dev": 243,
+      "train": 851
+    }
+  },
+  "schema_version": 1,
+  "selected": {
+    "dev_calibration_loss": 0.012208504801097364,
+    "dev_coverage": 0.9122085048010974,
+    "dev_coverage_by_tenor": {
+      "UST10Y": 0.897119341563786,
+      "UST2Y": 0.9300411522633745,
+      "UST30Y": 0.8847736625514403,
+      "UST3Y": 0.9382716049382716,
+      "UST5Y": 0.9218106995884774,
+      "UST7Y": 0.9012345679012346
+    },
+    "quantile": 0.8,
+    "widths_bps": {
+      "UST10Y": 41.000000000000014,
+      "UST2Y": 35.999999999999986,
+      "UST30Y": 37.000000000000014,
+      "UST3Y": 39.00000000000006,
+      "UST5Y": 42.99999999999999,
+      "UST7Y": 43.000000000000014
+    }
+  },
+  "selection_period": "2017-01-01/2021-12-31",
+  "source": "U.S. Treasury daily par yield curve rates",
+  "source_url_template": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all?type=daily_treasury_yield_curve&field_tdr_date_value={year}&page&_format=csv"
+}

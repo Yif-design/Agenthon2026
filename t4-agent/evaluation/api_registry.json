@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-26",
+  "apis": [
+    {
+      "id": "house",
+      "endpoint_source": "MODEL_ENDPOINT",
+      "authentication_source": "MODEL_TOKEN",
+      "available_during_official_evaluation": true,
+      "available_for_participant_development": false,
+      "request_limit_per_unit": 25,
+      "max_output_tokens_per_request": 4000,
+      "cumulative_token_limit": null
+    },
+    {
+      "id": "openrouter",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "credential": "git-ignored project secret",
+      "credential_validated": true,
+      "account_tier": "free",
+      "free_exact_family_model_available": true,
+      "incremental_cost_in_baseline_run_usd": 0,
+      "official_evaluation_accessible": false
+    }
+  ]
+}

@@ -38,6 +38,8 @@ class LLM:
         self.api_key = self.model_token or os.environ.get("MODEL_API_KEY") or self._read_local_key(root_dir) or "unused"
         self.temperature = float(os.environ.get("T4_TEMPERATURE", "0.0"))
         self.seed = int(os.environ.get("T4_SEED", "1234"))
+        self.allow_data_collection = os.environ.get("T4_MODEL_ALLOW_DATA_COLLECTION", "0") == "1"
+        self.enable_thinking = os.environ.get("T4_ENABLE_THINKING", "0") == "1"
         self.timeout = max(1.0, float(os.environ.get("T4_MODEL_TIMEOUT_S", "40")))
         self.max_calls = min(25, max(0, int(os.environ.get("T4_MODEL_MAX_CALLS", "18"))))
         self.max_retries = max(1, int(os.environ.get("T4_MODEL_RETRIES", "2")))
@@ -77,15 +79,14 @@ class LLM:
             "stream": False,
         }
         if self.official_mode:
-            # This agent extracts bounded JSON facts. Long model reasoning adds
-            # latency and makes the structured response less reliable.
-            body["chat_template_kwargs"] = {"enable_thinking": False}
+            body["chat_template_kwargs"] = {"enable_thinking": self.enable_thinking}
         elif "openrouter.ai" in self.endpoint:
             body["response_format"] = {"type": "json_object"}
+            body["reasoning"] = {"enabled": self.enable_thinking}
             body["provider"] = {
                 "allow_fallbacks": False,
                 "require_parameters": True,
-                "data_collection": "deny",
+                "data_collection": "allow" if self.allow_data_collection else "deny",
             }
         headers = {
             "Content-Type": "application/json",

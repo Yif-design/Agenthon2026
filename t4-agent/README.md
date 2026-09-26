@@ -1,9 +1,17 @@
 # t4-agent - Track 4 design note
 
-This directory holds our Track 4 agent. The current implementation uses cutoff-safe lexical retrieval, minimal observable deterministic models, optional House-model coarse-signal extraction, exact-span citation grounding, and local validation. Qwen 7B is retained only as a local behavioral approximation.
+This directory holds our Track 4 agent. The current implementation uses cutoff-safe lexical retrieval,
+minimal observable deterministic models, optional House-model evidence extraction, exact-span citation
+grounding, and local validation. Local experiments target the exact public Nemotron model family when
+available.
 
 Detailed design notes:
 
+- [Current architecture](docs/architecture-current.md): implementation and measured baseline.
+- [Current official rules](docs/official-rules-current.md): verified House, runtime and artifact constraints.
+- [Model API notes](docs/model-api-notes.md): official and free development endpoints without credentials.
+- [Research log](docs/research-log.md): external references and experiment decisions.
+- [Experiment methodology](docs/experiment-methodology.md): cutoff-safe A/B and acceptance protocol.
 - [Track 4 题型模型契约](docs/family-model-contracts-zh.md)：当前实现的权威设计；逐题定义输入白名单、计算方法、LLM 判断和缺失 fallback。
 - [Track 4 最小可观测预测模型 V1](docs/t4-minimal-observable-model-v1-zh.md)：形成当前契约前的总体精简原则。
 - [Track 4 各题型解法与工具设计](docs/t4-problem-solving-guide-zh.md)：逐一说明 11 个公开 unit 的输入、预测目标、解题步骤、参数和待实现工具，并包含隐藏题型通用解题器。
@@ -11,9 +19,13 @@ Detailed design notes:
 
 ## Decision
 
-Use a fixed workflow with small model-judgment steps. Do not build a free-form agent that decides which tools to call, and do not build a complex skill registry in the first version.
+Use a controlled workflow as the current reliable baseline. Treat direct model prediction, broader
+tool choice, and hybrid designs as testable alternatives rather than prohibited designs.
 
-Track 4 is a structured prediction task over a frozen corpus. The hard parts are schema safety, citation faithfulness, cutoff hygiene, and stable row coverage. A 7B model should act as an evidence judge, not as a programmer or tool orchestrator.
+Track 4 is a structured prediction task over a frozen corpus. The hard parts are schema safety,
+citation faithfulness, cutoff hygiene, stable row coverage, and predictive calibration. The official
+House is `nvidia/nemotron-3-super-120b-a12b` (120B total parameters, 12B active per token), so a generic
+7B model is not the primary behavioral reference.
 
 ## Official Constraints That Shape The Design
 
@@ -40,7 +52,8 @@ The public families are examples, not a closed list. The held-out set may contai
 
 ## Skill And Tool Policy
 
-Do not let the model freely call tools in version 1.
+The current version uses deterministic routing and fixed tools because this has a schema-valid,
+measured baseline. It is an implementation choice, not a permanent restriction.
 
 Use deterministic routing and fixed tool calls:
 
@@ -52,7 +65,12 @@ Use deterministic routing and fixed tool calls:
 - the deterministic family tool turns baselines and signals into labels, points, intervals, and ranks;
 - the workflow validates, grounds citations, and writes final `answer.json`.
 
-The model cannot return a final label, probability, interval, beta, or confidence. Missing or ambiguous evidence becomes a neutral signal, and the deterministic baseline remains in place.
+The current production path asks the model for grounded signals and lets deterministic family tools
+produce the final values. We retain this path because the final submission must run against the
+official House model, and signal extraction measures how well the prediction layer behaves when its
+inputs come from that model. Direct labels, points, intervals, model-selected tools, or other hybrid
+paths may replace it when a cutoff-safe experiment shows better end-to-end score and still meets the
+official request, time, context, schema, and faithfulness constraints.
 
 ## Workflow
 
@@ -141,14 +159,14 @@ The client calls `$MODEL_ENDPOINT/v1/chat/completions`, batches up to three enti
 
 The safety limits can be tuned locally with `T4_MODEL_BATCH_SIZE`, `T4_MODEL_MAX_CALLS`, `T4_MODEL_TIMEOUT_S`, and `T4_MODEL_BUDGET_S`. Submission defaults stay below the official 25-call and 600-second ceilings.
 
-Qwen 7B remains a local behavioral approximation only. It is not an eligible submitted model.
-
-OpenRouter local experiment:
+OpenRouter exact-family local experiment (free availability can change):
 
 ```bash
 MODEL_ENDPOINT=https://openrouter.ai/api/v1
-MODEL_NAME=qwen/qwen-2.5-7b-instruct
+MODEL_NAME=nvidia/nemotron-3-super-120b-a12b:free
 MODEL_API_KEY=...
+T4_MODEL_ALLOW_DATA_COLLECTION=1
+T4_ENABLE_THINKING=0
 ```
 
 Ollama local experiment:
@@ -171,14 +189,16 @@ Use low randomness:
 
 The official budget is per unit: 25 admitted requests and at most 4,000 output tokens per request. The organizers withdrew the former aggregate input/output token allowance and did not replace it with a published total-token quota. A retry can consume another request slot.
 
-For 7B local simulation, target roughly:
+For local simulations, start with:
 
 - 3K-6K input tokens per entity;
 - 300-800 output tokens per entity;
 - 5-10 retrieved chunks per entity;
 - one retry only when parsing fails.
 
-For a 30-row task, this is usually around 90K-180K input and 9K-24K output, within the official unit budget.
+For a 30-row task, this is usually around 90K-180K input and 9K-24K output. The organizers have not
+published an aggregate token allowance, so request count, 4,000 output tokens per request, the
+600-second wall-clock limit, and the actually served context window are the enforceable design bounds.
 
 ## First Implementation Milestones
 
@@ -196,7 +216,9 @@ V5: improve table parsers and calibrate model constants when labeled development
 
 ## Core Principle
 
-Do not make the 7B model a programmer. Make it an evidence judge. The workflow owns retrieval, calculation, schema, citation grounding, and fallbacks.
+Keep a measured, schema-safe fallback while testing more model autonomy. Use the architecture that
+wins on cutoff-safe evaluation under the official House runtime, rather than ruling out direct model
+prediction or tool selection in advance.
 
 ## Local Commands
 
@@ -210,16 +232,18 @@ MODEL_ENDPOINT= /Users/joezhou/PycharmProject/Agenthon2026/.venv/bin/python -m t
   --out /tmp/t4-agent-example-noapi.json
 ```
 
-OpenRouter Qwen 7B run:
+OpenRouter exact-family run:
 
 ```bash
 cd /Users/joezhou/PycharmProject/Agenthon2026-team/t4-agent
 MODEL_ENDPOINT=https://openrouter.ai/api/v1 \
-MODEL_NAME=qwen/qwen-2.5-7b-instruct \
+MODEL_NAME=nvidia/nemotron-3-super-120b-a12b:free \
+T4_MODEL_ALLOW_DATA_COLLECTION=1 \
+T4_ENABLE_THINKING=0 \
 /Users/joezhou/PycharmProject/Agenthon2026/.venv/bin/python -m t4agent.cli analyze \
   --task /Users/joezhou/PycharmProject/Agenthon2026/track4-analysis-public/units/t4-EXAMPLE-eps-beat/task.json \
   --corpus /Users/joezhou/PycharmProject/Agenthon2026/track4-analysis-public/units/t4-EXAMPLE-eps-beat/corpus \
-  --out /tmp/t4-agent-example-qwen7b.json
+  --out /tmp/t4-agent-example-nemotron.json
 ```
 
 The program reads `MODEL_API_KEY` if set. For local OpenRouter experiments it can also read `.secrets/openrouter_api_key.txt`, which is git-ignored. Do not print or log the key.

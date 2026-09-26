@@ -142,6 +142,7 @@ class MinimalModelTests(unittest.TestCase):
         )
         self.assertEqual(result.point, 0.85)
         self.assertEqual(result.label, "credit_event")
+        self.assertEqual(result.interval, {"level": 0.9, "lo": 0.0, "hi": 1.0})
 
     def test_rates_use_fixed_maturity_sensitivity(self) -> None:
         current = task("yield_change_bps_intermeeting", "regression")

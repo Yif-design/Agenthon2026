@@ -62,6 +62,28 @@ def test_request_budget_stops_before_network(monkeypatch) -> None:
     assert llm.usage.calls == 0
 
 
+def test_openrouter_data_collection_is_opt_in(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "https://openrouter.ai/api/v1")
+    monkeypatch.setenv("MODEL_API_KEY", "test-only-token")
+    monkeypatch.setenv("MODEL_NAME", "nvidia/nemotron-3-super-120b-a12b:free")
+    seen = []
+
+    def fake_urlopen(request, timeout):
+        seen.append(json.loads(request.data))
+        return FakeResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
+    assert LLM().chat_json("system", "user") == {"signals": {}}
+    assert seen[-1]["provider"]["data_collection"] == "deny"
+    assert seen[-1]["reasoning"] == {"enabled": False}
+
+    monkeypatch.setenv("T4_MODEL_ALLOW_DATA_COLLECTION", "1")
+    monkeypatch.setenv("T4_ENABLE_THINKING", "1")
+    assert LLM().chat_json("system", "user") == {"signals": {}}
+    assert seen[-1]["provider"]["data_collection"] == "allow"
+    assert seen[-1]["reasoning"] == {"enabled": True}
+
+
 def test_expired_deadline_stops_before_network(monkeypatch) -> None:
     monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
     monkeypatch.setenv("MODEL_NAME", "house")

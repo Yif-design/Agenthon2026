@@ -102,7 +102,14 @@ def _write_trace(trace_dir: pathlib.Path, task, results, llm: LLM) -> None:
         })
     (trace_dir / "rows.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
     usage = asdict(llm.usage)
-    usage.update({"model": llm.model, "temperature": llm.temperature, "seed": llm.seed, "enabled": llm.enabled})
+    usage.update({
+        "model": llm.model,
+        "temperature": llm.temperature,
+        "seed": llm.seed,
+        "enabled": llm.enabled,
+        "allow_data_collection": llm.allow_data_collection,
+        "enable_thinking": llm.enable_thinking,
+    })
     (trace_dir / "usage.json").write_text(json.dumps(usage, ensure_ascii=False, indent=2) + "\n")
 
 
