@@ -29,7 +29,7 @@ def solve(
         point = clip(gasoline_change, -5.0, 5.0)
     elif gasoline_change is not None and entity_id == "CPI_ENERGY":
         point = 0.4 * clip(gasoline_change, -5.0, 5.0)
-    half = max(0.35, 1.65 * pstdev(history)) if len(history) > 1 else 0.6
+    half = max(0.75, 1.65 * pstdev(history)) if len(history) > 1 else 0.75
     evidence = history_evidence
     if entity_id in {"CPI_GASOLINE", "CPI_ENERGY"} and gasoline_evidence:
         evidence = evidence + gasoline_evidence

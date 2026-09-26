@@ -150,3 +150,23 @@ also now discovers the latest date-suffixed input field instead of depending on 
 tests pass, and fresh Python 3.13 outputs for all 11 public units passed the official smoke verifier
 with 78/78 roster rows. The comparison report SHA-256 is
 `66b884aafef8390f5f29f9a3be2172979946380e0fc600a1f3be6cd0dc17b8e0`.
+
+### CPI vintage point models v1 — rejected; interval floor — accepted
+
+ALFRED real-time snapshots produced a complete 1,188-row panel for the eleven task components from
+2015 through 2023. Each feature row uses the month-end vintage before release and each target uses the
+following month-end vintage. The eleven December 2023 targets reproduce the archived BLS release
+Table A after rounding to its one-decimal publication precision. Raw downloads remain outside Git.
+
+On 2021 development, the lowest-MAE point candidate was simply the latest known monthly change. On
+the untouched 2022–2023 test it worsened MAE from 1.4096 for the production blend to 1.4923 and RMSE
+from 3.0702 to 3.3570 percentage points, so the point change was rejected. A separately selected
+interval candidate kept the production point and 1.65 volatility multiplier but raised the minimum
+half-width from 0.35 to 0.75. Test coverage improved from 85.23% to 89.02%; absolute error from the
+90% target fell from 0.0477 to 0.00985 while mean full width rose from 4.12 to 4.48 points.
+
+The interval-only change left the retired 11-unit diagnostic quality, coverage and composite exactly
+unchanged at 0.3864, 0.6636 and 0.1878. The public CPI unit's missed rows were volatile components
+whose intervals already exceeded the old floor. All 32 tests pass, and fresh Python 3.13 outputs for
+all 11 public units passed the official smoke verifier with 78/78 rows. The report SHA-256 is
+`3c69f3c7c2a04e01b58f5bfdc7cd939823513ea3e054f73701dc5998a5764aed`.

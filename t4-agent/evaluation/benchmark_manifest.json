@@ -49,6 +49,24 @@
       "mean_predictive_quality": 0.3864107119977663,
       "mean_interval_coverage": 0.6636265249901613,
       "mean_composite_before_faithfulness_gate": 0.18775727407730294
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v4",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294
     }
   ]
 }

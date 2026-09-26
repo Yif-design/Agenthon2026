@@ -236,6 +236,8 @@ class MinimalModelTests(unittest.TestCase):
             1,
         )
         self.assertAlmostEqual(result.point, 0.301)
+        self.assertAlmostEqual(result.interval["lo"], -0.449)
+        self.assertAlmostEqual(result.interval["hi"], 1.051)
 
 
 if __name__ == "__main__":

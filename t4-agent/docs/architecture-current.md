@@ -42,6 +42,7 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Same saved signals, accepted credit probability support | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6061 | 0.1662 |
 | Same signals, plus accepted post-earnings interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6364 | 0.1753 |
 | Same signals, plus accepted COT mean reversion and interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
+| Same signals, plus accepted CPI interval floor | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 
 These are diagnostic practice results, not a private leaderboard score. The official ensemble-NLI
 gate has not yet been run locally.
@@ -51,3 +52,8 @@ times current noncommercial net positioning as a percent of open interest. It ac
 `net_pct_oi` field or selects the latest `net_pct_oi_YYYYMMDD` field, so hidden units are not tied to
 the retired example date. Its 90% interval has a fixed 11.3 percentage-point half-width calibrated
 only from the historical training/development period.
+
+For CPI components, the existing point formula remains unchanged. The 90% interval uses the larger
+of 1.65 times the nine-month historical standard deviation and a 0.75 percentage-point half-width.
+The higher floor was selected on real-time ALFRED vintages and improved time-forward calibration;
+it did not happen to change coverage on the single retired public CPI unit.

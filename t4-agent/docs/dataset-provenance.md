@@ -84,3 +84,23 @@ and Yahoo responses are git-ignored cache files; derived events retain the SEC a
 
 The raw CFTC response is a git-ignored reproducibility cache. The tracked derived panel contains the
 source contract codes and no post-origin feature values other than the explicitly labeled target.
+
+## CPI component real-time vintage panel
+
+- Local file: `evaluation/datasets/cpi/components_2015_2023.json`
+- Dataset SHA-256: `2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40`
+- Primary source: ALFRED archival CSV (<https://alfred.stlouisfed.org/graph/alfredgraph.csv>), using
+  the eleven BLS/FRED series IDs from the public task
+- Raw used-cache SHA-256: `bcb2e25310d63f130df1c238085eb4f001f7f873ca200afe2ed0535638a644d3`
+- Coverage: 1,188 rows, eleven components by 108 reference months from 2015-01 through 2023-12
+- Feature snapshot: month-end vintage before the target release, with twelve known monthly changes
+- Target snapshot: next month-end vintage after the target release and before the following release
+- Split: 792 training rows in 2015–2020, 132 development rows in 2021, and a one-time 264-row test
+  in 2022–2023
+- Validation: all eleven 2023-12 targets round to the values in the archived BLS release Table A
+
+For the 25 used-car snapshots from 2022-01 through 2024-01, the builder deterministically uses the
+same-month day-20 vintage. Official BLS archive URLs show every 2022 and 2023 release occurred by day
+14, and the December 2023 release occurred on 2024-01-11, so no CPI release falls between day 20 and
+month-end. Each substitution is listed in the dataset metadata. Raw CSVs are git-ignored and the
+submission image excludes the entire evaluation directory.
