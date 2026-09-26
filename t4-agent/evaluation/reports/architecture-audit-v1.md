@@ -74,3 +74,22 @@ to one complete-roster call and the pre-registered fixed blend; smaller direct b
 separate, falsifiable candidate.
 
 Structured result: `evaluation/reports/architecture-ab-v1.json`.
+
+## Batch-size follow-up
+
+A second pre-registered screen used batches of at most three entities on one classification task
+(macro revision), one regression task (bank EPS growth), and one ranking task (COT). Smaller batches
+raised valid exact-quote rows from 10/30 for the equivalent complete-roster outputs to 27/30.
+Reliability improved, but prediction quality did not:
+
+| Representative subset | Mean quality | Mean coverage | Mean pre-gate composite |
+|---|---:|---:|---:|
+| Current signal/calculator | 0.5002 | 0.8972 | 0.3460 |
+| Batch-3 direct | 0.2701 | 0.1861 | -0.0251 |
+| Batch-3 hybrid | 0.3833 | 0.8972 | 0.2642 |
+
+The combined eleven-unit answer remained 11/11 smoke-admissible in both candidate modes. The
+batch-3 candidate is rejected: output completeness was not the sole cause of the direct model's
+poor numeric and label forecasts. Under the macro-first rule, direct batch-size tuning stops here.
+
+Structured result: `evaluation/reports/architecture-ab-v2-batch3.json`.

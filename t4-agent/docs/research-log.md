@@ -155,6 +155,16 @@ remains distinct because the current run omitted most macro-revision rows and co
 to a tie. Report SHA-256:
 `b41944bbdfbfec7f6a73cb945f62f2afc2841256d461acd282535b4fe81cc963`.
 
+The follow-up used direct batches of at most three entities on macro revision, bank EPS growth and
+COT, covering classification, regression and ranking. Eleven calls used 63,191 prompt and 5,766
+completion tokens at zero reported cost. Valid exact-quote rows improved from 10/30 in the
+equivalent complete-roster outputs to 27/30. Despite the reliability gain, representative mean
+quality fell from 0.5002 for production to 0.2701 for direct and 0.3833 for hybrid. Mean pre-gate
+composite fell from 0.3460 to -0.0251 and 0.2642. Both candidates still passed 11/11 smoke when
+combined with unchanged production answers. The candidate was rejected, and direct batch-size
+tuning stops under the macro-first rule. Report SHA-256:
+`52171827d212c7254c51523facd978e5481ee45a0f24ee5df30b526cb63b65c7`.
+
 ### CFTC positioning model v1 — accepted
 
 The official CFTC public-reporting API supplied 4,690 legacy futures-only observations for the ten

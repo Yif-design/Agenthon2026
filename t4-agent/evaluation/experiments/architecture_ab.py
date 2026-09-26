@@ -57,6 +57,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-excerpt-chars", type=int, default=1400)
     parser.add_argument("--max-output-tokens", type=int, default=4000)
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--task-ids", help="Comma-separated task ids for a representative screen.")
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=0,
+        help="Entities per direct call; zero means one complete-roster call.",
+    )
     parser.add_argument("--prompt-only", action="store_true")
     parser.add_argument(
         "--raw-input",
@@ -66,11 +73,17 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def prompt_for(task: Task, corpus_dir: Path, top_k: int, max_chars: int) -> tuple[str, Any]:
+def prompt_for(
+    task: Task,
+    corpus_dir: Path,
+    top_k: int,
+    max_chars: int,
+    entities: list[dict[str, Any]] | None = None,
+) -> tuple[str, Any]:
     corpus = build_index(corpus_dir, task.cutoff_date)
     index = BM25(corpus.chunks)
     items = []
-    for entity in task.entities:
+    for entity in entities or task.entities:
         allowed = allowed_document_ids(task, entity, corpus)
         chunks = index.search(query_for(task, entity), top_k=top_k, allowed_doc_ids=allowed)
         items.append(
@@ -281,6 +294,12 @@ def usage_delta(before: tuple[int, int, int, float], llm: LLM) -> dict[str, Any]
 def main() -> None:
     args = parse_args()
     unit_dirs = [path for path in sorted(args.units.iterdir()) if (path / "task.json").exists()]
+    if args.task_ids:
+        wanted = {value.strip() for value in args.task_ids.split(",") if value.strip()}
+        unit_dirs = [path for path in unit_dirs if path.name in wanted]
+        missing = wanted - {path.name for path in unit_dirs}
+        if missing:
+            raise SystemExit(f"unknown task ids: {sorted(missing)}")
     if args.limit is not None:
         unit_dirs = unit_dirs[: args.limit]
     llm = LLM(PROJECT)
@@ -295,6 +314,7 @@ def main() -> None:
         "thinking": llm.enable_thinking,
         "top_k": args.top_k,
         "max_excerpt_chars": args.max_excerpt_chars,
+        "batch_size": args.batch_size or "complete task roster",
         "hybrid_definition": "50/50 point blend; interval envelope around blend; direct label with baseline fallback",
         "tasks": [],
     }
@@ -302,11 +322,29 @@ def main() -> None:
         task = load_task(unit_dir / "task.json")
         baseline_path = args.baseline / task.task_id / "answer.json"
         baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
-        prompt, corpus = prompt_for(task, unit_dir / "corpus", args.top_k, args.max_excerpt_chars)
-        prompt_sha = hashlib.sha256(prompt.encode()).hexdigest()
+        entity_batches = (
+            [task.entities]
+            if args.batch_size <= 0
+            else [task.entities[i : i + args.batch_size] for i in range(0, len(task.entities), args.batch_size)]
+        )
+        prompts: list[str] = []
+        corpus = None
+        for entity_batch in entity_batches:
+            prompt, corpus = prompt_for(
+                task, unit_dir / "corpus", args.top_k, args.max_excerpt_chars, entity_batch
+            )
+            prompts.append(prompt)
+        assert corpus is not None
+        prompt_hashes = [hashlib.sha256(prompt.encode()).hexdigest() for prompt in prompts]
+        prompt_sha = hashlib.sha256("".join(prompt_hashes).encode()).hexdigest()
         if args.prompt_only:
             report["tasks"].append(
-                {"task_id": task.task_id, "prompt_chars": len(prompt), "prompt_sha256": prompt_sha}
+                {
+                    "task_id": task.task_id,
+                    "batches": len(prompts),
+                    "prompt_chars": sum(len(prompt) for prompt in prompts),
+                    "prompt_sha256": prompt_sha,
+                }
             )
             continue
         before = (
@@ -320,7 +358,12 @@ def main() -> None:
             parsed_path = args.raw_input / task.task_id / "model.json"
             parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
         else:
-            parsed = llm.chat_json(SYSTEM, prompt, max_tokens=args.max_output_tokens)
+            combined_rows = []
+            for prompt in prompts:
+                batch_result = llm.chat_json(SYSTEM, prompt, max_tokens=args.max_output_tokens)
+                if isinstance(batch_result, dict) and isinstance(batch_result.get("entities"), list):
+                    combined_rows.extend(batch_result["entities"])
+            parsed = {"entities": combined_rows} if combined_rows else None
         elapsed = time.monotonic() - started
         direct, validity = validate_rows(task, parsed, corpus, baseline)
         hybrid = hybrid_rows(task, baseline, direct)
@@ -331,7 +374,8 @@ def main() -> None:
                 "task_id": task.task_id,
                 "target_type": task.target_type,
                 "entities": len(task.entities),
-                "prompt_chars": len(prompt),
+                "batches": len(prompts),
+                "prompt_chars": sum(len(prompt) for prompt in prompts),
                 "prompt_sha256": prompt_sha,
                 "latency_s": elapsed,
                 "validity": validity,
