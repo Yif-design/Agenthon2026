@@ -9,6 +9,10 @@ from ..taskio import Task
 from .common import ModelOutput, clip, interval, number
 
 
+INTERVAL_PSTDEV_MULTIPLIER = 2.5
+ARTIFACT_AVAILABLE_DATE = "2022-01-01"
+
+
 def solve(
     task: Task,
     entity: dict[str, Any],
@@ -19,12 +23,19 @@ def solve(
     row_count: int,
 ) -> ModelOutput:
     values, evidence = _history(corpus, str(entity.get("tenor") or ""))
+    calibrated = False
+    multiplier: float | None = None
     if values:
         recent = values[-6:]
         baseline = sum(recent) / len(recent)
+        calibrated = task.cutoff_date[:10] >= ARTIFACT_AVAILABLE_DATE
         trend = 0.0 if len(values) < 3 else clip((values[-1] - values[-3]) / 2.0, -0.08, 0.08)
-        point = baseline + trend
-        half = max(0.15, 1.65 * pstdev(recent) if len(recent) > 1 else 0.0)
+        point = baseline if calibrated else baseline + trend
+        multiplier = INTERVAL_PSTDEV_MULTIPLIER if calibrated else 1.65
+        half = max(
+            0.15,
+            multiplier * pstdev(recent) if len(recent) > 1 else 0.0,
+        )
     else:
         point, half = 2.5, 0.8
     return ModelOutput(
@@ -33,7 +44,13 @@ def solve(
         interval(point, task.interval_level, half),
         "same_tenor_recent_history",
         evidence=evidence,
-        derivation={"recent_values": values[-6:], "forecast": point},
+        derivation={
+            "recent_values": values[-6:],
+            "forecast": point,
+            "interval_pstdev_multiplier": multiplier,
+            "calibrated_artifact_available": calibrated,
+            "artifact_available_date": ARTIFACT_AVAILABLE_DATE,
+        },
     )
 
 

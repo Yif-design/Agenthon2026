@@ -9,7 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     TRANSFORMERS_OFFLINE=1
 
 WORKDIR /app
-COPY pyproject.toml README.md ./
+COPY pyproject.toml README.md ARTIFACT_PROVENANCE.md ./
 COPY t4agent ./t4agent
 RUN python -m pip install --no-cache-dir .
 

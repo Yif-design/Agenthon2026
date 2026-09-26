@@ -43,6 +43,7 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Same signals, plus accepted post-earnings interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6364 | 0.1753 |
 | Same signals, plus accepted COT mean reversion and interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 | Same signals, plus accepted CPI interval floor | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
+| Same signals, plus accepted auction point and interval model | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 
 These are diagnostic practice results, not a private leaderboard score. The official ensemble-NLI
 gate has not yet been run locally.
@@ -57,3 +58,11 @@ For CPI components, the existing point formula remains unchanged. The 90% interv
 of 1.65 times the nine-month historical standard deviation and a 0.75 percentage-point half-width.
 The higher floor was selected on real-time ALFRED vintages and improved time-forward calibration;
 it did not happen to change coverage on the single retired public CPI unit.
+
+For Treasury auctions with cutoffs on or after 2022-01-01, the calculator uses the mean of the last
+six same-tenor bid-to-cover ratios. Its 90% half-width is the larger of 0.15 and 2.5 times their
+population standard deviation. A Treasury history panel selected both choices on 2020-2021 and
+confirmed them on 2022-2023 and an untouched January-October 2024 period. Earlier task cutoffs use
+the preceding heuristic so the later selection data cannot leak backward. This improved historical
+accuracy and calibration but did not change the retired public aggregate diagnostic because that
+single auction unit remains at the scorer's zero-skill floor and its coverage stayed 5/7.

@@ -208,3 +208,37 @@ unchanged at 0.3864, 0.6636 and 0.1878. The public CPI unit's missed rows were v
 whose intervals already exceeded the old floor. All 32 tests pass, and fresh Python 3.13 outputs for
 all 11 public units passed the official smoke verifier with 78/78 rows. The report SHA-256 is
 `3c69f3c7c2a04e01b58f5bfdc7cd939823513ea3e054f73701dc5998a5764aed`.
+
+### Treasury auction recent-mean model v1 — accepted
+
+The official Track 4 and toolkit sources were rechecked before this family cycle. Track 4 remained
+at `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`, the shared toolkit main remained at
+`95a0de3d9a814f3883c151b7efdbbcf579139244`, and installed `qfbench2-common` remained 2.4.4. No rule
+change affected the 25-request, 4,000-output-token, 600-second or restricted-network boundaries.
+
+The Treasury Fiscal Data Auctions Query supplied 1,124 nominal coupon auctions through the public
+task cutoff. The first builder incorrectly rejected 602 records because the published BTC did not
+exactly equal a naive `total_tendered / total_accepted` calculation. Treasury's BTC field is the
+authoritative outcome and the totals contain category/add-on semantics, so the final builder keeps
+the reported result and records the reconciliation difference only as a diagnostic. Seven target
+tenors are present, date/CUSIP keys are unique, no announcement follows its auction date, and a
+cached rebuild reproduced dataset SHA-256
+`1dd97882feb1a754fa4ade81f06d77bca871d3c5dae2f8e2922dec8628bfbb1a`.
+
+Development selected the last-six same-tenor mean over last value, mean/median alternatives,
+recency weighting, reopening-conditioned history and the production mean-plus-clipped-trend rule.
+It also selected 2.5 times recent population standard deviation from a fixed multiplier grid for a
+90% interval. On the 168-row 2022-2023 test, MAE improved from 0.10969 to 0.10074 and calibration
+error from 0.04881 to 0.01071. Because the point test had already been inspected before interval
+calibration was added, the combined candidate was frozen and checked on a separate untouched
+70-row January-October 2024 confirmation set. There MAE improved from 0.10250 to 0.08848, RMSE from
+0.12634 to 0.11026 and calibration error from 0.07143 to 0.02857. The paired-bootstrap 95% interval
+for mean absolute-error improvement was `[0.00326, 0.02486]`.
+
+Production enables the selected rule only for cutoffs on or after 2022-01-01, after the development
+period. Earlier tasks retain the preceding heuristic. A new unit test covers the point, interval,
+citation window and cutoff gate. All 33 tests pass, and fresh model-free CLI outputs for all eleven
+public units passed the official smoke verifier with 78/78 rows. The retired public aggregate
+diagnostic remained quality 0.3864, coverage 0.6636 and composite 0.1878 because the auction unit
+stayed at zero quality and 5/7 coverage. Report SHA-256:
+`798568bae80f5c27b787a689b9ee3756cc85aad1e4b22d9128727339642f8df1`.

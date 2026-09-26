@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import unittest
+from dataclasses import replace
+from statistics import pstdev
 
 from t4agent.family_specs import SPECS, family_spec, project_entity
 from t4agent.calculators.bank_eps import _find_pair
@@ -174,6 +176,53 @@ class MinimalModelTests(unittest.TestCase):
             )
             points.append(result.point)
         self.assertEqual(points, [15.0, 9.0, 6.0])
+
+    def test_auction_uses_recent_six_mean_and_calibrated_interval(self) -> None:
+        values = [1.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6]
+        lines = ["10-Year Treasury auction results", "date | a | b | c | bid_to_cover"]
+        lines.extend(
+            f"2024-{month:02d}-01 | x | x | x | {value}"
+            for month, value in enumerate(values, start=1)
+        )
+        text = "\n".join(lines)
+        corpus = IndexedCorpus(
+            [],
+            {"TDIRECT_AUCTIONS_10Y": text},
+            {"TDIRECT_AUCTIONS_10Y": "2024-08-01"},
+        )
+        current = task("bid_to_cover_ratio", "regression")
+        result = solve_minimal(
+            current,
+            {"tenor": "10-Year"},
+            SPECS["auction"],
+            {},
+            corpus,
+            0,
+            1,
+        )
+        recent = values[-6:]
+        point = sum(recent) / len(recent)
+        half = max(0.15, 2.5 * pstdev(recent))
+        self.assertAlmostEqual(result.point, point)
+        self.assertAlmostEqual(result.interval["lo"], point - half)
+        self.assertAlmostEqual(result.interval["hi"], point + half)
+        self.assertEqual(result.derivation["recent_values"], recent)
+        self.assertNotIn("2024-01-01", result.evidence[0]["quote"])
+        self.assertIn("2024-07-01", result.evidence[0]["quote"])
+
+        historical = solve_minimal(
+            replace(current, cutoff_date="2021-12-31"),
+            {"tenor": "10-Year"},
+            SPECS["auction"],
+            {},
+            corpus,
+            0,
+            1,
+        )
+        old_trend = min(0.08, max(-0.08, (values[-1] - values[-3]) / 2.0))
+        self.assertAlmostEqual(historical.point, point + old_trend)
+        self.assertEqual(historical.derivation["interval_pstdev_multiplier"], 1.65)
+        self.assertFalse(historical.derivation["calibrated_artifact_available"])
 
     def test_positioning_uses_latest_dated_net_position(self) -> None:
         current = task("position_change_5wk_pct_oi", "ranking")

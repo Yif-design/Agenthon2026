@@ -104,3 +104,27 @@ same-month day-20 vintage. Official BLS archive URLs show every 2022 and 2023 re
 14, and the December 2023 release occurred on 2024-01-11, so no CPI release falls between day 20 and
 month-end. Each substitution is listed in the dataset metadata. Raw CSVs are git-ignored and the
 submission image excludes the entire evaluation directory.
+
+## U.S. Treasury nominal coupon auction panel
+
+- Local file: `evaluation/datasets/auction/nominal_coupon_2010_2024-10-31.json`
+- Dataset SHA-256: `1dd97882feb1a754fa4ade81f06d77bca871d3c5dae2f8e2922dec8628bfbb1a`
+- Canonical source-payload SHA-256: `e9208637c7edefb0db257d41df29ab10108f165163830ddac226f328efaec9b0`
+- Raw cache-file SHA-256: `7f1d7e213234636d1d4b5be4ea4bf287a1b4ac6e09d64e30b0ad164dc08c2b9b`
+- Primary source: U.S. Treasury Fiscal Data Auctions Query
+  (<https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query>)
+- Coverage: 1,124 nominal fixed-rate coupon auctions from 2010-01-01 through 2024-10-31
+- Tenors: 2-, 3-, 5-, 7-, 10-, 20- and 30-year, using `original_security_term` so reopenings remain
+  in their original tenor group
+- Outcome: Treasury's official `bid_to_cover_ratio`
+- Forecast features: only earlier same-tenor outcomes and the current auction's pre-auction
+  new/reopening status; result fields for the target auction are outcomes only
+- Split: 685 training samples through 2019, 159 development samples in 2020-2021, 168 test samples
+  in 2022-2023 and 70 confirmation samples from 2024-01 through 2024-10-31
+- Runtime availability: the selected constants are enabled only for task cutoffs on or after
+  2022-01-01
+
+The builder excludes floating-rate and inflation-indexed securities. It retains the authoritative
+reported BTC rather than requiring equality with `total_tendered / total_accepted`: those totals
+include category and add-on semantics that make the naive ratio differ from the published measure.
+Rebuilding from the git-ignored raw API cache produced the tracked dataset byte-for-byte.

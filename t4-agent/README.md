@@ -284,3 +284,11 @@ Submission hardening tested on 2026-09-26 with `qfbench2-common==2.4.4` and the 
 - all 11 public units produce schema-valid, smoke-admissible answers without a model endpoint;
 - all 11 also remain schema-valid and smoke-admissible when the official House variables are present but the endpoint refuses the connection;
 - the CLI atomically writes a deterministic answer before any model request, then replaces it only with a locally valid enhanced answer.
+
+Auction calibration tested on 2026-09-27:
+
+- an official Treasury 1,124-auction time-forward panel selected a last-six same-tenor mean and a
+  calibrated 90% interval for cutoffs after the 2020-2021 development period;
+- an untouched 70-auction 2024 confirmation reduced MAE by 13.68% and interval calibration error
+  from 0.0714 to 0.0286;
+- all 33 tests pass and all 11 public units remain smoke-admissible with 78/78 rows.

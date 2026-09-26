@@ -13,3 +13,10 @@
 - Public-corpus free inference opts into provider data collection and must never be used for private data.
 - The COT mean-reversion coefficient is deliberately simple. It improved a 96-date time-forward test,
   but its mean rank correlation was only 0.0379 and may vary across market regimes.
+- The auction model uses only recent same-tenor BTC outcomes. Offering size, bidder composition and
+  rate-volatility features were not adopted, so it may miss regime changes despite improving the
+  2022-2024 time-forward checks. The 2022-2023 point test was inspected before interval calibration
+  was added; the combined candidate therefore relies on the untouched 2024 confirmation period.
+- Older fitted constants in the COT, CPI and post-earnings calculators still need explicit
+  artifact-availability gates if hidden tasks can have cutoffs before their respective development
+  periods. Auction now has this protection.
