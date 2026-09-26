@@ -103,3 +103,24 @@ diagnostic pair, the two rules had identical average MAE and identical official-
 Evidence was therefore insufficient to replace the current production point model with zero-change.
 The structured report SHA-256 is
 `8112b2acbc33dc265184915f23b23e8a757e51449da75c423cfe7872a1d7bfc5`.
+
+### Post-earnings interval calibration v1 — accepted
+
+The SEC API was inaccessible from the development host, so announcement dates came from Quant500's
+CC0 dataset (<https://quant500.com/data>), which preserves SEC accessions, source links, session and
+data-quality flags. Yahoo adjusted closes reproduce the retired 2024 AAPL/AMZN/META abnormal returns
+within 0.00015 percentage points, validating the event-window implementation.
+
+A deterministic 100-company selection yielded 2,092 usable after-close events across 88 symbols.
+The 2018–2020 training quantiles were selected only on 2021 development coverage. The selected 8.2915
+percentage-point half-width covered 88.95% of development and 81.60% of the untouched 2022–2023 test,
+versus 36.38% for the production 2.5-point half-width. The production constant was rounded to 8.3.
+On the 11-unit diagnostic set, mean quality stayed 0.3804, mean coverage rose from 0.6061 to 0.6364,
+and mean pre-gate composite rose from 0.1662 to 0.1753. Point forecasts, labels and citations did not
+change. The report SHA-256 is
+`5122d9ae5be1ea53ce17fd57e0d4e735c2f86fed3c6f1e99d517de87387b21d7`.
+
+Label experiments were not accepted. Always-positive and prior-reaction baselines changed relative
+performance between development and test, and the current flat label remained poor. Research shows
+that announcement returns depend on information absent from this task's prior-filing-only corpus,
+including expectations and within-quarter signals; see <https://www.nber.org/papers/w22366>.

@@ -144,6 +144,21 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(result.label, "credit_event")
         self.assertEqual(result.interval, {"level": 0.9, "lo": 0.0, "hi": 1.0})
 
+    def test_postearn_interval_uses_historical_announcement_volatility(self) -> None:
+        current = task("earnings_reaction", "classification", ["positive_reaction", "negative_reaction", "flat"])
+        result = solve_minimal(
+            current,
+            {"flat_threshold_abn_pct": 1.0},
+            SPECS["reaction"],
+            {"explicit_forward_outlook_signal": 0},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        self.assertEqual(result.label, "flat")
+        self.assertEqual(result.point, 0.0)
+        self.assertEqual(result.interval, {"level": 0.9, "lo": -8.3, "hi": 8.3})
+
     def test_rates_use_fixed_maturity_sensitivity(self) -> None:
         current = task("yield_change_bps_intermeeting", "regression")
         points = []

@@ -46,3 +46,22 @@ reproducible experiment remain tracked so the failed result is auditable and is 
 
 Each event stores its Federal Reserve URL and a SHA-256 of the visible statement text. Downloaded
 HTML is a git-ignored reproducibility cache and is never included in the submission image.
+
+## Post-earnings reaction calibration panel
+
+- Announcement source: Quant500 S&P 500 earnings announcements CSV
+  (<https://quant500.com/api/descarga/anuncios.csv>), CC0 1.0
+- Price source: Yahoo Finance chart endpoint for adjusted daily closes
+- Full-source SHA-256 at access: recorded inside each derived dataset
+- Small validation set: AAPL, AMZN and META, 72 events from 2018–2023
+- Main panel: deterministic alphabetical first 100 tickers among companies with 23–25 unique,
+  reliable after-close rows in 2018–2023
+- Main output: 2,092 events from 88 price-resolvable tickers
+- Main dataset SHA-256: `d4cb45d4d9af39f07731b84ce7cec9b66accbe8e80c79459958686c4acb7f32d`
+- Split: train 2018–2020, development 2021, one-time test 2022–2023
+- Target: adjusted-close company return from announcement close to next session close, minus SPY over
+  the same dates; labels use the task's +/-1 percentage-point thresholds
+
+Twelve selected historical/current symbols failed Yahoo resolution and remain in the dataset metadata
+with their HTTP errors. Selection happened before price download and never inspected returns. Raw CSV
+and Yahoo responses are git-ignored cache files; derived events retain the SEC accession and source URL.

@@ -40,6 +40,7 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Model-free | 0 | 0 | 0 | 0 | 0.3122 | 0.5454 | 0.1058 |
 | Nemotron 3 Super free, thinking off | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.5606 | 0.1581 |
 | Same saved signals, accepted credit probability support | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6061 | 0.1662 |
+| Same signals, plus accepted post-earnings interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6364 | 0.1753 |
 
 These are diagnostic practice results, not a private leaderboard score. The official ensemble-NLI
 gate has not yet been run locally.

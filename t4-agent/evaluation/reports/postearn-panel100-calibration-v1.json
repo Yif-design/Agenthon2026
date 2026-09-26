@@ -1,0 +1,68 @@
+{
+  "dataset": "evaluation/datasets/postearn/panel100_2018_2023.json",
+  "split_counts": {
+    "train": 1038,
+    "dev": 353,
+    "test": 701
+  },
+  "interval_candidates": [
+    {
+      "train_quantile": 0.8,
+      "half_width_pct": 7.367174252683721,
+      "dev_coverage": 0.8498583569405099
+    },
+    {
+      "train_quantile": 0.85,
+      "half_width_pct": 8.291508206070207,
+      "dev_coverage": 0.8895184135977338
+    },
+    {
+      "train_quantile": 0.9,
+      "half_width_pct": 10.454113611695513,
+      "dev_coverage": 0.9490084985835694
+    },
+    {
+      "train_quantile": 0.925,
+      "half_width_pct": 11.692338222843647,
+      "dev_coverage": 0.9631728045325779
+    },
+    {
+      "train_quantile": 0.95,
+      "half_width_pct": 13.746827589523402,
+      "dev_coverage": 0.9716713881019831
+    },
+    {
+      "train_quantile": 0.975,
+      "half_width_pct": 18.77389514638774,
+      "dev_coverage": 0.9886685552407932
+    }
+  ],
+  "selected_on_dev": {
+    "train_quantile": 0.85,
+    "half_width_pct": 8.291508206070207,
+    "dev_coverage": 0.8895184135977338
+  },
+  "test_interval": {
+    "current_half_width_pct": 2.5,
+    "current_coverage": 0.3637660485021398,
+    "candidate_half_width_pct": 8.291508206070207,
+    "candidate_coverage": 0.8159771754636234,
+    "candidate_calibration_loss": 0.08402282453637666
+  },
+  "label_baselines": {
+    "train_counts": {
+      "negative_reaction": 405,
+      "flat": 193,
+      "positive_reaction": 440
+    },
+    "train_majority_label": "positive_reaction",
+    "dev_flat_accuracy": 0.22662889518413598,
+    "dev_majority_accuracy": 0.3881019830028329,
+    "dev_prior_reaction_accuracy": 0.40226628895184136,
+    "test_flat_accuracy": 0.14835948644793154,
+    "test_majority_accuracy": 0.44365192582025675,
+    "test_prior_reaction_accuracy": 0.39514978601997147
+  },
+  "interval_decision": "consider",
+  "label_decision": "research_further"
+}
