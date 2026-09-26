@@ -17,7 +17,7 @@ def build_answer(task: Task, results: list[RowResult], corpus: IndexedCorpus, us
         "entity_predictions": [r.prediction for r in results],
         "evidence_trace": (
             "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, "
-            "Qwen-7B coarse signal extraction only when required, exact-span citation grounding. "
+            "House-compatible coarse signal extraction only when required, exact-span citation grounding. "
             f"model_calls={usage.calls}, prompt_tokens={usage.prompt_tokens}, "
             f"completion_tokens={usage.completion_tokens}."
         ),
