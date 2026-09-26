@@ -1,6 +1,6 @@
 # Agenthon Track 4 current rules
 
-Last verified: 2026-09-26
+Last verified: 2026-09-27
 
 Pinned development sources:
 
@@ -58,6 +58,11 @@ Sources:
 
 - <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/ARTIFACT-POLICY.md>
 - <https://github.com/Agenthon-2026/track4-analysis-public>
+
+The official README states that the eleven published units are format exemplars, not a
+representative syllabus. The hidden set is substantially larger, spans classification, regression
+and ranking, and contains many families with no published counterpart. Architecture selection must
+therefore test unknown schemas and cross-family behavior rather than optimize only published shapes.
 
 ## Unresolved official facts
 

@@ -127,6 +127,34 @@ including expectations and within-quarter signals; see <https://www.nber.org/pap
 
 ## 2026-09-27
 
+### Macro-first architecture audit
+
+The official Track 4 README was rechecked at public commit
+`7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`. It explicitly describes the eleven published units as
+format exemplars and says the larger hidden set contains many families without a published
+counterpart. It also recommends starting with a text-blind tabular baseline before adding text.
+Toolkit `v2.4.4`, 25 admitted requests per unit, 4,000 output tokens per request, no cumulative
+token allowance, 600 seconds and restricted network remain current. No newer toolkit tag or Track 4
+code commit was present on 2026-09-27.
+
+An L1-L5 audit therefore selected the missing direct-vs-signal-vs-hybrid comparison ahead of more
+auction-specific work. The new development-only `architecture_ab.py` uses the same task, cutoff,
+scoped BM25 evidence, model, seed and temperature for a direct forecast. Invalid rows fall back to
+production, and the pre-registered hybrid is a fixed 50/50 point blend. Public reconstructed
+outcomes are only a feasibility screen; production adoption requires a new, previously unused,
+time-forward holdout after a promising screen.
+
+The complete screen used eleven task-level free Nemotron calls, 139,272 prompt tokens and 12,927
+completion tokens at zero reported cost. Only 52 of 78 direct rows passed numeric, label and exact
+quote validation; 26 used the production fallback. Against the current calculator replay, direct
+reduced mean predictive quality from 0.3864 to 0.2576 and pre-gate composite from 0.1878 to 0.0012.
+The fixed hybrid produced quality 0.2804, coverage 0.7221 and composite 0.1311. Both outputs passed
+11/11 smoke units, which confirms that formal validity did not imply useful forecasts. The
+complete-roster direct call and fixed hybrid were rejected. A smaller-batch direct experiment
+remains distinct because the current run omitted most macro-revision rows and collapsed COT scores
+to a tie. Report SHA-256:
+`b41944bbdfbfec7f6a73cb945f62f2afc2841256d461acd282535b4fe81cc963`.
+
 ### CFTC positioning model v1 — accepted
 
 The official CFTC public-reporting API supplied 4,690 legacy futures-only observations for the ten
