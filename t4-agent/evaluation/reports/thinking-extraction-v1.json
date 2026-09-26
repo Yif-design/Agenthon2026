@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-26",
+  "experiment": "thinking_extraction_v1",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "task_id": "t4-EXAMPLE-eps-beat",
+  "controls": {
+    "same_retrieval": true,
+    "same_prompt": true,
+    "temperature": 0.0,
+    "seed": 1234
+  },
+  "thinking_off": {
+    "max_output_tokens": 700,
+    "calls": 1,
+    "prompt_tokens": 1341,
+    "completion_tokens": 213,
+    "parseable_json": true,
+    "signal_level": 0,
+    "point_forecast": 1.5,
+    "label": "inline"
+  },
+  "thinking_on_700": {
+    "max_output_tokens": 700,
+    "calls": 2,
+    "prompt_tokens": 1341,
+    "completion_tokens": 700,
+    "parseable_json": false,
+    "circuit_open": true,
+    "fallback": "model-free baseline"
+  },
+  "thinking_on_4000": {
+    "max_output_tokens": 4000,
+    "calls": 1,
+    "prompt_tokens": 1341,
+    "completion_tokens": 2143,
+    "parseable_json": true,
+    "signal_level": 1,
+    "point_forecast": 1.5,
+    "label": "inline"
+  },
+  "decision": "reject_as_default",
+  "reason": "No final-output improvement on the controlled unit; 700-token production extraction fails and 4000-token extraction uses about ten times the completion tokens"
+}

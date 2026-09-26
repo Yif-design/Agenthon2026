@@ -68,3 +68,38 @@ labels, retrieval, and citations. On the 11-unit diagnostic set, mean predictive
 0.1662. The full 30-test suite passed and the CLI produced all eight credit rows with the new legal
 interval. The change is accepted, with the public-set and missing-NLI limitations recorded in the
 experiment report.
+
+### Thinking-on extraction v1 — rejected as the default
+
+The exact public Nemotron endpoint was tested on the EPS teaching unit with identical retrieval,
+prompt, temperature and seed. At the production extraction allowance of 700 output tokens, two
+attempts exhausted the allowance without one parseable JSON object and opened the circuit breaker.
+At the official maximum of 4,000 output tokens, one attempt returned valid JSON after 2,143 completion
+tokens and about 23 seconds. Thinking-off returned valid JSON in 213 completion tokens. Thinking
+changed the extracted signal from neutral to +1, but both paths produced the same final `1.50` /
+`inline` forecast, so there was no measured output benefit to justify roughly ten times the completion
+tokens. Thinking remains an opt-in experiment for tasks where it can change the scored answer.
+
+### Submission-image checkpoint
+
+GitHub Actions run <https://github.com/Yif-design/Agenthon2026/actions/runs/36243893020> passed unit
+tests, linux/amd64 image build and push, and the container command smoke test. Immutable image:
+`ghcr.io/yif-design/agenthon2026-t4@sha256:09ddf7a8cc9d027263255d26a1f2fa74256eb59768165d3c781b1dbd9a261d9b`.
+
+### FOMC point models v1 — rejected
+
+The research baseline follows the Federal Reserve's finding that Treasury yields are close to
+non-stationary and that yield-only models rarely beat a no-change random walk consistently:
+<https://www.federalreserve.gov/pubs/ifdp/2010/993/ifdp993.htm>. The level/slope/curvature candidate
+follows the dynamic Nelson-Siegel interpretation described by Diebold and Li:
+<https://www.nber.org/papers/w10048>.
+
+A new dataset combines 152 official Federal Reserve policy statements with official Treasury daily
+curves. A per-tenor curve-and-policy ridge selected on 2016–2018 improved development MAE to 13.91
+bps, but deteriorated to 19.18 bps on the untouched 2019–2021 test, 34.8% worse than the 14.22 bps
+zero-change baseline. It was rejected. The existing policy-decay rule scored 14.58 bps on test;
+zero-change was slightly better on test but slightly worse on development. On the retired public
+diagnostic pair, the two rules had identical average MAE and identical official-quality proxy scores.
+Evidence was therefore insufficient to replace the current production point model with zero-change.
+The structured report SHA-256 is
+`8112b2acbc33dc265184915f23b23e8a757e51449da75c423cfe7872a1d7bfc5`.

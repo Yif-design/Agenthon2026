@@ -29,3 +29,20 @@ test set. New family artifacts require earlier train/dev histories and a time-fo
 
 The interval candidate was rejected on the one-time holdout check. The raw primary-source data and
 reproducible experiment remain tracked so the failed result is auditable and is not repeated.
+
+## FOMC inter-meeting event dataset
+
+- Local file: `evaluation/datasets/fomc/events_2000_2021.json`
+- SHA-256: `dc15b069e70a2ae8221055a1d62ba0a40f653dbf4d461a6a296e497e5e5b148b`
+- Sources: Federal Reserve historical policy statements and the Treasury CSVs above
+- Construction: first complete Treasury close after a statement through the last complete close
+  before the next statement
+- Coverage: 152 events and six maturities, 2000–2021
+- Policy signal: sign of the parsed target-rate midpoint change; 111 hold, 26 ease and 15 tighten
+- Missing statement targets: four liquidity/market-operation statements without a target decision
+- Structural gap: most 2003–2005 events lack a complete 30-year tenor because 30-year issuance was
+  suspended; incomplete six-tenor events are skipped
+- Model split: train through 2015, development 2016–2018, one-time test 2019–2021
+
+Each event stores its Federal Reserve URL and a SHA-256 of the visible statement text. Downloaded
+HTML is a git-ignored reproducibility cache and is never included in the submission image.

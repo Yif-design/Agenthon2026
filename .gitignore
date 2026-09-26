@@ -7,6 +7,7 @@ starter-repos/
 */runs_*/
 */runs_*.log
 */evaluation/runs/
+*/evaluation/cache/
 */out/
 */submissions/
 
@@ -22,6 +23,7 @@ starter-repos/
 __pycache__/
 *.py[cod]
 *.egg-info/
+*/build/
 .venv/
 venv*/
 

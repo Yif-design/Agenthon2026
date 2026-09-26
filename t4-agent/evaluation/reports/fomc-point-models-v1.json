@@ -1,0 +1,74 @@
+{
+  "dataset": "evaluation/datasets/fomc/events_2000_2021.json",
+  "source": "Federal Reserve policy statements and U.S. Treasury daily par-yield CSVs",
+  "split_event_counts": {
+    "train": 102,
+    "dev": 24,
+    "test": 26
+  },
+  "selection_metric": "dev aggregate MAE in basis points",
+  "models": {
+    "zero_change": "Random-walk/no-change yield forecast",
+    "policy_decay": "Current 15 bps policy direction shock with maturity decay",
+    "curve_ridge": "Per-tenor ridge on cutoff curve level, slope and curvature",
+    "curve_policy_ridge": "Curve ridge plus parsed policy direction"
+  },
+  "dev_scores": {
+    "zero_change": {
+      "observations": 144,
+      "mae_bps": 15.090277777777779,
+      "rmse_bps": 19.73522654206601,
+      "direction_accuracy": 0.027777777777777776
+    },
+    "policy_decay": {
+      "observations": 144,
+      "mae_bps": 14.9375,
+      "rmse_bps": 19.828956099603428,
+      "direction_accuracy": 0.24305555555555555
+    },
+    "curve_ridge": {
+      "observations": 144,
+      "mae_bps": 13.92435757853602,
+      "rmse_bps": 18.539546447080745,
+      "direction_accuracy": 0.6875
+    },
+    "curve_policy_ridge": {
+      "observations": 144,
+      "mae_bps": 13.908664190414344,
+      "rmse_bps": 18.56694592058245,
+      "direction_accuracy": 0.6805555555555556
+    }
+  },
+  "selected_on_dev": "curve_policy_ridge",
+  "test_scores": {
+    "zero_change": {
+      "observations": 156,
+      "mae_bps": 14.224358974358974,
+      "rmse_bps": 20.042422956037974,
+      "direction_accuracy": 0.019230769230769232
+    },
+    "policy_decay": {
+      "observations": 156,
+      "mae_bps": 14.576923076923077,
+      "rmse_bps": 20.455078988120686,
+      "direction_accuracy": 0.1346153846153846
+    },
+    "curve_ridge": {
+      "observations": 156,
+      "mae_bps": 19.401236467095003,
+      "rmse_bps": 25.020870677725178,
+      "direction_accuracy": 0.4807692307692308
+    },
+    "curve_policy_ridge": {
+      "observations": 156,
+      "mae_bps": 19.17605939403517,
+      "rmse_bps": 24.883149723795505,
+      "direction_accuracy": 0.48717948717948717
+    }
+  },
+  "best_on_test_for_diagnostics_only": "zero_change",
+  "selected_test_mae_bps": 19.17605939403517,
+  "decision_rule": "Consider production only if the dev-selected model improves test MAE over both zero_change and policy_decay by at least 2 percent",
+  "selected_test_improvement_vs_best_baseline_pct": -34.81141349569566,
+  "decision": "reject"
+}
