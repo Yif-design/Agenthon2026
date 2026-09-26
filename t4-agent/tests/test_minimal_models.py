@@ -175,6 +175,24 @@ class MinimalModelTests(unittest.TestCase):
             points.append(result.point)
         self.assertEqual(points, [15.0, 9.0, 6.0])
 
+    def test_positioning_uses_latest_dated_net_position(self) -> None:
+        current = task("position_change_5wk_pct_oi", "ranking")
+        entity = project_entity(
+            {
+                "entity_id": "GOLD_CMX",
+                "net_pct_oi_20241231": 30.0,
+                "net_pct_oi_20251231": -20.0,
+            },
+            SPECS["positioning"],
+        )
+        result = solve_minimal(current, entity, SPECS["positioning"], {}, EMPTY_CORPUS, 0, 1)
+        self.assertEqual(result.point, 4.0)
+        self.assertEqual(result.interval["level"], 0.9)
+        self.assertAlmostEqual(result.interval["lo"], -7.3)
+        self.assertAlmostEqual(result.interval["hi"], 15.3)
+        self.assertEqual(result.method, "net_position_mean_reversion")
+        self.assertEqual(result.derivation["current_net_pct_oi_field"], "net_pct_oi_20251231")
+
     def test_bank_eps_uses_recent_yoy_delta(self) -> None:
         current = task("eps_yoy_growth_pct", "regression")
         result = solve_minimal(

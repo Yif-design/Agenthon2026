@@ -1,6 +1,6 @@
 # Current Track 4 architecture
 
-Last updated: 2026-09-26
+Last updated: 2026-09-27
 
 The submitted path is a baseline-first bounded workflow:
 
@@ -41,6 +41,13 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Nemotron 3 Super free, thinking off | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.5606 | 0.1581 |
 | Same saved signals, accepted credit probability support | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6061 | 0.1662 |
 | Same signals, plus accepted post-earnings interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.6364 | 0.1753 |
+| Same signals, plus accepted COT mean reversion and interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 
 These are diagnostic practice results, not a private leaderboard score. The official ensemble-NLI
 gate has not yet been run locally.
+
+For positioning rankings, the deterministic calculator now forecasts five-week change as `-0.2`
+times current noncommercial net positioning as a percent of open interest. It accepts an exact
+`net_pct_oi` field or selects the latest `net_pct_oi_YYYYMMDD` field, so hidden units are not tied to
+the retired example date. Its 90% interval has a fixed 11.3 percentage-point half-width calibrated
+only from the historical training/development period.

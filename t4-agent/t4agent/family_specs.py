@@ -158,6 +158,7 @@ SPECS: dict[str, FamilySpec] = {
         (),
         (),
         False,
+        True,
     ),
     "generic": FamilySpec(
         "generic",

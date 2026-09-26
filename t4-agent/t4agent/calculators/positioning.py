@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import math
 import re
-from statistics import pstdev
 from typing import Any
 
 from ..retrieve import IndexedCorpus
@@ -19,23 +17,39 @@ def solve(
     row_index: int,
     row_count: int,
 ) -> ModelOutput:
-    point = number(entity.get("trailing_4wk_net_change_pct_oi")) or 0.0
-    current = number(entity.get("net_pct_oi_20241022"))
+    current, current_field = _latest_dated_number(entity, "net_pct_oi")
+    point = -0.2 * current if current is not None else 0.0
     history, evidence = _history(corpus, str(entity.get("name") or ""), str(entity.get("entity_id") or ""))
-    if current is not None and len(history) >= 8:
-        absolute = sorted(abs(value) for value in history)
-        cutoff = absolute[max(0, math.ceil(0.9 * len(absolute)) - 1)]
-        if abs(current) >= cutoff:
-            point *= 0.5
-    half = max(4.0, 1.65 * pstdev(history) if len(history) > 1 else 8.0)
     return ModelOutput(
         point,
         None,
-        interval(point, task.interval_level, half),
-        "trailing_change_crowding_cap",
+        interval(point, task.interval_level, 11.3),
+        "net_position_mean_reversion",
         evidence=evidence,
-        derivation={"trailing_change": number(entity.get("trailing_4wk_net_change_pct_oi")), "history": history},
+        derivation={
+            "current_net_pct_oi": current,
+            "current_net_pct_oi_field": current_field,
+            "mean_reversion_coefficient": -0.2,
+            "interval_half_width_pct_oi": 11.3,
+            "history": history,
+        },
     )
+
+
+def _latest_dated_number(entity: dict[str, Any], prefix: str) -> tuple[float | None, str | None]:
+    """Return an exact field or the latest YYYYMMDD-suffixed numeric field."""
+    direct = number(entity.get(prefix))
+    if direct is not None:
+        return direct, prefix
+    dated_fields = sorted(
+        (key for key in entity if re.fullmatch(rf"{re.escape(prefix)}_\d{{8}}", key)),
+        reverse=True,
+    )
+    for key in dated_fields:
+        value = number(entity.get(key))
+        if value is not None:
+            return value, key
+    return None, None
 
 
 def _history(corpus: IndexedCorpus, name: str, entity_id: str) -> tuple[list[float], list[dict[str, Any]]]:

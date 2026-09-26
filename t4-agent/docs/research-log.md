@@ -124,3 +124,29 @@ Label experiments were not accepted. Always-positive and prior-reaction baseline
 performance between development and test, and the current flat label remained poor. Research shows
 that announcement returns depend on information absent from this task's prior-filing-only corpus,
 including expectations and within-quarter signals; see <https://www.nber.org/papers/w22366>.
+
+## 2026-09-27
+
+### CFTC positioning model v1 — accepted
+
+The official CFTC public-reporting API supplied 4,690 legacy futures-only observations for the ten
+task-aligned contracts. Aligning common weekly dates produced 445 five-week forecasting groups. The
+experiment used 2015–2020 for training, 2021 for development selection, and read 2022–2023 only once
+for the final test. Rebuilding from the cached primary response reproduced the tracked dataset and
+report exactly after normalizing only the build date and output path.
+
+The previous trailing-change/crowding-cap rule had negative mean Spearman correlation on development
+and test. Development selected the simple forecast `-0.2 * current net_%OI`. On the untouched test,
+mean Spearman improved from -0.0385 to 0.0379 and MAE improved from 6.5399 to 5.7595 percentage
+points. A training quantile selected an 11.2821-point interval on development; the production value
+is rounded to 11.3. Test coverage improved from 66.56% to 87.19%, reducing absolute calibration loss
+from 0.2344 to 0.0281.
+
+On the retired public diagnostic, COT quality improved from 0.6848 to 0.7515, MAE from 6.6471 to
+5.4884, and coverage from 0.60 to 0.90. Across all 11 units, mean quality improved from 0.3804 to
+0.3864, mean coverage from 0.6364 to 0.6636, and pre-gate composite from 0.1753 to 0.1878. The formal
+CLI returned all ten roster rows with exact frozen-corpus spans and no model calls. The calculator
+also now discovers the latest date-suffixed input field instead of depending on `20241022`. All 32
+tests pass, and fresh Python 3.13 outputs for all 11 public units passed the official smoke verifier
+with 78/78 roster rows. The comparison report SHA-256 is
+`66b884aafef8390f5f29f9a3be2172979946380e0fc600a1f3be6cd0dc17b8e0`.

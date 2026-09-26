@@ -65,3 +65,22 @@ HTML is a git-ignored reproducibility cache and is never included in the submiss
 Twelve selected historical/current symbols failed Yahoo resolution and remain in the dataset metadata
 with their HTTP errors. Selection happened before price download and never inspected returns. Raw CSV
 and Yahoo responses are git-ignored cache files; derived events retain the SEC accession and source URL.
+
+## CFTC legacy futures-only positioning panel
+
+- Local file: `evaluation/datasets/cot/legacy10_2015_2023.json`
+- Dataset SHA-256: `a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e`
+- Primary source: CFTC Public Reporting Socrata resource `6dca-aqww`
+  (<https://publicreporting.cftc.gov/resource/6dca-aqww.json>)
+- Raw cache SHA-256: `dfa3770a1415d5a9f5d6c47e2f3f1c6cac1b3602a435500a0bb7a3b1aa5e62d3`
+- Coverage: ten task-aligned legacy futures-only contracts, 4,690 weekly rows from 2015–2023
+- Aligned sample: 445 common-date groups with a 28-day trailing window and 35-day target window
+- Target: change in noncommercial net contracts from origin to five weeks later, divided by origin
+  open interest and multiplied by 100
+- Split: 298 training groups through 2020, 51 development groups in 2021, and a one-time 96-group
+  test covering 2022–2023
+- Leakage control: the model and interval were selected on development before inspecting test; the
+  retired 2024 public outcome was used only for the final diagnostic comparison
+
+The raw CFTC response is a git-ignored reproducibility cache. The tracked derived panel contains the
+source contract codes and no post-origin feature values other than the explicitly labeled target.
