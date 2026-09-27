@@ -242,3 +242,24 @@ public units passed the official smoke verifier with 78/78 rows. The retired pub
 diagnostic remained quality 0.3864, coverage 0.6636 and composite 0.1878 because the auction unit
 stayed at zero quality and 5/7 coverage. Report SHA-256:
 `798568bae80f5c27b787a689b9ee3756cc85aad1e4b22d9128727339642f8df1`.
+
+### Cross-family artifact availability gates v1 — accepted
+
+The provenance audit found that accepted COT, CPI and post-earnings constants were documented but
+were enabled solely by family routing. A hidden historical task with a cutoff before their 2021
+development labels could therefore receive a parameter selected using future outcomes. Auction had
+already added a local cutoff guard in the preceding cycle.
+
+A shared fail-closed ISO-date helper now controls all four fitted family paths. Their current
+availability date is 2022-01-01, immediately after the latest development observations. Earlier
+cutoffs restore the preceding COT trailing-change/crowding rule, CPI interval floor and
+post-earnings interval; auction retains its preceding mean-plus-trend fallback. Missing or malformed
+cutoffs also disable fitted parameters. Each family records the decision and availability date in
+its calculator trace. The COT dated-field selector now also rejects suffix dates after the task
+cutoff instead of blindly taking the largest date.
+
+The acceptance test regenerated all eleven public units before and after the change: all 78 answer
+rows were byte-identical, and all eleven passed the official smoke verifier. Early-cutoff synthetic
+checks exercised each fallback and a future-dated COT distractor, and the complete suite remained
+at 33 passing tests. Predictive
+metrics are intentionally unchanged; this is a cross-family embargo and reproducibility fix.

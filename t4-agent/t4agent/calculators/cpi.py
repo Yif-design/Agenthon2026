@@ -6,7 +6,10 @@ from typing import Any
 
 from ..retrieve import IndexedCorpus
 from ..taskio import Task
-from .common import ModelOutput, clip, interval, number
+from .common import ModelOutput, artifact_available, clip, interval, number
+
+
+ARTIFACT_AVAILABLE_DATE = "2022-01-01"
 
 
 def solve(
@@ -29,7 +32,9 @@ def solve(
         point = clip(gasoline_change, -5.0, 5.0)
     elif gasoline_change is not None and entity_id == "CPI_ENERGY":
         point = 0.4 * clip(gasoline_change, -5.0, 5.0)
-    half = max(0.75, 1.65 * pstdev(history)) if len(history) > 1 else 0.75
+    calibrated = artifact_available(task.cutoff_date, ARTIFACT_AVAILABLE_DATE)
+    floor = 0.75 if calibrated else 0.35
+    half = max(floor, 1.65 * pstdev(history)) if len(history) > 1 else (0.75 if calibrated else 0.6)
     evidence = history_evidence
     if entity_id in {"CPI_GASOLINE", "CPI_ENERGY"} and gasoline_evidence:
         evidence = evidence + gasoline_evidence
@@ -39,7 +44,14 @@ def solve(
         interval(point, task.interval_level, half),
         "component_history",
         evidence=evidence,
-        derivation={"latest_mom": latest, "recent_median": recent_median, "gasoline_change": gasoline_change},
+        derivation={
+            "latest_mom": latest,
+            "recent_median": recent_median,
+            "gasoline_change": gasoline_change,
+            "interval_floor": floor,
+            "calibrated_artifact_available": calibrated,
+            "artifact_available_date": ARTIFACT_AVAILABLE_DATE,
+        },
     )
 
 

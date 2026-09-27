@@ -22,11 +22,15 @@ time citations still come only from the supplied frozen corpus.
 ## Other fixed family parameters
 
 - CFTC positioning: `-0.2 * current net percent of open interest`, 11.3-point half-width. Selected
-  with CFTC public-reporting data through 2021 and used by the current 2024 public family.
+  with CFTC public-reporting data through 2021 and enabled only from `2022-01-01`.
 - CPI component interval: maximum of `1.65 *` recent population standard deviation and a 0.75-point
-  floor. Selected with ALFRED real-time vintages through 2021 and tested on 2022-2023.
+  floor. Selected with ALFRED real-time vintages through 2021, enabled only from `2022-01-01`, and
+  tested on 2022-2023.
 - Post-earnings reaction interval: 8.3 percentage-point half-width. Selected with 2018-2021
-  announcement/price data and tested on 2022-2023.
+  announcement/price data, enabled only from `2022-01-01`, and tested on 2022-2023.
+
+All four fitted family paths call the same fail-closed ISO-date helper. An absent or malformed task
+cutoff disables the calibrated artifact and retains the preceding deterministic heuristic.
 
 Full sources, immutable hashes, splits, rejected candidates and known limitations are recorded in
 `docs/dataset-provenance.md`, `docs/research-log.md`, `evaluation/accepted_changes.jsonl` and the

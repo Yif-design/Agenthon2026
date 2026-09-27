@@ -5,7 +5,10 @@ from typing import Any
 
 from ..retrieve import IndexedCorpus
 from ..taskio import Task
-from .common import ModelOutput, interval, number
+from .common import ModelOutput, artifact_available, interval, number
+
+
+ARTIFACT_AVAILABLE_DATE = "2022-01-01"
 
 
 def solve(
@@ -30,5 +33,16 @@ def solve(
     # 2018-2023. The previous 2.5-point half-width covered only 36.4% of the
     # time-forward test set, while 8.3 points covered 81.6% at the requested
     # 90% level. Keep unusually large task label thresholds inside the band.
-    half_width = max(8.3, 2.0 * threshold)
-    return ModelOutput(point, label, interval(point, task.interval_level, half_width), "flat_unless_strong_outlook")
+    calibrated = artifact_available(task.cutoff_date, ARTIFACT_AVAILABLE_DATE)
+    half_width = max(8.3 if calibrated else 2.5, 2.0 * threshold)
+    return ModelOutput(
+        point,
+        label,
+        interval(point, task.interval_level, half_width),
+        "flat_unless_strong_outlook",
+        derivation={
+            "calibrated_artifact_available": calibrated,
+            "artifact_available_date": ARTIFACT_AVAILABLE_DATE,
+            "interval_half_width": half_width,
+        },
+    )

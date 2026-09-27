@@ -1,11 +1,16 @@
 from __future__ import annotations
 
+import math
 import re
+from statistics import pstdev
 from typing import Any
 
 from ..retrieve import IndexedCorpus
 from ..taskio import Task
-from .common import ModelOutput, interval, number
+from .common import ModelOutput, artifact_available, interval, number
+
+
+ARTIFACT_AVAILABLE_DATE = "2022-01-01"
 
 
 def solve(
@@ -17,32 +22,57 @@ def solve(
     row_index: int,
     row_count: int,
 ) -> ModelOutput:
-    current, current_field = _latest_dated_number(entity, "net_pct_oi")
-    point = -0.2 * current if current is not None else 0.0
+    current, current_field = _latest_dated_number(entity, "net_pct_oi", task.cutoff_date)
     history, evidence = _history(corpus, str(entity.get("name") or ""), str(entity.get("entity_id") or ""))
+    calibrated = artifact_available(task.cutoff_date, ARTIFACT_AVAILABLE_DATE)
+    if calibrated:
+        point = -0.2 * current if current is not None else 0.0
+        half = 11.3
+        method = "net_position_mean_reversion"
+    else:
+        point = number(entity.get("trailing_4wk_net_change_pct_oi")) or 0.0
+        if current is not None and len(history) >= 8:
+            absolute = sorted(abs(value) for value in history)
+            crowding_cutoff = absolute[max(0, math.ceil(0.9 * len(absolute)) - 1)]
+            if abs(current) >= crowding_cutoff:
+                point *= 0.5
+        half = max(4.0, 1.65 * pstdev(history) if len(history) > 1 else 8.0)
+        method = "trailing_change_crowding_cap"
     return ModelOutput(
         point,
         None,
-        interval(point, task.interval_level, 11.3),
-        "net_position_mean_reversion",
+        interval(point, task.interval_level, half),
+        method,
         evidence=evidence,
         derivation={
             "current_net_pct_oi": current,
             "current_net_pct_oi_field": current_field,
-            "mean_reversion_coefficient": -0.2,
-            "interval_half_width_pct_oi": 11.3,
+            "mean_reversion_coefficient": -0.2 if calibrated else None,
+            "interval_half_width_pct_oi": half,
+            "calibrated_artifact_available": calibrated,
+            "artifact_available_date": ARTIFACT_AVAILABLE_DATE,
             "history": history,
         },
     )
 
 
-def _latest_dated_number(entity: dict[str, Any], prefix: str) -> tuple[float | None, str | None]:
-    """Return an exact field or the latest YYYYMMDD-suffixed numeric field."""
+def _latest_dated_number(
+    entity: dict[str, Any], prefix: str, cutoff_date: str
+) -> tuple[float | None, str | None]:
+    """Return an exact field or the latest cutoff-admissible dated numeric field."""
     direct = number(entity.get(prefix))
     if direct is not None:
         return direct, prefix
+    cutoff_digits = cutoff_date[:10].replace("-", "")
+    if not re.fullmatch(r"\d{8}", cutoff_digits):
+        return None, None
     dated_fields = sorted(
-        (key for key in entity if re.fullmatch(rf"{re.escape(prefix)}_\d{{8}}", key)),
+        (
+            key
+            for key in entity
+            if re.fullmatch(rf"{re.escape(prefix)}_\d{{8}}", key)
+            and key.rsplit("_", 1)[-1] <= cutoff_digits
+        ),
         reverse=True,
     )
     for key in dated_fields:

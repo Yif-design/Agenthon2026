@@ -6,7 +6,7 @@ from typing import Any
 
 from ..retrieve import IndexedCorpus
 from ..taskio import Task
-from .common import ModelOutput, clip, interval, number
+from .common import ModelOutput, artifact_available, clip, interval, number
 
 
 INTERVAL_PSTDEV_MULTIPLIER = 2.5
@@ -28,7 +28,7 @@ def solve(
     if values:
         recent = values[-6:]
         baseline = sum(recent) / len(recent)
-        calibrated = task.cutoff_date[:10] >= ARTIFACT_AVAILABLE_DATE
+        calibrated = artifact_available(task.cutoff_date, ARTIFACT_AVAILABLE_DATE)
         trend = 0.0 if len(values) < 3 else clip((values[-1] - values[-3]) / 2.0, -0.08, 0.08)
         point = baseline if calibrated else baseline + trend
         multiplier = INTERVAL_PSTDEV_MULTIPLIER if calibrated else 1.65

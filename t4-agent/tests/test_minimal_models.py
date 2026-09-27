@@ -160,6 +160,17 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(result.label, "flat")
         self.assertEqual(result.point, 0.0)
         self.assertEqual(result.interval, {"level": 0.9, "lo": -8.3, "hi": 8.3})
+        historical = solve_minimal(
+            replace(current, cutoff_date="2021-12-31"),
+            {"flat_threshold_abn_pct": 1.0},
+            SPECS["reaction"],
+            {"explicit_forward_outlook_signal": 0},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        self.assertEqual(historical.interval, {"level": 0.9, "lo": -2.5, "hi": 2.5})
+        self.assertFalse(historical.derivation["calibrated_artifact_available"])
 
     def test_rates_use_fixed_maturity_sensitivity(self) -> None:
         current = task("yield_change_bps_intermeeting", "regression")
@@ -229,8 +240,10 @@ class MinimalModelTests(unittest.TestCase):
         entity = project_entity(
             {
                 "entity_id": "GOLD_CMX",
-                "net_pct_oi_20241231": 30.0,
-                "net_pct_oi_20251231": -20.0,
+                "trailing_4wk_net_change_pct_oi": 6.0,
+                "net_pct_oi_20231231": 30.0,
+                "net_pct_oi_20240101": -20.0,
+                "net_pct_oi_20251231": -99.0,
             },
             SPECS["positioning"],
         )
@@ -240,7 +253,20 @@ class MinimalModelTests(unittest.TestCase):
         self.assertAlmostEqual(result.interval["lo"], -7.3)
         self.assertAlmostEqual(result.interval["hi"], 15.3)
         self.assertEqual(result.method, "net_position_mean_reversion")
-        self.assertEqual(result.derivation["current_net_pct_oi_field"], "net_pct_oi_20251231")
+        self.assertEqual(result.derivation["current_net_pct_oi_field"], "net_pct_oi_20240101")
+        historical = solve_minimal(
+            replace(current, cutoff_date="2021-12-31"),
+            entity,
+            SPECS["positioning"],
+            {},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        self.assertEqual(historical.point, 6.0)
+        self.assertEqual(historical.interval, {"level": 0.9, "lo": -2.0, "hi": 14.0})
+        self.assertEqual(historical.method, "trailing_change_crowding_cap")
+        self.assertFalse(historical.derivation["calibrated_artifact_available"])
 
     def test_bank_eps_uses_recent_yoy_delta(self) -> None:
         current = task("eps_yoy_growth_pct", "regression")
@@ -287,6 +313,19 @@ class MinimalModelTests(unittest.TestCase):
         self.assertAlmostEqual(result.point, 0.301)
         self.assertAlmostEqual(result.interval["lo"], -0.449)
         self.assertAlmostEqual(result.interval["hi"], 1.051)
+        historical = solve_minimal(
+            replace(current, cutoff_date="2021-12-31"),
+            {"entity_id": "CPI_CORE", "name": "All items less food and energy (core CPI)", "latest_published_mom_pct": 0.31},
+            SPECS["cpi"],
+            {},
+            corpus,
+            0,
+            1,
+        )
+        self.assertAlmostEqual(historical.point, result.point)
+        self.assertAlmostEqual(historical.interval["lo"], result.point - 0.35)
+        self.assertAlmostEqual(historical.interval["hi"], result.point + 0.35)
+        self.assertFalse(historical.derivation["calibrated_artifact_available"])
 
 
 if __name__ == "__main__":

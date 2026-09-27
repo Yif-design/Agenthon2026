@@ -17,6 +17,6 @@
   rate-volatility features were not adopted, so it may miss regime changes despite improving the
   2022-2024 time-forward checks. The 2022-2023 point test was inspected before interval calibration
   was added; the combined candidate therefore relies on the untouched 2024 confirmation period.
-- Older fitted constants in the COT, CPI and post-earnings calculators still need explicit
-  artifact-availability gates if hidden tasks can have cutoffs before their respective development
-  periods. Auction now has this protection.
+- Artifact-availability gates cover the four currently fitted family constants. Any future fitted
+  artifact still requires its own recorded availability date and early-cutoff fallback; the helper
+  cannot infer provenance automatically.

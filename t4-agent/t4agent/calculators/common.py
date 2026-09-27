@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
+from datetime import date
 from typing import Any
 
 
@@ -34,3 +35,11 @@ def clip(value: float, lo: float, hi: float) -> float:
 
 def interval(point: float, level: float, half: float) -> dict[str, float]:
     return {"level": float(level), "lo": float(point - half), "hi": float(point + half)}
+
+
+def artifact_available(cutoff_date: str, available_date: str) -> bool:
+    """Return whether a fitted artifact existed by the task's trusted cutoff."""
+    try:
+        return date.fromisoformat(cutoff_date[:10]) >= date.fromisoformat(available_date)
+    except (TypeError, ValueError):
+        return False

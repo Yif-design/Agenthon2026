@@ -6,7 +6,8 @@ The submitted path is a baseline-first bounded workflow:
 
 1. Load the task and cutoff-filter the frozen corpus.
 2. Route the target to an isolated family specification.
-3. Hard-scope documents by entity, series, tenor or shared macro source.
+3. Disable any fitted family parameter whose recorded availability date is later than the task
+   cutoff, then hard-scope documents by entity, series, tenor or shared macro source.
 4. Retrieve evidence with BM25 and extract explicit numerical parameters deterministically.
 5. Compute and atomically write a complete model-free baseline answer.
 6. For families that need text judgement, batch up to three entities and ask the House-compatible
@@ -66,3 +67,10 @@ confirmed them on 2022-2023 and an untouched January-October 2024 period. Earlie
 the preceding heuristic so the later selection data cannot leak backward. This improved historical
 accuracy and calibration but did not change the retired public aggregate diagnostic because that
 single auction unit remains at the scorer's zero-skill floor and its coverage stayed 5/7.
+
+Auction, COT, CPI and post-earnings calibration now share a fail-closed artifact-availability date
+check. If a task predates the data used to select a fitted constant, its family calculator reverts
+to the preceding deterministic rule. This does not change any current public output; it prevents a
+historical hidden unit from receiving a parameter selected with later outcomes.
+Date-suffixed COT entity fields are filtered against the same task cutoff before the latest value is
+selected.
