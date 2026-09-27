@@ -1,0 +1,25 @@
+{
+  "baseline_git_commit": "e0062fb318ee8307974e0f46f3a6b3e827d3bb25",
+  "change": "Reject a batch row when its valid item_id and valid entity_id resolve to different requested entities; otherwise retain item_id-first mapping with entity_id fallback.",
+  "decision": "accept",
+  "deterministic_checks": {
+    "consistent_reordered_rows": "accepted and restored to original roster order",
+    "disagreeing_valid_identifiers": "both rows rejected to per-entity fallback",
+    "duplicate_policy": "first accepted row per entity remains authoritative",
+    "partial_batch": "returned entity preserved; missing entity alone falls back"
+  },
+  "experiment": "batch_identity_consistency_v1",
+  "hypothesis": "Requiring consistent item_id and entity_id when both resolve prevents cross-entity model outputs without reducing valid reordered or partial batch completion.",
+  "model_requests_added": 0,
+  "predictive_quality_claim": "none; evidence isolation and engineering reliability improvement only",
+  "prompt_tokens_added": 0,
+  "public_no_model": {
+    "byte_identical_units": 11,
+    "rows": 78,
+    "smoke_admissible_units": 11,
+    "units": 11
+  },
+  "reason": "Closes a shared cross-entity typed-schema ambiguity while preserving valid order-independent batching, partial fallback, all offline public answers, and every official smoke gate.",
+  "schema_version": 1,
+  "tests": "53 passed"
+}

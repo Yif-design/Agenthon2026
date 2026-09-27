@@ -438,3 +438,18 @@ using six instead of five calls. Provider nondeterminism prevents attributing th
 solely to the circuit policy, so it is corroborating evidence only; the adoption claim is improved
 partial completion under deterministic injected failures, not predictive accuracy. Structured
 summary SHA-256: `232567285ec862ef357bab28de8734b9cdf205d1e8ff247b2af391b10aec1eb0`.
+
+### Batch identity consistency — accepted
+
+The shared batch unpacker supported response reordering by preferring `item_id` and falling back to
+`entity_id`, but it did not compare the two when both were valid. A model row with `item_id=0` and
+the second entity's ID could therefore be assigned to the first entity. Exact-quote scope usually
+rejects a foreign document, but shared macro documents make that an incomplete defense.
+
+The candidate rejects only rows whose valid identifiers resolve to different requested entities.
+Consistently reordered rows still map correctly; a partial response preserves returned siblings and
+falls back only missing entities. The change adds no requests, tokens or prompt text. All 53 tests
+passed. Eleven fresh no-model public answers were byte-identical to the preceding baseline and all
+eleven passed official smoke with 78 rows. The candidate was accepted as an evidence-isolation and
+typed-intermediate reliability improvement; it makes no predictive-accuracy claim. Structured
+summary SHA-256: `d632d73de1a900b431e664d37e78b4bd2586fed445a9c8a2e620e4bc384237f3`.

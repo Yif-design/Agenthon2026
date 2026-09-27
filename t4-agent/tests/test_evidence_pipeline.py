@@ -4,7 +4,7 @@ import json
 
 from t4agent.evidence import fact_from_quote, validate_model_output
 from t4agent.family_specs import SPECS
-from t4agent.predict import _claims_with_context, predict_rows
+from t4agent.predict import PreparedRow, _claims_with_context, _unpack_batch, predict_rows
 from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, tokenize
 from t4agent.taskio import Task
 from t4agent.validate import validate_answer
@@ -282,3 +282,30 @@ def test_generic_entities_are_batched_and_mapped_by_item_id(monkeypatch) -> None
     assert llm.calls == 3
     assert [row.prediction["entity_id"] for row in results] == [f"E{i}" for i in range(7)]
     assert [row.prediction["point_forecast"] for row in results] == [float(i + 1) for i in range(7)]
+
+
+def test_batch_unpack_rejects_disagreeing_item_and_entity_ids() -> None:
+    corpus = IndexedCorpus([], {}, {})
+    rows = [
+        PreparedRow(index, {"entity_id": entity_id}, set(), corpus, [], {}, [], [], True)
+        for index, entity_id in enumerate(("A", "B"))
+    ]
+    parsed = {
+        "entities": [
+            {"item_id": 0, "entity_id": "B", "signals": {}},
+            {"item_id": 1, "entity_id": "A", "signals": {}},
+        ]
+    }
+
+    assert _unpack_batch(parsed, rows) == {0: None, 1: None}
+
+
+def test_batch_unpack_falls_back_only_the_missing_entity() -> None:
+    corpus = IndexedCorpus([], {}, {})
+    rows = [
+        PreparedRow(index, {"entity_id": entity_id}, set(), corpus, [], {}, [], [], True)
+        for index, entity_id in enumerate(("A", "B"))
+    ]
+    returned = {"item_id": 1, "entity_id": "B", "signals": {}}
+
+    assert _unpack_batch({"entities": [returned]}, rows) == {0: None, 1: returned}

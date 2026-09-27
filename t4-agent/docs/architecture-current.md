@@ -17,6 +17,11 @@ The submitted path is a baseline-first bounded workflow:
 9. Normalize rankings, validate the complete answer, and atomically replace the baseline only when
    the enhanced answer is valid.
 
+Batch responses are mapped back to the requested roster by both integer `item_id` and string
+`entity_id`. Reordered rows are accepted. If both identifiers resolve but disagree, that model row
+is rejected so it cannot cross entity boundaries; a missing row falls back independently without
+discarding valid sibling rows.
+
 This design uses at most 18 requests by default, a 420-second model phase, 40-second request
 timeouts and a circuit breaker. Each batch gets two attempts by default. The cross-batch circuit
 opens after four consecutive failures, so one malformed batch falls back without suppressing every
