@@ -53,11 +53,14 @@ stored the macOS `com.apple.provenance` extended attribute on `/app`. Their Linu
 that attribute. A macOS-created tarball must use `tar --no-xattrs`; `xattr -cr` is not considered a
 reliable fix. A normal Docker build from a clean Linux checkout avoids the attribute.
 
-Our submission image is built by GitHub Actions on `ubuntu-latest` from a fresh checkout with
-`docker/build-push-action`, rather than from a macOS tarball, so the reported trigger is absent from
-the current pipeline. The workflow also pulls and starts the pushed Linux image after the build.
+Our submission image is built by GitHub Actions on the explicit `ubuntu-24.04` runner from a fresh
+checkout with `docker/build-push-action`, rather than from a macOS tarball, so the reported trigger
+is absent from the current pipeline. The workflow also pulls and starts the pushed Linux image
+after the build. The explicit runner label also avoids the announced `ubuntu-latest` migration to
+Ubuntu 26.04 beginning 2026-10-19, during the competition's Final + Verification window.
 
-Source: <https://github.com/Agenthon-2026/track4-analysis-public/issues/16>
+Sources: <https://github.com/Agenthon-2026/track4-analysis-public/issues/16> and
+<https://github.com/actions/runner-images/issues/14748>
 
 ## Track 4 artifacts and evidence
 

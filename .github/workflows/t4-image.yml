@@ -15,7 +15,8 @@ permissions:
 
 jobs:
   test-and-push:
-    runs-on: ubuntu-latest
+    # Keep submission builds stable through the 2026-10-19 ubuntu-latest migration.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 

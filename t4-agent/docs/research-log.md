@@ -765,3 +765,21 @@ participant repositories, so no external implementation was copied. Report:
 References: <https://github.com/Agenthon-2026/track4-analysis-public>,
 <https://github.com/wangzgui/agenthon-t4-baseline-2026>, and
 <https://github.com/dungcao06/optivex-t4-agent>.
+
+### Pin the submission-image runner — accepted pending CI verification
+
+The successful image workflow emitted GitHub's migration annotation: the `ubuntu-latest` label will
+begin moving from Ubuntu 24.04 to Ubuntu 26.04 on 2026-10-19. GitHub's runner-image announcement
+warns that workflows depending on system libraries, compilers or prebuilt binaries may be affected
+and gives `ubuntu-24.04` as the rollback label. Agenthon's joint Final + Verification phase continues
+through 2026-10-25, so the floating-label migration overlaps the period in which the final image may
+need to be rebuilt and verified.
+
+The candidate changes only the image workflow runner from `ubuntu-latest` to `ubuntu-24.04`. It does
+not change the Dockerfile, agent code, predictions, model requests or formal image platform, which
+remains Linux/amd64. The candidate is accepted only if the pinned runner passes all 77 tests, builds
+and pushes the image, starts its `analyze --help` command, and produces a digest that is anonymously
+readable from GHCR. The final CI run and digest are recorded after the pushed workflow completes.
+
+References: <https://github.com/actions/runner-images/issues/14748> and
+<https://www.agenthon.net/guides/submission-format/>.
