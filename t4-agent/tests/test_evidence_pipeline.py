@@ -5,7 +5,7 @@ import json
 from t4agent.evidence import fact_from_quote, validate_model_output
 from t4agent.family_specs import SPECS
 from t4agent.predict import _claims_with_context, predict_rows
-from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids
+from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, tokenize
 from t4agent.taskio import Task
 from t4agent.validate import validate_answer
 
@@ -43,6 +43,29 @@ def test_bm25_never_returns_foreign_document() -> None:
     ]
     results = BM25(chunks).search("liquidity default", allowed_doc_ids={"B"})
     assert results and {result.chunk.doc_id for result in results} == {"B"}
+
+
+def test_tokenizer_ignores_trailing_punctuation_but_preserves_financial_tokens() -> None:
+    assert tokenize("action_flat.") == tokenize("action_flat") == ["action_flat"]
+    assert tokenize("$5.28, 10%; 2024-10-31 year-over-year.") == [
+        "$5.28",
+        "10%",
+        "2024-10-31",
+        "year-over-year",
+    ]
+    assert tokenize("... - %") == []
+
+
+def test_bm25_entity_token_matches_sentence_final_identifier() -> None:
+    chunks = []
+    for entity_id in ("action_up", "action_flat", "action_down"):
+        text = f"{entity_id}. evidence"
+        chunks.append(Chunk(f"DOC_{entity_id.upper()}", "2023-01-01", 0, len(text), text))
+
+    index = BM25(chunks)
+
+    for entity_id in ("action_up", "action_flat", "action_down"):
+        assert index.search(entity_id, top_k=1)[0].chunk.doc_id == f"DOC_{entity_id.upper()}"
 
 
 def test_nonzero_signal_with_foreign_doc_is_neutralized() -> None:

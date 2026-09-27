@@ -7,8 +7,9 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+from typing import Callable
 
-TOKEN_RE = re.compile(r"[A-Za-z0-9_.$%-]+")
+TOKEN_RE = re.compile(r"\$?[A-Za-z0-9_]+(?:\.[0-9]+)?%?(?:-[A-Za-z0-9_]+)*")
 
 
 @dataclass(frozen=True)
@@ -101,9 +102,10 @@ def _chunks_for_text(doc_id: str, doc_date: str | None, text: str, base_offset: 
 
 
 class BM25:
-    def __init__(self, chunks: list[Chunk]):
+    def __init__(self, chunks: list[Chunk], tokenizer: Callable[[str], list[str]] | None = None):
         self.chunks = chunks
-        self.tokens = [tokenize(c.text) for c in chunks]
+        self.tokenizer = tokenizer or tokenize
+        self.tokens = [self.tokenizer(c.text) for c in chunks]
         self.lengths = [len(t) for t in self.tokens]
         self.avg_len = sum(self.lengths) / max(len(self.lengths), 1)
         df: dict[str, int] = defaultdict(int)
@@ -117,7 +119,7 @@ class BM25:
     def search(
         self, query: str, top_k: int = 8, allowed_doc_ids: set[str] | None = None
     ) -> list[ScoredChunk]:
-        q = tokenize(query)
+        q = self.tokenizer(query)
         if not q:
             candidates = [c for c in self.chunks if allowed_doc_ids is None or c.doc_id in allowed_doc_ids]
             return [ScoredChunk(c, 0.0) for c in candidates[:top_k]]

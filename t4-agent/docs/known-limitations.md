@@ -13,6 +13,8 @@
 - The generic hidden-family path now has target-field, numeric-noise, row-order and change-vs-level
   robustness tests, but no broad real-outcome benchmark. Its field selection is lexical and does not
   yet solve arbitrary label semantics for unknown classification targets.
+- Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
+  identifier misses, but aliases, abbreviations and paraphrases can still rank the wrong chunk.
 - Complete-roster and batch-3 direct prediction plus fixed 50/50 hybrids were rejected on public
   development diagnostics. The results do not cover every possible direct prompt or learned blend,
   but further batch-size tuning is not justified without a new independent hypothesis and holdout.

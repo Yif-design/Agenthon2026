@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import inspect
 import json
 import sys
 import time
@@ -140,12 +141,31 @@ def main() -> None:
     from faithfulness.judge import DeBERTaNLIJudge, build_unit_context, check_answer
 
     args.cache_dir.mkdir(parents=True, exist_ok=True)
-    judge = DeBERTaNLIJudge(
-        model_id=args.model_id,
-        revision=args.revision,
-        cache_dir=str(args.cache_dir),
-        device=-1,
-    )
+    judge_parameters = inspect.signature(DeBERTaNLIJudge).parameters
+    if "revision" in judge_parameters:
+        judge = DeBERTaNLIJudge(
+            model_id=args.model_id,
+            revision=args.revision,
+            cache_dir=str(args.cache_dir),
+            device=-1,
+        )
+    else:
+        snapshot = (
+            args.cache_dir
+            / f"models--{args.model_id.replace('/', '--')}"
+            / "snapshots"
+            / args.revision
+        )
+        if not snapshot.is_dir():
+            raise FileNotFoundError(
+                f"pinned model snapshot is unavailable for {args.model_id}@{args.revision}: "
+                f"{snapshot}"
+            )
+        judge = DeBERTaNLIJudge(
+            model_id=str(snapshot),
+            cache_dir=str(args.cache_dir),
+            device=-1,
+        )
     common = {
         "model_id": args.model_id,
         "model_revision": args.revision,

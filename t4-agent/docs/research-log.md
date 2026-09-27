@@ -374,3 +374,29 @@ the first document.
 The direct-label production code was fully rolled back. Retesting is deferred until punctuation
 normalization is repaired and independently checked across public retrieval results. Structured
 summary SHA-256: `9bd2e781ecd82b2c24a1365bf25d60620089022d0e53e3376ae9046532e1a688`.
+
+### Punctuation-normalized lexical retrieval — accepted
+
+The deferred generic-label audit exposed a shared L2 retrieval defect. The legacy token expression
+retained sentence-final periods, so a query for `action_flat` did not match `action_flat.` in a
+document. When every chunk scored zero, stable ordering silently selected the first allowed chunk.
+Across thirteen unseen-label synthetic entities, legacy BM25 retrieved the correct top-one document
+once; punctuation-normalized BM25 retrieved all thirteen. Tests also pin `$5.28`, `10%`,
+`2024-10-31` and `year-over-year` so normalization does not split common financial tokens.
+
+The public retrieval A/B changed the top three chunks for 25 of 78 rows across seven units. A strict
+no-model replay using identical code and inputs except for the tokenizer changed zero labels, point
+forecasts or intervals; it changed only those 25 citation lists. A free Nemotron analogue generated
+all eleven production-shaped answers using 12 calls, 91,295 prompt tokens and 7,115 completion
+tokens at zero reported cost. Three malformed JSON responses were contained by retry/fallback logic.
+All eleven answers passed the official smoke verifier with all 78 roster rows.
+
+Every affected unit was then scored with both fixed official NLI members at revisions
+`bab4bc7178836f731dcfd18c06ca9def0a137712` and
+`b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7`. The local official judge no longer accepts a
+`revision` constructor argument, so the audit runner now resolves the requested revision to its
+exact cached snapshot path and fails closed when that directory is absent. Citation-level ensemble
+faithfulness was 1.0 for auction, EPS YoY, the 2024 FOMC curve and post-earnings; 0.9091 for CPI; and
+0.875 for credit event and bank EPS. All seven crossed the 0.80 gate. The two CPU members took
+1,490.6 and 2,855.0 seconds for 198 citation pairs each. The candidate was accepted. Structured
+summary SHA-256: `50dea380b4370bd6c178b31ccb9c561d20921a7611a8f29f506184fe3a25f3ba`.

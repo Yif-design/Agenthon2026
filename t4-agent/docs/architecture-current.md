@@ -97,3 +97,10 @@ target name, with unrelated identifiers, dates, market-cap fields and other nume
 out of the fallback. A change/delta/growth target with no matching change field uses a neutral zero
 rather than reusing a level field. If exactly one non-metadata numeric field is available, it remains
 the fallback. The selected field and reason are retained in the deterministic derivation trace.
+
+BM25 tokenization removes sentence-edge punctuation while preserving financial forms such as
+`$5.28`, `10%`, `2024-10-31` and `year-over-year`. This makes a query token such as `action_flat`
+match the same identifier at the end of a sentence instead of assigning every zero-score query the
+first allowed chunk. The same tokenizer instance is used for documents and queries. The change is
+shared by known and unknown families and does not alter document scope, cutoff filtering or the
+deterministic calculators.
