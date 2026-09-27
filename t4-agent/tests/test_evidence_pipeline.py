@@ -459,6 +459,35 @@ def test_batch_unpack_does_not_treat_boolean_item_ids_as_integers() -> None:
     ) == {0: None, 1: None}
 
 
+def test_batch_unpack_rejects_any_present_invalid_identity() -> None:
+    corpus = IndexedCorpus([], {}, {})
+    rows = [
+        PreparedRow(index, {"entity_id": entity_id}, set(), corpus, [], {}, [], [], True)
+        for index, entity_id in enumerate(("A", "B"))
+    ]
+    invalid_rows = [
+        {"item_id": 0, "entity_id": "FOREIGN", "signals": {}},
+        {"item_id": 1, "entity_id": 123, "signals": {}},
+        {"item_id": "0", "entity_id": "A", "signals": {}},
+        {"item_id": 9, "entity_id": "A", "signals": {}},
+        {"signals": {}},
+    ]
+
+    assert _unpack_batch({"entities": invalid_rows}, rows) == {0: None, 1: None}
+
+
+def test_batch_unpack_allows_one_valid_identity_when_the_other_is_absent() -> None:
+    corpus = IndexedCorpus([], {}, {})
+    rows = [
+        PreparedRow(index, {"entity_id": entity_id}, set(), corpus, [], {}, [], [], True)
+        for index, entity_id in enumerate(("A", "B"))
+    ]
+    item_only = {"item_id": 0, "signals": {}}
+    entity_only = {"entity_id": "B", "signals": {}}
+
+    assert _unpack_batch({"entities": [item_only, entity_only]}, rows) == {0: item_only, 1: entity_only}
+
+
 def test_model_evidence_rejects_boolean_signal_and_nonfinite_parameter() -> None:
     text = "The filing reports diluted EPS of 1.25 and discusses financial performance."
     corpus = IndexedCorpus([], {"DOC": text}, {"DOC": "2023-01-01"})

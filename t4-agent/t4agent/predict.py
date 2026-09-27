@@ -198,13 +198,20 @@ def _unpack_batch(parsed: dict[str, Any] | None, rows: list[PreparedRow]) -> dic
     for value in parsed["entities"]:
         if not isinstance(value, dict):
             continue
+        has_item_id = "item_id" in value
+        has_entity_id = "entity_id" in value
         item_id = value.get("item_id")
         item_index = (
             item_id
             if isinstance(item_id, int) and not isinstance(item_id, bool) and item_id in allowed_indexes
             else None
         )
-        entity_index = by_entity.get(str(value.get("entity_id", "")))
+        entity_id = value.get("entity_id")
+        entity_index = by_entity.get(entity_id) if isinstance(entity_id, str) else None
+        if (has_item_id and item_index is None) or (has_entity_id and entity_index is None):
+            continue
+        if not has_item_id and not has_entity_id:
+            continue
         if item_index is not None and entity_index is not None and item_index != entity_index:
             continue
         index = item_index if item_index is not None else entity_index

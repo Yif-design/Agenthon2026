@@ -19,7 +19,10 @@ The submitted path is a baseline-first bounded workflow:
 
 Batch responses are mapped back to the requested roster by both integer `item_id` and string
 `entity_id`. Reordered rows are accepted. If both identifiers resolve but disagree, that model row
-is rejected so it cannot cross entity boundaries; a missing row falls back independently without
+is rejected so it cannot cross entity boundaries. Every identity field that is present must have
+the correct type and resolve inside the current batch; a foreign entity ID cannot be hidden by a
+valid item ID, and an invalid item ID cannot be hidden by a valid entity ID. If one field is absent,
+the other valid field can still recover the row. A missing row falls back independently without
 discarding valid sibling rows.
 
 The model boundary enforces JSON scalar types before any calculator runs. Python booleans are not

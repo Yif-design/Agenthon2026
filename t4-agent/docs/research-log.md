@@ -737,3 +737,31 @@ claim. Report: `evaluation/reports/typed-intermediate-scalar-validation-v1.json`
 References: <https://www.agenthon.net/guides/submission-format/>,
 <https://github.com/Agenthon-2026/track4-analysis-public>, and
 <https://github.com/Agenthon-2026/Agenthon2026-public>.
+
+### Strict presence-aware batch identities — accepted
+
+The preceding consistency check rejected two valid identifiers when they pointed to different
+entities, but it still accepted a row when one identifier was valid and the other was present but
+foreign, mistyped or out of range. For example, `{item_id: 0, entity_id: "FOREIGN"}` was assigned
+to item 0 because the unknown entity ID was silently ignored. This can cross entity boundaries when
+several entities share a macro or industry document.
+
+The candidate validates every identity field that the model actually returned. Any provided
+`item_id` must be a non-boolean integer in the current batch, and any provided `entity_id` must be a
+string in the current batch. If both are valid they must agree. If one field is absent, the other
+valid field still recovers the row, preserving the existing partial-output fallback.
+
+All four provided-invalid fault cases were accepted before and rejected after. Item-only and
+entity-only recovery remained valid. Seventeen saved batch rows from the free Nemotron run across
+credit, EPS YoY and post-earnings families remained 17/17 accepted because they contained correctly
+typed, matching identifiers. All 77 tests passed; the 11 public answers and 78 rows were
+byte-identical, schema-valid and 11/11 smoke-admissible. No model request or prompt token was added.
+
+The official public baselines process one entity at a time. GitHub code search found no joint
+`item_id`/`entity_id` mapper in the inspected official repository or the two previously reviewed
+participant repositories, so no external implementation was copied. Report:
+`evaluation/reports/strict-batch-identity-presence-v1.json`.
+
+References: <https://github.com/Agenthon-2026/track4-analysis-public>,
+<https://github.com/wangzgui/agenthon-t4-baseline-2026>, and
+<https://github.com/dungcao06/optivex-t4-agent>.

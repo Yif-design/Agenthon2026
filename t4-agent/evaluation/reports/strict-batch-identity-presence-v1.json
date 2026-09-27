@@ -1,0 +1,124 @@
+{
+  "baseline_git_commit": "272f1a8b4b1d4c439b93c2f4ffbc1ba5f777dfa4",
+  "change": "Validate every identity field that is present; reject foreign or mistyped entity_id values and mistyped or out-of-range item_id values before mapping, while preserving item-only and entity-only recovery.",
+  "decision": "accept",
+  "experiment": "strict_batch_identity_presence_v1",
+  "external_comparison": {
+    "copied_code": false,
+    "official_baselines": "process one entity per call and therefore do not expose a reusable batch identity policy",
+    "public_code_search": "no joint item_id/entity_id mapping implementation found in the inspected official and two participant repositories"
+  },
+  "fault_injection": {
+    "recovery_cases_preserved": [
+      "valid item_id with entity_id absent",
+      "valid entity_id with item_id absent"
+    ],
+    "safely_rejected_after": 4,
+    "safely_rejected_before": 0,
+    "total": 4,
+    "unsafe_cases": [
+      "valid item_id plus foreign entity_id",
+      "valid item_id plus numeric entity_id",
+      "string item_id plus valid entity_id",
+      "out-of-range item_id plus valid entity_id"
+    ]
+  },
+  "hypothesis": "Rejecting any batch row whose provided item_id or entity_id is invalid prevents a valid sibling identifier from masking a foreign, mistyped or out-of-range identity, while allowing one valid identifier when the other field is absent.",
+  "layer": "L2 cross-family batch identity binding",
+  "predictive_quality_claim": "none; cross-entity isolation and malformed-output reliability improvement only",
+  "public_no_model_ab": {
+    "byte_identical_count": 11,
+    "rows": 78,
+    "unit_count": 11,
+    "units": [
+      {
+        "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "byte_identical": true,
+        "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "unit_id": "t4-EXAMPLE-eps-beat"
+      },
+      {
+        "baseline_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "byte_identical": true,
+        "candidate_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "unit_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "byte_identical": true,
+        "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "unit_id": "t4-cotpos-202411-us10"
+      },
+      {
+        "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "byte_identical": true,
+        "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "unit_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "byte_identical": true,
+        "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "unit_id": "t4-credit-event-2023"
+      },
+      {
+        "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "byte_identical": true,
+        "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "unit_id": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "byte_identical": true,
+        "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "unit_id": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "byte_identical": true,
+        "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "unit_id": "t4-fomc-curve-20220728"
+      },
+      {
+        "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "byte_identical": true,
+        "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "unit_id": "t4-fomc-curve-20240918"
+      },
+      {
+        "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "byte_identical": true,
+        "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "unit_id": "t4-macrorev-20240930-us6"
+      },
+      {
+        "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "byte_identical": true,
+        "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "unit_id": "t4-postearn-20240201-megacap"
+      }
+    ]
+  },
+  "reason": "All provided-invalid identity combinations now fail closed, both documented missing-field recovery paths and all 17 saved real model rows remain valid, and every public schema/smoke/output gate passes.",
+  "saved_model_compatibility": {
+    "accepted_after": 17,
+    "accepted_before": 17,
+    "families": [
+      "credit_event",
+      "eps_yoy",
+      "post_earnings_reaction"
+    ],
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "saved_batch_rows": 17,
+    "source": "evaluation/runs/20260926-current/nemotron-free-nothink"
+  },
+  "schema_version": 1,
+  "validation": {
+    "analysis_schema_valid": "11/11",
+    "model_requests_added": 0,
+    "prompt_tokens_added": 0,
+    "qfbench2_smoke_admissible": "11/11",
+    "smoke_profile": "build_smoke_verifier, non-rankable",
+    "tests": "77 passed"
+  }
+}
