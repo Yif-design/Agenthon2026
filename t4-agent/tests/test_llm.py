@@ -9,6 +9,9 @@ from t4agent.llm import LLM, chat_completions_url
 
 
 class FakeResponse:
+    def __init__(self, content: str = '{"signals": {}}') -> None:
+        self.content = content
+
     def __enter__(self):
         return self
 
@@ -17,7 +20,7 @@ class FakeResponse:
 
     def read(self) -> bytes:
         return json.dumps({
-            "choices": [{"message": {"content": '{"signals": {}}'}}],
+            "choices": [{"message": {"content": self.content}}],
             "usage": {"prompt_tokens": 10, "completion_tokens": 4},
         }).encode()
 
@@ -121,3 +124,42 @@ def test_restricted_environment_requires_house_credentials(monkeypatch) -> None:
     assert not llm.enabled
     assert llm.usage.circuit_open
     assert "missing MODEL_NAME or MODEL_TOKEN" in (llm.usage.disabled_reason or "")
+
+
+def test_one_bad_batch_does_not_disable_later_batches(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    monkeypatch.setenv("T4_MODEL_CIRCUIT_FAILURES", "4")
+    responses = iter(("not json", "still not json", '{"signals": {}}'))
+    monkeypatch.setattr(
+        "urllib.request.urlopen",
+        lambda *_args, **_kwargs: FakeResponse(next(responses)),
+    )
+
+    llm = LLM()
+    assert llm.chat_json("system", "first batch") is None
+    assert not llm.usage.circuit_open
+    assert llm.chat_json("system", "second batch") == {"signals": {}}
+    assert llm.usage.calls == 3
+    assert llm.consecutive_failures == 0
+
+
+def test_persistent_bad_batches_open_shared_circuit(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    monkeypatch.setenv("T4_MODEL_CIRCUIT_FAILURES", "4")
+    monkeypatch.setattr(
+        "urllib.request.urlopen",
+        lambda *_args, **_kwargs: FakeResponse("not json"),
+    )
+
+    llm = LLM()
+    assert llm.chat_json("system", "first batch") is None
+    assert not llm.usage.circuit_open
+    assert llm.chat_json("system", "second batch") is None
+    assert llm.usage.circuit_open
+    assert llm.usage.calls == 4

@@ -43,6 +43,13 @@ class LLM:
         self.timeout = max(1.0, float(os.environ.get("T4_MODEL_TIMEOUT_S", "40")))
         self.max_calls = min(25, max(0, int(os.environ.get("T4_MODEL_MAX_CALLS", "18"))))
         self.max_retries = max(1, int(os.environ.get("T4_MODEL_RETRIES", "2")))
+        self.circuit_failure_limit = min(
+            25,
+            max(
+                self.max_retries,
+                int(os.environ.get("T4_MODEL_CIRCUIT_FAILURES", "4")),
+            ),
+        )
         self.deadline_monotonic = deadline_monotonic
         self.consecutive_failures = 0
         self.usage = Usage()
@@ -145,8 +152,8 @@ class LLM:
                 self._record_failure(f"{type(exc).__name__}: {str(exc)[:180]}")
             if attempt + 1 < self.max_retries and self._remaining_seconds() > 1.0:
                 time.sleep(min(1.0, max(0.0, self._remaining_seconds())))
-        if self.consecutive_failures >= self.max_retries:
-            self._open_circuit("consecutive model failures reached retry limit")
+        if self.consecutive_failures >= self.circuit_failure_limit:
+            self._open_circuit("consecutive model failure circuit threshold reached")
         return None
 
     def _can_call(self) -> bool:

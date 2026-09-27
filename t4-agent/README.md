@@ -155,7 +155,7 @@ MODEL_NAME=house
 MODEL_TOKEN=<injected per-unit bearer>
 ```
 
-The client calls `$MODEL_ENDPOINT/v1/chat/completions`, batches up to three entities per request, defaults to 18 attempted calls per unit (with a hard maximum of 25), and caps `max_tokens` at 4,000. It first atomically writes a complete deterministic answer, then spends at most 420 seconds on model enhancement. Endpoint timeouts, rejected credentials, invalid model JSON, and trace failures therefore leave a schema-valid answer in place. In the official House environment it sends `chat_template_kwargs.enable_thinking=false` because the model is only extracting bounded evidence signals.
+The client calls `$MODEL_ENDPOINT/v1/chat/completions`, batches up to three entities per request, defaults to 18 attempted calls per unit (with a hard maximum of 25), and caps `max_tokens` at 4,000. It first atomically writes a complete deterministic answer, then spends at most 420 seconds on model enhancement. Each batch gets two attempts by default; four consecutive failures across batches open the circuit, while a successful response resets it. Endpoint timeouts, rejected credentials, invalid model JSON, and trace failures therefore leave a schema-valid answer in place. In the official House environment it sends `chat_template_kwargs.enable_thinking=false` because the model is only extracting bounded evidence signals.
 
 The safety limits can be tuned locally with `T4_MODEL_BATCH_SIZE`, `T4_MODEL_MAX_CALLS`, `T4_MODEL_TIMEOUT_S`, and `T4_MODEL_BUDGET_S`. Submission defaults stay below the official 25-call and 600-second ceilings.
 
@@ -194,7 +194,8 @@ For local simulations, start with:
 - 3K-6K input tokens per entity;
 - 300-800 output tokens per entity;
 - 5-10 retrieved chunks per entity;
-- one retry only when parsing fails.
+- one retry per batch by default; a separate four-failure circuit threshold prevents one bad batch
+  from disabling every later batch.
 
 For a 30-row task, this is usually around 90K-180K input and 9K-24K output. The organizers have not
 published an aggregate token allowance, so request count, 4,000 output tokens per request, the

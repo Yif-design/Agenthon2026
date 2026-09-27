@@ -18,8 +18,11 @@ The submitted path is a baseline-first bounded workflow:
    the enhanced answer is valid.
 
 This design uses at most 18 requests by default, a 420-second model phase, 40-second request
-timeouts and a circuit breaker. A failed API, invalid JSON or trace-write failure leaves the
-already-written baseline answer intact.
+timeouts and a circuit breaker. Each batch gets two attempts by default. The cross-batch circuit
+opens after four consecutive failures, so one malformed batch falls back without suppressing every
+later independent batch; a successful response resets the count. Authorization failures,
+non-retriable client errors, the request cap and the deadline still stop immediately. A failed API,
+invalid JSON or trace-write failure leaves the already-written baseline answer intact.
 
 ## Why this remains the baseline
 

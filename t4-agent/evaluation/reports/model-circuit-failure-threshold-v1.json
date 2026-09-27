@@ -1,0 +1,68 @@
+{
+  "baseline_git_commit": "5babec52e7f75a57210b95337b7e4db73ab65f1a",
+  "change": {
+    "candidate_circuit_failures": 4,
+    "default_request_cap": 18,
+    "hard_request_cap": 25,
+    "legacy_circuit_failures": 2,
+    "per_batch_retries": 2
+  },
+  "decision": "accept",
+  "deterministic_fault_injection": {
+    "candidate": "first batch returns fallback; circuit remains closed; second batch parses successfully on call 3 and resets failures",
+    "legacy_expected": "first batch returns fallback and disables every later batch",
+    "persistent_candidate": "circuit opens after call 4",
+    "persistent_sequence": [
+      "malformed JSON",
+      "malformed JSON",
+      "malformed JSON",
+      "malformed JSON"
+    ],
+    "transient_sequence": [
+      "malformed JSON",
+      "malformed JSON",
+      "valid JSON"
+    ]
+  },
+  "experiment": "model_circuit_failure_threshold_v1",
+  "free_model_replay": {
+    "baseline": {
+      "calls": 5,
+      "candidate_correct": 10,
+      "errors": [
+        "model returned content without one JSON object",
+        "model returned content without one JSON object",
+        "model returned content without one JSON object",
+        "consecutive model failures reached retry limit"
+      ],
+      "sha256": "68b5c236f858ab65f738d261d32e54b3e5708d5f128ae3c31546beca2717e05c",
+      "validated_label_quotes": 6
+    },
+    "candidate": {
+      "calls": 6,
+      "candidate_correct": 13,
+      "errors": [
+        "model returned content without one JSON object"
+      ],
+      "sha256": "36a30ff8cea697c5278cf120fb8f5e2e8a0045899c90c48f2d0c5827daca801e",
+      "validated_label_quotes": 12
+    },
+    "caveat": "Provider outputs were generated at different wall-clock times and are not deterministic; use only as corroborating completion evidence.",
+    "cost_usd": 0.0,
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "provider": "OpenRouter",
+    "seed": 1234,
+    "temperature": 0.0
+  },
+  "hypothesis": "Separating per-batch retry count from the cross-batch circuit threshold lets later independent batches recover without weakening request, deadline, authorization, or persistent-failure guards.",
+  "predictive_quality_claim": "none; engineering reliability improvement only",
+  "public_no_model": {
+    "byte_identical_units": 11,
+    "rows": 78,
+    "smoke_admissible_units": 11,
+    "units": 11
+  },
+  "reason": "A single malformed batch no longer suppresses unrelated later entities, persistent failures still stop after four attempts, all global budget/deadline/auth guards remain, and public offline behavior is unchanged.",
+  "schema_version": 1,
+  "tests": "51 passed"
+}

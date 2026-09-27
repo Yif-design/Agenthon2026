@@ -416,3 +416,25 @@ but did not make grouped structured output stable enough for a hidden-schema fal
 candidate needs an independent reliability mechanism, such as a smaller constrained response or a
 request-budget-aware retry policy, rather than another label-prompt wording change. Structured
 summary SHA-256: `46ef6da4770cbe3b665731ee2c9ae875a05235aadc9a5cfa859dc8494974e137`.
+
+### Cross-batch model circuit threshold — accepted
+
+A response-shape probe found that a healthy Nemotron analogue response placed complete JSON in
+`message.content`; `reasoning` was empty and the existing parser succeeded. There was therefore no
+evidence for reading a provider-specific alternate field or loosening JSON parsing. The shared
+failure was circuit policy: exhausting two attempts for one malformed batch immediately disabled
+all later, independently scoped batches in the unit.
+
+The candidate retains two attempts per batch but opens the shared circuit after four consecutive
+failures. A deterministic response sequence of malformed, malformed, valid now lets the first batch
+fall back and the next batch succeed on call three; four persistent malformed responses still open
+the circuit. Success resets the count. Authorization refusal, non-retriable client errors, the
+18-call default cap, 25-call hard cap and model-phase deadline remain unchanged.
+
+All 51 tests passed. Eleven fresh no-model public outputs were byte-identical to the tokenizer
+baseline and all eleven passed smoke with 78 rows. A non-simultaneous free-provider replay improved
+the synthetic unknown-label run from 6 to 12 validated quotes and from 10/13 to 13/13 labels while
+using six instead of five calls. Provider nondeterminism prevents attributing that numerical change
+solely to the circuit policy, so it is corroborating evidence only; the adoption claim is improved
+partial completion under deterministic injected failures, not predictive accuracy. Structured
+summary SHA-256: `232567285ec862ef357bab28de8734b9cdf205d1e8ff247b2af391b10aec1eb0`.
