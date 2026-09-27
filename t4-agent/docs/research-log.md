@@ -494,3 +494,19 @@ The direct GitHub HEAD check timed out during this cycle. The last verified offi
 shared-toolkit commits therefore remain the recorded snapshots; the installed official toolkit is
 still `qfbench2-common==2.4.4`. Current official web pages showed no scoring or runtime-boundary
 change relevant to this experiment.
+
+### EPS YoY recent-delta point v1 — rejected
+
+The accepted interval change left point accuracy untouched, so a second experiment asked whether the
+most recent filed quarter's YoY EPS delta predicts the target quarter. The feature builder required
+both the recent quarter and its comparable prior-year fact to be available before a seven-day
+pre-target-filing proxy cutoff. This yielded 1,509 rows from the same SEC panel. Development selected
+`prior target-quarter EPS + 0.25 * recent YoY delta` from four fixed damping coefficients.
+
+The candidate improved the inspected 2022–2023 subset: MAE fell from 1.7148 to 1.5564 USD/share and
+direction accuracy rose from 41.52% to 66.09%. It failed the locked 299-row 2024–2025 confirmation:
+direction accuracy rose from 38.46% to 61.20%, but MAE worsened from 1.2519 to 1.3073 and RMSE from
+5.9071 to 6.4416. The predeclared rule required both MAE and direction to improve, so no calculator
+change was made. The result also shows that direction persistence alone is insufficient for numeric
+EPS sizing. Structured report SHA-256:
+`c1dd14c000ff5be8cc6ad192e2d2acece4a0a0dd4ffb32e5b943a3586598ef66`.
