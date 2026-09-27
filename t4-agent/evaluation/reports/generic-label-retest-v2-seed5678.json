@@ -1,0 +1,170 @@
+{
+  "baseline_correct": 8,
+  "baseline_git_commit": "0a9682b21e04ec0bc91e941e9c238c55c3f18399",
+  "candidate_correct": 13,
+  "dataset": "13 synthetic rows across five unseen label schemas",
+  "decision_rule": "Advance only if two fixed seeds each score at least 12/13, validate all 13 label quotes, and stay within the 25-request unit limit.",
+  "experiment": "generic_grounded_direct_label_v2_retest",
+  "limitation": "Synthetic schema robustness evidence only; no real-outcome predictive claim.",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "retrieved_correct": 13,
+  "rows": [
+    {
+      "baseline": "high",
+      "baseline_correct": true,
+      "candidate": "high",
+      "candidate_correct": true,
+      "entity_id": "tier_high",
+      "expected": "high",
+      "group": "demand_tier",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "high",
+      "baseline_correct": false,
+      "candidate": "medium",
+      "candidate_correct": true,
+      "entity_id": "tier_medium",
+      "expected": "medium",
+      "group": "demand_tier",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "high",
+      "baseline_correct": false,
+      "candidate": "low",
+      "candidate_correct": true,
+      "entity_id": "tier_low",
+      "expected": "low",
+      "group": "demand_tier",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "upgrade",
+      "baseline_correct": true,
+      "candidate": "upgrade",
+      "candidate_correct": true,
+      "entity_id": "action_up",
+      "expected": "upgrade",
+      "group": "credit_action",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "unchanged",
+      "baseline_correct": true,
+      "candidate": "unchanged",
+      "candidate_correct": true,
+      "entity_id": "action_flat",
+      "expected": "unchanged",
+      "group": "credit_action",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "downgrade",
+      "baseline_correct": true,
+      "candidate": "downgrade",
+      "candidate_correct": true,
+      "entity_id": "action_down",
+      "expected": "downgrade",
+      "group": "credit_action",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "expand",
+      "baseline_correct": true,
+      "candidate": "expand",
+      "candidate_correct": true,
+      "entity_id": "capacity_expand",
+      "expected": "expand",
+      "group": "capacity_action",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "expand",
+      "baseline_correct": false,
+      "candidate": "hold",
+      "candidate_correct": true,
+      "entity_id": "capacity_hold",
+      "expected": "hold",
+      "group": "capacity_action",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "expand",
+      "baseline_correct": false,
+      "candidate": "contract",
+      "candidate_correct": true,
+      "entity_id": "capacity_contract",
+      "expected": "contract",
+      "group": "capacity_action",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "at_risk",
+      "baseline_correct": true,
+      "candidate": "at_risk",
+      "candidate_correct": true,
+      "entity_id": "risk_yes",
+      "expected": "at_risk",
+      "group": "covenant_risk",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "not_at_risk",
+      "baseline_correct": true,
+      "candidate": "not_at_risk",
+      "candidate_correct": true,
+      "entity_id": "risk_no",
+      "expected": "not_at_risk",
+      "group": "covenant_risk",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "pass",
+      "baseline_correct": true,
+      "candidate": "pass",
+      "candidate_correct": true,
+      "entity_id": "quality_pass",
+      "expected": "pass",
+      "group": "quality_gate",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    },
+    {
+      "baseline": "pass",
+      "baseline_correct": false,
+      "candidate": "fail",
+      "candidate_correct": true,
+      "entity_id": "quality_fail",
+      "expected": "fail",
+      "group": "quality_gate",
+      "retrieved_doc_correct": true,
+      "validated_label_quote": true
+    }
+  ],
+  "schema_version": 1,
+  "seed": 5678,
+  "temperature": 0.0,
+  "total_rows": 13,
+  "usage": {
+    "calls": 6,
+    "completion_tokens": 1617,
+    "cost": 0.0,
+    "errors": [
+      "model returned content without one JSON object"
+    ],
+    "prompt_tokens": 1549
+  },
+  "validated_label_quotes": 13
+}

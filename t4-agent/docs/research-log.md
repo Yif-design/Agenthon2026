@@ -400,3 +400,19 @@ faithfulness was 1.0 for auction, EPS YoY, the 2024 FOMC curve and post-earnings
 0.875 for credit event and bank EPS. All seven crossed the 0.80 gate. The two CPU members took
 1,490.6 and 2,855.0 seconds for 198 citation pairs each. The candidate was accepted. Structured
 summary SHA-256: `50dea380b4370bd6c178b31ccb9c561d20921a7611a8f29f506184fe3a25f3ba`.
+
+### Generic grounded direct label v2 retest — rejected
+
+The grouped direct-label experiment was rerun only after the shared tokenizer repair had been
+accepted. Both fixed-seed runs retrieved the correct entity document for all 13 synthetic rows, so
+the earlier retrieval confound was removed. The deterministic mapper remained at 8/13. Seed 1234
+reached 10/13 but validated only six exact label quotes after malformed JSON responses opened the
+model circuit. Seed 5678 reached 13/13 with all thirteen quotes validated. The runs used five and
+six free-provider calls and stayed below the official per-unit request cap.
+
+The pre-registered rule required both seeds to reach at least 12/13 and validate every quote. It
+failed, so no production direct-label code was introduced. Correct entity retrieval is necessary
+but did not make grouped structured output stable enough for a hidden-schema fallback. A future
+candidate needs an independent reliability mechanism, such as a smaller constrained response or a
+request-budget-aware retry policy, rather than another label-prompt wording change. Structured
+summary SHA-256: `46ef6da4770cbe3b665731ee2c9ae875a05235aadc9a5cfa859dc8494974e137`.

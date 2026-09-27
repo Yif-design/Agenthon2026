@@ -1,0 +1,57 @@
+{
+  "baseline_git_commit": "0a9682b21e04ec0bc91e941e9c238c55c3f18399",
+  "dataset": "13 synthetic rows across five unseen label schemas",
+  "decision": "reject_production_candidate",
+  "decision_rule": "Advance only if both fixed seeds score at least 12/13, validate all 13 label quotes, and stay within the 25-request unit limit.",
+  "experiment": "generic_grounded_direct_label_v2_retest",
+  "hypothesis": "After punctuation-normalized BM25 restores exact entity retrieval, grouped grounded direct-label selection will be stable across fixed seeds.",
+  "limitation": "Synthetic schema robustness evidence only; no real-outcome predictive claim.",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "production_change": "none",
+  "reason": "Retrieval was 13/13 in both runs, but seed 1234 produced only 10/13 correct labels and 6/13 validated quotes after malformed JSON opened the circuit. Seed 5678 reached 13/13, so corrected retrieval is necessary but not sufficient for stable direct-label production use.",
+  "runs": [
+    {
+      "baseline_correct": 8,
+      "candidate_correct": 10,
+      "report": "generic-label-retest-v2-seed1234.json",
+      "retrieved_correct": 13,
+      "seed": 1234,
+      "sha256": "68b5c236f858ab65f738d261d32e54b3e5708d5f128ae3c31546beca2717e05c",
+      "total_rows": 13,
+      "usage": {
+        "calls": 5,
+        "completion_tokens": 323,
+        "cost": 0.0,
+        "errors": [
+          "model returned content without one JSON object",
+          "model returned content without one JSON object",
+          "model returned content without one JSON object",
+          "consecutive model failures reached retry limit"
+        ],
+        "prompt_tokens": 554
+      },
+      "validated_label_quotes": 6
+    },
+    {
+      "baseline_correct": 8,
+      "candidate_correct": 13,
+      "report": "generic-label-retest-v2-seed5678.json",
+      "retrieved_correct": 13,
+      "seed": 5678,
+      "sha256": "32358e83ba637baec8b8a5aac0166862b642e4fff042229ed0f925ffefeb51f5",
+      "total_rows": 13,
+      "usage": {
+        "calls": 6,
+        "completion_tokens": 1617,
+        "cost": 0.0,
+        "errors": [
+          "model returned content without one JSON object"
+        ],
+        "prompt_tokens": 1549
+      },
+      "validated_label_quotes": 13
+    }
+  ],
+  "schema_version": 1,
+  "temperature": 0.0
+}
