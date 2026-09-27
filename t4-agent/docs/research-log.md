@@ -510,3 +510,21 @@ direction accuracy rose from 38.46% to 61.20%, but MAE worsened from 1.2519 to 1
 change was made. The result also shows that direction persistence alone is insufficient for numeric
 EPS sizing. Structured report SHA-256:
 `c1dd14c000ff5be8cc6ad192e2d2acece4a0a0dd4ffb32e5b943a3586598ef66`.
+
+### FOMC cutoff reaction and momentum v1 — rejected
+
+Official Federal Reserve research confirms that FOMC communication moves the Treasury curve, with
+the strongest immediate trading response generally at shorter maturities, while New York Fed work
+finds that long-horizon yield reactions can contain a distinct market-confidence shock. Those results
+motivated a cutoff-safe test of the first complete post-decision close and trailing 10/20-trading-day
+yield momentum. The candidate used only official Treasury closes available by the public tasks'
+next-day cutoff pattern.
+
+The fixed historical split contained 102 training-era events through 2015, 24 development events in
+2016–2018 and 26 untouched test events in 2019–2021. Development selected a full reversal of the
+cutoff-day yield move. It reduced development MAE from the better production baseline's 14.9375 to
+14.6528 bps. On held-out test, however, candidate MAE was 14.4679 bps versus 14.2244 for the
+zero-change baseline, a 1.71% regression. Direction accuracy improved from the better directional
+baseline's 13.46% to 44.23%, but the predeclared rule required at least 2% MAE improvement as well.
+The candidate was rejected and `rates.py` was unchanged. Structured report SHA-256:
+`e7cc65f36c64f62a97b98fb1d9d83f460b4089b7fdc5cf9c0ad65436fee027e3`.
