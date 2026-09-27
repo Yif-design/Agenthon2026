@@ -453,3 +453,44 @@ passed. Eleven fresh no-model public answers were byte-identical to the precedin
 eleven passed official smoke with 78 rows. The candidate was accepted as an evidence-isolation and
 typed-intermediate reliability improvement; it makes no predictive-accuracy claim. Structured
 summary SHA-256: `d632d73de1a900b431e664d37e78b4bd2586fed445a9c8a2e620e4bc384237f3`.
+
+### EPS YoY interval calibration v1 — accepted
+
+The preceding generic and shared-architecture audits were complete, so the next family cycle targeted
+EPS YoY direction: its retired public labels were all correct, but only three of six numeric outcomes
+fell inside the declared 90% intervals. The SEC Company Concept API supplied standard diluted-EPS
+facts with explicit period, filing date and accession metadata. A deterministic builder kept only
+approximately single-quarter 10-Q contexts, selected the earliest filing for repeated comparative
+facts and required the prior filing to predate the target quarter. A pre-adoption audit found split
+and retrospective recast artifacts, so the final builder also requires the target filing's prior
+comparator to match the originally filed value within the larger of $0.01 or 1%. It removed 139
+incomparable pairs and six without a comparator, leaving 2,321 rows across 88 companies through
+2025. A cache-only rebuild was byte-identical at SHA-256
+`d192f63d6008677a4cf69f2d4af0b5eae27125a256629e02849e0b9f223fa307`.
+
+The split was fixed at 2015–2019 train, 2020–2021 development and a one-time 2022–2023 test. To avoid
+assuming perfect model direction, interval selection centered each row on the production fallback
+point used when no positive signal is accepted. Development selected half-width
+`max(2.75, 1.15 * abs(prior EPS))`, with exactly 90.0% coverage. On the 444-row test,
+coverage rose from 25.23% to 93.69%, cutting absolute calibration error from 64.77 to 3.69 percentage
+points. The mean full width rose from 0.753 to 8.438 USD/share; this is material and recorded because the
+official composite has no width penalty.
+
+The split/recast audit was introduced after inspecting that 2022–2023 test, so the test is not
+described as untouched. The extraction rule and candidate were frozen before reading a separate
+457-row 2024–2025 confirmation set. Confirmation coverage rose from 24.95% to 95.84%, reducing
+absolute calibration error from 65.05 to 5.84 percentage points; mean full width was 6.746
+USD/share. No parameter changed after that read.
+
+Only tasks at or after 2022-01-01 receive the fitted rule. Earlier cutoffs retain the preceding
+interval. On the retired six-row public diagnostic, coverage moved from 50% to 100% and unit
+composite from 0.58 to 0.67. Across all eleven units, mean pre-gate composite moved from 0.1878 to
+0.1959. Exactly six `interval` objects changed; every point, label and claim was identical, so the
+existing official two-member NLI evidence result remains applicable. All 54 tests passed, and fresh
+model-free plus saved-signal outputs both passed official smoke for 11/11 units and 78/78 rows.
+Structured comparison SHA-256: `147f34b16e9ff57809163c6330535afae498a5e2a8c2e7bab4e3b340275202ea`.
+
+The direct GitHub HEAD check timed out during this cycle. The last verified official Track 4 and
+shared-toolkit commits therefore remain the recorded snapshots; the installed official toolkit is
+still `qfbench2-common==2.4.4`. Current official web pages showed no scoring or runtime-boundary
+change relevant to this experiment.

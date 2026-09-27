@@ -93,6 +93,37 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(result.point, 1.5)
         self.assertEqual(result.label, "inline")
 
+    def test_eps_yoy_uses_cutoff_safe_calibrated_interval(self) -> None:
+        current = task("eps_yoy_direction", "classification", ["up", "down"])
+        result = solve_minimal(
+            current,
+            {"prior_year_q_eps": 2.0},
+            SPECS["eps_yoy"],
+            {"yoy_earnings_signal": 1},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        self.assertAlmostEqual(result.point, 2.1)
+        self.assertEqual(result.label, "up")
+        self.assertAlmostEqual(result.interval["lo"], -0.65)
+        self.assertAlmostEqual(result.interval["hi"], 4.85)
+        self.assertTrue(result.derivation["calibrated_artifact_available"])
+
+        historical = solve_minimal(
+            replace(current, cutoff_date="2021-12-31"),
+            {"prior_year_q_eps": 2.0},
+            SPECS["eps_yoy"],
+            {"yoy_earnings_signal": 1},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        self.assertAlmostEqual(historical.point, result.point)
+        self.assertAlmostEqual(historical.interval["lo"], 1.8)
+        self.assertAlmostEqual(historical.interval["hi"], 2.4)
+        self.assertFalse(historical.derivation["calibrated_artifact_available"])
+
     def test_eps_consensus_only_strong_signal_crosses_threshold(self) -> None:
         current = task("eps_outcome", "classification", ["beat", "miss", "inline"])
         mild = solve_minimal(

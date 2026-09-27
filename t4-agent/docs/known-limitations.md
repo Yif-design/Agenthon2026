@@ -8,7 +8,12 @@
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
-- Accepted interval changes lift diagnostic mean coverage to 66.4%, still below the 90% target.
+- Accepted interval changes lift diagnostic mean coverage to 70.9%, still below the 90% target.
+- The EPS YoY interval is deliberately broad: mean full width was 8.44 USD/share on the inspected
+  2022–2023 test and 6.75 on the locked 2024–2025 confirmation. The official score penalizes only
+  coverage error and has no width or sharpness term. The rule is independently confirmed and
+  width-minimal within the selected grid, but it should not be interpreted as a tight economic
+  confidence bound.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
 - The generic hidden-family path now has target-field, numeric-noise, row-order and change-vs-level
   robustness tests, but no broad real-outcome benchmark. Its field selection is lexical and does not

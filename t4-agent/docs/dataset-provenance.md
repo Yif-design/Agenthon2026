@@ -66,6 +66,39 @@ Twelve selected historical/current symbols failed Yahoo resolution and remain in
 with their HTTP errors. Selection happened before price download and never inspected returns. Raw CSV
 and Yahoo responses are git-ignored cache files; derived events retain the SEC accession and source URL.
 
+## Quarterly diluted-EPS year-over-year panel
+
+- Local file: `evaluation/datasets/eps_yoy/quarterly_diluted_eps_2015_2025.json`
+- Dataset SHA-256: `d192f63d6008677a4cf69f2d4af0b5eae27125a256629e02849e0b9f223fa307`
+- Primary source: SEC EDGAR Company Concept API, standard
+  `us-gaap:EarningsPerShareDiluted` facts
+- Source documentation: <https://www.sec.gov/search-filings/edgar-application-programming-interfaces>
+- Universe: all 88 ticker-resolvable companies in the pre-existing post-earnings panel
+- Coverage: 2,321 comparable same-company year-over-year quarter pairs with target periods from
+  2015–2025
+- Split: 980 train rows in 2015–2019, 440 development rows in 2020–2021, and a one-time
+  444-row test in 2022–2023; 457 confirmation rows in 2024–2025
+- Runtime availability: the selected interval constants are enabled only for task cutoffs on or
+  after 2022-01-01
+
+The builder accepts only 10-Q facts with 60–120 day contexts, keeps the earliest filed version of
+each reporting period, pairs periods 330–400 days apart, and requires the prior filing to predate
+the target quarter. It also requires the target filing's comparative prior-quarter EPS to match the
+original prior filing within the larger of $0.01 or 1%. This removes 139 split/recast basis changes
+and six rows without a comparator instead of treating unit changes as forecast errors. It excludes
+`abs(prior EPS) < 0.05`, where a relative-width rule is unstable; this filter uses only the
+already-public feature. Every retained row stores the comparator, tolerance, both filing dates,
+accessions and SEC endpoint. Raw SEC responses are a git-ignored cache. Rebuilding from that cache
+produced the tracked dataset byte-for-byte.
+
+Interval selection used the current no-positive-signal fallback point so calibration does not assume
+that the text model gets direction right. Among a fixed grid, development selected half-width
+`max(2.75 USD/share, 1.15 * abs(prior EPS))`. The official score has no interval-width term, but the
+selection still minimizes mean width after matching 90% development coverage. The 2022–2023 test
+was read after selection but before the comparability audit was added, so it is not claimed as a
+pristine holdout. Extraction and candidate were then locked before the one-time 2024–2025
+confirmation read.
+
 ## CFTC legacy futures-only positioning panel
 
 - Local file: `evaluation/datasets/cot/legacy10_2015_2023.json`

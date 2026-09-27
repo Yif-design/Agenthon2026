@@ -293,3 +293,13 @@ Auction calibration tested on 2026-09-27:
 - an untouched 70-auction 2024 confirmation reduced MAE by 13.68% and interval calibration error
   from 0.0714 to 0.0286;
 - all 33 tests pass and all 11 public units remain smoke-admissible with 78/78 rows.
+
+EPS YoY interval calibration tested on 2026-09-27:
+
+- 2,321 SEC first-filed, split/recast-comparable quarterly diluted-EPS pairs were split forward into
+  train, development, test and confirmation periods;
+- coverage improved from 25.2% to 93.7% on 2022–2023 and from 24.9% to 95.8% on the locked
+  2024–2025 confirmation, without changing labels or point forecasts;
+- the calibrated rule is cutoff-gated to 2022-01-01 and later tasks;
+- all 54 tests pass and both fresh offline and saved-signal answers pass official smoke for all
+  11 public units and 78 rows.
