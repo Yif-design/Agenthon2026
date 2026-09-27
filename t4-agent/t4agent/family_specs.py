@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import re
 from dataclasses import dataclass
 
 
@@ -180,28 +181,54 @@ SPECS: dict[str, FamilySpec] = {
 
 
 def family_spec(family: str, target_name: str) -> FamilySpec:
-    text = f"{family} {target_name}".lower()
-    if target_name == "eps_outcome" or "eps_beat_consensus" in text:
+    family_tokens = _route_tokens(family)
+    target_tokens = _route_tokens(target_name)
+    if (
+        target_name == "eps_outcome"
+        or _has_sequence(family_tokens, ("eps", "beat", "consensus"))
+        or _has_sequence(target_tokens, ("eps", "beat", "consensus"))
+    ):
         return SPECS["eps_consensus"]
-    if target_name == "eps_yoy_direction":
+    if target_name == "eps_yoy_direction" or _has_sequence(family_tokens, ("eps", "yoy", "direction")):
         return SPECS["eps_yoy"]
     if target_name == "eps_yoy_growth_pct":
         return SPECS["bank_eps"]
-    if "credit_event" in text:
+    if _has_sequence(family_tokens, ("credit", "event")) or _has_sequence(target_tokens, ("credit", "event")):
         return SPECS["credit"]
-    if "earnings_reaction" in text or "post_earnings_reaction" in text:
+    if _has_sequence(family_tokens, ("earnings", "reaction")) or _has_sequence(
+        target_tokens, ("earnings", "reaction")
+    ):
         return SPECS["reaction"]
-    if "yield_change_bps" in text or "rate_curve" in text:
+    if _has_sequence(target_tokens, ("yield", "change", "bps")) or _has_sequence(
+        family_tokens, ("rate", "curve")
+    ):
         return SPECS["rates"]
-    if "cpi_component" in text:
+    if _has_sequence(family_tokens, ("cpi", "component")) or _has_sequence(target_tokens, ("cpi", "component")):
         return SPECS["cpi"]
-    if "revision" in text:
+    if _has_sequence(family_tokens, ("macro", "revision")) or _has_sequence(
+        target_tokens, ("estimate", "revision")
+    ):
         return SPECS["macro_revision"]
-    if "bid_to_cover" in text or "auction" in text:
+    if _has_sequence(target_tokens, ("bid", "to", "cover")) or _has_sequence(
+        family_tokens, ("auction", "demand")
+    ):
         return SPECS["auction"]
-    if "position" in text or "cot" in text:
+    if (
+        _has_sequence(family_tokens, ("positioning", "shift"))
+        or _has_sequence(family_tokens, ("cftc", "positioning"))
+        or _has_sequence(target_tokens, ("net", "positioning", "change"))
+    ):
         return SPECS["positioning"]
     return SPECS["generic"]
+
+
+def _route_tokens(value: str) -> tuple[str, ...]:
+    return tuple(re.findall(r"[a-z0-9]+", value.lower()))
+
+
+def _has_sequence(tokens: tuple[str, ...], sequence: tuple[str, ...]) -> bool:
+    width = len(sequence)
+    return any(tokens[index : index + width] == sequence for index in range(len(tokens) - width + 1))
 
 
 def project_entity(entity: dict[str, object], spec: FamilySpec) -> dict[str, object]:

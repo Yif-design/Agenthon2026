@@ -1,0 +1,295 @@
+{
+  "baseline_git_commit": "6d5d731c1505e62e56737541927c87b32b631d99",
+  "candidate": {
+    "calculator_changes": 0,
+    "fallback": "generic",
+    "matching": "contiguous complete lowercase alphanumeric token sequences",
+    "model_requests_added": 0,
+    "prompt_changes": 0
+  },
+  "collision_cases": [
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "inventory_forecast",
+      "legacy": "positioning",
+      "target": "inventory_position_rank"
+    },
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "housing",
+      "legacy": "auction",
+      "target": "auction_price_change"
+    },
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "equity_research",
+      "legacy": "macro_revision",
+      "target": "analyst_revision_probability"
+    },
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "agriculture",
+      "legacy": "positioning",
+      "target": "cotton_yield_rank"
+    },
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "marketing",
+      "legacy": "credit",
+      "target": "credit_eventual_return"
+    },
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "sports",
+      "legacy": "rates",
+      "target": "rate_curveball_score"
+    },
+    {
+      "candidate": "generic",
+      "candidate_generic": true,
+      "family": "supply_chain",
+      "legacy": "positioning",
+      "target": "positioning_of_inventory"
+    }
+  ],
+  "date": "2026-09-28",
+  "decision": "accept",
+  "decision_reason": "All published and anchored known signatures retain their specialists, all seven incidental-substring collisions fall back generic, no model cost is added, and every public answer remains byte-identical.",
+  "decision_rule": "Require every public and anchored-variant route to remain correct, all seven incidental-substring cases to route generic, byte-identical public outputs and no added model calls.",
+  "experiment": "router_signature_collision_v1",
+  "hypothesis": "Complete target/family token signatures retain known tools while preventing incidental substrings in unseen targets from bypassing the generic path.",
+  "known_cases": [
+    {
+      "actual": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "family": "eps_beat_consensus",
+      "source": "public",
+      "target": "eps_outcome"
+    },
+    {
+      "actual": "auction",
+      "correct": true,
+      "expected": "auction",
+      "family": "auction_demand",
+      "source": "public",
+      "target": "bid_to_cover_ratio"
+    },
+    {
+      "actual": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "family": "positioning_shift",
+      "source": "public",
+      "target": "net_positioning_change_pct_oi_rank"
+    },
+    {
+      "actual": "cpi",
+      "correct": true,
+      "expected": "cpi",
+      "family": "cpi_component_nowcast",
+      "source": "public",
+      "target": "cpi_component_mom_first_print"
+    },
+    {
+      "actual": "credit",
+      "correct": true,
+      "expected": "credit",
+      "family": "credit_event",
+      "source": "public",
+      "target": "credit_event_12m"
+    },
+    {
+      "actual": "bank_eps",
+      "correct": true,
+      "expected": "bank_eps",
+      "family": "eps_growth_regression",
+      "source": "public",
+      "target": "eps_yoy_growth_pct"
+    },
+    {
+      "actual": "eps_yoy",
+      "correct": true,
+      "expected": "eps_yoy",
+      "family": "eps_yoy_direction",
+      "source": "public",
+      "target": "eps_yoy_direction"
+    },
+    {
+      "actual": "rates",
+      "correct": true,
+      "expected": "rates",
+      "family": "rate_curve_cross_section",
+      "source": "public",
+      "target": "yield_change_bps_intermeeting"
+    },
+    {
+      "actual": "macro_revision",
+      "correct": true,
+      "expected": "macro_revision",
+      "family": "macro_revision_direction",
+      "source": "public",
+      "target": "next_estimate_revision_direction"
+    },
+    {
+      "actual": "reaction",
+      "correct": true,
+      "expected": "reaction",
+      "family": "post_earnings_reaction",
+      "source": "public",
+      "target": "earnings_reaction"
+    },
+    {
+      "actual": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "family": "eps_beat_consensus_v2",
+      "source": "variant",
+      "target": "future_eps_class"
+    },
+    {
+      "actual": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "family": "",
+      "source": "variant",
+      "target": "eps_beat_consensus_probability"
+    },
+    {
+      "actual": "credit",
+      "correct": true,
+      "expected": "credit",
+      "family": "credit_event_cross_section",
+      "source": "variant",
+      "target": "event_probability"
+    },
+    {
+      "actual": "reaction",
+      "correct": true,
+      "expected": "reaction",
+      "family": "post_earnings_reaction_v2",
+      "source": "variant",
+      "target": "abnormal_return_class"
+    },
+    {
+      "actual": "rates",
+      "correct": true,
+      "expected": "rates",
+      "family": "rate_curve_scenario",
+      "source": "variant",
+      "target": "tenor_move"
+    },
+    {
+      "actual": "cpi",
+      "correct": true,
+      "expected": "cpi",
+      "family": "cpi_component_forecast",
+      "source": "variant",
+      "target": "first_print"
+    },
+    {
+      "actual": "macro_revision",
+      "correct": true,
+      "expected": "macro_revision",
+      "family": "macro_revision_panel",
+      "source": "variant",
+      "target": "direction"
+    },
+    {
+      "actual": "auction",
+      "correct": true,
+      "expected": "auction",
+      "family": "auction_demand_panel",
+      "source": "variant",
+      "target": "ratio"
+    },
+    {
+      "actual": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "family": "positioning_shift_panel",
+      "source": "variant",
+      "target": "rank"
+    },
+    {
+      "actual": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "family": "cftc_positioning_panel",
+      "source": "variant",
+      "target": "rank"
+    }
+  ],
+  "layer": "L1/L2 target-family routing and unknown-family isolation",
+  "limitations": [
+    "Synthetic collision/variant robustness only; hidden naming conventions are unavailable.",
+    "A genuinely related hidden task with an unpublished synonym may use generic instead of a specialist."
+  ],
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "reason": "Deterministic router boundary experiment.",
+    "requests": 0
+  },
+  "not_measured": "Predictive quality for organizer-hidden family names; variants and collisions are synthetic routing tests.",
+  "official_references": [
+    {
+      "finding": "Most hidden families have no published counterpart; published units are format exemplars rather than a syllabus.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md"
+    }
+  ],
+  "official_snapshots": {
+    "open_track4_issues_changed": false,
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "public_ab": {
+    "answers_byte_identical": 11,
+    "gate_inference": "Byte-identical to the current committed baseline with recorded smoke and public official-local-NLI passage; no new NLI result is claimed.",
+    "model_mode": "disabled",
+    "report": "evaluation/reports/router-signature-public-ab-v1.json",
+    "report_sha256": "80a11877b0b33143539cc83d9153a0021f002ad1112a4186921ded1528723d4a",
+    "rows": 78,
+    "units": 11
+  },
+  "public_references": [
+    {
+      "license": "MIT",
+      "method": "Strong-RAG task pass-through with no reusable specialist router.",
+      "url": "https://github.com/wangzgui/agenthon-t4-baseline-2026",
+      "used": "Architecture comparison only."
+    },
+    {
+      "license": "MIT",
+      "method": "Strong-RAG evidence-council prompt with no reusable specialist router.",
+      "url": "https://github.com/dungcao06/optivex-t4-agent",
+      "used": "Architecture comparison only."
+    }
+  ],
+  "results": {
+    "candidate_collisions_to_generic": 7,
+    "collision_total": 7,
+    "known_correct": 20,
+    "known_total": 20,
+    "legacy_collision_misroutes": 7,
+    "public_correct": 10,
+    "public_total": 10,
+    "variant_correct": 10,
+    "variant_total": 10
+  },
+  "schema_version": 1,
+  "tests": {
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "pytest": "71 passed"
+  }
+}

@@ -38,6 +38,38 @@ class FamilySpecTests(unittest.TestCase):
         self.assertEqual(family_spec("", "bid_to_cover_ratio").key, "auction")
         self.assertEqual(family_spec("", "cpi_component_mom_first_print").key, "cpi")
 
+    def test_router_uses_complete_signatures_instead_of_substrings(self) -> None:
+        collisions = [
+            ("inventory_forecast", "inventory_position_rank"),
+            ("housing", "auction_price_change"),
+            ("equity_research", "analyst_revision_probability"),
+            ("agriculture", "cotton_yield_rank"),
+            ("marketing", "credit_eventual_return"),
+            ("sports", "rate_curveball_score"),
+            ("supply_chain", "positioning_of_inventory"),
+        ]
+
+        self.assertEqual([family_spec(family, target).key for family, target in collisions], ["generic"] * 7)
+
+    def test_router_accepts_anchored_known_family_variants(self) -> None:
+        cases = [
+            ("eps_beat_consensus_v2", "future_eps_class", "eps_consensus"),
+            ("", "eps_beat_consensus_probability", "eps_consensus"),
+            ("credit_event_cross_section", "event_probability", "credit"),
+            ("post_earnings_reaction_v2", "abnormal_return_class", "reaction"),
+            ("rate_curve_scenario", "tenor_move", "rates"),
+            ("cpi_component_forecast", "first_print", "cpi"),
+            ("macro_revision_panel", "direction", "macro_revision"),
+            ("auction_demand_panel", "ratio", "auction"),
+            ("positioning_shift_panel", "rank", "positioning"),
+            ("cftc_positioning_panel", "rank", "positioning"),
+        ]
+
+        self.assertEqual(
+            [family_spec(family, target).key for family, target, _ in cases],
+            [expected for _, _, expected in cases],
+        )
+
     def test_signal_normalization_clamps_and_defaults(self) -> None:
         parsed = {"signals": {"target_period_earnings_signal": {"level": 9}}}
         self.assertEqual(normalize_signals(parsed, SPECS["eps_consensus"]), {"target_period_earnings_signal": 2})

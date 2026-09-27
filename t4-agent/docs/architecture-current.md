@@ -130,6 +130,13 @@ prompt for explicit rules such as “zeta when throughput climbs.” If no uniqu
 falls back to the preceding deterministic allowed-label rule. The mapper neither asks the model for
 a final label nor adds a request; known-family label calculators remain isolated.
 
+Family routing uses complete token signatures from `family` and `target.name`, such as
+`credit event`, `rate curve`, `bid to cover` and `net positioning change`. A lone ambiguous token or
+a substring inside another word does not activate a specialist. This prevents targets such as
+`inventory_position_rank`, `credit_eventual_return` or `cotton_yield_rank` from losing their unknown
+fields and entering an unrelated calculator. Published signatures and anchored family variants keep
+their specialist routes; unmatched tasks use the generic path.
+
 BM25 tokenization removes sentence-edge punctuation while preserving financial forms such as
 `$5.28`, `10%`, `2024-10-31` and `year-over-year`. This makes a query token such as `action_flat`
 match the same identifier at the end of a sentence instead of assigning every zero-score query the

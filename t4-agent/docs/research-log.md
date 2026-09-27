@@ -680,3 +680,33 @@ wrong or the task describes label semantics indirectly. Reports:
 
 References: <https://github.com/wangzgui/agenthon-t4-baseline-2026> and
 <https://github.com/dungcao06/optivex-t4-agent>.
+
+### Anchored family routing — accepted
+
+The official repositories and `v2.4.4` tag remained unchanged. Official documentation again states
+that most hidden families have no public counterpart. The official minimal baseline handles only a
+narrow EPS rule, while the newly inspected MIT `wangzgui/agenthon-t4-baseline-2026` and the earlier
+MIT Optivex agent send the task directly to a strong-RAG model and provide no reusable specialist
+router. No external routing code was copied.
+
+Our router previously used raw substring tests. A seven-case collision audit showed seven false
+specialist routes: `inventory_position_rank`, `auction_price_change`,
+`analyst_revision_probability`, `cotton_yield_rank`, `credit_eventual_return`,
+`rate_curveball_score` and `positioning_of_inventory` all bypassed generic handling. That could
+drop unknown fields, select an unrelated corpus scope and execute the wrong calculator.
+
+The candidate matches complete token sequences in `family` and `target.name`. Ten unique public
+family/target pairs and ten anchored variants retained their expected specialist, while all seven
+collisions moved to generic. All 71 tests passed. A fresh final-candidate A/B produced byte-identical
+answers on 11/11 public units, so existing smoke and local official-NLI evidence is unchanged. No
+model request, prompt or formula changed.
+
+The candidate was accepted as an unknown-family isolation improvement. It deliberately prefers a
+generic fallback when a genuinely related hidden task uses an unpublished synonym; the limitation
+is recorded rather than offset with more loose keywords. Reports:
+`evaluation/reports/router-signature-collision-v1.json` and
+`evaluation/reports/router-signature-public-ab-v1.json`.
+
+References: <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md>,
+<https://github.com/wangzgui/agenthon-t4-baseline-2026>, and
+<https://github.com/dungcao06/optivex-t4-agent>.
