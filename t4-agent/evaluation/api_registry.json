@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-28",
   "apis": [
     {
       "id": "house",
@@ -18,6 +18,9 @@
       "credential": "git-ignored project secret",
       "credential_validated": true,
       "account_tier": "free",
+      "last_observed_daily_request_limit": 50,
+      "last_observed_exhausted_at": "2026-09-28",
+      "last_observed_reset_at": "2026-09-28T00:00:00Z",
       "free_exact_family_model_available": true,
       "incremental_cost_in_baseline_run_usd": 0,
       "official_evaluation_accessible": false

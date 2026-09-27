@@ -546,3 +546,45 @@ All five 2026 confirmation meetings held the target range unchanged, so candidat
 identical: both covered 100% of 30 rows and had 0.10 calibration loss. The predeclared rule required
 strictly lower confirmation loss. The candidate was therefore rejected and `rates.py` was not
 changed. Dataset SHA-256: `d51d0b231c0df5312dae367e802aa445b06f921d13ba9e0a03e1b710162b4580`. Structured report SHA-256: `4d5d2abed8d7d445e643721fc3f16d1b6e0dd959053ac7f8e6c61ba620e83783`.
+
+### Public Agenthon repositories and evidence-ID probe — deferred, candidate rejected
+
+Two public participant implementations were inspected. `dungcao06/optivex-t4-agent` is MIT-licensed
+and wraps the official strong-RAG baseline with a single-prompt “evidence council”: predictor,
+evidence reviewer, calibration reviewer and admission guard. It still asks the model for final
+per-entity forecasts and does not publish outcome-based calibration evidence. Our complete-roster
+and batch-of-three direct/hybrid experiments already reduced predictive quality, so that prompt
+architecture was documented but not repeated.
+
+The MIT-licensed `youxuanxue/track4-analysis-public` fork contains a much larger evaluation harness
+and a generic evidence-ID mechanism. Its PR 4 reports that a bundled change using Qwen2.5-7B,
+strict JSON schema, evidence IDs and retrieval filters moved accepted model rows from 28/78 to
+78/78 and reduced elapsed time from 1,200.06 to 500.44 seconds. The raw outputs are outside the
+repository, the change bundles several mechanisms, and the commit history includes public-unit
+tuning and former output locks. We therefore treated it as a hypothesis source, not independent
+proof, and copied no task-specific predictions or constants.
+
+An evidence-ID-only toggle was implemented locally: the model selected `E1`, `E2`, and so on from
+the already scoped retrieval packet, while code restored the exact document text and span. Forty-two
+focused tests passed, including fail-closed unknown IDs. A free exact-family Nemotron probe completed
+one paired EPS case: both paths stayed neutral with the same final prediction, while completion
+tokens fell from 213 to 156. In credit, the legacy path had one malformed JSON response and one
+exact-quote rejection. The candidate's completed subset had no quote rejection, but two of its
+three calls received HTTP 429 after the provider's free daily allowance was exhausted. Both rates
+runs then received 429. These are asymmetric samples and cannot satisfy the preregistered cross-type
+rule.
+
+The candidate was rolled back and is not part of production. The structured report is
+`evaluation/reports/public-repo-evidence-id-probe-v1.json`. No local language model was downloaded
+or run; after the user's compute preference was clarified, the temporary inference-binary download
+was deleted. Future model experiments use remote free capacity or the official House API unless the
+user explicitly changes that preference.
+
+References: <https://github.com/dungcao06/optivex-t4-agent>,
+<https://github.com/youxuanxue/track4-analysis-public>, and
+<https://github.com/youxuanxue/track4-analysis-public/pull/4>.
+
+The official Track 4 main commit remains `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`.
+New issue 16 documents a separate macOS image-layer failure: `com.apple.provenance` in a layer can
+make organizer Linux workers fail to unpack an image. Our GHCR workflow builds on `ubuntu-latest`
+from a fresh checkout and does not create a macOS tar layer, so no pipeline change was needed.

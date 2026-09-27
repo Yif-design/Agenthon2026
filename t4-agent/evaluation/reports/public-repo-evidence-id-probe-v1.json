@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-28",
+  "baseline_git_commit": "9dbc4e7",
+  "hypothesis": "Prompt-local evidence IDs let a small model select grounded evidence more reliably than copying exact quotes.",
+  "public_references": [
+    {
+      "name": "optivex-t4-agent",
+      "url": "https://github.com/dungcao06/optivex-t4-agent",
+      "license": "MIT",
+      "method": "Per-entity direct prediction with an evidence-council prompt and exact-quote review."
+    },
+    {
+      "name": "youxuanxue/track4-analysis-public",
+      "url": "https://github.com/youxuanxue/track4-analysis-public",
+      "license": "MIT",
+      "method": "Prompt-local evidence IDs, programmatic span restoration and strict JSON schema; PR 4 reports a Qwen2.5-7B adoption change from 28/78 to 78/78 in a bundled local experiment."
+    }
+  ],
+  "candidate": {
+    "scope": "Evidence IDs only; strict server-side JSON schema was intentionally excluded so one mechanism was tested.",
+    "files_temporarily_modified": [
+      "t4agent/evidence.py",
+      "t4agent/predict.py",
+      "tests/test_evidence_pipeline.py"
+    ],
+    "unit_tests": {"passed": 42, "failed": 0}
+  },
+  "remote_probe": {
+    "provider": "OpenRouter",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "temperature": 0.0,
+    "seed": 1234,
+    "cost_usd": 0.0,
+    "eps_example": {
+      "baseline": {"calls": 1, "completion_tokens": 213, "validated_non_context_facts": 0, "rejected_facts": 0},
+      "candidate": {"calls": 1, "completion_tokens": 156, "validated_non_context_facts": 0, "rejected_facts": 0},
+      "final_prediction_equal": true
+    },
+    "credit_event": {
+      "baseline": {"calls": 3, "request_errors": 0, "parse_errors": 1, "validated_non_context_facts": 1, "quote_rejections": 1},
+      "candidate": {"calls": 3, "request_errors_429": 2, "validated_non_context_facts": 2, "quote_rejections": 0},
+      "comparison_valid": false
+    },
+    "rates": {
+      "baseline_request_errors_429": 1,
+      "candidate_request_errors_429": 1,
+      "comparison_valid": false
+    },
+    "quota_observation": "The free-model daily allowance was exhausted during the candidate credit run; the response reported a 50-request daily tier and reset at 2026-09-28T00:00:00Z."
+  },
+  "leakage_review": {
+    "risk": "The fork history contains public-unit tuning and former output locks.",
+    "mitigation": "No task-specific constants, locked predictions, resolved outcomes or private artifacts were copied. Only the generic evidence-ID mechanism was reimplemented."
+  },
+  "decision": "defer_and_reject_current_candidate",
+  "reason": "The only complete paired case was neutral and unchanged. The informative credit and rates comparisons became asymmetric after the free API quota was exhausted, so the predeclared cross-type acceptance rule could not be evaluated.",
+  "production_change": "none",
+  "local_compute_policy": "No local language model was downloaded or run. Future model experiments use remote free or official APIs unless the user explicitly changes this preference."
+}

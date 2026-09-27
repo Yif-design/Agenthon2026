@@ -1,6 +1,6 @@
 # Model API notes
 
-Last updated: 2026-09-26
+Last updated: 2026-09-28
 
 ## Official House
 
@@ -25,6 +25,11 @@ official `rl-030326-fp8` serving snapshot.
 The free endpoint requires a provider that may collect prompts for training. Public competition
 corpus experiments may opt in with `T4_MODEL_ALLOW_DATA_COLLECTION=1`. The default remains denial.
 Never enable this option for private or sensitive inputs.
+
+On 2026-09-28 the free-model endpoint reported a 50-request daily allowance and returned HTTP 429
+after it was exhausted, with a reset timestamp of `2026-09-28T00:00:00Z`. This is an observed
+provider condition, not a stable contract. Experiments must stop on 429 and must not compare a
+partially served candidate with a fully served baseline.
 
 OpenRouter and House use different thinking controls. The client maps:
 
@@ -51,3 +56,10 @@ python -m t4agent.cli analyze --task TASK --corpus CORPUS --out ANSWER
 ```
 
 No key value may appear in commands committed to the repository, logs, traces or reports.
+
+## Local compute preference
+
+Do not download or run local language models on the user's machine. Local unit tests, deterministic
+calculators and official NLI checks already installed for the project remain normal development
+work; language-model inference should use a legitimate remote free endpoint or the official House
+API. Revisit local LLM inference only if the user explicitly changes this preference.
