@@ -588,3 +588,32 @@ The official Track 4 main commit remains `7b2bce1d80d96f5d5667d7f67bfaa945fa5d14
 New issue 16 documents a separate macOS image-layer failure: `com.apple.provenance` in a layer can
 make organizer Linux workers fail to unpack an image. Our GHCR workflow builds on `ubuntu-latest`
 from a fresh checkout and does not create a macOS tar layer, so no pipeline change was needed.
+
+### Safe `corpus_ref` subtree scope — accepted
+
+The official snapshot and open issues were checked again on 2026-09-28 and were unchanged. Track 4
+`docs/CATEGORIES.md` says some families give each entity its own subtree, and the strong-baseline
+documentation says retrieval should use `corpus_ref` to scope each row. The public authoring guide
+and all eleven public units use a flat corpus, so this hidden-shape requirement had not been tested.
+Our index used a root-only `glob("*.json")` and ignored `corpus_ref` entirely.
+
+The candidate recursively indexes cutoff-safe JSON documents, records their paths relative to the
+mounted corpus, and intersects every existing family scope with a validated `corpus_ref`. Root
+references retain shared-corpus behavior. Subtree matching uses complete path components, so
+`entity-a` cannot match `entity-a-old`; parent traversal, absolute or backslash paths and duplicate
+document IDs fail closed.
+
+In the synthetic A/B, the old index loaded zero documents from three nested entity directories;
+the candidate loaded all three pre-cutoff documents and exposed exactly one to the requested
+entity, while excluding a prefix collision and a post-cutoff distractor. Four of four unsafe path
+cases were rejected. All 61 tests passed. Across the eleven public units, both implementations
+exited successfully and all eleven candidate answers were byte-identical to the current committed
+baseline. Those exact files therefore retain the baseline's already recorded 11/11 smoke result.
+The current shell lacks the Python 3.13 `qfbench2-smoke` executable, so no fresh smoke run is
+claimed. The candidate was accepted as a shared retrieval and evidence-isolation fix; it makes no
+public predictive-quality claim. Structured report:
+`evaluation/reports/corpus-ref-scope-v1.json`.
+
+References: <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/CATEGORIES.md>,
+<https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/README.md>, and
+<https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/AUTHORING-GUIDE.md>.

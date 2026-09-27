@@ -20,6 +20,10 @@
   yet solve arbitrary label semantics for unknown classification targets.
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
   identifier misses, but aliases, abbreviations and paraphrases can still rank the wrong chunk.
+- Official category and baseline documents describe per-entity `corpus_ref` subtrees, while the
+  published authoring guide describes flat `corpus/<doc_id>.json` files. The agent supports both
+  shapes and rejects duplicate IDs, but no public unit exercises a non-root reference, so nested
+  scorer resolution remains unverified against a real organizer unit.
 - Complete-roster and batch-3 direct prediction plus fixed 50/50 hybrids were rejected on public
   development diagnostics. The results do not cover every possible direct prompt or learned blend,
   but further batch-size tuning is not justified without a new independent hypothesis and holdout.

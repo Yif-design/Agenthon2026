@@ -121,3 +121,10 @@ match the same identifier at the end of a sentence instead of assigning every ze
 first allowed chunk. The same tokenizer instance is used for documents and queries. The change is
 shared by known and unknown families and does not alter document scope, cutoff filtering or the
 deterministic calculators.
+
+The corpus index supports both the flat public layout and entity subdirectories. It recursively
+loads cutoff-safe JSON documents, retains each document's path relative to the mounted corpus root,
+and resolves an entity's `corpus_ref` against that path before applying family-specific scope rules.
+`corpus/` continues to mean the full shared corpus; `corpus/entity-a/` matches only that directory,
+not a similarly named `entity-a-old/` directory. Absolute paths, parent traversal, backslash paths
+and duplicate `doc_id` values fail closed. This adds no model request or prompt content.

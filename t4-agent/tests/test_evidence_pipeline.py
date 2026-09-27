@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from t4agent.evidence import fact_from_quote, validate_model_output
 from t4agent.family_specs import SPECS
 from t4agent.predict import PreparedRow, _claims_with_context, _unpack_batch, predict_rows
-from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, tokenize
+from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, build_index, tokenize
 from t4agent.taskio import Task
 from t4agent.validate import validate_answer
 
@@ -34,6 +36,71 @@ def test_company_document_scope_uses_cik() -> None:
     )
     task = make_task("credit_event", "credit_event_12m", [{"entity_id": "A", "cik": "1"}])
     assert allowed_document_ids(task, task.entities[0], corpus) == {"EDGAR_0000000001_10K"}
+
+
+def test_nested_corpus_ref_indexes_and_isolates_entity_subtree(tmp_path) -> None:
+    corpus_dir = tmp_path / "corpus"
+    (corpus_dir / "entity-a").mkdir(parents=True)
+    (corpus_dir / "entity-a-old").mkdir()
+    (corpus_dir / "entity-b").mkdir()
+    documents = {
+        "entity-a/a.json": {"doc_id": "A", "doc_date": "2023-01-01", "text": "entity A evidence"},
+        "entity-a/future.json": {"doc_id": "A_FUTURE", "doc_date": "2025-01-01", "text": "future answer"},
+        "entity-a-old/a-old.json": {"doc_id": "A_OLD", "doc_date": "2023-01-01", "text": "old A evidence"},
+        "entity-b/b.json": {"doc_id": "B", "doc_date": "2023-01-01", "text": "entity B evidence"},
+    }
+    for relative_path, document in documents.items():
+        (corpus_dir / relative_path).write_text(json.dumps(document), encoding="utf-8")
+
+    corpus = build_index(corpus_dir, "2024-01-01")
+    entity = {"entity_id": "A", "corpus_ref": "corpus/entity-a/"}
+    task = make_task("unseen_family", "unknown_metric", [entity])
+
+    assert set(corpus.doc_texts) == {"A", "A_OLD", "B"}
+    assert corpus.doc_paths == {
+        "A": "entity-a/a.json",
+        "A_OLD": "entity-a-old/a-old.json",
+        "B": "entity-b/b.json",
+    }
+    assert allowed_document_ids(task, entity, corpus) == {"A"}
+
+
+def test_root_corpus_ref_preserves_shared_document_scope(tmp_path) -> None:
+    corpus_dir = tmp_path / "corpus"
+    corpus_dir.mkdir()
+    for doc_id in ("A", "B"):
+        (corpus_dir / f"{doc_id}.json").write_text(
+            json.dumps({"doc_id": doc_id, "doc_date": "2023-01-01", "text": doc_id}),
+            encoding="utf-8",
+        )
+    corpus = build_index(corpus_dir, "2024-01-01")
+    entity = {"entity_id": "shared", "corpus_ref": "corpus/"}
+    task = make_task("unseen_family", "unknown_metric", [entity])
+
+    assert allowed_document_ids(task, entity, corpus) == {"A", "B"}
+
+
+@pytest.mark.parametrize("corpus_ref", ["../private/", "corpus/../../private", "/input/corpus/entity", "corpus\\entity"])
+def test_unsafe_corpus_ref_is_rejected(corpus_ref) -> None:
+    corpus = IndexedCorpus([], {"A": "text"}, {"A": "2023-01-01"}, {"A": "entity/a.json"})
+    entity = {"entity_id": "A", "corpus_ref": corpus_ref}
+    task = make_task("unseen_family", "unknown_metric", [entity])
+
+    with pytest.raises(ValueError, match="unsafe corpus_ref"):
+        allowed_document_ids(task, entity, corpus)
+
+
+def test_nested_index_rejects_duplicate_document_ids(tmp_path) -> None:
+    corpus_dir = tmp_path / "corpus"
+    for subtree in ("one", "two"):
+        (corpus_dir / subtree).mkdir(parents=True)
+        (corpus_dir / subtree / "doc.json").write_text(
+            json.dumps({"doc_id": "DUPLICATE", "doc_date": "2023-01-01", "text": subtree}),
+            encoding="utf-8",
+        )
+
+    with pytest.raises(ValueError, match="duplicate corpus doc_id"):
+        build_index(corpus_dir, "2024-01-01")
 
 
 def test_bm25_never_returns_foreign_document() -> None:

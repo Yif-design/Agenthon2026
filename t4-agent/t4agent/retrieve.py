@@ -4,7 +4,7 @@ import json
 import math
 import re
 from collections import Counter, defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Callable
@@ -26,6 +26,7 @@ class IndexedCorpus:
     chunks: list[Chunk]
     doc_texts: dict[str, str]
     doc_dates: dict[str, str | None]
+    doc_paths: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -59,14 +60,24 @@ def _span_texts(doc: dict) -> list[str]:
 
 
 def build_index(corpus_dir: str | Path, cutoff_date: str) -> IndexedCorpus:
+    corpus_root = Path(corpus_dir)
+    resolved_root = corpus_root.resolve()
     chunks: list[Chunk] = []
     doc_texts: dict[str, str] = {}
     doc_dates: dict[str, str | None] = {}
-    for path in sorted(Path(corpus_dir).glob("*.json")):
+    doc_paths: dict[str, str] = {}
+    for path in sorted(corpus_root.rglob("*.json")):
         if path.name == "manifest.json":
             continue
+        try:
+            resolved_path = path.resolve(strict=True)
+            resolved_path.relative_to(resolved_root)
+        except (FileNotFoundError, ValueError) as exc:
+            raise ValueError(f"corpus document escapes corpus root: {path}") from exc
         doc = json.loads(path.read_text(encoding="utf-8"))
         doc_id = str(doc.get("doc_id") or path.stem)
+        if doc_id in doc_paths:
+            raise ValueError(f"duplicate corpus doc_id: {doc_id}")
         doc_date = doc.get("doc_date")
         if not _date_ok(str(doc_date) if doc_date else None, cutoff_date):
             continue
@@ -78,7 +89,8 @@ def build_index(corpus_dir: str | Path, cutoff_date: str) -> IndexedCorpus:
             offset += len(text) + 1
         doc_texts[doc_id] = " ".join(parts)
         doc_dates[doc_id] = str(doc_date) if doc_date else None
-    return IndexedCorpus(chunks, doc_texts, doc_dates)
+        doc_paths[doc_id] = path.relative_to(corpus_root).as_posix()
+    return IndexedCorpus(chunks, doc_texts, doc_dates, doc_paths)
 
 
 def _chunks_for_text(doc_id: str, doc_date: str | None, text: str, base_offset: int) -> list[Chunk]:
@@ -146,7 +158,7 @@ class BM25:
 
 def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> set[str]:
     """Return the hard document scope for one roster entity before lexical retrieval."""
-    all_ids = set(corpus.doc_texts)
+    all_ids = _corpus_ref_document_ids(entity.get("corpus_ref"), corpus)
     target = getattr(task, "target", {}) or {}
     family_text = f"{getattr(task, 'family', '')} {target.get('name', '')}".lower()
     cik = "".join(ch for ch in str(entity.get("cik") or "") if ch.isdigit()).zfill(10)
@@ -196,11 +208,40 @@ def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> s
     return all_ids
 
 
+def _corpus_ref_document_ids(corpus_ref: object, corpus: IndexedCorpus) -> set[str]:
+    """Resolve a task-relative corpus pointer without allowing it to escape the corpus root."""
+    all_ids = set(corpus.doc_texts)
+    if corpus_ref is None:
+        return all_ids
+    if not isinstance(corpus_ref, str) or not corpus_ref.strip():
+        raise ValueError("corpus_ref must be a non-empty relative path")
+    raw = corpus_ref.strip()
+    if "\\" in raw or raw.startswith("/"):
+        raise ValueError(f"unsafe corpus_ref: {corpus_ref!r}")
+    parts = [part for part in raw.split("/") if part not in ("", ".")]
+    if any(part == ".." for part in parts):
+        raise ValueError(f"unsafe corpus_ref: {corpus_ref!r}")
+    if parts and parts[0] == "corpus":
+        parts = parts[1:]
+    if not parts:
+        return all_ids
+    if not corpus.doc_paths:
+        return set()
+    prefix = tuple(parts)
+    scoped: set[str] = set()
+    for doc_id, relative_path in corpus.doc_paths.items():
+        path_parts = tuple(part for part in relative_path.split("/") if part)
+        if path_parts == prefix or path_parts[: len(prefix)] == prefix:
+            scoped.add(doc_id)
+    return scoped
+
+
 def scoped_corpus(corpus: IndexedCorpus, allowed_doc_ids: set[str]) -> IndexedCorpus:
     return IndexedCorpus(
         chunks=[chunk for chunk in corpus.chunks if chunk.doc_id in allowed_doc_ids],
         doc_texts={doc_id: text for doc_id, text in corpus.doc_texts.items() if doc_id in allowed_doc_ids},
         doc_dates={doc_id: value for doc_id, value in corpus.doc_dates.items() if doc_id in allowed_doc_ids},
+        doc_paths={doc_id: value for doc_id, value in corpus.doc_paths.items() if doc_id in allowed_doc_ids},
     )
 
 
