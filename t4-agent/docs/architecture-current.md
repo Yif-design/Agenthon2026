@@ -46,8 +46,10 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Same signals, plus accepted CPI interval floor | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 | Same signals, plus accepted auction point and interval model | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 
-These are diagnostic practice results, not a private leaderboard score. The official ensemble-NLI
-gate has not yet been run locally.
+These are diagnostic practice results, not a private leaderboard score. A local approximation of
+the official two-model ensemble-NLI gate has now covered one representative classification unit,
+one regression unit and one ranking unit. It is not a complete 11-unit certification; see
+`docs/nli-gate-audit.md`.
 
 For positioning rankings, the deterministic calculator now forecasts five-week change as `-0.2`
 times current noncommercial net positioning as a percent of open interest. It accepts an exact
@@ -67,6 +69,13 @@ confirmed them on 2022-2023 and an untouched January-October 2024 period. Earlie
 the preceding heuristic so the later selection data cannot leak backward. This improved historical
 accuracy and calibration but did not change the retired public aggregate diagnostic because that
 single auction unit remains at the scorer's zero-skill floor and its coverage stayed 5/7.
+
+Auction citations now prefer a concise corpus sentence that explicitly reports the recent-six
+average only after the calculator independently reproduces that value from the raw rows. A missing
+or mismatched summary falls back to the six source rows, and pre-artifact cutoffs always retain the
+row citation because their forecast includes the old trend adjustment. On the public auction unit,
+this changed official ensemble-NLI faithfulness from 5/7 to 7/7 without changing forecasts or
+intervals.
 
 Auction, COT, CPI and post-earnings calibration now share a fail-closed artifact-availability date
 check. If a task predates the data used to select a fitted constant, its family calculator reverts

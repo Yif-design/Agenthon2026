@@ -235,6 +235,64 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(historical.derivation["interval_pstdev_multiplier"], 1.65)
         self.assertFalse(historical.derivation["calibrated_artifact_available"])
 
+    def test_auction_prefers_only_a_verified_recent_six_summary(self) -> None:
+        values = [2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7]
+        lines = ["10-Year Treasury auction results", "date | a | b | c | bid_to_cover"]
+        lines.extend(
+            f"2024-{month:02d}-01 | x | x | x | {value}"
+            for month, value in enumerate(values, start=1)
+        )
+        verified_note = (
+            "NOTES (derived from the table above): the average over the six most recent "
+            "auctions is 2.450; the historical range was 2.10 to 2.70."
+        )
+        corpus = IndexedCorpus(
+            [],
+            {"TDIRECT_AUCTIONS_10Y": "\n".join(lines + ["", verified_note])},
+            {"TDIRECT_AUCTIONS_10Y": "2024-08-01"},
+        )
+        current = task("bid_to_cover_ratio", "regression")
+
+        result = solve_minimal(
+            current,
+            {"tenor": "10-Year"},
+            SPECS["auction"],
+            {},
+            corpus,
+            0,
+            1,
+        )
+
+        self.assertEqual(result.evidence[0]["quote"], verified_note)
+
+        bad_note = verified_note.replace("2.450", "9.999")
+        mismatched = IndexedCorpus(
+            [],
+            {"TDIRECT_AUCTIONS_10Y": "\n".join(lines + ["", bad_note])},
+            {"TDIRECT_AUCTIONS_10Y": "2024-08-01"},
+        )
+        mismatch_result = solve_minimal(
+            current,
+            {"tenor": "10-Year"},
+            SPECS["auction"],
+            {},
+            mismatched,
+            0,
+            1,
+        )
+        self.assertNotIn("NOTES", mismatch_result.evidence[0]["quote"])
+
+        historical_result = solve_minimal(
+            replace(current, cutoff_date="2021-12-31"),
+            {"tenor": "10-Year"},
+            SPECS["auction"],
+            {},
+            corpus,
+            0,
+            1,
+        )
+        self.assertNotIn("NOTES", historical_result.evidence[0]["quote"])
+
     def test_positioning_uses_latest_dated_net_position(self) -> None:
         current = task("position_change_5wk_pct_oi", "ranking")
         entity = project_entity(

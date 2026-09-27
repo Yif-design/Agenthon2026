@@ -263,3 +263,37 @@ rows were byte-identical, and all eleven passed the official smoke verifier. Ear
 checks exercised each fallback and a future-dated COT distractor, and the complete suite remained
 at 33 passing tests. Predictive
 metrics are intentionally unchanged; this is a cross-family embargo and reproducibility fix.
+
+### Official ensemble-NLI audit and auction citation selection — accepted
+
+The remote Track 4 repository remained at
+`7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`. Its current `faithfulness/judge.py` SHA-256
+`93757e18214a1057c2899f12baf4c67d827025fc69fabad032663822e256464a` exactly matched the local
+judge used in this experiment. The remote README has newer policy wording than the local starter
+snapshot: it pins toolkit `v2.4.4`, withdraws the old cumulative token allowance, removes BYO model
+guidance and retains 25 admitted requests with at most 4,000 output tokens each. The project rules
+document already reflected those operative constraints. Installed `qfbench2-common` was 2.4.4.
+
+The local audit fixed both official NLI members to revisions
+`bab4bc7178836f731dcfd18c06ca9def0a137712` and
+`b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7`. The development runtime was Python 3.11.7,
+torch 2.2.2 and transformers 4.46.3 on Intel CPU, so this is a production approximation rather
+than a runtime-equivalence claim. A classification EPS unit and ranking COT unit passed at 1.0
+faithfulness. The regression auction unit failed at 5/7 because the 10-Year and 7-Year citations
+did not cross the 0.5 ensemble threshold.
+
+Keeping every forecast, interval, cutoff and canonical hypothesis fixed, four exact-span variants
+were scored with both models. Recent-six rows remained at 5/7. A concise `NOTES` sentence directly
+reporting the same recent-six mean, recent rows plus that note, and the full same-tenor document each
+reached 7/7. The concise variant reduced total cited text from 2,452 to 1,673 characters, increased
+mean ensemble entailment from 0.5577 to 0.7091 and raised the weakest entity from 0.3786 to 0.5403.
+Although rows plus note had the highest mean score, 0.7827, its weakest score was only 0.5064 and it
+used 4,139 characters. The concise variant was adopted as the less noisy passing input.
+
+Production uses the summary only when its reported recent-six average agrees within 0.001 with the
+calculator's independent mean of the source rows. Missing, mismatched and pre-2022 summaries fall
+back to the existing rows. The production span omitted only the experiment span's final newline;
+both fixed tokenizers produced identical input IDs for all seven hypotheses, so the measured 7/7
+scores apply exactly to the production model inputs. Forecasts and intervals were unchanged, all
+eleven public outputs passed smoke, and the other ten outputs were byte-identical to the preceding
+baseline. Full details and reproducibility limits are in `docs/nli-gate-audit.md`.

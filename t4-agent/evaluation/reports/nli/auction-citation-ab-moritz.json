@@ -1,0 +1,232 @@
+{
+  "schema_version": 2,
+  "model_id": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.11.7",
+    "torch": "2.2.2",
+    "transformers": "4.46.3",
+    "qfbench2-common": "2.4.4"
+  },
+  "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model.",
+  "total_elapsed_seconds": 495.59598363994155,
+  "cases": [
+    {
+      "case_id": "baseline",
+      "unit_id": "t4-auction-btc-202411-us7",
+      "answer_sha256": "fa35b0faf8d8d8b03d2f702408ffba58822a86e7aa25e9d94878e468c301d72c",
+      "elapsed_seconds": 121.06188103801105,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.7142857142857143,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "AUC_10Y_20241105",
+          "hypothesis": "The bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.53. The 90% prediction interval for the bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.23703 to 2.82297.",
+          "score": 0.2233407199382782,
+          "supported": false
+        },
+        {
+          "entity_id": "AUC_20Y_20241120",
+          "hypothesis": "The bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.595. The 90% prediction interval for the bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.3767 to 2.8133.",
+          "score": 0.5919139385223389,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_2Y_20241125",
+          "hypothesis": "The bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.62333. The 90% prediction interval for the bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.27582 to 2.97084.",
+          "score": 0.7020430564880371,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_30Y_20241106",
+          "hypothesis": "The bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.39833. The 90% prediction interval for the bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.20285 to 2.59381.",
+          "score": 0.6016021370887756,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_3Y_20241104",
+          "hypothesis": "The bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.565. The 90% prediction interval for the bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.32358 to 2.80642.",
+          "score": 0.827415406703949,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_5Y_20241126",
+          "hypothesis": "The bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.37167. The 90% prediction interval for the bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.22167 to 2.52167.",
+          "score": 0.8359987735748291,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_7Y_20241127",
+          "hypothesis": "The bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.58667. The 90% prediction interval for the bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.33597 to 2.83736.",
+          "score": 0.30860164761543274,
+          "supported": false
+        }
+      ]
+    },
+    {
+      "case_id": "notes-only",
+      "unit_id": "t4-auction-btc-202411-us7",
+      "answer_sha256": "ac523b27c8d2101e4971a82ab8c7e61224eb38d8641e0d6fc6791d8e90d65ef8",
+      "elapsed_seconds": 94.10802936798427,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.5714285714285714,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "AUC_10Y_20241105",
+          "hypothesis": "The bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.53. The 90% prediction interval for the bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.23703 to 2.82297.",
+          "score": 0.7467755675315857,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_20Y_20241120",
+          "hypothesis": "The bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.595. The 90% prediction interval for the bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.3767 to 2.8133.",
+          "score": 0.8061498403549194,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_2Y_20241125",
+          "hypothesis": "The bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.62333. The 90% prediction interval for the bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.27582 to 2.97084.",
+          "score": 0.4884890615940094,
+          "supported": false
+        },
+        {
+          "entity_id": "AUC_30Y_20241106",
+          "hypothesis": "The bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.39833. The 90% prediction interval for the bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.20285 to 2.59381.",
+          "score": 0.2701212763786316,
+          "supported": false
+        },
+        {
+          "entity_id": "AUC_3Y_20241104",
+          "hypothesis": "The bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.565. The 90% prediction interval for the bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.32358 to 2.80642.",
+          "score": 0.5824663043022156,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_5Y_20241126",
+          "hypothesis": "The bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.37167. The 90% prediction interval for the bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.22167 to 2.52167.",
+          "score": 0.4103631377220154,
+          "supported": false
+        },
+        {
+          "entity_id": "AUC_7Y_20241127",
+          "hypothesis": "The bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.58667. The 90% prediction interval for the bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.33597 to 2.83736.",
+          "score": 0.6140168905258179,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "case_id": "recent-plus-notes",
+      "unit_id": "t4-auction-btc-202411-us7",
+      "answer_sha256": "eee12f5475ba12656d7447a1bd1f1938d7beb6f7f1d270bcf2d1afe8cee175d4",
+      "elapsed_seconds": 144.20498528098688,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "AUC_10Y_20241105",
+          "hypothesis": "The bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.53. The 90% prediction interval for the bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.23703 to 2.82297.",
+          "score": 0.7410176992416382,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_20Y_20241120",
+          "hypothesis": "The bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.595. The 90% prediction interval for the bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.3767 to 2.8133.",
+          "score": 0.9703990817070007,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_2Y_20241125",
+          "hypothesis": "The bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.62333. The 90% prediction interval for the bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.27582 to 2.97084.",
+          "score": 0.8469519019126892,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_30Y_20241106",
+          "hypothesis": "The bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.39833. The 90% prediction interval for the bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.20285 to 2.59381.",
+          "score": 0.7741655707359314,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_3Y_20241104",
+          "hypothesis": "The bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.565. The 90% prediction interval for the bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.32358 to 2.80642.",
+          "score": 0.7374865412712097,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_5Y_20241126",
+          "hypothesis": "The bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.37167. The 90% prediction interval for the bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.22167 to 2.52167.",
+          "score": 0.9207503795623779,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_7Y_20241127",
+          "hypothesis": "The bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.58667. The 90% prediction interval for the bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.33597 to 2.83736.",
+          "score": 0.9620492458343506,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "case_id": "full-document",
+      "unit_id": "t4-auction-btc-202411-us7",
+      "answer_sha256": "2cd41ff7f3a411e713d5b89d8ae5564d17743b282921838a73445a75e11669df",
+      "elapsed_seconds": 136.22108795295935,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "AUC_10Y_20241105",
+          "hypothesis": "The bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.53. The 90% prediction interval for the bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.23703 to 2.82297.",
+          "score": 0.5077556371688843,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_20Y_20241120",
+          "hypothesis": "The bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.595. The 90% prediction interval for the bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.3767 to 2.8133.",
+          "score": 0.6409116983413696,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_2Y_20241125",
+          "hypothesis": "The bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.62333. The 90% prediction interval for the bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.27582 to 2.97084.",
+          "score": 0.9387826323509216,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_30Y_20241106",
+          "hypothesis": "The bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.39833. The 90% prediction interval for the bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.20285 to 2.59381.",
+          "score": 0.8719367384910583,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_3Y_20241104",
+          "hypothesis": "The bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.565. The 90% prediction interval for the bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.32358 to 2.80642.",
+          "score": 0.7346241474151611,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_5Y_20241126",
+          "hypothesis": "The bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.37167. The 90% prediction interval for the bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.22167 to 2.52167.",
+          "score": 0.9384116530418396,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_7Y_20241127",
+          "hypothesis": "The bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.58667. The 90% prediction interval for the bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.33597 to 2.83736.",
+          "score": 0.8069686889648438,
+          "supported": true
+        }
+      ]
+    }
+  ]
+}

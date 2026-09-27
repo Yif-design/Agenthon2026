@@ -36,6 +36,8 @@ def solve(
             0.15,
             multiplier * pstdev(recent) if len(recent) > 1 else 0.0,
         )
+        if calibrated:
+            evidence = _prefer_verified_recent_mean_summary(corpus, evidence, baseline)
     else:
         point, half = 2.5, 0.8
     return ModelOutput(
@@ -82,3 +84,34 @@ def _history(corpus: IndexedCorpus, tenor: str) -> tuple[list[float], list[dict[
             }] if quote in text else []
             return values, evidence
     return [], []
+
+
+def _prefer_verified_recent_mean_summary(
+    corpus: IndexedCorpus,
+    evidence: list[dict[str, Any]],
+    baseline: float,
+) -> list[dict[str, Any]]:
+    """Prefer a concise corpus summary only after reproducing its statistic from raw rows."""
+    if not evidence:
+        return evidence
+    doc_id = str(evidence[0].get("doc_id") or "")
+    text = corpus.doc_texts.get(doc_id, "")
+    for line in text.splitlines():
+        match = re.search(
+            r"average over the six most recent auctions is\s*([0-9]+(?:\.[0-9]+)?)",
+            line,
+            flags=re.IGNORECASE,
+        )
+        if match is None:
+            continue
+        reported = number(match.group(1))
+        if reported is None or abs(reported - baseline) > 0.001:
+            continue
+        preferred = dict(evidence[0])
+        preferred["quote"] = line
+        preferred["claim"] = (
+            "The frozen TreasuryDirect summary reports the verified recent-six "
+            "bid-to-cover average used by the forecast."
+        )
+        return [preferred]
+    return evidence

@@ -2,7 +2,9 @@
 
 - No authoritative House serving input/context ceiling is published.
 - Official Development House access is not yet open; OpenRouter is only an analogue.
-- Current local score excludes the official two-model NLI faithfulness gate.
+- The official two-model NLI path has been approximated locally only for representative EPS,
+  auction and COT units. The remaining eight public units have smoke validation but no full NLI
+  result, and the local CPU/runtime package set is not guaranteed byte-identical to production.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
 - Accepted interval changes lift diagnostic mean coverage to 66.4%, still below the 90% target.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
@@ -17,6 +19,8 @@
   rate-volatility features were not adopted, so it may miss regime changes despite improving the
   2022-2024 time-forward checks. The 2022-2023 point test was inspected before interval calibration
   was added; the combined candidate therefore relies on the untouched 2024 confirmation period.
+  Its concise-summary citation rule helps only when the frozen corpus contains a summary whose
+  reported recent-six average can be independently verified from the raw rows.
 - Artifact-availability gates cover the four currently fitted family constants. Any future fitted
   artifact still requires its own recorded availability date and early-cutoff fallback; the helper
   cannot infer provenance automatically.

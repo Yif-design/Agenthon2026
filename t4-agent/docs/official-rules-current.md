@@ -8,6 +8,10 @@ Pinned development sources:
 - Track 4 public main: `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`
 - Installed `qfbench2-common`: `2.4.4`
 
+The remote Track 4 `faithfulness/judge.py` and the local audit copy had identical SHA-256 on this
+date. The remote README is newer than the local starter snapshot, but the operative changes
+(toolkit 2.4.4, withdrawn cumulative token allowance and removal of BYO models) are reflected here.
+
 ## House model
 
 The approved model is `nvidia/nemotron-3-super-120b-a12b`, snapshot and tokenizer revision
