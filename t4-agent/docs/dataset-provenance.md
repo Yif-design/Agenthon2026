@@ -161,3 +161,24 @@ The builder excludes floating-rate and inflation-indexed securities. It retains 
 reported BTC rather than requiring equality with `total_tendered / total_accepted`: those totals
 include category and add-on semantics that make the naive ratio differ from the published measure.
 Rebuilding from the git-ignored raw API cache produced the tracked dataset byte-for-byte.
+
+## Recent FOMC inter-meeting Treasury panel
+
+- Local file: `evaluation/datasets/fomc/events_2022_2026.json`
+- Dataset SHA-256: `d51d0b231c0df5312dae367e802aa445b06f921d13ba9e0a03e1b710162b4580`
+- Primary sources: Federal Reserve annual FOMC release indexes and policy-actions table, plus U.S.
+  Treasury daily par-yield CSVs
+- Coverage: 37 completed inter-meeting events from 2022-01-26 through 2026-07-29, with six
+  maturities per event
+- Features available at the forecast origin: first complete post-decision Treasury close, signed
+  target-rate change and direction
+- Outcome: yield change from that origin close to the final Treasury close before the next FOMC
+  decision
+- Leakage control: the two retired public events (2022-07-27 and 2024-09-18) are excluded from
+  interval selection and confirmation; 2022-2025 selects the candidate and five completed 2026
+  events form the one-time confirmation set
+
+The builder records SHA-256 values for every tracked annual Treasury CSV. Federal Reserve policy
+action dates are effective dates, so the builder maps them to the preceding decision date; meetings
+absent from the actions table are holds. The dataset and experiment are research artifacts and are
+excluded from the submission image.

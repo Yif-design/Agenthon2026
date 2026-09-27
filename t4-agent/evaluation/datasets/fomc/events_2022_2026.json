@@ -1,0 +1,910 @@
+{
+  "source": "Federal Reserve FOMC annual indexes and policy-actions table; U.S. Treasury daily par-yield CSVs",
+  "license": "Public domain (U.S. government works)",
+  "source_urls": {
+    "fomc_index_template": "https://www.federalreserve.gov/newsevents/pressreleases/{year}-press-fomc.htm",
+    "policy_actions": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+    "treasury_template": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all?type=daily_treasury_yield_curve&field_tdr_date_value={year}&page&_format=csv"
+  },
+  "built_at": "2026-09-27",
+  "start_year": 2022,
+  "end_year": 2026,
+  "treasury_file_sha256": {
+    "2022.csv": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814",
+    "2023.csv": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4",
+    "2024.csv": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d",
+    "2025.csv": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5",
+    "2026.csv": "a6f539a43d43751ab75d2ec98cfa83909cb5ae084306aca1372594c2088e1239"
+  },
+  "event_count": 37,
+  "events": [
+    {
+      "decision_date": "2022-01-26",
+      "next_decision_date": "2022-03-16",
+      "start_date": "2022-01-27",
+      "resolution_date": "2022-03-15",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.18,
+        "UST3Y": 1.43,
+        "UST5Y": 1.66,
+        "UST7Y": 1.78,
+        "UST10Y": 1.81,
+        "UST30Y": 2.09
+      },
+      "yield_changes_bps": {
+        "UST2Y": 67.0,
+        "UST3Y": 61.0,
+        "UST5Y": 44.0,
+        "UST7Y": 38.0,
+        "UST10Y": 34.0,
+        "UST30Y": 40.0
+      }
+    },
+    {
+      "decision_date": "2022-03-16",
+      "next_decision_date": "2022-05-04",
+      "start_date": "2022-03-17",
+      "resolution_date": "2022-05-03",
+      "policy_change_bps": 25.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 1.94,
+        "UST3Y": 2.14,
+        "UST5Y": 2.17,
+        "UST7Y": 2.22,
+        "UST10Y": 2.2,
+        "UST30Y": 2.5
+      },
+      "yield_changes_bps": {
+        "UST2Y": 84.0,
+        "UST3Y": 81.0,
+        "UST5Y": 84.0,
+        "UST7Y": 81.0,
+        "UST10Y": 77.0,
+        "UST30Y": 53.0
+      }
+    },
+    {
+      "decision_date": "2022-05-04",
+      "next_decision_date": "2022-06-15",
+      "start_date": "2022-05-05",
+      "resolution_date": "2022-06-14",
+      "policy_change_bps": 50.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 2.71,
+        "UST3Y": 2.91,
+        "UST5Y": 3.01,
+        "UST7Y": 3.07,
+        "UST10Y": 3.05,
+        "UST30Y": 3.15
+      },
+      "yield_changes_bps": {
+        "UST2Y": 74.0,
+        "UST3Y": 69.0,
+        "UST5Y": 60.0,
+        "UST7Y": 53.0,
+        "UST10Y": 44.0,
+        "UST30Y": 30.0
+      }
+    },
+    {
+      "decision_date": "2022-06-15",
+      "next_decision_date": "2022-07-27",
+      "start_date": "2022-06-16",
+      "resolution_date": "2022-07-26",
+      "policy_change_bps": 75.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 3.14,
+        "UST3Y": 3.33,
+        "UST5Y": 3.35,
+        "UST7Y": 3.36,
+        "UST10Y": 3.28,
+        "UST30Y": 3.35
+      },
+      "yield_changes_bps": {
+        "UST2Y": -12.0,
+        "UST3Y": -32.0,
+        "UST5Y": -46.0,
+        "UST7Y": -48.0,
+        "UST10Y": -47.0,
+        "UST30Y": -32.0
+      }
+    },
+    {
+      "decision_date": "2022-07-27",
+      "next_decision_date": "2022-09-21",
+      "start_date": "2022-07-28",
+      "resolution_date": "2022-09-20",
+      "policy_change_bps": 75.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 2.85,
+        "UST3Y": 2.81,
+        "UST5Y": 2.69,
+        "UST7Y": 2.69,
+        "UST10Y": 2.68,
+        "UST30Y": 3.02
+      },
+      "yield_changes_bps": {
+        "UST2Y": 111.0,
+        "UST3Y": 113.0,
+        "UST5Y": 106.0,
+        "UST7Y": 100.0,
+        "UST10Y": 89.0,
+        "UST30Y": 57.0
+      }
+    },
+    {
+      "decision_date": "2022-09-21",
+      "next_decision_date": "2022-11-02",
+      "start_date": "2022-09-22",
+      "resolution_date": "2022-11-01",
+      "policy_change_bps": 75.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.11,
+        "UST3Y": 4.12,
+        "UST5Y": 3.91,
+        "UST7Y": 3.84,
+        "UST10Y": 3.7,
+        "UST30Y": 3.65
+      },
+      "yield_changes_bps": {
+        "UST2Y": 43.0,
+        "UST3Y": 36.0,
+        "UST5Y": 36.0,
+        "UST7Y": 34.0,
+        "UST10Y": 37.0,
+        "UST30Y": 49.0
+      }
+    },
+    {
+      "decision_date": "2022-11-02",
+      "next_decision_date": "2022-12-14",
+      "start_date": "2022-11-03",
+      "resolution_date": "2022-12-13",
+      "policy_change_bps": 75.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.71,
+        "UST3Y": 4.63,
+        "UST5Y": 4.36,
+        "UST7Y": 4.26,
+        "UST10Y": 4.14,
+        "UST30Y": 4.18
+      },
+      "yield_changes_bps": {
+        "UST2Y": -49.0,
+        "UST3Y": -67.0,
+        "UST5Y": -70.0,
+        "UST7Y": -66.0,
+        "UST10Y": -63.0,
+        "UST30Y": -65.0
+      }
+    },
+    {
+      "decision_date": "2022-12-14",
+      "next_decision_date": "2023-02-01",
+      "start_date": "2022-12-15",
+      "resolution_date": "2023-01-31",
+      "policy_change_bps": 50.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.23,
+        "UST3Y": 3.96,
+        "UST5Y": 3.62,
+        "UST7Y": 3.56,
+        "UST10Y": 3.44,
+        "UST30Y": 3.48
+      },
+      "yield_changes_bps": {
+        "UST2Y": -2.0,
+        "UST3Y": -6.0,
+        "UST5Y": 1.0,
+        "UST7Y": 3.0,
+        "UST10Y": 8.0,
+        "UST30Y": 17.0
+      }
+    },
+    {
+      "decision_date": "2023-02-01",
+      "next_decision_date": "2023-03-22",
+      "start_date": "2023-02-02",
+      "resolution_date": "2023-03-21",
+      "policy_change_bps": 25.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.09,
+        "UST3Y": 3.75,
+        "UST5Y": 3.49,
+        "UST7Y": 3.44,
+        "UST10Y": 3.4,
+        "UST30Y": 3.55
+      },
+      "yield_changes_bps": {
+        "UST2Y": 8.0,
+        "UST3Y": 23.0,
+        "UST5Y": 24.0,
+        "UST7Y": 24.0,
+        "UST10Y": 19.0,
+        "UST30Y": 18.0
+      }
+    },
+    {
+      "decision_date": "2023-03-22",
+      "next_decision_date": "2023-05-03",
+      "start_date": "2023-03-23",
+      "resolution_date": "2023-05-02",
+      "policy_change_bps": 25.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 3.76,
+        "UST3Y": 3.57,
+        "UST5Y": 3.39,
+        "UST7Y": 3.39,
+        "UST10Y": 3.38,
+        "UST30Y": 3.66
+      },
+      "yield_changes_bps": {
+        "UST2Y": 21.0,
+        "UST3Y": 10.0,
+        "UST5Y": 7.0,
+        "UST7Y": 5.0,
+        "UST10Y": 6.0,
+        "UST30Y": 6.0
+      }
+    },
+    {
+      "decision_date": "2023-05-03",
+      "next_decision_date": "2023-06-14",
+      "start_date": "2023-05-04",
+      "resolution_date": "2023-06-13",
+      "policy_change_bps": 25.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 3.75,
+        "UST3Y": 3.47,
+        "UST5Y": 3.29,
+        "UST7Y": 3.32,
+        "UST10Y": 3.37,
+        "UST30Y": 3.73
+      },
+      "yield_changes_bps": {
+        "UST2Y": 92.0,
+        "UST3Y": 83.0,
+        "UST5Y": 72.0,
+        "UST7Y": 62.0,
+        "UST10Y": 47.0,
+        "UST30Y": 21.0
+      }
+    },
+    {
+      "decision_date": "2023-06-14",
+      "next_decision_date": "2023-07-26",
+      "start_date": "2023-06-15",
+      "resolution_date": "2023-07-25",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.62,
+        "UST3Y": 4.23,
+        "UST5Y": 3.91,
+        "UST7Y": 3.82,
+        "UST10Y": 3.72,
+        "UST30Y": 3.85
+      },
+      "yield_changes_bps": {
+        "UST2Y": 23.0,
+        "UST3Y": 30.0,
+        "UST5Y": 24.0,
+        "UST7Y": 23.0,
+        "UST10Y": 19.0,
+        "UST30Y": 10.0
+      }
+    },
+    {
+      "decision_date": "2023-07-26",
+      "next_decision_date": "2023-09-20",
+      "start_date": "2023-07-27",
+      "resolution_date": "2023-09-19",
+      "policy_change_bps": 25.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.91,
+        "UST3Y": 4.58,
+        "UST5Y": 4.24,
+        "UST7Y": 4.13,
+        "UST10Y": 4.01,
+        "UST30Y": 4.06
+      },
+      "yield_changes_bps": {
+        "UST2Y": 17.0,
+        "UST3Y": 21.0,
+        "UST5Y": 27.0,
+        "UST7Y": 34.0,
+        "UST10Y": 36.0,
+        "UST30Y": 37.0
+      }
+    },
+    {
+      "decision_date": "2023-09-20",
+      "next_decision_date": "2023-11-01",
+      "start_date": "2023-09-21",
+      "resolution_date": "2023-10-31",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 5.12,
+        "UST3Y": 4.85,
+        "UST5Y": 4.61,
+        "UST7Y": 4.57,
+        "UST10Y": 4.49,
+        "UST30Y": 4.56
+      },
+      "yield_changes_bps": {
+        "UST2Y": -5.0,
+        "UST3Y": 5.0,
+        "UST5Y": 21.0,
+        "UST7Y": 32.0,
+        "UST10Y": 39.0,
+        "UST30Y": 48.0
+      }
+    },
+    {
+      "decision_date": "2023-11-01",
+      "next_decision_date": "2023-12-13",
+      "start_date": "2023-11-02",
+      "resolution_date": "2023-12-12",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.98,
+        "UST3Y": 4.78,
+        "UST5Y": 4.65,
+        "UST7Y": 4.68,
+        "UST10Y": 4.67,
+        "UST30Y": 4.82
+      },
+      "yield_changes_bps": {
+        "UST2Y": -25.0,
+        "UST3Y": -36.0,
+        "UST5Y": -42.0,
+        "UST7Y": -44.0,
+        "UST10Y": -47.0,
+        "UST30Y": -52.0
+      }
+    },
+    {
+      "decision_date": "2023-12-13",
+      "next_decision_date": "2024-01-31",
+      "start_date": "2023-12-14",
+      "resolution_date": "2024-01-30",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.37,
+        "UST3Y": 4.09,
+        "UST5Y": 3.9,
+        "UST7Y": 3.93,
+        "UST10Y": 3.92,
+        "UST30Y": 4.03
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 5.0,
+        "UST5Y": 10.0,
+        "UST7Y": 10.0,
+        "UST10Y": 14.0,
+        "UST30Y": 25.0
+      }
+    },
+    {
+      "decision_date": "2024-01-31",
+      "next_decision_date": "2024-03-20",
+      "start_date": "2024-02-01",
+      "resolution_date": "2024-03-19",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.2,
+        "UST3Y": 3.96,
+        "UST5Y": 3.8,
+        "UST7Y": 3.83,
+        "UST10Y": 3.87,
+        "UST30Y": 4.1
+      },
+      "yield_changes_bps": {
+        "UST2Y": 48.0,
+        "UST3Y": 51.0,
+        "UST5Y": 51.0,
+        "UST7Y": 48.0,
+        "UST10Y": 43.0,
+        "UST30Y": 34.0
+      }
+    },
+    {
+      "decision_date": "2024-03-20",
+      "next_decision_date": "2024-05-01",
+      "start_date": "2024-03-21",
+      "resolution_date": "2024-04-30",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.62,
+        "UST3Y": 4.42,
+        "UST5Y": 4.26,
+        "UST7Y": 4.28,
+        "UST10Y": 4.27,
+        "UST30Y": 4.44
+      },
+      "yield_changes_bps": {
+        "UST2Y": 42.0,
+        "UST3Y": 45.0,
+        "UST5Y": 46.0,
+        "UST7Y": 43.0,
+        "UST10Y": 42.0,
+        "UST30Y": 35.0
+      }
+    },
+    {
+      "decision_date": "2024-05-01",
+      "next_decision_date": "2024-06-12",
+      "start_date": "2024-05-02",
+      "resolution_date": "2024-06-11",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.87,
+        "UST3Y": 4.71,
+        "UST5Y": 4.57,
+        "UST7Y": 4.57,
+        "UST10Y": 4.58,
+        "UST30Y": 4.72
+      },
+      "yield_changes_bps": {
+        "UST2Y": -6.0,
+        "UST3Y": -14.0,
+        "UST5Y": -16.0,
+        "UST7Y": -17.0,
+        "UST10Y": -19.0,
+        "UST30Y": -19.0
+      }
+    },
+    {
+      "decision_date": "2024-06-12",
+      "next_decision_date": "2024-07-31",
+      "start_date": "2024-06-13",
+      "resolution_date": "2024-07-30",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.68,
+        "UST3Y": 4.42,
+        "UST5Y": 4.24,
+        "UST7Y": 4.23,
+        "UST10Y": 4.24,
+        "UST30Y": 4.4
+      },
+      "yield_changes_bps": {
+        "UST2Y": -33.0,
+        "UST3Y": -26.0,
+        "UST5Y": -21.0,
+        "UST7Y": -17.0,
+        "UST10Y": -9.0,
+        "UST30Y": 0.0
+      }
+    },
+    {
+      "decision_date": "2024-07-31",
+      "next_decision_date": "2024-09-18",
+      "start_date": "2024-08-01",
+      "resolution_date": "2024-09-17",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.16,
+        "UST3Y": 3.96,
+        "UST5Y": 3.84,
+        "UST7Y": 3.89,
+        "UST10Y": 3.99,
+        "UST30Y": 4.27
+      },
+      "yield_changes_bps": {
+        "UST2Y": -57.0,
+        "UST3Y": -51.0,
+        "UST5Y": -40.0,
+        "UST7Y": -36.0,
+        "UST10Y": -34.0,
+        "UST30Y": -31.0
+      }
+    },
+    {
+      "decision_date": "2024-09-18",
+      "next_decision_date": "2024-11-07",
+      "start_date": "2024-09-19",
+      "resolution_date": "2024-11-06",
+      "policy_change_bps": -50.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.59,
+        "UST3Y": 3.47,
+        "UST5Y": 3.49,
+        "UST7Y": 3.6,
+        "UST10Y": 3.73,
+        "UST30Y": 4.06
+      },
+      "yield_changes_bps": {
+        "UST2Y": 68.0,
+        "UST3Y": 73.0,
+        "UST5Y": 78.0,
+        "UST7Y": 77.0,
+        "UST10Y": 69.0,
+        "UST30Y": 54.0
+      }
+    },
+    {
+      "decision_date": "2024-11-07",
+      "next_decision_date": "2024-12-18",
+      "start_date": "2024-11-08",
+      "resolution_date": "2024-12-17",
+      "policy_change_bps": -25.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.26,
+        "UST3Y": 4.18,
+        "UST5Y": 4.2,
+        "UST7Y": 4.25,
+        "UST10Y": 4.3,
+        "UST30Y": 4.47
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 4.0,
+        "UST5Y": 6.0,
+        "UST7Y": 8.0,
+        "UST10Y": 10.0,
+        "UST30Y": 12.0
+      }
+    },
+    {
+      "decision_date": "2024-12-18",
+      "next_decision_date": "2025-01-29",
+      "start_date": "2024-12-19",
+      "resolution_date": "2025-01-28",
+      "policy_change_bps": -25.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.32,
+        "UST3Y": 4.35,
+        "UST5Y": 4.43,
+        "UST7Y": 4.51,
+        "UST10Y": 4.57,
+        "UST30Y": 4.74
+      },
+      "yield_changes_bps": {
+        "UST2Y": -13.0,
+        "UST3Y": -10.0,
+        "UST5Y": -10.0,
+        "UST7Y": -8.0,
+        "UST10Y": -2.0,
+        "UST30Y": 4.0
+      }
+    },
+    {
+      "decision_date": "2025-01-29",
+      "next_decision_date": "2025-03-19",
+      "start_date": "2025-01-30",
+      "resolution_date": "2025-03-18",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.18,
+        "UST3Y": 4.24,
+        "UST5Y": 4.31,
+        "UST7Y": 4.41,
+        "UST10Y": 4.52,
+        "UST30Y": 4.76
+      },
+      "yield_changes_bps": {
+        "UST2Y": -14.0,
+        "UST3Y": -23.0,
+        "UST5Y": -24.0,
+        "UST7Y": -23.0,
+        "UST10Y": -23.0,
+        "UST30Y": -18.0
+      }
+    },
+    {
+      "decision_date": "2025-03-19",
+      "next_decision_date": "2025-05-07",
+      "start_date": "2025-03-20",
+      "resolution_date": "2025-05-06",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.95,
+        "UST3Y": 3.93,
+        "UST5Y": 4.01,
+        "UST7Y": 4.12,
+        "UST10Y": 4.24,
+        "UST30Y": 4.55
+      },
+      "yield_changes_bps": {
+        "UST2Y": -17.0,
+        "UST3Y": -20.0,
+        "UST5Y": -11.0,
+        "UST7Y": -2.0,
+        "UST10Y": 6.0,
+        "UST30Y": 26.0
+      }
+    },
+    {
+      "decision_date": "2025-05-07",
+      "next_decision_date": "2025-06-18",
+      "start_date": "2025-05-08",
+      "resolution_date": "2025-06-17",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.9,
+        "UST3Y": 3.85,
+        "UST5Y": 4.0,
+        "UST7Y": 4.18,
+        "UST10Y": 4.37,
+        "UST30Y": 4.83
+      },
+      "yield_changes_bps": {
+        "UST2Y": 4.0,
+        "UST3Y": 5.0,
+        "UST5Y": -1.0,
+        "UST7Y": -1.0,
+        "UST10Y": 2.0,
+        "UST30Y": 5.0
+      }
+    },
+    {
+      "decision_date": "2025-06-18",
+      "next_decision_date": "2025-07-30",
+      "start_date": "2025-06-20",
+      "resolution_date": "2025-07-29",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.9,
+        "UST3Y": 3.86,
+        "UST5Y": 3.96,
+        "UST7Y": 4.16,
+        "UST10Y": 4.38,
+        "UST30Y": 4.89
+      },
+      "yield_changes_bps": {
+        "UST2Y": -4.0,
+        "UST3Y": -4.0,
+        "UST5Y": -6.0,
+        "UST7Y": -6.0,
+        "UST10Y": -4.0,
+        "UST30Y": -3.0
+      }
+    },
+    {
+      "decision_date": "2025-07-30",
+      "next_decision_date": "2025-09-17",
+      "start_date": "2025-07-31",
+      "resolution_date": "2025-09-16",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.94,
+        "UST3Y": 3.89,
+        "UST5Y": 3.96,
+        "UST7Y": 4.14,
+        "UST10Y": 4.37,
+        "UST30Y": 4.89
+      },
+      "yield_changes_bps": {
+        "UST2Y": -43.0,
+        "UST3Y": -42.0,
+        "UST5Y": -37.0,
+        "UST7Y": -36.0,
+        "UST10Y": -33.0,
+        "UST30Y": -24.0
+      }
+    },
+    {
+      "decision_date": "2025-09-17",
+      "next_decision_date": "2025-10-29",
+      "start_date": "2025-09-18",
+      "resolution_date": "2025-10-28",
+      "policy_change_bps": -25.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.57,
+        "UST3Y": 3.55,
+        "UST5Y": 3.67,
+        "UST7Y": 3.86,
+        "UST10Y": 4.11,
+        "UST30Y": 4.72
+      },
+      "yield_changes_bps": {
+        "UST2Y": -10.0,
+        "UST3Y": -5.0,
+        "UST5Y": -7.0,
+        "UST7Y": -9.0,
+        "UST10Y": -12.0,
+        "UST30Y": -17.0
+      }
+    },
+    {
+      "decision_date": "2025-10-29",
+      "next_decision_date": "2025-12-10",
+      "start_date": "2025-10-30",
+      "resolution_date": "2025-12-09",
+      "policy_change_bps": -25.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.61,
+        "UST3Y": 3.61,
+        "UST5Y": 3.72,
+        "UST7Y": 3.9,
+        "UST10Y": 4.11,
+        "UST30Y": 4.65
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": 1.0,
+        "UST5Y": 6.0,
+        "UST7Y": 6.0,
+        "UST10Y": 7.0,
+        "UST30Y": 15.0
+      }
+    },
+    {
+      "decision_date": "2025-12-10",
+      "next_decision_date": "2026-01-28",
+      "start_date": "2025-12-11",
+      "resolution_date": "2026-01-27",
+      "policy_change_bps": -25.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.52,
+        "UST3Y": 3.55,
+        "UST5Y": 3.72,
+        "UST7Y": 3.91,
+        "UST10Y": 4.14,
+        "UST30Y": 4.79
+      },
+      "yield_changes_bps": {
+        "UST2Y": 1.0,
+        "UST3Y": 10.0,
+        "UST5Y": 9.0,
+        "UST7Y": 12.0,
+        "UST10Y": 10.0,
+        "UST30Y": 4.0
+      }
+    },
+    {
+      "decision_date": "2026-01-28",
+      "next_decision_date": "2026-03-18",
+      "start_date": "2026-01-29",
+      "resolution_date": "2026-03-17",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.53,
+        "UST3Y": 3.63,
+        "UST5Y": 3.8,
+        "UST7Y": 4.01,
+        "UST10Y": 4.24,
+        "UST30Y": 4.85
+      },
+      "yield_changes_bps": {
+        "UST2Y": 15.0,
+        "UST3Y": 5.0,
+        "UST5Y": -1.0,
+        "UST7Y": -3.0,
+        "UST10Y": -4.0,
+        "UST30Y": 0.0
+      }
+    },
+    {
+      "decision_date": "2026-03-18",
+      "next_decision_date": "2026-04-29",
+      "start_date": "2026-03-19",
+      "resolution_date": "2026-04-28",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.79,
+        "UST3Y": 3.79,
+        "UST5Y": 3.88,
+        "UST7Y": 4.06,
+        "UST10Y": 4.25,
+        "UST30Y": 4.83
+      },
+      "yield_changes_bps": {
+        "UST2Y": 5.0,
+        "UST3Y": 7.0,
+        "UST5Y": 9.0,
+        "UST7Y": 10.0,
+        "UST10Y": 11.0,
+        "UST30Y": 11.0
+      }
+    },
+    {
+      "decision_date": "2026-04-29",
+      "next_decision_date": "2026-06-17",
+      "start_date": "2026-04-30",
+      "resolution_date": "2026-06-16",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.88,
+        "UST3Y": 3.91,
+        "UST5Y": 4.02,
+        "UST7Y": 4.2,
+        "UST10Y": 4.4,
+        "UST30Y": 4.98
+      },
+      "yield_changes_bps": {
+        "UST2Y": 17.0,
+        "UST3Y": 17.0,
+        "UST5Y": 14.0,
+        "UST7Y": 8.0,
+        "UST10Y": 3.0,
+        "UST30Y": -5.0
+      }
+    },
+    {
+      "decision_date": "2026-06-17",
+      "next_decision_date": "2026-07-29",
+      "start_date": "2026-06-18",
+      "resolution_date": "2026-07-28",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.19,
+        "UST3Y": 4.19,
+        "UST5Y": 4.23,
+        "UST7Y": 4.34,
+        "UST10Y": 4.46,
+        "UST30Y": 4.9
+      },
+      "yield_changes_bps": {
+        "UST2Y": 7.0,
+        "UST3Y": 12.0,
+        "UST5Y": 12.0,
+        "UST7Y": 13.0,
+        "UST10Y": 15.0,
+        "UST30Y": 19.0
+      }
+    },
+    {
+      "decision_date": "2026-07-29",
+      "next_decision_date": "2026-09-16",
+      "start_date": "2026-07-30",
+      "resolution_date": "2026-09-15",
+      "policy_change_bps": 0.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.23,
+        "UST3Y": 4.3,
+        "UST5Y": 4.38,
+        "UST7Y": 4.52,
+        "UST10Y": 4.68,
+        "UST30Y": 5.21
+      },
+      "yield_changes_bps": {
+        "UST2Y": 44.0,
+        "UST3Y": 46.0,
+        "UST5Y": 45.0,
+        "UST7Y": 39.0,
+        "UST10Y": 32.0,
+        "UST30Y": 15.0
+      }
+    }
+  ]
+}

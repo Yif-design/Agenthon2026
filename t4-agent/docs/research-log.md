@@ -528,3 +528,21 @@ zero-change baseline, a 1.71% regression. Direction accuracy improved from the b
 baseline's 13.46% to 44.23%, but the predeclared rule required at least 2% MAE improvement as well.
 The candidate was rejected and `rates.py` was unchanged. Structured report SHA-256:
 `e7cc65f36c64f62a97b98fb1d9d83f460b4089b7fdc5cf9c0ad65436fee027e3`.
+
+### FOMC policy-scaled interval v1 — rejected
+
+The official Track 4 main snapshot remains `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`,
+the shared-toolkit main snapshot remains `95a0de3d9a814f3883c151b7efdbbcf579139244`, and
+installed `qfbench2-common==2.4.4` still matches the Track 4 pin. Current official pages showed no
+change to the 25-request, 4,000-output-token, 600-second or restricted-network boundaries.
+
+A new official-source panel adds 37 completed FOMC inter-meeting events from 2022 through the July
+2026 meeting. The two retired public events were excluded from both selection and confirmation. On
+30 development events in 2022-2025, the fixed 50 bps half-width covered 85.0% of 180 rows. A grid
+selected `50 + 0.25 * abs(policy change bps)`, which covered 88.89% with mean full width 109.58 bps,
+versus 100 bps for the baseline. The candidate was locked before reading five completed 2026 events.
+
+All five 2026 confirmation meetings held the target range unchanged, so candidate and baseline were
+identical: both covered 100% of 30 rows and had 0.10 calibration loss. The predeclared rule required
+strictly lower confirmation loss. The candidate was therefore rejected and `rates.py` was not
+changed. Dataset SHA-256: `d51d0b231c0df5312dae367e802aa445b06f921d13ba9e0a03e1b710162b4580`. Structured report SHA-256: `4d5d2abed8d7d445e643721fc3f16d1b6e0dd959053ac7f8e6c61ba620e83783`.
