@@ -199,7 +199,11 @@ def _unpack_batch(parsed: dict[str, Any] | None, rows: list[PreparedRow]) -> dic
         if not isinstance(value, dict):
             continue
         item_id = value.get("item_id")
-        item_index = item_id if isinstance(item_id, int) and item_id in allowed_indexes else None
+        item_index = (
+            item_id
+            if isinstance(item_id, int) and not isinstance(item_id, bool) and item_id in allowed_indexes
+            else None
+        )
         entity_index = by_entity.get(str(value.get("entity_id", "")))
         if item_index is not None and entity_index is not None and item_index != entity_index:
             continue

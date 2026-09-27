@@ -439,3 +439,64 @@ def test_batch_unpack_falls_back_only_the_missing_entity() -> None:
     returned = {"item_id": 1, "entity_id": "B", "signals": {}}
 
     assert _unpack_batch({"entities": [returned]}, rows) == {0: None, 1: returned}
+
+
+def test_batch_unpack_does_not_treat_boolean_item_ids_as_integers() -> None:
+    corpus = IndexedCorpus([], {}, {})
+    rows = [
+        PreparedRow(index, {"entity_id": entity_id}, set(), corpus, [], {}, [], [], True)
+        for index, entity_id in enumerate(("A", "B"))
+    ]
+
+    assert _unpack_batch(
+        {
+            "entities": [
+                {"item_id": False, "signals": {}},
+                {"item_id": True, "signals": {}},
+            ]
+        },
+        rows,
+    ) == {0: None, 1: None}
+
+
+def test_model_evidence_rejects_boolean_signal_and_nonfinite_parameter() -> None:
+    text = "The filing reports diluted EPS of 1.25 and discusses financial performance."
+    corpus = IndexedCorpus([], {"DOC": text}, {"DOC": "2023-01-01"})
+    parsed = {
+        "signals": {
+            "target_period_earnings_signal": {
+                "level": True,
+                "doc_id": "DOC",
+                "quote": text,
+                "claim": "The signal is positive.",
+            }
+        },
+        "parameters": {
+            "latest_reported_eps": {
+                "value": "NaN",
+                "doc_id": "DOC",
+                "quote": text,
+                "claim": "The filing reports EPS.",
+            },
+            "latest_reported_prior_year_eps": {
+                "value": "1.25",
+                "doc_id": "DOC",
+                "quote": text,
+                "claim": "The filing reports EPS of 1.25.",
+            },
+        },
+    }
+
+    signals, _, signal_facts, signal_rejected = validate_model_output(
+        parsed, SPECS["eps_consensus"], "A", corpus, {"DOC"}
+    )
+    _, parameters, parameter_facts, parameter_rejected = validate_model_output(
+        parsed, SPECS["bank_eps"], "A", corpus, {"DOC"}
+    )
+
+    assert signals == {"target_period_earnings_signal": 0}
+    assert signal_facts == []
+    assert signal_rejected == []
+    assert parameters == {"latest_reported_eps": None, "latest_reported_prior_year_eps": 1.25}
+    assert [fact.name for fact in parameter_facts] == ["latest_reported_prior_year_eps"]
+    assert parameter_rejected == []

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 from dataclasses import asdict, dataclass
 from typing import Any
@@ -245,10 +246,12 @@ def _number(value: object) -> float | None:
     if isinstance(value, bool):
         return None
     if isinstance(value, (int, float)):
-        return float(value)
+        parsed = float(value)
+        return parsed if math.isfinite(parsed) else None
     if isinstance(value, str):
         try:
-            return float(value.strip().replace(",", "").replace("%", ""))
+            parsed = float(value.strip().replace(",", "").replace("%", ""))
+            return parsed if math.isfinite(parsed) else None
         except ValueError:
             return None
     return None
@@ -265,7 +268,7 @@ def _signal_level(value: object) -> int:
         "strong_positive": 2,
     }
     if isinstance(value, bool):
-        return 2 if value else 0
-    if isinstance(value, (int, float)):
+        return 0
+    if isinstance(value, (int, float)) and math.isfinite(float(value)):
         return max(-2, min(2, round(float(value))))
     return names.get(str(value).strip().lower(), 0)

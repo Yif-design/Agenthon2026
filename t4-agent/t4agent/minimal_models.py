@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from typing import Any
 
 from .calculators import solve as solve_calculator
@@ -84,7 +85,7 @@ def _signal_level(value: object) -> int:
         "strong_positive": 2,
     }
     if isinstance(value, bool):
-        return 2 if value else 0
-    if isinstance(value, (int, float)):
+        return 0
+    if isinstance(value, (int, float)) and math.isfinite(float(value)):
         return max(-2, min(2, round(float(value))))
     return names.get(str(value).strip().lower(), 0)

@@ -1,6 +1,6 @@
 # Current Track 4 architecture
 
-Last updated: 2026-09-27
+Last updated: 2026-09-28
 
 The submitted path is a baseline-first bounded workflow:
 
@@ -21,6 +21,12 @@ Batch responses are mapped back to the requested roster by both integer `item_id
 `entity_id`. Reordered rows are accepted. If both identifiers resolve but disagree, that model row
 is rejected so it cannot cross entity boundaries; a missing row falls back independently without
 discarding valid sibling rows.
+
+The model boundary enforces JSON scalar types before any calculator runs. Python booleans are not
+accepted as integer item IDs or five-level signals, and non-finite values such as `NaN` and
+`Infinity` are not accepted as numeric parameters. An invalid signal becomes neutral, an invalid
+parameter remains missing, and an invalid batch identity falls back per entity. Finite numeric
+strings, named signal levels and correctly typed reordered batches keep their prior behavior.
 
 This design uses at most 18 requests by default, a 420-second model phase, 40-second request
 timeouts and a circuit breaker. Each batch gets two attempts by default. The cross-batch circuit

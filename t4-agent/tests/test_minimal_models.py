@@ -75,6 +75,14 @@ class FamilySpecTests(unittest.TestCase):
         self.assertEqual(normalize_signals(parsed, SPECS["eps_consensus"]), {"target_period_earnings_signal": 2})
         self.assertEqual(normalize_signals(None, SPECS["eps_consensus"]), {"target_period_earnings_signal": 0})
 
+    def test_signal_normalization_rejects_boolean_and_nonfinite_levels(self) -> None:
+        for value in (True, False, float("nan"), float("inf"), float("-inf")):
+            parsed = {"signals": {"target_period_earnings_signal": {"level": value}}}
+            self.assertEqual(
+                normalize_signals(parsed, SPECS["eps_consensus"]),
+                {"target_period_earnings_signal": 0},
+            )
+
     def test_entity_projection_enforces_family_whitelist(self) -> None:
         projected = project_entity(
             {"entity_id": "AAPL", "consensus_eps": 1.5, "threshold_pct": 0.05, "mktcap_bn": 2600},
@@ -114,6 +122,19 @@ class FamilySpecTests(unittest.TestCase):
             normalize_parameters(parsed, SPECS["bank_eps"]),
             {"latest_reported_eps": 1.2, "latest_reported_prior_year_eps": None},
         )
+
+    def test_numeric_parameters_reject_nonfinite_strings(self) -> None:
+        for value in ("NaN", "Infinity", "-Infinity"):
+            parsed = {
+                "parameters": {
+                    "latest_reported_eps": {"value": value},
+                    "latest_reported_prior_year_eps": {"value": "1.25"},
+                }
+            }
+            self.assertEqual(
+                normalize_parameters(parsed, SPECS["bank_eps"]),
+                {"latest_reported_eps": None, "latest_reported_prior_year_eps": 1.25},
+            )
 
 
 class MinimalModelTests(unittest.TestCase):

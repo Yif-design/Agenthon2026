@@ -23,7 +23,8 @@ def number(value: object) -> float | None:
         return float(value)
     if isinstance(value, str):
         try:
-            return float(value.strip().replace(",", "").replace("%", ""))
+            parsed = float(value.strip().replace(",", "").replace("%", ""))
+            return parsed if math.isfinite(parsed) else None
         except ValueError:
             return None
     return None

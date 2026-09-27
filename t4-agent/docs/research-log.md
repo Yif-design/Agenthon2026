@@ -710,3 +710,30 @@ is recorded rather than offset with more loose keywords. Reports:
 References: <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md>,
 <https://github.com/wangzgui/agenthon-t4-baseline-2026>, and
 <https://github.com/dungcao06/optivex-t4-agent>.
+
+### Strict model-intermediate scalar types — accepted
+
+The official Track 4 and shared-toolkit main commits, the `v2.4.4` toolkit tag and the five open
+Track 4 issues were unchanged on 2026-09-28. The submission guide still requires a complete output
+for every unit and counts malformed or incomplete output as a participant failure. No new rule or
+House development endpoint was published.
+
+A typed-intermediate audit found three related Python coercion failures. JSON `true` was interpreted
+as the integer signal level `+2`; JSON `true` and `false` could bind batch rows to item IDs 1 and 0;
+and the strings `NaN` and `Infinity` passed numeric parameter parsing. A non-finite numeric signal
+could also raise while being rounded. These values violate the prompt's integer and finite-number
+contracts and can turn malformed small-model output into a directional forecast, a cross-entity
+assignment or a non-finite calculator input.
+
+The accepted candidate treats boolean and non-finite signal levels as neutral, requires item IDs to
+be integers but not booleans, and rejects non-finite numeric parameters. It preserves finite numeric
+strings, named signal levels, integer clamping, valid reordered batches and entity-ID fallback.
+Five fault-injection checks changed from unsafe acceptance or exception risk to fail-closed behavior.
+All 75 tests passed. Fresh candidate answers were byte-identical to the baseline for 11/11 public
+units and all 78 rows; all 11 passed the packaged analysis schema and the non-rankable official
+smoke verifier. The change adds no prompt tokens or model calls and makes no predictive-accuracy
+claim. Report: `evaluation/reports/typed-intermediate-scalar-validation-v1.json`.
+
+References: <https://www.agenthon.net/guides/submission-format/>,
+<https://github.com/Agenthon-2026/track4-analysis-public>, and
+<https://github.com/Agenthon-2026/Agenthon2026-public>.
