@@ -1,6 +1,9 @@
 # Known limitations
 
-- No authoritative House serving input/context ceiling is published.
+- No authoritative House serving input/context ceiling is published. Public production-shaped
+  prompts currently range from 4,410 to 41,167 characters. The agent does not impose an arbitrary
+  fixed character cap; an explicit context-length HTTP 400 falls back for that batch while allowing
+  later shorter batches to continue under the existing circuit and request limits.
 - Official Development House access is not yet open; OpenRouter is only an analogue.
 - All eleven public units have a proven passing lower bound under the local official two-model NLI
   path, but this does not establish hidden-unit faithfulness. The local CPU/runtime package set is

@@ -143,6 +143,11 @@ class LLM:
                     self._open_circuit(f"House authorization/route refused with HTTP {exc.code}")
                     return None
                 if 400 <= exc.code < 500 and exc.code != 429:
+                    if exc.code == 400 and _is_context_length_error(detail):
+                        # Retrying the same oversized batch cannot help, but a later
+                        # batch may be shorter. Preserve the shared failure threshold
+                        # instead of disabling the whole unit after one local error.
+                        break
                     self._open_circuit(f"non-retriable model request HTTP {exc.code}")
                     return None
                 if "response_format" in body and attempt + 1 < self.max_retries:
@@ -193,6 +198,22 @@ def chat_completions_url(model_endpoint: str) -> str:
     if not base.endswith("/v1"):
         base += "/v1"
     return base + "/chat/completions"
+
+
+def _is_context_length_error(detail: str) -> bool:
+    normalized = " ".join(detail.lower().replace("_", " ").replace("-", " ").split())
+    return any(
+        marker in normalized
+        for marker in (
+            "context length exceeded",
+            "maximum context length",
+            "context window",
+            "prompt is too long",
+            "input is too long",
+            "too many tokens",
+            "token limit",
+        )
+    )
 
 
 def parse_json_object(text: str) -> dict | None:

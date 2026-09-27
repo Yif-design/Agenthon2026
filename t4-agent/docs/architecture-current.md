@@ -38,6 +38,12 @@ later independent batch; a successful response resets the count. Authorization f
 non-retriable client errors, the request cap and the deadline still stop immediately. A failed API,
 invalid JSON or trace-write failure leaves the already-written baseline answer intact.
 
+An HTTP 400 that explicitly identifies a context-length or token-limit overflow is local to that
+batch: retrying the same prompt is skipped, but a later shorter batch may still run. An unknown HTTP
+400 remains globally non-retriable, and four consecutive explicit context failures still open the
+shared circuit. This reacts to the serving route's actual limit without inventing an unpublished
+character or token ceiling.
+
 ## Why this remains the baseline
 
 The bounded signal interface provides exact evidence validation, deterministic replay, low request

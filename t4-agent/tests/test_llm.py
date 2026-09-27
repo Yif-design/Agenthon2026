@@ -115,6 +115,75 @@ def test_authorization_failure_opens_circuit_without_retry(monkeypatch) -> None:
     assert "401" in (llm.usage.disabled_reason or "")
 
 
+def _http_error(request, code: int, body: bytes) -> urllib.error.HTTPError:
+    return urllib.error.HTTPError(request.full_url, code, "error", {}, io.BytesIO(body))
+
+
+def test_context_length_400_falls_back_locally_and_later_batch_recovers(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    monkeypatch.setenv("T4_MODEL_CIRCUIT_FAILURES", "4")
+    calls = 0
+
+    def context_then_success(request, timeout):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise _http_error(
+                request,
+                400,
+                b'{"error":{"code":"context_length_exceeded","message":"maximum context length exceeded"}}',
+            )
+        return FakeResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", context_then_success)
+    llm = LLM()
+    assert llm.chat_json("system", "oversized batch") is None
+    assert not llm.usage.circuit_open
+    assert llm.chat_json("system", "shorter batch") == {"signals": {}}
+    assert calls == 2
+    assert llm.consecutive_failures == 0
+
+
+def test_unknown_http_400_still_opens_circuit(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+
+    def invalid_request(request, timeout):
+        raise _http_error(request, 400, b'{"error":{"message":"invalid request schema"}}')
+
+    monkeypatch.setattr("urllib.request.urlopen", invalid_request)
+    llm = LLM()
+    assert llm.chat_json("system", "bad request") is None
+    assert llm.usage.calls == 1
+    assert llm.usage.circuit_open
+    assert llm.usage.disabled_reason == "non-retriable model request HTTP 400"
+
+
+def test_persistent_context_length_errors_open_shared_circuit(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    monkeypatch.setenv("T4_MODEL_CIRCUIT_FAILURES", "4")
+
+    def context_error(request, timeout):
+        raise _http_error(request, 400, b'{"error":{"message":"prompt is too long for context window"}}')
+
+    monkeypatch.setattr("urllib.request.urlopen", context_error)
+    llm = LLM()
+    for _ in range(3):
+        assert llm.chat_json("system", "oversized batch") is None
+        assert not llm.usage.circuit_open
+    assert llm.chat_json("system", "oversized batch") is None
+    assert llm.usage.calls == 4
+    assert llm.usage.circuit_open
+    assert llm.usage.disabled_reason == "consecutive model failure circuit threshold reached"
+
+
 def test_restricted_environment_requires_house_credentials(monkeypatch) -> None:
     monkeypatch.setenv("QFBENCH_NETWORK", "restricted")
     monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")

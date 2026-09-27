@@ -786,3 +786,30 @@ accepted as a submission-stability improvement. Report:
 
 References: <https://github.com/actions/runner-images/issues/14748> and
 <https://www.agenthon.net/guides/submission-format/>.
+
+### Context-length errors remain batch-local — accepted
+
+The official Track 4 and shared-toolkit commits, `v2.4.4` tag and open issues were unchanged. The
+organizers still publish no authoritative House serving input ceiling. Reconstructing the current
+production prompts for all public units produced 12 model requests ranging from 4,410 to 41,167
+characters, with a 39,485.5-character median. The official strong-RAG baseline retrieves ten chunks
+per entity, compared with our eight. These observations do not justify an arbitrary fixed character
+cap that might remove task instructions or decisive evidence.
+
+The audit instead exposed a concrete recovery failure. The LLM adapter treated every HTTP 400 as a
+global, non-retriable configuration error. A single batch returning
+`context_length_exceeded` therefore disabled every later batch, even when a later batch was shorter.
+The candidate recognizes a bounded set of context-length and token-limit markers, does not retry the
+same oversized request, and leaves the cross-batch circuit available for subsequent work.
+
+In fault injection, the baseline made one network call, opened its circuit and suppressed the later
+valid batch. The candidate let the first batch fall back and completed the later batch on the second
+call. Unknown HTTP 400 responses and 401/403 authorization errors still fail closed immediately;
+four consecutive context errors still open the shared circuit. All 80 tests passed. The 11 public
+answers were byte-identical for all 78 rows, 11/11 schema-valid and 11/11 smoke-admissible. Normal
+execution adds no request or prompt token. Report:
+`evaluation/reports/context-length-local-recovery-v1.json`.
+
+References: <https://github.com/Agenthon-2026/Agenthon2026-public>,
+<https://github.com/Agenthon-2026/track4-analysis-public>, and
+<https://github.com/Agenthon-2026/track4-analysis-public/tree/main/baselines/strong_rag_baseline>.
