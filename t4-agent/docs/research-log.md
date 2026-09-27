@@ -354,3 +354,23 @@ result, not predictive-accuracy evidence. Replaying all saved validated public s
 unchanged labels, points and intervals for 78/78 rows; all eleven outputs passed official smoke.
 The complete suite passed 47 tests. Report SHA-256:
 `11cce19c5ae589b856dbaa96154af53c9b7c93d822e576db6c6dbe07fa616381`.
+
+### Generic grounded direct label v1 — deferred and current candidate rejected
+
+The deterministic generic label mapper correctly handled 8 of 13 synthetic rows across five
+unseen label vocabularies. A preliminary simplified one-call prompt mapped all 13 labels and copied
+all 13 quotes with the free Nemotron analogue, so a production candidate asked the existing generic
+classification extraction call for one allowed label with an exact quote. No additional request was
+needed when a batch was complete, and invalid labels or quotes fell back to the old mapper.
+
+Production-shaped runs were not stable: the first run produced 6/13 correct with only three
+validated label facts after a malformed response opened the experimental circuit; fixed-seed runs
+then produced 13/13 and 11/13. Inspection of the latter failure found that `action_flat` and
+`action_down` both received the `action_up` document. The shared BM25 tokenizer had retained the
+sentence-final period in tokens such as `action_flat.`, so the exact entity query token
+`action_flat` did not match and every document scored zero. The retrieval fallback then selected
+the first document.
+
+The direct-label production code was fully rolled back. Retesting is deferred until punctuation
+normalization is repaired and independently checked across public retrieval results. Structured
+summary SHA-256: `9bd2e781ecd82b2c24a1365bf25d60620089022d0e53e3376ae9046532e1a688`.
