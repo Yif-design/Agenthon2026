@@ -647,3 +647,36 @@ and passes all boundedness and non-regression gates. Reports:
 `evaluation/reports/generic-scalar-public-ab-v1.json`.
 
 Reference: <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md>.
+
+### Generic typed label-role mapping — accepted
+
+The official Track 4 and shared-toolkit snapshots remained unchanged. A newly indexed MIT-licensed
+participant repository, `wangzgui/agenthon-t4-baseline-2026`, adapts the official strong-RAG
+scaffold: it asks the model to return one allowed label and falls back to the first label when the
+response is invalid. `dungcao06/optivex-t4-agent` follows the same direct-output shape. We already
+tested and rejected a separate direct-label call twice because malformed JSON and provider
+instability produced 6–13 valid rows out of 13. The public implementations were therefore used as
+architecture comparisons, not copied.
+
+The alternative candidate retains the validated generic `directional_signal` and interprets label
+semantics deterministically from the task schema. It recognizes unambiguous role words and
+event-target negation, then scans a bounded 8,000-character prompt for explicit clauses pairing a
+label with rise, stable or fall semantics. If no unique role is established, the preceding allowed
+label fallback remains. No prompt sent to the House model changed and no request was added.
+
+On the five-schema/13-row set from the rejected direct-label experiments, the prior mapper scored
+8/13 and the candidate 13/13. A separate synthetic confirmation set used eight rows across three
+opaque schemas (`zeta/eta/theta`, color labels and `class_a/class_b`) whose meaning appeared only in
+the prompt; the candidate scored 8/8. All 102 permutations of allowed-label order preserved the
+expected result, and an ambiguous prompt returned an allowed deterministic fallback. These are
+schema robustness checks, not real hidden outcomes.
+
+All 69 tests passed. Fresh no-model public answers were byte-identical for 11/11 units, preserving
+their existing schema, smoke and local official-NLI evidence. The candidate was accepted as a
+typed-intermediate reliability improvement. It cannot help when the direction extractor itself is
+wrong or the task describes label semantics indirectly. Reports:
+`evaluation/reports/generic-label-role-mapping-v1.json` and
+`evaluation/reports/generic-label-role-public-ab-v1.json`.
+
+References: <https://github.com/wangzgui/agenthon-t4-baseline-2026> and
+<https://github.com/dungcao06/optivex-t4-agent>.

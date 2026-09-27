@@ -1,0 +1,225 @@
+{
+  "baseline_git_commit": "2b3422b483fd056c0e15c6ab816c4f5bdd6c8171",
+  "candidate": {
+    "ambiguous_behavior": "preceding deterministic allowed-label fallback",
+    "generic_classification_only": true,
+    "known_family_calculators_changed": false,
+    "model_prompt_changed": false,
+    "model_requests_added": 0,
+    "output_roles": [
+      "positive",
+      "neutral",
+      "negative"
+    ],
+    "prompt_character_limit": 8000
+  },
+  "confirmation_dataset": "Eight new rows across three opaque label schemas whose role is stated only in the task prompt.",
+  "confirmation_rows": [
+    {
+      "expected": "zeta",
+      "group": "opaque_throughput",
+      "predicted": "zeta",
+      "signal": 1
+    },
+    {
+      "expected": "eta",
+      "group": "opaque_throughput",
+      "predicted": "eta",
+      "signal": 0
+    },
+    {
+      "expected": "theta",
+      "group": "opaque_throughput",
+      "predicted": "theta",
+      "signal": -1
+    },
+    {
+      "expected": "green",
+      "group": "opaque_conditions",
+      "predicted": "green",
+      "signal": 1
+    },
+    {
+      "expected": "amber",
+      "group": "opaque_conditions",
+      "predicted": "amber",
+      "signal": 0
+    },
+    {
+      "expected": "red",
+      "group": "opaque_conditions",
+      "predicted": "red",
+      "signal": -1
+    },
+    {
+      "expected": "class_a",
+      "group": "opaque_metric",
+      "predicted": "class_a",
+      "signal": 1
+    },
+    {
+      "expected": "class_b",
+      "group": "opaque_metric",
+      "predicted": "class_b",
+      "signal": -1
+    }
+  ],
+  "date": "2026-09-28",
+  "decision": "accept",
+  "decision_reason": "The mapper improves known synthetic schema robustness from 8/13 to 13/13, passes all eight opaque-label confirmations and 102 label-order permutations, adds no model cost, and leaves all public outputs byte-identical.",
+  "decision_rule": "Require 13/13 development, 8/8 confirmation, all label-order permutations, an allowed deterministic fallback for ambiguous prompts, unchanged public outputs and no added model calls.",
+  "development_dataset": "The 13-row five-schema set retained from the two rejected direct-label experiments.",
+  "development_rows": [
+    {
+      "expected": "high",
+      "group": "demand_tier",
+      "predicted": "high",
+      "signal": 2
+    },
+    {
+      "expected": "medium",
+      "group": "demand_tier",
+      "predicted": "medium",
+      "signal": 0
+    },
+    {
+      "expected": "low",
+      "group": "demand_tier",
+      "predicted": "low",
+      "signal": -2
+    },
+    {
+      "expected": "upgrade",
+      "group": "credit_action",
+      "predicted": "upgrade",
+      "signal": 2
+    },
+    {
+      "expected": "unchanged",
+      "group": "credit_action",
+      "predicted": "unchanged",
+      "signal": 0
+    },
+    {
+      "expected": "downgrade",
+      "group": "credit_action",
+      "predicted": "downgrade",
+      "signal": -2
+    },
+    {
+      "expected": "expand",
+      "group": "capacity_action",
+      "predicted": "expand",
+      "signal": 2
+    },
+    {
+      "expected": "hold",
+      "group": "capacity_action",
+      "predicted": "hold",
+      "signal": 0
+    },
+    {
+      "expected": "contract",
+      "group": "capacity_action",
+      "predicted": "contract",
+      "signal": -2
+    },
+    {
+      "expected": "at_risk",
+      "group": "covenant_risk",
+      "predicted": "at_risk",
+      "signal": 2
+    },
+    {
+      "expected": "not_at_risk",
+      "group": "covenant_risk",
+      "predicted": "not_at_risk",
+      "signal": -2
+    },
+    {
+      "expected": "pass",
+      "group": "quality_gate",
+      "predicted": "pass",
+      "signal": 2
+    },
+    {
+      "expected": "fail",
+      "group": "quality_gate",
+      "predicted": "fail",
+      "signal": -2
+    }
+  ],
+  "experiment": "generic_label_role_mapping_v1",
+  "hypothesis": "A bounded deterministic parser can map the existing validated generic direction signal to arbitrary allowed labels from task-schema wording more reliably than a fixed label-token list, without another model request.",
+  "layer": "L2 typed intermediate schema for unknown classification labels",
+  "limitations": [
+    "Synthetic schema robustness only; no real hidden-outcome accuracy claim.",
+    "A wrong generic direction signal remains wrong.",
+    "Ambiguous, indirect or domain-specific label definitions use the preceding deterministic fallback."
+  ],
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "reason": "This candidate replaces an unstable extra direct-label decision with deterministic interpretation of the existing signal.",
+    "requests": 0
+  },
+  "not_measured": "Real hidden-outcome accuracy or generic direction-signal extraction accuracy.",
+  "official_references": [
+    {
+      "finding": "Hidden families are broader than the public examples and classification targets declare fixed allowed labels.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md"
+    },
+    {
+      "finding": "Classification quality is scored from the submitted allowed label for every entity.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/CONCEPTS.md"
+    }
+  ],
+  "official_snapshots": {
+    "open_track4_issues_changed": false,
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "public_ab": {
+    "answers_byte_identical": 11,
+    "gate_inference": "Byte-identical to the current committed baseline with recorded 11/11 smoke and public official-local-NLI passage; no new NLI result is claimed.",
+    "model_mode": "disabled",
+    "report": "evaluation/reports/generic-label-role-public-ab-v1.json",
+    "report_sha256": "80a11877b0b33143539cc83d9153a0021f002ad1112a4186921ded1528723d4a",
+    "rows": 78,
+    "units": 11
+  },
+  "public_references": [
+    {
+      "license": "MIT",
+      "method": "Official strong-RAG adaptation asks the model for a final label and falls back to the first label.",
+      "url": "https://github.com/wangzgui/agenthon-t4-baseline-2026",
+      "used": "Architecture comparison only; no code or predictions copied."
+    },
+    {
+      "license": "MIT",
+      "method": "Evidence-council prompt still uses the model final-label output shape.",
+      "url": "https://github.com/dungcao06/optivex-t4-agent",
+      "used": "Previously researched comparison; no code or predictions copied."
+    }
+  ],
+  "results": {
+    "ambiguous_fallback": "class_x",
+    "ambiguous_fallback_allowed": true,
+    "confirmation_correct": 8,
+    "confirmation_total": 8,
+    "development_baseline_correct": 8,
+    "development_candidate_correct": 13,
+    "development_total": 13,
+    "permutation_checks_passed": 102,
+    "permutation_checks_total": 102
+  },
+  "schema_version": 1,
+  "tests": {
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "pytest": "69 passed"
+  }
+}

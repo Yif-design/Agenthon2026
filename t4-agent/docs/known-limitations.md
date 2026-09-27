@@ -17,9 +17,10 @@
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
 - The generic hidden-family path now has target-field, numeric-noise, row-order, change-vs-level and
   bounded scalar-feature visibility tests, but no broad real-outcome benchmark. Input reachability
-  does not prove prediction accuracy. Its field selection is lexical, later fields may be omitted
-  after the 64-field/6,000-character budget, and it does not yet solve arbitrary label semantics for
-  unknown classification targets.
+  does not prove prediction accuracy. Its field selection is lexical, and later fields may be
+  omitted after the 64-field/6,000-character budget. The generic label-role mapper handles explicit
+  directional rules and common role words, but an ambiguous, indirect or domain-specific label
+  definition still falls back deterministically. It cannot correct a wrong direction signal.
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
   identifier misses, but aliases, abbreviations and paraphrases can still rank the wrong chunk.
 - Official category and baseline documents describe per-entity `corpus_ref` subtrees, while the

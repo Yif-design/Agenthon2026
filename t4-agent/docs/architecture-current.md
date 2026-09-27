@@ -123,6 +123,13 @@ characters, all strings together to 6,000 characters and the row to 64 scalar fi
 fields are selected first. This lets hidden schemas use categorical and text columns without making
 prompt growth unbounded.
 
+Unknown classification targets keep the same five-level `directional_signal`, then use a bounded
+typed-schema mapper to assign allowed labels to positive, neutral and negative roles. It first uses
+unambiguous label tokens and event-target negation, then reads at most 8,000 characters of the task
+prompt for explicit rules such as “zeta when throughput climbs.” If no unique role is supported, it
+falls back to the preceding deterministic allowed-label rule. The mapper neither asks the model for
+a final label nor adds a request; known-family label calculators remain isolated.
+
 BM25 tokenization removes sentence-edge punctuation while preserving financial forms such as
 `$5.28`, `10%`, `2024-10-31` and `year-over-year`. This makes a query token such as `action_flat`
 match the same identifier at the end of a sentence instead of assigning every zero-score query the

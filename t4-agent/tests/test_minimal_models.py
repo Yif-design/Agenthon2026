@@ -5,6 +5,7 @@ from dataclasses import replace
 from statistics import pstdev
 
 from t4agent.calculators.bank_eps import _find_pair
+from t4agent.calculators.generic import _label, infer_label_roles
 from t4agent.calc import select_default_point
 from t4agent.family_specs import SPECS, family_spec, project_entity
 from t4agent.minimal_models import normalize_parameters, normalize_signals, solve_minimal
@@ -258,6 +259,48 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(point, 0.0)
         self.assertIsNone(field)
         self.assertEqual(reason, "no_unambiguous_baseline")
+
+    def test_generic_label_roles_use_task_rules_and_ignore_label_order(self) -> None:
+        prompt = "Use zeta when throughput climbs, eta when unchanged, and theta when throughput drops."
+        labels = ["theta", "zeta", "eta"]
+
+        self.assertEqual(infer_label_roles(labels, prompt, "throughput_direction"), {
+            "negative": "theta",
+            "positive": "zeta",
+            "neutral": "eta",
+        })
+        self.assertEqual(_label(2, labels, prompt, "throughput_direction"), "zeta")
+        self.assertEqual(_label(0, labels, prompt, "throughput_direction"), "eta")
+        self.assertEqual(_label(-2, labels, prompt, "throughput_direction"), "theta")
+
+    def test_generic_event_target_maps_negated_label_to_negative_role(self) -> None:
+        labels = ["not_at_risk", "at_risk"]
+        prompt = "Label at_risk if covenant failure is likely, otherwise not_at_risk."
+
+        self.assertEqual(_label(2, labels, prompt, "covenant_risk"), "at_risk")
+        self.assertEqual(_label(-2, labels, prompt, "covenant_risk"), "not_at_risk")
+
+    def test_generic_solver_applies_task_label_roles(self) -> None:
+        current = replace(
+            task("throughput_direction", "classification", ["theta", "zeta", "eta"]),
+            prompt="Use zeta when throughput climbs, eta when unchanged, and theta when throughput drops.",
+        )
+        result = solve_minimal(
+            current,
+            {},
+            SPECS["generic"],
+            {"directional_signal": 2},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+
+        self.assertEqual(result.label, "zeta")
+
+    def test_generic_ambiguous_label_schema_returns_an_allowed_label(self) -> None:
+        labels = ["class_x", "class_y"]
+
+        self.assertIn(_label(1, labels, "Choose the appropriate class.", "unknown_target"), labels)
 
     def test_credit_default_uses_high_risk_tier(self) -> None:
         current = task("credit_event_12m", "classification", ["credit_event", "no_event"])
