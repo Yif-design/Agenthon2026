@@ -10,6 +10,20 @@ import sys
 import time
 from importlib.metadata import version
 from pathlib import Path
+from typing import Any
+
+
+class RecordingJudge:
+    """Record the exact premise/hypothesis pairs requested by the official checker."""
+
+    def __init__(self, inner: Any) -> None:
+        self.inner = inner
+        self.calls: dict[tuple[str, str], float] = {}
+
+    def entail(self, premise: str, hypothesis: str) -> float:
+        score = float(self.inner.entail(premise, hypothesis))
+        self.calls[(premise, hypothesis)] = score
+        return score
 
 
 def parse_args() -> argparse.Namespace:
@@ -79,12 +93,13 @@ def _check_case(
     answer_bytes = answer_path.read_bytes()
     answer = json.loads(answer_bytes)
     rows = answer.get("entity_predictions")
-    if not isinstance(rows, list) or any(len(row.get("claims") or []) != 1 for row in rows):
-        raise ValueError("bounded-memory aggregation requires exactly one citation per entity")
+    if not isinstance(rows, list):
+        raise ValueError("answer entity_predictions must be a list")
 
     ctx = build_unit_context(unit)
+    recorder = RecordingJudge(judge)
     started = time.monotonic()
-    result = check_answer(answer, ctx, judge)
+    result = check_answer(answer, ctx, recorder)
     elapsed = time.monotonic() - started
     params = ctx["_params"]
     return {
@@ -102,6 +117,15 @@ def _check_case(
                 "hypothesis": item.hypothesis,
                 "score": item.score,
                 "supported": item.supported,
+                "citation_scores": [
+                    {
+                        "premise_sha256": hashlib.sha256(premise.encode("utf-8")).hexdigest(),
+                        "premise_chars": len(premise),
+                        "score": score,
+                    }
+                    for (premise, hypothesis), score in recorder.calls.items()
+                    if hypothesis == item.hypothesis
+                ],
             }
             for item in result.predictions
         ],
@@ -143,7 +167,10 @@ def main() -> None:
         report = {
             "schema_version": 2,
             **common,
-            "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model.",
+            "aggregation_scope": (
+                "Each case calls the official check_answer sequentially while reusing one loaded model; "
+                "every distinct citation premise score is retained for exact ensemble aggregation."
+            ),
             "total_elapsed_seconds": sum(float(case["elapsed_seconds"]) for case in checked),
             "cases": checked,
         }

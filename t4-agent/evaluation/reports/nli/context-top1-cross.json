@@ -1,0 +1,742 @@
+{
+  "schema_version": 2,
+  "model_id": "cross-encoder/nli-deberta-v3-large",
+  "model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.11.7",
+    "torch": "2.2.2",
+    "transformers": "4.46.3",
+    "qfbench2-common": "2.4.4"
+  },
+  "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model; every distinct citation premise score is retained for exact ensemble aggregation.",
+  "total_elapsed_seconds": 295.3004012219608,
+  "cases": [
+    {
+      "case_id": "t4-macrorev-20240930-us6",
+      "unit_id": "t4-macrorev-20240930-us6",
+      "answer_sha256": "dc502b301a349349a931602f645a98007096025272c9133856dc3157c68eb52e",
+      "elapsed_seconds": 129.09340109396726,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "DGORDER_2024-07_20241025",
+          "hypothesis": "The next estimate revision direction of DGORDER_2024-07_20241025 is down. The 90% prediction interval for the next estimate revision direction of DGORDER_2024-07_20241025 is 288824 to 290056.",
+          "score": 0.6619218587875366,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "fee7bd8c90f520f3f80de027fabd996f41155b0065deb18be6432b9016018de9",
+              "premise_chars": 998,
+              "score": 0.40939268469810486
+            },
+            {
+              "premise_sha256": "67b8e218305ae4d7709a90fd85fbfba2c8c25f4163b3e060899a038600a03584",
+              "premise_chars": 2186,
+              "score": 0.6619218587875366
+            }
+          ]
+        },
+        {
+          "entity_id": "DGORDER_2024-08_20241025",
+          "hypothesis": "The next estimate revision direction of DGORDER_2024-08_20241025 is down. The 90% prediction interval for the next estimate revision direction of DGORDER_2024-08_20241025 is 288957 to 290189.",
+          "score": 0.6456146836280823,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "fee7bd8c90f520f3f80de027fabd996f41155b0065deb18be6432b9016018de9",
+              "premise_chars": 998,
+              "score": 0.37504786252975464
+            },
+            {
+              "premise_sha256": "67b8e218305ae4d7709a90fd85fbfba2c8c25f4163b3e060899a038600a03584",
+              "premise_chars": 2186,
+              "score": 0.6456146836280823
+            }
+          ]
+        },
+        {
+          "entity_id": "HOUST_2024-07_20241018",
+          "hypothesis": "The next estimate revision direction of HOUST_2024-07_20241018 is up. The 90% prediction interval for the next estimate revision direction of HOUST_2024-07_20241018 is 1202.74 to 1273.26.",
+          "score": 0.7649194002151489,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "69918e6342376d0ef7a0a5523de4e31b7f61bd2e015a838d9fdd195a1a505e5b",
+              "premise_chars": 451,
+              "score": 0.1761617511510849
+            },
+            {
+              "premise_sha256": "e94a3ef42dbfc523dffa4d2ec429bb6065dd345b6bf004d42b1c8e11117c8695",
+              "premise_chars": 1486,
+              "score": 0.7649194002151489
+            }
+          ]
+        },
+        {
+          "entity_id": "INDPRO_2024-07_20241017",
+          "hypothesis": "The next estimate revision direction of INDPRO_2024-07_20241017 is down. The 90% prediction interval for the next estimate revision direction of INDPRO_2024-07_20241017 is 101.951 to 102.587.",
+          "score": 0.6851916909217834,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8b00132ae84242a3929203e65a8341729066706685f994e8acdebfcbcda2b73e",
+              "premise_chars": 2032,
+              "score": 0.5161916613578796
+            },
+            {
+              "premise_sha256": "fc0c3961aed0ce2fcb59bb666807c9c68526de20c3cc5fac50ee1037d8ae40fc",
+              "premise_chars": 2170,
+              "score": 0.6851916909217834
+            }
+          ]
+        },
+        {
+          "entity_id": "INDPRO_2024-08_20241017",
+          "hypothesis": "The next estimate revision direction of INDPRO_2024-08_20241017 is down. The 90% prediction interval for the next estimate revision direction of INDPRO_2024-08_20241017 is 102.784 to 103.42.",
+          "score": 0.7280765175819397,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8b00132ae84242a3929203e65a8341729066706685f994e8acdebfcbcda2b73e",
+              "premise_chars": 2032,
+              "score": 0.4120881259441376
+            },
+            {
+              "premise_sha256": "fc0c3961aed0ce2fcb59bb666807c9c68526de20c3cc5fac50ee1037d8ae40fc",
+              "premise_chars": 2170,
+              "score": 0.7280765175819397
+            }
+          ]
+        },
+        {
+          "entity_id": "PAYEMS_2024-07_20241004",
+          "hypothesis": "The next estimate revision direction of PAYEMS_2024-07_20241004 is down. The 90% prediction interval for the next estimate revision direction of PAYEMS_2024-07_20241004 is 158261 to 158895.",
+          "score": 0.7538785934448242,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4fce07171860e59649290b001715ea889c8bcc9fb24b763ae350de8f70ebd40f",
+              "premise_chars": 582,
+              "score": 0.5307428240776062
+            },
+            {
+              "premise_sha256": "20109485c059cba98f1d5555bf355080d5ebaf5da93224b3323cce92d7048a96",
+              "premise_chars": 1668,
+              "score": 0.7538785934448242
+            }
+          ]
+        },
+        {
+          "entity_id": "PAYEMS_2024-08_20241004",
+          "hypothesis": "The next estimate revision direction of PAYEMS_2024-08_20241004 is down. The 90% prediction interval for the next estimate revision direction of PAYEMS_2024-08_20241004 is 158402 to 159038.",
+          "score": 0.6773750185966492,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4fce07171860e59649290b001715ea889c8bcc9fb24b763ae350de8f70ebd40f",
+              "premise_chars": 582,
+              "score": 0.36504361033439636
+            },
+            {
+              "premise_sha256": "20109485c059cba98f1d5555bf355080d5ebaf5da93224b3323cce92d7048a96",
+              "premise_chars": 1668,
+              "score": 0.6773750185966492
+            }
+          ]
+        },
+        {
+          "entity_id": "PAYEMS_2024-08_20241101",
+          "hypothesis": "The next estimate revision direction of PAYEMS_2024-08_20241101 is down. The 90% prediction interval for the next estimate revision direction of PAYEMS_2024-08_20241101 is 158402 to 159038.",
+          "score": 0.6455501317977905,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4fce07171860e59649290b001715ea889c8bcc9fb24b763ae350de8f70ebd40f",
+              "premise_chars": 582,
+              "score": 0.3770841360092163
+            },
+            {
+              "premise_sha256": "20109485c059cba98f1d5555bf355080d5ebaf5da93224b3323cce92d7048a96",
+              "premise_chars": 1668,
+              "score": 0.6455501317977905
+            }
+          ]
+        },
+        {
+          "entity_id": "PI_2024-07_20241031",
+          "hypothesis": "The next estimate revision direction of PI_2024-07_20241031 is up. The 90% prediction interval for the next estimate revision direction of PI_2024-07_20241031 is 23431.9 to 27545.8.",
+          "score": 0.5556114912033081,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "6f557f9e1743c90e95e5d6ea69090cd6fdfb4c4f0fec4f941ae244119e03885a",
+              "premise_chars": 1172,
+              "score": 0.5556114912033081
+            },
+            {
+              "premise_sha256": "7c180a104ccafff5bab65b3b2c1462c01c0ecd8d0d0a80655ed98eeb3f3f6988",
+              "premise_chars": 2222,
+              "score": 0.42348578572273254
+            }
+          ]
+        },
+        {
+          "entity_id": "PI_2024-08_20241127",
+          "hypothesis": "The next estimate revision direction of PI_2024-08_20241127 is up. The 90% prediction interval for the next estimate revision direction of PI_2024-08_20241127 is 23482.4 to 27596.3.",
+          "score": 0.5350444316864014,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "6f557f9e1743c90e95e5d6ea69090cd6fdfb4c4f0fec4f941ae244119e03885a",
+              "premise_chars": 1172,
+              "score": 0.5350444316864014
+            },
+            {
+              "premise_sha256": "7c180a104ccafff5bab65b3b2c1462c01c0ecd8d0d0a80655ed98eeb3f3f6988",
+              "premise_chars": 2222,
+              "score": 0.4301503002643585
+            }
+          ]
+        },
+        {
+          "entity_id": "RSAFS_2024-07_20241017",
+          "hypothesis": "The next estimate revision direction of RSAFS_2024-07_20241017 is up. The 90% prediction interval for the next estimate revision direction of RSAFS_2024-07_20241017 is 708932 to 711935.",
+          "score": 0.5579833984375,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "db4a19dbafa415fea7efa475242a54e49a1bce436e1e291a0867d6062a7b3915",
+              "premise_chars": 576,
+              "score": 0.5579833984375
+            },
+            {
+              "premise_sha256": "92bafea8d7106a59b5c4b6f357053817347e4213ddcf4381cd1f810a15ae196e",
+              "premise_chars": 1700,
+              "score": 0.40628522634506226
+            }
+          ]
+        },
+        {
+          "entity_id": "RSAFS_2024-08_20241115",
+          "hypothesis": "The next estimate revision direction of RSAFS_2024-08_20241115 is up. The 90% prediction interval for the next estimate revision direction of RSAFS_2024-08_20241115 is 709296 to 712299.",
+          "score": 0.5117402672767639,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "db4a19dbafa415fea7efa475242a54e49a1bce436e1e291a0867d6062a7b3915",
+              "premise_chars": 576,
+              "score": 0.5117402672767639
+            },
+            {
+              "premise_sha256": "92bafea8d7106a59b5c4b6f357053817347e4213ddcf4381cd1f810a15ae196e",
+              "premise_chars": 1700,
+              "score": 0.38435807824134827
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-postearn-20240201-megacap",
+      "unit_id": "t4-postearn-20240201-megacap",
+      "answer_sha256": "dc82fde3ccf1175fc99bb1fbbb99feb02814fcae6b7d4c879b3a8c3dfc10fc8c",
+      "elapsed_seconds": 18.824096575030126,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.0,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "AAPL",
+          "hypothesis": "The earnings reaction of Apple Inc. (AAPL) is flat. The 90% prediction interval for the earnings reaction of Apple Inc. (AAPL) is -8.3 to 8.3.",
+          "score": 0.45840004086494446,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "0c973120b55288ebea199afceaf2345773e4ad429834f1fb3e992a9aaead6e65",
+              "premise_chars": 250,
+              "score": 0.45840004086494446
+            },
+            {
+              "premise_sha256": "b42c92f241532b638c534230949ef5890394be98a6c688fb9a1efedc1a5a02bb",
+              "premise_chars": 1569,
+              "score": 0.2648218274116516
+            }
+          ]
+        },
+        {
+          "entity_id": "AMZN",
+          "hypothesis": "The earnings reaction of Amazon.com, Inc. (AMZN) is flat. The 90% prediction interval for the earnings reaction of Amazon.com, Inc. (AMZN) is -8.3 to 8.3.",
+          "score": 0.3508254587650299,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "85a7d028801233cdea7ec1a9e6a709d223d87c81859e24d81a2e6c21c21acd87",
+              "premise_chars": 387,
+              "score": 0.22741274535655975
+            },
+            {
+              "premise_sha256": "095f3f647f96d29bd2891cc465e52a968815888b4c202467d3ca61686f1243ff",
+              "premise_chars": 1824,
+              "score": 0.3508254587650299
+            }
+          ]
+        },
+        {
+          "entity_id": "META",
+          "hypothesis": "The earnings reaction of Meta Platforms, Inc. (META) is flat. The 90% prediction interval for the earnings reaction of Meta Platforms, Inc. (META) is -8.3 to 8.3.",
+          "score": 0.3904370367527008,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "9dce887c686e11583ded4547c602dc26e660fc90aed7038e317a5c67b7eb7ae6",
+              "premise_chars": 250,
+              "score": 0.3904370367527008
+            },
+            {
+              "premise_sha256": "cd37a99291dff89a2edea1106a950f0ea5a722bb1c615949e1e5a3c39901de7f",
+              "premise_chars": 2187,
+              "score": 0.25008442997932434
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-credit-event-2023",
+      "unit_id": "t4-credit-event-2023",
+      "answer_sha256": "6223b14d85556bd0782d24e1a46729f9ed8dd8b75e982440f2720f1fb83e031f",
+      "elapsed_seconds": 52.786415725946426,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.0,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "BBBY",
+          "hypothesis": "The credit event 12m of Bed Bath & Beyond Inc. (BBBY) is no_event. The 90% prediction interval for the credit event 12m of Bed Bath & Beyond Inc. (BBBY) is 0 to 1.",
+          "score": 0.11180367320775986,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "d73ffb868a8e54fecc92b51ada9af022ea2202bc9b8fccb48b8a488876221cae",
+              "premise_chars": 250,
+              "score": 0.11180367320775986
+            },
+            {
+              "premise_sha256": "0c5f71b0ba83955af1b89611943eaf35560c6ed159d5f835869373997589d818",
+              "premise_chars": 1981,
+              "score": 0.001042763120494783
+            }
+          ]
+        },
+        {
+          "entity_id": "BBY",
+          "hypothesis": "The credit event 12m of Best Buy Co., Inc. (BBY) is no_event. The 90% prediction interval for the credit event 12m of Best Buy Co., Inc. (BBY) is 0 to 1.",
+          "score": 0.4765031337738037,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "a43d7d94dcd2455f83ebb86cf3b32cb2278d866badca3d56f99c08053bea1d53",
+              "premise_chars": 489,
+              "score": 0.4765031337738037
+            },
+            {
+              "premise_sha256": "c8c65896b1ced3c10d208aaabd5710fbf85f0848888515ea09ba89fe0c4277e0",
+              "premise_chars": 2169,
+              "score": 0.45263344049453735
+            }
+          ]
+        },
+        {
+          "entity_id": "M",
+          "hypothesis": "The credit event 12m of Macy's, Inc. (M) is no_event. The 90% prediction interval for the credit event 12m of Macy's, Inc. (M) is 0 to 1.",
+          "score": 0.23690325021743774,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "117c823a61e0cb21df7a7b541315f8b51cfc26f5304067987f997dc4bd1cf8f7",
+              "premise_chars": 249,
+              "score": 0.23690325021743774
+            },
+            {
+              "premise_sha256": "526077e4459ea8c82b98659aa7e1d8833563028ac7257c57ec1da7f664eb32eb",
+              "premise_chars": 2087,
+              "score": 0.22030429542064667
+            }
+          ]
+        },
+        {
+          "entity_id": "ODFL",
+          "hypothesis": "The credit event 12m of Old Dominion Freight Line, Inc. (ODFL) is no_event. The 90% prediction interval for the credit event 12m of Old Dominion Freight Line, Inc. (ODFL) is 0 to 1.",
+          "score": 0.45390936732292175,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "c2ee1bd6c1aaa052c07902fe05f49fa737d4d93dcf88565c6542d15baf03617b",
+              "premise_chars": 250,
+              "score": 0.45390936732292175
+            },
+            {
+              "premise_sha256": "b598abba1d9b40a3f110b9da62a5446b4efb9e0e30b13bf9753193716d877403",
+              "premise_chars": 2175,
+              "score": 0.279705673456192
+            }
+          ]
+        },
+        {
+          "entity_id": "RAD",
+          "hypothesis": "The credit event 12m of Rite Aid Corporation (RAD) is no_event. The 90% prediction interval for the credit event 12m of Rite Aid Corporation (RAD) is 0 to 1.",
+          "score": 0.14921551942825317,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "e36c5510e7881b2e5590264a2756417c9210fed1456de513c2e1de3320507e80",
+              "premise_chars": 495,
+              "score": 0.0008938072714954615
+            },
+            {
+              "premise_sha256": "a30b1be9aead42b4c54249e5177a92519d538b920513f11b95e0f9885883251e",
+              "premise_chars": 2193,
+              "score": 0.14921551942825317
+            }
+          ]
+        },
+        {
+          "entity_id": "WBA",
+          "hypothesis": "The credit event 12m of Walgreens Boots Alliance, Inc. (WBA) is no_event. The 90% prediction interval for the credit event 12m of Walgreens Boots Alliance, Inc. (WBA) is 0 to 1.",
+          "score": 0.32321617007255554,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "f6889678ae585909b5c760eba3bedfb21d276813da3d322b540e10b97812398d",
+              "premise_chars": 250,
+              "score": 0.32321617007255554
+            },
+            {
+              "premise_sha256": "ccffc2dfc5dcc6ef72e5c4a041b131c6a9bc63c76146416b53f843f109db1d08",
+              "premise_chars": 2145,
+              "score": 0.07590404152870178
+            }
+          ]
+        },
+        {
+          "entity_id": "WE",
+          "hypothesis": "The credit event 12m of WeWork Inc. (WE) is no_event. The 90% prediction interval for the credit event 12m of WeWork Inc. (WE) is 0 to 1.",
+          "score": 0.010743934661149979,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "3ee45c0f7a5e16174cfa59ec4bdaca1245ef5b7790d145b51180ed46defd06bd",
+              "premise_chars": 484,
+              "score": 0.0008427995489910245
+            },
+            {
+              "premise_sha256": "7aea7be06022161ff18411df9c7f2a5e146f519b7b4998e98fff6a43f0d77702",
+              "premise_chars": 2150,
+              "score": 0.010743934661149979
+            }
+          ]
+        },
+        {
+          "entity_id": "YELL",
+          "hypothesis": "The credit event 12m of Yellow Corporation (YELL) is no_event. The 90% prediction interval for the credit event 12m of Yellow Corporation (YELL) is 0 to 1.",
+          "score": 0.0354667603969574,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "2715b218454a8cc275df8d912a18e52cf177f6918cde20cee39f7afa5e1132e8",
+              "premise_chars": 389,
+              "score": 0.0354667603969574
+            },
+            {
+              "premise_sha256": "800800760fd371054808f89de3c693c1e074e52cda42caaabee6d0158e65ada9",
+              "premise_chars": 2093,
+              "score": 0.005360757000744343
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-eps-growth-2024Q3-banks",
+      "unit_id": "t4-eps-growth-2024Q3-banks",
+      "answer_sha256": "838018a8a39cd324d28e25dacd4d667a068b3674ea31bb9fcd3254d8de7ad793",
+      "elapsed_seconds": 52.91032815899234,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.75,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "BAC",
+          "hypothesis": "The eps yoy growth pct of Bank of America Corporation (BAC) is -5.55556. The 90% prediction interval for the eps yoy growth pct of Bank of America Corporation (BAC) is -25.5556 to 14.4444.",
+          "score": 0.07892163097858429,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "f5cd08acf1319c08b50211976d1aa0ad14d4077944ddae2f8cf9deb2e99e0c3c",
+              "premise_chars": 108,
+              "score": 0.0006710132001899183
+            },
+            {
+              "premise_sha256": "14442dde2b887ca345cecf172aa97f4df2cd38d63051594061125b4a76d813d4",
+              "premise_chars": 2200,
+              "score": 0.07892163097858429
+            }
+          ]
+        },
+        {
+          "entity_id": "C",
+          "hypothesis": "The eps yoy growth pct of Citigroup Inc. (C) is 11.6564. The 90% prediction interval for the eps yoy growth pct of Citigroup Inc. (C) is -8.34356 to 31.6564.",
+          "score": 0.6949600577354431,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e11672ea11d5f20a3991974c9cae75ae1f34e9efdd06e55610239ff3ee83e260",
+              "premise_chars": 57,
+              "score": 0.006437426432967186
+            },
+            {
+              "premise_sha256": "7454f062fb0d4b280bab119e83849de2651a4ed0b429d70203779c5470eb11a1",
+              "premise_chars": 2200,
+              "score": 0.6949600577354431
+            }
+          ]
+        },
+        {
+          "entity_id": "GS",
+          "hypothesis": "The eps yoy growth pct of The Goldman Sachs Group, Inc. (GS) is 101.28. The 90% prediction interval for the eps yoy growth pct of The Goldman Sachs Group, Inc. (GS) is 25.3199 to 177.239.",
+          "score": 0.7641193866729736,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5c3bc881522dda06a9c72e52dbe78a9e63df24c43f5d5c20ad56c7cf3827ed77",
+              "premise_chars": 97,
+              "score": 0.00025488893152214587
+            },
+            {
+              "premise_sha256": "92a4726a26ea200a620c0b0c3c2f4266cddc02cf1cd94ed95402bed29879a452",
+              "premise_chars": 2146,
+              "score": 0.7641193866729736
+            }
+          ]
+        },
+        {
+          "entity_id": "JPM",
+          "hypothesis": "The eps yoy growth pct of JPMorgan Chase & Co. (JPM) is 31.6397. The 90% prediction interval for the eps yoy growth pct of JPMorgan Chase & Co. (JPM) is 7.90993 to 55.3695.",
+          "score": 0.9966040253639221,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "404c66b6a43b43a419f79fa6752fa35495f0b4ed594159758a4fb84c52a1cdef",
+              "premise_chars": 38,
+              "score": 6.895125261507928e-05
+            },
+            {
+              "premise_sha256": "7846ec9063c7f7d20c7f5ac2512ae060ed78d55c6f74cc6f6279ff13aeeefb37",
+              "premise_chars": 1879,
+              "score": 0.9966040253639221
+            }
+          ]
+        },
+        {
+          "entity_id": "MS",
+          "hypothesis": "The eps yoy growth pct of Morgan Stanley (MS) is 42.029. The 90% prediction interval for the eps yoy growth pct of Morgan Stanley (MS) is 10.5072 to 73.5507.",
+          "score": 0.1969541311264038,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "c28fac3a3d30a9a07a18cdee26de352fcba140f164848aa45bb7c58ed4d70f91",
+              "premise_chars": 87,
+              "score": 0.0046563721261918545
+            },
+            {
+              "premise_sha256": "bae98bd639d936c7d8dd1485e4d9112363c0a19dbdf69b96d35a31c73503b668",
+              "premise_chars": 2105,
+              "score": 0.1969541311264038
+            }
+          ]
+        },
+        {
+          "entity_id": "PNC",
+          "hypothesis": "The eps yoy growth pct of The PNC Financial Services Group, Inc. (PNC) is 0.833333. The 90% prediction interval for the eps yoy growth pct of The PNC Financial Services Group, Inc. (PNC) is -19.1667 to 20.8333.",
+          "score": 0.7424167394638062,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a6d26be3a7f70125665685137c4cb04e487dd2106a13f656daf859f1f2f039dd",
+              "premise_chars": 91,
+              "score": 0.0005474491626955569
+            },
+            {
+              "premise_sha256": "585f1d28626e3e09d4d28e2d6bc8eb9e06dc407681065674068bada145eb1284",
+              "premise_chars": 1945,
+              "score": 0.7424167394638062
+            }
+          ]
+        },
+        {
+          "entity_id": "USB",
+          "hypothesis": "The eps yoy growth pct of U.S. Bancorp (USB) is 14.2857. The 90% prediction interval for the eps yoy growth pct of U.S. Bancorp (USB) is -5.71429 to 34.2857.",
+          "score": 0.5424532294273376,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0a6126f99e592b811dce4ce032ab400407018f6f738420bf61cc45227f1371e8",
+              "premise_chars": 93,
+              "score": 0.0003383815346751362
+            },
+            {
+              "premise_sha256": "247b26ece14aa01d696601a9f6a55fd74cf548401f3d528411c49133ef9e6d42",
+              "premise_chars": 1608,
+              "score": 0.5424532294273376
+            }
+          ]
+        },
+        {
+          "entity_id": "WFC",
+          "hypothesis": "The eps yoy growth pct of Wells Fargo & Company (WFC) is 5.40541. The 90% prediction interval for the eps yoy growth pct of Wells Fargo & Company (WFC) is -14.5946 to 25.4054.",
+          "score": 0.881714403629303,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "1787b16ef998360f395cc4c9d64d105b61094ebe1d679c6386675475b50332d8",
+              "premise_chars": 115,
+              "score": 0.0009188081603497267
+            },
+            {
+              "premise_sha256": "b4e2420cf5af96c8099457644a747ad9c07987a00a760158e689120268d9bb48",
+              "premise_chars": 2195,
+              "score": 0.881714403629303
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-eps-yoy-2023Q2-mixed",
+      "unit_id": "t4-eps-yoy-2023Q2-mixed",
+      "answer_sha256": "c14db83fa440bad04cb4167dc01f4b89ffd3f2d000987208041d649d966642e3",
+      "elapsed_seconds": 41.68615966802463,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.8333333333333334,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "AMD",
+          "hypothesis": "The eps yoy direction of Advanced Micro Devices, Inc. (AMD) is down. The 90% prediction interval for the eps yoy direction of Advanced Micro Devices, Inc. (AMD) is 0.216 to 0.297.",
+          "score": 0.5931431651115417,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c2e7ff52b501b8dc3b57c5a97f3666f4310f0d4bb37bdd3d1091c707f49297b8",
+              "premise_chars": 250,
+              "score": 0.4729250371456146
+            },
+            {
+              "premise_sha256": "e4e930c3beb7269111e2c68ac72d63a41197605680284d65282d2604782cd8ec",
+              "premise_chars": 1697,
+              "score": 0.5931431651115417
+            }
+          ]
+        },
+        {
+          "entity_id": "AMGN",
+          "hypothesis": "The eps yoy direction of Amgen Inc. (AMGN) is down. The 90% prediction interval for the eps yoy direction of Amgen Inc. (AMGN) is 1.96 to 2.695.",
+          "score": 0.5129865407943726,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f4f358fb8fb5b87a12e614730b2a78f86f9f56a15f95ebad0e6cd7ea3c5a6a03",
+              "premise_chars": 249,
+              "score": 0.5129865407943726
+            },
+            {
+              "premise_sha256": "b80f947d6aec128305cb3560c144b49f411addf3782a3ff308b0b4d2dd005458",
+              "premise_chars": 1936,
+              "score": 0.4894992411136627
+            }
+          ]
+        },
+        {
+          "entity_id": "DOW",
+          "hypothesis": "The eps yoy direction of Dow Inc. (DOW) is down. The 90% prediction interval for the eps yoy direction of Dow Inc. (DOW) is 1.808 to 2.486.",
+          "score": 0.5381529927253723,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0c92cb0c9257eb3e474dfcc85b9e42815a8114d706ab5687530ec1b802aff2ae",
+              "premise_chars": 384,
+              "score": 0.2695100009441376
+            },
+            {
+              "premise_sha256": "37b555ea2a2072dc2f0bc6c14217ff1abae2755ac5b530fc0a1d4c97be702cba",
+              "premise_chars": 1886,
+              "score": 0.5381529927253723
+            }
+          ]
+        },
+        {
+          "entity_id": "HON",
+          "hypothesis": "The eps yoy direction of Honeywell International Inc. (HON) is down. The 90% prediction interval for the eps yoy direction of Honeywell International Inc. (HON) is 1.472 to 2.024.",
+          "score": 0.4916924238204956,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "b0ba3a7edbe9dd575bb8ae7d9474dc89f23863c73ec123fd1f17466245d16116",
+              "premise_chars": 250,
+              "score": 0.4916924238204956
+            },
+            {
+              "premise_sha256": "ab4c53e4fcfa0a449c853be99fd06e07cf7270c114328974ac2237ba732e36ca",
+              "premise_chars": 2198,
+              "score": 0.007448472548276186
+            }
+          ]
+        },
+        {
+          "entity_id": "IBM",
+          "hypothesis": "The eps yoy direction of International Business Machines Corporation (IBM) is down. The 90% prediction interval for the eps yoy direction of International Business Machines Corporation (IBM) is 1.224 to 1.683.",
+          "score": 0.6520554423332214,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "021ea8c765e372d0d33c1acea42a3c69657fae6143dc7af27883baab7c398d62",
+              "premise_chars": 250,
+              "score": 0.3746735155582428
+            },
+            {
+              "premise_sha256": "d29132ab2cff428d0dc42a4f47f2d8c6354b13a3908c79426c359b68aabda4d5",
+              "premise_chars": 2092,
+              "score": 0.6520554423332214
+            }
+          ]
+        },
+        {
+          "entity_id": "TMO",
+          "hypothesis": "The eps yoy direction of Thermo Fisher Scientific Inc. (TMO) is down. The 90% prediction interval for the eps yoy direction of Thermo Fisher Scientific Inc. (TMO) is 3.376 to 4.642.",
+          "score": 0.841630220413208,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "9a1c6935f515a1d6a3c66f0bd7f6fd9737be8cab957a86e57dcf777f5953e3e0",
+              "premise_chars": 394,
+              "score": 0.4656226933002472
+            },
+            {
+              "premise_sha256": "cbe457e86f59983295e526c9a6b379700da7478f181297af41bb1797c24e564c",
+              "premise_chars": 1899,
+              "score": 0.841630220413208
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

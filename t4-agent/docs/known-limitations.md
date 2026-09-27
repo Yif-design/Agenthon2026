@@ -2,9 +2,11 @@
 
 - No authoritative House serving input/context ceiling is published.
 - Official Development House access is not yet open; OpenRouter is only an analogue.
-- The official two-model NLI path has been approximated locally only for representative EPS,
-  auction and COT units. The remaining eight public units have smoke validation but no full NLI
-  result, and the local CPU/runtime package set is not guaranteed byte-identical to production.
+- All eleven public units have a proven passing lower bound under the local official two-model NLI
+  path, but this does not establish hidden-unit faithfulness. The local CPU/runtime package set is
+  not guaranteed byte-identical to production.
+- Up to three retrieved context citations are added per entity. They increase answer size and
+  scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
 - Accepted interval changes lift diagnostic mean coverage to 66.4%, still below the 90% target.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.

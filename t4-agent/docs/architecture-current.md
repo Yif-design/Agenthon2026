@@ -46,10 +46,10 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Same signals, plus accepted CPI interval floor | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 | Same signals, plus accepted auction point and interval model | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 
-These are diagnostic practice results, not a private leaderboard score. A local approximation of
-the official two-model ensemble-NLI gate has now covered one representative classification unit,
-one regression unit and one ranking unit. It is not a complete 11-unit certification; see
-`docs/nli-gate-audit.md`.
+These are diagnostic practice results, not a private leaderboard score. The local official
+two-model ensemble path now covers all eleven public units. Six passed before the shared context
+candidate and all eleven have a proven passing lower bound after it. Local runtime differences and
+the public-only scope remain; see `docs/nli-gate-audit.md`.
 
 For positioning rankings, the deterministic calculator now forecasts five-week change as `-0.2`
 times current noncommercial net positioning as a percent of open interest. It accepts an exact
@@ -83,3 +83,10 @@ to the preceding deterministic rule. This does not change any current public out
 historical hidden unit from receiving a parameter selected with later outcomes.
 Date-suffixed COT entity fields are filtered against the same task cutoff before the latest value is
 selected.
+
+Every prediction preserves up to three compact calculator/model facts and can additionally cite up
+to three distinct full BM25 chunks. These context candidates come only from the same cutoff-safe,
+entity-scoped retrieval result already used for reasoning. Their exact source slice is rechecked
+before output. This fixes cases where a short fact or the beginning of a relevant chunk omitted the
+table header or later passage needed by the prediction-bound NLI hypothesis. It changes no forecast
+and raised local public NLI gate passage from 6/11 to 11/11.

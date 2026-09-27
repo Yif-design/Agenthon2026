@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import json
 
-from t4agent.evidence import validate_model_output
+from t4agent.evidence import fact_from_quote, validate_model_output
 from t4agent.family_specs import SPECS
-from t4agent.predict import predict_rows
+from t4agent.predict import _claims_with_context, predict_rows
 from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids
 from t4agent.taskio import Task
 from t4agent.validate import validate_answer
@@ -100,6 +100,41 @@ def test_exact_quote_produces_a_span_bound_fact() -> None:
     assert not rejected
     assert len(facts) == 1
     assert text[facts[0].span_start : facts[0].span_end] == quote
+
+
+def test_context_citations_preserve_facts_and_add_three_exact_scoped_chunks() -> None:
+    text = "fact sentence. first context. second context. third context. fourth context."
+    foreign = "foreign context"
+    corpus = IndexedCorpus([], {"A": text, "B": foreign}, {"A": "2023-01-01", "B": "2023-01-01"})
+    fact = fact_from_quote(
+        entity_id="E",
+        name="fact",
+        kind="context",
+        value="fact",
+        doc_id="A",
+        quote="fact sentence.",
+        claim="A verified fact.",
+        extractor="test",
+        corpus=corpus,
+    )
+    assert fact is not None
+    chunks = []
+    for phrase in ("first context.", "second context.", "third context.", "fourth context."):
+        start = text.index(phrase)
+        chunks.append(Chunk("A", "2023-01-01", start, start + len(phrase), phrase))
+    chunks.insert(1, Chunk("B", "2023-01-01", 0, len(foreign), foreign))
+    chunks.insert(2, Chunk("A", "2023-01-01", 0, 4, "not exact"))
+
+    claims = _claims_with_context([fact], chunks, corpus, {"A"}, max_context=3)
+
+    assert claims[0] == fact.as_claim()
+    assert len(claims) == 4
+    assert [text[c["span_start"] : c["span_end"]] for c in claims[1:]] == [
+        "first context.",
+        "second context.",
+        "third context.",
+    ]
+    assert {claim["doc_id"] for claim in claims} == {"A"}
 
 
 def test_whitespace_normalized_quote_maps_back_to_original_span() -> None:

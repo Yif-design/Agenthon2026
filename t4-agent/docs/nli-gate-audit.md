@@ -5,11 +5,9 @@ Last updated: 2026-09-27
 ## Scope
 
 This audit runs the public Track 4 `check_answer` path with each of the two published NLI members,
-then averages each citation's member scores before applying the 0.5 threshold. It covers one public
-classification unit (`t4-EXAMPLE-eps-beat`), one regression unit
-(`t4-auction-btc-202411-us7`) and one ranking unit (`t4-cotpos-202411-us10`). Public practice units
-have no shipped resolution outcomes; this audit measures evidence faithfulness, not predictive
-accuracy.
+then averages each citation's member scores before applying the 0.5 threshold. It now covers all
+eleven public units and all 78 roster entities. Public practice units have no shipped resolution
+outcomes; this audit measures evidence faithfulness, not predictive accuracy.
 
 The local judge file exactly matched remote Track 4 commit
 `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491` on the audit date. Fixed model inputs were:
@@ -58,11 +56,69 @@ average within 0.001 of that independent calculation. Otherwise it cites the ori
 Tasks before the fitted artifact's 2022-01-01 availability date also retain row evidence because
 their fallback forecast includes a trend adjustment that the mean-only summary does not support.
 
+## Full public baseline
+
+After accepting the auction-specific summary, six of eleven public units passed the local official
+ensemble path. Five failed across both classification and regression, which established a shared
+evidence-construction issue rather than one family-specific defect.
+
+| Unit | Baseline faithfulness | Gate |
+|---|---:|---|
+| EPS example | 1.0000 | pass |
+| Treasury auction | 1.0000 | pass |
+| COT positioning | 1.0000 | pass |
+| CPI components | 0.9091 | pass |
+| FOMC 2022 | 1.0000 | pass |
+| FOMC 2024 | 0.8333 | pass |
+| Macro revisions | 0.6667 | fail |
+| Post-earnings reaction | 0.6667 | fail |
+| Credit event | 0.2500 | fail |
+| Bank EPS growth | 0.0000 | fail |
+| EPS YoY direction | 0.3333 | fail |
+
+The common failure was that the shortest calculator or fallback fact was the only NLI premise.
+Several fallback facts cited only the first 250–500 characters of a relevant 1,400–2,200-character
+retrieval chunk, while the useful liquidity, guidance or earnings passage appeared later in that
+same exact chunk. Calculator facts for derived quantities could also omit the table header and
+surrounding comparison text that makes the arithmetic relationship legible to NLI.
+
+## Retrieved-context A/B
+
+The candidate preserved every existing claim and appended exact spans from the already ranked,
+cutoff-filtered and entity-scoped BM25 results. It changed no label, point, interval, retrieval
+ranking, model call or prompt.
+
+Top-1 context was enough to move macro revisions from 8/12 to 12/12 and EPS YoY from 2/6 to 6/6.
+It raised bank EPS from 0/8 to 5/8 but did not pass the unit. Top-3 context was then tested on the
+three remaining failures:
+
+| Unit | Baseline | Top-1 | Top-3 | Accepted gate |
+|---|---:|---:|---:|---|
+| Macro revisions | 0.6667 | 1.0000 | at least 1.0000 | pass |
+| EPS YoY direction | 0.3333 | 1.0000 | at least 1.0000 | pass |
+| Post-earnings reaction | 0.6667 | 0.6667 | 1.0000 | pass |
+| Credit event | 0.2500 | 0.2500 | 0.8750 | pass |
+| Bank EPS growth | 0.0000 | 0.6250 | 0.8750 | pass |
+
+Production therefore keeps up to three compact facts and adds up to three distinct full retrieval
+chunks. A chunk is admitted only when its document is in the entity's allowed scope, its bounds are
+valid and the source text at those bounds exactly equals the indexed chunk. The corpus index has
+already removed undated, malformed and post-cutoff documents. Duplicate spans are skipped.
+
+The top-3 production outputs exactly reproduce the measured spans for post-earnings, credit and
+bank EPS. For macro revisions and EPS YoY they are strict supersets of the passing top-1 answers.
+For the six already passing units, every baseline citation remains present. Under the official
+rule, member scores are averaged per citation and entity support is the maximum across citations;
+adding valid alternatives cannot turn a supported entity into an unsupported one. The combined
+report therefore proves all eleven public gates pass, with lower bounds where a superset was not
+rerun.
+
 ## Verification
 
 - 11/11 public units passed `qfbench2-smoke`; 78/78 roster rows were present.
-- The auction point forecasts and intervals stayed equal to the previous outputs within `1e-12`;
-  the remaining ten unit answers were byte-identical.
+- Labels were unchanged and every point/interval stayed equal to the preceding outputs within
+  `1e-12`.
+- The accepted citation candidate raises proven public NLI gate passage from 6/11 to 11/11.
 - The experiment and production spans differ only by a trailing newline. Both fixed tokenizers
   produced identical token IDs and attention masks for all seven premise/hypothesis pairs.
 - The NLI experiment scripts support multiple answer variants for one unit while loading each model
@@ -74,7 +130,11 @@ Reports:
 - `evaluation/reports/nli/auction-citation-ab-cross-encoder.json`
 - `evaluation/reports/nli/auction-citation-ab-moritz.json`
 - `evaluation/reports/nli/auction-citation-ab-ensemble.json`
+- `evaluation/reports/nli/public-suite-context-v1.json`
+- `evaluation/reports/nli/public-remaining-group-{a,b}-{cross,moritz,ensemble}.json`
+- `evaluation/reports/nli/context-top{1,3}-{cross,moritz,ensemble}.json`
 
-The audit does not establish that every hidden auction corpus contains a derived summary, or that
-the remaining eight public units pass the full ensemble. Fallback behavior and the 11-unit smoke
-suite preserve validity when no verified summary is available.
+The audit does not establish hidden-unit faithfulness, that every hidden auction corpus contains a
+derived summary, or runtime equivalence with the production scorer. Context alternatives improve
+the public gate but do not make an unsupported forecast substantively correct. Exact scope, cutoff
+and fallback checks preserve validity when no useful context exists.

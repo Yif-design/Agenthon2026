@@ -1,0 +1,584 @@
+{
+  "schema_version": 2,
+  "model_id": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.11.7",
+    "torch": "2.2.2",
+    "transformers": "4.46.3",
+    "qfbench2-common": "2.4.4"
+  },
+  "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model; every distinct citation premise score is retained for exact ensemble aggregation.",
+  "total_elapsed_seconds": 284.92080158391036,
+  "cases": [
+    {
+      "case_id": "t4-postearn-20240201-megacap",
+      "unit_id": "t4-postearn-20240201-megacap",
+      "answer_sha256": "1ac309230a7192828fb7358cb52fec1e681713947df78bad0df573df4a1515cb",
+      "elapsed_seconds": 50.61184572591446,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "AAPL",
+          "hypothesis": "The earnings reaction of Apple Inc. (AAPL) is flat. The 90% prediction interval for the earnings reaction of Apple Inc. (AAPL) is -8.3 to 8.3.",
+          "score": 0.8280696868896484,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0c973120b55288ebea199afceaf2345773e4ad429834f1fb3e992a9aaead6e65",
+              "premise_chars": 250,
+              "score": 0.5603034496307373
+            },
+            {
+              "premise_sha256": "b42c92f241532b638c534230949ef5890394be98a6c688fb9a1efedc1a5a02bb",
+              "premise_chars": 1569,
+              "score": 0.6068530678749084
+            },
+            {
+              "premise_sha256": "f39c3f2061b09db8df246b233fce2963bb58aec17598ab9753e395f8d5d03e6a",
+              "premise_chars": 2191,
+              "score": 0.8280696868896484
+            },
+            {
+              "premise_sha256": "ca2801349c204df66195e6c276bcf80502bc699197c578fbde6ec12cafe73b4d",
+              "premise_chars": 2169,
+              "score": 0.626144528388977
+            }
+          ]
+        },
+        {
+          "entity_id": "AMZN",
+          "hypothesis": "The earnings reaction of Amazon.com, Inc. (AMZN) is flat. The 90% prediction interval for the earnings reaction of Amazon.com, Inc. (AMZN) is -8.3 to 8.3.",
+          "score": 0.8726522922515869,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "85a7d028801233cdea7ec1a9e6a709d223d87c81859e24d81a2e6c21c21acd87",
+              "premise_chars": 387,
+              "score": 0.595114529132843
+            },
+            {
+              "premise_sha256": "095f3f647f96d29bd2891cc465e52a968815888b4c202467d3ca61686f1243ff",
+              "premise_chars": 1824,
+              "score": 0.6141343712806702
+            },
+            {
+              "premise_sha256": "5b2f22d109742c43995c10a3eb431c67d92f646d68e1a5ac4ff26c47c6df0c7e",
+              "premise_chars": 2050,
+              "score": 0.8520795106887817
+            },
+            {
+              "premise_sha256": "39212067593bb007a6602638215e99a71ad9ef6fa43f7de160e5627d8897a36a",
+              "premise_chars": 2075,
+              "score": 0.8726522922515869
+            }
+          ]
+        },
+        {
+          "entity_id": "META",
+          "hypothesis": "The earnings reaction of Meta Platforms, Inc. (META) is flat. The 90% prediction interval for the earnings reaction of Meta Platforms, Inc. (META) is -8.3 to 8.3.",
+          "score": 0.8082801103591919,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "9dce887c686e11583ded4547c602dc26e660fc90aed7038e317a5c67b7eb7ae6",
+              "premise_chars": 250,
+              "score": 0.8082801103591919
+            },
+            {
+              "premise_sha256": "cd37a99291dff89a2edea1106a950f0ea5a722bb1c615949e1e5a3c39901de7f",
+              "premise_chars": 2187,
+              "score": 0.6137869358062744
+            },
+            {
+              "premise_sha256": "05ad24e03e52c791926e589b1b226db6c758a2e4448505c0c65c3976919196aa",
+              "premise_chars": 2158,
+              "score": 0.5663915276527405
+            },
+            {
+              "premise_sha256": "ec0e5bbdf9c9267c7b98e4c4979f2dd74c7c856a03fc38456e1d6236bfad59bc",
+              "premise_chars": 925,
+              "score": 0.6861000657081604
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-credit-event-2023",
+      "unit_id": "t4-credit-event-2023",
+      "answer_sha256": "6ebf032f55e658093181a679c7ffa0aaddb09abbd22436996136ca318015114c",
+      "elapsed_seconds": 114.74391918198671,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "BBBY",
+          "hypothesis": "The credit event 12m of Bed Bath & Beyond Inc. (BBBY) is no_event. The 90% prediction interval for the credit event 12m of Bed Bath & Beyond Inc. (BBBY) is 0 to 1.",
+          "score": 0.6745158433914185,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d73ffb868a8e54fecc92b51ada9af022ea2202bc9b8fccb48b8a488876221cae",
+              "premise_chars": 250,
+              "score": 0.46058276295661926
+            },
+            {
+              "premise_sha256": "0c5f71b0ba83955af1b89611943eaf35560c6ed159d5f835869373997589d818",
+              "premise_chars": 1981,
+              "score": 0.20481045544147491
+            },
+            {
+              "premise_sha256": "c188e201fbf6276cffdc1ee95c1787e6669f834a62534b606d76cb41199bbbd0",
+              "premise_chars": 2132,
+              "score": 0.6038129925727844
+            },
+            {
+              "premise_sha256": "7782cc0cb9195b60e78704a1744400f1218da3249b892d8daeee008d60ea1cc6",
+              "premise_chars": 2196,
+              "score": 0.6745158433914185
+            }
+          ]
+        },
+        {
+          "entity_id": "BBY",
+          "hypothesis": "The credit event 12m of Best Buy Co., Inc. (BBY) is no_event. The 90% prediction interval for the credit event 12m of Best Buy Co., Inc. (BBY) is 0 to 1.",
+          "score": 0.624319851398468,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a43d7d94dcd2455f83ebb86cf3b32cb2278d866badca3d56f99c08053bea1d53",
+              "premise_chars": 489,
+              "score": 0.5607741475105286
+            },
+            {
+              "premise_sha256": "c8c65896b1ced3c10d208aaabd5710fbf85f0848888515ea09ba89fe0c4277e0",
+              "premise_chars": 2169,
+              "score": 0.624319851398468
+            },
+            {
+              "premise_sha256": "88407757d28dcf06bdec1501b6a4806d49048e69617ff97aadcd48bb4fc63378",
+              "premise_chars": 2179,
+              "score": 0.62155681848526
+            },
+            {
+              "premise_sha256": "0bbdb1425f80c9b50ee4b9d9a62f5f0f2727cf50683577e28b25983878f67858",
+              "premise_chars": 1877,
+              "score": 0.4485475420951843
+            }
+          ]
+        },
+        {
+          "entity_id": "M",
+          "hypothesis": "The credit event 12m of Macy's, Inc. (M) is no_event. The 90% prediction interval for the credit event 12m of Macy's, Inc. (M) is 0 to 1.",
+          "score": 0.6562981605529785,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "117c823a61e0cb21df7a7b541315f8b51cfc26f5304067987f997dc4bd1cf8f7",
+              "premise_chars": 249,
+              "score": 0.6562981605529785
+            },
+            {
+              "premise_sha256": "526077e4459ea8c82b98659aa7e1d8833563028ac7257c57ec1da7f664eb32eb",
+              "premise_chars": 2087,
+              "score": 0.14746393263339996
+            },
+            {
+              "premise_sha256": "38b148340973cf8234ecf6f309e121e0b49ed575f6c66514dd1ead63535a4655",
+              "premise_chars": 2162,
+              "score": 0.6348015666007996
+            },
+            {
+              "premise_sha256": "0d063d93fb8581c5a0c1b2c39a364491978a74993f9000860257e6a3665bd3a2",
+              "premise_chars": 2148,
+              "score": 0.62041836977005
+            }
+          ]
+        },
+        {
+          "entity_id": "ODFL",
+          "hypothesis": "The credit event 12m of Old Dominion Freight Line, Inc. (ODFL) is no_event. The 90% prediction interval for the credit event 12m of Old Dominion Freight Line, Inc. (ODFL) is 0 to 1.",
+          "score": 0.8713814616203308,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c2ee1bd6c1aaa052c07902fe05f49fa737d4d93dcf88565c6542d15baf03617b",
+              "premise_chars": 250,
+              "score": 0.8713814616203308
+            },
+            {
+              "premise_sha256": "b598abba1d9b40a3f110b9da62a5446b4efb9e0e30b13bf9753193716d877403",
+              "premise_chars": 2175,
+              "score": 0.5853919982910156
+            },
+            {
+              "premise_sha256": "648c14fc2449e5287a942c9951082a58a5213044587647496886f9637d821e70",
+              "premise_chars": 2199,
+              "score": 0.5929493308067322
+            },
+            {
+              "premise_sha256": "6ef8e351e4f81fcc2792ae54868a5fdcfa075a879cae25006f2e8a43cbc9e238",
+              "premise_chars": 2127,
+              "score": 0.5650222897529602
+            }
+          ]
+        },
+        {
+          "entity_id": "RAD",
+          "hypothesis": "The credit event 12m of Rite Aid Corporation (RAD) is no_event. The 90% prediction interval for the credit event 12m of Rite Aid Corporation (RAD) is 0 to 1.",
+          "score": 0.6286576390266418,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e36c5510e7881b2e5590264a2756417c9210fed1456de513c2e1de3320507e80",
+              "premise_chars": 495,
+              "score": 0.44568291306495667
+            },
+            {
+              "premise_sha256": "a30b1be9aead42b4c54249e5177a92519d538b920513f11b95e0f9885883251e",
+              "premise_chars": 2193,
+              "score": 0.6150968074798584
+            },
+            {
+              "premise_sha256": "80ef375e592434e67064212c9377810c0a12ad3bcd52b3cf1d589eb1ef3fd719",
+              "premise_chars": 2195,
+              "score": 0.4887096583843231
+            },
+            {
+              "premise_sha256": "d63751b9358a8c7343d63d34c43a3863977878c33457da8a37609d211b8cbe9f",
+              "premise_chars": 2124,
+              "score": 0.6286576390266418
+            }
+          ]
+        },
+        {
+          "entity_id": "WBA",
+          "hypothesis": "The credit event 12m of Walgreens Boots Alliance, Inc. (WBA) is no_event. The 90% prediction interval for the credit event 12m of Walgreens Boots Alliance, Inc. (WBA) is 0 to 1.",
+          "score": 0.9014610052108765,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f6889678ae585909b5c760eba3bedfb21d276813da3d322b540e10b97812398d",
+              "premise_chars": 250,
+              "score": 0.6763116717338562
+            },
+            {
+              "premise_sha256": "ccffc2dfc5dcc6ef72e5c4a041b131c6a9bc63c76146416b53f843f109db1d08",
+              "premise_chars": 2145,
+              "score": 0.6726897954940796
+            },
+            {
+              "premise_sha256": "735ae633afd6c992887ffd9dd8feaa8d574eae1ef4d6cd4651b43546464c27b3",
+              "premise_chars": 1709,
+              "score": 0.9014610052108765
+            },
+            {
+              "premise_sha256": "be4ebed7797c18e0b1955975fe021883218826dffd0ff2c433f62248d194474a",
+              "premise_chars": 2142,
+              "score": 0.5803819894790649
+            }
+          ]
+        },
+        {
+          "entity_id": "WE",
+          "hypothesis": "The credit event 12m of WeWork Inc. (WE) is no_event. The 90% prediction interval for the credit event 12m of WeWork Inc. (WE) is 0 to 1.",
+          "score": 0.9158573150634766,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "3ee45c0f7a5e16174cfa59ec4bdaca1245ef5b7790d145b51180ed46defd06bd",
+              "premise_chars": 484,
+              "score": 0.807129442691803
+            },
+            {
+              "premise_sha256": "7aea7be06022161ff18411df9c7f2a5e146f519b7b4998e98fff6a43f0d77702",
+              "premise_chars": 2150,
+              "score": 0.682164192199707
+            },
+            {
+              "premise_sha256": "c23073de26429c9699dd29c50b7038376fc8eca83e1322c499de723c5b6d32bb",
+              "premise_chars": 2030,
+              "score": 0.6305616497993469
+            },
+            {
+              "premise_sha256": "a884aaa185dfc9a72185a0727e48b5fe7622e817aa317c18a48ed65f27121eb3",
+              "premise_chars": 2129,
+              "score": 0.9158573150634766
+            }
+          ]
+        },
+        {
+          "entity_id": "YELL",
+          "hypothesis": "The credit event 12m of Yellow Corporation (YELL) is no_event. The 90% prediction interval for the credit event 12m of Yellow Corporation (YELL) is 0 to 1.",
+          "score": 0.8080343008041382,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "2715b218454a8cc275df8d912a18e52cf177f6918cde20cee39f7afa5e1132e8",
+              "premise_chars": 389,
+              "score": 0.4653220772743225
+            },
+            {
+              "premise_sha256": "800800760fd371054808f89de3c693c1e074e52cda42caaabee6d0158e65ada9",
+              "premise_chars": 2093,
+              "score": 0.6215025186538696
+            },
+            {
+              "premise_sha256": "1ff9d13d225e06deadd4ec890178a076f853fc7bd2c52de32c154facd27722ff",
+              "premise_chars": 2095,
+              "score": 0.8080343008041382
+            },
+            {
+              "premise_sha256": "b166ccb0c170ed013962edc6d5f05f9da7da5b54ff2e61490c816fc0daf94233",
+              "premise_chars": 2114,
+              "score": 0.6266438961029053
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-eps-growth-2024Q3-banks",
+      "unit_id": "t4-eps-growth-2024Q3-banks",
+      "answer_sha256": "5eb2bfe478656678fc93e1395a01660ee28745bf031cb46ec00195a216879db3",
+      "elapsed_seconds": 119.56503667600919,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "BAC",
+          "hypothesis": "The eps yoy growth pct of Bank of America Corporation (BAC) is -5.55556. The 90% prediction interval for the eps yoy growth pct of Bank of America Corporation (BAC) is -25.5556 to 14.4444.",
+          "score": 0.648578941822052,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f5cd08acf1319c08b50211976d1aa0ad14d4077944ddae2f8cf9deb2e99e0c3c",
+              "premise_chars": 108,
+              "score": 0.648578941822052
+            },
+            {
+              "premise_sha256": "14442dde2b887ca345cecf172aa97f4df2cd38d63051594061125b4a76d813d4",
+              "premise_chars": 2200,
+              "score": 0.5474037528038025
+            },
+            {
+              "premise_sha256": "39b3249a053cbcd3d6d7fd785674de71a35536b5d9c6e321cf6b484b302df5f2",
+              "premise_chars": 1452,
+              "score": 0.5589135885238647
+            },
+            {
+              "premise_sha256": "3143a4f95cf22291d5934cbe0ca8e24181ba5fbf64ab0ae07c3f7f0931957bc1",
+              "premise_chars": 2200,
+              "score": 0.22766172885894775
+            }
+          ]
+        },
+        {
+          "entity_id": "C",
+          "hypothesis": "The eps yoy growth pct of Citigroup Inc. (C) is 11.6564. The 90% prediction interval for the eps yoy growth pct of Citigroup Inc. (C) is -8.34356 to 31.6564.",
+          "score": 0.6998699903488159,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e11672ea11d5f20a3991974c9cae75ae1f34e9efdd06e55610239ff3ee83e260",
+              "premise_chars": 57,
+              "score": 0.6998699903488159
+            },
+            {
+              "premise_sha256": "7454f062fb0d4b280bab119e83849de2651a4ed0b429d70203779c5470eb11a1",
+              "premise_chars": 2200,
+              "score": 0.5846714377403259
+            },
+            {
+              "premise_sha256": "a1a8e4be1c3056e3d8d5d49ae26d6f37bb863370022c8531c36fae3ca15176d4",
+              "premise_chars": 2179,
+              "score": 0.6051671504974365
+            },
+            {
+              "premise_sha256": "5ec7b69166006a0686149935c7b3209db162b4fac17774953ffc16f30ff50f38",
+              "premise_chars": 2027,
+              "score": 0.5839338898658752
+            }
+          ]
+        },
+        {
+          "entity_id": "GS",
+          "hypothesis": "The eps yoy growth pct of The Goldman Sachs Group, Inc. (GS) is 101.28. The 90% prediction interval for the eps yoy growth pct of The Goldman Sachs Group, Inc. (GS) is 25.3199 to 177.239.",
+          "score": 0.8981359601020813,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5c3bc881522dda06a9c72e52dbe78a9e63df24c43f5d5c20ad56c7cf3827ed77",
+              "premise_chars": 97,
+              "score": 0.8981359601020813
+            },
+            {
+              "premise_sha256": "92a4726a26ea200a620c0b0c3c2f4266cddc02cf1cd94ed95402bed29879a452",
+              "premise_chars": 2146,
+              "score": 0.6034345030784607
+            },
+            {
+              "premise_sha256": "b394cade222f93c183d30d0dc8b31db1251c3c15722ec5614926f2e0b58deea9",
+              "premise_chars": 2200,
+              "score": 0.6043644547462463
+            },
+            {
+              "premise_sha256": "e7356fc20624f0dc4b0f304076dee2b2cbe9be3c2e4421fe79976609e57c7190",
+              "premise_chars": 2043,
+              "score": 0.2096945345401764
+            }
+          ]
+        },
+        {
+          "entity_id": "JPM",
+          "hypothesis": "The eps yoy growth pct of JPMorgan Chase & Co. (JPM) is 31.6397. The 90% prediction interval for the eps yoy growth pct of JPMorgan Chase & Co. (JPM) is 7.90993 to 55.3695.",
+          "score": 0.7829945683479309,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "404c66b6a43b43a419f79fa6752fa35495f0b4ed594159758a4fb84c52a1cdef",
+              "premise_chars": 38,
+              "score": 0.7829945683479309
+            },
+            {
+              "premise_sha256": "7846ec9063c7f7d20c7f5ac2512ae060ed78d55c6f74cc6f6279ff13aeeefb37",
+              "premise_chars": 1879,
+              "score": 0.6022475361824036
+            },
+            {
+              "premise_sha256": "38ad37737bfba20461450afe48d0d65bfe80d8c9aa199580bb2af21d57a3f1b0",
+              "premise_chars": 1535,
+              "score": 0.7300295233726501
+            },
+            {
+              "premise_sha256": "e23bab6617cbae114596dc58b16f79b5ea00df79d6e181c0d096dac5db709c28",
+              "premise_chars": 1854,
+              "score": 0.5474551916122437
+            }
+          ]
+        },
+        {
+          "entity_id": "MS",
+          "hypothesis": "The eps yoy growth pct of Morgan Stanley (MS) is 42.029. The 90% prediction interval for the eps yoy growth pct of Morgan Stanley (MS) is 10.5072 to 73.5507.",
+          "score": 0.9468038082122803,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c28fac3a3d30a9a07a18cdee26de352fcba140f164848aa45bb7c58ed4d70f91",
+              "premise_chars": 87,
+              "score": 0.8851260542869568
+            },
+            {
+              "premise_sha256": "bae98bd639d936c7d8dd1485e4d9112363c0a19dbdf69b96d35a31c73503b668",
+              "premise_chars": 2105,
+              "score": 0.6112220883369446
+            },
+            {
+              "premise_sha256": "da8a47fd4404ba1ba06631d2e200df51c0c35837015f58b927c1f26eec67d983",
+              "premise_chars": 1343,
+              "score": 0.9468038082122803
+            },
+            {
+              "premise_sha256": "685130bad71ae32ed2d9dd56bb8a5b2519e623ed2da131ba124f0d7373778753",
+              "premise_chars": 1895,
+              "score": 0.6515905857086182
+            }
+          ]
+        },
+        {
+          "entity_id": "PNC",
+          "hypothesis": "The eps yoy growth pct of The PNC Financial Services Group, Inc. (PNC) is 0.833333. The 90% prediction interval for the eps yoy growth pct of The PNC Financial Services Group, Inc. (PNC) is -19.1667 to 20.8333.",
+          "score": 0.6584307551383972,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a6d26be3a7f70125665685137c4cb04e487dd2106a13f656daf859f1f2f039dd",
+              "premise_chars": 91,
+              "score": 0.6584307551383972
+            },
+            {
+              "premise_sha256": "585f1d28626e3e09d4d28e2d6bc8eb9e06dc407681065674068bada145eb1284",
+              "premise_chars": 1945,
+              "score": 0.2561763525009155
+            },
+            {
+              "premise_sha256": "406840633a17c688bcf0283901dc3327d7c8aeebf0bfb134656a2bc2d16c04a3",
+              "premise_chars": 1808,
+              "score": 0.58612060546875
+            },
+            {
+              "premise_sha256": "ee45475ebf0baf923e70fb3e8a5bf29cc48f27989d5e48334699adb46cf53b67",
+              "premise_chars": 2180,
+              "score": 0.5829361081123352
+            }
+          ]
+        },
+        {
+          "entity_id": "USB",
+          "hypothesis": "The eps yoy growth pct of U.S. Bancorp (USB) is 14.2857. The 90% prediction interval for the eps yoy growth pct of U.S. Bancorp (USB) is -5.71429 to 34.2857.",
+          "score": 0.9164248108863831,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0a6126f99e592b811dce4ce032ab400407018f6f738420bf61cc45227f1371e8",
+              "premise_chars": 93,
+              "score": 0.3971165716648102
+            },
+            {
+              "premise_sha256": "247b26ece14aa01d696601a9f6a55fd74cf548401f3d528411c49133ef9e6d42",
+              "premise_chars": 1608,
+              "score": 0.9164248108863831
+            },
+            {
+              "premise_sha256": "23559e1455683d7a425820462d87c3ffaab680497824db051b48cd076978b494",
+              "premise_chars": 1999,
+              "score": 0.6440523266792297
+            },
+            {
+              "premise_sha256": "f729ec5fc474e35a948bd1b0884ca49a8e274af25ef5de461fc43aa5e469054d",
+              "premise_chars": 1760,
+              "score": 0.7174124121665955
+            }
+          ]
+        },
+        {
+          "entity_id": "WFC",
+          "hypothesis": "The eps yoy growth pct of Wells Fargo & Company (WFC) is 5.40541. The 90% prediction interval for the eps yoy growth pct of Wells Fargo & Company (WFC) is -14.5946 to 25.4054.",
+          "score": 0.5998369455337524,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "1787b16ef998360f395cc4c9d64d105b61094ebe1d679c6386675475b50332d8",
+              "premise_chars": 115,
+              "score": 0.1719767153263092
+            },
+            {
+              "premise_sha256": "b4e2420cf5af96c8099457644a747ad9c07987a00a760158e689120268d9bb48",
+              "premise_chars": 2195,
+              "score": 0.45689088106155396
+            },
+            {
+              "premise_sha256": "b2ed20b98e7e3966cad84ce97ab58a7ff8aca8dc724e8ea5a8ea36d117676f8c",
+              "premise_chars": 2131,
+              "score": 0.5968517661094666
+            },
+            {
+              "premise_sha256": "243b9ef2ce0ffdab57849fac8543c825dcd0ae8bb76311bca8335f6ef893728d",
+              "premise_chars": 2200,
+              "score": 0.5998369455337524
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

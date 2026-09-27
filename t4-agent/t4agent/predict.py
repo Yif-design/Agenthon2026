@@ -55,6 +55,8 @@ Use only the provided entity fields and evidence excerpts. Never invent missing 
 Return one JSON object and no prose. Every non-neutral signal and every reported number must include one verbatim quote from the excerpts.
 Use level -2, -1, 0, 1, or 2. Use 0 when evidence is missing, ambiguous, historical-only, or not comparable."""
 
+MAX_CONTEXT_CITATIONS = 3
+
 
 def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k: int) -> list[RowResult]:
     spec = family_spec(task.family, str(task.target.get("name", "")))
@@ -342,7 +344,13 @@ def _prediction_from_model(
     all_rejected = list(extracted_rejected or []) + rejected + output_rejected
     if context_rejected is not None:
         all_rejected.append(context_rejected)
-    claims = _claims_from_facts(facts)
+    claims = _claims_with_context(
+        facts,
+        chunks,
+        corpus,
+        allowed_doc_ids,
+        max_context=MAX_CONTEXT_CITATIONS,
+    )
 
     pred: dict[str, Any] = {
         "entity_id": entity_id,
@@ -425,6 +433,47 @@ def _claims_from_facts(facts: list[EvidenceFact]) -> list[dict[str, Any]]:
         seen.add(key)
         out.append(fact.as_claim())
     return out[:3]
+
+
+def _claims_with_context(
+    facts: list[EvidenceFact],
+    chunks: list[Chunk],
+    corpus: IndexedCorpus,
+    allowed_doc_ids: set[str],
+    *,
+    max_context: int,
+) -> list[dict[str, Any]]:
+    """Keep compact facts and add a few exact, scoped chunks as NLI premise candidates."""
+    claims = _claims_from_facts(facts)
+    seen = {
+        (str(claim["doc_id"]), int(claim["span_start"]), int(claim["span_end"]))
+        for claim in claims
+    }
+    added = 0
+    for chunk in chunks:
+        if added >= max_context:
+            break
+        key = (chunk.doc_id, chunk.span_start, chunk.span_end)
+        text = corpus.doc_texts.get(chunk.doc_id, "")
+        if (
+            key in seen
+            or chunk.doc_id not in allowed_doc_ids
+            or chunk.span_start < 0
+            or chunk.span_end <= chunk.span_start
+            or text[chunk.span_start : chunk.span_end] != chunk.text
+        ):
+            continue
+        claims.append(
+            {
+                "doc_id": chunk.doc_id,
+                "span_start": chunk.span_start,
+                "span_end": chunk.span_end,
+                "claim": "Cutoff-safe retrieved context relevant to this entity and target.",
+            }
+        )
+        seen.add(key)
+        added += 1
+    return claims
 
 
 def _context_fact_from_chunks(

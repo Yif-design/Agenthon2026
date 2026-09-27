@@ -1,0 +1,428 @@
+{
+  "schema_version": 2,
+  "model_id": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.11.7",
+    "torch": "2.2.2",
+    "transformers": "4.46.3",
+    "qfbench2-common": "2.4.4"
+  },
+  "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model; every distinct citation premise score is retained for exact ensemble aggregation.",
+  "total_elapsed_seconds": 52.5835197790293,
+  "cases": [
+    {
+      "case_id": "t4-credit-event-2023",
+      "unit_id": "t4-credit-event-2023",
+      "answer_sha256": "b44e80096cf768e30bd0cf5ffe07c0b2395b5fd335ebdff82e0f39be05b5c887",
+      "elapsed_seconds": 22.820790046011098,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.625,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "BBBY",
+          "hypothesis": "The credit event 12m of Bed Bath & Beyond Inc. (BBBY) is no_event. The 90% prediction interval for the credit event 12m of Bed Bath & Beyond Inc. (BBBY) is 0 to 1.",
+          "score": 0.46058276295661926,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "d73ffb868a8e54fecc92b51ada9af022ea2202bc9b8fccb48b8a488876221cae",
+              "premise_chars": 250,
+              "score": 0.46058276295661926
+            }
+          ]
+        },
+        {
+          "entity_id": "BBY",
+          "hypothesis": "The credit event 12m of Best Buy Co., Inc. (BBY) is no_event. The 90% prediction interval for the credit event 12m of Best Buy Co., Inc. (BBY) is 0 to 1.",
+          "score": 0.5607741475105286,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a43d7d94dcd2455f83ebb86cf3b32cb2278d866badca3d56f99c08053bea1d53",
+              "premise_chars": 489,
+              "score": 0.5607741475105286
+            }
+          ]
+        },
+        {
+          "entity_id": "M",
+          "hypothesis": "The credit event 12m of Macy's, Inc. (M) is no_event. The 90% prediction interval for the credit event 12m of Macy's, Inc. (M) is 0 to 1.",
+          "score": 0.6562981605529785,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "117c823a61e0cb21df7a7b541315f8b51cfc26f5304067987f997dc4bd1cf8f7",
+              "premise_chars": 249,
+              "score": 0.6562981605529785
+            }
+          ]
+        },
+        {
+          "entity_id": "ODFL",
+          "hypothesis": "The credit event 12m of Old Dominion Freight Line, Inc. (ODFL) is no_event. The 90% prediction interval for the credit event 12m of Old Dominion Freight Line, Inc. (ODFL) is 0 to 1.",
+          "score": 0.8713814616203308,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c2ee1bd6c1aaa052c07902fe05f49fa737d4d93dcf88565c6542d15baf03617b",
+              "premise_chars": 250,
+              "score": 0.8713814616203308
+            }
+          ]
+        },
+        {
+          "entity_id": "RAD",
+          "hypothesis": "The credit event 12m of Rite Aid Corporation (RAD) is no_event. The 90% prediction interval for the credit event 12m of Rite Aid Corporation (RAD) is 0 to 1.",
+          "score": 0.44568291306495667,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "e36c5510e7881b2e5590264a2756417c9210fed1456de513c2e1de3320507e80",
+              "premise_chars": 495,
+              "score": 0.44568291306495667
+            }
+          ]
+        },
+        {
+          "entity_id": "WBA",
+          "hypothesis": "The credit event 12m of Walgreens Boots Alliance, Inc. (WBA) is no_event. The 90% prediction interval for the credit event 12m of Walgreens Boots Alliance, Inc. (WBA) is 0 to 1.",
+          "score": 0.6763116717338562,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f6889678ae585909b5c760eba3bedfb21d276813da3d322b540e10b97812398d",
+              "premise_chars": 250,
+              "score": 0.6763116717338562
+            }
+          ]
+        },
+        {
+          "entity_id": "WE",
+          "hypothesis": "The credit event 12m of WeWork Inc. (WE) is no_event. The 90% prediction interval for the credit event 12m of WeWork Inc. (WE) is 0 to 1.",
+          "score": 0.807129442691803,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "3ee45c0f7a5e16174cfa59ec4bdaca1245ef5b7790d145b51180ed46defd06bd",
+              "premise_chars": 484,
+              "score": 0.807129442691803
+            }
+          ]
+        },
+        {
+          "entity_id": "YELL",
+          "hypothesis": "The credit event 12m of Yellow Corporation (YELL) is no_event. The 90% prediction interval for the credit event 12m of Yellow Corporation (YELL) is 0 to 1.",
+          "score": 0.4653220772743225,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "2715b218454a8cc275df8d912a18e52cf177f6918cde20cee39f7afa5e1132e8",
+              "premise_chars": 389,
+              "score": 0.4653220772743225
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-eps-growth-2024Q3-banks",
+      "unit_id": "t4-eps-growth-2024Q3-banks",
+      "answer_sha256": "c9c4977685685ef95a1ff810a52d02d9dcf0c356c61fe06475b4bcf15ff48e87",
+      "elapsed_seconds": 9.467543510952964,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.75,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "BAC",
+          "hypothesis": "The eps yoy growth pct of Bank of America Corporation (BAC) is -5.55556. The 90% prediction interval for the eps yoy growth pct of Bank of America Corporation (BAC) is -25.5556 to 14.4444.",
+          "score": 0.648578941822052,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f5cd08acf1319c08b50211976d1aa0ad14d4077944ddae2f8cf9deb2e99e0c3c",
+              "premise_chars": 108,
+              "score": 0.648578941822052
+            }
+          ]
+        },
+        {
+          "entity_id": "C",
+          "hypothesis": "The eps yoy growth pct of Citigroup Inc. (C) is 11.6564. The 90% prediction interval for the eps yoy growth pct of Citigroup Inc. (C) is -8.34356 to 31.6564.",
+          "score": 0.6998699903488159,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e11672ea11d5f20a3991974c9cae75ae1f34e9efdd06e55610239ff3ee83e260",
+              "premise_chars": 57,
+              "score": 0.6998699903488159
+            }
+          ]
+        },
+        {
+          "entity_id": "GS",
+          "hypothesis": "The eps yoy growth pct of The Goldman Sachs Group, Inc. (GS) is 101.28. The 90% prediction interval for the eps yoy growth pct of The Goldman Sachs Group, Inc. (GS) is 25.3199 to 177.239.",
+          "score": 0.8981359601020813,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5c3bc881522dda06a9c72e52dbe78a9e63df24c43f5d5c20ad56c7cf3827ed77",
+              "premise_chars": 97,
+              "score": 0.8981359601020813
+            }
+          ]
+        },
+        {
+          "entity_id": "JPM",
+          "hypothesis": "The eps yoy growth pct of JPMorgan Chase & Co. (JPM) is 31.6397. The 90% prediction interval for the eps yoy growth pct of JPMorgan Chase & Co. (JPM) is 7.90993 to 55.3695.",
+          "score": 0.7829945683479309,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "404c66b6a43b43a419f79fa6752fa35495f0b4ed594159758a4fb84c52a1cdef",
+              "premise_chars": 38,
+              "score": 0.7829945683479309
+            }
+          ]
+        },
+        {
+          "entity_id": "MS",
+          "hypothesis": "The eps yoy growth pct of Morgan Stanley (MS) is 42.029. The 90% prediction interval for the eps yoy growth pct of Morgan Stanley (MS) is 10.5072 to 73.5507.",
+          "score": 0.8851260542869568,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c28fac3a3d30a9a07a18cdee26de352fcba140f164848aa45bb7c58ed4d70f91",
+              "premise_chars": 87,
+              "score": 0.8851260542869568
+            }
+          ]
+        },
+        {
+          "entity_id": "PNC",
+          "hypothesis": "The eps yoy growth pct of The PNC Financial Services Group, Inc. (PNC) is 0.833333. The 90% prediction interval for the eps yoy growth pct of The PNC Financial Services Group, Inc. (PNC) is -19.1667 to 20.8333.",
+          "score": 0.6584307551383972,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a6d26be3a7f70125665685137c4cb04e487dd2106a13f656daf859f1f2f039dd",
+              "premise_chars": 91,
+              "score": 0.6584307551383972
+            }
+          ]
+        },
+        {
+          "entity_id": "USB",
+          "hypothesis": "The eps yoy growth pct of U.S. Bancorp (USB) is 14.2857. The 90% prediction interval for the eps yoy growth pct of U.S. Bancorp (USB) is -5.71429 to 34.2857.",
+          "score": 0.3971165716648102,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "0a6126f99e592b811dce4ce032ab400407018f6f738420bf61cc45227f1371e8",
+              "premise_chars": 93,
+              "score": 0.3971165716648102
+            }
+          ]
+        },
+        {
+          "entity_id": "WFC",
+          "hypothesis": "The eps yoy growth pct of Wells Fargo & Company (WFC) is 5.40541. The 90% prediction interval for the eps yoy growth pct of Wells Fargo & Company (WFC) is -14.5946 to 25.4054.",
+          "score": 0.1719767153263092,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "1787b16ef998360f395cc4c9d64d105b61094ebe1d679c6386675475b50332d8",
+              "premise_chars": 115,
+              "score": 0.1719767153263092
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-eps-yoy-2023Q2-mixed",
+      "unit_id": "t4-eps-yoy-2023Q2-mixed",
+      "answer_sha256": "18b2b18181fa450e088ac6c6245e9fbd344786bb450986c9720570fda08a0084",
+      "elapsed_seconds": 7.96333560498897,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 0.6666666666666666,
+      "single_member_gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "AMD",
+          "hypothesis": "The eps yoy direction of Advanced Micro Devices, Inc. (AMD) is down. The 90% prediction interval for the eps yoy direction of Advanced Micro Devices, Inc. (AMD) is 0.216 to 0.297.",
+          "score": 0.7677926421165466,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c2e7ff52b501b8dc3b57c5a97f3666f4310f0d4bb37bdd3d1091c707f49297b8",
+              "premise_chars": 250,
+              "score": 0.7677926421165466
+            }
+          ]
+        },
+        {
+          "entity_id": "AMGN",
+          "hypothesis": "The eps yoy direction of Amgen Inc. (AMGN) is down. The 90% prediction interval for the eps yoy direction of Amgen Inc. (AMGN) is 1.96 to 2.695.",
+          "score": 0.3598248064517975,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "f4f358fb8fb5b87a12e614730b2a78f86f9f56a15f95ebad0e6cd7ea3c5a6a03",
+              "premise_chars": 249,
+              "score": 0.3598248064517975
+            }
+          ]
+        },
+        {
+          "entity_id": "DOW",
+          "hypothesis": "The eps yoy direction of Dow Inc. (DOW) is down. The 90% prediction interval for the eps yoy direction of Dow Inc. (DOW) is 1.808 to 2.486.",
+          "score": 0.5112680196762085,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0c92cb0c9257eb3e474dfcc85b9e42815a8114d706ab5687530ec1b802aff2ae",
+              "premise_chars": 384,
+              "score": 0.5112680196762085
+            }
+          ]
+        },
+        {
+          "entity_id": "HON",
+          "hypothesis": "The eps yoy direction of Honeywell International Inc. (HON) is down. The 90% prediction interval for the eps yoy direction of Honeywell International Inc. (HON) is 1.472 to 2.024.",
+          "score": 0.7307981252670288,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "b0ba3a7edbe9dd575bb8ae7d9474dc89f23863c73ec123fd1f17466245d16116",
+              "premise_chars": 250,
+              "score": 0.7307981252670288
+            }
+          ]
+        },
+        {
+          "entity_id": "IBM",
+          "hypothesis": "The eps yoy direction of International Business Machines Corporation (IBM) is down. The 90% prediction interval for the eps yoy direction of International Business Machines Corporation (IBM) is 1.224 to 1.683.",
+          "score": 0.5027182102203369,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "021ea8c765e372d0d33c1acea42a3c69657fae6143dc7af27883baab7c398d62",
+              "premise_chars": 250,
+              "score": 0.5027182102203369
+            }
+          ]
+        },
+        {
+          "entity_id": "TMO",
+          "hypothesis": "The eps yoy direction of Thermo Fisher Scientific Inc. (TMO) is down. The 90% prediction interval for the eps yoy direction of Thermo Fisher Scientific Inc. (TMO) is 3.376 to 4.642.",
+          "score": 0.32582521438598633,
+          "supported": false,
+          "citation_scores": [
+            {
+              "premise_sha256": "9a1c6935f515a1d6a3c66f0bd7f6fd9737be8cab957a86e57dcf777f5953e3e0",
+              "premise_chars": 394,
+              "score": 0.32582521438598633
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-fomc-curve-20220728",
+      "unit_id": "t4-fomc-curve-20220728",
+      "answer_sha256": "71f4cfa110d41464b07b3d58351bd8042997011e21f5491c28de8c980d962556",
+      "elapsed_seconds": 12.33185061707627,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "UST10Y",
+          "hypothesis": "The yield change bps intermeeting of 10-Year U.S. Treasury constant-maturity yield (UST10Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 10-Year U.S. Treasury constant-maturity yield (UST10Y) is -50 to 50.",
+          "score": 0.7212998867034912,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "7093b026c4f5f9530ec3386778f8c48dabcd7eeb584d8b5e3779970efced8138",
+              "premise_chars": 472,
+              "score": 0.7212998867034912
+            }
+          ]
+        },
+        {
+          "entity_id": "UST2Y",
+          "hypothesis": "The yield change bps intermeeting of 2-Year U.S. Treasury constant-maturity yield (UST2Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 2-Year U.S. Treasury constant-maturity yield (UST2Y) is -50 to 50.",
+          "score": 0.7193419337272644,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "7093b026c4f5f9530ec3386778f8c48dabcd7eeb584d8b5e3779970efced8138",
+              "premise_chars": 472,
+              "score": 0.7193419337272644
+            }
+          ]
+        },
+        {
+          "entity_id": "UST30Y",
+          "hypothesis": "The yield change bps intermeeting of 30-Year U.S. Treasury constant-maturity yield (UST30Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 30-Year U.S. Treasury constant-maturity yield (UST30Y) is -50 to 50.",
+          "score": 0.7140913009643555,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "7093b026c4f5f9530ec3386778f8c48dabcd7eeb584d8b5e3779970efced8138",
+              "premise_chars": 472,
+              "score": 0.7140913009643555
+            }
+          ]
+        },
+        {
+          "entity_id": "UST3Y",
+          "hypothesis": "The yield change bps intermeeting of 3-Year U.S. Treasury constant-maturity yield (UST3Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 3-Year U.S. Treasury constant-maturity yield (UST3Y) is -50 to 50.",
+          "score": 0.724388599395752,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "7093b026c4f5f9530ec3386778f8c48dabcd7eeb584d8b5e3779970efced8138",
+              "premise_chars": 472,
+              "score": 0.724388599395752
+            }
+          ]
+        },
+        {
+          "entity_id": "UST5Y",
+          "hypothesis": "The yield change bps intermeeting of 5-Year U.S. Treasury constant-maturity yield (UST5Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 5-Year U.S. Treasury constant-maturity yield (UST5Y) is -50 to 50.",
+          "score": 0.7083165049552917,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "7093b026c4f5f9530ec3386778f8c48dabcd7eeb584d8b5e3779970efced8138",
+              "premise_chars": 472,
+              "score": 0.7083165049552917
+            }
+          ]
+        },
+        {
+          "entity_id": "UST7Y",
+          "hypothesis": "The yield change bps intermeeting of 7-Year U.S. Treasury constant-maturity yield (UST7Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 7-Year U.S. Treasury constant-maturity yield (UST7Y) is -50 to 50.",
+          "score": 0.7273752689361572,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "7093b026c4f5f9530ec3386778f8c48dabcd7eeb584d8b5e3779970efced8138",
+              "premise_chars": 472,
+              "score": 0.7273752689361572
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -31,15 +31,50 @@ def _combine_case(reports: list[dict], first: dict) -> dict:
         hypothesis = rows[0]["hypothesis"]
         if any(row["entity_id"] != entity_id or row["hypothesis"] != hypothesis for row in rows):
             raise ValueError("member prediction rows are not aligned")
-        scores = [float(row["score"]) for row in rows]
-        ensemble_score = statistics.fmean(scores)
+        member_citations = [row.get("citation_scores") for row in rows]
+        combined_citations: list[dict] = []
+        if all(isinstance(citations, list) for citations in member_citations):
+            indexed = [
+                {citation["premise_sha256"]: citation for citation in citations}
+                for citations in member_citations
+            ]
+            citation_ids = list(indexed[0])
+            if any(set(member) != set(citation_ids) for member in indexed[1:]):
+                raise ValueError("member citation rows are not aligned")
+            for premise_sha256 in citation_ids:
+                citations = [member[premise_sha256] for member in indexed]
+                if any(
+                    citation["premise_chars"] != citations[0]["premise_chars"]
+                    for citation in citations[1:]
+                ):
+                    raise ValueError("member citation premises are not aligned")
+                member_scores = [float(citation["score"]) for citation in citations]
+                combined_citations.append(
+                    {
+                        "premise_sha256": premise_sha256,
+                        "premise_chars": citations[0]["premise_chars"],
+                        "member_scores": member_scores,
+                        "ensemble_score": statistics.fmean(member_scores),
+                    }
+                )
+            ensemble_score = max(
+                (citation["ensemble_score"] for citation in combined_citations),
+                default=0.0,
+            )
+            scores = [float(row["score"]) for row in rows]
+        else:
+            if any(citations is not None for citations in member_citations):
+                raise ValueError("member reports mix citation-level and legacy prediction rows")
+            scores = [float(row["score"]) for row in rows]
+            ensemble_score = statistics.fmean(scores)
         predictions.append(
             {
                 "entity_id": entity_id,
                 "hypothesis": hypothesis,
                 "member_scores": scores,
                 "ensemble_score": ensemble_score,
-                "supported": ensemble_score >= float(first["tau_citation"]),
+                "supported": ensemble_score > float(first["tau_citation"]),
+                **({"citations": combined_citations} if combined_citations else {}),
             }
         )
     faithfulness = statistics.fmean([float(row["supported"]) for row in predictions])
@@ -67,7 +102,10 @@ def main() -> None:
         "model_revisions": {report["model_id"]: report["model_revision"] for report in reports},
         "member_runtimes": {report["model_id"]: report["runtime"] for report in reports},
         "aggregation": "Arithmetic mean of member two-way entailment scores before tau threshold.",
-        "aggregation_scope": "Exact for these reports because run_nli_member requires one citation per entity.",
+        "aggregation_scope": (
+            "Exact when member rows retain citation_scores; legacy rows are exact only for "
+            "the one-citation-per-entity reports produced before citation-level capture."
+        ),
     }
     versions = {int(report.get("schema_version", 1)) for report in reports}
     if versions == {1}:

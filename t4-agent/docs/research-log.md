@@ -297,3 +297,35 @@ both fixed tokenizers produced identical input IDs for all seven hypotheses, so 
 scores apply exactly to the production model inputs. Forecasts and intervals were unchanged, all
 eleven public outputs passed smoke, and the other ten outputs were byte-identical to the preceding
 baseline. Full details and reproducibility limits are in `docs/nli-gate-audit.md`.
+
+### Full public NLI audit and retrieved-context candidates — accepted
+
+The remaining eight public units were run through both fixed NLI members. The first experimental
+runner revision had retained only the best score per entity and therefore could not reconstruct the
+official aggregation for multiple citations. It was corrected to record every distinct
+premise/hypothesis pair by premise hash. The combiner now aligns those citations, averages member
+scores per citation, and only then takes the entity maximum and applies the strict greater-than-0.5
+threshold. A synthetic case where each member preferred a different citation verifies that the
+incorrect max-before-average order fails. Legacy one-citation reports recombined identically.
+
+After the auction fix, six of eleven public units passed NLI. Macro revisions scored 0.6667,
+post-earnings 0.6667, credit event 0.2500, bank EPS growth 0.0000 and EPS YoY direction 0.3333.
+Inspection showed a shared citation-construction defect: the system often submitted a compact
+calculator fact or only the beginning of a retrieved chunk, while the relevant table header,
+guidance, liquidity or earnings comparison remained later in the same cutoff-safe chunk.
+
+An A/B kept all predictions and compact facts fixed and added the top retrieved chunk as another
+exact citation. Macro revisions and EPS YoY rose to 1.0; bank EPS rose to 0.625, while post-earnings
+and credit stayed below the gate. Extending the three remaining failures to top-three chunks raised
+post-earnings to 1.0, credit to 0.875 and bank EPS to 0.875. This candidate adds no model requests,
+prompt tokens or inference latency. The three measured answers were 4.9–12.7 KB, and all passed
+smoke. The top-one-only variant was not adopted because three of five baseline failures remained.
+
+Production now preserves up to three compact facts and appends at most three distinct retrieved
+chunks after rechecking document scope, exact bounds and source equality. The CLI regenerated all
+eleven units with unchanged labels and numerical predictions (absolute tolerance `1e-12`), and all
+eleven passed smoke. Measured top-three spans were reproduced exactly; top-one passing answers and
+the six already passing baselines are strict citation subsets. Because the official entity score is
+the maximum of per-citation ensemble scores, their gate status cannot regress. The resulting proven
+public gate count is 11/11 versus 6/11 before the shared candidate. Structured summary SHA-256:
+`35bd886c2bbde61f080e8ef56f50dc4a3989ecc9aa39211f9ba8db145e4d44fe`.
