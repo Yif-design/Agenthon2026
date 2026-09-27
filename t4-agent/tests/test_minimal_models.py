@@ -4,8 +4,9 @@ import unittest
 from dataclasses import replace
 from statistics import pstdev
 
-from t4agent.family_specs import SPECS, family_spec, project_entity
 from t4agent.calculators.bank_eps import _find_pair
+from t4agent.calc import select_default_point
+from t4agent.family_specs import SPECS, family_spec, project_entity
 from t4agent.minimal_models import normalize_parameters, normalize_signals, solve_minimal
 from t4agent.retrieve import IndexedCorpus
 from t4agent.taskio import Task
@@ -130,6 +131,88 @@ class MinimalModelTests(unittest.TestCase):
         self.assertEqual(neutral.point, 12.0)
         self.assertGreater(positive.point, neutral.point)
         self.assertEqual(positive.method, "generic_evidence_adjusted")
+
+    def test_generic_baseline_ignores_unrelated_numeric_metadata(self) -> None:
+        entity = {
+            "latest_revenue_growth_pct": 8.0,
+            "market_cap_bn": 200.0,
+            "fiscal_year": 2024,
+            "internal_row_id": 999999,
+        }
+
+        point, field, reason = select_default_point(
+            "regression", "revenue_growth_next_q_pct", entity, 0, 1
+        )
+
+        self.assertEqual(point, 8.0)
+        self.assertEqual(field, "latest_revenue_growth_pct")
+        self.assertEqual(reason, "target_token_match")
+
+    def test_generic_baseline_prefers_current_over_prior_matching_field(self) -> None:
+        point, field, reason = select_default_point(
+            "regression",
+            "revenue_growth_next_q_pct",
+            {"prior_revenue_growth_pct": 3.0, "latest_revenue_growth_pct": 8.0},
+            0,
+            1,
+        )
+
+        self.assertEqual(point, 8.0)
+        self.assertEqual(field, "latest_revenue_growth_pct")
+        self.assertEqual(reason, "target_token_match")
+
+    def test_generic_baseline_handles_camel_case_and_field_order(self) -> None:
+        first = {"recentRevenueGrowthPct": 8.0, "currentRevenueGrowthPct": 7.0}
+        second = dict(reversed(list(first.items())))
+
+        choice_a = select_default_point("regression", "revenue_growth_next_q_pct", first, 0, 1)
+        choice_b = select_default_point("regression", "revenue_growth_next_q_pct", second, 0, 1)
+
+        self.assertEqual(choice_a, choice_b)
+        self.assertEqual(choice_a[:2], (7.0, "currentRevenueGrowthPct"))
+
+    def test_generic_ranking_baseline_is_invariant_to_row_order(self) -> None:
+        first = {"recent_net_flow_change_pct_oi": -3.0, "market_size_bn": 100.0}
+        second = {"recent_net_flow_change_pct_oi": 4.0, "market_size_bn": 200.0}
+        target = "five_week_net_flow_change_pct_oi"
+
+        original = [
+            select_default_point("ranking", target, first, 0, 2)[0],
+            select_default_point("ranking", target, second, 1, 2)[0],
+        ]
+        reordered = [
+            select_default_point("ranking", target, second, 0, 2)[0],
+            select_default_point("ranking", target, first, 1, 2)[0],
+        ]
+
+        self.assertEqual(original, [-3.0, 4.0])
+        self.assertEqual(reordered, [4.0, -3.0])
+
+    def test_generic_change_target_does_not_reuse_a_level_field(self) -> None:
+        point, field, reason = select_default_point(
+            "regression",
+            "yield_delta_bps",
+            {"start_yield_pct": 4.5, "maturity_years": 2, "fiscal_year": 2024},
+            0,
+            1,
+        )
+
+        self.assertEqual(point, 0.0)
+        self.assertIsNone(field)
+        self.assertEqual(reason, "change_without_matching_baseline")
+
+    def test_generic_ambiguous_unrelated_fields_use_neutral_baseline(self) -> None:
+        point, field, reason = select_default_point(
+            "regression",
+            "unknown_metric",
+            {"market_cap_bn": 200.0, "fiscal_year": 2024},
+            0,
+            1,
+        )
+
+        self.assertEqual(point, 0.0)
+        self.assertIsNone(field)
+        self.assertEqual(reason, "no_unambiguous_baseline")
 
     def test_credit_default_uses_high_risk_tier(self) -> None:
         current = task("credit_event_12m", "classification", ["credit_event", "no_event"])

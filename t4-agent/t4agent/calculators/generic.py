@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from ..calc import default_point, interval_for
+from ..calc import interval_for, select_default_point
 from ..retrieve import IndexedCorpus
 from ..taskio import Task
 from .common import ModelOutput
@@ -18,7 +18,13 @@ def solve(
     row_count: int,
 ) -> ModelOutput:
     name = str(task.target.get("name", ""))
-    baseline = default_point(task.target_type, name, entity, row_index, row_count)
+    baseline, baseline_field, baseline_reason = select_default_point(
+        task.target_type,
+        name,
+        entity,
+        row_index,
+        row_count,
+    )
     signal = signals.get("directional_signal", 0)
     point = baseline
     if task.target_type in {"regression", "ranking"} and signal:
@@ -27,7 +33,18 @@ def solve(
         point = baseline + signal * scale
     label = _label(signal, task.labels)
     method = "generic_evidence_adjusted" if signal else "generic_baseline"
-    return ModelOutput(point, label, interval_for(point, name, task.interval_level), method)
+    return ModelOutput(
+        point,
+        label,
+        interval_for(point, name, task.interval_level),
+        method,
+        derivation={
+            "baseline": baseline,
+            "baseline_field": baseline_field,
+            "baseline_reason": baseline_reason,
+            "directional_signal": signal,
+        },
+    )
 
 
 def _label(signal: int, labels: list[str]) -> str | None:

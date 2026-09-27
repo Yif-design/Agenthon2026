@@ -10,7 +10,9 @@
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
 - Accepted interval changes lift diagnostic mean coverage to 66.4%, still below the 90% target.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
-- The generic hidden-family path has schema tests but no broad real-outcome benchmark.
+- The generic hidden-family path now has target-field, numeric-noise, row-order and change-vs-level
+  robustness tests, but no broad real-outcome benchmark. Its field selection is lexical and does not
+  yet solve arbitrary label semantics for unknown classification targets.
 - Complete-roster and batch-3 direct prediction plus fixed 50/50 hybrids were rejected on public
   development diagnostics. The results do not cover every possible direct prompt or learned blend,
   but further batch-size tuning is not justified without a new independent hypothesis and holdout.

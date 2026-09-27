@@ -329,3 +329,28 @@ the six already passing baselines are strict citation subsets. Because the offic
 the maximum of per-citation ensemble scores, their gate status cannot regress. The resulting proven
 public gate count is 11/11 versus 6/11 before the shared candidate. Structured summary SHA-256:
 `35bd886c2bbde61f080e8ef56f50dc4a3989ecc9aa39211f9ba8db145e4d44fe`.
+
+### Generic target-aware numeric baseline — accepted
+
+The official starter and Track 4 heads remained at
+`95a0de3d9a814f3883c151b7efdbbcf579139244` and
+`7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`; the installed official toolkit remained 2.4.4. A
+public GitHub search found the official repository but no additional public contestant
+implementation suitable for comparison. The official development guidance explicitly recommends a
+text-blind tabular baseline as the prediction floor, which made the generic numeric fallback the
+next shared layer to audit.
+
+The legacy generic path took the median of every numeric entity field for regression and used input
+row position for ranking whenever a fixed known field name was absent. A five-check synthetic audit
+showed that it selected 200 instead of the target-related value 8, changed that result to 1,112 when
+an irrelevant numeric row ID was added, reused a 4.5 yield level for a yield-delta target, and
+changed ranking scores when the same entities were reordered. It passed only the single-numeric
+fallback check.
+
+The candidate token-matches numeric field names against the target, rejects unrelated numeric
+metadata, uses zero when a change target has no matching change field, and retains the unambiguous
+single-field fallback. It passed all five checks versus one for the baseline. This is a robustness
+result, not predictive-accuracy evidence. Replaying all saved validated public signals produced
+unchanged labels, points and intervals for 78/78 rows; all eleven outputs passed official smoke.
+The complete suite passed 47 tests. Report SHA-256:
+`11cce19c5ae589b856dbaa96154af53c9b7c93d822e576db6c6dbe07fa616381`.

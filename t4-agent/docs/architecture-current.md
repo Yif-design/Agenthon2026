@@ -90,3 +90,10 @@ entity-scoped retrieval result already used for reasoning. Their exact source sl
 before output. This fixes cases where a short fact or the beginning of a relevant chunk omitted the
 table header or later passage needed by the prediction-bound NLI hypothesis. It changes no forecast
 and raised local public NLI gate passage from 6/11 to 11/11.
+
+Unknown regression and ranking targets use a target-aware numeric baseline instead of the median of
+every number in an entity row or the row's input position. Field names are matched against the
+target name, with unrelated identifiers, dates, market-cap fields and other numeric metadata kept
+out of the fallback. A change/delta/growth target with no matching change field uses a neutral zero
+rather than reusing a level field. If exactly one non-metadata numeric field is available, it remains
+the fallback. The selected field and reason are retained in the deterministic derivation trace.
