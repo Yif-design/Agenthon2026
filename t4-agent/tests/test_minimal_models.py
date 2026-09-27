@@ -49,12 +49,26 @@ class FamilySpecTests(unittest.TestCase):
         )
         self.assertEqual(projected, {"entity_id": "AAPL", "consensus_eps": 1.5, "threshold_pct": 0.05})
 
-    def test_generic_projection_keeps_only_identity_and_numeric_baselines(self) -> None:
+    def test_generic_projection_keeps_official_scalar_features_but_not_nested_values(self) -> None:
         projected = project_entity(
-            {"entity_id": "X", "latest_value": 12.5, "description": "secret prose", "active": True},
+            {
+                "entity_id": "X",
+                "latest_value": 12.5,
+                "description": "categorical context",
+                "active": True,
+                "nested": {"not": "a scalar feature"},
+            },
             SPECS["generic"],
         )
-        self.assertEqual(projected, {"entity_id": "X", "latest_value": 12.5})
+        self.assertEqual(
+            projected,
+            {
+                "entity_id": "X",
+                "latest_value": 12.5,
+                "description": "categorical context",
+                "active": True,
+            },
+        )
 
     def test_numeric_parameters_require_explicit_values(self) -> None:
         parsed = {

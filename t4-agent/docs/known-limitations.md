@@ -15,9 +15,11 @@
   width-minimal within the selected grid, but it should not be interpreted as a tight economic
   confidence bound.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
-- The generic hidden-family path now has target-field, numeric-noise, row-order and change-vs-level
-  robustness tests, but no broad real-outcome benchmark. Its field selection is lexical and does not
-  yet solve arbitrary label semantics for unknown classification targets.
+- The generic hidden-family path now has target-field, numeric-noise, row-order, change-vs-level and
+  bounded scalar-feature visibility tests, but no broad real-outcome benchmark. Input reachability
+  does not prove prediction accuracy. Its field selection is lexical, later fields may be omitted
+  after the 64-field/6,000-character budget, and it does not yet solve arbitrary label semantics for
+  unknown classification targets.
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
   identifier misses, but aliases, abbreviations and paraphrases can still rank the wrong chunk.
 - Official category and baseline documents describe per-entity `corpus_ref` subtrees, while the

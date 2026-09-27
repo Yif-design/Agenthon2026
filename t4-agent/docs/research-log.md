@@ -617,3 +617,33 @@ public predictive-quality claim. Structured report:
 References: <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/CATEGORIES.md>,
 <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/README.md>, and
 <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/AUTHORING-GUIDE.md>.
+
+### Generic scalar feature visibility — accepted
+
+The official Track 4 description says entity tables can mix numeric, categorical and text columns,
+and warns that most hidden families have no public counterpart. Our known-family projections
+correctly used explicit white lists, but the generic projection preserved only identity and numeric
+fields. An unknown task's rating bucket, regime, status flag or short text feature was therefore
+absent from both the House-model packet and lexical retrieval query.
+
+The candidate preserves all JSON scalar types for generic rows while leaving every known-family
+white list unchanged. It excludes nested values and `corpus_ref`, rejects non-finite numbers, and
+bounds the packet at 64 scalar fields, 1,000 characters per string and 6,000 string characters in
+total. Identity fields are prioritized. The same bounded projection supplies the generic BM25
+query, so a previously unknown categorical value can select its matching evidence.
+
+A deterministic three-case audit covered unseen classification, regression and ranking schemas.
+The old packet exposed 0/3 custom categorical fields and selected the correct top document in 1/3
+cases; the candidate exposed 3/3 and retrieved 3/3. Boolean features were preserved, a 1,200-character
+field was clipped to 1,000, nested values were excluded and an 80-text-field adversary stopped at
+the 6,000-character total. All 65 tests passed. Final no-model A/B answers were byte-identical for
+11/11 public units, so their existing schema, smoke and NLI evidence remains unchanged. No model
+request or prompt instruction was added.
+
+This is an input-reachability and retrieval improvement, not a predictive-accuracy claim. The
+candidate was accepted because it aligns the generic path with the official mixed-column contract
+and passes all boundedness and non-regression gates. Reports:
+`evaluation/reports/generic-scalar-projection-v1.json` and
+`evaluation/reports/generic-scalar-public-ab-v1.json`.
+
+Reference: <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md>.

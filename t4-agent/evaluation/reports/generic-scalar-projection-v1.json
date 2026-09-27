@@ -1,0 +1,115 @@
+{
+  "baseline_git_commit": "61e9832c7da30256f75083cb25f92c7d53a8c017",
+  "candidate": {
+    "corpus_ref_excluded": true,
+    "known_family_whitelists_preserved": true,
+    "max_chars_per_string": 1000,
+    "max_field_name_chars": 128,
+    "max_scalar_fields": 64,
+    "max_total_string_chars": 6000,
+    "model_requests_added": 0,
+    "nested_values_excluded": true,
+    "prompt_instruction_changes": 0,
+    "scalar_types": [
+      "finite number",
+      "boolean",
+      "string"
+    ],
+    "scope": "generic family only"
+  },
+  "dataset": "Three synthetic unseen schemas covering classification, regression and ranking.",
+  "date": "2026-09-28",
+  "decision": "accept",
+  "decision_reason": "The candidate aligns the unknown-family path with the official heterogeneous-column contract, improves deterministic feature visibility and retrieval across all three target types, bounds prompt growth, adds no request cost, and preserves every public answer byte-for-byte.",
+  "decision_rule": "Require scalar visibility and correct top-1 retrieval for all three target types, 1000-character string bounding, nested-value exclusion, unchanged known-family projection, and byte-identical public outputs.",
+  "experiment": "generic_scalar_projection_v1",
+  "hypothesis": "Unknown-family rows need bounded categorical, boolean and text scalar features in both the model packet and lexical query; numeric-only projection silently removes official input types.",
+  "layer": "L2 unknown-family input projection and retrieval",
+  "limitations": [
+    "Synthetic schema robustness evidence only; no real-outcome predictive improvement is claimed.",
+    "Later scalar fields may be omitted after the 64-field or 6000-character budget.",
+    "Arbitrary unknown-classification label semantics remain unsolved."
+  ],
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "reason": "The hypothesis concerns deterministic feature visibility, retrieval and boundedness; model output cannot distinguish the input-layer mechanism.",
+    "requests": 0
+  },
+  "not_measured": "Predictive quality; this experiment isolates input and retrieval reachability for previously unseen schemas.",
+  "official_references": [
+    {
+      "finding": "Entity tables can mix numeric, categorical and text features; most hidden families have no published counterpart.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md"
+    },
+    {
+      "finding": "Rows carry heterogeneous feature columns and the target schema determines classification, regression or ranking output.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/CONCEPTS.md"
+    }
+  ],
+  "official_snapshots": {
+    "open_track4_issues_changed": false,
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "public_ab": {
+    "answers_byte_identical": 11,
+    "gate_inference": "Byte-identical to the current committed baseline whose 11 public outputs already have recorded smoke and official local NLI evidence; no new smoke or NLI result is claimed.",
+    "model_mode": "disabled",
+    "report": "evaluation/reports/generic-scalar-public-ab-v1.json",
+    "report_sha256": "80a11877b0b33143539cc83d9153a0021f002ad1112a4186921ded1528723d4a",
+    "rows": 78,
+    "units": 11
+  },
+  "results": {
+    "boolean_preserved": true,
+    "candidate_scalar_fields_visible": 3,
+    "candidate_top1_correct": 3,
+    "cases": 3,
+    "corpus_ref_excluded_from_model_packet": true,
+    "legacy_scalar_fields_visible": 0,
+    "legacy_top1_correct": 1,
+    "long_string_chars_input": 1200,
+    "long_string_chars_projected": 1000,
+    "many_fields_projected": 7,
+    "many_fields_string_chars": 6000,
+    "max_scalar_fields": 64,
+    "nested_values_excluded": true,
+    "total_string_char_limit": 6000
+  },
+  "rows": [
+    {
+      "candidate_field_visible": true,
+      "candidate_retrieval_correct": true,
+      "field": "rating_bucket",
+      "legacy_field_visible": false,
+      "legacy_retrieval_correct": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate_field_visible": true,
+      "candidate_retrieval_correct": true,
+      "field": "demand_regime",
+      "legacy_field_visible": false,
+      "legacy_retrieval_correct": false,
+      "target_type": "regression"
+    },
+    {
+      "candidate_field_visible": true,
+      "candidate_retrieval_correct": true,
+      "field": "policy_stance",
+      "legacy_field_visible": false,
+      "legacy_retrieval_correct": false,
+      "target_type": "ranking"
+    }
+  ],
+  "schema_version": 1,
+  "tests": {
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "pytest": "65 passed"
+  }
+}

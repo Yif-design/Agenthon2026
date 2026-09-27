@@ -64,7 +64,12 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
     for i, entity in enumerate(task.entities):
         allowed = allowed_document_ids(task, entity, corpus)
         entity_corpus = scoped_corpus(corpus, allowed)
-        scores = index.search(query_for(task, entity), top_k=top_k, allowed_doc_ids=allowed)
+        query_entity = project_entity(entity, spec) if spec.key == "generic" else entity
+        scores = index.search(
+            query_for(task, query_entity, include_all_scalar_fields=spec.key == "generic"),
+            top_k=top_k,
+            allowed_doc_ids=allowed,
+        )
         chunks = [s.chunk for s in scores]
         extracted, extracted_evidence = extract_calculator_parameters(project_entity(entity, spec), spec, entity_corpus)
         extracted_facts, extracted_rejected = _facts_from_items(

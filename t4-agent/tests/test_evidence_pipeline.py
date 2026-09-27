@@ -5,9 +5,15 @@ import json
 import pytest
 
 from t4agent.evidence import fact_from_quote, validate_model_output
-from t4agent.family_specs import SPECS
+from t4agent.family_specs import (
+    GENERIC_MAX_SCALAR_FIELDS,
+    GENERIC_STRING_FIELD_LIMIT,
+    GENERIC_TOTAL_STRING_LIMIT,
+    SPECS,
+    project_entity,
+)
 from t4agent.predict import PreparedRow, _claims_with_context, _unpack_batch, predict_rows
-from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, build_index, tokenize
+from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, build_index, query_for, tokenize
 from t4agent.taskio import Task
 from t4agent.validate import validate_answer
 
@@ -110,6 +116,63 @@ def test_bm25_never_returns_foreign_document() -> None:
     ]
     results = BM25(chunks).search("liquidity default", allowed_doc_ids={"B"})
     assert results and {result.chunk.doc_id for result in results} == {"B"}
+
+
+def test_generic_projection_preserves_bounded_scalar_unknown_fields() -> None:
+    projected = project_entity(
+        {
+            "entity_id": "ISSUER_A",
+            "rating_bucket": "deep_speculative",
+            "watch_negative": True,
+            "custom_score": 2.5,
+            "analyst_excerpt": "x" * (GENERIC_STRING_FIELD_LIMIT + 50),
+            "nested": {"unsafe": "large"},
+            "items": ["not", "scalar"],
+            "corpus_ref": "corpus/issuer-a/",
+        },
+        SPECS["generic"],
+    )
+
+    assert projected["rating_bucket"] == "deep_speculative"
+    assert projected["watch_negative"] is True
+    assert projected["custom_score"] == 2.5
+    assert projected["analyst_excerpt"] == "x" * GENERIC_STRING_FIELD_LIMIT
+    assert "nested" not in projected
+    assert "items" not in projected
+    assert "corpus_ref" not in projected
+
+
+def test_known_family_projection_still_rejects_unlisted_scalar_fields() -> None:
+    projected = project_entity(
+        {"entity_id": "A", "name": "Issuer A", "consensus_eps": 1.0, "hidden_status": "critical"},
+        SPECS["eps_consensus"],
+    )
+
+    assert "hidden_status" not in projected
+
+
+def test_generic_projection_bounds_total_fields_and_text() -> None:
+    entity = {"entity_id": "A"}
+    entity.update({f"text_{index}": "x" * GENERIC_STRING_FIELD_LIMIT for index in range(80)})
+    projected = project_entity(entity, SPECS["generic"])
+
+    assert len(projected) <= GENERIC_MAX_SCALAR_FIELDS
+    assert sum(len(value) for value in projected.values() if isinstance(value, str)) <= GENERIC_TOTAL_STRING_LIMIT
+
+
+def test_generic_query_uses_unknown_categorical_field_to_retrieve_correct_document() -> None:
+    chunks = [
+        Chunk("SAFE", "2023-01-01", 0, 34, "Issuer outlook is investment grade."),
+        Chunk("RISK", "2023-01-01", 0, 37, "Issuer outlook is deep speculative."),
+    ]
+    entity = {"entity_id": "ISSUER_A", "rating_bucket": "deep speculative"}
+    task = make_task("unseen_family", "future_credit_state", [entity])
+
+    legacy = BM25(chunks).search(query_for(task, entity), top_k=1)
+    candidate = BM25(chunks).search(query_for(task, entity, include_all_scalar_fields=True), top_k=1)
+
+    assert legacy[0].chunk.doc_id == "SAFE"
+    assert candidate[0].chunk.doc_id == "RISK"
 
 
 def test_tokenizer_ignores_trailing_punctuation_but_preserves_financial_tokens() -> None:

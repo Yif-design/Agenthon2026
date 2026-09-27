@@ -245,12 +245,38 @@ def scoped_corpus(corpus: IndexedCorpus, allowed_doc_ids: set[str]) -> IndexedCo
     )
 
 
-def query_for(task: object, entity: dict) -> str:
+def query_for(task: object, entity: dict, include_all_scalar_fields: bool = False) -> str:
     parts: list[str] = []
-    for key in ("entity_id", "name", "sector", "industry", "series_id", "series_name", "asset_class", "tenor", "description"):
+    standard_keys = (
+        "entity_id",
+        "name",
+        "sector",
+        "industry",
+        "series_id",
+        "series_name",
+        "asset_class",
+        "tenor",
+        "description",
+    )
+    for key in standard_keys:
         val = entity.get(key)
         if val is not None:
             parts.append(str(val))
+    if include_all_scalar_fields:
+        for key, value in entity.items():
+            if (
+                key in standard_keys
+                or key == "corpus_ref"
+                or value is None
+                or isinstance(value, (dict, list, tuple, set))
+                or (isinstance(value, float) and not math.isfinite(value))
+            ):
+                continue
+            parts.append(str(key))
+            if isinstance(value, str):
+                parts.append(value[:1000])
+            elif isinstance(value, (bool, int, float)):
+                parts.append(str(value))
     target = getattr(task, "target", {}) or {}
     parts.append(str(target.get("name", "")))
     parts.append(str(getattr(task, "family", "")))

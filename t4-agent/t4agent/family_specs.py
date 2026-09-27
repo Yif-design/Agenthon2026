@@ -24,6 +24,13 @@ class FamilySpec:
     signals: tuple[SignalSpec, ...]
     model_required: bool
     allow_numeric_entity_fields: bool = False
+    allow_scalar_entity_fields: bool = False
+
+
+GENERIC_STRING_FIELD_LIMIT = 1000
+GENERIC_TOTAL_STRING_LIMIT = 6000
+GENERIC_MAX_SCALAR_FIELDS = 64
+GENERIC_MAX_FIELD_NAME_CHARS = 128
 
 
 SPECS: dict[str, FamilySpec] = {
@@ -167,6 +174,7 @@ SPECS: dict[str, FamilySpec] = {
         (SignalSpec("directional_signal", "Simple target direction from explicit evidence; use 0 when unclear."),),
         True,
         True,
+        True,
     ),
 }
 
@@ -197,6 +205,30 @@ def family_spec(family: str, target_name: str) -> FamilySpec:
 
 
 def project_entity(entity: dict[str, object], spec: FamilySpec) -> dict[str, object]:
+    if spec.allow_scalar_entity_fields:
+        projected: dict[str, object] = {}
+        priority = [key for key in spec.allowed_entity_fields if key in entity]
+        ordered_keys = priority + [key for key in entity if key not in priority]
+        remaining_string_chars = GENERIC_TOTAL_STRING_LIMIT
+        for key in ordered_keys:
+            value = entity[key]
+            if (
+                len(projected) >= GENERIC_MAX_SCALAR_FIELDS
+                or key == "corpus_ref"
+                or len(key) > GENERIC_MAX_FIELD_NAME_CHARS
+                or value is None
+                or isinstance(value, (dict, list, tuple, set))
+            ):
+                continue
+            if isinstance(value, bool):
+                projected[key] = value
+            elif isinstance(value, (int, float)) and math.isfinite(float(value)):
+                projected[key] = value
+            elif isinstance(value, str) and remaining_string_chars > 0:
+                clipped = value[: min(GENERIC_STRING_FIELD_LIMIT, remaining_string_chars)]
+                projected[key] = clipped
+                remaining_string_chars -= len(clipped)
+        return projected
     projected = {key: entity[key] for key in spec.allowed_entity_fields if key in entity}
     if spec.allow_numeric_entity_fields:
         for key, value in entity.items():

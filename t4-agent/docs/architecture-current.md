@@ -115,6 +115,14 @@ out of the fallback. A change/delta/growth target with no matching change field 
 rather than reusing a level field. If exactly one non-metadata numeric field is available, it remains
 the fallback. The selected field and reason are retained in the deterministic derivation trace.
 
+For unknown families only, the model packet and BM25 query also retain official scalar table
+features whose names could not be known in advance: finite numbers, booleans, categorical strings
+and short text. Known families keep their explicit field white lists. The generic packet excludes
+`corpus_ref` and nested structures, limits field names to 128 characters, each string to 1,000
+characters, all strings together to 6,000 characters and the row to 64 scalar fields. Identity
+fields are selected first. This lets hidden schemas use categorical and text columns without making
+prompt growth unbounded.
+
 BM25 tokenization removes sentence-edge punctuation while preserving financial forms such as
 `$5.28`, `10%`, `2024-10-31` and `year-over-year`. This makes a query token such as `action_flat`
 match the same identifier at the end of a sentence instead of assigning every zero-score query the
