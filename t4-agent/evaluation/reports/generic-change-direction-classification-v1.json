@@ -1,0 +1,161 @@
+{
+  "baseline_git_commit": "f74fe4713080f9446a65a169a1a68573bf288cd2",
+  "dataset_sha256": {
+    "cot": "a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e",
+    "cpi": "2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40",
+    "cpi_confirmation": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb",
+    "macro_revision": "1dfd5172b99834966a4410b36fcaf4eb26ee9354dcd85a1d82ecc60cec8ceb6c"
+  },
+  "decision": "reject",
+  "decision_rule": "Advance only if cross-domain mean accuracy improves on development, test and confirmation; no test or confirmation domain worsens; label order is invariant; and every safety check passes.",
+  "experiment": "generic_change_direction_classification_v1",
+  "gates": {
+    "confirmation": {
+      "baseline_mean_accuracy": 0.5544590877103193,
+      "candidate_mean_accuracy": 0.5387397905870812,
+      "label_order_invariant": true,
+      "mean_accuracy_improved": false,
+      "no_domain_worsened": false
+    },
+    "development": {
+      "baseline_mean_accuracy": 0.5982781782014518,
+      "candidate_mean_accuracy": 0.6149551783822883,
+      "label_order_invariant": true,
+      "mean_accuracy_improved": true,
+      "no_domain_worsened": true
+    },
+    "test": {
+      "baseline_mean_accuracy": 0.5751114827201783,
+      "candidate_mean_accuracy": 0.5925475490692882,
+      "label_order_invariant": false,
+      "mean_accuracy_improved": true,
+      "no_domain_worsened": true
+    }
+  },
+  "hypothesis": "For unknown binary direction classifications, use the sign of a numeric field only when the target and selected field explicitly describe change and both label roles are unambiguous.",
+  "limitations": [
+    "The transformed binary labels proxy unknown direction tasks and are not hidden competition labels.",
+    "Rows with exactly zero outcomes are treated as down because the screen is binary.",
+    "No task prompt or corpus evidence is used by this no-model candidate."
+  ],
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "results": {
+    "confirmation": {
+      "cot": {
+        "baseline_accuracy": 0.45454545454545453,
+        "candidate_accuracy": 0.46136363636363636,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.46136363636363636,
+        "rows": 440
+      },
+      "cpi": {
+        "baseline_accuracy": 0.7346938775510204,
+        "candidate_accuracy": 0.6979591836734694,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.6979591836734694,
+        "rows": 245
+      },
+      "macro_revision": {
+        "baseline_accuracy": 0.47413793103448276,
+        "candidate_accuracy": 0.45689655172413796,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.45689655172413796,
+        "rows": 232
+      }
+    },
+    "development": {
+      "cot": {
+        "baseline_accuracy": 0.44509803921568625,
+        "candidate_accuracy": 0.4745098039215686,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.4745098039215686,
+        "rows": 510
+      },
+      "cpi": {
+        "baseline_accuracy": 0.8106060606060606,
+        "candidate_accuracy": 0.8181818181818182,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.8181818181818182,
+        "rows": 132
+      },
+      "macro_revision": {
+        "baseline_accuracy": 0.5391304347826087,
+        "candidate_accuracy": 0.5521739130434783,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.5521739130434783,
+        "rows": 230
+      }
+    },
+    "test": {
+      "cot": {
+        "baseline_accuracy": 0.45576923076923076,
+        "candidate_accuracy": 0.49615384615384617,
+        "label_order_invariant": false,
+        "reversed_label_accuracy": 0.49423076923076925,
+        "rows": 520
+      },
+      "cpi": {
+        "baseline_accuracy": 0.75,
+        "candidate_accuracy": 0.7575757575757576,
+        "label_order_invariant": true,
+        "reversed_label_accuracy": 0.7575757575757576,
+        "rows": 132
+      },
+      "macro_revision": {
+        "baseline_accuracy": 0.5195652173913043,
+        "candidate_accuracy": 0.5239130434782608,
+        "label_order_invariant": false,
+        "reversed_label_accuracy": 0.5282608695652173,
+        "rows": 460
+      }
+    }
+  },
+  "safety_checks": {
+    "level_keeps_baseline": true,
+    "negative_change": true,
+    "opaque_labels_keep_baseline": true,
+    "positive_change": true,
+    "unmatched_change_keeps_baseline": true,
+    "zero_keeps_baseline": true
+  },
+  "schema_version": 1,
+  "scope": "L2/L3 unknown-family no-model classification fallback",
+  "time_splits": {
+    "confirmation": {
+      "cot": [
+        "2023"
+      ],
+      "cpi": [
+        "2024",
+        "2025"
+      ],
+      "macro_revision": [
+        "2023"
+      ]
+    },
+    "development": {
+      "cot": [
+        "2021"
+      ],
+      "cpi": [
+        "2021"
+      ],
+      "macro_revision": [
+        "2020"
+      ]
+    },
+    "test": {
+      "cot": [
+        "2022"
+      ],
+      "cpi": [
+        "2022"
+      ],
+      "macro_revision": [
+        "2021",
+        "2022"
+      ]
+    }
+  }
+}

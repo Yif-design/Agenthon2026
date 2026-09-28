@@ -1546,3 +1546,21 @@ validator. No model API or local model was used. The experiment is reproducible 
 reconstructing the pinned pre-change baseline before applying each candidate multiplier. Script:
 `evaluation/experiments/generic_change_shrinkage.py`. Report:
 `evaluation/reports/generic-change-shrinkage-v1.json`.
+
+### Generic explicit-change direction classification — rejected
+
+The generic no-model classification path emits a neutral or first-label fallback even when an
+unknown entity contains a target-matched numeric change. A bounded candidate used that change's
+sign only when both target and field explicitly described change and the positive and negative
+label roles were unambiguous.
+
+Across CPI, COT and macro revisions, mean development accuracy rose from 0.5983 to 0.6150 and mean
+test accuracy from 0.5751 to 0.5925. The independent confirmation gate reversed: mean accuracy fell
+from 0.5545 to 0.5387. CPI declined from 0.7347 to 0.6980 and macro revisions from 0.4741 to 0.4569,
+while COT improved only from 0.4545 to 0.4614. Test rows with exactly zero feature values also made
+the binary fallback sensitive to label order.
+
+All six safety controls passed, but confirmation degradation and label-order sensitivity each fail
+the predeclared rule. Production classification remains unchanged. No model was called. Script:
+`evaluation/experiments/generic_change_direction_classification.py`. Report:
+`evaluation/reports/generic-change-direction-classification-v1.json`.
