@@ -211,7 +211,7 @@ V2: OpenAI-compatible coarse-signal extractor with strict JSON and verbatim evid
 
 V3: minimal observable family specifications and deterministic solvers. Done.
 
-V4: local evaluation harness. Each run writes `trace/route.json`, `trace/rows.json`, and `trace/usage.json`; row traces contain allowed documents, retrieved chunks, raw model output, validated and rejected facts, used fact IDs, derivation, fallback reason, and final prediction. Done.
+V4: local evaluation harness. Pass `--trace-dir <path>` to write `route.json`, `rows.json`, and `usage.json`; row traces contain allowed documents, retrieved chunks, raw model output, validated and rejected facts, used fact IDs, derivation, fallback reason, and final prediction. The formal command writes only the required answer unless tracing is explicitly enabled, keeping the complete `/output` tree below the competition limit. Done.
 
 V5: improve table parsers and calibrate model constants when labeled development outcomes become available.
 
@@ -275,7 +275,7 @@ Evidence-chain hardening tested on 2026-09-19:
 - auction, COT, CPI, macro-revision and bank calculators cite the exact historical tables used in their derivations;
 - all 11 API outputs passed the official smoke verifier;
 - 21 tests cover cross-entity isolation, scoped BM25, rejection of foreign documents and invented quotes, whitespace-normalized quote-to-source mapping, deterministic replay, shared FOMC extraction, routing and family calculations;
-- every local run writes complete ignored traces, and all 78 offline rows reproduced their calculator output exactly from recorded inputs.
+- runs that explicitly pass `--trace-dir` write complete ignored traces, and all 78 offline rows reproduced their calculator output exactly from recorded inputs.
 
 Public units generally do not include resolved outcomes, so local smoke score is `null`; it checks admissibility, schema, roster, cutoff, and citation plumbing rather than leaderboard predictive quality.
 

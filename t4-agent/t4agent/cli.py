@@ -56,11 +56,14 @@ def main(argv: list[str] | None = None) -> int:
             answer = build_answer(task, baseline_results, corpus, llm.usage)
         write_json(args.out, answer)
 
-    trace_dir = args.trace_dir or (args.out.parent / "trace")
-    try:
-        _write_trace(trace_dir, task, results, llm)
-    except Exception as exc:  # noqa: BLE001
-        print(f"trace write failed after answer was saved: {exc}", file=sys.stderr)
+    # The competition scores the complete /output tree and caps it at 64 MiB.
+    # Full row traces repeat retrieved passages for every entity, so only emit
+    # them when a developer explicitly requests a trace destination.
+    if args.trace_dir is not None:
+        try:
+            _write_trace(args.trace_dir, task, results, llm)
+        except Exception as exc:  # noqa: BLE001
+            print(f"trace write failed after answer was saved: {exc}", file=sys.stderr)
 
     errors = answer.get("notes", {}).get("validation_errors") or []
     if errors:

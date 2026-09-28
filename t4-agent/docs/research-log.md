@@ -1014,3 +1014,32 @@ References:
 - <https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html>
 - <https://fred.stlouisfed.org/docs/api/fred/overview.html>
 - <https://github.com/Agenthon-2026/track4-analysis-public>
+
+### Explicit-only development traces — accepted
+
+The official state check on 2026-09-28 again found Track 4 main at `7b2bce1`, shared toolkit main at
+`95a0de3`, toolkit tag `v2.4.4`, and the same five open Track 4 issues (1, 2, 13, 14, 16). The
+official Development runtime caps the complete `/output` tree at 64 MiB and requires only the
+declared answer artifact. Two current MIT-licensed public Track 4 implementations were also
+inspected: `dungcao06/optivex-t4-agent` delegates to the official strong-RAG CLI, and
+`wangzgui/agenthon-t4-baseline-2026` writes its answer path without a default row-trace tree. No
+code was copied.
+
+Our formal CLI previously wrote `trace/rows.json` beside every answer even when `--trace-dir` was
+omitted. That file repeats retrieved passages and model data per entity and had no byte ceiling. A
+2,000-row deterministic probe produced a 2,043,320-byte answer plus 8,807,323 bytes of trace, a
+4.31x trace-to-answer ratio. The candidate makes the existing trace option literal: the formal
+default writes only `answer.json`, while an explicit `--trace-dir` retains the complete prior trace
+schema for development runs.
+
+A clean archive of commit `ed2f345` and the candidate produced byte-identical answers for all 11
+public units. Candidate outputs had no extra files, all 11 passed the toolkit 2.4.4 schema and smoke
+checks, and the test suite passed 91 tests. The change makes no model request and changes no
+prediction, citation, prompt or calculator. Report:
+`evaluation/reports/explicit-trace-output-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/Agenthon2026-public/blob/main/docs/DEVELOPMENT-RUNTIME.md#container-limits>
+- <https://github.com/dungcao06/optivex-t4-agent>
+- <https://github.com/wangzgui/agenthon-t4-baseline-2026>

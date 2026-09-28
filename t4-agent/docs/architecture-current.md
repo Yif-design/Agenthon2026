@@ -17,6 +17,11 @@ The submitted path is a baseline-first bounded workflow:
 9. Normalize rankings, validate the complete answer, and atomically replace the baseline only when
    the enhanced answer is valid.
 
+The formal CLI writes only the required answer by default. Full route, row and usage traces repeat
+retrieved corpus passages for every entity and are therefore emitted only when development code
+explicitly passes `--trace-dir`. This keeps optional diagnostics out of the competition's 64 MiB
+complete-output-tree allowance without changing predictions or local trace content.
+
 Batch responses are mapped back to the requested roster by both integer `item_id` and string
 `entity_id`. Reordered rows are accepted. If both identifiers resolve but disagree, that model row
 is rejected so it cannot cross entity boundaries. Every identity field that is present must have
