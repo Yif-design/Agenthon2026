@@ -10,8 +10,13 @@ from t4agent.llm import LLM, chat_completions_url, parse_json_object, retry_afte
 
 
 class FakeResponse:
-    def __init__(self, content: str = '{"signals": {}}') -> None:
+    def __init__(
+        self,
+        content: str = '{"signals": {}}',
+        usage: object = None,
+    ) -> None:
         self.content = content
+        self.usage = usage if usage is not None else {"prompt_tokens": 10, "completion_tokens": 4}
 
     def __enter__(self):
         return self
@@ -22,7 +27,7 @@ class FakeResponse:
     def read(self) -> bytes:
         return json.dumps({
             "choices": [{"message": {"content": self.content}}],
-            "usage": {"prompt_tokens": 10, "completion_tokens": 4},
+            "usage": self.usage,
         }).encode()
 
 
@@ -61,6 +66,41 @@ def test_llm_accepts_unambiguous_json_after_invalid_thinking_braces(monkeypatch)
     assert llm.chat_json("system", "user") == {"signals": {}}
     assert llm.usage.calls == 1
     assert llm.usage.errors == []
+
+
+def test_valid_content_survives_malformed_optional_usage(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    responses = iter(
+        (
+            FakeResponse(usage="not-a-map"),
+            FakeResponse(
+                usage={
+                    "prompt_tokens": "unknown",
+                    "completion_tokens": 4,
+                    "cost": "NaN",
+                }
+            ),
+        )
+    )
+    monkeypatch.setattr("urllib.request.urlopen", lambda *_args, **_kwargs: next(responses))
+
+    first = LLM()
+    assert first.chat_json("system", "first") == {"signals": {}}
+    assert first.usage.calls == 1
+    assert first.usage.prompt_tokens == 0
+    assert first.usage.completion_tokens == 0
+    assert first.usage.total_cost == 0.0
+    assert first.usage.errors == []
+
+    second = LLM()
+    assert second.chat_json("system", "second") == {"signals": {}}
+    assert second.usage.calls == 1
+    assert second.usage.prompt_tokens == 0
+    assert second.usage.completion_tokens == 4
+    assert second.usage.total_cost == 0.0
+    assert second.usage.errors == []
 
 
 def test_house_environment_uses_injected_token(monkeypatch) -> None:

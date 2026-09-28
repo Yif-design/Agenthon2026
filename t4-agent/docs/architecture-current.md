@@ -51,6 +51,13 @@ early, and an absent or malformed header retains the one-second bounded retry. R
 not remove JSON mode from the retry. The normal path, request cap and two-attempt default are
 unchanged.
 
+The assistant message and optional usage telemetry are independent at the response boundary. A
+valid assistant JSON object remains usable when `usage` is absent, is not an object, or contains an
+invalid counter. Valid non-negative counters are accumulated; booleans, negative values,
+non-numeric values and non-finite costs are ignored. Malformed `choices` or assistant content still
+uses the normal retry and fallback path. This prevents nonessential accounting metadata from
+discarding a prediction or consuming another request.
+
 Assistant text is decoded as a sequence of complete JSON containers rather than sliced from the
 first opening brace to the last closing brace. One dictionary surrounded by markdown, thinking text
 or invalid brace notes is accepted. Two independently valid dictionaries, a top-level array,

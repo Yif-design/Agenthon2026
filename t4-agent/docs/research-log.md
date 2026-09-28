@@ -916,3 +916,27 @@ forbids without explicit user approval. The production candidate is therefore re
 
 Script: `evaluation/experiments/bank_eps_interval_probe.py`. Report:
 `evaluation/reports/bank-eps-interval-calibration-v1.json`.
+
+### Optional usage telemetry isolation — accepted
+
+The next L2 response-boundary audit compared the production client with the official strong-RAG
+client. The official client reads the assistant message from `choices` and does not make prediction
+acceptance depend on `usage`. The only other public Track 4 repository found in the current GitHub
+search, `dungcao06/optivex-t4-agent`, delegates its HTTP path to that official scaffold. No code was
+copied.
+
+Our client instead converted usage fields before reading valid assistant content. In deterministic
+fault injection, a valid JSON reply with string-valued `usage` failed twice and fell back; a valid
+reply with `prompt_tokens: "unknown"` required a second call. The candidate treats usage as optional
+telemetry. Both replies now succeed in one call, invalid counters contribute zero, and an otherwise
+valid completion count is retained. Normal integer usage is unchanged.
+
+On Python 3.13, a clean archive of commit `2b08c40` and the candidate produced byte-identical
+answers for all 11 public units and 78 rows. Every candidate output passed the installed official
+`qfbench2-common==2.4.4` smoke verifier. The full test suite passed without a remote model call.
+Report: `evaluation/reports/optional-usage-telemetry-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/client.py>
+- <https://github.com/dungcao06/optivex-t4-agent>

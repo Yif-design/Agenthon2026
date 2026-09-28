@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import time
 import urllib.error
@@ -130,9 +131,10 @@ class LLM:
                 with urllib.request.urlopen(req, timeout=timeout) as resp:
                     payload = json.loads(resp.read().decode("utf-8"))
                 usage = payload.get("usage") or {}
-                self.usage.prompt_tokens += int(usage.get("prompt_tokens") or 0)
-                self.usage.completion_tokens += int(usage.get("completion_tokens") or 0)
-                self.usage.total_cost += float(usage.get("cost") or 0.0)
+                if isinstance(usage, dict):
+                    self.usage.prompt_tokens += _nonnegative_int(usage.get("prompt_tokens"))
+                    self.usage.completion_tokens += _nonnegative_int(usage.get("completion_tokens"))
+                    self.usage.total_cost += _nonnegative_float(usage.get("cost"))
                 content = (payload.get("choices") or [{}])[0].get("message", {}).get("content") or ""
                 parsed = parse_json_object(content)
                 if parsed is None:
@@ -212,6 +214,27 @@ def chat_completions_url(model_endpoint: str) -> str:
     if not base.endswith("/v1"):
         base += "/v1"
     return base + "/chat/completions"
+
+
+def _nonnegative_int(value: object) -> int:
+    """Keep optional usage telemetry from invalidating an otherwise usable reply."""
+    if isinstance(value, bool):
+        return 0
+    try:
+        parsed = int(value) if value is not None else 0
+    except (TypeError, ValueError, OverflowError):
+        return 0
+    return parsed if parsed >= 0 else 0
+
+
+def _nonnegative_float(value: object) -> float:
+    if isinstance(value, bool):
+        return 0.0
+    try:
+        parsed = float(value) if value is not None else 0.0
+    except (TypeError, ValueError, OverflowError):
+        return 0.0
+    return parsed if math.isfinite(parsed) and parsed >= 0.0 else 0.0
 
 
 def _is_context_length_error(detail: str) -> bool:

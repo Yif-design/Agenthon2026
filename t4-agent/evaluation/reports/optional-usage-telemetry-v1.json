@@ -1,0 +1,171 @@
+{
+  "baseline_git_commit": "2b08c4067a7acf6772beff12717d16450a907001",
+  "change": "Parse optional usage only when it is an object and accumulate only coercible, finite, non-negative counters and cost.",
+  "date": "2026-09-28",
+  "decision": "accept",
+  "experiment": "optional_usage_telemetry_v1",
+  "external_research": {
+    "copied_code": false,
+    "finding": "The official strong-RAG client extracts assistant content without consulting usage. The public Optivex repository delegates its HTTP path to that scaffold.",
+    "references": [
+      "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/client.py",
+      "https://github.com/dungcao06/optivex-t4-agent"
+    ]
+  },
+  "fault_injection": {
+    "valid_content_invalid_prompt_count_then_valid_retry": {
+      "baseline": {
+        "calls": 2,
+        "completion_tokens": 4,
+        "errors": [
+          "ValueError: invalid literal for int() with base 10: 'unknown'"
+        ],
+        "prompt_tokens": 10,
+        "success": true
+      },
+      "candidate": {
+        "calls": 1,
+        "completion_tokens": 4,
+        "errors": [],
+        "prompt_tokens": 0,
+        "success": true,
+        "total_cost": 0.0
+      }
+    },
+    "valid_content_non_mapping_usage": {
+      "baseline": {
+        "calls": 2,
+        "errors": [
+          "AttributeError: 'str' object has no attribute 'get'",
+          "AttributeError: 'str' object has no attribute 'get'"
+        ],
+        "success": false
+      },
+      "candidate": {
+        "calls": 1,
+        "completion_tokens": 0,
+        "errors": [],
+        "prompt_tokens": 0,
+        "success": true,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "hypothesis": "A valid assistant JSON response must remain usable when optional usage telemetry is malformed; invalid counters should be ignored without an extra request.",
+  "layer": "L2 cross-family model response boundary",
+  "official_state": {
+    "material_rule_update": false,
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "predictive_quality_claim": "none; shared response reliability improvement only",
+  "public_no_model_ab": {
+    "baseline_source": "clean git archive of baseline_git_commit",
+    "byte_identical_count": 11,
+    "row_count": 78,
+    "runtime": "Python 3.13.15 for both baseline and candidate",
+    "smoke_admissible_count": 11,
+    "unit_count": 11,
+    "units": [
+      {
+        "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "byte_identical": true,
+        "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "rows": 1,
+        "unit_id": "t4-EXAMPLE-eps-beat"
+      },
+      {
+        "baseline_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "byte_identical": true,
+        "candidate_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "rows": 7,
+        "unit_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "byte_identical": true,
+        "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "rows": 10,
+        "unit_id": "t4-cotpos-202411-us10"
+      },
+      {
+        "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "byte_identical": true,
+        "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "rows": 11,
+        "unit_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "byte_identical": true,
+        "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "rows": 8,
+        "unit_id": "t4-credit-event-2023"
+      },
+      {
+        "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "byte_identical": true,
+        "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "rows": 8,
+        "unit_id": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "byte_identical": true,
+        "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "rows": 6,
+        "unit_id": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "byte_identical": true,
+        "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "rows": 6,
+        "unit_id": "t4-fomc-curve-20220728"
+      },
+      {
+        "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "byte_identical": true,
+        "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "rows": 6,
+        "unit_id": "t4-fomc-curve-20240918"
+      },
+      {
+        "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "byte_identical": true,
+        "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "rows": 12,
+        "unit_id": "t4-macrorev-20240930-us6"
+      },
+      {
+        "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "byte_identical": true,
+        "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "rows": 3,
+        "unit_id": "t4-postearn-20240201-megacap"
+      }
+    ]
+  },
+  "reason": "Two malformed optional-telemetry paths now retain valid content in one call, valid counters keep their prior behavior, all public outputs are byte-identical, and every unit, smoke, and test gate passes.",
+  "schema_version": 1,
+  "validation": {
+    "focused_llm_tests": "20 passed",
+    "full_tests_python_3_11": "88 passed",
+    "full_tests_python_3_13": "88 passed",
+    "local_llm_run": false,
+    "normal_path_model_requests_added": 0,
+    "public_outputs_byte_identical": "11/11",
+    "public_rows": 78,
+    "qfbench2_common": "2.4.4",
+    "qfbench2_smoke": "11/11 admissible",
+    "remote_model_calls": 0
+  }
+}
