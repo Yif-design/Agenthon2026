@@ -61,6 +61,10 @@
   fallback even on a clean route.
 - The COT mean-reversion coefficient is deliberately simple. It improved a 96-date time-forward test,
   but its mean rank correlation was only 0.0379 and may vary across market regimes.
+- The CPI twelve-month mean is confirmed only for core and food on 42 complete-history rows in
+  2024-2025. It does not cover headline, energy or the other components, and it deliberately falls
+  back when fewer than twelve monthly changes are available. The 2025 shutdown left October
+  unpublished and the December 2025 core/food histories incomplete for this rule.
 - The auction model uses only recent same-tenor BTC outcomes. Offering size, bidder composition and
   rate-volatility features were not adopted, so it may miss regime changes despite improving the
   2022-2024 time-forward checks. The 2022-2023 point test was inspected before interval calibration

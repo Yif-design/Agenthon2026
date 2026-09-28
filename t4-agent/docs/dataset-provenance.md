@@ -148,6 +148,27 @@ same-month day-20 vintage. Official BLS archive URLs show every 2022 and 2023 re
 month-end. Each substitution is listed in the dataset metadata. Raw CSVs are git-ignored and the
 submission image excludes the entire evaluation directory.
 
+### CPI core and food 2024-2025 confirmation
+
+- Local file: `evaluation/datasets/cpi/components_2024_2025_confirmation.json`
+- Dataset SHA-256: `794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb`
+- Raw used-cache SHA-256: `1541c671dcaf03bf5ca1baeeb5a143cbf0e4adf8e206d543d965ff4d5d904a2b`
+- Source and vintage construction: the same ALFRED endpoint, series roster and cutoff-safe
+  month-end snapshots as the 2015-2023 panel
+- Coverage: 245 component rows from reference months 2024-01 through 2025-12
+- Locked decision subset: 24 core/food rows in 2024 and 18 in 2025 with exactly twelve known
+  monthly changes
+- Missing-history policy: 2025-12 core and food are excluded because the canceled October 2025 CPI
+  release leaves only ten calculable prior monthly changes
+- Runtime availability: the confirmed twelve-month mean is enabled only for task cutoffs on or
+  after `2026-02-01`
+
+The candidate was fixed from the Cleveland Fed Inflation Nowcasting FAQ's twelve-month moving
+average specification for core and food CPI before reading this confirmation. It was accepted only
+if MAE and RMSE improved and direction accuracy did not decline in 2024 and 2025 separately.
+Rebuilding the parameterized builder over its original 2015-2023 range reproduced all 1,188 rows
+and the raw-cache hash exactly.
+
 ## U.S. Treasury nominal coupon auction panel
 
 - Local file: `evaluation/datasets/auction/nominal_coupon_2010_2024-10-31.json`

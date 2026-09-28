@@ -42,10 +42,18 @@ def month_key(year: int, month: int) -> str:
     return f"{year:04d}-{month:02d}-01"
 
 
-def vintages() -> list[str]:
+def parse_month(value: str) -> tuple[int, int]:
+    year, month = (int(part) for part in value.split("-"))
+    if not 1 <= month <= 12:
+        raise argparse.ArgumentTypeError("month must be YYYY-MM")
+    return year, month
+
+
+def vintages(start: tuple[int, int], end_ref: tuple[int, int]) -> list[str]:
     result = []
-    year, month = 2015, 1
-    while (year, month) <= (2024, 1):
+    year, month = start
+    end = month_shift(*end_ref, 1)
+    while (year, month) <= end:
         result.append(month_end(year, month))
         year, month = month_shift(year, month, 1)
     return result
@@ -55,7 +63,7 @@ def month_end(year: int, month: int) -> str:
     return f"{year:04d}-{month:02d}-{calendar.monthrange(year, month)[1]:02d}"
 
 
-def fetch_one(cache: Path, series_id: str, vintage: str) -> Path:
+def fetch_one(cache: Path, series_id: str, vintage: str, observation_end: str) -> Path:
     target = cache / series_id / f"{vintage}.csv"
     year, month, day = (int(part) for part in vintage.split("-"))
     day20 = cache / series_id / f"{year:04d}-{month:02d}-20.csv"
@@ -68,7 +76,7 @@ def fetch_one(cache: Path, series_id: str, vintage: str) -> Path:
         # Official archive URLs show every release in this audited span occurred by day 14.
         # The day-20 and month-end information sets are therefore equivalent.
         if not day20.exists():
-            fetch_one(cache, series_id, f"{year:04d}-{month:02d}-20")
+            fetch_one(cache, series_id, f"{year:04d}-{month:02d}-20", observation_end)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(day20, target)
         return target
@@ -77,7 +85,7 @@ def fetch_one(cache: Path, series_id: str, vintage: str) -> Path:
     query = urlencode({
         "id": series_id,
         "cosd": "2013-01-01",
-        "coed": "2023-12-01",
+        "coed": observation_end,
         "vintage_date": vintage,
     })
     url = f"{API}?{query}"
@@ -130,11 +138,15 @@ def main() -> None:
     parser.add_argument("--cache", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--workers", type=int, default=12)
+    parser.add_argument("--start-ref", type=parse_month, default=parse_month("2015-01"))
+    parser.add_argument("--end-ref", type=parse_month, default=parse_month("2023-12"))
     args = parser.parse_args()
 
-    jobs = [(series_id, vintage) for series_id in SERIES.values() for vintage in vintages()]
+    requested_vintages = vintages(args.start_ref, args.end_ref)
+    observation_end = month_key(*args.end_ref)
+    jobs = [(series_id, vintage) for series_id in SERIES.values() for vintage in requested_vintages]
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = {pool.submit(fetch_one, args.cache, *job): job for job in jobs}
+        futures = {pool.submit(fetch_one, args.cache, *job, observation_end): job for job in jobs}
         for future in as_completed(futures):
             future.result()
 
@@ -143,27 +155,28 @@ def main() -> None:
         for series_id, vintage in jobs
     }
     rows = []
-    for year in range(2015, 2024):
-        for month in range(1, 13):
-            prior_vintage = month_end(year, month)
-            release_year, release_month = month_shift(year, month, 1)
-            target_vintage = month_end(release_year, release_month)
-            for entity_id, series_id in SERIES.items():
-                known = snapshots[(series_id, prior_vintage)]
-                resolved = snapshots[(series_id, target_vintage)]
-                history = changes(known, *month_shift(year, month, -1), 12)
-                target_changes = changes(resolved, year, month, 1)
-                if len(history) < 9 or not target_changes:
-                    continue
-                rows.append({
-                    "ref_month": f"{year:04d}-{month:02d}",
-                    "cutoff_vintage": prior_vintage,
-                    "resolution_vintage": target_vintage,
-                    "entity_id": entity_id,
-                    "series_id": series_id,
-                    "known_mom_pct": history,
-                    "target_mom_pct": target_changes[-1],
-                })
+    year, month = args.start_ref
+    while (year, month) <= args.end_ref:
+        prior_vintage = month_end(year, month)
+        release_year, release_month = month_shift(year, month, 1)
+        target_vintage = month_end(release_year, release_month)
+        for entity_id, series_id in SERIES.items():
+            known = snapshots[(series_id, prior_vintage)]
+            resolved = snapshots[(series_id, target_vintage)]
+            history = changes(known, *month_shift(year, month, -1), 12)
+            target_changes = changes(resolved, year, month, 1)
+            if len(history) < 9 or not target_changes:
+                continue
+            rows.append({
+                "ref_month": f"{year:04d}-{month:02d}",
+                "cutoff_vintage": prior_vintage,
+                "resolution_vintage": target_vintage,
+                "entity_id": entity_id,
+                "series_id": series_id,
+                "known_mom_pct": history,
+                "target_mom_pct": target_changes[-1],
+            })
+        year, month = month_shift(year, month, 1)
 
     raw_hash = hashlib.sha256()
     vintage_aliases = []
@@ -184,6 +197,10 @@ def main() -> None:
         "built_at": date.today().isoformat(),
         "source": API,
         "source_note": "Each target uses month-end ALFRED vintages immediately before and after its release.",
+        "reference_month_range": [
+            f"{args.start_ref[0]:04d}-{args.start_ref[1]:02d}",
+            f"{args.end_ref[0]:04d}-{args.end_ref[1]:02d}",
+        ],
         "raw_cache_sha256": raw_hash.hexdigest(),
         "equivalent_vintage_aliases": vintage_aliases,
         "series": SERIES,

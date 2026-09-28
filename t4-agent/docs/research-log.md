@@ -1,5 +1,32 @@
 # Research log
 
+## 2026-09-29: CPI core and food twelve-month mean — accepted
+
+The Cleveland Fed Inflation Nowcasting FAQ specifies a twelve-month moving average for its core and
+food CPI monthly forecasts. That externally fixed rule was compared with production's 70% latest
+change plus 30% recent-three median on a newly built, cutoff-safe ALFRED confirmation panel. The
+builder was parameterized for arbitrary month ranges; rebuilding 2015-2023 reproduced all 1,188
+existing rows and the raw-cache hash exactly before 2024-2025 was read.
+
+On 24 core/food rows in 2024, the twelve-month mean reduced MAE from 0.1052 to 0.0914 and RMSE from
+0.1318 to 0.1144 while retaining 100% direction accuracy. On 18 complete-history rows in 2025, MAE
+fell from 0.1787 to 0.1147, RMSE from 0.2108 to 0.1457 and direction accuracy rose from 88.9% to
+94.4%. The two December 2025 rows were excluded by the predeclared exact-twelve-history rule after
+the canceled October release interrupted the monthly-change chain.
+
+Production applies the mean only to `CPI_CORE` and `CPI_FOOD`, only with exactly twelve values, and
+only for cutoffs on or after 2026-02-01. The new path gives exact component headers priority so
+`Food` cannot bind to `All items less food and energy`; the legacy path is unchanged. Python 3.13
+passed 124 tests. A clean archive of baseline `03c1f21` and the candidate produced byte-identical
+offline answers for all 11 public units and 78 rows. Those bytes are identical to the previously
+source-pinned 11/11 smoke-admissible baseline, so heavy local NLI was not repeated. No model API or
+local language model ran. Report: `evaluation/reports/cpi-core-food-mean12-confirmation-v1.json`.
+
+References:
+
+- <https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting>
+- <https://alfred.stlouisfed.org/>
+
 ## 2026-09-29: context formatting recovery — rejected
 
 A saved `nemotron-3-super-120b-a12b` public run contained only three rejected facts. Two were context

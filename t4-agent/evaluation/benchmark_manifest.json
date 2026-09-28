@@ -151,5 +151,17 @@
       "role": "transformed_unknown_schema_real_outcome_test",
       "decision": "accept"
     }
+  },
+  "family_outcome_benchmarks": {
+    "cpi_core_food_mean12_confirmation_v1": {
+      "path": "evaluation/reports/cpi-core-food-mean12-confirmation-v1.json",
+      "sha256": "573cbb51f57278a076f7865259a1ba9376adfe37880cb211b3b5d7f94395b089",
+      "dataset": "evaluation/datasets/cpi/components_2024_2025_confirmation.json",
+      "dataset_sha256": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb",
+      "rows": 42,
+      "role": "locked_time_forward_confirmation",
+      "decision": "accept",
+      "artifact_available_date": "2026-02-01"
+    }
   }
 }

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from statistics import median, pstdev
+from statistics import fmean, median, pstdev
 from typing import Any
 
 from ..retrieve import IndexedCorpus
@@ -10,6 +10,8 @@ from .common import ModelOutput, artifact_available, clip, interval, number
 
 
 ARTIFACT_AVAILABLE_DATE = "2022-01-01"
+MEAN12_AVAILABLE_DATE = "2026-02-01"
+MEAN12_COMPONENTS = {"CPI_CORE", "CPI_FOOD"}
 
 
 def solve(
@@ -23,10 +25,15 @@ def solve(
 ) -> ModelOutput:
     latest = number(entity.get("latest_published_mom_pct")) or 0.0
     component = str(entity.get("name") or "")
-    history, history_evidence = _history(corpus, component)
+    entity_id = str(entity.get("entity_id") or "").upper()
+    mean12_available = artifact_available(task.cutoff_date, MEAN12_AVAILABLE_DATE)
+    mean12_eligible = mean12_available and entity_id in MEAN12_COMPONENTS
+    history, history_evidence = _history(corpus, component, prefer_exact=mean12_eligible)
     recent_median = median(history[-3:]) if history else latest
     point = 0.7 * latest + 0.3 * recent_median
-    entity_id = str(entity.get("entity_id") or "").upper()
+    mean12_applied = mean12_eligible and len(history) == 12
+    if mean12_applied:
+        point = fmean(history)
     gasoline_change, gasoline_evidence = _gasoline_change(corpus)
     if gasoline_change is not None and entity_id == "CPI_GASOLINE":
         point = clip(gasoline_change, -5.0, 5.0)
@@ -42,7 +49,7 @@ def solve(
         point,
         None,
         interval(point, task.interval_level, half),
-        "component_history",
+        "component_history_mean12" if mean12_applied else "component_history",
         evidence=evidence,
         derivation={
             "latest_mom": latest,
@@ -51,18 +58,25 @@ def solve(
             "interval_floor": floor,
             "calibrated_artifact_available": calibrated,
             "artifact_available_date": ARTIFACT_AVAILABLE_DATE,
+            "mean12_applied": mean12_applied,
+            "mean12_available_date": MEAN12_AVAILABLE_DATE,
         },
     )
 
 
-def _history(corpus: IndexedCorpus, component: str) -> tuple[list[float], list[dict[str, Any]]]:
+def _history(
+    corpus: IndexedCorpus,
+    component: str,
+    *,
+    prefer_exact: bool = False,
+) -> tuple[list[float], list[dict[str, Any]]]:
     for doc_id, text in corpus.doc_texts.items():
         if "CPI-U components" not in text or "month |" not in text:
             continue
         lines = text.splitlines()
         header = next((line for line in lines if line.startswith("month |")), "")
         columns = [part.strip() for part in header.split("|")]
-        index = _matching_column(columns, component)
+        index = _matching_column(columns, component, prefer_exact=prefer_exact)
         if index is None:
             return [], []
         values: list[float] = []
@@ -90,8 +104,13 @@ def _history(corpus: IndexedCorpus, component: str) -> tuple[list[float], list[d
     return [], []
 
 
-def _matching_column(columns: list[str], component: str) -> int | None:
+def _matching_column(columns: list[str], component: str, *, prefer_exact: bool = False) -> int | None:
     target = re.sub(r"\s+", " ", component.lower()).strip()
+    if prefer_exact:
+        for index, column in enumerate(columns):
+            normalized = re.sub(r"\s+", " ", column.lower()).strip()
+            if target == normalized:
+                return index
     for index, column in enumerate(columns):
         normalized = re.sub(r"\s+", " ", column.lower()).strip()
         if target == normalized or target in normalized or normalized in target:

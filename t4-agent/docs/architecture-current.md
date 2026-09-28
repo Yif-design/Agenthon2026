@@ -145,6 +145,12 @@ historical hidden unit from receiving a parameter selected with later outcomes.
 Date-suffixed COT entity fields are filtered against the same task cutoff before the latest value is
 selected.
 
+For task cutoffs on or after 2026-02-01, CPI core and food use the arithmetic mean of exactly twelve
+cutoff-safe monthly component changes. The point rule is limited to those two named series, uses an
+exact header match before substring fallback, and retains the preceding latest/median blend when the
+history is incomplete. A locked 2024-2025 ALFRED confirmation improved both MAE and RMSE in each
+year without reducing direction accuracy. Earlier tasks and all other CPI components are unchanged.
+
 Every prediction preserves up to three compact calculator/model facts and can additionally cite up
 to three distinct full BM25 chunks. These context candidates come only from the same cutoff-safe,
 entity-scoped retrieval result already used for reasoning. Their exact source slice is rechecked

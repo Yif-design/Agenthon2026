@@ -784,6 +784,65 @@ class MinimalModelTests(unittest.TestCase):
         self.assertAlmostEqual(historical.interval["hi"], result.point + 0.35)
         self.assertFalse(historical.derivation["calibrated_artifact_available"])
 
+    def test_core_and_food_cpi_use_confirmed_mean12_only_after_available_date(self) -> None:
+        months = "\n".join(
+            f"2025-{month:02d} | +{month / 100:.2f} | +{(month + 12) / 100:.2f}"
+            for month in range(1, 13)
+        )
+        cpi_text = (
+            "U.S. CPI-U components\n"
+            "month | All items less food and energy (core CPI) | Food\n"
+            f"{months}\n"
+        )
+        corpus = IndexedCorpus([], {"CPI": cpi_text}, {"CPI": "2026-01-31"})
+        current = replace(task("cpi_component_mom_first_print", "regression"), cutoff_date="2026-02-01")
+        before = replace(current, cutoff_date="2026-01-31")
+        core = {
+            "entity_id": "CPI_CORE",
+            "name": "All items less food and energy (core CPI)",
+            "latest_published_mom_pct": 0.12,
+        }
+        food = {"entity_id": "CPI_FOOD", "name": "Food", "latest_published_mom_pct": 0.24}
+
+        core_result = solve_minimal(current, core, SPECS["cpi"], {}, corpus, 0, 1)
+        food_result = solve_minimal(current, food, SPECS["cpi"], {}, corpus, 0, 1)
+        before_result = solve_minimal(before, core, SPECS["cpi"], {}, corpus, 0, 1)
+
+        self.assertAlmostEqual(core_result.point, 0.065)
+        self.assertAlmostEqual(food_result.point, 0.185)
+        self.assertEqual(core_result.method, "component_history_mean12")
+        self.assertTrue(core_result.derivation["mean12_applied"])
+        self.assertAlmostEqual(before_result.point, 0.117)
+        self.assertEqual(before_result.method, "component_history")
+        self.assertFalse(before_result.derivation["mean12_applied"])
+
+    def test_cpi_mean12_falls_back_when_history_is_incomplete(self) -> None:
+        cpi_text = """U.S. CPI-U components
+month | All items less food and energy (core CPI)
+2025-10 | +0.20
+2025-11 | +0.30
+2025-12 | +0.40
+"""
+        corpus = IndexedCorpus([], {"CPI": cpi_text}, {"CPI": "2026-01-31"})
+        current = replace(task("cpi_component_mom_first_print", "regression"), cutoff_date="2026-02-01")
+        result = solve_minimal(
+            current,
+            {
+                "entity_id": "CPI_CORE",
+                "name": "All items less food and energy (core CPI)",
+                "latest_published_mom_pct": 0.40,
+            },
+            SPECS["cpi"],
+            {},
+            corpus,
+            0,
+            1,
+        )
+
+        self.assertAlmostEqual(result.point, 0.37)
+        self.assertEqual(result.method, "component_history")
+        self.assertFalse(result.derivation["mean12_applied"])
+
 
 if __name__ == "__main__":
     unittest.main()
