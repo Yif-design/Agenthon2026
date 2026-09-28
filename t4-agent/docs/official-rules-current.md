@@ -59,8 +59,14 @@ is absent from the current pipeline. The workflow also pulls and starts the push
 after the build. The explicit runner label also avoids the announced `ubuntu-latest` migration to
 Ubuntu 26.04 beginning 2026-10-19, during the competition's Final + Verification window.
 
+GitHub removed Node.js 20 from hosted Actions runners on 2026-09-23. The image workflow pins full
+commit SHAs for the current Node.js 24 releases of checkout, Python setup and the three Docker
+actions. Run `36368888920` completed tests, image publication and command-contract smoke with no
+Node.js 20 compatibility warning; its image was anonymously readable by immutable digest.
+
 Sources: <https://github.com/Agenthon-2026/track4-analysis-public/issues/16> and
-<https://github.com/actions/runner-images/issues/14748>
+<https://github.com/actions/runner-images/issues/14748>, plus
+<https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/>.
 
 ## Track 4 artifacts and evidence
 

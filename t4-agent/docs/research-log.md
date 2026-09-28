@@ -940,3 +940,22 @@ References:
 
 - <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/client.py>
 - <https://github.com/dungcao06/optivex-t4-agent>
+
+### Node.js 24 GitHub Actions pinning — accepted
+
+Run `36364759306` succeeded but GitHub reported that checkout, Python setup and all three Docker
+actions still targeted retired Node.js 20 and were being forced onto Node.js 24. GitHub's migration
+guidance tells workflow users to update to action versions that run on Node.js 24. Each action had
+such a release, so the candidate replaced floating old major tags with the full commit SHA of the
+current release and retained a version comment.
+
+Candidate run `36368888920` passed all 88 tests, built and pushed the Linux/amd64 image, and passed
+the container command-contract smoke. The Node.js 20 warning count fell from one to zero. The
+resulting digest `sha256:42af4b17e5977b62cd789303bad1fe6afcb668a4d6717684213e7cb8eac9b846`
+returned HTTP 200 through an anonymous GHCR manifest request and matched the registry digest. The
+agent, Dockerfile and predictions did not change.
+
+Report: `evaluation/reports/node24-actions-pinning-v1.json`.
+
+Reference:
+<https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/>.
