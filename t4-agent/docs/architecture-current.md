@@ -164,6 +164,15 @@ characters, all strings together to 6,000 characters and the row to 64 scalar fi
 fields are selected first. This lets hidden schemas use categorical and text columns without making
 prompt growth unbounded.
 
+Generic BM25 queries preserve each exact schema identifier and additionally split semantic
+camelCase, snake_case and hyphenated names into at most eight natural-language components. When at
+least one such semantic identifier exists and no domain rubric applies, those components replace
+the broad `results/outlook/growth/...` fallback terms that otherwise dominate lexical scoring. An
+opaque schema such as `unseen_family + opaqueTarget + x1` keeps the original fallback rubric
+byte-for-byte: common placeholder words including `unseen`, `unknown`, `generic`, `opaque`, `task`,
+`family`, `target`, `metric` and `forecast` do not qualify as semantic components. Known-family
+queries remain unchanged. The model packet itself is not expanded, so this adds no prompt tokens.
+
 Unknown classification targets keep the same five-level `directional_signal`, then use a bounded
 typed-schema mapper to assign allowed labels to positive, neutral and negative roles. It first uses
 unambiguous label tokens and event-target negation, then reads at most 8,000 characters of the task

@@ -12,6 +12,20 @@ from typing import Callable
 from .family_specs import task_family_spec
 
 TOKEN_RE = re.compile(r"\$?[A-Za-z0-9_]+(?:\.[0-9]+)?%?(?:-[A-Za-z0-9_]+)*")
+SCHEMA_PART_RE = re.compile(r"[A-Za-z]+|[0-9]+")
+MAX_SCHEMA_QUERY_PARTS = 8
+GENERIC_RUBRIC = "results outlook growth risk change forecast target evidence"
+SCHEMA_NOISE_PARTS = {
+    "forecast",
+    "family",
+    "generic",
+    "metric",
+    "opaque",
+    "target",
+    "task",
+    "unknown",
+    "unseen",
+}
 
 
 @dataclass(frozen=True)
@@ -254,6 +268,7 @@ def scoped_corpus(corpus: IndexedCorpus, allowed_doc_ids: set[str]) -> IndexedCo
 
 def query_for(task: object, entity: dict, include_all_scalar_fields: bool = False) -> str:
     parts: list[str] = []
+    has_semantic_schema_terms = False
     standard_keys = (
         "entity_id",
         "name",
@@ -279,16 +294,40 @@ def query_for(task: object, entity: dict, include_all_scalar_fields: bool = Fals
                 or (isinstance(value, float) and not math.isfinite(value))
             ):
                 continue
-            parts.append(str(key))
+            key_text, expanded = _schema_query_text(str(key))
+            parts.append(key_text)
+            has_semantic_schema_terms = has_semantic_schema_terms or expanded
             if isinstance(value, str):
                 parts.append(value[:1000])
             elif isinstance(value, (bool, int, float)):
                 parts.append(str(value))
     target = getattr(task, "target", {}) or {}
-    parts.append(str(target.get("name", "")))
-    parts.append(str(getattr(task, "family", "")))
-    parts.append(rubric_keywords(str(getattr(task, "family", "")), str(target.get("name", ""))))
+    target_name = str(target.get("name", ""))
+    family = str(getattr(task, "family", ""))
+    if include_all_scalar_fields:
+        target_text, target_expanded = _schema_query_text(target_name)
+        family_text, family_expanded = _schema_query_text(family)
+        parts.extend((target_text, family_text))
+        has_semantic_schema_terms = has_semantic_schema_terms or target_expanded or family_expanded
+    else:
+        parts.extend((target_name, family))
+    keywords = rubric_keywords(family, target_name)
+    if not (include_all_scalar_fields and has_semantic_schema_terms and keywords == GENERIC_RUBRIC):
+        parts.append(keywords)
     return " ".join(parts)
+
+
+def _schema_query_text(value: str) -> tuple[str, bool]:
+    """Keep the exact identifier and add bounded components when at least two are semantic."""
+    separated = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", value).replace("_", " ").replace("-", " ")
+    components = SCHEMA_PART_RE.findall(separated)[:MAX_SCHEMA_QUERY_PARTS]
+    meaningful = [
+        part
+        for part in components
+        if part.isalpha() and len(part) >= 2 and part.lower() not in SCHEMA_NOISE_PARTS
+    ]
+    expanded = len(meaningful) >= 2 and tokenize(value) != [part.lower() for part in components]
+    return (f"{value} {' '.join(components)}", True) if expanded else (value, False)
 
 
 def rubric_keywords(family: str, target_name: str) -> str:
@@ -309,4 +348,4 @@ def rubric_keywords(family: str, target_name: str) -> str:
         return "revision estimate preliminary durable goods shipments inventories retail sales"
     if "reaction" in text:
         return "earnings guidance revenue margin outlook surprise market reaction"
-    return "results outlook growth risk change forecast target evidence"
+    return GENERIC_RUBRIC

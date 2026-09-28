@@ -1,0 +1,61 @@
+{
+  "baseline_git_commit": "64fe8e05d35f233d695bebe0e53f31cb02e55a99",
+  "cases": [
+    {
+      "candidate_tokens": 20,
+      "candidate_top1": "DISTRACTOR",
+      "case_id": "camel_field",
+      "exact_schema_tokens_preserved": true,
+      "legacy_tokens": 13,
+      "legacy_top1": "DISTRACTOR"
+    },
+    {
+      "candidate_tokens": 20,
+      "candidate_top1": "DISTRACTOR",
+      "case_id": "snake_field",
+      "exact_schema_tokens_preserved": true,
+      "legacy_tokens": 13,
+      "legacy_top1": "DISTRACTOR"
+    },
+    {
+      "candidate_tokens": 20,
+      "candidate_top1": "DISTRACTOR",
+      "case_id": "hyphen_field",
+      "exact_schema_tokens_preserved": true,
+      "legacy_tokens": 13,
+      "legacy_top1": "DISTRACTOR"
+    },
+    {
+      "candidate_tokens": 17,
+      "candidate_top1": "DISTRACTOR",
+      "case_id": "camel_target",
+      "exact_schema_tokens_preserved": true,
+      "legacy_tokens": 11,
+      "legacy_top1": "DISTRACTOR"
+    }
+  ],
+  "decision": "reject",
+  "decision_reason": "Schema-name expansion preserved exact tokens and stayed within the query-growth cap, but candidate top-1 retrieval remained 0/4 because the broad generic rubric still dominated the synthetic natural-language matches.",
+  "decision_rule": "Require candidate 4/4 top-1 versus legacy below 4/4, exact legacy schema tokens in 4/4, <=4x 64-field query growth, unchanged known-family query behavior, byte-identical public outputs, 11/11 schema/smoke and no model calls.",
+  "experiment": "generic_schema_query_expansion_v1",
+  "hypothesis": "Keeping exact schema tokens while adding bounded identifier components improves natural-language evidence retrieval for unseen schemas without changing known-family queries or model usage.",
+  "layer": "L2 unknown-family retrieval",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "production_change": "none; candidate code and tests rolled back",
+  "results": {
+    "budget_candidate_tokens": 464,
+    "budget_expansion_ratio": 3.338129496402878,
+    "budget_legacy_tokens": 139,
+    "candidate_correct": 0,
+    "exact_schema_token_cases": 4,
+    "legacy_correct": 0,
+    "total": 4
+  },
+  "schema_version": 1
+}

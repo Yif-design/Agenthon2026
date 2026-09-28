@@ -976,6 +976,45 @@ without another scorer installation. No model request or prompt changed. Script:
 `evaluation/experiments/structural_router_value_guard.py`. Report:
 `evaluation/reports/structural-router-value-guard-v1.json`.
 
+### Generic schema-name query expansion — rejected
+
+A deterministic retrieval screen tested whether retaining exact JSON schema tokens while adding
+camelCase, snake_case and hyphen-separated natural-language components was sufficient to recover
+evidence for unseen task schemas. Four cases covered three field-name styles and a camelCase target
+name. Each correct document used the expanded natural-language phrase; a distractor contained the
+existing generic rubric terms.
+
+The baseline and candidate both retrieved 0/4 correct top-one documents. Exact legacy tokens were
+preserved in 4/4 cases and the 64-field stress query grew by 3.34x, within the pre-registered 4x
+limit, but the eight broad generic rubric terms continued to dominate the BM25 score. The candidate
+failed its primary 4/4 retrieval gate and was fully rolled back before public or model tests. A
+separate experiment may test generic rubric selection or weighting; that behavior was not changed
+after seeing this result. Script: `evaluation/experiments/generic_schema_query_expansion.py`.
+Report: `evaluation/reports/generic-schema-query-expansion-v1.json`.
+
+### Generic semantic-schema query priority — accepted
+
+The follow-up isolated the root cause found by the rejected expansion-only screen. Exact schema
+identifiers are still preserved, and semantic camelCase, snake_case or hyphenated identifiers add
+at most eight natural-language components. When those terms exist and the router has no domain
+rubric, the broad generic fallback terms are omitted. Opaque schemas such as `x1/y2/z3` retain the
+legacy query byte-for-byte, including when they use `unseen_family` and `opaqueTarget` placeholders;
+known-family queries also remain byte-for-byte unchanged.
+
+The same four pre-registered retrieval cases improved from 0/4 correct top-one documents to 4/4.
+Exact schema tokens remained present in all four, opaque and known queries were identical, and a
+64-field stress query grew by 3.27x versus the 4x cap. Python 3.13 passed 104 tests. A clean archive
+of baseline `64fe8e0` and the candidate produced byte-identical answers for all 11 public units and
+78 rows with zero validation errors; those exact answer bytes retain the recorded 11/11 toolkit
+2.4.4 smoke result. The query expansion is retrieval-only and adds no model prompt tokens or calls.
+Script: `evaluation/experiments/generic_schema_query_priority.py`. Report:
+`evaluation/reports/generic-schema-query-priority-v1.json`.
+
+The official snapshot remained shared main `95a0de3`, Track 4 main `7b2bce1`, toolkit `v2.4.4`
+and open Track 4 issues 1, 2, 13, 14 and 16. The currently updated public repositories remained
+`wangzgui/agenthon-t4-baseline-2026` and `dungcao06/optivex-t4-agent`; neither supplied this bounded
+generic query policy.
+
 ### Node.js 24 GitHub Actions pinning — accepted
 
 Run `36364759306` succeeded but GitHub reported that checkout, Python setup and all three Docker

@@ -200,6 +200,45 @@ def test_generic_query_uses_unknown_categorical_field_to_retrieve_correct_docume
     assert candidate[0].chunk.doc_id == "RISK"
 
 
+def test_generic_query_prioritizes_semantic_schema_terms_over_generic_rubric() -> None:
+    chunks = [
+        Chunk("DISTRACTOR", "2023-01-01", 0, 58, "results outlook growth risk change forecast target evidence"),
+        Chunk("MATCH", "2023-01-01", 0, 51, "Operating margin trend improved during the quarter."),
+    ]
+    entity = {"entity_id": "ISSUER_A", "operatingMarginTrend": 1.0}
+    task = make_task("unseen_family", "futureMetric", [entity])
+
+    query = query_for(task, entity, include_all_scalar_fields=True)
+
+    assert "operatingMarginTrend operating Margin Trend" in query
+    assert "results outlook growth risk change forecast target evidence" not in query
+    assert BM25(chunks).search(query, top_k=1)[0].chunk.doc_id == "MATCH"
+
+
+def test_generic_query_retains_rubric_for_opaque_schema() -> None:
+    entity = {"entity_id": "ISSUER_A", "x1": 7}
+    task = make_task("unseen_family", "opaqueTarget", [entity])
+
+    query = query_for(task, entity, include_all_scalar_fields=True)
+
+    assert query == (
+        "ISSUER_A x1 7 opaqueTarget unseen_family "
+        "results outlook growth risk change forecast target evidence"
+    )
+
+
+def test_known_query_does_not_expand_or_suppress_rubric() -> None:
+    entity = {"entity_id": "ISSUER_A", "operatingMarginTrend": 1.0}
+    task = make_task("known_family", "futureMetric", [entity])
+
+    query = query_for(task, entity, include_all_scalar_fields=False)
+
+    assert "operatingMarginTrend" not in query
+    assert "futureMetric" in query
+    assert "future Metric" not in query
+    assert "results outlook growth risk change forecast target evidence" in query
+
+
 def test_tokenizer_ignores_trailing_punctuation_but_preserves_financial_tokens() -> None:
     assert tokenize("action_flat.") == tokenize("action_flat") == ["action_flat"]
     assert tokenize("$5.28, 10%; 2024-10-31 year-over-year.") == [
