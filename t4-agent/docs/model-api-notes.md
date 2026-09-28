@@ -68,3 +68,19 @@ Do not download or run local language models on the user's machine. Local unit t
 calculators and official NLI checks already installed for the project remain normal development
 work; language-model inference should use a legitimate remote free endpoint or the official House
 API. Revisit local LLM inference only if the user explicitly changes this preference.
+
+## Remote official NLI availability
+
+On 2026-09-28, the Hugging Face routed inference API required a user token; an anonymous request to
+the deployed MoritzLaurer official-judge model returned HTTP 401. No `HF_TOKEN` is configured for
+this project. Hugging Face's model page reports the other pinned official judge,
+`cross-encoder/nli-deberta-v3-large`, is not deployed by an Inference Provider. The free account
+credit is documented as $0.10 per month, but it cannot be used without a token and does not supply
+both fixed judge members. Therefore this is not currently an official-equivalent remote path.
+
+Sources:
+
+- <https://huggingface.co/docs/inference-providers/tasks/text-classification>
+- <https://huggingface.co/docs/inference-providers/pricing>
+- <https://huggingface.co/cross-encoder/nli-deberta-v3-large>
+- <https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli>

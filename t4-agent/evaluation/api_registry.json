@@ -24,6 +24,28 @@
       "free_exact_family_model_available": true,
       "incremental_cost_in_baseline_run_usd": 0,
       "official_evaluation_accessible": false
+    },
+    {
+      "id": "huggingface-official-nli",
+      "endpoint": "https://router.huggingface.co/hf-inference/models/",
+      "authentication_source": "HF_TOKEN",
+      "credential_available": false,
+      "anonymous_probe_status": 401,
+      "free_credit_usd_monthly": 0.1,
+      "official_models": [
+        {
+          "model": "cross-encoder/nli-deberta-v3-large",
+          "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+          "provider_deployed": false
+        },
+        {
+          "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+          "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+          "provider_deployed": true
+        }
+      ],
+      "official_evaluation_accessible": false,
+      "last_checked": "2026-09-28"
     }
   ]
 }

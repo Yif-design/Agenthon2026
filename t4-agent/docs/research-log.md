@@ -1106,3 +1106,24 @@ needed.
 Scripts: `evaluation/experiments/build_postearn_confirmation.py` and
 `evaluation/experiments/postearn_ticker_prior.py`. Report:
 `evaluation/reports/postearn-ticker-prior-v1.json`.
+
+### Post-earnings classification-only holdout — outcome passed, NLI pending
+
+The prior rejection treated point MAE as a hard gate even though the official classification
+predictive-quality metric reads label accuracy. To avoid changing a rule after seeing its holdout,
+the already locked `ticker_recent4` candidate was evaluated on a new 261-event 2026 YTD panel. Its
+fit remained frozen at 2018–2023. The candidate uses only `-1.25`, `0`, or `+1.25` as the point that
+represents its class and leaves the accepted zero-centered `[-8.3, 8.3]` interval unchanged.
+
+Accuracy rose from 0.1648 to 0.3755, a 0.2107 absolute gain. Coverage was byte-for-byte equivalent
+at 0.7778. Diagnostic point MAE rose by 0.0096 percentage points, but classification scoring does
+not read that quantity. The outcome gate therefore passes.
+
+Production is still deferred. The public AAPL, AMZN and META rows remain flat under the fitted prior,
+so saved public NLI results do not test a changed label. A remote official two-model run is not
+available: the Hugging Face route requires a missing token and one fixed judge model is not deployed
+there. Heavy local NLI is disallowed by the active goal. The candidate remains outside runtime until
+prediction-bound faithfulness can be verified on changed-label cases.
+
+Script: `evaluation/experiments/postearn_classification_holdout.py`. Report:
+`evaluation/reports/postearn-classification-holdout-v2.json`.

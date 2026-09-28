@@ -221,3 +221,16 @@ record the requested range, actual response-header digest, and leakage boundary.
 Twelve symbols in the fixed universe could not be resolved by the price endpoint and are explicitly
 listed in the dataset metadata. The universe and candidate were selected from 2018–2023 before the
 2024–2025 result was generated. Raw responses remain in the git-ignored cache.
+
+## Post-earnings 2026 YTD confirmation panel
+
+- Local file: `evaluation/datasets/postearn/panel88_confirmation_2026_ytd.json`
+- Dataset SHA-256: `325910df8af5f307f12495ce7e43b2b1acd05d2b0c419883111511a1f15fb1a1`
+- Fixed universe: the same 88 tickers selected before the 2024–2026 outcomes were inspected
+- Coverage: 261 reliable after-close events from 2026-01-01 through 2026-09-24
+- History used by the locked candidate: only the 2018–2023 panel
+- Raw price-cache SHA-256: `c1c07faaf63d3427f286c062f160eb8631a6a2e331cfeadde99e34e2251d18c2`
+- Historical-universe SHA-256: `d4cb45d4d9af39f07731b84ce7cec9b66accbe8e80c79459958686c4acb7f32d`
+
+Ten fixed-universe symbols could not be resolved and are recorded in metadata. This panel was built
+after locking `ticker_recent4`; it was not used to change the method or its threshold.

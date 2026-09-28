@@ -19,13 +19,13 @@ def unix(day: str) -> int:
     return int(datetime.fromisoformat(day).replace(tzinfo=timezone.utc).timestamp())
 
 
-def prices(symbol: str, cache: Path) -> dict[str, float]:
+def prices(symbol: str, cache: Path, period_start: str, period_end: str) -> dict[str, float]:
     path = cache / f"{symbol}.json"
     if not path.exists():
         query = urlencode(
             {
-                "period1": unix("2023-12-01"),
-                "period2": unix("2026-02-15"),
+                "period1": unix(period_start),
+                "period2": unix(period_end),
                 "interval": "1d",
                 "events": "div,splits",
             }
@@ -51,7 +51,9 @@ def next_session(series: dict[str, float], day: str) -> str | None:
     return next((item for item in sorted(series) if item > day), None)
 
 
-def announcements(path: Path, tickers: set[str]) -> list[dict[str, str]]:
+def announcements(
+    path: Path, tickers: set[str], start_date: str, end_date: str
+) -> list[dict[str, str]]:
     usable = "\n".join(
         line for line in path.read_text(encoding="utf-8-sig").splitlines() if not line.startswith("#")
     )
@@ -61,7 +63,7 @@ def announcements(path: Path, tickers: set[str]) -> list[dict[str, str]]:
         key = (row["ticker"], row["announcement_date"])
         if (
             row["ticker"] in tickers
-            and "2024-01-01" <= row["announcement_date"] <= "2025-12-31"
+            and start_date <= row["announcement_date"] <= end_date
             and row["session"] == "after_close"
             and row["date_uncertain"] == "no"
             and key not in seen
@@ -78,15 +80,22 @@ def main() -> None:
     parser.add_argument("--cache", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--start-date", default="2024-01-01")
+    parser.add_argument("--end-date", default="2025-12-31")
+    parser.add_argument("--price-start", default="2023-12-01")
+    parser.add_argument("--price-end", default="2026-02-15")
     args = parser.parse_args()
 
     history = json.loads(args.history.read_text())
     tickers = set(history["selected_tickers"])
-    source_rows = announcements(args.announcements, tickers)
+    source_rows = announcements(args.announcements, tickers, args.start_date, args.end_date)
     market: dict[str, dict[str, float]] = {}
     failures: dict[str, str] = {}
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = {pool.submit(prices, ticker, args.cache): ticker for ticker in sorted(tickers | {"SPY"})}
+        futures = {
+            pool.submit(prices, ticker, args.cache, args.price_start, args.price_end): ticker
+            for ticker in sorted(tickers | {"SPY"})
+        }
         for future in as_completed(futures):
             ticker = futures[future]
             try:
@@ -147,6 +156,14 @@ def main() -> None:
         "event_count": len(events),
         "events": events,
     }
+    if (args.start_date, args.end_date, args.price_start, args.price_end) != (
+        "2024-01-01",
+        "2025-12-31",
+        "2023-12-01",
+        "2026-02-15",
+    ):
+        document["requested_event_range"] = [args.start_date, args.end_date]
+        document["requested_price_range"] = [args.price_start, args.price_end]
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(document, indent=2) + "\n")
     print(json.dumps({"source_rows": len(source_rows), "events": len(events), "failures": len(failures)}, indent=2))
