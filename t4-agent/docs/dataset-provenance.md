@@ -182,3 +182,24 @@ The builder records SHA-256 values for every tracked annual Treasury CSV. Federa
 action dates are effective dates, so the builder maps them to the preceding decision date; meetings
 absent from the actions table are holds. The dataset and experiment are research artifacts and are
 excluded from the submission image.
+
+## ALFRED monthly macro-revision panel
+
+- Local file: `evaluation/datasets/macro_revision/alfred_monthend_2014_2024.json`
+- Dataset SHA-256: `1dfd5172b99834966a4410b36fcaf4eb26ee9354dcd85a1d82ecc60cec8ceb6c`
+- Primary source: ALFRED archival CSV
+  (<https://alfred.stlouisfed.org/graph/alfredgraph.csv>)
+- Series: `DGORDER`, `HOUST`, `INDPRO`, `PAYEMS`, `PI`, and `RSAFS`
+- Coverage: 2,450 non-zero next-snapshot revisions from requested month-end vintages spanning
+  2014 through 2024; experiment splits use 2015–2023 only
+- Feature boundary: each row contains only revision transitions strictly earlier than its cutoff,
+  limited to the preceding eight monthly snapshots and recent reference months
+- Outcome: the change in the same reference month's value between the cutoff month-end ALFRED
+  snapshot and the next month-end snapshot
+- Split: 2015–2019 train, 2020 development, 2021–2022 test, and 2023 one-time confirmation
+- Raw-cache SHA-256: `73b489ad737c911616fbb181a4623a2a5e5eb5dcb3900bf8006d1d0718707b62`
+
+The month-end construction can combine multiple releases within a calendar month, so this panel is
+an offline model-selection proxy rather than an exact reconstruction of every agency release. The
+raw 792 ALFRED CSV snapshots remain in a git-ignored cache; the tracked derived rows and builder
+record the requested range, actual response-header digest, and leakage boundary.

@@ -987,3 +987,30 @@ References:
 
 - <https://github.com/Agenthon-2026/Agenthon2026-public/blob/main/docs/DEVELOPMENT-RUNTIME.md#house-request-allowance>
 - <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/config.py>
+
+### Macro revision stage matching — rejected
+
+The official state check on 2026-09-28 found Track 4 main at `7b2bce1`, shared toolkit main at
+`95a0de3`, toolkit tag `v2.4.4`, and the same five open Track 4 issues (1, 2, 13, 14, 16). The
+published runtime remains 25 admitted House requests, 4,000 output tokens per request, no cumulative
+token allowance, 600 seconds, and restricted network. ALFRED's official API documentation confirms
+that a vintage date represents a release date on which a series changed; the experiment used its
+public archival graph CSV to avoid requiring a runtime API.
+
+The tested hypothesis was that the next revision should use the median of historical changes at the
+same revision age, rather than the current calculator's median over every revision stage. A
+cutoff-safe panel of the six published macro series compared both rules on identical rows. The
+candidate improved test accuracy from 0.5448 to 0.5597 and confirmation accuracy from 0.4778 to
+0.5468, but development accuracy fell from 0.5122 to 0.4976. This violates the pre-registered rule
+that direction accuracy be non-inferior on development, test, and confirmation. It is rejected;
+`macro_revision.py` remains unchanged and the retired public outcome was not used to rescue it.
+
+Scripts: `evaluation/experiments/build_macro_revision_panel.py` and
+`evaluation/experiments/macro_revision_age_matched.py`. Report:
+`evaluation/reports/macro-revision-age-matched-v1.json`.
+
+References:
+
+- <https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html>
+- <https://fred.stlouisfed.org/docs/api/fred/overview.html>
+- <https://github.com/Agenthon-2026/track4-analysis-public>

@@ -1,0 +1,211 @@
+{
+  "baseline_git_commit": "193a06a3bcfc668ec9fdf2fcc5449b37e40bd67f",
+  "hypothesis": "Matching historical changes by revision age improves next-revision direction over pooling all revision stages.",
+  "dataset": "evaluation/datasets/macro_revision/alfred_monthend_2014_2024.json",
+  "dataset_raw_cache_sha256": "73b489ad737c911616fbb181a4623a2a5e5eb5dcb3900bf8006d1d0718707b62",
+  "dataset_method": "Consecutive month-end ALFRED snapshots; each row predicts the next snapshot revision using only earlier transitions.",
+  "dataset_caveat": "Month-end snapshots may combine multiple releases in a month and are an offline model-selection proxy, not an exact release-calendar reconstruction.",
+  "splits": {
+    "train": "2015-2019",
+    "dev": "2020",
+    "test": "2021-2022",
+    "confirmation": "2023"
+  },
+  "results": {
+    "train": {
+      "pooled": {
+        "rows": 989,
+        "accuracy": 0.5156723963599595,
+        "mae_change": 251.9281821031343,
+        "series_accuracy": {
+          "DGORDER": 0.5213675213675214,
+          "HOUST": 0.49572649572649574,
+          "INDPRO": 0.5333333333333333,
+          "PAYEMS": 0.5084745762711864,
+          "PI": 0.47685185185185186,
+          "RSAFS": 0.5619834710743802
+        },
+        "series_rows": {
+          "DGORDER": 117,
+          "HOUST": 117,
+          "INDPRO": 300,
+          "PAYEMS": 118,
+          "PI": 216,
+          "RSAFS": 121
+        }
+      },
+      "age_matched": {
+        "rows": 989,
+        "accuracy": 0.544994944388271,
+        "mae_change": 238.50993058645093,
+        "series_accuracy": {
+          "DGORDER": 0.6153846153846154,
+          "HOUST": 0.5811965811965812,
+          "INDPRO": 0.54,
+          "PAYEMS": 0.4830508474576271,
+          "PI": 0.5416666666666666,
+          "RSAFS": 0.5206611570247934
+        },
+        "series_rows": {
+          "DGORDER": 117,
+          "HOUST": 117,
+          "INDPRO": 300,
+          "PAYEMS": 118,
+          "PI": 216,
+          "RSAFS": 121
+        }
+      },
+      "accuracy_delta": 0.029322548028311468
+    },
+    "dev": {
+      "pooled": {
+        "rows": 205,
+        "accuracy": 0.5121951219512195,
+        "mae_change": 377.54398756097555,
+        "series_accuracy": {
+          "DGORDER": 0.4583333333333333,
+          "HOUST": 0.5652173913043478,
+          "INDPRO": 0.6166666666666667,
+          "PAYEMS": 0.5416666666666666,
+          "PI": 0.46,
+          "RSAFS": 0.3333333333333333
+        },
+        "series_rows": {
+          "DGORDER": 24,
+          "HOUST": 23,
+          "INDPRO": 60,
+          "PAYEMS": 24,
+          "PI": 50,
+          "RSAFS": 24
+        }
+      },
+      "age_matched": {
+        "rows": 205,
+        "accuracy": 0.4975609756097561,
+        "mae_change": 353.1978958536584,
+        "series_accuracy": {
+          "DGORDER": 0.4583333333333333,
+          "HOUST": 0.6086956521739131,
+          "INDPRO": 0.6,
+          "PAYEMS": 0.25,
+          "PI": 0.44,
+          "RSAFS": 0.5416666666666666
+        },
+        "series_rows": {
+          "DGORDER": 24,
+          "HOUST": 23,
+          "INDPRO": 60,
+          "PAYEMS": 24,
+          "PI": 50,
+          "RSAFS": 24
+        }
+      },
+      "accuracy_delta": -0.014634146341463428
+    },
+    "test": {
+      "pooled": {
+        "rows": 402,
+        "accuracy": 0.5447761194029851,
+        "mae_change": 512.8832144278608,
+        "series_accuracy": {
+          "DGORDER": 0.5833333333333334,
+          "HOUST": 0.5,
+          "INDPRO": 0.5916666666666667,
+          "PAYEMS": 0.6666666666666666,
+          "PI": 0.5222222222222223,
+          "RSAFS": 0.3541666666666667
+        },
+        "series_rows": {
+          "DGORDER": 48,
+          "HOUST": 48,
+          "INDPRO": 120,
+          "PAYEMS": 48,
+          "PI": 90,
+          "RSAFS": 48
+        }
+      },
+      "age_matched": {
+        "rows": 402,
+        "accuracy": 0.5597014925373134,
+        "mae_change": 487.2145749999998,
+        "series_accuracy": {
+          "DGORDER": 0.5833333333333334,
+          "HOUST": 0.5625,
+          "INDPRO": 0.575,
+          "PAYEMS": 0.6875,
+          "PI": 0.4888888888888889,
+          "RSAFS": 0.5
+        },
+        "series_rows": {
+          "DGORDER": 48,
+          "HOUST": 48,
+          "INDPRO": 120,
+          "PAYEMS": 48,
+          "PI": 90,
+          "RSAFS": 48
+        }
+      },
+      "accuracy_delta": 0.01492537313432829
+    },
+    "confirmation": {
+      "pooled": {
+        "rows": 203,
+        "accuracy": 0.47783251231527096,
+        "mae_change": 381.78740788177333,
+        "series_accuracy": {
+          "DGORDER": 0.375,
+          "HOUST": 0.5,
+          "INDPRO": 0.45,
+          "PAYEMS": 0.5,
+          "PI": 0.574468085106383,
+          "RSAFS": 0.4166666666666667
+        },
+        "series_rows": {
+          "DGORDER": 24,
+          "HOUST": 24,
+          "INDPRO": 60,
+          "PAYEMS": 24,
+          "PI": 47,
+          "RSAFS": 24
+        }
+      },
+      "age_matched": {
+        "rows": 203,
+        "accuracy": 0.5467980295566502,
+        "mae_change": 361.0566009852216,
+        "series_accuracy": {
+          "DGORDER": 0.5,
+          "HOUST": 0.7083333333333334,
+          "INDPRO": 0.5833333333333334,
+          "PAYEMS": 0.75,
+          "PI": 0.425531914893617,
+          "RSAFS": 0.375
+        },
+        "series_rows": {
+          "DGORDER": 24,
+          "HOUST": 24,
+          "INDPRO": 60,
+          "PAYEMS": 24,
+          "PI": 47,
+          "RSAFS": 24
+        }
+      },
+      "accuracy_delta": 0.06896551724137928
+    }
+  },
+  "noninferior_on_dev_test_confirmation": false,
+  "improved_series": [
+    "DGORDER",
+    "HOUST",
+    "INDPRO",
+    "PAYEMS",
+    "RSAFS"
+  ],
+  "decision": "reject",
+  "acceptance_rule": "Direction accuracy must be non-inferior on dev, test, and confirmation, and improve for at least two series.",
+  "notes": [
+    "Rows with no age-matched history are excluded from candidate metrics and require a pooled fallback in production.",
+    "Direction accuracy is the preregistered primary metric; change MAE is diagnostic.",
+    "No model API or post-cutoff runtime data is used."
+  ]
+}
