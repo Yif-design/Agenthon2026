@@ -1624,3 +1624,18 @@ retained all 49 facts, with no savings. A uniform shorter prefix therefore canno
 and context-reduction requirements. Production remains unchanged, and no new model call or local
 model was used. Script: `evaluation/experiments/evidence_prefix_limit_screen.py`. Report:
 `evaluation/reports/evidence-prefix-limit-screen-v1.json`.
+
+### Recent-regime static FOMC interval width — rejected
+
+After two shared prompt candidates failed, the next loop moved to the weak rates family. A static
+half-width grid used 2022–2023 non-public FOMC events for selection, 2024–2025 for test and 2026 for
+confirmation. The two public event dates were excluded from all three periods and inspected only
+after the width was locked.
+
+Development selected a 70bp half-width instead of the production 50bp. On the test period, however,
+coverage rose from 95.6% to 100%, moving farther from the requested 90%: calibration loss worsened
+from 0.0556 to 0.10. Confirmation was unchanged at 0.10. Although the locked candidate improved the
+two-public-task diagnostic from 0% to 16.7% coverage, it failed the independent test gate and was
+rejected. Production points, intervals, evidence and citations remain unchanged. No model API or
+local model was used. Script: `evaluation/experiments/fomc_static_width_screen.py`. Report:
+`evaluation/reports/fomc-static-width-screen-v1.json`.
