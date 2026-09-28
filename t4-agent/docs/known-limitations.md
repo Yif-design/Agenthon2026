@@ -26,8 +26,9 @@
   definition still falls back deterministically. It cannot correct a wrong direction signal.
 - Specialist routing and specialist document-scope dispatch are intentionally conservative. A task
   with an unpublished name can recover a specialist only when its target type and roster-wide field
-  set uniquely contain one complete known structural signature. Renamed tasks with changed, partial,
-  mixed or ambiguous fields therefore remain on the generic calculator and generic `corpus_ref`
+  set uniquely contain one complete known structural signature whose required values are non-null,
+  non-blank and finite. Renamed tasks with changed, partial, mixed or ambiguous fields therefore
+  remain on the generic calculator and generic `corpus_ref`
   scope. This avoids applying a domain formula or dropping shared evidence after one incidental
   substring or field, but it can leave specialist accuracy unavailable on a genuinely new schema.
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact

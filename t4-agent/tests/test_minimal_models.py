@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import unittest
 from dataclasses import replace
 from statistics import pstdev
@@ -157,6 +158,64 @@ class FamilySpecTests(unittest.TestCase):
         self.assertEqual(
             task_family_spec("unseen_finance", "opaque_target", "classification", [complete_rates]).key,
             "generic",
+        )
+
+    def test_task_router_rejects_present_but_unusable_signature_values(self) -> None:
+        cases = [
+            ("classification", {"consensus_eps": None, "threshold_pct": 0.05}),
+            (
+                "classification",
+                {"prior_year_q_eps": math.nan, "prior_year_quarter": "Q2", "quarter_reported": "Q2"},
+            ),
+            (
+                "classification",
+                {
+                    "report_datetime": " ",
+                    "event_window": "next_day",
+                    "benchmark": "SPY",
+                    "flat_threshold_abn_pct": 1.0,
+                },
+            ),
+            (
+                "classification",
+                {
+                    "latest_precutoff_estimate": None,
+                    "latest_precutoff_vintage": "2026-01-01",
+                    "resolving_release_date": "2026-02-01",
+                },
+            ),
+            (
+                "regression",
+                {"cik": "", "prior_year_q_eps": 1.0, "prior_year_quarter": "Q2", "quarter_reported": "Q2"},
+            ),
+            ("regression", {"maturity_years": 2, "start_yield_pct": math.inf, "as_of": "2026-01-01"}),
+            (
+                "regression",
+                {
+                    "series_fred": "CPI",
+                    "ref_month": "2026-01",
+                    "latest_published_mom_pct": None,
+                    "latest_published_ref_month": "2025-12",
+                },
+            ),
+            (
+                "regression",
+                {"tenor": "10Y", "auction_date": "2026-01-01", "new_or_reopening": " ", "offering_amount_usd_bn": 40},
+            ),
+            (
+                "ranking",
+                {
+                    "asset_class": "rates",
+                    "net_noncommercial_20260901": 1,
+                    "open_interest_20260901": None,
+                    "net_pct_oi_20260901": 0.5,
+                },
+            ),
+        ]
+
+        self.assertEqual(
+            [task_family_spec("unseen_finance", "opaque_target", target_type, [entity]).key for target_type, entity in cases],
+            ["generic"] * len(cases),
         )
 
     def test_signal_normalization_clamps_and_defaults(self) -> None:

@@ -295,10 +295,35 @@ def task_family_spec(
     for key, expected_type, required_fields, required_prefixes in _STRUCTURAL_SIGNATURES:
         if normalized_type != expected_type or not required_fields.issubset(common_fields):
             continue
-        if any(not any(field.startswith(prefix) for field in common_fields) for prefix in required_prefixes):
+        if any(
+            not _usable_signature_value(entity.get(field))
+            for entity in entities
+            for field in required_fields
+        ):
+            continue
+        if any(
+            not all(
+                any(
+                    field.startswith(prefix) and _usable_signature_value(entity.get(field))
+                    for field in common_fields
+                )
+                for entity in entities
+            )
+            for prefix in required_prefixes
+        ):
             continue
         matches.append(key)
     return SPECS[matches[0]] if len(matches) == 1 else named
+
+
+def _usable_signature_value(value: object) -> bool:
+    if value is None or isinstance(value, (dict, list, tuple, set)):
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, float):
+        return math.isfinite(value)
+    return True
 
 
 def _route_tokens(value: str) -> tuple[str, ...]:

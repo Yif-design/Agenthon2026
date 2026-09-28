@@ -959,6 +959,23 @@ References:
 - <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/client.py>
 - <https://github.com/dungcao06/optivex-t4-agent>
 
+### Structural router usable-value guard — accepted
+
+The first structural fallback candidate treated a field name as present even when every value was
+`null`, blank or non-finite. On a renamed hidden task that could select a specialist whose required
+inputs were unavailable and apply its narrower document scope. The accepted guard now requires a
+usable value for every exact signature field in every entity, and a usable date-prefixed field per
+required prefix and entity. Zero remains valid.
+
+All 9/9 complete renamed structures retained their specialist route, while 9/9 new null, blank,
+NaN, infinity and empty-prefix controls stayed generic. Python 3.13 passed 101 tests. A clean
+archive of baseline `cde2950` and the candidate produced byte-identical answers for all 11 public
+units and 78 rows with zero local validation errors. Those exact baseline bytes passed the toolkit
+2.4.4 smoke verifier earlier in the same run, so the candidate preserves the 11/11 smoke result
+without another scorer installation. No model request or prompt changed. Script:
+`evaluation/experiments/structural_router_value_guard.py`. Report:
+`evaluation/reports/structural-router-value-guard-v1.json`.
+
 ### Node.js 24 GitHub Actions pinning — accepted
 
 Run `36364759306` succeeded but GitHub reported that checkout, Python setup and all three Docker
