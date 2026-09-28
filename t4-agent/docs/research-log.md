@@ -1106,6 +1106,35 @@ unchanged. Report: `evaluation/reports/explicit-zero-default-screen-v1.json`.
 
 Reference: <https://github.com/Agenthon-2026/track4-analysis-public>.
 
+### Strict structural router fallback — accepted
+
+The 2026-09-28 update check found Track 4 main still at `7b2bce1`, shared toolkit main at
+`95a0de3`, toolkit tag `v2.4.4`, and the same open Track 4 issues 1, 2, 13, 14 and 16. Public
+submissions from `harrisonmo/agenthon2026-submission`,
+`wangzgui/agenthon-t4-baseline-2026` and `dungcao06/optivex-t4-agent` were inspected for routing
+ideas. Their useful common pattern is a broad model/retrieval path; none supplied a reusable strict
+hidden-family specialist router.
+
+The accepted candidate keeps anchored name routing first. Only when that route is generic does it
+compare the target type and the fields present across every roster entity with complete known
+signatures. Exactly one match activates a specialist; partial, wrong-type, mixed-roster, ambiguous
+and prior substring-collision cases remain generic. This recovered 9/9 renamed complete structures
+versus 0/9 for the prior router, while all 27 negative controls stayed generic.
+
+A clean archive of baseline commit `ae1e631` and the candidate produced byte-identical answers for
+all 11 public units and 78 rows. All answers had zero local validation errors and passed the
+`qfbench2-common==2.4.4` smoke verifier. Python 3.13 passed 100 tests. The change adds no prompt
+content, token use or model request. Script:
+`evaluation/experiments/structural_router_fallback.py`. Report:
+`evaluation/reports/structural-router-fallback-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/track4-analysis-public>
+- <https://github.com/harrisonmo/agenthon2026-submission>
+- <https://github.com/wangzgui/agenthon-t4-baseline-2026>
+- <https://github.com/dungcao06/optivex-t4-agent>
+
 ### Post-earnings ticker prior — rejected
 
 A new 696-event 2024–2025 confirmation panel tested whether same-company historical abnormal-return

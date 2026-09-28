@@ -14,7 +14,7 @@ from .evidence import (
     validate_model_output,
     validated_context_fact,
 )
-from .family_specs import FamilySpec, family_spec, project_entity
+from .family_specs import FamilySpec, project_entity, task_family_spec
 from .llm import LLM
 from .minimal_models import solve_minimal
 from .retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, query_for, scoped_corpus
@@ -59,7 +59,7 @@ MAX_CONTEXT_CITATIONS = 3
 
 
 def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k: int) -> list[RowResult]:
-    spec = family_spec(task.family, str(task.target.get("name", "")))
+    spec = task_family_spec(task.family, str(task.target.get("name", "")), task.target_type, task.entities)
     prepared: list[PreparedRow] = []
     for i, entity in enumerate(task.entities):
         allowed = allowed_document_ids(task, entity, corpus)

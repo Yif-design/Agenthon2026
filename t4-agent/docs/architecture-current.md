@@ -178,6 +178,13 @@ a substring inside another word does not activate a specialist. This prevents ta
 fields and entering an unrelated calculator. Published signatures and anchored family variants keep
 their specialist routes; unmatched tasks use the generic path.
 
+If name routing remains generic, the router makes one second, stricter check against the task's
+target type and the fields shared by every roster entity. A specialist is selected only when one
+and only one complete known field signature matches; partial rows, mixed rosters, wrong target
+types and signatures matching more than one specialist remain generic. This recovers renamed
+versions of known task structures without allowing a coincidental field or substring to choose a
+domain calculator. Retrieval scope consumes the same resolved route as prediction.
+
 Family-specific document scopes are dispatched from that same routed family key. An unknown target
 whose name incidentally contains `position`, `cot`, `auction`, `revision` or `rate` therefore keeps
 every document allowed by its `corpus_ref`; it cannot enter a specialist calculator through one

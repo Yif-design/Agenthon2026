@@ -222,6 +222,85 @@ def family_spec(family: str, target_name: str) -> FamilySpec:
     return SPECS["generic"]
 
 
+_STRUCTURAL_SIGNATURES: tuple[
+    tuple[str, str, frozenset[str], tuple[str, ...]], ...
+] = (
+    ("eps_consensus", "classification", frozenset(("consensus_eps", "threshold_pct")), ()),
+    (
+        "eps_yoy",
+        "classification",
+        frozenset(("prior_year_q_eps", "prior_year_quarter", "quarter_reported")),
+        (),
+    ),
+    (
+        "reaction",
+        "classification",
+        frozenset(("report_datetime", "event_window", "benchmark", "flat_threshold_abn_pct")),
+        (),
+    ),
+    (
+        "macro_revision",
+        "classification",
+        frozenset(("latest_precutoff_estimate", "latest_precutoff_vintage", "resolving_release_date")),
+        (),
+    ),
+    (
+        "bank_eps",
+        "regression",
+        frozenset(("cik", "prior_year_q_eps", "prior_year_quarter", "quarter_reported")),
+        (),
+    ),
+    (
+        "rates",
+        "regression",
+        frozenset(("maturity_years", "start_yield_pct", "as_of")),
+        (),
+    ),
+    (
+        "cpi",
+        "regression",
+        frozenset(("series_fred", "ref_month", "latest_published_mom_pct", "latest_published_ref_month")),
+        (),
+    ),
+    (
+        "auction",
+        "regression",
+        frozenset(("tenor", "auction_date", "new_or_reopening", "offering_amount_usd_bn")),
+        (),
+    ),
+    (
+        "positioning",
+        "ranking",
+        frozenset(("asset_class",)),
+        ("net_noncommercial_", "open_interest_", "net_pct_oi_"),
+    ),
+)
+
+
+def task_family_spec(
+    family: str,
+    target_name: str,
+    target_type: str,
+    entities: list[dict[str, object]] | tuple[dict[str, object], ...],
+) -> FamilySpec:
+    """Resolve a task route, using a strict entity-shape fallback only after name routing fails."""
+    named = family_spec(family, target_name)
+    if named.key != "generic" or not entities or any(not isinstance(entity, dict) for entity in entities):
+        return named
+    common_fields = set(entities[0])
+    for entity in entities[1:]:
+        common_fields.intersection_update(entity)
+    matches = []
+    normalized_type = target_type.strip().lower()
+    for key, expected_type, required_fields, required_prefixes in _STRUCTURAL_SIGNATURES:
+        if normalized_type != expected_type or not required_fields.issubset(common_fields):
+            continue
+        if any(not any(field.startswith(prefix) for field in common_fields) for prefix in required_prefixes):
+            continue
+        matches.append(key)
+    return SPECS[matches[0]] if len(matches) == 1 else named
+
+
 def _route_tokens(value: str) -> tuple[str, ...]:
     return tuple(re.findall(r"[a-z0-9]+", value.lower()))
 

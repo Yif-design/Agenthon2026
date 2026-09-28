@@ -7,7 +7,7 @@ from statistics import pstdev
 from t4agent.calculators.bank_eps import _find_pair
 from t4agent.calculators.generic import _label, infer_label_roles
 from t4agent.calc import select_default_point
-from t4agent.family_specs import SPECS, family_spec, project_entity
+from t4agent.family_specs import SPECS, family_spec, project_entity, task_family_spec
 from t4agent.minimal_models import normalize_parameters, normalize_signals, solve_minimal
 from t4agent.retrieve import IndexedCorpus
 from t4agent.taskio import Task
@@ -68,6 +68,95 @@ class FamilySpecTests(unittest.TestCase):
         self.assertEqual(
             [family_spec(family, target).key for family, target, _ in cases],
             [expected for _, _, expected in cases],
+        )
+
+    def test_task_router_recovers_unique_complete_structural_signatures(self) -> None:
+        cases = [
+            ("classification", {"consensus_eps": 1.2, "threshold_pct": 0.05}, "eps_consensus"),
+            (
+                "classification",
+                {"prior_year_q_eps": 1.0, "prior_year_quarter": "Q2", "quarter_reported": "Q2"},
+                "eps_yoy",
+            ),
+            (
+                "classification",
+                {
+                    "report_datetime": "2026-01-01",
+                    "event_window": "next_day",
+                    "benchmark": "SPY",
+                    "flat_threshold_abn_pct": 1.0,
+                },
+                "reaction",
+            ),
+            (
+                "classification",
+                {
+                    "latest_precutoff_estimate": 1.0,
+                    "latest_precutoff_vintage": "2026-01-01",
+                    "resolving_release_date": "2026-02-01",
+                },
+                "macro_revision",
+            ),
+            (
+                "regression",
+                {"cik": "1", "prior_year_q_eps": 1.0, "prior_year_quarter": "Q2", "quarter_reported": "Q2"},
+                "bank_eps",
+            ),
+            ("regression", {"maturity_years": 2, "start_yield_pct": 4.0, "as_of": "2026-01-01"}, "rates"),
+            (
+                "regression",
+                {
+                    "series_fred": "CPI",
+                    "ref_month": "2026-01",
+                    "latest_published_mom_pct": 0.2,
+                    "latest_published_ref_month": "2025-12",
+                },
+                "cpi",
+            ),
+            (
+                "regression",
+                {"tenor": "10Y", "auction_date": "2026-01-01", "new_or_reopening": "new", "offering_amount_usd_bn": 40},
+                "auction",
+            ),
+            (
+                "ranking",
+                {
+                    "asset_class": "rates",
+                    "net_noncommercial_20260901": 1,
+                    "open_interest_20260901": 2,
+                    "net_pct_oi_20260901": 0.5,
+                },
+                "positioning",
+            ),
+        ]
+
+        self.assertEqual(
+            [task_family_spec("unseen_finance", "opaque_target", target_type, [entity]).key for target_type, entity, _ in cases],
+            [expected for _, _, expected in cases],
+        )
+
+    def test_task_router_requires_complete_roster_wide_unique_signature(self) -> None:
+        complete_rates = {"maturity_years": 2, "start_yield_pct": 4.0, "as_of": "2026-01-01"}
+        partial_rates = {"maturity_years": 10, "start_yield_pct": 4.2}
+        ambiguous_regression = {
+            **complete_rates,
+            "series_fred": "CPI",
+            "ref_month": "2026-01",
+            "latest_published_mom_pct": 0.2,
+            "latest_published_ref_month": "2025-12",
+        }
+
+        self.assertEqual(
+            task_family_spec("unseen_finance", "opaque_target", "regression", [complete_rates, partial_rates]).key,
+            "generic",
+        )
+        self.assertEqual(
+            task_family_spec("unseen_finance", "opaque_target", "regression", [ambiguous_regression]).key,
+            "generic",
+        )
+        self.assertEqual(
+            task_family_spec("unseen_finance", "opaque_target", "classification", [complete_rates]).key,
+            "generic",
         )
 
     def test_signal_normalization_clamps_and_defaults(self) -> None:

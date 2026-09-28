@@ -9,7 +9,7 @@ from datetime import date
 from pathlib import Path
 from typing import Callable
 
-from .family_specs import family_spec
+from .family_specs import task_family_spec
 
 TOKEN_RE = re.compile(r"\$?[A-Za-z0-9_]+(?:\.[0-9]+)?%?(?:-[A-Za-z0-9_]+)*")
 
@@ -162,7 +162,12 @@ def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> s
     """Return the hard document scope for one roster entity before lexical retrieval."""
     all_ids = _corpus_ref_document_ids(entity.get("corpus_ref"), corpus)
     target = getattr(task, "target", {}) or {}
-    routed_family = family_spec(str(getattr(task, "family", "")), str(target.get("name", ""))).key
+    routed_family = task_family_spec(
+        str(getattr(task, "family", "")),
+        str(target.get("name", "")),
+        str(getattr(task, "target_type", target.get("type", ""))),
+        list(getattr(task, "entities", ()) or ()),
+    ).key
     cik = "".join(ch for ch in str(entity.get("cik") or "") if ch.isdigit()).zfill(10)
     if cik.strip("0"):
         scoped = {doc_id for doc_id in all_ids if cik in doc_id}
