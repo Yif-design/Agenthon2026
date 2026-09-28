@@ -21,9 +21,11 @@
 - The generic hidden-family path now has target-field, numeric-noise, row-order, change-vs-level and
   bounded scalar-feature visibility tests, but no broad real-outcome benchmark. Input reachability
   does not prove prediction accuracy. Schema query terms now decompose common identifier styles,
-  but retrieval remains lexical and cannot infer true synonyms or domain meaning. Opaque schemas
-  keep the broad fallback rubric, and later fields may be omitted after the
-  64-field/6,000-character budget. The generic label-role mapper handles explicit
+  but retrieval remains lexical and cannot infer true synonyms or domain meaning. For opaque
+  schemas, the fallback reads only the first 512 prompt characters and retains at most 24 lexical
+  terms, so a late definition, indirect synonym or boilerplate-looking domain term can still be
+  missed. Later fields may be omitted after the 64-field/6,000-character budget. The generic
+  label-role mapper handles explicit
   directional rules and common role words, but an ambiguous, indirect or domain-specific label
   definition still falls back deterministically. It cannot correct a wrong direction signal.
 - Specialist routing and specialist document-scope dispatch are intentionally conservative. A task

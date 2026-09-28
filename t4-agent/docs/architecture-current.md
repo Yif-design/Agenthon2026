@@ -173,6 +173,13 @@ byte-for-byte: common placeholder words including `unseen`, `unknown`, `generic`
 `family`, `target`, `metric` and `forecast` do not qualify as semantic components. Known-family
 queries remain unchanged. The model packet itself is not expanded, so this adds no prompt tokens.
 
+When every generic schema name is opaque, retrieval can instead use task-specific words from the
+first 512 prompt characters. Boilerplate, target-type words and duplicates are removed, at least
+two useful terms are required, and at most 24 terms are retained. A useful prompt term set replaces
+the same broad generic rubric; a template prompt with no task meaning keeps the previous query
+byte-for-byte. Known families and generic tasks with semantic schema terms do not enter this path.
+The words affect only BM25 retrieval and are not copied into the model packet.
+
 Unknown classification targets keep the same five-level `directional_signal`, then use a bounded
 typed-schema mapper to assign allowed labels to positive, neutral and negative roles. It first uses
 unambiguous label tokens and event-target negation, then reads at most 8,000 characters of the task

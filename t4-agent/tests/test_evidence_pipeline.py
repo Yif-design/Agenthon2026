@@ -227,6 +227,33 @@ def test_generic_query_retains_rubric_for_opaque_schema() -> None:
     )
 
 
+def test_generic_opaque_query_uses_bounded_prompt_terms() -> None:
+    chunks = [
+        Chunk("DISTRACTOR", "2023-01-01", 0, 58, "results outlook growth risk change forecast target evidence"),
+        Chunk("MATCH", "2023-01-01", 0, 43, "The issuer reported a covenant breach."),
+    ]
+    entity = {"entity_id": "ISSUER_A", "x1": 7}
+    base = make_task("unseen_family", "opaqueTarget", [entity])
+    task = Task(**{**base.__dict__, "prompt": "Predict whether the issuer faces a covenant breach within 12 months."})
+
+    query = query_for(task, entity, include_all_scalar_fields=True)
+
+    assert "issuer faces covenant breach within months" in query
+    assert "results outlook growth risk change forecast target evidence" not in query
+    assert BM25(chunks).search(query, top_k=1)[0].chunk.doc_id == "MATCH"
+
+
+def test_generic_template_prompt_keeps_legacy_rubric() -> None:
+    entity = {"entity_id": "ISSUER_A", "x1": 7}
+    base = make_task("unseen_family", "opaqueTarget", [entity])
+    task = Task(**{**base.__dict__, "prompt": "Predict target value for each entity."})
+
+    assert query_for(task, entity, include_all_scalar_fields=True) == (
+        "ISSUER_A x1 7 opaqueTarget unseen_family "
+        "results outlook growth risk change forecast target evidence"
+    )
+
+
 def test_known_query_does_not_expand_or_suppress_rubric() -> None:
     entity = {"entity_id": "ISSUER_A", "operatingMarginTrend": 1.0}
     task = make_task("known_family", "futureMetric", [entity])

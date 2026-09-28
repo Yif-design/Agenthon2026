@@ -1,0 +1,730 @@
+{
+  "baseline_git_commit": "08eaaafdb1dbce0241304c1db59e6b2eef1f7893",
+  "decision": "reject_before_code",
+  "decision_reason": "Deduplication changes 27/78 top-one and 46/78 top-three retrievals. That invalidates broad citation evidence without a lightweight quality gain, while a fresh heavy local NLI run is prohibited.",
+  "decision_rule": "Proceed only if citation churn is small enough to validate with existing evidence, or an independent relevance/NLI metric proves the changed retrieval is better. Reject before code when broad citation churn has no such quality signal.",
+  "experiment": "bm25_query_dedup_screen_v1",
+  "hypothesis": "Counting each query term once, as in the public strong-RAG reference, may remove accidental weighting from repeated schema and rubric words without destabilizing existing citations.",
+  "layer": "L2 shared lexical retrieval",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "production_change": "none",
+  "reference": "https://github.com/wangzgui/agenthon-t4-baseline-2026/blob/main/strong_rag/retriever.py",
+  "results": {
+    "duplicate_terms_total": 75,
+    "rows": 78,
+    "rows_with_duplicates": 52,
+    "top1_changed": 27,
+    "top3_changed": 46
+  },
+  "rows": [
+    {
+      "duplicate_terms": 0,
+      "entity_id": "AAPL",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_10Y_20241105",
+      "query_tokens": 18,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_20Y_20241120",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_2Y_20241125",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_30Y_20241106",
+      "query_tokens": 18,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_3Y_20241104",
+      "query_tokens": 18,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_5Y_20241126",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "AUC_7Y_20241127",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "CORN_CBT",
+      "query_tokens": 15,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "ES_SP500",
+      "query_tokens": 18,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "EURO_FX",
+      "query_tokens": 16,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "GOLD_CMX",
+      "query_tokens": 15,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "JPY_CME",
+      "query_tokens": 16,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "NATGAS_NYMEX",
+      "query_tokens": 18,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "SILVER_CMX",
+      "query_tokens": 15,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST_10Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST_2Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "WTI_NYMEX",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "CPI_ALLITEMS",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "CPI_APPAREL",
+      "query_tokens": 14,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 13,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 4,
+      "entity_id": "CPI_CORE",
+      "query_tokens": 21,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "CPI_ENERGY",
+      "query_tokens": 14,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 12,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "CPI_FOOD",
+      "query_tokens": 14,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 12,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "CPI_GASOLINE",
+      "query_tokens": 16,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "CPI_MEDICAL",
+      "query_tokens": 15,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "CPI_NEWVEH",
+      "query_tokens": 15,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "CPI_SHELTER",
+      "query_tokens": 14,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 12,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "CPI_TRANSPSVC",
+      "query_tokens": 15,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 13,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "CPI_USEDCARS",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "BBBY",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 20,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "BBY",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 20,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "M",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 19,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "ODFL",
+      "query_tokens": 20,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 20,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "RAD",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 19,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "WBA",
+      "query_tokens": 20,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 20,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "WE",
+      "query_tokens": 18,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "YELL",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "BAC",
+      "query_tokens": 18,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "C",
+      "query_tokens": 16,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "GS",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 19,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "JPM",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "MS",
+      "query_tokens": 16,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "PNC",
+      "query_tokens": 20,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 19,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "USB",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "WFC",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "AMD",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "AMGN",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "DOW",
+      "query_tokens": 16,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 14,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "HON",
+      "query_tokens": 17,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "IBM",
+      "query_tokens": 19,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "TMO",
+      "query_tokens": 19,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST10Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST2Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST30Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST3Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST5Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST7Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST10Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST2Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST30Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST3Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST5Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "UST7Y",
+      "query_tokens": 19,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "DGORDER_2024-07_20241025",
+      "query_tokens": 18,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 2,
+      "entity_id": "DGORDER_2024-08_20241025",
+      "query_tokens": 18,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "HOUST_2024-07_20241018",
+      "query_tokens": 18,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "INDPRO_2024-07_20241017",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "INDPRO_2024-08_20241017",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "PAYEMS_2024-07_20241004",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "PAYEMS_2024-08_20241004",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "PAYEMS_2024-08_20241101",
+      "query_tokens": 17,
+      "top1_changed": false,
+      "top3_changed": true,
+      "unique_query_tokens": 17,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "PI_2024-07_20241031",
+      "query_tokens": 15,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "PI_2024-08_20241127",
+      "query_tokens": 15,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 3,
+      "entity_id": "RSAFS_2024-07_20241017",
+      "query_tokens": 21,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 3,
+      "entity_id": "RSAFS_2024-08_20241115",
+      "query_tokens": 21,
+      "top1_changed": false,
+      "top3_changed": false,
+      "unique_query_tokens": 18,
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "AAPL",
+      "query_tokens": 15,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-postearn-20240201-megacap"
+    },
+    {
+      "duplicate_terms": 0,
+      "entity_id": "AMZN",
+      "query_tokens": 16,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 16,
+      "unit_id": "t4-postearn-20240201-megacap"
+    },
+    {
+      "duplicate_terms": 1,
+      "entity_id": "META",
+      "query_tokens": 16,
+      "top1_changed": true,
+      "top3_changed": true,
+      "unique_query_tokens": 15,
+      "unit_id": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "schema_version": 1
+}

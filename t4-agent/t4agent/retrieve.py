@@ -14,6 +14,8 @@ from .family_specs import task_family_spec
 TOKEN_RE = re.compile(r"\$?[A-Za-z0-9_]+(?:\.[0-9]+)?%?(?:-[A-Za-z0-9_]+)*")
 SCHEMA_PART_RE = re.compile(r"[A-Za-z]+|[0-9]+")
 MAX_SCHEMA_QUERY_PARTS = 8
+MAX_PROMPT_QUERY_CHARS = 512
+MAX_PROMPT_QUERY_TERMS = 24
 GENERIC_RUBRIC = "results outlook growth risk change forecast target evidence"
 RUBRIC_BY_FAMILY = {
     "eps_consensus": "eps earnings revenue margin guidance diluted net income per share",
@@ -38,6 +40,40 @@ SCHEMA_NOISE_PARTS = {
     "task",
     "unknown",
     "unseen",
+}
+PROMPT_QUERY_STOPWORDS = SCHEMA_NOISE_PARTS | {
+    "allowed",
+    "and",
+    "based",
+    "classification",
+    "determine",
+    "each",
+    "entities",
+    "entity",
+    "estimate",
+    "for",
+    "from",
+    "future",
+    "into",
+    "label",
+    "labels",
+    "next",
+    "output",
+    "percent",
+    "percentage",
+    "predict",
+    "ranking",
+    "regression",
+    "return",
+    "score",
+    "the",
+    "their",
+    "this",
+    "using",
+    "value",
+    "values",
+    "whether",
+    "with",
 }
 
 
@@ -330,8 +366,17 @@ def query_for(task: object, entity: dict, include_all_scalar_fields: bool = Fals
         str(getattr(task, "target_type", target.get("type", ""))),
         list(getattr(task, "entities", ()) or ()),
     ).key
+    prompt_terms: list[str] = []
+    if include_all_scalar_fields and routed_family == "generic" and not has_semantic_schema_terms:
+        prompt_terms = _prompt_query_terms(str(getattr(task, "prompt", "")))
+        if prompt_terms:
+            parts.append(" ".join(prompt_terms))
     keywords = rubric_keywords(family, target_name, routed_family=routed_family)
-    if not (include_all_scalar_fields and has_semantic_schema_terms and keywords == GENERIC_RUBRIC):
+    if not (
+        include_all_scalar_fields
+        and (has_semantic_schema_terms or prompt_terms)
+        and keywords == GENERIC_RUBRIC
+    ):
         parts.append(keywords)
     return " ".join(parts)
 
@@ -347,6 +392,20 @@ def _schema_query_text(value: str) -> tuple[str, bool]:
     ]
     expanded = len(meaningful) >= 2 and tokenize(value) != [part.lower() for part in components]
     return (f"{value} {' '.join(components)}", True) if expanded else (value, False)
+
+
+def _prompt_query_terms(prompt: str) -> list[str]:
+    terms: list[str] = []
+    seen: set[str] = set()
+    for raw in SCHEMA_PART_RE.findall(prompt[:MAX_PROMPT_QUERY_CHARS]):
+        term = raw.lower()
+        if len(term) < 3 or term in PROMPT_QUERY_STOPWORDS or term in seen:
+            continue
+        terms.append(term)
+        seen.add(term)
+        if len(terms) >= MAX_PROMPT_QUERY_TERMS:
+            break
+    return terms if len(terms) >= 2 else []
 
 
 def rubric_keywords(family: str, target_name: str, *, routed_family: str | None = None) -> str:

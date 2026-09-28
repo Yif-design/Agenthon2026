@@ -1033,6 +1033,21 @@ model request or prompt token was added. Script:
 `evaluation/experiments/query_rubric_router_alignment.py`. Report:
 `evaluation/reports/query-rubric-router-alignment-v1.json`.
 
+### BM25 query-term deduplication — rejected before code
+
+The MIT-licensed public strong-RAG retriever from
+`wangzgui/agenthon-t4-baseline-2026` scores a set of query terms, while production scores every
+occurrence and therefore weights repeated schema/rubric words more heavily. A read-only screen
+compared those semantics over all 78 public rows before changing production.
+
+Fifty-two rows contained duplicate query terms. Deduplication changed 27/78 top-one retrievals and
+46/78 top-three lists. That is broad citation churn, not a bounded engineering correction. No
+independent relevance label or lightweight NLI metric proves the changed passages are better, and
+fresh heavy local NLI is prohibited by the active goal. The candidate was rejected before code;
+production retrieval and every answer remain unchanged. Script:
+`evaluation/experiments/bm25_query_dedup_screen.py`. Report:
+`evaluation/reports/bm25-query-dedup-screen-v1.json`.
+
 ### Node.js 24 GitHub Actions pinning — accepted
 
 Run `36364759306` succeeded but GitHub reported that checkout, Python setup and all three Docker
@@ -1248,3 +1263,27 @@ prediction-bound faithfulness can be verified on changed-label cases.
 
 Script: `evaluation/experiments/postearn_classification_holdout.py`. Report:
 `evaluation/reports/postearn-classification-holdout-v2.json`.
+
+### Bounded prompt terms for opaque generic schemas — accepted
+
+The same update check found no official repository or toolkit change. The public
+`wangzgui/agenthon-t4-baseline-2026` retriever uses an entity-focused query plus a generic suffix;
+that approach still has no task-specific signal when family, target and input fields are opaque.
+
+The accepted candidate uses filtered words from only the first 512 prompt characters when the
+strict route is generic and every schema identifier is opaque. It requires at least two useful
+terms, retains at most 24, and replaces the broad generic rubric only on that path. Three synthetic
+classification, regression and ranking cases improved from 0/3 to 3/3 correct top-one retrieval.
+Template-prompt and semantic-schema queries remained byte-identical, and the maximum-term control
+retained exactly 24 words.
+
+A clean archive of baseline commit `08eaaaf` and the candidate produced byte-identical answers for
+all 11 public units and 78 rows. All outputs therefore retain the baseline's toolkit 2.4.4 schema
+and smoke result. Python 3.13 passed 113 tests. The candidate adds no model request and does not add
+words to the model packet. Script: `evaluation/experiments/generic_prompt_query_priority.py`.
+Report: `evaluation/reports/generic-prompt-query-priority-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/track4-analysis-public>
+- <https://github.com/wangzgui/agenthon-t4-baseline-2026>
