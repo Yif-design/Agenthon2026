@@ -52,8 +52,9 @@
 - A malformed batch can now fall back while later batches continue. An explicit context-limit error
   on a multi-row batch can consume up to one failed batch attempt plus one attempt per row. The
   25-call hard cap, four-failure circuit and model-phase deadline still bound this behavior, so
-  recovery may spend slots that would otherwise serve later rows. With batch size three, more than
-  75 model-required rows necessarily use the deterministic fallback even on a clean route.
+  single-row recovery runs only after normal batches and may receive no remaining slot on a large
+  roster. With batch size three, more than 75 model-required rows necessarily use the deterministic
+  fallback even on a clean route.
 - The COT mean-reversion coefficient is deliberately simple. It improved a 96-date time-forward test,
   but its mean rank correlation was only 0.0379 and may vary across market regimes.
 - The auction model uses only recent same-tenor BTC outcomes. Offering size, bidder composition and

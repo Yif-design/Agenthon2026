@@ -107,6 +107,7 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
             model_prompts[row.index] = prompt_text
     else:
         batch_size = min(6, max(1, int(os.environ.get("T4_MODEL_BATCH_SIZE", "3"))))
+        deferred_context_batches: list[list[PreparedRow]] = []
         for start in range(0, len(candidates), batch_size):
             batch = candidates[start : start + batch_size]
             if len(batch) == 1:
@@ -119,10 +120,17 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
                 unpacked = _unpack_batch(parsed, batch)
                 prompts = {row.index: prompt_text for row in batch}
                 if parsed is None and getattr(llm, "last_failure_kind", None) == "context_length":
-                    unpacked, prompts = _retry_batch_as_single_rows(task, batch, spec, llm)
+                    deferred_context_batches.append(batch)
             for row in batch:
                 model_outputs[row.index] = unpacked.get(row.index)
                 model_prompts[row.index] = prompts.get(row.index, prompt_text) if len(batch) > 1 else prompt_text
+        # Normal batches recover up to three rows per admitted request. Use those efficient
+        # opportunities before spending remaining request slots on one-row context recovery.
+        for batch in deferred_context_batches:
+            unpacked, prompts = _retry_batch_as_single_rows(task, batch, spec, llm)
+            for row in batch:
+                model_outputs[row.index] = unpacked.get(row.index)
+                model_prompts[row.index] = prompts[row.index]
 
     results: list[RowResult] = []
     for row in prepared:

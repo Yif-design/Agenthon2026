@@ -1345,3 +1345,56 @@ the same bytes retain the baseline toolkit 2.4.4 schema and smoke result. No rea
 Screen: `evaluation/experiments/context_batch_split_size_screen.py`. Reports:
 `evaluation/reports/context-batch-split-size-screen-v1.json` and
 `evaluation/reports/context-batch-split-recovery-v1.json`.
+
+### Prompt-local evidence IDs, second remote A/B — deferred and rejected
+
+The official shared and Track 4 repositories, v2.4.4 tag and open Issues 1, 2, 13, 14 and 16 were
+unchanged. The newest commit in `harrisonmo/agenthon2026-submission` only recorded a frozen CodaBench
+submission and changed no agent code. The earlier evidence-ID candidate was revisited because its
+first same-family Nemotron comparison ended at the free quota boundary rather than failing its
+quality hypothesis.
+
+The candidate let the model return an item-local `E1`, `E2`, ... identifier while deterministic
+code restored the original scoped document and exact span. Valid, foreign, cross-scope and tampered
+IDs plus the legacy quote path passed 124 deterministic tests before remote testing. The candidate
+was kept behind an A/B switch and its final patch is stored outside production at
+`evaluation/experiments/candidates/evidence-id-v2.patch`.
+
+On `gemini-2.5-flash-lite`, the three complete paired cases (classification plus unknown ranking)
+retained 4/4 non-context facts in both arms and had no quote rejection. Evidence IDs reduced prompt
+characters from 131,897 to 126,044 and completion tokens from 2,741 to 2,023. The regression/rates
+pair was asymmetric because the quote arm received a transient 503 while the ID arm succeeded, so
+it was excluded from quality comparison.
+
+The weak-model `gemma-4-26b-a4b-it` run produced no valid paired model rows: responses were either
+unparseable or hit HTTP 429/500. The run also lacked Gemma's documented `minimal` thinking level;
+Gemini 2.5's `thinkingBudget=0` is not the Gemma control. Because the predeclared gate required valid
+Flash-Lite, weak-model and same-family Nemotron pairs across all target types, Nemotron was not
+called and the candidate was restored out of production. All 24 remote requests used free Gemini
+quota and no local model. Report: `evaluation/reports/evidence-id-remote-ab-v2.json`.
+
+References:
+
+- <https://github.com/youxuanxue/track4-analysis-public/pull/4>
+- <https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api>
+
+### Deferred context-recovery scheduling — accepted
+
+The immediately preceding context-splitting change recovered an oversized batch but retried its rows
+before later three-row batches. Under the official 25-request cap, that ordering can spend three
+slots on three rows while preventing later calls that could each enhance three rows. A deterministic
+budget screen compared immediate and deferred recovery without changing error classification.
+
+For a 78-row roster whose first batch hit a context limit and whose later batches succeeded,
+deferring single-row recovery increased enhanced coverage from 66 to 72 rows under the same 25
+network calls. A nine-row first-failure case remained 9/9, a nine-row all-context case remained 9/9,
+and the clean 78-row path remained 75 enhanced rows. Production now records context-limited batches,
+runs every normal batch first, then spends any remaining slots on the queued rows.
+
+Python 3.13 passed 121 tests, including a budgeted 78-row fault injection and a nine-row all-context
+case. A clean archive of baseline commit `848f18d` and the candidate produced byte-identical offline
+answers for all 11 public units and 78 rows, with zero validation-error units. Those bytes retain the
+baseline toolkit 2.4.4 schema and smoke result. No model was called. Screen:
+`evaluation/experiments/context_recovery_scheduling_screen.py`. Reports:
+`evaluation/reports/context-recovery-scheduling-screen-v1.json` and
+`evaluation/reports/context-recovery-scheduling-v1.json`.

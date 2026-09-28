@@ -633,6 +633,74 @@ def test_single_context_failure_is_not_retried(monkeypatch) -> None:
     assert results[0].raw_model is None
 
 
+def test_context_recovery_defers_single_rows_until_after_normal_batches(monkeypatch) -> None:
+    entities = [{"entity_id": f"E{i}", "latest_value": float(i + 1)} for i in range(78)]
+    task = make_task("unseen_family", "unknown_metric", entities)
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "3")
+
+    class BudgetedLLM:
+        network_calls = 0
+        batch_calls = 0
+        last_failure_kind = None
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> dict | None:
+            if self.network_calls >= 25:
+                self.last_failure_kind = None
+                return None
+            self.network_calls += 1
+            if "REQUEST_JSON:\n" not in user:
+                self.last_failure_kind = None
+                return {"signals": {"directional_signal": {"level": 0}}}
+            request = json.loads(user.split("REQUEST_JSON:\n", 1)[1].split("\nOUTPUT_SCHEMA_JSON:", 1)[0])
+            self.batch_calls += 1
+            if self.batch_calls == 1:
+                self.last_failure_kind = "context_length"
+                return None
+            self.last_failure_kind = None
+            return {
+                "entities": [
+                    {
+                        "item_id": item["item_id"],
+                        "entity_id": item["entity_id"],
+                        "signals": {"directional_signal": {"level": 0}},
+                    }
+                    for item in request["items"]
+                ]
+            }
+
+    llm = BudgetedLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+
+    assert llm.network_calls == 25
+    assert sum(row.raw_model is not None for row in results) == 72
+
+
+def test_deferred_recovery_preserves_small_all_context_case(monkeypatch) -> None:
+    entities = [{"entity_id": f"E{i}", "latest_value": float(i + 1)} for i in range(9)]
+    task = make_task("unseen_family", "unknown_metric", entities)
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "3")
+
+    class ContextBatchLLM:
+        calls = 0
+        last_failure_kind = None
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> dict | None:
+            self.calls += 1
+            if "REQUEST_JSON:\n" in user:
+                self.last_failure_kind = "context_length"
+                return None
+            self.last_failure_kind = None
+            return {"signals": {"directional_signal": {"level": 0}}}
+
+    llm = ContextBatchLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+
+    assert llm.calls == 12
+    assert sum(row.raw_model is not None for row in results) == 9
+
+
 def test_batch_unpack_rejects_disagreeing_item_and_entity_ids() -> None:
     corpus = IndexedCorpus([], {}, {})
     rows = [

@@ -61,6 +61,12 @@ not spend tokens on thinking. `gemma-4-26b-a4b-it` is not automatically more quo
 because only 3.8B parameters are active; use it when weak-model behavior is the point of the test.
 Neither model replaces the official House model in the submitted container.
 
+Gemma 4 uses its own thinking control: the Gemini API documentation specifies thinking level
+`minimal` to disable or minimize thinking. The Gemini 2.5 `thinkingBudget=0` setting is not the
+documented Gemma 4 control. A 2026-09-28 evidence-ID run without `minimal` produced no valid paired
+structured rows and encountered 429/500 responses, so that run cannot support an architecture
+decision. See `evaluation/reports/evidence-id-remote-ab-v2.json`.
+
 Quota-saving rules:
 
 - use `countTokens` before unusually large prompts;
@@ -76,6 +82,7 @@ Sources:
 
 - <https://ai.google.dev/gemini-api/docs/pricing>
 - <https://ai.google.dev/gemini-api/docs/rate-limits>
+- <https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api>
 - <https://ai.google.dev/gemini-api/docs/generate-content/thinking>
 - <https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-lite>
 - <https://ai.google.dev/gemma/docs/core/model_card_4>

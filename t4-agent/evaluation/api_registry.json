@@ -38,7 +38,13 @@
       "stable_public_daily_request_limit": null,
       "default_development_model": "gemini-2.5-flash-lite",
       "small_model_stress_model": "gemma-4-26b-a4b-it",
-      "official_evaluation_accessible": false
+      "official_evaluation_accessible": false,
+      "last_experiment": "evidence_id_remote_ab_v2",
+      "last_observed_errors": [
+        "gemini-2.5-flash-lite HTTP 503",
+        "gemma-4-26b-a4b-it HTTP 429",
+        "gemma-4-26b-a4b-it HTTP 500"
+      ]
     },
     {
       "id": "huggingface-official-nli",
