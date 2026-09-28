@@ -893,3 +893,26 @@ grid without a new feature or hypothesis. Script:
 `evaluation/reports/bank-eps-delta-damping-v1.json`.
 
 Source: <https://www.sec.gov/search-filings/edgar-application-programming-interfaces>.
+
+### Bank EPS interval calibration — statistically positive, production candidate rejected
+
+The 2026-09-28 preflight found no change to either official main commit or the five open Track 4
+issues; the current toolkit tag remains `v2.4.4`. The submission guide still requires an immutable
+Linux/amd64 image digest and anonymous pullability, and confirms that hidden reference answers
+remain private.
+
+The same cutoff-safe 158-row bank panel tested the existing
+`max(20, 0.75 × |point|)` 90% half-width against a fixed grid of seven floors and five point
+multipliers. Development selected `max(100, 1.0 × |point|)`. It improved test calibration loss from
+0.176 to 0.100 and locked 2024–2025 confirmation loss from 0.244 to 0.100. Confirmation coverage
+moved from 65.6% to 100%, while mean full width rose from 49.1 to 200.1 growth-percentage points.
+
+The statistical result alone does not satisfy the project acceptance rule. The saved official
+two-model NLI audit passes the public bank unit at 7/8 entities, only one entity above the 0.8 gate.
+Changing every interval changes every prediction-bound NLI hypothesis, so the saved result cannot
+validate the candidate. A fresh official-model run is a heavy local NLI job, which the current goal
+forbids without explicit user approval. The production candidate is therefore rejected/deferred;
+`bank_eps.py` remains unchanged.
+
+Script: `evaluation/experiments/bank_eps_interval_probe.py`. Report:
+`evaluation/reports/bank-eps-interval-calibration-v1.json`.
