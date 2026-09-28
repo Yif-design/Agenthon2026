@@ -379,6 +379,30 @@ class MinimalModelTests(unittest.TestCase):
         self.assertGreater(positive.point, neutral.point)
         self.assertEqual(positive.method, "generic_evidence_adjusted")
 
+    def test_generic_numeric_intervals_double_only_the_final_half_width(self) -> None:
+        regression = solve_minimal(
+            task("future_margin_pct", "regression"),
+            {"current_margin_pct": 4.0},
+            SPECS["generic"],
+            {},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+        classification = solve_minimal(
+            task("future_margin_class", "classification", ["up", "down"]),
+            {"current_margin_pct": 4.0},
+            SPECS["generic"],
+            {},
+            EMPTY_CORPUS,
+            0,
+            1,
+        )
+
+        self.assertEqual(regression.point, 4.0)
+        self.assertEqual(regression.interval, {"level": 0.9, "lo": 0.0, "hi": 8.0})
+        self.assertEqual(classification.interval, {"level": 0.9, "lo": 2.0, "hi": 6.0})
+
     def test_generic_baseline_ignores_unrelated_numeric_metadata(self) -> None:
         entity = {
             "latest_revenue_growth_pct": 8.0,

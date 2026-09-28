@@ -9,6 +9,9 @@ from ..taskio import Task
 from .common import ModelOutput
 
 
+GENERIC_NUMERIC_INTERVAL_SCALE = 2.0
+
+
 def solve(
     task: Task,
     entity: dict[str, Any],
@@ -34,10 +37,18 @@ def solve(
         point = baseline + signal * scale
     label = _label(signal, task.labels, task.prompt, name)
     method = "generic_evidence_adjusted" if signal else "generic_baseline"
+    final_interval = interval_for(point, name, task.interval_level)
+    if task.target_type in {"regression", "ranking"}:
+        half = (final_interval["hi"] - final_interval["lo"]) / 2.0
+        final_interval = {
+            "level": final_interval["level"],
+            "lo": point - GENERIC_NUMERIC_INTERVAL_SCALE * half,
+            "hi": point + GENERIC_NUMERIC_INTERVAL_SCALE * half,
+        }
     return ModelOutput(
         point,
         label,
-        interval_for(point, name, task.interval_level),
+        final_interval,
         method,
         derivation={
             "baseline": baseline,

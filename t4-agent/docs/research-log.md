@@ -1564,3 +1564,29 @@ All six safety controls passed, but confirmation degradation and label-order sen
 the predeclared rule. Production classification remains unchanged. No model was called. Script:
 `evaluation/experiments/generic_change_direction_classification.py`. Report:
 `evaluation/reports/generic-change-direction-classification-v1.json`.
+
+### Generic numeric interval scaling — accepted
+
+The 2026-09-29 preflight found no official rule or source update: shared main remained `95a0de3`,
+Track 4 main remained `7b2bce1`, and the latest formal toolkit tag remained `v2.4.4`. The public
+website now displayed Development leaderboard scores, but no hidden outcomes. The known public
+Wang, Optivex and Harrison implementations also had no newer code than the versions already
+screened.
+
+The published scorer penalizes the absolute difference between realized coverage and the requested
+interval level and has no separate interval-width term. Current generic 90% intervals were
+systematically narrow on the development split: CPI covered 71.2%, COT 81.6% and macro revisions
+30.4%. A fixed grid multiplied only the final generic numeric half-width. Under the requirement that
+no development domain worsen, the lowest mean calibration error selected `2.0`.
+
+With that factor locked, test mean calibration error fell from 0.2997 to 0.2295. Independent
+confirmation fell from 0.2873 to 0.1928. Every CPI, COT and macro-revision test and confirmation
+cell was non-inferior. Auction coverage stayed at 1.0 in both arms, while the FOMC transformed-schema
+control improved from 10.3% to 16.7% coverage. Point forecasts, labels, retrieval and citations do
+not change; model-signal point adjustment retains its previous scale.
+
+Python 3.13 passed 126 tests. A clean archive of baseline `cbe352f` and the candidate produced
+byte-identical answers for all 11 public units and 78 rows, and all 11 passed local structural
+validation. No model API or local model was used. Script:
+`evaluation/experiments/generic_interval_scale.py`. Report:
+`evaluation/reports/generic-interval-scale-v1.json`.

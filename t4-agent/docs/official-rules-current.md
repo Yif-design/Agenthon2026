@@ -1,12 +1,16 @@
 # Agenthon Track 4 current rules
 
-Last verified: 2026-09-28
+Last verified: 2026-09-29
 
 Pinned development sources:
 
 - Shared toolkit main: `95a0de3d9a814f3883c151b7efdbbcf579139244`
 - Track 4 public main: `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`
 - Installed `qfbench2-common`: `2.4.4`
+
+The 2026-09-29 preflight found no newer official commit, tag or Track 4 issue. The public website
+now renders the Development leaderboards, including Track 4 scores, but does not expose hidden
+outcomes or change the scoring contract. Submission remains out of scope for this development loop.
 
 The remote Track 4 `faithfulness/judge.py` and the local audit copy had identical SHA-256 on this
 date. The remote README is newer than the local starter snapshot, but the operative changes
