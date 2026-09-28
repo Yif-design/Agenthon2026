@@ -38,7 +38,8 @@
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
   identifier misses, schema components cover common identifier styles, and rubric dispatch now
   follows the strict shared router, but aliases, abbreviations and paraphrases can still rank the
-  wrong chunk.
+  wrong chunk. Recency affects only exact score ties; it assumes a newer cutoff-safe document is
+  preferable in that narrow case and treats invalid or missing document dates as least recent.
 - Official category and baseline documents describe per-entity `corpus_ref` subtrees, while the
   published authoring guide describes flat `corpus/<doc_id>.json` files. The agent supports both
   shapes and rejects duplicate IDs, but no public unit exercises a non-root reference, so nested

@@ -223,6 +223,12 @@ first allowed chunk. The same tokenizer instance is used for documents and queri
 shared by known and unknown families and does not alter document scope, cutoff filtering or the
 deterministic calculators.
 
+BM25 relevance remains the primary ordering key. When two positive scores are exactly equal, the
+newer cutoff-safe `doc_date` wins before the existing document-ID and span tie-breaks. When every
+score is zero, documents are stably ordered by recency, so equal or missing dates retain corpus
+order. This removes accidental alphabetical or path-order preference for older evidence without
+allowing recency to override any relevance-score difference.
+
 The corpus index supports both the flat public layout and entity subdirectories. It recursively
 loads cutoff-safe JSON documents, retains each document's path relative to the mounted corpus root,
 and resolves an entity's `corpus_ref` against that path before applying family-specific scope rules.

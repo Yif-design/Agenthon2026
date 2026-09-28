@@ -1,0 +1,91 @@
+{
+  "baseline_git_commit": "751d04db14b1d464e3e7ec6916913c6c5900f51a",
+  "decision": "accept",
+  "decision_rule": "Proceed only if 3/3 families move from wrong to correct, public top-1 changes are <=3/78, and every public top-1 change is an exact score tie. Final adoption additionally requires all existing tests, byte-identical public outputs, zero validation errors, and no model calls.",
+  "experiment": "bm25_recency_tiebreak_v1",
+  "hypothesis": "For exactly equal BM25 scores, newer cutoff-safe documents are a safer cross-family tie-break than lexicographic doc_id order.",
+  "implementation": {
+    "initial_candidate_adjustment": "The first zero-score implementation changed equal-date corpus order and failed one existing test; it was narrowed before final validation.",
+    "positive_scores": "BM25 score descending, then doc_date descending, then existing doc_id and span keys.",
+    "zero_score_fallback": "doc_date descending with stable corpus order for equal dates."
+  },
+  "layer": "L2 shared lexical retrieval ordering",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "official_snapshot": {
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_tag": "v2.4.4",
+    "toolkit_tag_object": "1bc80b542359832fd50341992459687456459450",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "track4_open_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ]
+  },
+  "reason": "All three exact-tie families recover the newer relevant document, every public top-three result and answer byte is preserved, all 116 tests pass, and recency never overrides a relevance-score difference.",
+  "schema_version": 1,
+  "screen": {
+    "public": {
+      "changed_top1_all_exact_ties": true,
+      "rows": 78,
+      "top1_changed": 0,
+      "top1_changes": [],
+      "top3_changed": 0,
+      "units": 11
+    },
+    "synthetic": {
+      "baseline_correct": 0,
+      "candidate_correct": 3,
+      "cases": [
+        {
+          "baseline_correct": false,
+          "baseline_top1": "A_OLD",
+          "candidate_correct": true,
+          "candidate_top1": "Z_NEW",
+          "family": "eps_beat_consensus",
+          "scores_equal": true
+        },
+        {
+          "baseline_correct": false,
+          "baseline_top1": "A_OLD",
+          "candidate_correct": true,
+          "candidate_top1": "Z_NEW",
+          "family": "rate_curve",
+          "scores_equal": true
+        },
+        {
+          "baseline_correct": false,
+          "baseline_top1": "A_OLD",
+          "candidate_correct": true,
+          "candidate_top1": "Z_NEW",
+          "family": "auction_demand",
+          "scores_equal": true
+        }
+      ],
+      "total": 3
+    }
+  },
+  "screen_report": "evaluation/reports/bm25-recency-tiebreak-screen-v1.json",
+  "validation": {
+    "compileall": "passed",
+    "git_diff_check": "passed after final documentation normalization",
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "Candidate bytes equal the 751d04d baseline whose bytes inherit the existing toolkit 2.4.4 verification.",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "116 passed",
+    "validation_error_units": 0
+  }
+}

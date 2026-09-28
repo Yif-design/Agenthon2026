@@ -115,6 +115,23 @@ def _date_ok(doc_date: str | None, cutoff: str) -> bool:
         return False
 
 
+def _date_ordinal(doc_date: str | None) -> int:
+    try:
+        return date.fromisoformat(str(doc_date)[:10]).toordinal()
+    except ValueError:
+        return 0
+
+
+def _score_order(item: ScoredChunk) -> tuple[float, int, str, int]:
+    """Prefer recent cutoff-safe evidence only when BM25 scores are exactly equal."""
+    return (-item.score, -_date_ordinal(item.chunk.doc_date), item.chunk.doc_id, item.chunk.span_start)
+
+
+def _fallback_order(item: ScoredChunk) -> int:
+    """Use recency for zero-score fallbacks while preserving corpus order for equal dates."""
+    return -_date_ordinal(item.chunk.doc_date)
+
+
 def _span_texts(doc: dict) -> list[str]:
     if isinstance(doc.get("text"), str):
         return [doc["text"]]
@@ -199,7 +216,7 @@ class BM25:
         q = self.tokenizer(query)
         if not q:
             candidates = [c for c in self.chunks if allowed_doc_ids is None or c.doc_id in allowed_doc_ids]
-            return [ScoredChunk(c, 0.0) for c in candidates[:top_k]]
+            return sorted((ScoredChunk(c, 0.0) for c in candidates), key=_fallback_order)[:top_k]
         scores: list[ScoredChunk] = []
         k1, b = 1.5, 0.75
         for chunk, tf, length in zip(self.chunks, self.tfs, self.lengths, strict=True):
@@ -214,11 +231,11 @@ class BM25:
                 score += self.idf.get(tok, 0.0) * freq * (k1 + 1) / denom
             if score > 0:
                 scores.append(ScoredChunk(chunk, score))
-        scores.sort(key=lambda x: (-x.score, x.chunk.doc_id, x.chunk.span_start))
+        scores.sort(key=_score_order)
         if scores:
             return scores[:top_k]
         candidates = [c for c in self.chunks if allowed_doc_ids is None or c.doc_id in allowed_doc_ids]
-        return [ScoredChunk(c, 0.0) for c in candidates[:top_k]]
+        return sorted((ScoredChunk(c, 0.0) for c in candidates), key=_fallback_order)[:top_k]
 
 
 def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> set[str]:

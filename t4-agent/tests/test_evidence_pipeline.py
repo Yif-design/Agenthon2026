@@ -312,6 +312,42 @@ def test_bm25_entity_token_matches_sentence_final_identifier() -> None:
         assert index.search(entity_id, top_k=1)[0].chunk.doc_id == f"DOC_{entity_id.upper()}"
 
 
+def test_bm25_exact_score_tie_prefers_newer_cutoff_safe_document() -> None:
+    text = "Acme earnings outlook evidence"
+    chunks = [
+        Chunk("A_OLD", "2023-01-01", 0, len(text), text),
+        Chunk("Z_NEW", "2024-12-01", 0, len(text), text),
+    ]
+
+    results = BM25(chunks).search("Acme earnings", top_k=2)
+
+    assert results[0].score == results[1].score
+    assert [item.chunk.doc_id for item in results] == ["Z_NEW", "A_OLD"]
+
+
+def test_bm25_zero_score_fallback_prefers_newer_document() -> None:
+    chunks = [
+        Chunk("A_OLD", "2023-01-01", 0, 8, "old text"),
+        Chunk("Z_NEW", "2024-12-01", 0, 8, "new text"),
+    ]
+
+    results = BM25(chunks).search("unmatched", top_k=2)
+
+    assert [item.chunk.doc_id for item in results] == ["Z_NEW", "A_OLD"]
+
+
+def test_bm25_higher_score_still_beats_newer_document() -> None:
+    chunks = [
+        Chunk("A_OLD", "2023-01-01", 0, 30, "Acme earnings earnings evidence"),
+        Chunk("Z_NEW", "2024-12-01", 0, 21, "Acme earnings evidence"),
+    ]
+
+    results = BM25(chunks).search("earnings", top_k=2)
+
+    assert results[0].score > results[1].score
+    assert results[0].chunk.doc_id == "A_OLD"
+
+
 def test_nonzero_signal_with_foreign_doc_is_neutralized() -> None:
     corpus = IndexedCorpus([], {"A": "substantial doubt about continuing"}, {"A": "2023-01-01"})
     parsed = {

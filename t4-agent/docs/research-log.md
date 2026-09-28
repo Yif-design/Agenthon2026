@@ -1287,3 +1287,39 @@ References:
 
 - <https://github.com/Agenthon-2026/track4-analysis-public>
 - <https://github.com/wangzgui/agenthon-t4-baseline-2026>
+
+### Known-family temporal query values — rejected before code
+
+A cross-family screen appended supplied period values such as `quarter_reported`, `as_of`,
+`ref_month` and `auction_date` to known-family BM25 queries. The pre-registered gate required all
+three synthetic families to move from 0/3 to 3/3 correct top-one retrieval, with no more than 7/78
+public top-one and 15/78 top-three changes.
+
+The candidate reached 3/3, but the baseline was already correct on one EPS case, so the required
+0/3 starting condition failed. It also changed 11/78 public top-one citations, above the limit; nine
+were CPI rows and two were auctions. Top-three changed on 12/78 rows. Those alternatives may be
+period-relevant, but no independent NLI or relevance label proves them better. Production code was
+therefore left unchanged. No model was called. Script:
+`evaluation/experiments/known_family_temporal_query_screen.py`. Report:
+`evaluation/reports/known-family-temporal-query-screen-v1.json`.
+
+### BM25 exact-score recency tie-break — accepted
+
+After the temporal-query candidate was rejected for excessive citation churn, a narrower shared
+retrieval hypothesis tested recency only when BM25 relevance scores are exactly equal. Three EPS,
+rates and auction controls began with an older alphabetically preferred document; all improved from
+0/3 to 3/3 correct top-one retrieval. The read-only public screen changed no top-one or top-three
+result across 78 rows.
+
+The first implementation also applied document-ID ordering to equal-date zero-score fallbacks and
+failed an existing corpus-order test. It was narrowed before adoption: positive equal scores prefer
+newer dates and retain document ID/span as final keys, while zero-score fallbacks use a stable
+recency sort so equal dates preserve corpus order. A relevance-score difference always wins over
+recency.
+
+Python 3.13 passed 116 tests. A clean archive of baseline commit `751d04d` and the candidate produced
+byte-identical answers for all 11 public units and 78 rows, with zero validation-error units. Those
+bytes retain the baseline toolkit 2.4.4 schema and smoke result. No model was called. Screen script:
+`evaluation/experiments/bm25_recency_tiebreak_screen.py`. Reports:
+`evaluation/reports/bm25-recency-tiebreak-screen-v1.json` and
+`evaluation/reports/bm25-recency-tiebreak-v1.json`.
