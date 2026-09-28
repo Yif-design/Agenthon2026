@@ -39,8 +39,9 @@
   but further batch-size tuning is not justified without a new independent hypothesis and holdout.
 - Public-corpus free inference opts into provider data collection and must never be used for private data.
 - A malformed batch can now fall back while later batches continue, so a partially failing provider
-  may consume more attempts than the former eager circuit policy. The 18-call default, 25-call hard
-  cap and model-phase deadline still bound this behavior.
+  may consume more attempts than the former eager circuit policy. The 25-call hard cap, four-failure
+  circuit and model-phase deadline still bound this behavior. With batch size three, more than 75
+  model-required rows necessarily use the deterministic fallback, and retries can lower that number.
 - The COT mean-reversion coefficient is deliberately simple. It improved a 96-date time-forward test,
   but its mean rank correlation was only 0.0379 and may vary across market regimes.
 - The auction model uses only recent same-tenor BTC outcomes. Offering size, bidder composition and

@@ -138,6 +138,30 @@ def test_request_budget_stops_before_network(monkeypatch) -> None:
     assert llm.usage.calls == 0
 
 
+def test_default_request_budget_uses_official_slots_but_never_call_26(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.delenv("T4_MODEL_MAX_CALLS", raising=False)
+    network_calls = 0
+
+    def successful_response(request, timeout):
+        nonlocal network_calls
+        network_calls += 1
+        return FakeResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", successful_response)
+    llm = LLM()
+    for _ in range(25):
+        assert llm.chat_json("system", "user") == {"signals": {}}
+    assert llm.chat_json("system", "user") is None
+    assert llm.max_calls == 25
+    assert llm.usage.calls == 25
+    assert network_calls == 25
+    assert llm.usage.circuit_open
+    assert llm.usage.disabled_reason == "model request budget exhausted"
+
+
 def test_openrouter_data_collection_is_opt_in(monkeypatch) -> None:
     monkeypatch.setenv("MODEL_ENDPOINT", "https://openrouter.ai/api/v1")
     monkeypatch.setenv("MODEL_API_KEY", "test-only-token")

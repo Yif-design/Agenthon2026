@@ -43,7 +43,7 @@ class LLM:
         self.allow_data_collection = os.environ.get("T4_MODEL_ALLOW_DATA_COLLECTION", "0") == "1"
         self.enable_thinking = os.environ.get("T4_ENABLE_THINKING", "0") == "1"
         self.timeout = max(1.0, float(os.environ.get("T4_MODEL_TIMEOUT_S", "40")))
-        self.max_calls = min(25, max(0, int(os.environ.get("T4_MODEL_MAX_CALLS", "18"))))
+        self.max_calls = min(25, max(0, int(os.environ.get("T4_MODEL_MAX_CALLS", "25"))))
         self.max_retries = max(1, int(os.environ.get("T4_MODEL_RETRIES", "2")))
         self.retry_after_cap = min(
             60.0,

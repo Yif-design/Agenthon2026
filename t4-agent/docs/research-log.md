@@ -959,3 +959,31 @@ Report: `evaluation/reports/node24-actions-pinning-v1.json`.
 
 Reference:
 <https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/>.
+
+### Full official request allowance for large rosters — accepted
+
+The official runtime still allows 25 admitted generation requests per unit and has no cumulative
+token allowance. Our client nevertheless defaulted to 18 calls after an earlier reliability pass;
+the repository history contained no rule or experiment supporting that lower number. The official
+strong-RAG baseline was also inspected: it retries per entity but has no participant-side global
+request guard, so its implementation was not copied. Our existing shared `LLM` counter remains the
+appropriate enforcement point.
+
+With batch size three, deterministic response simulation showed that the 18-call default enhanced
+only 54 of 60 or 75 rows on a clean route. One transient malformed reply reduced that to 51. Using
+the existing hard maximum of 25 enhanced 60/60 rows after one retry and 75/75 on a clean route. A
+78-row case made exactly 25 calls and fell back for the last three rows; no 26th network request was
+made. Persistent malformed replies still opened the circuit after four calls under both caps.
+
+On Python 3.13, a clean archive of commit `17d1d45` and the candidate produced byte-identical
+answers for all 11 public units and 78 rows, and every candidate answer passed
+`qfbench2-common==2.4.4` smoke. Both Python 3.11 and 3.13 test runs passed 89 tests. No remote or
+local language model was run.
+
+Script: `evaluation/experiments/request_budget_roster_probe.py`. Report:
+`evaluation/reports/official-request-budget-roster-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/Agenthon2026-public/blob/main/docs/DEVELOPMENT-RUNTIME.md#house-request-allowance>
+- <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/config.py>
