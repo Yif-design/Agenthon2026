@@ -1,0 +1,524 @@
+{
+  "alpha_grid": [
+    0.05,
+    0.1,
+    0.2,
+    0.25,
+    0.33,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "baseline_git_commit": "1b13a46fdecaf0853c37bf0762f2f4f4fcc7e211",
+  "confirmation": {
+    "baseline": {
+      "cot": {
+        "groups": 44,
+        "mae": 7.700634972131853,
+        "mean_spearman": -0.11212121212121212,
+        "rows": 440,
+        "selection_reasons": {
+          "target_token_match": 440
+        }
+      },
+      "cpi": {
+        "mae": 0.7932907685601112,
+        "rmse": 1.4187077049726537,
+        "rows": 245,
+        "selection_reasons": {
+          "target_token_match": 245
+        }
+      },
+      "macro_revision": {
+        "mae": 561.8639504310345,
+        "rmse": 1544.2481098201904,
+        "rows": 232,
+        "selection_reasons": {
+          "target_token_match": 232
+        }
+      }
+    },
+    "candidate": {
+      "cot": {
+        "groups": 44,
+        "mae": 6.15096242272045,
+        "mean_spearman": -0.11212121212121212,
+        "rows": 440,
+        "selection_reasons": {
+          "damped_change_match": 440
+        }
+      },
+      "cpi": {
+        "mae": 0.6672141143234008,
+        "rmse": 1.1528052617891535,
+        "rows": 245,
+        "selection_reasons": {
+          "damped_change_match": 245
+        }
+      },
+      "macro_revision": {
+        "mae": 530.7228715517241,
+        "rmse": 1489.429959574007,
+        "rows": 232,
+        "selection_reasons": {
+          "damped_change_match": 232
+        }
+      }
+    },
+    "gate": {
+      "cot_rank_noninferior": true,
+      "cpi_mae_noninferior": true,
+      "macro_mae_noninferior": true,
+      "mean_normalized_mae": 0.861469050238524,
+      "mean_normalized_mae_improved": true
+    }
+  },
+  "controls": {
+    "auction": {
+      "baseline": {
+        "mae": 0.0884761904761905,
+        "rmse": 0.1102637530564566,
+        "rows": 70,
+        "selection_reasons": {
+          "target_token_match": 70
+        }
+      },
+      "candidate": {
+        "mae": 0.0884761904761905,
+        "rmse": 0.1102637530564566,
+        "rows": 70,
+        "selection_reasons": {
+          "target_token_match": 70
+        }
+      }
+    },
+    "fomc": {
+      "baseline": {
+        "mae": 14.224358974358974,
+        "rmse": 20.042422956037974,
+        "rows": 156,
+        "selection_reasons": {
+          "no_unambiguous_baseline": 156
+        }
+      },
+      "candidate": {
+        "mae": 14.224358974358974,
+        "rmse": 20.042422956037974,
+        "rows": 156,
+        "selection_reasons": {
+          "no_unambiguous_baseline": 156
+        }
+      }
+    }
+  },
+  "controls_unchanged": {
+    "auction": true,
+    "fomc": true
+  },
+  "dataset_sha256": {
+    "auction": "1dd97882feb1a754fa4ade81f06d77bca871d3c5dae2f8e2922dec8628bfbb1a",
+    "cot": "a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e",
+    "cpi": "2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40",
+    "cpi_confirmation": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb",
+    "fomc": "dc15b069e70a2ae8221055a1d62ba0a40f653dbf4d461a6a296e497e5e5b148b",
+    "macro_revision": "1dfd5172b99834966a4410b36fcaf4eb26ee9354dcd85a1d82ecc60cec8ceb6c"
+  },
+  "decision": "pass_to_production_gates",
+  "decision_rule": "Advance only if development selects the preregistered alpha 0.5; test and confirmation each improve mean normalized MAE, do not worsen CPI or macro MAE, and do not worsen COT Spearman; auction/FOMC controls remain exactly unchanged; and every synthetic guard passes.",
+  "development_baseline": {
+    "cot": {
+      "groups": 51,
+      "mae": 6.562696578440281,
+      "mean_spearman": -0.12560903149138444,
+      "rows": 510,
+      "selection_reasons": {
+        "target_token_match": 510
+      }
+    },
+    "cpi": {
+      "mae": 0.9539637941362705,
+      "rmse": 2.008355080147839,
+      "rows": 132,
+      "selection_reasons": {
+        "target_token_match": 132
+      }
+    },
+    "macro_revision": {
+      "mae": 538.4065976086955,
+      "rmse": 1394.6584259225717,
+      "rows": 230,
+      "selection_reasons": {
+        "target_token_match": 230
+      }
+    }
+  },
+  "development_grid": {
+    "0.05": {
+      "mean_normalized_mae": 0.9952509960395185,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 4.492728460169851,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 1.2937215153232278,
+          "rmse": 2.284092420256651,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 508.80153964130426,
+          "rmse": 1387.5406041651086,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "0.1": {
+      "mean_normalized_mae": 0.9858654854990693,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 4.542155984352588,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 1.259003199524393,
+          "rmse": 2.208759592819654,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 509.1814536304347,
+          "rmse": 1387.0325680525584,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "0.2": {
+      "mean_normalized_mae": 0.9681981891478983,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 4.658867063245162,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 1.1898955348549383,
+          "rmse": 2.072137904145221,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 510.07345752173904,
+          "rmse": 1386.3107385177263,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "0.25": {
+      "mean_normalized_mae": 0.960765931389235,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 4.726363914722093,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 1.1570698230747989,
+          "rmse": 2.0118029958519537,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 511.05772353260863,
+          "rmse": 1386.0970983264672,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "0.33": {
+      "mean_normalized_mae": 0.9507454864104634,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 4.862082885944397,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 1.1054726987625665,
+          "rmse": 1.927933973542391,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 512.858902023913,
+          "rmse": 1385.959646228165,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "0.5": {
+      "mean_normalized_mae": 0.9366422791307247,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 5.213733577556121,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 1.0039885073080512,
+          "rmse": 1.8098633993645963,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 518.506094021739,
+          "rmse": 1386.5028328228984,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "0.75": {
+      "mean_normalized_mae": 0.9413642249561501,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 5.847857239952328,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 0.9082276272226172,
+          "rmse": 1.808586502116635,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 528.1556620108695,
+          "rmse": 1389.3616370220223,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    },
+    "1.0": {
+      "mean_normalized_mae": 1.0,
+      "metrics": {
+        "cot": {
+          "groups": 51,
+          "mae": 6.562696578440281,
+          "mean_spearman": -0.12560903149138444,
+          "rows": 510,
+          "selection_reasons": {
+            "damped_change_match": 510
+          }
+        },
+        "cpi": {
+          "mae": 0.9539637941362705,
+          "rmse": 2.008355080147839,
+          "rows": 132,
+          "selection_reasons": {
+            "damped_change_match": 132
+          }
+        },
+        "macro_revision": {
+          "mae": 538.4065976086955,
+          "rmse": 1394.6584259225717,
+          "rows": 230,
+          "selection_reasons": {
+            "damped_change_match": 230
+          }
+        }
+      }
+    }
+  },
+  "experiment": "generic_change_shrinkage_v1",
+  "hypothesis": "For unknown regression and ranking schemas with an explicit matched change field, shrinking the carried-forward change by one cross-domain development-selected factor reduces noisy over-persistence.",
+  "limitations": [
+    "Generic identifiers proxy unseen schemas and are not hidden competition tasks.",
+    "COT Spearman is invariant to positive scalar shrinkage; COT MAE remains a diagnostic in the aggregate gate.",
+    "The rule applies only to an explicit change target matched to an explicit change field."
+  ],
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "persistent_virtual_environment": false,
+  "schema_version": 1,
+  "scope": "L2/L3 unknown-family scalar projection across regression and ranking",
+  "selected_alpha": 0.5,
+  "selected_alpha_matches_preregistered_lock": true,
+  "synthetic_checks": {
+    "classification_unchanged": true,
+    "explicit_change_ranking_damped": true,
+    "explicit_change_regression_damped": true,
+    "incompatible_units_stay_excluded": true,
+    "level_regression_unchanged": true,
+    "metadata_stays_excluded": true,
+    "unmatched_change_stays_zero": true
+  },
+  "test": {
+    "baseline": {
+      "cot": {
+        "groups": 52,
+        "mae": 6.338557378579452,
+        "mean_spearman": 0.018414918414918414,
+        "rows": 520,
+        "selection_reasons": {
+          "target_token_match": 520
+        }
+      },
+      "cpi": {
+        "mae": 1.7356877291155721,
+        "rmse": 3.9783414099862338,
+        "rows": 132,
+        "selection_reasons": {
+          "target_token_match": 132
+        }
+      },
+      "macro_revision": {
+        "mae": 885.170717173913,
+        "rmse": 2668.137287838649,
+        "rows": 460,
+        "selection_reasons": {
+          "target_token_match": 460
+        }
+      }
+    },
+    "candidate": {
+      "cot": {
+        "groups": 52,
+        "mae": 5.115100478890794,
+        "mean_spearman": 0.018414918414918414,
+        "rows": 520,
+        "selection_reasons": {
+          "damped_change_match": 520
+        }
+      },
+      "cpi": {
+        "mae": 1.554458634253165,
+        "rmse": 3.2380846065324365,
+        "rows": 132,
+        "selection_reasons": {
+          "damped_change_match": 132
+        }
+      },
+      "macro_revision": {
+        "mae": 852.1179930434782,
+        "rmse": 2624.711225223822,
+        "rows": 460,
+        "selection_reasons": {
+          "damped_change_match": 460
+        }
+      }
+    },
+    "gate": {
+      "cot_rank_noninferior": true,
+      "cpi_mae_noninferior": true,
+      "macro_mae_noninferior": true,
+      "mean_normalized_mae": 0.8884092920310308,
+      "mean_normalized_mae_improved": true
+    }
+  },
+  "time_splits": {
+    "confirmation": {
+      "cot": [
+        "2023"
+      ],
+      "cpi": [
+        "2024",
+        "2025"
+      ],
+      "macro_revision": [
+        "2023"
+      ]
+    },
+    "controls": {
+      "auction": "2024",
+      "fomc": "2019-2021"
+    },
+    "development": {
+      "cot": [
+        "2021"
+      ],
+      "cpi": [
+        "2021"
+      ],
+      "macro_revision": [
+        "2020"
+      ]
+    },
+    "test": {
+      "cot": [
+        "2022"
+      ],
+      "cpi": [
+        "2022"
+      ],
+      "macro_revision": [
+        "2021",
+        "2022"
+      ]
+    }
+  }
+}

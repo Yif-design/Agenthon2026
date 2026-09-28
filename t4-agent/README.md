@@ -227,9 +227,9 @@ Model-free fallback run:
 
 ```bash
 cd /Users/joezhou/PycharmProject/Agenthon2026-team/t4-agent
-MODEL_ENDPOINT= /Users/joezhou/PycharmProject/Agenthon2026/.venv/bin/python -m t4agent.cli analyze \
-  --task /Users/joezhou/PycharmProject/Agenthon2026/track4-analysis-public/units/t4-EXAMPLE-eps-beat/task.json \
-  --corpus /Users/joezhou/PycharmProject/Agenthon2026/track4-analysis-public/units/t4-EXAMPLE-eps-beat/corpus \
+MODEL_ENDPOINT= /usr/local/bin/python3.13 -m t4agent.cli analyze \
+  --task /Users/joezhou/PycharmProject/Agenthon2026-team/starter-repos/track4-analysis-public/units/t4-EXAMPLE-eps-beat/task.json \
+  --corpus /Users/joezhou/PycharmProject/Agenthon2026-team/starter-repos/track4-analysis-public/units/t4-EXAMPLE-eps-beat/corpus \
   --out /tmp/t4-agent-example-noapi.json
 ```
 
@@ -241,13 +241,18 @@ MODEL_ENDPOINT=https://openrouter.ai/api/v1 \
 MODEL_NAME=nvidia/nemotron-3-super-120b-a12b:free \
 T4_MODEL_ALLOW_DATA_COLLECTION=1 \
 T4_ENABLE_THINKING=0 \
-/Users/joezhou/PycharmProject/Agenthon2026/.venv/bin/python -m t4agent.cli analyze \
-  --task /Users/joezhou/PycharmProject/Agenthon2026/track4-analysis-public/units/t4-EXAMPLE-eps-beat/task.json \
-  --corpus /Users/joezhou/PycharmProject/Agenthon2026/track4-analysis-public/units/t4-EXAMPLE-eps-beat/corpus \
+/usr/local/bin/python3.13 -m t4agent.cli analyze \
+  --task /Users/joezhou/PycharmProject/Agenthon2026-team/starter-repos/track4-analysis-public/units/t4-EXAMPLE-eps-beat/task.json \
+  --corpus /Users/joezhou/PycharmProject/Agenthon2026-team/starter-repos/track4-analysis-public/units/t4-EXAMPLE-eps-beat/corpus \
   --out /tmp/t4-agent-example-nemotron.json
 ```
 
 The program reads `MODEL_API_KEY` if set. For local OpenRouter experiments it can also read `.secrets/openrouter_api_key.txt`, which is git-ignored. Do not print or log the key.
+
+Local verification does not require a persistent virtual environment. Use the existing Python 3.13
+interpreter; when a test-only package such as pytest is absent, install it with `--target` under
+`/tmp`, disable the pip cache, and delete that temporary directory after the run. The submission
+image remains the reproducible dependency boundary.
 
 ## Current Test Status
 

@@ -1520,3 +1520,29 @@ baseline toolkit 2.4.4 schema and smoke result. No model was called. Screen:
 `evaluation/experiments/context_recovery_scheduling_screen.py`. Reports:
 `evaluation/reports/context-recovery-scheduling-screen-v1.json` and
 `evaluation/reports/context-recovery-scheduling-v1.json`.
+
+### Generic explicit-change shrinkage — accepted
+
+The rejected fraction-to-percent experiment exposed a broader error: the generic fallback carried
+the latest observed change forward at full magnitude, and an incorrectly tiny fraction happened to
+score better. A cross-domain development screen therefore tested one shared positive multiplier on
+explicit change targets matched to explicit change fields. The fixed grid used CPI 2021, COT 2021
+and macro-revision 2020 only; mean normalized MAE selected `0.5`.
+
+With that factor locked, the test periods improved in all three domains: CPI MAE fell from 1.7357
+to 1.5545, COT point MAE from 6.3386 to 5.1151, and macro-revision MAE from 885.1707 to 852.1180.
+Independent confirmation again improved all three: 2024-2025 CPI fell from 0.7933 to 0.6672, 2023
+COT from 7.7006 to 6.1510, and 2023 macro revisions from 561.8640 to 530.7229. COT Spearman stayed
+exactly unchanged in both periods because a positive multiplier preserves ranks.
+
+Production applies the factor only after the generic selector returns an explicit target-token
+match and both target and chosen field contain a change token. Levels, classifications, missing
+change fields, incompatible units and every known-family early return retain their previous paths.
+Auction and FOMC controls were byte-identical, and seven synthetic guards passed.
+
+Python 3.13 passed 125 tests. A clean archive of baseline `1b13a46` and the candidate produced
+byte-identical answers for all 11 public units and 78 rows; all 11 also passed the local structural
+validator. No model API or local model was used. The experiment is reproducible after adoption by
+reconstructing the pinned pre-change baseline before applying each candidate multiplier. Script:
+`evaluation/experiments/generic_change_shrinkage.py`. Report:
+`evaluation/reports/generic-change-shrinkage-v1.json`.

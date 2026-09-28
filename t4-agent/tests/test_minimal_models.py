@@ -391,9 +391,9 @@ class MinimalModelTests(unittest.TestCase):
             "regression", "revenue_growth_next_q_pct", entity, 0, 1
         )
 
-        self.assertEqual(point, 8.0)
+        self.assertEqual(point, 4.0)
         self.assertEqual(field, "latest_revenue_growth_pct")
-        self.assertEqual(reason, "target_token_match")
+        self.assertEqual(reason, "damped_change_match")
 
     def test_generic_baseline_prefers_current_over_prior_matching_field(self) -> None:
         point, field, reason = select_default_point(
@@ -404,9 +404,9 @@ class MinimalModelTests(unittest.TestCase):
             1,
         )
 
-        self.assertEqual(point, 8.0)
+        self.assertEqual(point, 4.0)
         self.assertEqual(field, "latest_revenue_growth_pct")
-        self.assertEqual(reason, "target_token_match")
+        self.assertEqual(reason, "damped_change_match")
 
     def test_generic_baseline_handles_camel_case_and_field_order(self) -> None:
         first = {"recentRevenueGrowthPct": 8.0, "currentRevenueGrowthPct": 7.0}
@@ -416,7 +416,7 @@ class MinimalModelTests(unittest.TestCase):
         choice_b = select_default_point("regression", "revenue_growth_next_q_pct", second, 0, 1)
 
         self.assertEqual(choice_a, choice_b)
-        self.assertEqual(choice_a[:2], (7.0, "currentRevenueGrowthPct"))
+        self.assertEqual(choice_a, (3.5, "currentRevenueGrowthPct", "damped_change_match"))
 
     def test_generic_ranking_baseline_is_invariant_to_row_order(self) -> None:
         first = {"recent_net_flow_change_pct_oi": -3.0, "market_size_bn": 100.0}
@@ -432,8 +432,19 @@ class MinimalModelTests(unittest.TestCase):
             select_default_point("ranking", target, first, 1, 2)[0],
         ]
 
-        self.assertEqual(original, [-3.0, 4.0])
-        self.assertEqual(reordered, [4.0, -3.0])
+        self.assertEqual(original, [-1.5, 2.0])
+        self.assertEqual(reordered, [2.0, -1.5])
+
+    def test_generic_change_shrinkage_does_not_affect_levels_or_classification(self) -> None:
+        level = select_default_point(
+            "regression", "future_margin_pct", {"current_margin_pct": 4.0}, 0, 1
+        )
+        classification = select_default_point(
+            "classification", "future_margin_change_pct", {"latest_margin_change_pct": 4.0}, 0, 1
+        )
+
+        self.assertEqual(level, (4.0, "current_margin_pct", "target_token_match"))
+        self.assertEqual(classification, (4.0, "latest_margin_change_pct", "target_token_match"))
 
     def test_generic_change_target_does_not_reuse_a_level_field(self) -> None:
         point, field, reason = select_default_point(

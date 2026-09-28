@@ -6,6 +6,7 @@ import re
 
 FIELD_TOKEN_RE = re.compile(r"[A-Za-z]+|[0-9]+")
 CHANGE_TOKENS = {"change", "delta", "growth", "return", "revision", "shift", "move"}
+CHANGE_BASELINE_SHRINKAGE = 0.5
 CURRENT_BASELINE_TOKENS = {"latest", "current", "recent", "trailing", "precutoff"}
 REFERENCE_BASELINE_TOKENS = {"start", "baseline"}
 METADATA_TOKENS = {
@@ -111,6 +112,8 @@ def select_default_point(
             candidates.append((score, key, value))
     if candidates:
         _, key, value = sorted(candidates, key=lambda item: (-item[0], item[1]))[0]
+        if requires_change and _field_tokens(key) & CHANGE_TOKENS:
+            return CHANGE_BASELINE_SHRINKAGE * float(value), key, "damped_change_match"
         return float(value), key, "target_token_match"
     if requires_change:
         return 0.0, None, "change_without_matching_baseline"
