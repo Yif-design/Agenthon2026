@@ -838,3 +838,37 @@ schema-valid and smoke-admissible. Report:
 
 References: <https://github.com/Agenthon-2026/track4-analysis-public/tree/main/baselines/strong_rag_baseline>
 and <https://docs.python.org/3/library/json.html#json.JSONDecoder.raw_decode>.
+
+### Deadline-bounded `Retry-After` recovery — accepted
+
+The official Track 4 and shared-toolkit main commits, the `v2.4.4` tag and the five open Track 4
+issues were unchanged. Historical project reports contain five HTTP 429 responses from the free
+Nemotron evidence-ID experiment. The model adapter nominally slept one second between attempts, but
+the OpenRouter JSON-mode branch removed `response_format` and immediately continued, so a 429 was
+retried with no wait and with an unrelated request-shape change.
+
+RFC 9110 defines `Retry-After` as either non-negative delay seconds or an HTTP date, and RFC 6585
+allows it on 429 responses. OpenRouter's own documentation describes 429 as rate limiting and tells
+clients to wait before retrying. The candidate parses both standard forms. It waits only when the
+server delay fits a configurable 30-second default ceiling and leaves one second inside the model
+deadline. A longer delay falls back for that batch instead of violating the server's requested
+minimum; a missing or malformed header retains the prior one-second bound. JSON mode remains on the
+retry.
+
+In deterministic A/B fault injection, both versions recovered on call two, but the baseline slept
+zero seconds and sent JSON mode on only one of two attempts. The candidate slept the requested
+three seconds and kept JSON mode on both attempts. Separate checks proved that a 60-second request
+under a five-second cap and a five-second request with only two deadline seconds remaining both
+made one call, slept zero seconds and fell back. No remote model was called.
+
+All 87 tests passed. A clean `git archive HEAD` baseline and the candidate produced byte-identical
+answers for all 11 public units and 78 rows on the same interpreter, and all 11 candidate answers
+validated against `analysis.schema.json` fetched directly from toolkit tag `v2.4.4`. The local
+shell is Python 3.11 while the official scorer requires Python 3.13, so no fresh local
+`qfbench2-smoke` run is claimed; the candidate does not touch no-model output and preserves the
+current baseline's prior 11/11 smoke evidence. Structured report:
+`evaluation/reports/retry-after-rate-limit-v1.json`.
+
+References: <https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after>,
+<https://www.rfc-editor.org/rfc/rfc6585.html#section-4>, and
+<https://openrouter.ai/docs/guides/overview/auth/byok>.

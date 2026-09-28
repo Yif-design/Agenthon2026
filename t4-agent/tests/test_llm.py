@@ -4,8 +4,9 @@ import json
 import io
 import time
 import urllib.error
+from email.message import Message
 
-from t4agent.llm import LLM, chat_completions_url, parse_json_object
+from t4agent.llm import LLM, chat_completions_url, parse_json_object, retry_after_seconds
 
 
 class FakeResponse:
@@ -147,8 +148,96 @@ def test_authorization_failure_opens_circuit_without_retry(monkeypatch) -> None:
     assert "401" in (llm.usage.disabled_reason or "")
 
 
-def _http_error(request, code: int, body: bytes) -> urllib.error.HTTPError:
-    return urllib.error.HTTPError(request.full_url, code, "error", {}, io.BytesIO(body))
+def _http_error(
+    request,
+    code: int,
+    body: bytes,
+    headers: dict[str, str] | None = None,
+) -> urllib.error.HTTPError:
+    message = Message()
+    for name, value in (headers or {}).items():
+        message[name] = value
+    return urllib.error.HTTPError(request.full_url, code, "error", message, io.BytesIO(body))
+
+
+def test_retry_after_parser_accepts_seconds_and_http_date() -> None:
+    assert retry_after_seconds("7") == 7.0
+    assert retry_after_seconds("Thu, 01 Jan 1970 00:01:40 GMT", now_epoch=90.0) == 10.0
+    assert retry_after_seconds("Thu, 01 Jan 1970 00:01:20 GMT", now_epoch=90.0) == 0.0
+    assert retry_after_seconds("1.5") is None
+    assert retry_after_seconds("not a date") is None
+    assert retry_after_seconds(None) is None
+
+
+def test_rate_limit_waits_for_retry_after_without_dropping_json_mode(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "https://openrouter.ai/api/v1")
+    monkeypatch.setenv("MODEL_API_KEY", "test-only-token")
+    monkeypatch.setenv("MODEL_NAME", "free-model")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    calls = 0
+    bodies = []
+    sleeps = []
+
+    def limited_then_success(request, timeout):
+        nonlocal calls
+        calls += 1
+        bodies.append(json.loads(request.data))
+        if calls == 1:
+            raise _http_error(request, 429, b'{"error":"rate limited"}', {"Retry-After": "3"})
+        return FakeResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", limited_then_success)
+    monkeypatch.setattr("time.sleep", sleeps.append)
+    llm = LLM()
+    assert llm.chat_json("system", "user") == {"signals": {}}
+    assert calls == 2
+    assert sleeps == [3.0]
+    assert all(body.get("response_format") == {"type": "json_object"} for body in bodies)
+    assert llm.consecutive_failures == 0
+
+
+def test_rate_limit_longer_than_cap_falls_back_without_early_retry(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    monkeypatch.setenv("T4_MODEL_RETRY_AFTER_CAP_S", "5")
+    sleeps = []
+    calls = 0
+
+    def long_limit(request, timeout):
+        nonlocal calls
+        calls += 1
+        raise _http_error(request, 429, b'limited', {"Retry-After": "60"})
+
+    monkeypatch.setattr("urllib.request.urlopen", long_limit)
+    monkeypatch.setattr("time.sleep", sleeps.append)
+    llm = LLM()
+    assert llm.chat_json("system", "user") is None
+    assert calls == 1
+    assert sleeps == []
+    assert not llm.usage.circuit_open
+
+
+def test_rate_limit_delay_must_fit_remaining_deadline(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setenv("T4_MODEL_RETRIES", "2")
+    sleeps = []
+    calls = 0
+
+    def limited(request, timeout):
+        nonlocal calls
+        calls += 1
+        raise _http_error(request, 429, b'limited', {"Retry-After": "5"})
+
+    monkeypatch.setattr("urllib.request.urlopen", limited)
+    monkeypatch.setattr("time.sleep", sleeps.append)
+    llm = LLM(deadline_monotonic=time.monotonic() + 2.0)
+    assert llm.chat_json("system", "user") is None
+    assert calls == 1
+    assert sleeps == []
 
 
 def test_context_length_400_falls_back_locally_and_later_batch_recovers(monkeypatch) -> None:

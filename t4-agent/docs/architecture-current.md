@@ -44,6 +44,13 @@ batch: retrying the same prompt is skipped, but a later shorter batch may still 
 shared circuit. This reacts to the serving route's actual limit without inventing an unpublished
 character or token ceiling.
 
+An HTTP 429 is retried only after the server's `Retry-After` delay when that delay fits both the
+30-second retry ceiling and the remaining model-phase deadline. Both RFC forms, integer seconds and
+an HTTP date, are accepted. A longer requested delay falls back for that batch instead of retrying
+early, and an absent or malformed header retains the one-second bounded retry. Rate limiting does
+not remove JSON mode from the retry. The normal path, request cap and two-attempt default are
+unchanged.
+
 Assistant text is decoded as a sequence of complete JSON containers rather than sliced from the
 first opening brace to the last closing brace. One dictionary surrounded by markdown, thinking text
 or invalid brace notes is accepted. Two independently valid dictionaries, a top-level array,

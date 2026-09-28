@@ -6,6 +6,7 @@ import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 
@@ -43,6 +44,10 @@ class LLM:
         self.timeout = max(1.0, float(os.environ.get("T4_MODEL_TIMEOUT_S", "40")))
         self.max_calls = min(25, max(0, int(os.environ.get("T4_MODEL_MAX_CALLS", "18"))))
         self.max_retries = max(1, int(os.environ.get("T4_MODEL_RETRIES", "2")))
+        self.retry_after_cap = min(
+            60.0,
+            max(0.0, float(os.environ.get("T4_MODEL_RETRY_AFTER_CAP_S", "30"))),
+        )
         self.circuit_failure_limit = min(
             25,
             max(
@@ -120,6 +125,7 @@ class LLM:
             # Count attempts conservatively. The House route charges an admitted
             # request before forwarding, so an upstream failure may still consume it.
             self.usage.calls += 1
+            retry_delay = 1.0
             try:
                 with urllib.request.urlopen(req, timeout=timeout) as resp:
                     payload = json.loads(resp.read().decode("utf-8"))
@@ -150,13 +156,21 @@ class LLM:
                         break
                     self._open_circuit(f"non-retriable model request HTTP {exc.code}")
                     return None
-                if "response_format" in body and attempt + 1 < self.max_retries:
+                if exc.code == 429:
+                    retry_after = exc.headers.get("Retry-After") if exc.headers is not None else None
+                    requested_delay = retry_after_seconds(retry_after)
+                    if requested_delay is not None:
+                        available = max(0.0, self._remaining_seconds() - 1.0)
+                        if requested_delay > min(self.retry_after_cap, available):
+                            break
+                        retry_delay = requested_delay
+                elif "response_format" in body and attempt + 1 < self.max_retries:
                     body.pop("response_format", None)
                     continue
             except Exception as exc:  # noqa: BLE001
                 self._record_failure(f"{type(exc).__name__}: {str(exc)[:180]}")
             if attempt + 1 < self.max_retries and self._remaining_seconds() > 1.0:
-                time.sleep(min(1.0, max(0.0, self._remaining_seconds())))
+                time.sleep(min(retry_delay, max(0.0, self._remaining_seconds() - 1.0)))
         if self.consecutive_failures >= self.circuit_failure_limit:
             self._open_circuit("consecutive model failure circuit threshold reached")
         return None
@@ -214,6 +228,23 @@ def _is_context_length_error(detail: str) -> bool:
             "token limit",
         )
     )
+
+
+def retry_after_seconds(value: str | None, *, now_epoch: float | None = None) -> float | None:
+    """Parse the two RFC 9110 Retry-After forms without trusting an unbounded delay."""
+    if value is None:
+        return None
+    stripped = value.strip()
+    if stripped.isdecimal():
+        return float(stripped)
+    try:
+        retry_at = parsedate_to_datetime(stripped)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if retry_at.tzinfo is None:
+        return None
+    current = time.time() if now_epoch is None else now_epoch
+    return max(0.0, retry_at.timestamp() - current)
 
 
 def parse_json_object(text: str) -> dict | None:

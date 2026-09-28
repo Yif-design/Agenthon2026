@@ -28,8 +28,10 @@ Never enable this option for private or sensitive inputs.
 
 On 2026-09-28 the free-model endpoint reported a 50-request daily allowance and returned HTTP 429
 after it was exhausted, with a reset timestamp of `2026-09-28T00:00:00Z`. This is an observed
-provider condition, not a stable contract. Experiments must stop on 429 and must not compare a
-partially served candidate with a fully served baseline.
+provider condition, not a stable contract. The runtime now follows a valid `Retry-After` value when
+it fits the 30-second ceiling and the remaining deadline; a longer delay falls back without an
+early retry. Experiments must still stop an A/B when quota exhaustion leaves one side only partly
+served, and must not compare that sample with a fully served counterpart.
 
 OpenRouter and House use different thinking controls. The client maps:
 
@@ -40,6 +42,9 @@ OpenRouter and House use different thinking controls. The client maps:
 
 Sources:
 
+- <https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after>
+- <https://www.rfc-editor.org/rfc/rfc6585.html#section-4>
+- <https://openrouter.ai/docs/guides/overview/auth/byok>
 - <https://openrouter.ai/docs/guides/get-started/sovereign-ai>
 - <https://openrouter.ai/docs/api/api-reference/models/get-models>
 - <https://openrouter.ai/collections/free-models/>
