@@ -1,0 +1,85 @@
+{
+  "baseline_git_commit": "416cfa2c6e05deb16b1cc1b9800509cdb9437207",
+  "context_rejections": 2,
+  "decision": "reject",
+  "decision_rule": "Advance only if both saved context rejections across two families and two target types map to exact unique source slices, the non-context rejection stays strict, and all negative controls pass.",
+  "experiment": "context_formatting_recovery_screen_v1",
+  "families": [
+    "credit_event",
+    "eps_yoy_direction"
+  ],
+  "hypothesis": "Context quotes that differ only by whitespace, currency markers or bullet glyphs can be uniquely mapped to an exact corpus span without relaxing signal or numeric-parameter evidence.",
+  "limitations": [
+    "The saved run is a fixed public diagnostic, not a hidden-unit sample.",
+    "The recovery admits only context facts; signal and numeric parameter quotes remain strict.",
+    "A formatting variant must be at least 40 normalized characters and unique within its document."
+  ],
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "negative_controls": {
+    "ambiguous_repeat": true,
+    "short_match": true,
+    "substantive_edit": true,
+    "wrong_document": true
+  },
+  "prediction_path_change": false,
+  "recovered_contexts": [
+    {
+      "baseline_rejected": true,
+      "candidate_recovered": true,
+      "candidate_rejection": null,
+      "entity_id": "YELL",
+      "family": "credit_event",
+      "restored_exact_source_slice": true,
+      "restored_span": [
+        70401,
+        71069
+      ],
+      "target_type": "classification",
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "baseline_rejected": true,
+      "candidate_recovered": true,
+      "candidate_rejection": null,
+      "entity_id": "TMO",
+      "family": "eps_yoy_direction",
+      "restored_exact_source_slice": true,
+      "restored_span": [
+        56677,
+        56765
+      ],
+      "target_type": "classification",
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    }
+  ],
+  "rejected_facts_total": 3,
+  "saved_rows_sha256": {
+    "t4-EXAMPLE-eps-beat": "bb157f2bedb9335a446659b0a072341c9d6c71358b552437941864c20526ec2c",
+    "t4-auction-btc-202411-us7": "9267c17ce8f99a9c83d9e7912210aca5e6e746a7da05a331885a673fa4687520",
+    "t4-cotpos-202411-us10": "4038738e372f1d8dd2a201b40c4cc2a91409e7f91aa7919409529a4f26380277",
+    "t4-cpicomp-202410-us11": "38a7c7a6c187256aa8662fdf931789e92078dce1c5c4f541904ea5d7ea940b9b",
+    "t4-credit-event-2023": "ed76549becab3b3d318e7b645864d24a7f94bfd12bf5b52001fcd2eb4398e419",
+    "t4-eps-growth-2024Q3-banks": "f4bca9946c456acb1dbea6798232701ab78ee1e0ca66646231518f4545f33a56",
+    "t4-eps-yoy-2023Q2-mixed": "72745e0edf454483fa76480e8e0fed3351909a781ceb99d53b66b35a455baba2",
+    "t4-fomc-curve-20220728": "4fd8982cdc153f03c7e85e204c735d578a4f9e48343e66250b567725d964a808",
+    "t4-fomc-curve-20240918": "79ac7e9c90029c335aab194fdecfb6d57dc8904cd052c7f225e93be3081c42b9",
+    "t4-macrorev-20240930-us6": "6fdd17bb93a6ab585721b6d31a1e537f3ed6b8bbbdbfd069bb596e2dc734a2bc",
+    "t4-postearn-20240201-megacap": "7607c78a226c767c60decc1e776635d65b2d0a76d801925728050ffbe344c543"
+  },
+  "saved_run": "evaluation/runs/20260926-current/nemotron-free-nothink",
+  "schema_version": 1,
+  "scope": "L2 cross-family context citation construction only.",
+  "strict_non_context_rejections": [
+    {
+      "baseline_rejected": true,
+      "entity_id": "TMO",
+      "name": "yoy_earnings_signal",
+      "production_still_strict": true,
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    }
+  ],
+  "target_types": [
+    "classification"
+  ]
+}

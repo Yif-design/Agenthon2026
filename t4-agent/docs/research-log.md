@@ -1,5 +1,22 @@
 # Research log
 
+## 2026-09-29: context formatting recovery — rejected
+
+A saved `nemotron-3-super-120b-a12b` public run contained only three rejected facts. Two were context
+quotes where the model changed formatting: it inserted dollar signs into an EPS table or removed
+bullet glyphs and whitespace from a debt passage. A context-only candidate removed `$`, `•` and
+whitespace for matching, required at least 40 normalized characters and exactly one occurrence, then
+restored the original corpus slice. Signal and numeric-parameter validation stayed strict.
+
+The candidate recovered both contexts across the credit and EPS YoY families, restored exact source
+spans, retained the rejected EPS signal, and passed four substantive-edit, ambiguity, short-quote
+and wrong-document controls. It nevertheless failed the pre-registered cross-target gate: both
+published units declare classification targets, so the evidence covered only one target type rather
+than classification plus regression. Production code and tests were rolled back. The reproducible
+screen and rejected result remain in
+`evaluation/experiments/context_formatting_recovery_screen.py` and
+`evaluation/reports/context-formatting-recovery-screen-v1.json`. No model API or local NLI ran.
+
 ## 2026-09-28: generic explicit-unit compatibility — accepted
 
 The official state check remained unchanged: shared main `95a0de3`, Track 4 main `7b2bce1`, toolkit
