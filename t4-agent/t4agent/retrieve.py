@@ -15,6 +15,19 @@ TOKEN_RE = re.compile(r"\$?[A-Za-z0-9_]+(?:\.[0-9]+)?%?(?:-[A-Za-z0-9_]+)*")
 SCHEMA_PART_RE = re.compile(r"[A-Za-z]+|[0-9]+")
 MAX_SCHEMA_QUERY_PARTS = 8
 GENERIC_RUBRIC = "results outlook growth risk change forecast target evidence"
+RUBRIC_BY_FAMILY = {
+    "eps_consensus": "eps earnings revenue margin guidance diluted net income per share",
+    "eps_yoy": "eps earnings revenue margin guidance diluted net income per share",
+    "bank_eps": "eps earnings revenue margin guidance diluted net income per share",
+    "credit": "liquidity debt default bankruptcy covenant going concern rating maturity",
+    "rates": "fomc inflation labor market unemployment fed funds policy yield curve",
+    "cpi": "cpi inflation shelter energy food services goods month over month",
+    "auction": "auction bid cover indirect direct dealer demand tail offering amount",
+    "positioning": "commitments traders net position open interest managed money futures",
+    "macro_revision": "revision estimate preliminary durable goods shipments inventories retail sales",
+    "reaction": "earnings guidance revenue margin outlook surprise market reaction",
+    "generic": GENERIC_RUBRIC,
+}
 SCHEMA_NOISE_PARTS = {
     "forecast",
     "family",
@@ -311,7 +324,13 @@ def query_for(task: object, entity: dict, include_all_scalar_fields: bool = Fals
         has_semantic_schema_terms = has_semantic_schema_terms or target_expanded or family_expanded
     else:
         parts.extend((target_name, family))
-    keywords = rubric_keywords(family, target_name)
+    routed_family = task_family_spec(
+        family,
+        target_name,
+        str(getattr(task, "target_type", target.get("type", ""))),
+        list(getattr(task, "entities", ()) or ()),
+    ).key
+    keywords = rubric_keywords(family, target_name, routed_family=routed_family)
     if not (include_all_scalar_fields and has_semantic_schema_terms and keywords == GENERIC_RUBRIC):
         parts.append(keywords)
     return " ".join(parts)
@@ -330,7 +349,9 @@ def _schema_query_text(value: str) -> tuple[str, bool]:
     return (f"{value} {' '.join(components)}", True) if expanded else (value, False)
 
 
-def rubric_keywords(family: str, target_name: str) -> str:
+def rubric_keywords(family: str, target_name: str, *, routed_family: str | None = None) -> str:
+    if routed_family is not None:
+        return RUBRIC_BY_FAMILY.get(routed_family, GENERIC_RUBRIC)
     text = f"{family} {target_name}".lower()
     if "eps" in text:
         return "eps earnings revenue margin guidance diluted net income per share"

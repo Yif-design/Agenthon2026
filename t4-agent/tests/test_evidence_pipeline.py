@@ -187,8 +187,8 @@ def test_generic_projection_bounds_total_fields_and_text() -> None:
 
 def test_generic_query_uses_unknown_categorical_field_to_retrieve_correct_document() -> None:
     chunks = [
-        Chunk("SAFE", "2023-01-01", 0, 34, "Issuer outlook is investment grade."),
-        Chunk("RISK", "2023-01-01", 0, 37, "Issuer outlook is deep speculative."),
+        Chunk("SAFE", "2023-01-01", 0, 34, "Issuer status is investment grade."),
+        Chunk("RISK", "2023-01-01", 0, 37, "Issuer status is deep speculative."),
     ]
     entity = {"entity_id": "ISSUER_A", "rating_bucket": "deep speculative"}
     task = make_task("unseen_family", "future_credit_state", [entity])
@@ -237,6 +237,29 @@ def test_known_query_does_not_expand_or_suppress_rubric() -> None:
     assert "futureMetric" in query
     assert "future Metric" not in query
     assert "results outlook growth risk change forecast target evidence" in query
+
+
+@pytest.mark.parametrize(
+    ("family", "target_name", "wrong_terms"),
+    [
+        ("inventory_forecast", "inventory_position_rank", "commitments traders"),
+        ("housing", "auction_price_change", "indirect direct dealer"),
+        ("equity_research", "analyst_revision_probability", "durable goods shipments"),
+        ("agriculture", "cotton_yield_rank", "fomc inflation labor"),
+        ("marketing", "credit_eventual_return", "liquidity debt default"),
+        ("sports", "rate_curveball_score", "fomc inflation labor"),
+        ("supply_chain", "positioning_of_inventory", "commitments traders"),
+    ],
+)
+def test_generic_query_does_not_inject_specialist_rubric_from_substrings(
+    family: str, target_name: str, wrong_terms: str
+) -> None:
+    entity = {"entity_id": "A", "opaqueValue": 1}
+    task = make_task(family, target_name, [entity])
+
+    query = query_for(task, entity, include_all_scalar_fields=True)
+
+    assert wrong_terms not in query
 
 
 def test_tokenizer_ignores_trailing_punctuation_but_preserves_financial_tokens() -> None:

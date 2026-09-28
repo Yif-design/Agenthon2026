@@ -1015,6 +1015,24 @@ and open Track 4 issues 1, 2, 13, 14 and 16. The currently updated public reposi
 `wangzgui/agenthon-t4-baseline-2026` and `dungcao06/optivex-t4-agent`; neither supplied this bounded
 generic query policy.
 
+### Router-aligned query rubrics — accepted
+
+After calculator routing and document scope were aligned, query rubric selection still used the
+discarded loose substring rules. All seven existing collision cases therefore routed generic but
+injected an unrelated specialist vocabulary: examples included COT terms for
+`inventory_position_rank`, credit terms for `credit_eventual_return`, and FOMC terms for
+`rate_curveball_score`.
+
+The accepted candidate maps rubrics from the same `task_family_spec` result used by prediction and
+scope. Specialist injection fell from 7/7 collision cases to 0/7. All 20 published and anchored
+known queries remained byte-identical, and all 9 renamed complete structural signatures received
+the rubric matching their recovered specialist. Python 3.13 passed 111 tests. A clean archive of
+baseline `3a37e44` and the candidate produced byte-identical answers for all 11 public units and 78
+rows with zero validation errors, preserving the recorded 11/11 toolkit 2.4.4 smoke result. No
+model request or prompt token was added. Script:
+`evaluation/experiments/query_rubric_router_alignment.py`. Report:
+`evaluation/reports/query-rubric-router-alignment-v1.json`.
+
 ### Node.js 24 GitHub Actions pinning — accepted
 
 Run `36364759306` succeeded but GitHub reported that checkout, Python setup and all three Docker

@@ -203,6 +203,12 @@ route while silently losing shared evidence through a second, looser scope rule.
 a family-independent entity boundary, and known specialists retain their existing series, tenor and
 macro-source filters.
 
+Retrieval rubric selection also consumes this routed family key. Incidental strings such as
+`inventory_position_rank`, `credit_eventual_return` and `rate_curveball_score` cannot inject COT,
+credit or FOMC vocabulary into an otherwise generic query. Published and anchored routes preserve
+their previous query bytes, while a renamed task recovered by the strict structural fallback gets
+the same specialist rubric as its calculator and document scope.
+
 BM25 tokenization removes sentence-edge punctuation while preserving financial forms such as
 `$5.28`, `10%`, `2024-10-31` and `year-over-year`. This makes a query token such as `action_flat`
 match the same identifier at the end of a sentence instead of assigning every zero-score query the

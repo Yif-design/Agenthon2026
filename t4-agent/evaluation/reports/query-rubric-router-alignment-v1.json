@@ -1,0 +1,305 @@
+{
+  "baseline_git_commit": "3a37e44e73b411466308a0d8c0d6baaddc41fe45",
+  "collision_cases": [
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "inventory_forecast",
+      "legacy_rubric": "commitments traders net position open interest managed money futures",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "inventory_position_rank"
+    },
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "housing",
+      "legacy_rubric": "auction bid cover indirect direct dealer demand tail offering amount",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "auction_price_change"
+    },
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "equity_research",
+      "legacy_rubric": "revision estimate preliminary durable goods shipments inventories retail sales",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "analyst_revision_probability"
+    },
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "agriculture",
+      "legacy_rubric": "fomc inflation labor market unemployment fed funds policy yield curve",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "cotton_yield_rank"
+    },
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "marketing",
+      "legacy_rubric": "liquidity debt default bankruptcy covenant going concern rating maturity",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "credit_eventual_return"
+    },
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "sports",
+      "legacy_rubric": "fomc inflation labor market unemployment fed funds policy yield curve",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "rate_curveball_score"
+    },
+    {
+      "candidate_rubric": "results outlook growth risk change forecast target evidence",
+      "candidate_specialist_injection": false,
+      "family": "supply_chain",
+      "legacy_rubric": "commitments traders net position open interest managed money futures",
+      "legacy_specialist_injection": true,
+      "route": "generic",
+      "target": "positioning_of_inventory"
+    }
+  ],
+  "decision": "accept",
+  "decision_reason": "The shared strict route removes all seven incidental specialist rubrics, preserves every known query, gives all structurally recovered tasks the matching rubric, and passes all public-byte, validation, smoke and unit gates without model cost.",
+  "decision_rule": "Require collision specialist injections 7/7 to 0/7, 20/20 known queries byte-identical, 9/9 structural rubrics correct, byte-identical public outputs, 11/11 schema/smoke and no model calls.",
+  "experiment": "query_rubric_router_alignment_v1",
+  "hypothesis": "Dispatching retrieval rubrics from the same strict task route as calculators and document scopes removes incidental-substring domain bias while preserving known and structurally recovered tasks.",
+  "known_cases": [
+    {
+      "byte_identical": true,
+      "expected": "eps_consensus",
+      "family": "eps_beat_consensus",
+      "source": "public",
+      "target": "eps_outcome"
+    },
+    {
+      "byte_identical": true,
+      "expected": "auction",
+      "family": "auction_demand",
+      "source": "public",
+      "target": "bid_to_cover_ratio"
+    },
+    {
+      "byte_identical": true,
+      "expected": "positioning",
+      "family": "positioning_shift",
+      "source": "public",
+      "target": "net_positioning_change_pct_oi_rank"
+    },
+    {
+      "byte_identical": true,
+      "expected": "cpi",
+      "family": "cpi_component_nowcast",
+      "source": "public",
+      "target": "cpi_component_mom_first_print"
+    },
+    {
+      "byte_identical": true,
+      "expected": "credit",
+      "family": "credit_event",
+      "source": "public",
+      "target": "credit_event_12m"
+    },
+    {
+      "byte_identical": true,
+      "expected": "bank_eps",
+      "family": "eps_growth_regression",
+      "source": "public",
+      "target": "eps_yoy_growth_pct"
+    },
+    {
+      "byte_identical": true,
+      "expected": "eps_yoy",
+      "family": "eps_yoy_direction",
+      "source": "public",
+      "target": "eps_yoy_direction"
+    },
+    {
+      "byte_identical": true,
+      "expected": "rates",
+      "family": "rate_curve_cross_section",
+      "source": "public",
+      "target": "yield_change_bps_intermeeting"
+    },
+    {
+      "byte_identical": true,
+      "expected": "macro_revision",
+      "family": "macro_revision_direction",
+      "source": "public",
+      "target": "next_estimate_revision_direction"
+    },
+    {
+      "byte_identical": true,
+      "expected": "reaction",
+      "family": "post_earnings_reaction",
+      "source": "public",
+      "target": "earnings_reaction"
+    },
+    {
+      "byte_identical": true,
+      "expected": "eps_consensus",
+      "family": "eps_beat_consensus_v2",
+      "source": "variant",
+      "target": "future_eps_class"
+    },
+    {
+      "byte_identical": true,
+      "expected": "eps_consensus",
+      "family": "",
+      "source": "variant",
+      "target": "eps_beat_consensus_probability"
+    },
+    {
+      "byte_identical": true,
+      "expected": "credit",
+      "family": "credit_event_cross_section",
+      "source": "variant",
+      "target": "event_probability"
+    },
+    {
+      "byte_identical": true,
+      "expected": "reaction",
+      "family": "post_earnings_reaction_v2",
+      "source": "variant",
+      "target": "abnormal_return_class"
+    },
+    {
+      "byte_identical": true,
+      "expected": "rates",
+      "family": "rate_curve_scenario",
+      "source": "variant",
+      "target": "tenor_move"
+    },
+    {
+      "byte_identical": true,
+      "expected": "cpi",
+      "family": "cpi_component_forecast",
+      "source": "variant",
+      "target": "first_print"
+    },
+    {
+      "byte_identical": true,
+      "expected": "macro_revision",
+      "family": "macro_revision_panel",
+      "source": "variant",
+      "target": "direction"
+    },
+    {
+      "byte_identical": true,
+      "expected": "auction",
+      "family": "auction_demand_panel",
+      "source": "variant",
+      "target": "ratio"
+    },
+    {
+      "byte_identical": true,
+      "expected": "positioning",
+      "family": "positioning_shift_panel",
+      "source": "variant",
+      "target": "rank"
+    },
+    {
+      "byte_identical": true,
+      "expected": "positioning",
+      "family": "cftc_positioning_panel",
+      "source": "variant",
+      "target": "rank"
+    }
+  ],
+  "layer": "L2 shared task routing and retrieval",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "official_snapshot": {
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_tag": "v2.4.4",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "results": {
+    "candidate_collision_injections": 0,
+    "collision_total": 7,
+    "known_queries_identical": 20,
+    "known_total": 20,
+    "legacy_collision_injections": 7,
+    "structural_rubrics_correct": 9,
+    "structural_total": 9
+  },
+  "schema_version": 1,
+  "structural_cases": [
+    {
+      "expected": "eps_consensus",
+      "route": "eps_consensus",
+      "rubric_present": true
+    },
+    {
+      "expected": "eps_yoy",
+      "route": "eps_yoy",
+      "rubric_present": true
+    },
+    {
+      "expected": "reaction",
+      "route": "reaction",
+      "rubric_present": true
+    },
+    {
+      "expected": "macro_revision",
+      "route": "macro_revision",
+      "rubric_present": true
+    },
+    {
+      "expected": "bank_eps",
+      "route": "bank_eps",
+      "rubric_present": true
+    },
+    {
+      "expected": "rates",
+      "route": "rates",
+      "rubric_present": true
+    },
+    {
+      "expected": "cpi",
+      "route": "cpi",
+      "rubric_present": true
+    },
+    {
+      "expected": "auction",
+      "route": "auction",
+      "rubric_present": true
+    },
+    {
+      "expected": "positioning",
+      "route": "positioning",
+      "rubric_present": true
+    }
+  ],
+  "validation": {
+    "local_validation_error_units": 0,
+    "model_requests_added": 0,
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "candidate bytes identical to 3a37e44 smoke-verified baseline",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "111 passed"
+  }
+}

@@ -34,7 +34,9 @@
   scope. This avoids applying a domain formula or dropping shared evidence after one incidental
   substring or field, but it can leave specialist accuracy unavailable on a genuinely new schema.
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
-  identifier misses, but aliases, abbreviations and paraphrases can still rank the wrong chunk.
+  identifier misses, schema components cover common identifier styles, and rubric dispatch now
+  follows the strict shared router, but aliases, abbreviations and paraphrases can still rank the
+  wrong chunk.
 - Official category and baseline documents describe per-entity `corpus_ref` subtrees, while the
   published authoring guide describes flat `corpus/<doc_id>.json` files. The agent supports both
   shapes and rejects duplicate IDs, but no public unit exercises a non-root reference, so nested
