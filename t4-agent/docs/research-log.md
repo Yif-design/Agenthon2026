@@ -1043,3 +1043,32 @@ References:
 - <https://github.com/Agenthon-2026/Agenthon2026-public/blob/main/docs/DEVELOPMENT-RUNTIME.md#container-limits>
 - <https://github.com/dungcao06/optivex-t4-agent>
 - <https://github.com/wangzgui/agenthon-t4-baseline-2026>
+
+### Router-aligned document scopes — accepted
+
+The 2026-09-28 official check again found Track 4 main at `7b2bce1`, shared toolkit main at
+`95a0de3`, toolkit tag `v2.4.4`, and open issues 1, 2, 13, 14 and 16. The official README continues
+to warn that most hidden families have no published counterpart and that rows can share evidence.
+The MIT-licensed official strong-RAG retriever uses one cutoff-safe BM25 index without reusable
+family-substring document filters; it was inspected as a design comparison and no code was copied.
+
+The earlier strict-router experiment fixed calculator selection, but `allowed_document_ids` still
+used the discarded loose substring rules. Consequently `inventory_position_rank`,
+`cotton_yield_rank` and `positioning_of_inventory` routed to the generic calculator while their
+retrieval scope silently entered the COT specialist. In the pre-registered seven collision cases,
+only 4/7 retained a shared document allowed by the entity's root `corpus_ref`.
+
+The accepted candidate dispatches specialist scopes from the same anchored `family_spec` key used
+by calculators. Shared-document preservation improved from 4/7 to 7/7, all 20 published and
+anchored-variant routes remained correct, and the general CIK entity boundary was unchanged. A
+clean archive of commit `87704b0` and the candidate produced byte-identical answers for all 11
+public units and 78 rows; all 11 passed toolkit 2.4.4 schema and smoke checks. Python 3.11 and 3.13
+both passed 98 tests. No model request, prompt or calculator changed.
+
+Script: `evaluation/experiments/scope_router_alignment_audit.py`. Report:
+`evaluation/reports/scope-router-alignment-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/track4-analysis-public>
+- <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/retriever.py>

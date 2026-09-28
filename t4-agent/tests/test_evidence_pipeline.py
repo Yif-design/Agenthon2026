@@ -118,6 +118,31 @@ def test_bm25_never_returns_foreign_document() -> None:
     assert results and {result.chunk.doc_id for result in results} == {"B"}
 
 
+@pytest.mark.parametrize(
+    ("family", "target_name"),
+    [
+        ("inventory_forecast", "inventory_position_rank"),
+        ("housing", "auction_price_change"),
+        ("equity_research", "analyst_revision_probability"),
+        ("agriculture", "cotton_yield_rank"),
+        ("marketing", "credit_eventual_return"),
+        ("sports", "rate_curveball_score"),
+        ("supply_chain", "positioning_of_inventory"),
+    ],
+)
+def test_unknown_family_scope_ignores_incidental_specialist_substrings(family, target_name) -> None:
+    corpus = IndexedCorpus(
+        [],
+        {"ENTITY_A_LOCAL": "local evidence", "GLOBAL_SHARED": "shared evidence"},
+        {"ENTITY_A_LOCAL": "2023-01-01", "GLOBAL_SHARED": "2023-01-01"},
+        {"ENTITY_A_LOCAL": "local.json", "GLOBAL_SHARED": "shared.json"},
+    )
+    entity = {"entity_id": "ENTITY_A", "corpus_ref": "corpus/"}
+    task = make_task(family, target_name, [entity])
+
+    assert allowed_document_ids(task, entity, corpus) == {"ENTITY_A_LOCAL", "GLOBAL_SHARED"}
+
+
 def test_generic_projection_preserves_bounded_scalar_unknown_fields() -> None:
     projected = project_entity(
         {

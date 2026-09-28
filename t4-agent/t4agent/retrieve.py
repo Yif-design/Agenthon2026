@@ -9,6 +9,8 @@ from datetime import date
 from pathlib import Path
 from typing import Callable
 
+from .family_specs import family_spec
+
 TOKEN_RE = re.compile(r"\$?[A-Za-z0-9_]+(?:\.[0-9]+)?%?(?:-[A-Za-z0-9_]+)*")
 
 
@@ -160,19 +162,19 @@ def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> s
     """Return the hard document scope for one roster entity before lexical retrieval."""
     all_ids = _corpus_ref_document_ids(entity.get("corpus_ref"), corpus)
     target = getattr(task, "target", {}) or {}
-    family_text = f"{getattr(task, 'family', '')} {target.get('name', '')}".lower()
+    routed_family = family_spec(str(getattr(task, "family", "")), str(target.get("name", ""))).key
     cik = "".join(ch for ch in str(entity.get("cik") or "") if ch.isdigit()).zfill(10)
     if cik.strip("0"):
         scoped = {doc_id for doc_id in all_ids if cik in doc_id}
         if scoped:
             return scoped
-    if "revision" in family_text:
+    if routed_family == "macro_revision":
         series_id = str(entity.get("series_id") or "").upper()
         scoped = {doc_id for doc_id in all_ids if series_id and series_id in doc_id.upper()}
         if series_id == "PAYEMS":
             scoped |= {doc_id for doc_id in all_ids if "CES_PRELIM_BENCHMARK" in doc_id.upper()}
         return scoped or all_ids
-    if "auction" in family_text or "bid_to_cover" in family_text:
+    if routed_family == "auction":
         tenor_text = str(entity.get("tenor") or "").upper()
         digits = "".join(ch for ch in tenor_text if ch.isdigit())
         tenor = f"{digits}Y" if digits else tenor_text.replace("-", "").replace(" ", "")
@@ -183,7 +185,7 @@ def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> s
             or ("TDIRECT_AUCTIONS" in doc_id.upper() and tenor in doc_id.upper().replace("-", "").replace("_", ""))
         }
         return scoped or all_ids
-    if "position" in family_text or "cot" in family_text:
+    if routed_family == "positioning":
         entity_id = str(entity.get("entity_id") or "").upper()
         scoped = {
             doc_id
@@ -193,13 +195,13 @@ def allowed_document_ids(task: object, entity: dict, corpus: IndexedCorpus) -> s
             or "MKT_SNAPSHOT" in doc_id.upper()
         }
         return scoped or all_ids
-    if "cpi" in family_text:
+    if routed_family == "cpi":
         return {
             doc_id
             for doc_id in all_ids
             if any(token in doc_id.upper() for token in ("CPI", "GASREG", "EIA"))
         } or all_ids
-    if "yield" in family_text or "rate_curve" in family_text:
+    if routed_family == "rates":
         return {
             doc_id
             for doc_id in all_ids

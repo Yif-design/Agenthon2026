@@ -178,6 +178,13 @@ a substring inside another word does not activate a specialist. This prevents ta
 fields and entering an unrelated calculator. Published signatures and anchored family variants keep
 their specialist routes; unmatched tasks use the generic path.
 
+Family-specific document scopes are dispatched from that same routed family key. An unknown target
+whose name incidentally contains `position`, `cot`, `auction`, `revision` or `rate` therefore keeps
+every document allowed by its `corpus_ref`; it cannot enter a specialist calculator through one
+route while silently losing shared evidence through a second, looser scope rule. CIK scoping remains
+a family-independent entity boundary, and known specialists retain their existing series, tenor and
+macro-source filters.
+
 BM25 tokenization removes sentence-edge punctuation while preserving financial forms such as
 `$5.28`, `10%`, `2024-10-31` and `year-over-year`. This makes a query token such as `action_flat`
 match the same identifier at the end of a sentence instead of assigning every zero-score query the

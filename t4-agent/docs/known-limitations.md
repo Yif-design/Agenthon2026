@@ -24,10 +24,11 @@
   omitted after the 64-field/6,000-character budget. The generic label-role mapper handles explicit
   directional rules and common role words, but an ambiguous, indirect or domain-specific label
   definition still falls back deterministically. It cannot correct a wrong direction signal.
-- Specialist routing is intentionally conservative and recognizes complete published or anchored
-  family/target signatures. An unpublished synonym may therefore use the generic path instead of a
-  relevant specialist. This is safer than applying a domain formula after one incidental substring,
-  but it can leave specialist accuracy unavailable on a novel organizer naming convention.
+- Specialist routing and specialist document-scope dispatch are intentionally conservative and
+  recognize complete published or anchored family/target signatures. An unpublished synonym may
+  therefore use the generic calculator and generic `corpus_ref` scope instead of a relevant
+  specialist. This avoids applying a domain formula or dropping shared evidence after one incidental
+  substring, but it can leave specialist accuracy unavailable on a novel organizer naming convention.
 - Retrieval remains lexical BM25 without semantic reranking. Punctuation-normalized tokens fix exact
   identifier misses, but aliases, abbreviations and paraphrases can still rank the wrong chunk.
 - Official category and baseline documents describe per-entity `corpus_ref` subtrees, while the
