@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-28",
   "models": [
     {
       "id": "official-house",
@@ -24,6 +24,44 @@
       "supports_reasoning_control": true,
       "equivalent_to_official_snapshot": false,
       "notes": "Closest free development analogue found; provider may collect opted-in public prompts."
+    },
+    {
+      "id": "google-gemini-2.5-flash-lite",
+      "name": "gemini-2.5-flash-lite",
+      "provider": "Google Gemini Developer API",
+      "catalog_context_length": 1048576,
+      "free_tier_input": true,
+      "free_tier_output": true,
+      "thinking_default": false,
+      "thinking_disable_parameter": "generationConfig.thinkingConfig.thinkingBudget=0",
+      "official_evaluation_accessible": false,
+      "role": "default quota-conscious development extractor",
+      "notes": "Use for bounded JSON and interface work; stronger behavior than a small-model stress proxy is possible."
+    },
+    {
+      "id": "google-gemma-4-26b-a4b-it",
+      "name": "gemma-4-26b-a4b-it",
+      "provider": "Google Gemini Developer API",
+      "parameters_total": "25.2B",
+      "parameters_active": "3.8B",
+      "catalog_context_length": 262144,
+      "free_tier_input": true,
+      "free_tier_output": true,
+      "paid_api_tier_available": false,
+      "official_evaluation_accessible": false,
+      "role": "small-active-parameter stress model",
+      "notes": "Use when testing weak-model robustness; reasoning can consume output tokens, so it is not the routine quota-saving default."
+    },
+    {
+      "id": "google-gemini-3.1-flash-lite",
+      "name": "gemini-3.1-flash-lite",
+      "provider": "Google Gemini Developer API",
+      "catalog_context_length": 1048576,
+      "free_tier_input": true,
+      "free_tier_output": true,
+      "official_evaluation_accessible": false,
+      "role": "secondary current-generation compatibility check",
+      "notes": "Do not spend quota on routine duplicate tests while 2.5 Flash-Lite satisfies the experiment."
     }
   ]
 }

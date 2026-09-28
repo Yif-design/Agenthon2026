@@ -1,5 +1,23 @@
 # Research log
 
+## 2026-09-28: free development model and quota policy
+
+Official documentation is sufficient for initial model selection, so no multi-model token benchmark
+was run. The House model thinks by default and permits per-request disabling. The existing controlled
+House-family experiment remains the decision evidence for production: thinking did not change the
+final label, increased completion tokens from 213 to 2,143, and failed to reach parseable JSON under
+the 700-token extraction cap. Production therefore keeps thinking off unless a task-specific A/B
+shows a scored benefit.
+
+Google documents Gemini 2.5 Flash-Lite as non-thinking by default and offers free-tier input/output;
+it is now the default quota-conscious development extractor. Gemma 4 26B A4B is free through the
+Gemini API and activates 3.8B of 25.2B parameters, making it useful for weak-model stress tests, but
+its parameter efficiency does not imply lower token consumption. OpenRouter remains the closest
+exact-family analogue, but its Free plan currently advertises only 50 requests/day. It is reserved
+for preregistered House-behavior comparisons, while deterministic replays and Gemini Flash-Lite cover
+routine development. Details and source links are in `docs/model-api-notes.md`; registries now record
+both providers without storing credentials.
+
 ## 2026-09-26
 
 ### Official findings

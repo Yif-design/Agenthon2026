@@ -26,6 +26,21 @@
       "official_evaluation_accessible": false
     },
     {
+      "id": "google-gemini",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+      "credential": "git-ignored project secret",
+      "credential_validated": true,
+      "validated_at": "2026-09-28",
+      "connectivity_status": 200,
+      "free_tier_supported": true,
+      "billing_status_programmatically_confirmed": false,
+      "active_quota_source": "Google AI Studio rate-limit page",
+      "stable_public_daily_request_limit": null,
+      "default_development_model": "gemini-2.5-flash-lite",
+      "small_model_stress_model": "gemma-4-26b-a4b-it",
+      "official_evaluation_accessible": false
+    },
+    {
       "id": "huggingface-official-nli",
       "endpoint": "https://router.huggingface.co/hf-inference/models/",
       "authentication_source": "HF_TOKEN",
