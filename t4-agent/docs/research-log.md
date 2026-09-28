@@ -1,5 +1,25 @@
 # Research log
 
+## 2026-09-29: generic fraction-to-percent scaling — rejected
+
+The generic selector recognizes percent, basis-point and USD identifiers but does not normalize
+explicit `_fraction` or `_decimal` encodings. A no-model transformed-schema candidate multiplied
+those fields by 100 for percent targets and divided explicit percent fields by 100 for fraction or
+decimal targets. It never inferred scale from value magnitude and left bare ratios and unspecified
+units untouched.
+
+The candidate exactly restored the native percent-encoded CPI and COT benchmark metrics, passed all
+seven bidirectional conversion and isolation controls, and left auction, macro-revision and FOMC
+results exactly unchanged. It still failed the real-outcome adoption gate: on the fraction-encoded
+CPI test, MAE rose from 1.2856 without conversion to 1.4923 after correct conversion; on COT it rose
+from 4.9979 to 6.9628 while rank correlation was unchanged. The near-zero wrong-scale values happened
+to outperform full persistence because recent changes are weak forecasts of future changes.
+
+Production was not modified. The result shows that unit normalization cannot be separated from the
+generic change-baseline model and should not be adopted only for semantic neatness. No model API or
+local NLI ran. Script: `evaluation/experiments/generic_fraction_scale_screen.py`. Report:
+`evaluation/reports/generic-fraction-scale-screen-v1.json`.
+
 ## 2026-09-29: quote-local citation context — rejected before production
 
 The official shared and Track 4 main commits, toolkit `v2.4.4` and open Track 4 Issues 1, 2, 13,
