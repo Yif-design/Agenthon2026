@@ -19,9 +19,13 @@
   width-minimal within the selected grid, but it should not be interpreted as a tight economic
   confidence bound.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
-- The generic hidden-family path now has target-field, numeric-noise, row-order, change-vs-level and
-  bounded scalar-feature visibility tests, but no broad real-outcome benchmark. Input reachability
-  does not prove prediction accuracy. Schema query terms now decompose common identifier styles,
+- The generic hidden-family path now has target-field, numeric-noise, row-order, change-vs-level,
+  explicit-unit and bounded scalar-feature visibility tests. A transformed-schema benchmark covers
+  five real-outcome datasets across regression and ranking, but it is not a hidden-unit benchmark
+  and does not cover generic classification accuracy. Input reachability does not prove prediction
+  accuracy. Unit compatibility is enforced only when both identifiers explicitly declare a known
+  percent, basis-point or USD unit; equivalent scale encodings such as decimals versus percentages
+  remain unresolved. Schema query terms now decompose common identifier styles,
   but retrieval remains lexical and cannot infer true synonyms or domain meaning. For opaque
   schemas, the fallback reads only the first 512 prompt characters and retains at most 24 lexical
   terms, so a late definition, indirect synonym or boilerplate-looking domain term can still be

@@ -1,5 +1,15 @@
 # Dataset provenance
 
+## Generic explicit-unit transformed-schema benchmark
+
+`evaluation/reports/generic-unit-compatibility-v1.json` combines five previously recorded official
+or first-party historical panels: BLS/FRED ALFRED CPI vintages, CFTC legacy COT, U.S. Treasury
+auctions, ALFRED macro revisions and Federal Reserve/Treasury FOMC yield events. The report pins the
+SHA-256 of every source dataset and reuses their existing cutoff-safe time splits. It changes only
+the feature and target identifiers presented to the generic selector; numeric features and realized
+outcomes are unchanged. The transformed cases test unknown-schema behavior and must not be described
+as hidden competition units.
+
 ## Retired public practice outcome reconstruction
 
 - Local file: `evaluation/realized/public_all_realized.json` (git-ignored)

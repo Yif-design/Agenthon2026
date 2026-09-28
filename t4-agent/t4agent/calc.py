@@ -39,6 +39,18 @@ TARGET_NOISE_TOKENS = {
     "value",
     "metric",
 }
+SCALAR_UNIT_ALIASES = {
+    "bp": "basis_points",
+    "bps": "basis_points",
+    "basispoint": "basis_points",
+    "basispoints": "basis_points",
+    "pct": "percent",
+    "percent": "percent",
+    "percentage": "percent",
+    "usd": "usd",
+    "dollar": "usd",
+    "dollars": "usd",
+}
 
 
 def numeric_facts(entity: dict) -> dict[str, float]:
@@ -61,6 +73,8 @@ def select_default_point(
     entity: dict,
     row_index: int,
     row_count: int,
+    *,
+    enforce_unit_compatibility: bool = True,
 ) -> tuple[float, str | None, str]:
     """Choose a generic baseline without mixing unrelated numeric metadata."""
     nums = numeric_facts(entity)
@@ -75,11 +89,15 @@ def select_default_point(
         return 2.5, None, "known_constant"
 
     target_tokens = _field_tokens(target_name) - TARGET_NOISE_TOKENS
+    target_units = _explicit_units(target_name)
     requires_change = target_type in {"regression", "ranking"} and bool(target_tokens & CHANGE_TOKENS)
     candidates: list[tuple[int, str, float]] = []
     eligible: list[tuple[str, float]] = []
     for key, value in nums.items():
         field_tokens = _field_tokens(key)
+        field_units = _explicit_units(key)
+        if enforce_unit_compatibility and target_units and field_units and target_units.isdisjoint(field_units):
+            continue
         overlap = target_tokens & field_tokens
         if requires_change and not field_tokens & CHANGE_TOKENS:
             continue
@@ -105,6 +123,14 @@ def select_default_point(
 def _field_tokens(value: str) -> set[str]:
     separated = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", value).replace("_", " ")
     return {token.lower() for token in FIELD_TOKEN_RE.findall(separated)}
+
+
+def _explicit_units(value: str) -> set[str]:
+    return {
+        SCALAR_UNIT_ALIASES[token]
+        for token in _field_tokens(value)
+        if token in SCALAR_UNIT_ALIASES
+    }
 
 
 def interval_for(point: float | None, target_name: str, level: float) -> dict[str, float]:

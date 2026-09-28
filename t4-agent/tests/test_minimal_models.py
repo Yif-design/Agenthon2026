@@ -448,6 +448,33 @@ class MinimalModelTests(unittest.TestCase):
         self.assertIsNone(field)
         self.assertEqual(reason, "change_without_matching_baseline")
 
+    def test_generic_baseline_rejects_only_explicitly_incompatible_units(self) -> None:
+        mismatch = select_default_point(
+            "regression",
+            "future_curve_response_bps",
+            {"current_curve_response_pct": 4.5},
+            0,
+            1,
+        )
+        matching = select_default_point(
+            "regression",
+            "future_curve_response_bps",
+            {"current_curve_response_bps": 45.0},
+            0,
+            1,
+        )
+        unspecified = select_default_point(
+            "regression",
+            "future_curve_response",
+            {"current_curve_response": 4.5},
+            0,
+            1,
+        )
+
+        self.assertEqual(mismatch, (0.0, None, "no_unambiguous_baseline"))
+        self.assertEqual(matching, (45.0, "current_curve_response_bps", "target_token_match"))
+        self.assertEqual(unspecified, (4.5, "current_curve_response", "target_token_match"))
+
     def test_generic_ambiguous_unrelated_fields_use_neutral_baseline(self) -> None:
         point, field, reason = select_default_point(
             "regression",

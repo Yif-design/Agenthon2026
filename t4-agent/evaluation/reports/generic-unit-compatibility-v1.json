@@ -1,0 +1,160 @@
+{
+  "baseline_git_commit": "9ad1b7a7712b42aad0bb70de1e78acd32535c5a2",
+  "dataset_sha256": {
+    "auction": "1dd97882feb1a754fa4ade81f06d77bca871d3c5dae2f8e2922dec8628bfbb1a",
+    "cot": "a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e",
+    "cpi": "2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40",
+    "fomc": "dc15b069e70a2ae8221055a1d62ba0a40f653dbf4d461a6a296e497e5e5b148b",
+    "macro_revision": "1dfd5172b99834966a4410b36fcaf4eb26ee9354dcd85a1d82ecc60cec8ceb6c"
+  },
+  "decision": "accept",
+  "decision_rule": "Advance only if FOMC MAE improves, CPI/COT/auction/macro results are exactly unchanged, and all five unit controls pass. Production adoption also requires 122/122 tests, 11/11 byte-identical public outputs, zero validation errors, and 11/11 smoke admissibility.",
+  "experiment": "generic_explicit_unit_compatibility_v1",
+  "fomc_mae_improvement": 0.2936538461538465,
+  "hypothesis": "For unknown schemas, rejecting a numeric field only when both the target and field declare incompatible explicit units prevents scale errors without changing compatible or unspecified fields.",
+  "limitations": [
+    "This evaluates point selection, not citation entailment.",
+    "The transformed identifiers proxy unknown schemas; they are not hidden competition units.",
+    "No parameter is tuned on the reported test periods."
+  ],
+  "official_state": {
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "public_search_result": "No additional Agenthon Track 4 agent repository beyond the official repository.",
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_peeled_commit": "68bc878a740eb0040e70ddf0feab98405dca1d6d",
+    "toolkit_tag": "v2.4.4",
+    "toolkit_tag_object": "1bc80b542359832fd50341992459687456459450",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "outcome_results": {
+    "baseline": {
+      "auction": {
+        "mae": 0.0884761904761905,
+        "rmse": 0.1102637530564566,
+        "rows": 70,
+        "selection_reasons": {
+          "target_token_match": 70
+        }
+      },
+      "cot": {
+        "groups": 96,
+        "mae": 6.96284294229097,
+        "mean_spearman": -0.04141414141414141,
+        "rows": 960,
+        "selection_reasons": {
+          "target_token_match": 960
+        }
+      },
+      "cpi": {
+        "mae": 1.4923047994067637,
+        "rmse": 3.356960949054327,
+        "rows": 264,
+        "selection_reasons": {
+          "target_token_match": 264
+        }
+      },
+      "fomc": {
+        "mae": 14.518012820512821,
+        "rmse": 20.513986363904543,
+        "rows": 156,
+        "selection_reasons": {
+          "target_token_match": 156
+        }
+      },
+      "macro_revision": {
+        "mae": 885.170717173913,
+        "rmse": 2668.137287838649,
+        "rows": 460,
+        "selection_reasons": {
+          "target_token_match": 460
+        }
+      }
+    },
+    "candidate": {
+      "auction": {
+        "mae": 0.0884761904761905,
+        "rmse": 0.1102637530564566,
+        "rows": 70,
+        "selection_reasons": {
+          "target_token_match": 70
+        }
+      },
+      "cot": {
+        "groups": 96,
+        "mae": 6.96284294229097,
+        "mean_spearman": -0.04141414141414141,
+        "rows": 960,
+        "selection_reasons": {
+          "target_token_match": 960
+        }
+      },
+      "cpi": {
+        "mae": 1.4923047994067637,
+        "rmse": 3.356960949054327,
+        "rows": 264,
+        "selection_reasons": {
+          "target_token_match": 264
+        }
+      },
+      "fomc": {
+        "mae": 14.224358974358974,
+        "rmse": 20.042422956037974,
+        "rows": 156,
+        "selection_reasons": {
+          "no_unambiguous_baseline": 156
+        }
+      },
+      "macro_revision": {
+        "mae": 885.170717173913,
+        "rmse": 2668.137287838649,
+        "rows": 460,
+        "selection_reasons": {
+          "target_token_match": 460
+        }
+      }
+    }
+  },
+  "production_gates": {
+    "local_llm_run": false,
+    "model_api_calls": 0,
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "smoke_admissible_units": 11,
+    "temporary_dependency_policy": "pytest and smoke dependencies installed under /tmp with PIP_NO_CACHE_DIR=1 and removed after each run; no project venv",
+    "tests": "122 passed",
+    "validation_error_units": 0
+  },
+  "reason": "The guard removes an explicit dimensional mismatch, improves held-out FOMC error, leaves four other real-outcome controls and every public output unchanged, and passes all reliability gates.",
+  "schema_version": 1,
+  "scope": "L2 unknown-family scalar selection across regression and ranking.",
+  "screen_report": "evaluation/reports/generic-unit-compatibility-screen-v1.json",
+  "screen_report_sha256": "2a1cc6da722d96a67b01286af7182ba7dbf3b68b444b33ed8decf08212d1fbea",
+  "synthetic_checks": {
+    "preserve_matching_bps": true,
+    "preserve_matching_pct": true,
+    "preserve_unspecified_unit": true,
+    "reject_bps_for_pct": true,
+    "reject_pct_for_bps": true
+  },
+  "time_splits": {
+    "auction": "2024 confirmation rows using prior same-tenor observations only",
+    "cot": "2022-2023 test groups",
+    "cpi": "2022-2023 test rows",
+    "fomc": "2019-2021 test events",
+    "macro_revision": "2021-2022 test rows"
+  },
+  "unchanged_control_domains": [
+    "cpi",
+    "cot",
+    "auction",
+    "macro_revision"
+  ]
+}

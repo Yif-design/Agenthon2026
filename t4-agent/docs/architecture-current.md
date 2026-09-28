@@ -157,7 +157,11 @@ every number in an entity row or the row's input position. Field names are match
 target name, with unrelated identifiers, dates, market-cap fields and other numeric metadata kept
 out of the fallback. A change/delta/growth target with no matching change field uses a neutral zero
 rather than reusing a level field. If exactly one non-metadata numeric field is available, it remains
-the fallback. The selected field and reason are retained in the deterministic derivation trace.
+the fallback. When both the target and a candidate field explicitly declare units, incompatible
+percent, basis-point or USD units prevent that field from being selected. Missing units are not
+inferred. This avoids treating a current curve level in percent as a future curve response in basis
+points while preserving compatible and unspecified schemas. The selected field and reason are
+retained in the deterministic derivation trace.
 
 For unknown families only, the model packet and BM25 query also retain official scalar table
 features whose names could not be known in advance: finite numbers, booleans, categorical strings

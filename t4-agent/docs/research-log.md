@@ -1,5 +1,37 @@
 # Research log
 
+## 2026-09-28: generic explicit-unit compatibility — accepted
+
+The official state check remained unchanged: shared main `95a0de3`, Track 4 main `7b2bce1`, toolkit
+tag `v2.4.4` (annotated object `1bc80b5`, peeled commit `68bc878`) and open Track 4 Issues 1, 2, 13,
+14 and 16. A fresh GitHub repository search returned no additional public Agenthon Track 4 agent
+implementation beyond the official repository, so no participant code was copied.
+
+The generic scalar selector previously removed `pct` and `bps` from semantic target matching but did
+not preserve them as units. A transformed unknown schema could therefore match
+`future_curve_response_bps` to `current_curve_response_pct` on the shared word `curve` and use a
+percent level as a basis-point change. The accepted guard rejects a field only when both identifiers
+explicitly declare incompatible percent, basis-point or USD units. It does not infer missing units.
+
+Five cutoff-safe real-outcome datasets formed the A/B screen. On 156 FOMC test rows, blocking the
+percent-to-basis-point mismatch reduced MAE from 14.5180 to 14.2244 bps and RMSE from 20.5140 to
+20.0424. CPI (264 rows), COT (96 groups / 960 rows), 2024 Treasury auctions (70 rows) and macro
+revision (460 rows) were exactly unchanged. Five synthetic controls covered both mismatch
+directions, compatible percent and basis-point fields, and unspecified units.
+
+Python 3.13 passed 122 tests. A clean archive of baseline `9ad1b7a` and the candidate produced
+byte-identical offline answers for all 11 public units and 78 rows with no validation errors; a
+fresh source-pinned toolkit/Track 4 smoke run admitted 11/11. Temporary pytest and smoke dependencies
+were installed under `/tmp` with pip caching disabled and removed after each run; no project virtual
+environment, local language model or model API was used. Reports:
+`evaluation/reports/generic-unit-compatibility-screen-v1.json` and
+`evaluation/reports/generic-unit-compatibility-v1.json`.
+
+References:
+
+- <https://github.com/Agenthon-2026/track4-analysis-public>
+- <https://github.com/Agenthon-2026/Agenthon2026-public/releases/tag/v2.4.4>
+
 ## 2026-09-28: free development model and quota policy
 
 Official documentation is sufficient for initial model selection, so no multi-model token benchmark

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "baseline_commit": "0cf7a7fe40f2d5184f99140c5064511b8de6f7e2",
   "official_toolkit_version": "2.4.4",
   "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
@@ -132,5 +132,24 @@
       "eps_yoy_time_forward_report": "evaluation/reports/eps-yoy-interval-calibration-v1.json",
       "public_diagnostic_report": "evaluation/reports/eps-yoy-interval-public-diagnostic-v1.json"
     }
-  ]
+  ],
+  "cross_family_outcome_benchmarks": {
+    "generic_explicit_unit_compatibility_v1": {
+      "path": "evaluation/reports/generic-unit-compatibility-v1.json",
+      "sha256": "dcf32f597a20f5acac8bd520a70485df2c3495f821832d68c912da3bdcd0c4b8",
+      "target_types": [
+        "regression",
+        "ranking"
+      ],
+      "domains": [
+        "cpi",
+        "cot",
+        "auction",
+        "macro_revision",
+        "fomc"
+      ],
+      "role": "transformed_unknown_schema_real_outcome_test",
+      "decision": "accept"
+    }
+  }
 }
