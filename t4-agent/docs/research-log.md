@@ -1323,3 +1323,25 @@ bytes retain the baseline toolkit 2.4.4 schema and smoke result. No model was ca
 `evaluation/experiments/bm25_recency_tiebreak_screen.py`. Reports:
 `evaluation/reports/bm25-recency-tiebreak-screen-v1.json` and
 `evaluation/reports/bm25-recency-tiebreak-v1.json`.
+
+### Context-limited batch splitting — accepted
+
+The earlier context-local error handling let later batches continue but still discarded every row
+in the oversized batch. A no-model size screen recorded the actual production-shaped public prompts
+with batch size three and one. Batch prompts ranged from 4,410 to 41,167 characters; single-row
+prompts ranged from 4,410 to 16,211. At the 16k, 24k and 32k deterministic proxies, respectively
+15, 17 and 15 entities sat in a batch that exceeded the proxy while their individual prompt fit.
+No authoritative House character or token ceiling is inferred from these proxies.
+
+The accepted recovery records whether the immediately preceding API failure was an explicit context
+limit. Only a multi-row batch with that failure is retried as single rows. Ordinary failures do not
+split, and a failed single row is not recursively retried. Fault injection improved recovery from
+0/3 to 3/3 rows after one oversized batch, while the existing 25-request test still blocks call 26.
+All attempts remain under the shared deadline and four-failure circuit.
+
+Python 3.13 passed 119 tests. A clean archive of baseline commit `f948922` and the candidate produced
+byte-identical offline answers for all 11 public units and 78 rows, with zero validation-error units;
+the same bytes retain the baseline toolkit 2.4.4 schema and smoke result. No real model was called.
+Screen: `evaluation/experiments/context_batch_split_size_screen.py`. Reports:
+`evaluation/reports/context-batch-split-size-screen-v1.json` and
+`evaluation/reports/context-batch-split-recovery-v1.json`.

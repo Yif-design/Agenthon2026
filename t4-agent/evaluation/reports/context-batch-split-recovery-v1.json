@@ -1,0 +1,85 @@
+{
+  "baseline_git_commit": "f9489224e6fa44850dce15659de4a90406d01312",
+  "decision": "accept",
+  "decision_rule": "Require recoverable public prompt-size windows at two or more proxies; then recover 3/3 rows after one explicit context failure, never split ordinary or single-row failures, preserve the 25-call hard cap, pass all tests, and keep all public offline outputs byte-identical.",
+  "experiment": "context_batch_split_recovery_v1",
+  "fault_injection": {
+    "call_26_blocked": true,
+    "context_limited_three_row_batch": {
+      "baseline_recovered": 0,
+      "candidate_recovered": 3,
+      "network_opportunities": 4
+    },
+    "default_request_cap": 25,
+    "non_context_failure_split": false,
+    "single_context_failure_retried": false,
+    "successful_path_requests_added": 0
+  },
+  "hypothesis": "A batch-local context-limit failure can often be recovered by retrying its rows individually within the existing request and deadline caps.",
+  "layer": "L1/L2 cross-family House context recovery",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "official_snapshot": {
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_tag": "v2.4.4",
+    "toolkit_tag_object": "1bc80b542359832fd50341992459687456459450",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "track4_open_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ]
+  },
+  "reason": "All three proxy ceilings expose public recovery opportunities; deterministic fault injection recovers every row only for explicit multi-row context errors, preserves all global bounds and normal paths, and leaves all public offline bytes unchanged.",
+  "schema_version": 1,
+  "size_screen": {
+    "batch_prompt_chars": {
+      "groups": 9,
+      "maximum": 41167,
+      "minimum": 4410
+    },
+    "caveat": "Character limits are deterministic context proxies; no authoritative House token ceiling is published.",
+    "qualifying_thresholds": 3,
+    "report": "evaluation/reports/context-batch-split-size-screen-v1.json",
+    "single_prompt_chars": {
+      "maximum": 16211,
+      "minimum": 4410,
+      "rows": 20
+    },
+    "thresholds": {
+      "16000": {
+        "oversized_batches": 6,
+        "recoverable_entities": 15
+      },
+      "24000": {
+        "oversized_batches": 6,
+        "recoverable_entities": 17
+      },
+      "32000": {
+        "oversized_batches": 5,
+        "recoverable_entities": 15
+      }
+    }
+  },
+  "validation": {
+    "compileall": "passed",
+    "git_diff_check": "passed after final normalization",
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "Candidate offline bytes equal the f948922 baseline already verified by toolkit 2.4.4.",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "119 passed",
+    "validation_error_units": 0
+  }
+}

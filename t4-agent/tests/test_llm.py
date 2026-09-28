@@ -326,8 +326,10 @@ def test_context_length_400_falls_back_locally_and_later_batch_recovers(monkeypa
     monkeypatch.setattr("urllib.request.urlopen", context_then_success)
     llm = LLM()
     assert llm.chat_json("system", "oversized batch") is None
+    assert llm.last_failure_kind == "context_length"
     assert not llm.usage.circuit_open
     assert llm.chat_json("system", "shorter batch") == {"signals": {}}
+    assert llm.last_failure_kind is None
     assert calls == 2
     assert llm.consecutive_failures == 0
 
@@ -343,6 +345,7 @@ def test_unknown_http_400_still_opens_circuit(monkeypatch) -> None:
     monkeypatch.setattr("urllib.request.urlopen", invalid_request)
     llm = LLM()
     assert llm.chat_json("system", "bad request") is None
+    assert llm.last_failure_kind == "other"
     assert llm.usage.calls == 1
     assert llm.usage.circuit_open
     assert llm.usage.disabled_reason == "non-retriable model request HTTP 400"

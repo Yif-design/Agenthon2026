@@ -58,6 +58,7 @@ class LLM:
         )
         self.deadline_monotonic = deadline_monotonic
         self.consecutive_failures = 0
+        self.last_failure_kind: str | None = None
         self.usage = Usage()
         self.enabled = bool(self.endpoint) if enabled is None else bool(enabled and self.endpoint)
         if self.official_mode and self.enabled and (not self.model or not self.model_token):
@@ -81,6 +82,7 @@ class LLM:
         return None
 
     def chat_json(self, system: str, user: str, max_tokens: int = 700) -> dict | None:
+        self.last_failure_kind = None
         if not self._can_call():
             return None
         body = {
@@ -138,6 +140,7 @@ class LLM:
                 content = (payload.get("choices") or [{}])[0].get("message", {}).get("content") or ""
                 parsed = parse_json_object(content)
                 if parsed is None:
+                    self.last_failure_kind = "other"
                     self._record_failure("model returned content without one JSON object")
                     if attempt + 1 < self.max_retries:
                         continue
@@ -146,12 +149,14 @@ class LLM:
                 return parsed
             except urllib.error.HTTPError as exc:
                 detail = exc.read().decode("utf-8", "replace")[:240]
+                self.last_failure_kind = "other"
                 self._record_failure(f"HTTP {exc.code}: {detail}")
                 if exc.code in (401, 403):
                     self._open_circuit(f"House authorization/route refused with HTTP {exc.code}")
                     return None
                 if 400 <= exc.code < 500 and exc.code != 429:
                     if exc.code == 400 and _is_context_length_error(detail):
+                        self.last_failure_kind = "context_length"
                         # Retrying the same oversized batch cannot help, but a later
                         # batch may be shorter. Preserve the shared failure threshold
                         # instead of disabling the whole unit after one local error.
@@ -170,6 +175,7 @@ class LLM:
                     body.pop("response_format", None)
                     continue
             except Exception as exc:  # noqa: BLE001
+                self.last_failure_kind = "other"
                 self._record_failure(f"{type(exc).__name__}: {str(exc)[:180]}")
             if attempt + 1 < self.max_retries and self._remaining_seconds() > 1.0:
                 time.sleep(min(retry_delay, max(0.0, self._remaining_seconds() - 1.0)))

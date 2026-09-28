@@ -2,8 +2,9 @@
 
 - No authoritative House serving input/context ceiling is published. Public production-shaped
   prompts currently range from 4,410 to 41,167 characters. The agent does not impose an arbitrary
-  fixed character cap; an explicit context-length HTTP 400 falls back for that batch while allowing
-  later shorter batches to continue under the existing circuit and request limits.
+  fixed character cap; an explicit context-length HTTP 400 splits a multi-row batch into single-row
+  attempts while allowing later shorter batches to continue under the existing limits. A single-row
+  prompt that still exceeds the serving limit uses the deterministic fallback.
 - Official Development House access is not yet open; OpenRouter is only an analogue.
 - All eleven public units have a proven passing lower bound under the local official two-model NLI
   path, but this does not establish hidden-unit faithfulness. The local CPU/runtime package set is
@@ -48,10 +49,11 @@
   development diagnostics. The results do not cover every possible direct prompt or learned blend,
   but further batch-size tuning is not justified without a new independent hypothesis and holdout.
 - Public-corpus free inference opts into provider data collection and must never be used for private data.
-- A malformed batch can now fall back while later batches continue, so a partially failing provider
-  may consume more attempts than the former eager circuit policy. The 25-call hard cap, four-failure
-  circuit and model-phase deadline still bound this behavior. With batch size three, more than 75
-  model-required rows necessarily use the deterministic fallback, and retries can lower that number.
+- A malformed batch can now fall back while later batches continue. An explicit context-limit error
+  on a multi-row batch can consume up to one failed batch attempt plus one attempt per row. The
+  25-call hard cap, four-failure circuit and model-phase deadline still bound this behavior, so
+  recovery may spend slots that would otherwise serve later rows. With batch size three, more than
+  75 model-required rows necessarily use the deterministic fallback even on a clean route.
 - The COT mean-reversion coefficient is deliberately simple. It improved a 96-date time-forward test,
   but its mean rank correlation was only 0.0379 and may vary across market regimes.
 - The auction model uses only recent same-tenor BTC outcomes. Offering size, bidder composition and

@@ -564,6 +564,75 @@ def test_generic_entities_are_batched_and_mapped_by_item_id(monkeypatch) -> None
     assert [row.prediction["point_forecast"] for row in results] == [float(i + 1) for i in range(7)]
 
 
+def test_context_limited_batch_retries_each_row_individually(monkeypatch) -> None:
+    entities = [{"entity_id": f"E{i}", "latest_value": float(i + 1)} for i in range(3)]
+    task = make_task("unseen_family", "unknown_metric", entities)
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "3")
+
+    class FakeLLM:
+        calls = 0
+        last_failure_kind = None
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> dict | None:
+            self.calls += 1
+            if "REQUEST_JSON:\n" in user:
+                self.last_failure_kind = "context_length"
+                return None
+            self.last_failure_kind = None
+            return {"signals": {"directional_signal": {"level": 0}}}
+
+    llm = FakeLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+
+    assert llm.calls == 4
+    assert all(row.raw_model is not None for row in results)
+    assert all(row.model_prompt and "REQUEST_JSON:\n" not in row.model_prompt for row in results)
+
+
+def test_non_context_batch_failure_does_not_split(monkeypatch) -> None:
+    entities = [{"entity_id": f"E{i}", "latest_value": float(i + 1)} for i in range(3)]
+    task = make_task("unseen_family", "unknown_metric", entities)
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "3")
+
+    class FakeLLM:
+        calls = 0
+        last_failure_kind = "other"
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> None:
+            self.calls += 1
+            self.last_failure_kind = "other"
+            return None
+
+    llm = FakeLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+
+    assert llm.calls == 1
+    assert all(row.raw_model is None for row in results)
+
+
+def test_single_context_failure_is_not_retried(monkeypatch) -> None:
+    task = make_task("unseen_family", "unknown_metric", [{"entity_id": "E0", "latest_value": 1.0}])
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "3")
+
+    class FakeLLM:
+        calls = 0
+        last_failure_kind = None
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> None:
+            self.calls += 1
+            self.last_failure_kind = "context_length"
+            return None
+
+    llm = FakeLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+
+    assert llm.calls == 1
+    assert results[0].raw_model is None
+
+
 def test_batch_unpack_rejects_disagreeing_item_and_entity_ids() -> None:
     corpus = IndexedCorpus([], {}, {})
     rows = [

@@ -117,9 +117,12 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
                 prompt_text = _batch_prompt(task, batch, spec)
                 parsed = llm.chat_json(SYSTEM, prompt_text, max_tokens=350 * len(batch) + 300)
                 unpacked = _unpack_batch(parsed, batch)
+                prompts = {row.index: prompt_text for row in batch}
+                if parsed is None and getattr(llm, "last_failure_kind", None) == "context_length":
+                    unpacked, prompts = _retry_batch_as_single_rows(task, batch, spec, llm)
             for row in batch:
                 model_outputs[row.index] = unpacked.get(row.index)
-                model_prompts[row.index] = prompt_text
+                model_prompts[row.index] = prompts.get(row.index, prompt_text) if len(batch) > 1 else prompt_text
 
     results: list[RowResult] = []
     for row in prepared:
@@ -140,6 +143,21 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
         )
         results.append(result)
     return _normalize_ranking(task, results)
+
+
+def _retry_batch_as_single_rows(
+    task: Task,
+    rows: list[PreparedRow],
+    spec: FamilySpec,
+    llm: LLM,
+) -> tuple[dict[int, dict[str, Any] | None], dict[int, str]]:
+    outputs: dict[int, dict[str, Any] | None] = {}
+    prompts: dict[int, str] = {}
+    for row in rows:
+        prompt = _prompt(task, row.entity, row.chunks, spec)
+        outputs[row.index] = llm.chat_json(SYSTEM, prompt, max_tokens=700)
+        prompts[row.index] = prompt
+    return outputs, prompts
 
 
 def _batch_prompt(task: Task, rows: list[PreparedRow], spec: FamilySpec) -> str:

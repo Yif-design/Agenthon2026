@@ -45,10 +45,11 @@ non-retriable client errors, the request cap and the deadline still stop immedia
 invalid JSON or trace-write failure leaves the already-written baseline answer intact.
 
 An HTTP 400 that explicitly identifies a context-length or token-limit overflow is local to that
-batch: retrying the same prompt is skipped, but a later shorter batch may still run. An unknown HTTP
-400 remains globally non-retriable, and four consecutive explicit context failures still open the
-shared circuit. This reacts to the serving route's actual limit without inventing an unpublished
-character or token ceiling.
+batch: retrying the same prompt is skipped. A multi-entity batch is then attempted once per entity
+with the shorter single-row prompt; a single-row failure is not recursively retried. Later batches
+may still run. Every recovery attempt remains inside the same 25-request cap, four-failure circuit
+and model-phase deadline. An unknown HTTP 400 remains globally non-retriable. This reacts to the
+serving route's actual limit without inventing an unpublished character or token ceiling.
 
 An HTTP 429 is retried only after the server's `Retry-After` delay when that delay fits both the
 30-second retry ceiling and the remaining model-phase deadline. Both RFC forms, integer seconds and
