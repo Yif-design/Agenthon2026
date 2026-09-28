@@ -1072,3 +1072,37 @@ References:
 
 - <https://github.com/Agenthon-2026/track4-analysis-public>
 - <https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/retriever.py>
+
+### Explicit-zero default handling — rejected before code
+
+A shared-code screen checked whether three `number(...) or default` call sites produced a measurable
+cross-target bug when an entity explicitly supplied numeric zero. EPS-consensus and post-earnings
+strong positive signals already produced the correct positive class under a zero threshold, although
+the fallback changed their forecast magnitude. Only a synthetic zero-year rate row changed the
+existing maturity-decay result, from the default ten-year 9 bps to the short-end 15 bps.
+
+That is one regression boundary case, not evidence of a cross-family improvement. No real-outcome
+panel establishes that changing the two zero-threshold point magnitudes helps. The candidate was
+therefore rejected before production code; the current calculators and all public outputs remain
+unchanged. Report: `evaluation/reports/explicit-zero-default-screen-v1.json`.
+
+Reference: <https://github.com/Agenthon-2026/track4-analysis-public>.
+
+### Post-earnings ticker prior — rejected
+
+A new 696-event 2024–2025 confirmation panel tested whether same-company historical abnormal-return
+priors could replace the zero/flat fallback. The candidate grid was selected on 2021 after training
+on 2018–2020. It selected the mean of the ticker's four most recent historical reactions, converted
+to the existing conservative +/-1.25-point forecast step. The previously inspected 2022–2023 rows
+were diagnostic only. The accepted zero-centered `[-8.3, 8.3]` fallback interval was held fixed, so
+the point candidate could not improve through interval calibration.
+
+On untouched 2024 events, accuracy rose from 0.1813 to 0.3428, but MAE worsened from 5.2506 to
+5.3321. On untouched 2025 events, accuracy rose from 0.1399 to 0.3353, but MAE worsened from 5.4683
+to 5.5183. The pre-registered rule required both years to preserve or improve accuracy and MAE.
+The candidate is rejected; no ticker artifact or production change was added, and no NLI run was
+needed.
+
+Scripts: `evaluation/experiments/build_postearn_confirmation.py` and
+`evaluation/experiments/postearn_ticker_prior.py`. Report:
+`evaluation/reports/postearn-ticker-prior-v1.json`.

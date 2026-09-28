@@ -1,0 +1,129 @@
+{
+  "experiment_id": "postearn_ticker_prior_v1",
+  "date": "2026-09-28",
+  "baseline_git_commit": "d252c2121e6236ed1bb2d96f53c2cf426ad69fdd",
+  "hypothesis": "A same-ticker historical abnormal-return prior can improve the zero/flat fallback when emitted as a conservative threshold-crossing point.",
+  "history_dataset": "evaluation/datasets/postearn/panel100_2018_2023.json",
+  "confirmation_dataset": "evaluation/datasets/postearn/panel88_confirmation_2024_2025.json",
+  "selection": {
+    "train": "2018-2020",
+    "development": "2021",
+    "candidate_results": [
+      {
+        "method": "global_mean",
+        "strength": 0,
+        "rows": 353,
+        "accuracy": 0.22662889518413598,
+        "mae_pct": 3.794158088782129,
+        "coverage_fixed_interval": 0.8895184135977338
+      },
+      {
+        "method": "ticker_mean",
+        "strength": 2,
+        "rows": 353,
+        "accuracy": 0.3371104815864023,
+        "mae_pct": 3.8492774220996324,
+        "coverage_fixed_interval": 0.8895184135977338
+      },
+      {
+        "method": "ticker_mean",
+        "strength": 4,
+        "rows": 353,
+        "accuracy": 0.32011331444759206,
+        "mae_pct": 3.8484194793337654,
+        "coverage_fixed_interval": 0.8895184135977338
+      },
+      {
+        "method": "ticker_mean",
+        "strength": 8,
+        "rows": 353,
+        "accuracy": 0.3059490084985836,
+        "mae_pct": 3.8303191644473236,
+        "coverage_fixed_interval": 0.8895184135977338
+      },
+      {
+        "method": "ticker_mean",
+        "strength": 16,
+        "rows": 353,
+        "accuracy": 0.2747875354107649,
+        "mae_pct": 3.8471661410579876,
+        "coverage_fixed_interval": 0.8895184135977338
+      },
+      {
+        "method": "ticker_median",
+        "strength": 0,
+        "rows": 353,
+        "accuracy": 0.3626062322946176,
+        "mae_pct": 3.83968714748604,
+        "coverage_fixed_interval": 0.8895184135977338
+      },
+      {
+        "method": "ticker_recent4",
+        "strength": 0,
+        "rows": 353,
+        "accuracy": 0.37393767705382436,
+        "mae_pct": 3.8488458223209894,
+        "coverage_fixed_interval": 0.8895184135977338
+      }
+    ],
+    "selected": {
+      "method": "ticker_recent4",
+      "strength": 0,
+      "rows": 353,
+      "accuracy": 0.37393767705382436,
+      "mae_pct": 3.8488458223209894,
+      "coverage_fixed_interval": 0.8895184135977338
+    }
+  },
+  "previously_inspected_diagnostic_2022_2023": {
+    "baseline": {
+      "rows": 701,
+      "accuracy": 0.14835948644793154,
+      "mae_pct": 5.193506750673899,
+      "coverage_fixed_interval": 0.8159771754636234
+    },
+    "candidate": {
+      "rows": 701,
+      "accuracy": 0.3281027104136947,
+      "mae_pct": 5.297039600607751,
+      "coverage_fixed_interval": 0.8159771754636234
+    },
+    "used_for_selection": false
+  },
+  "untouched_confirmation": {
+    "2024": {
+      "baseline": {
+        "rows": 353,
+        "accuracy": 0.1813031161473088,
+        "mae_pct": 5.250644836952978,
+        "coverage_fixed_interval": 0.8016997167138811
+      },
+      "candidate": {
+        "rows": 353,
+        "accuracy": 0.34277620396600567,
+        "mae_pct": 5.332091360101013,
+        "coverage_fixed_interval": 0.8016997167138811
+      }
+    },
+    "2025": {
+      "baseline": {
+        "rows": 343,
+        "accuracy": 0.13994169096209913,
+        "mae_pct": 5.468327262971276,
+        "coverage_fixed_interval": 0.7900874635568513
+      },
+      "candidate": {
+        "rows": 343,
+        "accuracy": 0.33527696793002915,
+        "mae_pct": 5.518257815358572,
+        "coverage_fixed_interval": 0.7900874635568513
+      }
+    }
+  },
+  "interval_policy": "Preserve the accepted zero-centered [-8.3, 8.3] fallback interval so point-model testing cannot borrow interval score.",
+  "acceptance_rule": "For both 2024 and 2025, accuracy must not fall and MAE must not rise; at least one metric must improve strictly.",
+  "decision": "reject",
+  "next_gate": null,
+  "model_api_calls": 0,
+  "local_llm_run": false
+}

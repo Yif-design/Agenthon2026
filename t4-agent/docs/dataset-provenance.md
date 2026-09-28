@@ -203,3 +203,21 @@ The month-end construction can combine multiple releases within a calendar month
 an offline model-selection proxy rather than an exact reconstruction of every agency release. The
 raw 792 ALFRED CSV snapshots remain in a git-ignored cache; the tracked derived rows and builder
 record the requested range, actual response-header digest, and leakage boundary.
+
+## Post-earnings 2024–2025 confirmation panel
+
+- Local file: `evaluation/datasets/postearn/panel88_confirmation_2024_2025.json`
+- Dataset SHA-256: `7fa1418262baa7daae49166b1ff0d1b91fe720d647f336ac89697eaf86250d44`
+- Fixed universe: the 88 price-resolvable tickers selected by the earlier 2018–2023 panel before
+  confirmation outcomes were inspected
+- Announcement source: Quant500 S&P 500 earnings announcements CSV, CC0 1.0
+- Price source: Yahoo Finance adjusted-close chart endpoint
+- Coverage: 696 reliable after-close events, with 353 in 2024 and 343 in 2025
+- Raw price-cache SHA-256: `b2af3b327ee2a820c2e492b68255d44aa64a746b53c7d5477c6b843e152e2aec`
+- Historical-universe SHA-256: `d4cb45d4d9af39f07731b84ce7cec9b66accbe8e80c79459958686c4acb7f32d`
+- Target: next-session company adjusted-close return minus SPY return, with +/-1 percentage-point
+  labels identical to the public task
+
+Twelve symbols in the fixed universe could not be resolved by the price endpoint and are explicitly
+listed in the dataset metadata. The universe and candidate were selected from 2018–2023 before the
+2024–2025 result was generated. Raw responses remain in the git-ignored cache.

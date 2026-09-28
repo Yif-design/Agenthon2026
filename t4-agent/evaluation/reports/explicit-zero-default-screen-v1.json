@@ -1,0 +1,43 @@
+{
+  "experiment_id": "explicit_zero_default_screen_v1",
+  "date": "2026-09-28",
+  "baseline_git_commit": "d252c2121e6236ed1bb2d96f53c2cf426ad69fdd",
+  "layer": "L2 shared numeric feature semantics",
+  "hypothesis": "Preserving explicit numeric zero instead of applying nonzero defaults produces a measurable semantic correction across classification and regression families.",
+  "official_reference": {
+    "finding": "Track 4 rows may contain arbitrary numeric and categorical feature columns; hidden families are broader than the public examples.",
+    "url": "https://github.com/Agenthon-2026/track4-analysis-public"
+  },
+  "baseline_probe": [
+    {
+      "case": "eps_zero_threshold_positive_signal",
+      "input": {"consensus_eps": 2.0, "threshold_pct": 0.0, "signal": 2},
+      "point_forecast": 2.125,
+      "label": "beat",
+      "classification_semantics_correct": true,
+      "finding": "The default changes forecast magnitude but the strong signal already crosses the explicit zero threshold."
+    },
+    {
+      "case": "reaction_zero_threshold_positive_signal",
+      "input": {"flat_threshold_abn_pct": 0.0, "signal": 2},
+      "point_forecast": 1.25,
+      "label": "positive_reaction",
+      "classification_semantics_correct": true,
+      "finding": "The default changes forecast magnitude but the strong signal already produces the correct positive label."
+    },
+    {
+      "case": "rates_zero_maturity_positive_signal",
+      "input": {"maturity_years": 0.0, "signal": 1},
+      "point_forecast": 9.0,
+      "expected_from_existing_short_end_rule": 15.0,
+      "semantic_correction_supported": true
+    }
+  ],
+  "affected_target_types_with_supported_output_correction": ["regression"],
+  "cross_target_requirement_met": false,
+  "candidate_implemented": false,
+  "production_change": "none",
+  "model_requests": 0,
+  "decision": "reject_before_code",
+  "reason": "The probe supports only one synthetic rates boundary case. It does not establish a cross-family or cross-target benefit, and no real-outcome panel justifies changing the zero-threshold forecast magnitudes."
+}
