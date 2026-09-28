@@ -1609,3 +1609,18 @@ hypothesis therefore failed before code or a remote-model A/B. Production prompt
 no model API or local model was used. Script:
 `evaluation/experiments/batch_evidence_dedup_screen.py`. Report:
 `evaluation/reports/batch-evidence-dedup-screen-v1.json`.
+
+### Global evidence-prefix reduction — rejected before production
+
+The next cross-family screen tested a simpler way to reduce the same large model prompts: lower the
+global 1,400-character prefix sent for every retrieved excerpt. The screen replayed the exact quote
+locations of 49 facts validated from the saved remote weak-model run, spanning six tasks and five
+families. The gate required 100% fact retention across multiple families and at least 10% possible
+evidence-text savings.
+
+A 1,200-character cap could save at most 14.3%, but retained only 44/49 facts. A 1,300-character cap
+retained 48/49, but its maximum possible saving was only 7.1%. Only the existing 1,400-character cap
+retained all 49 facts, with no savings. A uniform shorter prefix therefore cannot meet both safety
+and context-reduction requirements. Production remains unchanged, and no new model call or local
+model was used. Script: `evaluation/experiments/evidence_prefix_limit_screen.py`. Report:
+`evaluation/reports/evidence-prefix-limit-screen-v1.json`.
