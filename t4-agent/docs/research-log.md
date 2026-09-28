@@ -1590,3 +1590,22 @@ byte-identical answers for all 11 public units and 78 rows, and all 11 passed lo
 validation. No model API or local model was used. Script:
 `evaluation/experiments/generic_interval_scale.py`. Report:
 `evaluation/reports/generic-interval-scale-v1.json`.
+
+### Shared batch evidence catalog — rejected before production
+
+The 2026-09-29 preflight found no newer official Track 4 package or toolkit release and no new code
+in the public implementations already tracked. Official issue #8 documents optional House reasoning
+controls, but the current client already follows the published endpoint, token and request limits;
+the organizers do not guarantee that the backend honors those optional controls.
+
+A cross-family prompt audit tested whether multi-entity batches repeat identical evidence excerpts.
+If so, a top-level evidence catalog could reduce context without dropping information. The gate
+required at least 10% evidence-character savings across at least two families before any prompt or
+production change.
+
+Across all six public multi-entity batches, 136 evidence occurrences contained 136 unique excerpts.
+Exact deduplication saved 0 of 204,741 evidence characters (0%) and helped zero families. The
+hypothesis therefore failed before code or a remote-model A/B. Production prompts are unchanged;
+no model API or local model was used. Script:
+`evaluation/experiments/batch_evidence_dedup_screen.py`. Report:
+`evaluation/reports/batch-evidence-dedup-screen-v1.json`.

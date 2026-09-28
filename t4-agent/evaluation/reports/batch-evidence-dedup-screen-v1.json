@@ -1,0 +1,105 @@
+{
+  "baseline_git_commit": "85f05a6afc295e80570cb3df35a8b787e59279de",
+  "batches": [
+    {
+      "call_index": 0,
+      "duplicate_chars": 0,
+      "duplicate_evidence_pct": 0.0,
+      "duplicate_occurrences": 0,
+      "evidence_chars": 35585,
+      "evidence_occurrences": 24,
+      "family": "credit_event",
+      "items": 3,
+      "prompt_chars": 40201,
+      "task_id": "t4-credit-event-2023",
+      "unique_evidence": 24
+    },
+    {
+      "call_index": 1,
+      "duplicate_chars": 0,
+      "duplicate_evidence_pct": 0.0,
+      "duplicate_occurrences": 0,
+      "evidence_chars": 36542,
+      "evidence_occurrences": 24,
+      "family": "credit_event",
+      "items": 3,
+      "prompt_chars": 41167,
+      "task_id": "t4-credit-event-2023",
+      "unique_evidence": 24
+    },
+    {
+      "call_index": 2,
+      "duplicate_chars": 0,
+      "duplicate_evidence_pct": 0.0,
+      "duplicate_occurrences": 0,
+      "evidence_chars": 24453,
+      "evidence_occurrences": 16,
+      "family": "credit_event",
+      "items": 2,
+      "prompt_chars": 28689,
+      "task_id": "t4-credit-event-2023",
+      "unique_evidence": 16
+    },
+    {
+      "call_index": 0,
+      "duplicate_chars": 0,
+      "duplicate_evidence_pct": 0.0,
+      "duplicate_occurrences": 0,
+      "evidence_chars": 36281,
+      "evidence_occurrences": 24,
+      "family": "eps_yoy_direction",
+      "items": 3,
+      "prompt_chars": 39703,
+      "task_id": "t4-eps-yoy-2023Q2-mixed",
+      "unique_evidence": 24
+    },
+    {
+      "call_index": 1,
+      "duplicate_chars": 0,
+      "duplicate_evidence_pct": 0.0,
+      "duplicate_occurrences": 0,
+      "evidence_chars": 36118,
+      "evidence_occurrences": 24,
+      "family": "eps_yoy_direction",
+      "items": 3,
+      "prompt_chars": 39592,
+      "task_id": "t4-eps-yoy-2023Q2-mixed",
+      "unique_evidence": 24
+    },
+    {
+      "call_index": 0,
+      "duplicate_chars": 0,
+      "duplicate_evidence_pct": 0.0,
+      "duplicate_occurrences": 0,
+      "evidence_chars": 35762,
+      "evidence_occurrences": 24,
+      "family": "post_earnings_reaction",
+      "items": 3,
+      "prompt_chars": 39379,
+      "task_id": "t4-postearn-20240201-megacap",
+      "unique_evidence": 24
+    }
+  ],
+  "decision": "reject_before_code",
+  "decision_rule": "Proceed only if exact deduplication saves at least 10% of evidence characters across at least two families.",
+  "experiment": "batch_evidence_dedup_screen_v1",
+  "hypothesis": "Public multi-entity prompts repeat enough exact evidence to justify a shared evidence catalog.",
+  "local_llm_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "production_change": "none",
+  "schema_version": 1,
+  "totals": {
+    "batch_count": 6,
+    "batches_with_duplicates": 0,
+    "duplicate_chars": 0,
+    "duplicate_evidence_pct": 0.0,
+    "duplicate_occurrences": 0,
+    "evidence_chars": 204741,
+    "evidence_occurrences": 136,
+    "families_with_savings": []
+  }
+}
