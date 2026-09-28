@@ -813,3 +813,28 @@ execution adds no request or prompt token. Report:
 References: <https://github.com/Agenthon-2026/Agenthon2026-public>,
 <https://github.com/Agenthon-2026/track4-analysis-public>, and
 <https://github.com/Agenthon-2026/track4-analysis-public/tree/main/baselines/strong_rag_baseline>.
+
+### Unambiguous JSON framing recovery — accepted
+
+The shared model parser previously sliced from the first `{` to the last `}` and called
+`json.loads` once. A single valid response therefore failed when thinking text contained an invalid
+brace note before it or explanatory text contained one after it. Conversely, an array containing a
+dictionary was silently accepted by extracting its nested object even though the required top level
+was an object. The official strong-RAG exemplar uses a similarly greedy brace expression; GitHub
+search found no reusable balanced parser in the two previously reviewed participant repositories.
+
+The candidate walks complete JSON containers with `JSONDecoder.raw_decode`. A decoded container is
+skipped as a unit, so nested dictionaries and braces inside strings are not mistaken for separate
+answers. Exactly one top-level dictionary is accepted. Two valid dictionaries remain ambiguous and
+are rejected; arrays, truncation and prose without an object are also rejected.
+
+Both reproducible invalid-brace framing cases improved from 0/2 to 2/2 and the full LLM integration
+accepted the recovered object in one request. Four strict rejection shapes remained fail-closed.
+Historical reports contain 17 “model returned content without one JSON object” entries across eight
+reports, but the raw unparsed text was not retained, so this is frequency evidence rather than a
+claim that all 17 failures are fixed. All 83 tests passed; all 11 public answers were byte-identical,
+schema-valid and smoke-admissible. Report:
+`evaluation/reports/unambiguous-json-framing-v1.json`.
+
+References: <https://github.com/Agenthon-2026/track4-analysis-public/tree/main/baselines/strong_rag_baseline>
+and <https://docs.python.org/3/library/json.html#json.JSONDecoder.raw_decode>.

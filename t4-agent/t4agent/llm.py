@@ -217,12 +217,22 @@ def _is_context_length_error(detail: str) -> bool:
 
 
 def parse_json_object(text: str) -> dict | None:
-    start = text.find("{")
-    end = text.rfind("}")
-    if start < 0 or end <= start:
-        return None
-    try:
-        value = json.loads(text[start : end + 1])
-    except json.JSONDecodeError:
-        return None
-    return value if isinstance(value, dict) else None
+    decoder = json.JSONDecoder()
+    objects: list[dict] = []
+    cursor = 0
+    while cursor < len(text):
+        starts = [position for token in ("{", "[") if (position := text.find(token, cursor)) >= 0]
+        if not starts:
+            break
+        start = min(starts)
+        try:
+            value, end = decoder.raw_decode(text, start)
+        except json.JSONDecodeError:
+            cursor = start + 1
+            continue
+        cursor = end
+        if isinstance(value, dict):
+            objects.append(value)
+            if len(objects) > 1:
+                return None
+    return objects[0] if len(objects) == 1 else None

@@ -5,7 +5,7 @@ import io
 import time
 import urllib.error
 
-from t4agent.llm import LLM, chat_completions_url
+from t4agent.llm import LLM, chat_completions_url, parse_json_object
 
 
 class FakeResponse:
@@ -28,6 +28,38 @@ class FakeResponse:
 def test_house_url_adds_v1() -> None:
     assert chat_completions_url("http://model:8443") == "http://model:8443/v1/chat/completions"
     assert chat_completions_url("http://localhost:11434/v1") == "http://localhost:11434/v1/chat/completions"
+
+
+def test_json_parser_recovers_one_unambiguous_object_around_invalid_braces() -> None:
+    expected = {"signals": {"x": {"level": 1, "reason": "margin {expanded}"}}}
+    encoded = json.dumps(expected)
+
+    assert parse_json_object(encoded) == expected
+    assert parse_json_object(f"analysis {{not valid json}}\n{encoded}") == expected
+    assert parse_json_object(f"{encoded}\nexplanation {{not json}}") == expected
+    assert parse_json_object(f"```json\n{encoded}\n```") == expected
+
+
+def test_json_parser_rejects_ambiguous_or_non_object_content() -> None:
+    assert parse_json_object('{"draft": 1}\n{"signals": {}}') is None
+    assert parse_json_object('[{"signals": {}}]') is None
+    assert parse_json_object('{"signals": {') is None
+    assert parse_json_object("plain text") is None
+
+
+def test_llm_accepts_unambiguous_json_after_invalid_thinking_braces(monkeypatch) -> None:
+    monkeypatch.setenv("MODEL_ENDPOINT", "http://model:8443")
+    monkeypatch.setenv("MODEL_NAME", "house")
+    monkeypatch.setenv("MODEL_TOKEN", "test-only-token")
+    monkeypatch.setattr(
+        "urllib.request.urlopen",
+        lambda *_args, **_kwargs: FakeResponse('thinking {draft note}\n{"signals": {}}'),
+    )
+
+    llm = LLM()
+    assert llm.chat_json("system", "user") == {"signals": {}}
+    assert llm.usage.calls == 1
+    assert llm.usage.errors == []
 
 
 def test_house_environment_uses_injected_token(monkeypatch) -> None:

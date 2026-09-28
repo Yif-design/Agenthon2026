@@ -44,6 +44,12 @@ batch: retrying the same prompt is skipped, but a later shorter batch may still 
 shared circuit. This reacts to the serving route's actual limit without inventing an unpublished
 character or token ceiling.
 
+Assistant text is decoded as a sequence of complete JSON containers rather than sliced from the
+first opening brace to the last closing brace. One dictionary surrounded by markdown, thinking text
+or invalid brace notes is accepted. Two independently valid dictionaries, a top-level array,
+truncated JSON or plain text remain invalid and follow the existing retry/fallback path. Nested
+dictionaries and braces inside JSON strings are handled by the standard decoder.
+
 ## Why this remains the baseline
 
 The bounded signal interface provides exact evidence validation, deterministic replay, low request
