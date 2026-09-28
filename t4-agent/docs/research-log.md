@@ -872,3 +872,24 @@ current baseline's prior 11/11 smoke evidence. Structured report:
 References: <https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after>,
 <https://www.rfc-editor.org/rfc/rfc6585.html#section-4>, and
 <https://openrouter.ai/docs/guides/overview/auth/byok>.
+
+### Bank EPS delta damping — rejected
+
+After the shared fault-recovery audit, the next family-level candidate tested whether the bank EPS
+calculator should damp the most recently filed quarterly YoY EPS delta instead of carrying it
+fully into the target quarter. Eight public-unit banks supplied 242 comparable SEC quarterly pairs;
+158 also had a distinct, cutoff-safe recent-quarter feature. The time split contained 69 train, 28
+development, 29 test and 32 locked 2024–2025 confirmation rows.
+
+The candidate grid was `beta = 0, 0.1, 0.25, 0.5, 0.75, 1.0`, where production already uses 1.0.
+Development selected 1.0 itself: its growth-percentage MAE was 80.90%, versus 81.20% at 0.75,
+99.15% at 0.5 and worse values for stronger damping. Every positive beta had the same 75.0%
+direction accuracy. Because the selected candidate was identical to production, the preregistered
+requirement for a distinct candidate failed before confirmation could support a change.
+
+No production code changed. The experiment is recorded so a future run does not repeat this beta
+grid without a new feature or hypothesis. Script:
+`evaluation/experiments/bank_eps_delta_probe.py`. Structured report:
+`evaluation/reports/bank-eps-delta-damping-v1.json`.
+
+Source: <https://www.sec.gov/search-filings/edgar-application-programming-interfaces>.
