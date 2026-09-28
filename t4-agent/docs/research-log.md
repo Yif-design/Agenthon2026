@@ -1,5 +1,31 @@
 # Research log
 
+## 2026-09-29: quote-local citation context — rejected before production
+
+The official shared and Track 4 main commits, toolkit `v2.4.4` and open Track 4 Issues 1, 2, 13,
+14 and 16 were unchanged. The public website now displayed Development leaderboard results, but no
+runtime or scoring rule changed. A refreshed GitHub search found the same two licensed Track 4
+participant implementations. The MIT-licensed `wangzgui/agenthon-t4-baseline-2026` added a bounded
+window around model-verified quotes at commit `420bee09`: 120 characters before and 240 after.
+
+Production already preserves each compact fact citation and appends up to three exact, scoped BM25
+chunks. A read-only screen therefore asked whether the public method supplied entity identity and
+target terms absent from both the fact and those existing contexts. Across 80 saved production fact
+citations, 31 expanded windows were fully contained in an existing context. Forty-nine crossed an
+existing context boundary, but only 11 supplied both term classes; all 11 belonged to CPI regression
+and only ten entities. The pre-registered requirement of at least two families and two target types
+failed.
+
+No production code, prompt, prediction or citation changed. No model API or local NLI ran. The
+screen and rejected result are in `evaluation/experiments/citation_local_context_screen.py` and
+`evaluation/reports/citation-local-context-screen-v1.json`.
+
+References:
+
+- <https://github.com/wangzgui/agenthon-t4-baseline-2026/commit/420bee094775f30e43fd18e10982402c91d90e23>
+- <https://github.com/Agenthon-2026/track4-analysis-public>
+- <https://github.com/Agenthon-2026/Agenthon2026-public>
+
 ## 2026-09-29: CPI core and food twelve-month mean — accepted
 
 The Cleveland Fed Inflation Nowcasting FAQ specifies a twelve-month moving average for its core and
