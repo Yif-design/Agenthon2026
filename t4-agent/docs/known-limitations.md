@@ -19,6 +19,11 @@
   width-minimal within the selected grid, but it should not be interpreted as a tight economic
   confidence bound.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
+- The dated-table fallback supports only pipe tables with an exact target or series header and an
+  explicit matching unit. It deliberately abstains on synonyms, missing units, derived changes and
+  unit conversion. Its historical quality evidence covers bid-to-cover ratios and quarterly diluted
+  EPS, while its remote NLI evidence covers two synthetic five-entity units; neither proves hidden
+  distribution accuracy.
 - The generic hidden-family path now has target-field, numeric-noise, row-order, change-vs-level,
   explicit-unit and bounded scalar-feature visibility tests. A transformed-schema benchmark covers
   five real-outcome datasets across regression and ranking, but it is not a hidden-unit benchmark

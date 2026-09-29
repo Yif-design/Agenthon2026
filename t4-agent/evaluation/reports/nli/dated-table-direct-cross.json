@@ -1,0 +1,220 @@
+{
+  "schema_version": 2,
+  "model_id": "cross-encoder/nli-deberta-v3-large",
+  "model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.14.0+cpu",
+    "transformers": "5.17.0",
+    "qfbench2-common": "2.4.4"
+  },
+  "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model; every distinct citation premise score is retained for exact ensemble aggregation.",
+  "total_elapsed_seconds": 15.828316904000019,
+  "cases": [
+    {
+      "case_id": "t4-generic-dated-level-synthetic",
+      "unit_id": "t4-generic-dated-level-synthetic",
+      "answer_sha256": "d26e9ca6798d599095f3596380c65422fbb25fc9c7785688e32c0a99e118455f",
+      "elapsed_seconds": 8.666684637999992,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "ALPHA",
+          "hypothesis": "The metric ratio of Alpha (ALPHA) is 2.61. The 90% prediction interval for the metric ratio of Alpha (ALPHA) is -4.44089e-16 to 5.22.",
+          "score": 0.75680011510849,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d930cc4bf531c22bad613bbf45934bfc4c223c08de3645add89397e3dbb5e263",
+              "premise_chars": 17,
+              "score": 0.75680011510849
+            },
+            {
+              "premise_sha256": "c259b7adbe25286c680e0ef31d8fb4a41c3ca8482c13989bda2f0684ae56095c",
+              "premise_chars": 73,
+              "score": 0.2744552791118622
+            }
+          ]
+        },
+        {
+          "entity_id": "BETA",
+          "hypothesis": "The metric ratio of Beta (BETA) is 1.96. The 90% prediction interval for the metric ratio of Beta (BETA) is -0.04 to 3.96.",
+          "score": 0.7079848647117615,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "9c46176f82fb1c1e93d1b57685078d66b994d502bb978bcf6637736a37641d01",
+              "premise_chars": 17,
+              "score": 0.7079848647117615
+            },
+            {
+              "premise_sha256": "b562b7260111fd827f1c27b69cb295ac84055dc360d390f2dba51e1677db1ebe",
+              "premise_chars": 73,
+              "score": 0.5933232307434082
+            }
+          ]
+        },
+        {
+          "entity_id": "GAMMA",
+          "hypothesis": "The metric ratio of Gamma (GAMMA) is 3.11. The 90% prediction interval for the metric ratio of Gamma (GAMMA) is -4.44089e-16 to 6.22.",
+          "score": 0.7936625480651855,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e74789ea0d54125bf7ddc932e7f974792f62976bff2e46734e0ddaeb8a229eff",
+              "premise_chars": 17,
+              "score": 0.7936625480651855
+            },
+            {
+              "premise_sha256": "edcfb7d119a932dcb18382c01f73c263159f603344a5162464f7e55d522a4b2e",
+              "premise_chars": 73,
+              "score": 0.4899842143058777
+            }
+          ]
+        },
+        {
+          "entity_id": "DELTA",
+          "hypothesis": "The metric ratio of Delta (DELTA) is 0.97. The 90% prediction interval for the metric ratio of Delta (DELTA) is -1.03 to 2.97.",
+          "score": 0.6390879154205322,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8220a77d6c52cb9df563cb43e0227bbbcd24698691323445e68c724070b31719",
+              "premise_chars": 17,
+              "score": 0.6390879154205322
+            },
+            {
+              "premise_sha256": "77e361bab7d69a2ecec7b41371367ecfd643788ec80bace78280a5c27be20dd1",
+              "premise_chars": 73,
+              "score": 0.40866780281066895
+            }
+          ]
+        },
+        {
+          "entity_id": "EPSILON",
+          "hypothesis": "The metric ratio of Epsilon (EPSILON) is 4.24. The 90% prediction interval for the metric ratio of Epsilon (EPSILON) is 0 to 8.48.",
+          "score": 0.7953716516494751,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d46d17a5600d63408c37cb63adfec4164a0b743f24a4ea20a2b9b15b99fac736",
+              "premise_chars": 17,
+              "score": 0.7953716516494751
+            },
+            {
+              "premise_sha256": "1a61f300e2f8440a9b7041e7e45e4a109c85cd91854c419c34e405e8c7103692",
+              "premise_chars": 73,
+              "score": 0.16595043241977692
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-generic-dated-change-synthetic",
+      "unit_id": "t4-generic-dated-change-synthetic",
+      "answer_sha256": "fc259f8e49270385c9a38fa5271243806451688dea3b5c755c8470acd37189f6",
+      "elapsed_seconds": 7.1616322660000264,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "TWO_YEAR",
+          "hypothesis": "The rate change bps of Two Year (TWO_YEAR) is -6. The 90% prediction interval for the rate change bps of Two Year (TWO_YEAR) is -12 to 0.",
+          "score": 0.7003679275512695,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f1ddd6838a4b7b462dc7012c96a82fbc03beaa47adca13bd6d96c775f857ed2b",
+              "premise_chars": 18,
+              "score": 0.7003679275512695
+            },
+            {
+              "premise_sha256": "ccf9b20f611af355c9a80f5d79356f556fbb52a6be5c9e3c29414638a9045f5a",
+              "premise_chars": 79,
+              "score": 0.34049564599990845
+            }
+          ]
+        },
+        {
+          "entity_id": "THREE_YEAR",
+          "hypothesis": "The rate change bps of Three Year (THREE_YEAR) is -5. The 90% prediction interval for the rate change bps of Three Year (THREE_YEAR) is -10 to 0.",
+          "score": 0.6796965003013611,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5e7f5283859ecf7dfaf8e174785ee7f0dbe5715ed64347de20cac37743f64410",
+              "premise_chars": 18,
+              "score": 0.6796965003013611
+            },
+            {
+              "premise_sha256": "58d050e9d1fafb2e7def4b36a265a127e9bf6d56862aff486c7150468e59f8c4",
+              "premise_chars": 79,
+              "score": 0.29829442501068115
+            }
+          ]
+        },
+        {
+          "entity_id": "FIVE_YEAR",
+          "hypothesis": "The rate change bps of Five Year (FIVE_YEAR) is -6. The 90% prediction interval for the rate change bps of Five Year (FIVE_YEAR) is -12 to 0.",
+          "score": 0.7070890665054321,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f1ddd6838a4b7b462dc7012c96a82fbc03beaa47adca13bd6d96c775f857ed2b",
+              "premise_chars": 18,
+              "score": 0.7070890665054321
+            },
+            {
+              "premise_sha256": "c7add66ad4d7bb40246551f6565c0246132b14d931f78cb32e8bc003cb2a3e11",
+              "premise_chars": 79,
+              "score": 0.35695597529411316
+            }
+          ]
+        },
+        {
+          "entity_id": "TEN_YEAR",
+          "hypothesis": "The rate change bps of Ten Year (TEN_YEAR) is -6. The 90% prediction interval for the rate change bps of Ten Year (TEN_YEAR) is -12 to 0.",
+          "score": 0.7120431661605835,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f1ddd6838a4b7b462dc7012c96a82fbc03beaa47adca13bd6d96c775f857ed2b",
+              "premise_chars": 18,
+              "score": 0.7120431661605835
+            },
+            {
+              "premise_sha256": "3db6c6116e267dc5e3c793762287bf6e29e861093d832ad3d2252b3c2fe712e5",
+              "premise_chars": 79,
+              "score": 0.32846683263778687
+            }
+          ]
+        },
+        {
+          "entity_id": "THIRTY_YEAR",
+          "hypothesis": "The rate change bps of Thirty Year (THIRTY_YEAR) is -5. The 90% prediction interval for the rate change bps of Thirty Year (THIRTY_YEAR) is -10 to 0.",
+          "score": 0.6607268452644348,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5e7f5283859ecf7dfaf8e174785ee7f0dbe5715ed64347de20cac37743f64410",
+              "premise_chars": 18,
+              "score": 0.6607268452644348
+            },
+            {
+              "premise_sha256": "73cd4c0ae313b1ed36c82db1d3734ede3569be9c7a8a5d70f3dd339a8432fa38",
+              "premise_chars": 79,
+              "score": 0.3553350567817688
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,7 @@ from t4agent.taskio import Task  # noqa: E402
 
 
 REPORT = ROOT / "evaluation/reports/generic-dated-table-extractor-v1.json"
+NLI_REPORT = ROOT / "evaluation/reports/nli/dated-table-direct-ensemble.json"
 
 
 def task(target_name: str, unit: str, cutoff: str) -> Task:
@@ -146,6 +147,29 @@ def main() -> None:
         },
     }
     report["decision"] = "pass_to_faithfulness_gate" if all(report["gates"].values()) else "reject"
+    if report["decision"] == "pass_to_faithfulness_gate" and NLI_REPORT.exists():
+        nli = json.loads(NLI_REPORT.read_text())
+        cases = {
+            case["case_id"]: {
+                "entities": len(case["predictions"]),
+                "faithfulness": case["faithfulness"],
+                "gate_pass": case["gate_pass"],
+            }
+            for case in nli["cases"]
+        }
+        report["nli_gate"] = {
+            "workflow_run": 36556813650,
+            "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+            "toolkit_version": "2.4.4",
+            "cases": cases,
+            "all_gates_pass": nli["all_gates_pass"],
+            "report": str(NLI_REPORT.relative_to(ROOT)),
+        }
+        report["rejected_scope"] = (
+            "Derived changes and percent-to-basis-point conversion failed the first remote NLI gate "
+            "and are not in production."
+        )
+        report["decision"] = "accept" if nli["all_gates_pass"] else "reject"
     REPORT.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print(json.dumps({"decision": report["decision"], "safety": report["safety"], "datasets": datasets}, indent=2))
     if report["decision"] == "reject":

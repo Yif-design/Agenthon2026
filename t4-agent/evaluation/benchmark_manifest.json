@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-29",
   "baseline_commit": "0cf7a7fe40f2d5184f99140c5064511b8de6f7e2",
   "official_toolkit_version": "2.4.4",
   "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
@@ -150,6 +150,21 @@
       ],
       "role": "transformed_unknown_schema_real_outcome_test",
       "decision": "accept"
+    },
+    "generic_dated_table_direct_observation_v1": {
+      "path": "evaluation/reports/generic-dated-table-extractor-v1.json",
+      "sha256": "99bfcada5ea9653f2960059cd44e638c5b1ed48f928b3321d25759fac5e6b0c6",
+      "target_types": [
+        "regression",
+        "ranking"
+      ],
+      "domains": [
+        "auction_bid_to_cover",
+        "quarterly_diluted_eps"
+      ],
+      "role": "transformed_unknown_schema_time_forward_test_and_confirmation",
+      "decision": "accept",
+      "nli_report": "evaluation/reports/nli/dated-table-direct-ensemble.json"
     }
   },
   "family_outcome_benchmarks": {

@@ -1,6 +1,6 @@
 # Current Track 4 architecture
 
-Last updated: 2026-09-28
+Last updated: 2026-09-29
 
 The submitted path is a baseline-first bounded workflow:
 
@@ -168,6 +168,14 @@ percent, basis-point or USD units prevent that field from being selected. Missin
 inferred. This avoids treating a current curve level in percent as a future curve response in basis
 points while preserving compatible and unspecified schemas. The selected field and reason are
 retained in the deterministic derivation trace.
+
+Unknown regression and ranking tasks also inspect cutoff-safe dated pipe tables when the entity
+schema has no sufficient direct baseline. The parser requires increasing unique dates, one exact
+target or series column, a matching explicit unit, finite complete values, and entity-bound documents
+when more than one document is visible. It uses only the latest directly stated observation. It does
+not derive changes, convert units, cross malformed rows, or infer a column synonym. This path passed
+two independent time-forward outcome panels and a remote two-model NLI gate; setting
+`T4_ENABLE_DATED_TABLE_BASELINE=0` disables it for rollback.
 
 For unknown families only, the model packet and BM25 query also retain official scalar table
 features whose names could not be known in advance: finite numbers, booleans, categorical strings

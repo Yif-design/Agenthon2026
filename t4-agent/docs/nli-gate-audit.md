@@ -1,6 +1,6 @@
 # Track 4 NLI gate audit
 
-Last updated: 2026-09-27
+Last updated: 2026-09-29
 
 ## Scope
 
@@ -138,3 +138,23 @@ The audit does not establish hidden-unit faithfulness, that every hidden auction
 derived summary, or runtime equivalence with the production scorer. Context alternatives improve
 the public gate but do not make an unsupported forecast substantively correct. Exact scope, cutoff
 and fallback checks preserve validity when no useful context exists.
+
+
+## Generic dated-table direct observations
+
+GitHub Actions run `36556813650` used the same two pinned model revisions and the exact public Track 4
+judge at commit `7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491`. Its runtime was Python 3.13.15,
+torch 2.14.0+cpu, transformers 5.17.0 and `qfbench2-common` 2.4.4.
+
+The first candidate derived a basis-point change from two percentage observations. Its level unit
+passed at 1.0 roster faithfulness, but the derived-change unit scored 0.0. The arithmetic was not
+directly entailed by either cited raw row, so that scope was removed. The accepted candidate reads
+only direct exact-column observations. A five-entity ratio unit and a five-entity basis-point-change
+unit then each scored 1.0 roster faithfulness. This validates citation construction for the strict
+path, not the predictive accuracy of persistence on hidden tasks.
+
+Reports:
+
+- `evaluation/reports/nli/dated-table-direct-cross.json`
+- `evaluation/reports/nli/dated-table-direct-moritz.json`
+- `evaluation/reports/nli/dated-table-direct-ensemble.json`

@@ -72,8 +72,8 @@ def test_multiple_documents_require_doc_id_entity_binding() -> None:
     assert value.value == 2.5
 
 
-def test_generic_pipeline_uses_table_baseline_and_exact_claim_without_extra_model_calls(monkeypatch) -> None:
-    monkeypatch.setenv("T4_ENABLE_DATED_TABLE_BASELINE", "1")
+def test_generic_pipeline_uses_table_baseline_by_default_without_extra_model_calls(monkeypatch) -> None:
+    monkeypatch.delenv("T4_ENABLE_DATED_TABLE_BASELINE", raising=False)
     text = "date | metric_ratio\n2024-01-01 | 2.5\n2024-02-01 | 2.7"
     indexed = corpus(text)
 
@@ -96,8 +96,8 @@ def test_generic_pipeline_uses_table_baseline_and_exact_claim_without_extra_mode
     assert text[result.prediction["claims"][0]["span_start"] : result.prediction["claims"][0]["span_end"]] == "2024-02-01 | 2.7"
 
 
-def test_generic_pipeline_keeps_current_baseline_while_candidate_is_disabled(monkeypatch) -> None:
-    monkeypatch.delenv("T4_ENABLE_DATED_TABLE_BASELINE", raising=False)
+def test_generic_pipeline_can_disable_dated_table_baseline(monkeypatch) -> None:
+    monkeypatch.setenv("T4_ENABLE_DATED_TABLE_BASELINE", "0")
     text = "date | metric_ratio\n2024-01-01 | 2.5\n2024-02-01 | 2.7"
     indexed = corpus(text)
 

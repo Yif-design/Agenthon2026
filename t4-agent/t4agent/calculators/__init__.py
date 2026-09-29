@@ -46,7 +46,7 @@ def extract_parameters(
     if (
         spec.key == "generic"
         and task.target_type in {"regression", "ranking"}
-        and os.environ.get("T4_ENABLE_DATED_TABLE_BASELINE", "0") == "1"
+        and os.environ.get("T4_ENABLE_DATED_TABLE_BASELINE", "1") == "1"
     ):
         baseline = extract_generic_table_baseline(task, entity, corpus)
         if baseline is not None:
