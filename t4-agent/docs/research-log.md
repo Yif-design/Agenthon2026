@@ -1835,3 +1835,22 @@ Scripts: `evaluation/experiments/generic_classification_benchmark.py`,
 `evaluation/reports/generic-classification-benchmark-v1.json`,
 `evaluation/reports/generic-above-below-role-screen-v1.json`, and
 `evaluation/reports/generic-opaque-label-nli-preflight-v1.json`.
+
+## 2026-09-30: horizon-aligned FOMC reversal — rejected
+
+The existing rates screens had already rejected curve ridge, policy-augmented ridge, cutoff-day
+reaction and 10/20-trading-day momentum. A final point-model screen tested whether the prompt's
+explicit "already priced" regime was better represented by reversing a pre-cutoff move over 35,
+45 or 60 trading days, closer to the intermeeting forecast horizon. Development selected a 35-day
+move multiplied by -0.25.
+
+The locked candidate improved direction accuracy but failed the magnitude gates. Relative to the
+best of zero change and policy decay, test MAE worsened by 21.46% and the untouched 2022–2026
+confirmation MAE worsened by 12.29%. The worst tenor regressed by 4.22 bps on test and 4.05 bps on
+confirmation, both above the pre-registered 2 bps ceiling. The public 2022 and 2024 events were
+excluded from selection, test and confirmation and retained only as diagnostics.
+
+The candidate was rejected before corpus parsing, citation construction or NLI. No production
+code, model request, prediction, citation or image changed. Script:
+`evaluation/experiments/fomc_long_reversal_screen.py`. Report:
+`evaluation/reports/fomc-long-reversal-screen-v1.json`.

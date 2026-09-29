@@ -1,0 +1,451 @@
+{
+  "baseline_git_commit": "c5e30e8d402db1ab672d1b87984b41f7aeba2514",
+  "candidate_grid": {
+    "coefficients": [
+      -0.25,
+      -0.5,
+      -0.75,
+      -1.0
+    ],
+    "windows_trading_days": [
+      35,
+      45,
+      60
+    ]
+  },
+  "decision": "reject",
+  "decision_rule": "Proceed only if the locked candidate improves MAE at least 2%, improves direction accuracy, and worsens no tenor MAE by more than 2 bps on both test and confirmation.",
+  "development_scores": {
+    "policy_decay": {
+      "direction_accuracy": 0.24305555555555555,
+      "events": 24,
+      "mae_bps": 14.9375,
+      "mae_by_tenor": {
+        "UST10Y": 15.541666666666666,
+        "UST2Y": 13.416666666666666,
+        "UST30Y": 14.333333333333334,
+        "UST3Y": 14.541666666666666,
+        "UST5Y": 15.875,
+        "UST7Y": 15.916666666666666
+      },
+      "observations": 144,
+      "rmse_bps": 19.828956099603428
+    },
+    "reversal_35d_x-0.25": {
+      "direction_accuracy": 0.4027777777777778,
+      "events": 24,
+      "mae_bps": 15.703125,
+      "mae_by_tenor": {
+        "UST10Y": 16.59375,
+        "UST2Y": 14.364583333333334,
+        "UST30Y": 14.45833333333333,
+        "UST3Y": 15.791666666666666,
+        "UST5Y": 16.4375,
+        "UST7Y": 16.572916666666668
+      },
+      "observations": 144,
+      "rmse_bps": 20.570456076481253
+    },
+    "reversal_35d_x-0.5": {
+      "direction_accuracy": 0.4027777777777778,
+      "events": 24,
+      "mae_bps": 18.03125,
+      "mae_by_tenor": {
+        "UST10Y": 19.104166666666668,
+        "UST2Y": 16.645833333333332,
+        "UST30Y": 15.541666666666664,
+        "UST3Y": 18.291666666666668,
+        "UST5Y": 19.208333333333332,
+        "UST7Y": 19.395833333333332
+      },
+      "observations": 144,
+      "rmse_bps": 22.65145782652116
+    },
+    "reversal_35d_x-0.75": {
+      "direction_accuracy": 0.4027777777777778,
+      "events": 24,
+      "mae_bps": 20.651041666666668,
+      "mae_by_tenor": {
+        "UST10Y": 21.843749999999996,
+        "UST2Y": 19.177083333333336,
+        "UST30Y": 17.020833333333332,
+        "UST3Y": 21.1875,
+        "UST5Y": 22.25,
+        "UST7Y": 22.427083333333332
+      },
+      "observations": 144,
+      "rmse_bps": 25.677106575378257
+    },
+    "reversal_35d_x-1": {
+      "direction_accuracy": 0.4027777777777778,
+      "events": 24,
+      "mae_bps": 23.569444444444443,
+      "mae_by_tenor": {
+        "UST10Y": 24.83333333333333,
+        "UST2Y": 21.875000000000004,
+        "UST30Y": 19.41666666666666,
+        "UST3Y": 24.20833333333334,
+        "UST5Y": 25.541666666666668,
+        "UST7Y": 25.541666666666668
+      },
+      "observations": 144,
+      "rmse_bps": 29.356761477459404
+    },
+    "reversal_45d_x-0.25": {
+      "direction_accuracy": 0.3680555555555556,
+      "events": 24,
+      "mae_bps": 16.10590277777778,
+      "mae_by_tenor": {
+        "UST10Y": 17.083333333333336,
+        "UST2Y": 14.78125,
+        "UST30Y": 14.822916666666664,
+        "UST3Y": 16.239583333333332,
+        "UST5Y": 16.71875,
+        "UST7Y": 16.989583333333332
+      },
+      "observations": 144,
+      "rmse_bps": 21.01916081882856
+    },
+    "reversal_45d_x-0.5": {
+      "direction_accuracy": 0.3680555555555556,
+      "events": 24,
+      "mae_bps": 18.84375,
+      "mae_by_tenor": {
+        "UST10Y": 19.958333333333336,
+        "UST2Y": 17.562500000000004,
+        "UST30Y": 16.354166666666664,
+        "UST3Y": 19.020833333333336,
+        "UST5Y": 19.979166666666668,
+        "UST7Y": 20.187500000000004
+      },
+      "observations": 144,
+      "rmse_bps": 23.910386806202492
+    },
+    "reversal_45d_x-0.75": {
+      "direction_accuracy": 0.3680555555555556,
+      "events": 24,
+      "mae_bps": 22.27951388888889,
+      "mae_by_tenor": {
+        "UST10Y": 23.54166666666667,
+        "UST2Y": 20.843750000000004,
+        "UST30Y": 18.989583333333332,
+        "UST3Y": 22.489583333333332,
+        "UST5Y": 23.864583333333332,
+        "UST7Y": 23.947916666666668
+      },
+      "observations": 144,
+      "rmse_bps": 27.913860244509358
+    },
+    "reversal_45d_x-1": {
+      "direction_accuracy": 0.3680555555555556,
+      "events": 24,
+      "mae_bps": 25.819444444444446,
+      "mae_by_tenor": {
+        "UST10Y": 27.125000000000004,
+        "UST2Y": 24.20833333333334,
+        "UST30Y": 21.874999999999996,
+        "UST3Y": 26.250000000000004,
+        "UST5Y": 27.75,
+        "UST7Y": 27.70833333333334
+      },
+      "observations": 144,
+      "rmse_bps": 32.62263188510564
+    },
+    "reversal_60d_x-0.25": {
+      "direction_accuracy": 0.3125,
+      "events": 24,
+      "mae_bps": 17.328125,
+      "mae_by_tenor": {
+        "UST10Y": 18.166666666666668,
+        "UST2Y": 16.333333333333336,
+        "UST30Y": 15.354166666666664,
+        "UST3Y": 17.645833333333336,
+        "UST5Y": 18.229166666666668,
+        "UST7Y": 18.239583333333332
+      },
+      "observations": 144,
+      "rmse_bps": 22.291812694225754
+    },
+    "reversal_60d_x-0.5": {
+      "direction_accuracy": 0.3125,
+      "events": 24,
+      "mae_bps": 21.29513888888889,
+      "mae_by_tenor": {
+        "UST10Y": 22.125,
+        "UST2Y": 20.83333333333334,
+        "UST30Y": 17.5,
+        "UST3Y": 22.25,
+        "UST5Y": 22.5,
+        "UST7Y": 22.5625
+      },
+      "observations": 144,
+      "rmse_bps": 26.727242396310007
+    },
+    "reversal_60d_x-0.75": {
+      "direction_accuracy": 0.3125,
+      "events": 24,
+      "mae_bps": 25.73784722222222,
+      "mae_by_tenor": {
+        "UST10Y": 26.75,
+        "UST2Y": 25.33333333333334,
+        "UST30Y": 21.333333333333332,
+        "UST3Y": 26.85416666666667,
+        "UST5Y": 26.9375,
+        "UST7Y": 27.21875
+      },
+      "observations": 144,
+      "rmse_bps": 32.27601098984611
+    },
+    "reversal_60d_x-1": {
+      "direction_accuracy": 0.3125,
+      "events": 24,
+      "mae_bps": 30.625,
+      "mae_by_tenor": {
+        "UST10Y": 31.875,
+        "UST2Y": 30.166666666666675,
+        "UST30Y": 25.5,
+        "UST3Y": 31.45833333333334,
+        "UST5Y": 32.208333333333336,
+        "UST7Y": 32.541666666666664
+      },
+      "observations": 144,
+      "rmse_bps": 38.45921360494922
+    },
+    "zero_change": {
+      "direction_accuracy": 0.027777777777777776,
+      "events": 24,
+      "mae_bps": 15.090277777777779,
+      "mae_by_tenor": {
+        "UST10Y": 15.708333333333334,
+        "UST2Y": 13.083333333333334,
+        "UST30Y": 14.75,
+        "UST3Y": 14.791666666666666,
+        "UST5Y": 16.125,
+        "UST7Y": 16.083333333333332
+      },
+      "observations": 144,
+      "rmse_bps": 19.73522654206601
+    }
+  },
+  "experiment": "fomc_long_reversal_screen_v1",
+  "gates": {
+    "confirmation": {
+      "direction_accuracy_improved": true,
+      "mae_improvement_vs_best_baseline_pct": -12.285958904109586,
+      "passed": false,
+      "worst_tenor_mae_regression_bps": 4.050000000000001
+    },
+    "test": {
+      "direction_accuracy_improved": true,
+      "mae_improvement_vs_best_baseline_pct": -21.462370437133853,
+      "passed": false,
+      "worst_tenor_mae_regression_bps": 4.221153846153845
+    }
+  },
+  "hypothesis": "A development-selected reversal of the 35, 45, or 60 trading-day pre-cutoff yield move predicts the roughly 35-trading-day intermeeting move better than zero change and policy decay.",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "production_change": "none",
+  "schema_version": 1,
+  "scores": {
+    "confirmation": {
+      "policy_decay": {
+        "direction_accuracy": 0.2857142857142857,
+        "events": 35,
+        "mae_bps": 25.02857142857143,
+        "mae_by_tenor": {
+          "UST10Y": 23.857142857142858,
+          "UST2Y": 25.285714285714285,
+          "UST30Y": 22.34285714285714,
+          "UST3Y": 27.114285714285714,
+          "UST5Y": 26.457142857142856,
+          "UST7Y": 25.114285714285714
+        },
+        "observations": 210,
+        "rmse_bps": 32.17911182887492
+      },
+      "reversal_35d_x-0.25": {
+        "direction_accuracy": 0.41904761904761906,
+        "events": 35,
+        "mae_bps": 28.103571428571428,
+        "mae_by_tenor": {
+          "UST10Y": 26.535714285714285,
+          "UST2Y": 29.235714285714284,
+          "UST30Y": 23.357142857142858,
+          "UST3Y": 31.164285714285715,
+          "UST5Y": 29.914285714285715,
+          "UST7Y": 28.414285714285715
+        },
+        "observations": 210,
+        "rmse_bps": 36.55744419664039
+      },
+      "zero_change": {
+        "direction_accuracy": 0.014285714285714285,
+        "events": 35,
+        "mae_bps": 25.557142857142857,
+        "mae_by_tenor": {
+          "UST10Y": 24.514285714285716,
+          "UST2Y": 25.82857142857143,
+          "UST30Y": 22.857142857142858,
+          "UST3Y": 27.514285714285716,
+          "UST5Y": 26.857142857142858,
+          "UST7Y": 25.771428571428572
+        },
+        "observations": 210,
+        "rmse_bps": 33.295144791195405
+      }
+    },
+    "development": {
+      "policy_decay": {
+        "direction_accuracy": 0.24305555555555555,
+        "events": 24,
+        "mae_bps": 14.9375,
+        "mae_by_tenor": {
+          "UST10Y": 15.541666666666666,
+          "UST2Y": 13.416666666666666,
+          "UST30Y": 14.333333333333334,
+          "UST3Y": 14.541666666666666,
+          "UST5Y": 15.875,
+          "UST7Y": 15.916666666666666
+        },
+        "observations": 144,
+        "rmse_bps": 19.828956099603428
+      },
+      "reversal_35d_x-0.25": {
+        "direction_accuracy": 0.4027777777777778,
+        "events": 24,
+        "mae_bps": 15.703125,
+        "mae_by_tenor": {
+          "UST10Y": 16.59375,
+          "UST2Y": 14.364583333333334,
+          "UST30Y": 14.45833333333333,
+          "UST3Y": 15.791666666666666,
+          "UST5Y": 16.4375,
+          "UST7Y": 16.572916666666668
+        },
+        "observations": 144,
+        "rmse_bps": 20.570456076481253
+      },
+      "zero_change": {
+        "direction_accuracy": 0.027777777777777776,
+        "events": 24,
+        "mae_bps": 15.090277777777779,
+        "mae_by_tenor": {
+          "UST10Y": 15.708333333333334,
+          "UST2Y": 13.083333333333334,
+          "UST30Y": 14.75,
+          "UST3Y": 14.791666666666666,
+          "UST5Y": 16.125,
+          "UST7Y": 16.083333333333332
+        },
+        "observations": 144,
+        "rmse_bps": 19.73522654206601
+      }
+    },
+    "public_diagnostic": {
+      "policy_decay": {
+        "direction_accuracy": 0.5,
+        "events": 2,
+        "mae_bps": 82.91666666666667,
+        "mae_by_tenor": {
+          "UST10Y": 79.0,
+          "UST2Y": 89.5,
+          "UST30Y": 55.5,
+          "UST3Y": 93.0,
+          "UST5Y": 92.0,
+          "UST7Y": 88.5
+        },
+        "observations": 12,
+        "rmse_bps": 84.07784091741017
+      },
+      "reversal_35d_x-0.25": {
+        "direction_accuracy": 0.9166666666666666,
+        "events": 2,
+        "mae_bps": 74.79166666666667,
+        "mae_by_tenor": {
+          "UST10Y": 70.75,
+          "UST2Y": 82.0,
+          "UST30Y": 50.5,
+          "UST3Y": 83.875,
+          "UST5Y": 82.25,
+          "UST7Y": 79.375
+        },
+        "observations": 12,
+        "rmse_bps": 78.13263296045598
+      },
+      "zero_change": {
+        "direction_accuracy": 0.0,
+        "events": 2,
+        "mae_bps": 82.91666666666667,
+        "mae_by_tenor": {
+          "UST10Y": 79.0,
+          "UST2Y": 89.5,
+          "UST30Y": 55.5,
+          "UST3Y": 93.0,
+          "UST5Y": 92.0,
+          "UST7Y": 88.5
+        },
+        "observations": 12,
+        "rmse_bps": 85.21492435796287
+      }
+    },
+    "test": {
+      "policy_decay": {
+        "direction_accuracy": 0.1346153846153846,
+        "events": 26,
+        "mae_bps": 14.576923076923077,
+        "mae_by_tenor": {
+          "UST10Y": 16.115384615384617,
+          "UST2Y": 12.038461538461538,
+          "UST30Y": 16.46153846153846,
+          "UST3Y": 12.76923076923077,
+          "UST5Y": 14.307692307692308,
+          "UST7Y": 15.76923076923077
+        },
+        "observations": 156,
+        "rmse_bps": 20.455078988120686
+      },
+      "reversal_35d_x-0.25": {
+        "direction_accuracy": 0.3782051282051282,
+        "events": 26,
+        "mae_bps": 17.27724358974359,
+        "mae_by_tenor": {
+          "UST10Y": 18.58653846153846,
+          "UST2Y": 15.278846153846153,
+          "UST30Y": 17.83653846153846,
+          "UST3Y": 16.278846153846153,
+          "UST5Y": 17.682692307692307,
+          "UST7Y": 18.0
+        },
+        "observations": 156,
+        "rmse_bps": 23.35107784532572
+      },
+      "zero_change": {
+        "direction_accuracy": 0.019230769230769232,
+        "events": 26,
+        "mae_bps": 14.224358974358974,
+        "mae_by_tenor": {
+          "UST10Y": 16.384615384615383,
+          "UST2Y": 11.538461538461538,
+          "UST30Y": 16.692307692307693,
+          "UST3Y": 12.307692307692308,
+          "UST5Y": 13.461538461538462,
+          "UST7Y": 14.961538461538462
+        },
+        "observations": 156,
+        "rmse_bps": 20.042422956037974
+      }
+    }
+  },
+  "selected_on_development": "reversal_35d_x-0.25",
+  "source": [
+    "Federal Reserve policy statements and U.S. Treasury daily par-yield CSVs",
+    "Federal Reserve FOMC annual indexes and policy-actions table; U.S. Treasury daily par-yield CSVs"
+  ],
+  "split_event_counts": {
+    "confirmation": 35,
+    "development": 24,
+    "public_diagnostic": 2,
+    "test": 26
+  }
+}
