@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -12,7 +13,7 @@ from t4agent.family_specs import (
     SPECS,
     project_entity,
 )
-from t4agent.predict import PreparedRow, _claims_with_context, _unpack_batch, predict_rows
+from t4agent.predict import PreparedRow, _claims_with_context, _model_batch_size, _unpack_batch, predict_rows
 from t4agent.retrieve import BM25, Chunk, IndexedCorpus, allowed_document_ids, build_index, query_for, tokenize
 from t4agent.taskio import Task
 from t4agent.validate import validate_answer
@@ -674,6 +675,70 @@ def test_context_recovery_defers_single_rows_until_after_normal_batches(monkeypa
 
     assert llm.network_calls == 25
     assert sum(row.raw_model is not None for row in results) == 72
+
+
+def test_adaptive_batch_width_uses_remaining_request_capacity(monkeypatch) -> None:
+    monkeypatch.delenv("T4_MODEL_BATCH_SIZE", raising=False)
+    monkeypatch.setenv("T4_ENABLE_ADAPTIVE_BATCH", "1")
+    llm = SimpleNamespace(max_calls=25, usage=SimpleNamespace(calls=0))
+
+    assert _model_batch_size(75, llm) == 3
+    assert _model_batch_size(78, llm) == 4
+    assert _model_batch_size(100, llm) == 4
+    assert _model_batch_size(150, llm) == 6
+
+    llm.usage.calls = 5
+    assert _model_batch_size(78, llm) == 4
+    monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "2")
+    assert _model_batch_size(150, llm) == 2
+
+
+@pytest.mark.parametrize(("context_first", "expected_calls"), [(False, 20), (True, 24)])
+def test_adaptive_batch_covers_78_rows_with_clean_or_first_context_failure(
+    monkeypatch, context_first: bool, expected_calls: int
+) -> None:
+    entities = [{"entity_id": f"E{i}", "latest_value": float(i + 1)} for i in range(78)]
+    task = make_task("unseen_family", "unknown_metric", entities)
+    corpus = IndexedCorpus([], {}, {})
+    monkeypatch.delenv("T4_MODEL_BATCH_SIZE", raising=False)
+    monkeypatch.setenv("T4_ENABLE_ADAPTIVE_BATCH", "1")
+
+    class BudgetedLLM:
+        max_calls = 25
+        usage = SimpleNamespace(calls=0)
+        batch_calls = 0
+        last_failure_kind = None
+
+        def chat_json(self, system: str, user: str, max_tokens: int) -> dict | None:
+            if self.usage.calls >= self.max_calls:
+                self.last_failure_kind = None
+                return None
+            self.usage.calls += 1
+            if "REQUEST_JSON:\n" not in user:
+                self.last_failure_kind = None
+                return {"signals": {"directional_signal": {"level": 0}}}
+            request = json.loads(user.split("REQUEST_JSON:\n", 1)[1].split("\nOUTPUT_SCHEMA_JSON:", 1)[0])
+            self.batch_calls += 1
+            if context_first and self.batch_calls == 1:
+                self.last_failure_kind = "context_length"
+                return None
+            self.last_failure_kind = None
+            return {
+                "entities": [
+                    {
+                        "item_id": item["item_id"],
+                        "entity_id": item["entity_id"],
+                        "signals": {"directional_signal": {"level": 0}},
+                    }
+                    for item in request["items"]
+                ]
+            }
+
+    llm = BudgetedLLM()
+    results = predict_rows(task, BM25([]), corpus, llm, top_k=2)
+
+    assert llm.usage.calls == expected_calls
+    assert sum(row.raw_model is not None for row in results) == 78
 
 
 def test_deferred_recovery_preserves_small_all_context_case(monkeypatch) -> None:

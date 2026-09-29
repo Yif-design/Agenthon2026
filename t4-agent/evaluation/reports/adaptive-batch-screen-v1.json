@@ -1,0 +1,196 @@
+{
+  "baseline_git_commit": "8f3ef1790f67d20890a615fa2c38f4c0d997d3ce",
+  "cases": {
+    "clean_100": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "fallback_rows": 25,
+        "normal_batches": 34,
+        "rows": 100
+      },
+      "candidate": {
+        "batch_width": 4,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 100,
+        "fallback_rows": 0,
+        "normal_batches": 25,
+        "rows": 100
+      }
+    },
+    "clean_150": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "fallback_rows": 75,
+        "normal_batches": 50,
+        "rows": 150
+      },
+      "candidate": {
+        "batch_width": 6,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 150,
+        "fallback_rows": 0,
+        "normal_batches": 25,
+        "rows": 150
+      }
+    },
+    "clean_60": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 20,
+        "enhanced_rows": 60,
+        "fallback_rows": 0,
+        "normal_batches": 20,
+        "rows": 60
+      },
+      "candidate": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 20,
+        "enhanced_rows": 60,
+        "fallback_rows": 0,
+        "normal_batches": 20,
+        "rows": 60
+      }
+    },
+    "clean_75": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "fallback_rows": 0,
+        "normal_batches": 25,
+        "rows": 75
+      },
+      "candidate": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "fallback_rows": 0,
+        "normal_batches": 25,
+        "rows": 75
+      }
+    },
+    "clean_78": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "fallback_rows": 3,
+        "normal_batches": 26,
+        "rows": 78
+      },
+      "candidate": {
+        "batch_width": 4,
+        "call_26_blocked": true,
+        "calls": 20,
+        "enhanced_rows": 78,
+        "fallback_rows": 0,
+        "normal_batches": 20,
+        "rows": 78
+      }
+    },
+    "context_all_9": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 12,
+        "enhanced_rows": 9,
+        "fallback_rows": 0,
+        "normal_batches": 3,
+        "rows": 9
+      },
+      "candidate": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 12,
+        "enhanced_rows": 9,
+        "fallback_rows": 0,
+        "normal_batches": 3,
+        "rows": 9
+      }
+    },
+    "context_first_78": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 72,
+        "fallback_rows": 6,
+        "normal_batches": 26,
+        "rows": 78
+      },
+      "candidate": {
+        "batch_width": 4,
+        "call_26_blocked": true,
+        "calls": 24,
+        "enhanced_rows": 78,
+        "fallback_rows": 0,
+        "normal_batches": 20,
+        "rows": 78
+      }
+    },
+    "persistent_78": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 4,
+        "enhanced_rows": 0,
+        "fallback_rows": 78,
+        "normal_batches": 26,
+        "rows": 78
+      },
+      "candidate": {
+        "batch_width": 4,
+        "call_26_blocked": true,
+        "calls": 4,
+        "enhanced_rows": 0,
+        "fallback_rows": 78,
+        "normal_batches": 20,
+        "rows": 78
+      }
+    },
+    "transient_first_78": {
+      "baseline": {
+        "batch_width": 3,
+        "call_26_blocked": true,
+        "calls": 25,
+        "enhanced_rows": 72,
+        "fallback_rows": 6,
+        "normal_batches": 26,
+        "rows": 78
+      },
+      "candidate": {
+        "batch_width": 4,
+        "call_26_blocked": true,
+        "calls": 21,
+        "enhanced_rows": 78,
+        "fallback_rows": 0,
+        "normal_batches": 20,
+        "rows": 78
+      }
+    }
+  },
+  "decision": "proceed_to_fault_injection",
+  "decision_rule": "Require 78/78 clean, transient and first-context coverage; preserve the nine-row all-context and persistent-failure behavior; never issue call 26.",
+  "experiment": "adaptive_batch_screen_v1",
+  "hypothesis": "Increase batch width only when the remaining fixed-width schedule cannot cover all model-required rows within the remaining House request allowance.",
+  "layer": "L1/L2 cross-family House request scheduling",
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "schema_version": 1
+}

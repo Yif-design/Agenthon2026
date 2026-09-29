@@ -70,6 +70,7 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       T4_ENABLE_DATED_TABLE_BASELINE: "1"
+      T4_ENABLE_ADAPTIVE_BATCH: "1"
     strategy:
       fail-fast: false
       matrix:
@@ -109,6 +110,14 @@ jobs:
       - name: Build synthetic units and production answers
         run: |
           python t4-agent/evaluation/experiments/build_dated_table_nli_fixture.py \
+            --track4-repo official-track4 \
+            --answers-root nli-input/answers \
+            --case-manifest nli-input/cases.json
+          python t4-agent/evaluation/experiments/build_adaptive_batch_nli_fixture.py \
+            --track4-repo official-track4 \
+            --answers-root nli-input/answers \
+            --case-manifest nli-input/cases.json
+          python t4-agent/evaluation/experiments/build_adaptive_batch_nli_fixture.py \
             --track4-repo official-track4 \
             --answers-root nli-input/answers \
             --case-manifest nli-input/cases.json

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 from dataclasses import dataclass
 from typing import Any
@@ -111,7 +112,7 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
             model_outputs[row.index] = parsed
             model_prompts[row.index] = prompt_text
     else:
-        batch_size = min(6, max(1, int(os.environ.get("T4_MODEL_BATCH_SIZE", "3"))))
+        batch_size = _model_batch_size(len(candidates), llm)
         deferred_context_batches: list[list[PreparedRow]] = []
         for start in range(0, len(candidates), batch_size):
             batch = candidates[start : start + batch_size]
@@ -156,6 +157,21 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
         )
         results.append(result)
     return _normalize_ranking(task, results)
+
+
+def _model_batch_size(candidate_count: int, llm: LLM) -> int:
+    """Cover large rosters within the remaining call budget without changing small batches."""
+    configured = os.environ.get("T4_MODEL_BATCH_SIZE")
+    if configured is not None:
+        return min(6, max(1, int(configured)))
+    if os.environ.get("T4_ENABLE_ADAPTIVE_BATCH", "0") != "1":
+        return 3
+    usage = getattr(llm, "usage", None)
+    used_calls = max(0, int(getattr(usage, "calls", 0)))
+    remaining_calls = max(1, int(getattr(llm, "max_calls", 25)) - used_calls)
+    if candidate_count <= 3 * remaining_calls:
+        return 3
+    return min(6, max(3, math.ceil(candidate_count / remaining_calls)))
 
 
 def _retry_batch_as_single_rows(
