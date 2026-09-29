@@ -1781,3 +1781,24 @@ The candidate was rejected before code. Existing explicit field-name unit guards
 units and family calculators remain unchanged. No model or NLI ran. Script:
 `evaluation/experiments/target_contract_inventory.py`. Report:
 `evaluation/reports/target-contract-inventory-v1.json`.
+
+## 2026-09-30: shared macro model context — already satisfied or not applicable
+
+The rates, CPI and macro-revision paths were audited before introducing a second shared-context
+representation. Both published FOMC curve units already make exactly one task-level model request
+for all six tenors. CPI and macro revision make zero model requests because their cutoff-safe
+tables are consumed by deterministic calculators. Consequently, their repeated BM25 chunks never
+consume House model input tokens.
+
+The audit still measured retrieval overlap. Exact duplicate chunk characters were 90.9% for CPI,
+83.3% for both rate units and 59.3% for macro revision. This does not expose a model-context saving:
+the rate prompt is already shared, while the other two families have no model prompt. All entity
+queries were distinct, and their result sets remain useful for entity-specific fallback context and
+citations. Replacing them with one common retrieval would therefore change evidence selection to
+save only inexpensive local BM25 work.
+
+The candidate was rejected as already satisfied or not applicable under the pre-registered gate,
+which required at least two model-required macro families with multiple prompts and at least 10%
+exact duplicated prompt evidence. No production code, prediction, citation, model call or NLI
+changed. Script: `evaluation/experiments/shared_macro_context_audit.py`. Report:
+`evaluation/reports/shared-macro-context-audit-v1.json`.
