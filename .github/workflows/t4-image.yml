@@ -91,7 +91,7 @@ jobs:
 
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
       - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
@@ -100,7 +100,9 @@ jobs:
 
       - name: Install pinned judge runtime
         run: |
-          python -m pip install "numpy==1.26.4" "torch==2.2.2" "transformers==4.46.3"
+          python -m pip install "numpy<2"
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install transformers
           python -m pip install "qfbench2-common @ git+https://github.com/Agenthon-2026/Agenthon2026-public.git@v2.4.4#subdirectory=common"
           python -m pip install --no-deps ./official-track4
 
