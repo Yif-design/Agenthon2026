@@ -62,8 +62,12 @@
   on a multi-row batch can consume up to one failed batch attempt plus one attempt per row. The
   25-call hard cap, four-failure circuit and model-phase deadline still bound this behavior, so
   single-row recovery runs only after normal batches and may receive no remaining slot on a large
-  roster. With batch size three, more than 75 model-required rows necessarily use the deterministic
-  fallback even on a clean route.
+  roster. Batch width increases only when needed, from three to at most six, so a clean route can
+  cover at most 150 model-required rows. Larger rosters still require deterministic fallback. Larger
+  batches also carry more evidence and may encounter the unpublished House context ceiling; the
+  bounded context-split recovery remains active. Evidence for widths above three currently consists
+  of deterministic fault injection, one four-row free remote-model A/B and a synthetic 78-row
+  official NLI run; it does not establish hidden-task predictive accuracy.
 - The COT mean-reversion coefficient is deliberately simple. It improved a 96-date time-forward test,
   but its mean rank correlation was only 0.0379 and may vary across market regimes.
 - The CPI twelve-month mean is confirmed only for core and food on 42 complete-history rows in

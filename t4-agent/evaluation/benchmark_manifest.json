@@ -178,5 +178,19 @@
       "decision": "accept",
       "artifact_available_date": "2026-02-01"
     }
+  },
+  "cross_family_engineering_benchmarks": {
+    "adaptive_batch_v1": {
+      "screen_report": "evaluation/reports/adaptive-batch-screen-v1.json",
+      "screen_sha256": "79751cb670f36c12ffba17ed7bb3dd8ae557b589a7b1c0a454d8ca61d97b6520",
+      "remote_ab_report": "evaluation/reports/adaptive-batch-remote-ab-v1.json",
+      "remote_ab_sha256": "d5d5553349bba0d1364ed5f27ecd6ec5beabd74d765da6d2f936d421dd6da3ee",
+      "public_ab_report": "evaluation/reports/adaptive-batch-public-ab-v1.json",
+      "public_ab_sha256": "b50b494298e54831df2fc839f6b65bb9f26035fc7db642cce20778aea961d57c",
+      "nli_report": "evaluation/reports/nli/adaptive-batch-ensemble.json",
+      "nli_sha256": "2a18f63e19c9dd18ea66392dd558b7010572f1b863603ddfe7ee55308f9141b1",
+      "scope": "L1/L2 cross-family House request scheduling",
+      "decision": "accept"
+    }
   }
 }

@@ -158,3 +158,22 @@ Reports:
 - `evaluation/reports/nli/dated-table-direct-cross.json`
 - `evaluation/reports/nli/dated-table-direct-moritz.json`
 - `evaluation/reports/nli/dated-table-direct-ensemble.json`
+
+## Adaptive large-roster batching
+
+GitHub Actions run `36564155953` used the same two pinned model revisions and exact public Track 4
+judge as the dated-table gate. A 78-entity synthetic classification unit exercised the production
+width-four batching path in 20 House-compatible calls. Each output claim cited one exact,
+entity-bound direction statement.
+
+Both individual NLI members and their arithmetic-mean ensemble scored 1.0 roster faithfulness,
+above the 0.80 gate. The lowest per-entity ensemble entailment score was 0.7857. The two existing
+dated-table units also remained at 1.0, so the new fixture did not regress the earlier gate. This
+validates identity-bound evidence construction at width four; it does not prove classification
+accuracy on hidden tasks or safety of every possible width-six prompt.
+
+Reports:
+
+- `evaluation/reports/nli/adaptive-batch-cross.json`
+- `evaluation/reports/nli/adaptive-batch-moritz.json`
+- `evaluation/reports/nli/adaptive-batch-ensemble.json`

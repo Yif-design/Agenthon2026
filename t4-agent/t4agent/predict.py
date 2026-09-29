@@ -164,7 +164,7 @@ def _model_batch_size(candidate_count: int, llm: LLM) -> int:
     configured = os.environ.get("T4_MODEL_BATCH_SIZE")
     if configured is not None:
         return min(6, max(1, int(configured)))
-    if os.environ.get("T4_ENABLE_ADAPTIVE_BATCH", "0") != "1":
+    if os.environ.get("T4_ENABLE_ADAPTIVE_BATCH", "1") != "1":
         return 3
     usage = getattr(llm, "usage", None)
     used_calls = max(0, int(getattr(usage, "calls", 0)))

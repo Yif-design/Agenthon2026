@@ -10,8 +10,9 @@ The submitted path is a baseline-first bounded workflow:
    cutoff, then hard-scope documents by entity, series, tenor or shared macro source.
 4. Retrieve evidence with BM25 and extract explicit numerical parameters deterministically.
 5. Compute and atomically write a complete model-free baseline answer.
-6. For families that need text judgement, batch up to three entities and ask the House-compatible
-   model for five-level signals, explicit numbers and exact quotes.
+6. For families that need text judgement, use batches of three when they fit the remaining request
+   budget; otherwise raise the width only as far as needed, capped at six, and ask the
+   House-compatible model for five-level signals, explicit numbers and exact quotes.
 7. Reject model facts with a foreign document, non-exact quote or invalid value.
 8. Re-run the deterministic family calculator with accepted signals and parameters.
 9. Normalize rankings, validate the complete answer, and atomically replace the baseline only when
@@ -37,8 +38,10 @@ parameter remains missing, and an invalid batch identity falls back per entity. 
 strings, named signal levels and correctly typed reordered batches keep their prior behavior.
 
 This design uses at most the official 25 requests, a 420-second model phase, 40-second request
-timeouts and a circuit breaker. With three entities per batch, a clean route can enhance up to 75
-rows instead of imposing fallback after row 54. Each batch gets two attempts by default. The
+timeouts and a circuit breaker. Batches stay at three entities whenever the remaining requests can
+cover the roster. When they cannot, the width rises to the smallest required integer, capped at six.
+A clean 78-row route therefore uses 20 width-four requests and enhances all 78 rows; a clean route
+can cover up to 150 rows before deterministic fallback is required. Each batch gets two attempts by default. The
 cross-batch circuit opens after four consecutive failures, so one malformed batch falls back
 without suppressing every later independent batch; a successful response resets the count. Authorization failures,
 non-retriable client errors, the request cap and the deadline still stop immediately. A failed API,

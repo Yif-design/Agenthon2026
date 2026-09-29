@@ -679,7 +679,7 @@ def test_context_recovery_defers_single_rows_until_after_normal_batches(monkeypa
 
 def test_adaptive_batch_width_uses_remaining_request_capacity(monkeypatch) -> None:
     monkeypatch.delenv("T4_MODEL_BATCH_SIZE", raising=False)
-    monkeypatch.setenv("T4_ENABLE_ADAPTIVE_BATCH", "1")
+    monkeypatch.delenv("T4_ENABLE_ADAPTIVE_BATCH", raising=False)
     llm = SimpleNamespace(max_calls=25, usage=SimpleNamespace(calls=0))
 
     assert _model_batch_size(75, llm) == 3
@@ -691,6 +691,14 @@ def test_adaptive_batch_width_uses_remaining_request_capacity(monkeypatch) -> No
     assert _model_batch_size(78, llm) == 4
     monkeypatch.setenv("T4_MODEL_BATCH_SIZE", "2")
     assert _model_batch_size(150, llm) == 2
+
+
+def test_adaptive_batch_can_be_disabled(monkeypatch) -> None:
+    monkeypatch.delenv("T4_MODEL_BATCH_SIZE", raising=False)
+    monkeypatch.setenv("T4_ENABLE_ADAPTIVE_BATCH", "0")
+    llm = SimpleNamespace(max_calls=25, usage=SimpleNamespace(calls=0))
+
+    assert _model_batch_size(150, llm) == 3
 
 
 @pytest.mark.parametrize(("context_first", "expected_calls"), [(False, 20), (True, 24)])

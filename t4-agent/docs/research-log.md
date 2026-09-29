@@ -1675,3 +1675,30 @@ members. The five-entity direct-ratio unit and five-entity direct-basis-point-ch
 language model was used. Reports: `evaluation/reports/generic-dated-table-extractor-v1.json`,
 `evaluation/reports/generic-dated-table-public-ab-v1.json`, and
 `evaluation/reports/nli/dated-table-direct-ensemble.json`.
+
+### Request-budget adaptive batching — accepted
+
+The fixed width of three could enhance at most 75 model-required rows under the official 25-call
+limit. This left three rows on deterministic fallback in a clean 78-row roster and six rows after
+either one transient failure or one first-batch context overflow. The candidate keeps width three
+whenever the remaining request slots can cover the roster. Otherwise it chooses the smallest width
+that can cover the remaining candidates, capped at six; `T4_MODEL_BATCH_SIZE` still overrides it
+and `T4_ENABLE_ADAPTIVE_BATCH=0` provides an operational rollback.
+
+Deterministic fault injection improved clean 78-row coverage from 75 to 78, and both transient-first
+and first-context-overflow coverage from 72 to 78. Clean 100- and 150-row rosters reached complete
+coverage, while the 60-row, 75-row, nine-row all-context and persistent-failure controls were
+unchanged. No case issued call 26. A one-call width-four OpenRouter replay with the free Nemotron 3
+Super analogue returned all four exact identities for 997 prompt and 527 completion tokens at zero
+cost; width three required two calls and 1,450 prompt plus 498 completion tokens. A prior Google
+Gemini 2.5 Flash Lite attempt was unavailable after two HTTP 503 responses and one timeout and was
+not counted as a candidate failure.
+
+GitHub Actions run `36564155953` then evaluated a 78-row production-path fixture with both pinned
+official NLI members. Each member and the ensemble scored 1.0 faithfulness, and both existing
+dated-table cases stayed at 1.0. The candidate is enabled by default. The public no-model A/B stayed
+byte-identical for all 11 units and 78 rows. No local language model was run. Reports:
+`evaluation/reports/adaptive-batch-screen-v1.json`,
+`evaluation/reports/adaptive-batch-remote-ab-v1.json`,
+`evaluation/reports/adaptive-batch-public-ab-v1.json`, and
+`evaluation/reports/nli/adaptive-batch-ensemble.json`.
