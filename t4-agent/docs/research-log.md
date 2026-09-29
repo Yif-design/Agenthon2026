@@ -1702,3 +1702,25 @@ byte-identical for all 11 units and 78 rows. No local language model was run. Re
 `evaluation/reports/adaptive-batch-remote-ab-v1.json`,
 `evaluation/reports/adaptive-batch-public-ab-v1.json`, and
 `evaluation/reports/nli/adaptive-batch-ensemble.json`.
+
+## 2026-09-30: post-earnings ticker prior citation preflight — rejected before runtime
+
+The previously locked same-ticker recent-four prior improved classification accuracy from 0.1648
+to 0.3755 on the untouched 261-event 2026 YTD confirmation panel while preserving the fixed
+interval coverage. It remained deferred only because prediction-bound faithfulness had not been
+tested. The new remote official NLI workflow removed the compute blocker, but a static provenance
+audit found a more fundamental input mismatch.
+
+The fitted abnormal-return history is a permitted local numerical artifact for forecasting, but it
+is not part of an evaluated unit's frozen corpus and therefore cannot be cited. The published
+post-earnings unit supplies six cutoff-safe SEC filings and no prior abnormal-return series in task
+fields or corpus documents. Because the official judge constructs its hypothesis from the submitted
+label, point and interval, prose cannot make the prior-selected direction faithful. Creating a
+synthetic NLI unit that inserts the fitted history would test evidence unavailable to the actual
+runtime and was deliberately not done.
+
+The candidate is rejected before production despite its outcome gain. No prediction, citation, API
+call or image changed. A different corpus-conditioned mechanism may be reconsidered only for units
+that explicitly supply cutoff-safe reaction history or a direct forward statement supporting the
+same canonical direction. Report:
+`evaluation/reports/postearn-prior-citation-preflight-v1.json`.

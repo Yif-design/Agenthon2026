@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment": "postearn_prior_citation_preflight_v1",
+  "date": "2026-09-30",
+  "baseline_git_commit": "424fe9f49dfea766de1248fc2adb8e936043e339",
+  "candidate_source": "evaluation/reports/postearn-classification-holdout-v2.json",
+  "candidate": "Use the mean of each ticker's four most recent 2018-2023 abnormal earnings reactions to choose positive_reaction, negative_reaction, or flat.",
+  "outcome_evidence": {
+    "confirmation_dataset": "evaluation/datasets/postearn/panel88_confirmation_2026_ytd.json",
+    "rows": 261,
+    "baseline_accuracy": 0.16475095785440613,
+    "candidate_accuracy": 0.37547892720306514,
+    "accuracy_delta": 0.210727969348659,
+    "interval_coverage_unchanged": true,
+    "source_report_sha256": "6270b6d983ee7481e1a3fc20e63fe8802e420474da99f521ee5721bcd21ace07"
+  },
+  "static_faithfulness_contract": {
+    "prediction_hypothesis_source": "The official judge constructs the hypothesis from submitted label, point_forecast, and interval rather than claim prose.",
+    "citation_source": "Every supporting span must resolve inside the official unit's frozen corpus and satisfy its cutoff.",
+    "artifact_role": "Local numerical artifacts may affect a forecast but are not part of the unit corpus and cannot be cited as prediction evidence.",
+    "official_reference": "starter-repos/track4-analysis-public/README.md lines 265-325"
+  },
+  "runtime_reachability": {
+    "public_postearn_entities": 3,
+    "task_fields_with_prior_abnormal_returns": 0,
+    "corpus_documents": 6,
+    "corpus_document_types": [
+      "SEC 10-K",
+      "SEC 10-Q",
+      "SEC 8-K"
+    ],
+    "corpus_documents_with_prior_abnormal_return_series": 0,
+    "fitted_history_is_official_runtime_input": false,
+    "fitted_history_is_citable_official_corpus": false
+  },
+  "nli_decision": {
+    "remote_official_nli_run": false,
+    "reason": "No legal corpus premise exists for the candidate's incremental ticker-prior direction. A synthetic premise containing the fitted history would test an input that real runtime units do not provide and could not justify production adoption."
+  },
+  "decision_rule": "Reject before runtime if the incremental changed label cannot be bound to an exact cutoff-safe span in the supplied official corpus; do not manufacture an NLI fixture with non-runtime evidence.",
+  "decision": "reject_before_runtime",
+  "production_change": "none",
+  "model_api_calls": 0,
+  "local_llm_run": false,
+  "future_reconsideration": "A separate corpus-conditioned candidate may be tested only when a unit itself supplies explicit, cutoff-safe prior reaction observations or a direct forward statement supporting the same canonical prediction."
+}
