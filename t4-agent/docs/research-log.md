@@ -1802,3 +1802,36 @@ which required at least two model-required macro families with multiple prompts 
 exact duplicated prompt evidence. No production code, prediction, citation, model call or NLI
 changed. Script: `evaluation/experiments/shared_macro_context_audit.py`. Report:
 `evaluation/reports/shared-macro-context-audit-v1.json`.
+
+## 2026-09-30: real-outcome generic classification benchmark and opaque label synonym — rejected
+
+A new benchmark sampled balanced positive and negative time-forward outcomes from the frozen CPI,
+COT and macro-revision panels. Each split contains six rows per domain, and each row is evaluated
+under semantic `up/down` labels and prompt-defined opaque `class_a/class_b` labels. The model sees
+one cutoff-safe lagged feature; the future outcome is available only to the scorer. Metrics include
+accuracy, macro-F1, hard-label Brier, quote validation, label-schema consistency and API usage.
+
+Three free Google lightweight-model attempts were incomplete and are retained rather than silently
+discarded. Gemini 2.5 Flash Lite had nine failed batches, Gemini 3.1 Flash Lite had two, and Gemini
+3.5 Flash Lite had one malformed-JSON batch. Their aggregate scorecards are marked invalid. The
+completed 3.5 rows nevertheless exposed one deterministic mapper defect: for the same validated
+direction signal, the current parser understood `higher/lower` but did not understand prompt clauses
+using `above/below`. A saved-signal screen excluded the unresolved batch and found that adding those
+two synonyms would raise opaque-label test accuracy from 0.5000 to 0.6111 and macro-F1 from 0.3333
+to 0.5786. Confirmation accuracy rose to 0.5556 and macro-F1 to 0.5500, with no domain regression.
+The public 11-unit no-model A/B remained byte-identical and 138 tests passed after the candidate was
+reverted.
+
+The outcome gate was not sufficient for adoption. The official canonical classification hypothesis
+contains the submitted opaque token, for example `class_b`, but omits the task-prompt definition
+that says `class_b means below zero`. None of the 36 runtime evidence documents contains either
+opaque label definition; they contain only lagged numbers. Consequently, the cited premise cannot
+entail the changed opaque prediction. A remote NLI run would test a statically invalid premise and
+was deliberately skipped. Production role keywords and tests were restored to baseline.
+
+Scripts: `evaluation/experiments/generic_classification_benchmark.py`,
+`evaluation/experiments/generic_above_below_role_screen.py`, and
+`evaluation/experiments/generic_opaque_label_nli_preflight.py`. Reports:
+`evaluation/reports/generic-classification-benchmark-v1.json`,
+`evaluation/reports/generic-above-below-role-screen-v1.json`, and
+`evaluation/reports/generic-opaque-label-nli-preflight-v1.json`.
