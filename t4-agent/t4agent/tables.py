@@ -17,11 +17,6 @@ from .taskio import Task
 
 DATE_HEADER_RE = re.compile(r"(?:[a-z]+_)*date", re.I)
 NUMBER_RE = re.compile(r"[+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?")
-CHANGE_TOKENS = {"change", "delta", "revision", "shift", "move"}
-AMBIGUOUS_CHANGE_TOKENS = {"growth", "return"}
-UNIT_TOKENS = {"bp", "bps", "basis", "point", "points", "pct", "percent", "percentage"}
-
-
 @dataclass(frozen=True)
 class TableRow:
     observation_date: str
@@ -105,10 +100,6 @@ def extract_generic_table_baseline(
     """Return one unambiguous target-matched baseline, otherwise abstain."""
     target_name = str(task.target.get("name") or "")
     target_unit = _unit(str(task.target.get("unit") or task.target.get("units") or entity.get("unit") or entity.get("units") or ""))
-    target_parts = _parts(target_name)
-    if target_parts & AMBIGUOUS_CHANGE_TOKENS:
-        return None
-    base_parts = target_parts - CHANGE_TOKENS - UNIT_TOKENS - {"forecast", "prediction", "predicted", "next", "future"}
     identifiers = {_normalize(target_name)}
     for key in ("series_id", "series_fred"):
         value = entity.get(key) or task.target.get(key)
@@ -121,40 +112,24 @@ def extract_generic_table_baseline(
         if len(corpus.doc_texts) > 1 and not _doc_id_matches_entity(doc_id, entity):
             continue
         for table in parse_dated_tables(text, task.cutoff_date):
-            matches: list[tuple[int, str, str]] = []
+            matches: list[tuple[int, str]] = []
             for position, column in enumerate(table.header[1:], 1):
                 normalized = _normalize(column)
                 if normalized in identifiers:
-                    matches.append((position, column, "last"))
-                    continue
-                column_parts = _parts(column)
-                if target_parts & CHANGE_TOKENS and column_parts == base_parts:
-                    matches.append((position, column, "last_minus_previous"))
-                elif target_parts & CHANGE_TOKENS and column_parts - UNIT_TOKENS == base_parts:
-                    matches.append((position, column, "last_minus_previous"))
+                    matches.append((position, column))
             if len(matches) != 1:
                 continue
-            position, column, statistic = matches[0]
+            position, column = matches[0]
             values = [_number(row.cells[position]) for row in table.rows]
             if any(value is None for value in values):
                 continue
             decimals = [value for value in values if value is not None]
             numeric = [float(value) for value in decimals]
-            if statistic == "last_minus_previous" and len(numeric) < 2:
-                continue
             source_unit = _unit_from_column_or_context(column, text, table.rows[0].start)
             effective_unit = target_unit or source_unit
             if not effective_unit or (target_unit and source_unit and target_unit != source_unit):
-                if not (
-                    statistic != "last"
-                    and target_unit == "basis_points"
-                    and source_unit == "percent"
-                ):
-                    continue
-            value_decimal = decimals[-1] if statistic == "last" else decimals[-1] - decimals[-2]
-            if target_unit == "basis_points" and source_unit == "percent" and statistic != "last":
-                value_decimal *= Decimal("100")
-                effective_unit = "basis_points"
+                continue
+            value_decimal = decimals[-1]
             value = float(value_decimal)
             if not math.isfinite(value):
                 continue
@@ -162,8 +137,6 @@ def extract_generic_table_baseline(
             deviations = [abs(item - median) for item in numeric]
             last_row = table.rows[-1]
             quote = last_row.raw
-            if statistic == "last_minus_previous":
-                quote = table.rows[-2].raw + "\n" + last_row.raw
             candidates.append(
                 TableBaseline(
                     value=value,
@@ -172,7 +145,7 @@ def extract_generic_table_baseline(
                     doc_id=doc_id,
                     quote=quote,
                     observation_date=last_row.observation_date,
-                    statistic=statistic,
+                    statistic="last",
                     first=numeric[0],
                     previous=numeric[-2] if len(numeric) > 1 else None,
                     last=numeric[-1],

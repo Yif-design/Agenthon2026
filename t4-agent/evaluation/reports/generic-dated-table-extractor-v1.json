@@ -40,11 +40,12 @@
   },
   "hypothesis": "An exact target-matched cutoff-safe dated-table persistence baseline improves unknown numeric tasks over the current zero fallback without affecting known families or model requests.",
   "layer": "L2 unknown-family deterministic extraction",
-  "pre_registered_rule": "For a level target with one exact target/series column and a confirmed unit, use the latest valid pre-cutoff observation; for unambiguous change/delta targets use the latest difference; otherwise abstain.",
+  "pre_registered_rule": "With one exact target/series column and a confirmed matching unit, use the latest valid pre-cutoff observation; never derive changes or convert units; otherwise abstain.",
   "safety": {
     "cases": {
       "blank_boundary_not_crossed": true,
-      "change_delta": true,
+      "derived_change_abstains": true,
+      "direct_change_column": true,
       "duplicate_column_rejected": true,
       "duplicate_date_rejected": true,
       "future_stopped": true,
@@ -53,7 +54,6 @@
       "missing_rejected": true,
       "parser_no_table_on_invalid_cutoff": true,
       "partial_number_rejected": true,
-      "percent_to_bps": true,
       "reverse_date_rejected": true,
       "unit_mismatch_rejected": true,
       "unknown_unit_rejected": true,

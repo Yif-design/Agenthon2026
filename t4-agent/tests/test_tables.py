@@ -29,13 +29,15 @@ def test_exact_target_table_extracts_latest_cutoff_safe_value() -> None:
     assert value.unit == "ratio"
 
 
-def test_change_target_uses_two_rows_and_safe_percent_to_bps_conversion() -> None:
+def test_derived_change_abstains_but_direct_change_column_is_supported() -> None:
     text = "date | rate_pct\n2024-01-01 | 4.10\n2024-02-01 | 4.02"
-    value = extract_generic_table_baseline(task("rate_change_bps", "basis points"), {"entity_id": "X"}, corpus(text))
+    assert extract_generic_table_baseline(task("rate_change_bps", "basis points"), {"entity_id": "X"}, corpus(text)) is None
 
+    direct = "date | rate_change_bps\n2024-01-01 | -7\n2024-02-01 | -8"
+    value = extract_generic_table_baseline(task("rate_change_bps", "basis points"), {"entity_id": "X"}, corpus(direct))
     assert value is not None
     assert math.isclose(value.value, -8.0)
-    assert value.quote == "2024-01-01 | 4.10\n2024-02-01 | 4.02"
+    assert value.quote == "2024-02-01 | -8"
 
 
 def test_malformed_missing_duplicate_and_unknown_unit_tables_abstain() -> None:

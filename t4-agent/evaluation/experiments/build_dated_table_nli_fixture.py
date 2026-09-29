@@ -38,11 +38,11 @@ CASES = (
         "target_name": "rate_change_bps",
         "unit": "basis points",
         "tables": (
-            ("TWO_YEAR", (4.31, 4.24, 4.18)),
-            ("THREE_YEAR", (4.18, 4.10, 4.05)),
-            ("FIVE_YEAR", (4.02, 3.97, 3.91)),
-            ("TEN_YEAR", (4.11, 4.06, 4.00)),
-            ("THIRTY_YEAR", (4.35, 4.31, 4.26)),
+            ("TWO_YEAR", (-7, -6, -6)),
+            ("THREE_YEAR", (-8, -5, -5)),
+            ("FIVE_YEAR", (-5, -7, -6)),
+            ("TEN_YEAR", (-7, -5, -6)),
+            ("THIRTY_YEAR", (-4, -6, -5)),
         ),
     },
 )
@@ -67,7 +67,7 @@ def _build_unit(track4_repo: Path, answers_root: Path, case: dict) -> tuple[str,
     corpus_dir.mkdir(parents=True, exist_ok=True)
     manifest_files = []
     entities = []
-    column = "metric_ratio" if case["target_name"] == "metric_ratio" else "rate_pct"
+    column = case["target_name"]
     for entity_id, values in case["tables"]:
         relative = f"corpus/{entity_id}_HISTORY.json"
         path = unit_dir / relative
