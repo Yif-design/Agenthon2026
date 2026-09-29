@@ -17,6 +17,10 @@ Verified properties:
 - Linux/amd64;
 - image label `qfbench2.interface_version=2.0`;
 - `analyze` command smoke-tested by GitHub Actions;
+- final no-model audit passed all 11 public units and all 78 entities with zero local validation
+  errors in 19.1 seconds; the combined answer size was 99,885 bytes;
+- all 8 OCI layers and 5,888 tar entries were streamed and checked for the macOS
+  `com.apple.provenance` attribute reported in official Track 4 issue #16; none contained it;
 - descriptor declares the official House Nemotron snapshot and Apache-2.0 license.
 
 Install the official toolkit in a temporary directory or other clean Python 3.13 environment,
