@@ -2,14 +2,13 @@
   "schema_version": "1.0.0",
   "interface_version": "2.0",
   "competition_id": "agenthon2026-analysis-dev",
-  "team_id": "REPLACE_WITH_DERIVED_TEAM_ID",
   "track": "analysis",
   "phase": "dev",
   "category": "api",
   "image": {
     "registry": "ghcr.io",
     "repository": "yif-design/agenthon2026-t4",
-    "digest": "sha256:REPLACE_WITH_64_HEX_IMAGE_DIGEST"
+    "digest": "sha256:f06ebceb97265ecd2a9b2c6bea778b03637b58432871ce272cdee93640796d3a"
   },
   "image_access": "public",
   "models": [
@@ -21,6 +20,5 @@
       "revision": "rl-030326-fp8"
     }
   ],
-  "license": "Apache-2.0",
-  "descriptor_digest": "sha256:REPLACE_WITH_TOOLKIT_SEALED_DIGEST"
+  "license": "Apache-2.0"
 }
