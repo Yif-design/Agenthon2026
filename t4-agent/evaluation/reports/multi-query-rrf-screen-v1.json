@@ -1,0 +1,305 @@
+{
+  "baseline_git_commit": "ded7edcb26de06280ca8324832bb39c41089d98a",
+  "by_family": {
+    "credit_event": {
+      "baseline": {
+        "facts": 4,
+        "hit_at_1": 0.0,
+        "hit_at_3": 0.25,
+        "hit_at_8": 1.0,
+        "mrr": 0.3125
+      },
+      "candidate": {
+        "facts": 4,
+        "hit_at_1": 0.0,
+        "hit_at_3": 0.0,
+        "hit_at_8": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "eps_yoy_direction": {
+      "baseline": {
+        "facts": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.8,
+        "hit_at_8": 1.0,
+        "mrr": 0.85
+      },
+      "candidate": {
+        "facts": 5,
+        "hit_at_1": 0.0,
+        "hit_at_3": 0.4,
+        "hit_at_8": 0.4,
+        "mrr": 0.16666666666666666
+      }
+    },
+    "post_earnings_reaction": {
+      "baseline": {
+        "facts": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_8": 1.0,
+        "mrr": 1.0
+      },
+      "candidate": {
+        "facts": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 0.0,
+        "hit_at_8": 1.0,
+        "mrr": 0.14285714285714285
+      }
+    },
+    "rate_curve_cross_section": {
+      "baseline": {
+        "facts": 12,
+        "hit_at_1": 0.5,
+        "hit_at_3": 1.0,
+        "hit_at_8": 1.0,
+        "mrr": 0.75
+      },
+      "candidate": {
+        "facts": 12,
+        "hit_at_1": 0.5,
+        "hit_at_3": 1.0,
+        "hit_at_8": 1.0,
+        "mrr": 0.75
+      }
+    }
+  },
+  "chunk_set_symmetric_difference_total": 70,
+  "configuration": {
+    "query_depth": 30,
+    "query_roles": 5,
+    "rrf_k": 60,
+    "top_k": 8
+  },
+  "date": "2026-09-30",
+  "decision": "reject_before_production",
+  "decision_rule": "Advance only if overall MRR and hit@3 strictly improve, MRR improves in at least two families, no family's hit@8 falls, and top-eight retrieved characters grow by at most 10%.",
+  "experiment": "multi_query_rrf_screen_v1",
+  "facts": [
+    {
+      "baseline_rank": 2,
+      "candidate_rank": null,
+      "entity_id": "BBBY",
+      "fact_name": "going_concern_present",
+      "family": "credit_event",
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "baseline_rank": 4,
+      "candidate_rank": null,
+      "entity_id": "BBBY",
+      "fact_name": "liquidity_explicitly_insufficient",
+      "family": "credit_event",
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "baseline_rank": 4,
+      "candidate_rank": null,
+      "entity_id": "WE",
+      "fact_name": "going_concern_present",
+      "family": "credit_event",
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "baseline_rank": 4,
+      "candidate_rank": null,
+      "entity_id": "WE",
+      "fact_name": "liquidity_explicitly_insufficient",
+      "family": "credit_event",
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 3,
+      "entity_id": "AMD",
+      "fact_name": "yoy_earnings_signal",
+      "family": "eps_yoy_direction",
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": null,
+      "entity_id": "AMGN",
+      "fact_name": "yoy_earnings_signal",
+      "family": "eps_yoy_direction",
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": null,
+      "entity_id": "DOW",
+      "fact_name": "yoy_earnings_signal",
+      "family": "eps_yoy_direction",
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 2,
+      "entity_id": "HON",
+      "fact_name": "yoy_earnings_signal",
+      "family": "eps_yoy_direction",
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline_rank": 4,
+      "candidate_rank": null,
+      "entity_id": "IBM",
+      "fact_name": "yoy_earnings_signal",
+      "family": "eps_yoy_direction",
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline_rank": 2,
+      "candidate_rank": 2,
+      "entity_id": "UST10Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_rank": 2,
+      "candidate_rank": 2,
+      "entity_id": "UST2Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_rank": 2,
+      "candidate_rank": 2,
+      "entity_id": "UST30Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_rank": 2,
+      "candidate_rank": 2,
+      "entity_id": "UST3Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_rank": 2,
+      "candidate_rank": 2,
+      "entity_id": "UST5Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_rank": 2,
+      "candidate_rank": 2,
+      "entity_id": "UST7Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 1,
+      "entity_id": "UST10Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 1,
+      "entity_id": "UST2Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 1,
+      "entity_id": "UST30Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 1,
+      "entity_id": "UST3Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 1,
+      "entity_id": "UST5Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 1,
+      "entity_id": "UST7Y",
+      "fact_name": "policy_direction",
+      "family": "rate_curve_cross_section",
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_rank": 1,
+      "candidate_rank": 7,
+      "entity_id": "AMZN",
+      "fact_name": "explicit_forward_outlook_signal",
+      "family": "post_earnings_reaction",
+      "task_id": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "family_hit8_noninferior": false,
+  "hypothesis": "Fixed-role target, historical, expectations and outlook queries fused with RRF recover independently validated exact facts more reliably than one broad BM25 query.",
+  "improved_families": [],
+  "limitations": [
+    "Validated weak-model facts are independent exact spans but come from retired public practice units.",
+    "Retrieval relevance does not by itself prove predictive-quality or NLI improvement."
+  ],
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "overall": {
+    "baseline": {
+      "facts": 22,
+      "hit_at_1": 0.5,
+      "hit_at_3": 0.8181818181818182,
+      "hit_at_8": 1.0,
+      "mrr": 0.7045454545454546
+    },
+    "candidate": {
+      "facts": 22,
+      "hit_at_1": 0.2727272727272727,
+      "hit_at_3": 0.6363636363636364,
+      "hit_at_8": 0.6818181818181818,
+      "mrr": 0.45346320346320346
+    }
+  },
+  "query_cases": 20,
+  "retrieved_chars": {
+    "baseline": 228778,
+    "candidate": 228109,
+    "growth_fraction": -0.0029242322251265417
+  },
+  "schema_version": 1,
+  "scope": "L2 multi-query lexical retrieval",
+  "source_trace_root": "t4-agent/evaluation/runs/20260926-current/nemotron-free-nothink",
+  "source_trace_rows_sha256": {
+    "t4-EXAMPLE-eps-beat": "bb157f2bedb9335a446659b0a072341c9d6c71358b552437941864c20526ec2c",
+    "t4-auction-btc-202411-us7": "9267c17ce8f99a9c83d9e7912210aca5e6e746a7da05a331885a673fa4687520",
+    "t4-cotpos-202411-us10": "4038738e372f1d8dd2a201b40c4cc2a91409e7f91aa7919409529a4f26380277",
+    "t4-cpicomp-202410-us11": "38a7c7a6c187256aa8662fdf931789e92078dce1c5c4f541904ea5d7ea940b9b",
+    "t4-credit-event-2023": "ed76549becab3b3d318e7b645864d24a7f94bfd12bf5b52001fcd2eb4398e419",
+    "t4-eps-growth-2024Q3-banks": "f4bca9946c456acb1dbea6798232701ab78ee1e0ca66646231518f4545f33a56",
+    "t4-eps-yoy-2023Q2-mixed": "72745e0edf454483fa76480e8e0fed3351909a781ceb99d53b66b35a455baba2",
+    "t4-fomc-curve-20220728": "4fd8982cdc153f03c7e85e204c735d578a4f9e48343e66250b567725d964a808",
+    "t4-fomc-curve-20240918": "79ac7e9c90029c335aab194fdecfb6d57dc8904cd052c7f225e93be3081c42b9",
+    "t4-macrorev-20240930-us6": "6fdd17bb93a6ab585721b6d31a1e537f3ed6b8bbbdbfd069bb596e2dc734a2bc",
+    "t4-postearn-20240201-megacap": "7607c78a226c767c60decc1e776635d65b2d0a76d801925728050ffbe344c543"
+  }
+}

@@ -1743,3 +1743,22 @@ unchanged in all splits.
 The pre-registered cross-target gate failed. No prompt, production code, API call, prediction,
 citation or image changed. Script: `evaluation/experiments/cross_section_stats_screen.py`. Report:
 `evaluation/reports/cross-section-stats-screen-v1.json`.
+
+## 2026-09-30: fixed-role multi-query RRF — rejected before production
+
+A retrieval benchmark used 22 non-context weak-model facts whose quotes had already passed exact
+span, entity scope and cutoff validation. The labels covered EPS YoY, credit, post-earnings and
+rates. The current single BM25 query was compared with five-query reciprocal-rank fusion at fixed
+`k=60`: the baseline query plus target observation, historical/previous, expectations/consensus and
+guidance/outlook/risk roles.
+
+The first screen accidentally admitted the retriever's zero-score recency fallbacks as votes from
+empty role queries. Excluding those non-matches was a correctness repair; query text, fusion
+constant and adoption thresholds stayed locked. The corrected result was identical. Overall hit@3
+fell from 0.8182 to 0.6364, hit@8 from 1.0 to 0.6818 and MRR from 0.7045 to 0.4535. EPS, credit and
+post-earnings regressed, rates was unchanged and no family improved. Retrieved characters fell only
+0.3%, while the top-eight sets accumulated 70 symmetric-difference positions.
+
+The candidate failed every relevance gate and never entered production or NLI. No model API or
+local model ran. Script: `evaluation/experiments/multi_query_rrf_screen.py`. Report:
+`evaluation/reports/multi-query-rrf-screen-v1.json`.
