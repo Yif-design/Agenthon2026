@@ -4,6 +4,7 @@ import math
 import unittest
 from dataclasses import replace
 from statistics import pstdev
+from unittest.mock import patch
 
 from t4agent.calculators.bank_eps import _find_pair
 from t4agent.calculators.generic import _label, infer_label_roles
@@ -773,6 +774,27 @@ class MinimalModelTests(unittest.TestCase):
             {"latest_reported_eps": 1.8, "latest_reported_prior_year_eps": 1.6},
         )
         self.assertAlmostEqual(result.point, 10.0)
+        self.assertEqual(result.interval["level"], 0.9)
+        self.assertAlmostEqual(result.interval["lo"], -10.0)
+        self.assertAlmostEqual(result.interval["hi"], 30.0)
+
+    def test_bank_eps_candidate_interval_is_flagged_and_preserves_point(self) -> None:
+        current = task("eps_yoy_growth_pct", "regression")
+        with patch.dict("os.environ", {"T4_ENABLE_BANK_EPS_INTERVAL": "1"}):
+            result = solve_minimal(
+                current,
+                {"prior_year_q_eps": 2.0},
+                SPECS["bank_eps"],
+                {},
+                EMPTY_CORPUS,
+                0,
+                1,
+                {"latest_reported_eps": 1.8, "latest_reported_prior_year_eps": 1.6},
+            )
+        self.assertAlmostEqual(result.point, 10.0)
+        self.assertEqual(result.interval["level"], 0.9)
+        self.assertAlmostEqual(result.interval["lo"], -90.0)
+        self.assertAlmostEqual(result.interval["hi"], 110.0)
 
     def test_bank_eps_missing_number_falls_back_to_zero_growth(self) -> None:
         current = task("eps_yoy_growth_pct", "regression")
