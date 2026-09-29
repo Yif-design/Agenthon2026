@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 from typing import Any
 
@@ -29,6 +30,16 @@ def solve(
         row_index,
         row_count,
     )
+    table_baseline = parameters.get("dated_table_baseline")
+    if (
+        task.target_type in {"regression", "ranking"}
+        and isinstance(table_baseline, (int, float))
+        and not isinstance(table_baseline, bool)
+        and math.isfinite(float(table_baseline))
+    ):
+        baseline = float(table_baseline)
+        baseline_field = "dated_table_baseline"
+        baseline_reason = "cutoff_safe_target_matched_table"
     signal = signals.get("directional_signal", 0)
     point = baseline
     if task.target_type in {"regression", "ranking"} and signal:
@@ -36,7 +47,10 @@ def solve(
         scale = (baseline_interval["hi"] - baseline_interval["lo"]) / 6.0
         point = baseline + signal * scale
     label = _label(signal, task.labels, task.prompt, name)
-    method = "generic_evidence_adjusted" if signal else "generic_baseline"
+    if baseline_reason == "cutoff_safe_target_matched_table":
+        method = "generic_dated_table_adjusted" if signal else "generic_dated_table_baseline"
+    else:
+        method = "generic_evidence_adjusted" if signal else "generic_baseline"
     final_interval = interval_for(point, name, task.interval_level)
     if task.target_type in {"regression", "ranking"}:
         half = (final_interval["hi"] - final_interval["lo"]) / 2.0

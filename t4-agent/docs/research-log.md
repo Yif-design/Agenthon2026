@@ -1639,3 +1639,44 @@ two-public-task diagnostic from 0% to 16.7% coverage, it failed the independent 
 rejected. Production points, intervals, evidence and citations remain unchanged. No model API or
 local model was used. Script: `evaluation/experiments/fomc_static_width_screen.py`. Report:
 `evaluation/reports/fomc-static-width-screen-v1.json`.
+
+### Generic target-matched dated tables — passed quality gates, remote NLI pending
+
+The 2026-09-29 preflight confirmed that shared toolkit main remains `95a0de3`, Track 4 main remains
+`7b2bce1`, and toolkit `v2.4.4` remains the latest formal tag. The operative official update is the
+removal of bring-your-own models and adapters: remote free models remain development analogues,
+while scored runs use the House route. No Track 4 input, scoring or request-limit change was found.
+
+The public `youxuanxue/track4-analysis-public` implementation supplied a useful strict-table safety
+pattern. A newer public implementation, `wangzgui/agenthon-t4-baseline-2026@5d972915`, now fits a
+two-feature rolling-origin numeric prior from dated corpus tables and keeps the prior only when a
+later pre-cutoff validation window improves by at least 0.05. Neither repository publishes an
+official hidden score, so both remain sources of falsifiable candidates rather than performance
+evidence. This round tests only strict table extraction and persistence; fitted cross-sectional or
+ridge priors are a separate future hypothesis.
+
+The current generic path ignored dated tables when the entity schema did not expose one usable
+numeric field. The preregistered candidate parses only contiguous pipe tables whose first column is
+a valid, unique, strictly increasing date no later than the task cutoff. It requires one exact
+target or series column, an explicit compatible unit, an entity-bound document when multiple
+documents are visible, and complete finite decimal cells. It never crosses a blank or malformed
+row. Level targets use the last observation; only explicit `change`, `delta`, `revision`, `shift`
+or `move` targets may use the last difference. Ambiguous `growth` and `return` targets abstain.
+Percent-to-basis-point conversion is permitted only for a difference, never for a level.
+
+On frozen rolling historical panels, persistence reduced auction bid-to-cover MAE from 2.4201 to
+0.1548 on the 2020-2021 test and from 2.5250 to 0.1221 on the 2022-2024 confirmation. Quarterly
+diluted-EPS MAE fell from 2.8056 to 1.8391 on test and from 1.9478 to 1.3891 on confirmation.
+All 17 malformed-table and unit controls passed. With
+`T4_ENABLE_DATED_TABLE_BASELINE=1`, a clean archive of baseline `e7bd672` and the candidate produced
+byte-identical no-model answers for all 11 public units and 78 rows with zero local validation
+errors. The complete suite passed 134 tests. No model API or local language model was used.
+
+The candidate changes prediction, interval and citations on qualifying hidden-style tasks, so the
+saved public NLI reports cannot prove its new path. Production therefore keeps the flag disabled
+until a manual GitHub Actions job runs both official pinned DeBERTa members on two synthetic
+five-entity units, one level and one percent-to-basis-point change. The workflow retains each
+member report and the exact ensemble aggregation. Passing requires both synthetic units to reach
+the official 0.80 roster gate; failure leaves the flag off and records the candidate as rejected.
+Reports: `evaluation/reports/generic-dated-table-extractor-v1.json` and
+`evaluation/reports/generic-dated-table-public-ab-v1.json`.

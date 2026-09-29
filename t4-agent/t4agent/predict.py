@@ -71,7 +71,12 @@ def predict_rows(task: Task, index: BM25, corpus: IndexedCorpus, llm: LLM, top_k
             allowed_doc_ids=allowed,
         )
         chunks = [s.chunk for s in scores]
-        extracted, extracted_evidence = extract_calculator_parameters(project_entity(entity, spec), spec, entity_corpus)
+        extraction_corpus = entity_corpus
+        if spec.key == "generic" and chunks:
+            extraction_corpus = scoped_corpus(entity_corpus, {chunk.doc_id for chunk in chunks})
+        extracted, extracted_evidence = extract_calculator_parameters(
+            task, project_entity(entity, spec), spec, extraction_corpus
+        )
         extracted_facts, extracted_rejected = _facts_from_items(
             extracted_evidence, str(entity.get("entity_id", "")), entity_corpus, allowed, "deterministic_extractor"
         )

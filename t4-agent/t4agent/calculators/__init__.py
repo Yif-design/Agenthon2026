@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from ..family_specs import FamilySpec
 from ..retrieve import IndexedCorpus
+from ..tables import extract_generic_table_baseline
 from ..taskio import Task
 from .auction import solve as solve_auction
 from .bank_eps import extract_parameters as extract_bank_eps_parameters
@@ -36,11 +38,37 @@ SOLVERS = {
 
 
 def extract_parameters(
-    entity: dict[str, Any], spec: FamilySpec, corpus: IndexedCorpus
+    task: Task, entity: dict[str, Any], spec: FamilySpec, corpus: IndexedCorpus
 ) -> tuple[dict[str, float], list[dict[str, Any]]]:
     """Run family-owned deterministic extractors before asking the model."""
     if spec.key == "bank_eps":
         return extract_bank_eps_parameters(entity, corpus)
+    if (
+        spec.key == "generic"
+        and task.target_type in {"regression", "ranking"}
+        and os.environ.get("T4_ENABLE_DATED_TABLE_BASELINE", "0") == "1"
+    ):
+        baseline = extract_generic_table_baseline(task, entity, corpus)
+        if baseline is not None:
+            if baseline.statistic == "last":
+                claim = (
+                    f"The {baseline.column} observation on {baseline.observation_date} was "
+                    f"{baseline.last:g} {baseline.unit}."
+                )
+            else:
+                claim = (
+                    f"The last two {baseline.column} observations were {baseline.previous:g} and "
+                    f"{baseline.last:g} {baseline.unit}; their change was {baseline.value:g} {baseline.unit}."
+                )
+            return {"dated_table_baseline": baseline.value}, [
+                {
+                    "name": "dated_table_baseline",
+                    "value": baseline.value,
+                    "doc_id": baseline.doc_id,
+                    "quote": baseline.quote,
+                    "claim": claim,
+                }
+            ]
     return {}, []
 
 

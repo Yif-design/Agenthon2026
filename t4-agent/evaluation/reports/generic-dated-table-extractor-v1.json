@@ -1,0 +1,72 @@
+{
+  "datasets": {
+    "auction_bid_to_cover": {
+      "confirmation": {
+        "baseline_zero_mae": 2.5250420168067227,
+        "candidate_persistence_mae": 0.12205882352941179,
+        "relative_mae_improvement": 0.9516606762513312,
+        "rows": 238
+      },
+      "test": {
+        "baseline_zero_mae": 2.420121951219512,
+        "candidate_persistence_mae": 0.15475609756097564,
+        "relative_mae_improvement": 0.9360544217687075,
+        "rows": 164
+      }
+    },
+    "quarterly_diluted_eps": {
+      "confirmation": {
+        "baseline_zero_mae": 1.9478,
+        "candidate_persistence_mae": 1.3891333333333333,
+        "relative_mae_improvement": 0.28681931752062156,
+        "rows": 900
+      },
+      "test": {
+        "baseline_zero_mae": 2.80558352402746,
+        "candidate_persistence_mae": 1.8391075514874142,
+        "relative_mae_improvement": 0.3444830511239438,
+        "rows": 437
+      }
+    }
+  },
+  "decision": "pass_to_faithfulness_gate",
+  "experiment": "generic_dated_table_extractor_v1",
+  "gates": {
+    "all_synthetic_safety": true,
+    "no_model_calls": true,
+    "production_path_unchanged_during_screen": true,
+    "test_and_confirmation_no_reversal": true,
+    "two_independent_datasets": true
+  },
+  "hypothesis": "An exact target-matched cutoff-safe dated-table persistence baseline improves unknown numeric tasks over the current zero fallback without affecting known families or model requests.",
+  "layer": "L2 unknown-family deterministic extraction",
+  "pre_registered_rule": "For a level target with one exact target/series column and a confirmed unit, use the latest valid pre-cutoff observation; for unambiguous change/delta targets use the latest difference; otherwise abstain.",
+  "safety": {
+    "cases": {
+      "blank_boundary_not_crossed": true,
+      "change_delta": true,
+      "duplicate_column_rejected": true,
+      "duplicate_date_rejected": true,
+      "future_stopped": true,
+      "growth_abstains": true,
+      "malformed_boundary_not_crossed": true,
+      "missing_rejected": true,
+      "parser_no_table_on_invalid_cutoff": true,
+      "partial_number_rejected": true,
+      "percent_to_bps": true,
+      "reverse_date_rejected": true,
+      "unit_mismatch_rejected": true,
+      "unknown_unit_rejected": true,
+      "valid_level": true,
+      "valid_markdown": true,
+      "wrong_column_rejected": true
+    },
+    "passed": 17,
+    "total": 17
+  },
+  "source_reuse": "Frozen project datasets; this screen performs no network access and does not change the source files.",
+  "splits": {
+    "confirmation": "2022 through each frozen dataset end",
+    "test": "2020-2021"
+  }
+}
