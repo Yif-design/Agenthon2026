@@ -1724,3 +1724,22 @@ call or image changed. A different corpus-conditioned mechanism may be reconside
 that explicitly supply cutoff-safe reaction history or a direct forward statement supporting the
 same canonical direction. Report:
 `evaluation/reports/postearn-prior-citation-preflight-v1.json`.
+
+## 2026-09-30: generic cross-sectional peer statistics — rejected before prompt change
+
+The next L3 screen tested whether peer median, MAD, robust z-score and percentile supplied useful
+full-roster context beyond each entity's visible scalar. CPI components were grouped by reference
+month as a transformed unknown binary-classification proxy; ten COT markets were grouped by week
+as an unknown-ranking proxy. Development, time-forward test and untouched confirmation periods
+were kept separate. A simple peer-centered direction served only as an information screen, not as
+a proposed production forecast rule.
+
+All rows were computable and no group had zero MAD. Nevertheless, CPI test accuracy fell from
+0.7576 for the raw sign to 0.5076 for the peer-centered sign, and confirmation fell from 0.6980 to
+0.5061; macro-F1 also declined in both periods. Within every COT group, percentile and robust z-score
+were monotonic transforms of the raw value, so their rank order and mean Spearman were exactly
+unchanged in all splits.
+
+The pre-registered cross-target gate failed. No prompt, production code, API call, prediction,
+citation or image changed. Script: `evaluation/experiments/cross_section_stats_screen.py`. Report:
+`evaluation/reports/cross-section-stats-screen-v1.json`.
