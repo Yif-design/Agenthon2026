@@ -8,7 +8,7 @@ does not match the Team Number and Team Key.
 Current participant image:
 
 ```text
-ghcr.io/yif-design/agenthon2026-t4@sha256:eac4684919872f50d49beec7277d909c33d92abb05d84c80bbd15f8057eefc1d
+ghcr.io/yif-design/agenthon2026-t4@sha256:f3c8251bc787b0698e7bf36c10e90f322903450b4af00c9e4d9ab1f58605dfe6
 ```
 
 Verified properties:
@@ -16,11 +16,11 @@ Verified properties:
 - anonymously readable from GHCR;
 - Linux/amd64;
 - image label `qfbench2.interface_version=2.0`;
-- `analyze` command smoke-tested by GitHub Actions run `36558265759`;
+- `analyze` command smoke-tested by GitHub Actions run `36565906824`;
 - anonymous registry manifest request returned HTTP 200 for the same immutable digest;
 - final no-model audit passed all 11 public units and all 78 entities with zero local validation
   errors in 19.1 seconds; the combined answer size was 99,885 bytes;
-- all 8 OCI layers and 5,888 tar entries were streamed and checked for the macOS
+- all 8 OCI layers and 5,893 tar entries were streamed and checked for the macOS
   `com.apple.provenance` attribute reported in official Track 4 issue #16; none contained it;
 - descriptor declares the official House Nemotron snapshot and Apache-2.0 license.
 
