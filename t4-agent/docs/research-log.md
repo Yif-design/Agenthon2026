@@ -1762,3 +1762,22 @@ post-earnings regressed, rates was unchanged and no family improved. Retrieved c
 The candidate failed every relevance gate and never entered production or NLI. No model API or
 local model ran. Script: `evaluation/experiments/multi_query_rrf_screen.py`. Report:
 `evaluation/reports/multi-query-rrf-screen-v1.json`.
+
+## 2026-09-30: metadata-driven TargetSpec — rejected before production
+
+An inventory compared all 11 published task targets with the official alignment contract and the
+production validator. The output contract is already covered locally: exact roster, classification
+label vocabulary, required regression/ranking point, finite numerics, exact interval level and
+ordering, and complete optional rank permutation. Production additionally requires the point to
+lie inside its interval.
+
+No published target object carries `unit`, `units`, `minimum`, `maximum`, `min`, `max` or `domain`.
+The explicit-unit rate and explicit-bound rate are both 0/11 across classification, regression and
+ranking. A single authoritative metadata-driven TargetSpec therefore cannot be constructed from the
+actual task schema. Inferring every quantity from free-form prompt prose could mis-clamp returns,
+percent probabilities, ratios or basis-point changes and has no labeled paraphrase benchmark.
+
+The candidate was rejected before code. Existing explicit field-name unit guards, strict table
+units and family calculators remain unchanged. No model or NLI ran. Script:
+`evaluation/experiments/target_contract_inventory.py`. Report:
+`evaluation/reports/target-contract-inventory-v1.json`.
