@@ -117,10 +117,6 @@ jobs:
             --track4-repo official-track4 \
             --answers-root nli-input/answers \
             --case-manifest nli-input/cases.json
-          python t4-agent/evaluation/experiments/build_adaptive_batch_nli_fixture.py \
-            --track4-repo official-track4 \
-            --answers-root nli-input/answers \
-            --case-manifest nli-input/cases.json
 
       - name: Run pinned NLI member
         run: |

@@ -196,6 +196,7 @@ def main() -> None:
     answer_path = args.answers_root / UNIT_ID / "answer.json"
     write_json(answer_path, build_answer(loaded, results, corpus, llm.usage))
     manifest = json.loads(args.case_manifest.read_text())
+    manifest["cases"] = [case for case in manifest["cases"] if case.get("case_id") != UNIT_ID]
     manifest["cases"].append({"case_id": UNIT_ID, "unit_id": UNIT_ID, "answer": str(answer_path.resolve())})
     args.case_manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"unit_id": UNIT_ID, "rows": 78, "calls": llm.usage.calls}))
