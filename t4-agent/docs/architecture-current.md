@@ -101,6 +101,7 @@ On the 11 retired public practice units with 78 independently reconstructed outc
 | Same signals, plus accepted CPI interval floor | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 | Same signals, plus accepted auction point and interval model | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.6636 | 0.1878 |
 | Same signals, plus EPS YoY interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.7091 | 0.1959 |
+| Same signals, plus bank EPS interval calibration | 9 | 83,198 | 5,951 | 0 | 0.3864 | 0.7204 | 0.1939 |
 
 These are diagnostic practice results, not a private leaderboard score. The local official
 two-model ensemble path now covers all eleven public units. Six passed before the shared context
@@ -125,6 +126,15 @@ half-width is the larger of 2.75 USD/share and 115% of absolute prior-year-quart
 test and 95.8% on the locked 2024–2025 confirmation, versus 25.2% and 24.9% for the previous
 interval. Earlier cutoffs retain the prior 15%-of-EPS half-width. The retired public six-row
 diagnostic moved from 50% to 100% coverage; points, labels and claims are unchanged.
+
+For bank EPS growth, the seasonal-delta point forecast is unchanged. The 90% interval half-width is
+now the larger of 100 percentage points and the absolute point forecast. On the time-forward SEC
+history, calibration loss fell from 0.1759 to 0.1000 on test and from 0.2438 to 0.1000 on locked
+confirmation. The retired public bank unit moved from 87.5% to 100% coverage, which worsens that
+single development-influenced diagnostic from 0.025 to 0.10 calibration loss; it was not used for
+adoption. The official scorer has no width term. `T4_ENABLE_BANK_EPS_INTERVAL=0` restores the old
+`max(20, 0.75 * abs(point))` interval. A fresh remote run of both pinned official NLI members passed
+the changed eight-row public answer at 0.875 ensemble faithfulness.
 
 For Treasury auctions with cutoffs on or after 2022-01-01, the calculator uses the mean of the last
 six same-tenor bid-to-cover ratios. Its 90% half-width is the larger of 0.15 and 2.5 times their

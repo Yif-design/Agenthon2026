@@ -1854,3 +1854,27 @@ The candidate was rejected before corpus parsing, citation construction or NLI. 
 code, model request, prediction, citation or image changed. Script:
 `evaluation/experiments/fomc_long_reversal_screen.py`. Report:
 `evaluation/reports/fomc-long-reversal-screen-v1.json`.
+
+## 2026-09-30: bank EPS interval calibration — accepted
+
+The previously deferred bank EPS rule was reopened after a remote official NLI path became
+available. The point model remains seasonal EPS-delta persistence. Only the 90% interval changes
+from `max(20, 0.75 * abs(point))` to `max(100, abs(point))` percentage points.
+
+On the frozen SEC time-forward panel, test calibration loss fell from 0.1759 to 0.1000 and locked
+confirmation fell from 0.2438 to 0.1000. Mean full width increased materially, but the official
+Track 4 scorer at `7b2bce1` explicitly has no width, sharpness or Winkler term; it scores
+`abs(coverage - 0.90)`. The retired public bank unit moved from 7/8 to 8/8 coverage and therefore
+worsened its own calibration loss from 0.025 to 0.10. That development-influenced unit was retained
+as a transparent diagnostic rather than used to overturn both time-forward splits.
+
+GitHub Actions run `36605861989` evaluated the changed canonical hypotheses with both fixed
+official NLI members. Single-member roster faithfulness was 0.875 and 1.0; the ensemble was 0.875,
+above the 0.80 gate. The 11-unit A/B changed exactly the eight bank interval objects, preserved all
+other answer fields, and produced zero validation errors. Python 3.11.7 passed 139 tests. The rule
+is enabled by default; `T4_ENABLE_BANK_EPS_INTERVAL=0` is the rollback. No House request, external
+generation model or local language model was used.
+
+Reports: `evaluation/reports/bank-eps-interval-calibration-v1.json`,
+`evaluation/reports/bank-eps-interval-public-ab-v1.json`, and
+`evaluation/reports/nli/bank-eps-interval-{cross,moritz,ensemble}.json`.

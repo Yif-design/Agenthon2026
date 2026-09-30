@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-29",
+  "updated_at": "2026-09-30",
   "baseline_commit": "0cf7a7fe40f2d5184f99140c5064511b8de6f7e2",
   "official_toolkit_version": "2.4.4",
   "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
@@ -131,6 +131,30 @@
       "mean_composite_before_faithfulness_gate": 0.19593909225912115,
       "eps_yoy_time_forward_report": "evaluation/reports/eps-yoy-interval-calibration-v1.json",
       "public_diagnostic_report": "evaluation/reports/eps-yoy-interval-public-diagnostic-v1.json"
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v8",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1",
+        "artifact_availability_gates_v1",
+        "eps_yoy_interval_calibration_v1",
+        "bank_eps_interval_calibration_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.720444706808343,
+      "mean_composite_before_faithfulness_gate": 0.1938936377136666,
+      "bank_eps_time_forward_report": "evaluation/reports/bank-eps-interval-calibration-v1.json",
+      "bank_eps_nli_report": "evaluation/reports/nli/bank-eps-interval-ensemble.json"
     }
   ],
   "cross_family_outcome_benchmarks": {
@@ -177,6 +201,15 @@
       "role": "locked_time_forward_confirmation",
       "decision": "accept",
       "artifact_available_date": "2026-02-01"
+    },
+    "bank_eps_interval_calibration_v1": {
+      "path": "evaluation/reports/bank-eps-interval-calibration-v1.json",
+      "dataset": "SEC Company Concept API, us-gaap:EarningsPerShareDiluted",
+      "rows": 158,
+      "role": "time_forward_train_dev_test_and_locked_confirmation",
+      "decision": "accept",
+      "nli_report": "evaluation/reports/nli/bank-eps-interval-ensemble.json",
+      "public_ab_report": "evaluation/reports/bank-eps-interval-public-ab-v1.json"
     }
   },
   "cross_family_engineering_benchmarks": {

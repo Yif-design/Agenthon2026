@@ -775,12 +775,12 @@ class MinimalModelTests(unittest.TestCase):
         )
         self.assertAlmostEqual(result.point, 10.0)
         self.assertEqual(result.interval["level"], 0.9)
-        self.assertAlmostEqual(result.interval["lo"], -10.0)
-        self.assertAlmostEqual(result.interval["hi"], 30.0)
+        self.assertAlmostEqual(result.interval["lo"], -90.0)
+        self.assertAlmostEqual(result.interval["hi"], 110.0)
 
-    def test_bank_eps_candidate_interval_is_flagged_and_preserves_point(self) -> None:
+    def test_bank_eps_legacy_interval_is_available_for_rollback(self) -> None:
         current = task("eps_yoy_growth_pct", "regression")
-        with patch.dict("os.environ", {"T4_ENABLE_BANK_EPS_INTERVAL": "1"}):
+        with patch.dict("os.environ", {"T4_ENABLE_BANK_EPS_INTERVAL": "0"}):
             result = solve_minimal(
                 current,
                 {"prior_year_q_eps": 2.0},
@@ -793,8 +793,8 @@ class MinimalModelTests(unittest.TestCase):
             )
         self.assertAlmostEqual(result.point, 10.0)
         self.assertEqual(result.interval["level"], 0.9)
-        self.assertAlmostEqual(result.interval["lo"], -90.0)
-        self.assertAlmostEqual(result.interval["hi"], 110.0)
+        self.assertAlmostEqual(result.interval["lo"], -10.0)
+        self.assertAlmostEqual(result.interval["hi"], 30.0)
 
     def test_bank_eps_missing_number_falls_back_to_zero_growth(self) -> None:
         current = task("eps_yoy_growth_pct", "regression")

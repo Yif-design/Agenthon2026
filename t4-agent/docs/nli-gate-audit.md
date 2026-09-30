@@ -177,3 +177,23 @@ Reports:
 - `evaluation/reports/nli/adaptive-batch-cross.json`
 - `evaluation/reports/nli/adaptive-batch-moritz.json`
 - `evaluation/reports/nli/adaptive-batch-ensemble.json`
+
+## Bank EPS interval calibration
+
+GitHub Actions run `36605861989` evaluated the eight-row retired public bank unit after changing
+only its interval bounds. It used the same pinned official Track 4 judge commit and the two fixed
+DeBERTa-v3-large member revisions. The cross-encoder member supported 7/8 entities, the Moritz
+member supported 8/8, and their per-citation arithmetic-mean ensemble supported 7/8, for roster
+faithfulness 0.875. This exceeds the 0.80 admission threshold. BAC remained unsupported, so this is
+a passing roster-level result rather than proof that every prediction is entailed.
+
+The local public A/B confirmed that exactly eight interval objects in the bank unit changed. Every
+point, label, citation and other answer field across all 11 units remained identical, and both
+variants had zero local validation errors. No local NLI model or generation model ran.
+
+Reports:
+
+- `evaluation/reports/nli/bank-eps-interval-cross.json`
+- `evaluation/reports/nli/bank-eps-interval-moritz.json`
+- `evaluation/reports/nli/bank-eps-interval-ensemble.json`
+- `evaluation/reports/bank-eps-interval-public-ab-v1.json`

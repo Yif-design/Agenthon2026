@@ -12,12 +12,18 @@
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
-- Accepted interval changes lift diagnostic mean coverage to 70.9%, still below the 90% target.
+- Accepted interval changes lift diagnostic mean coverage to 72.0%, still below the 90% target.
 - The EPS YoY interval is deliberately broad: mean full width was 8.44 USD/share on the inspected
   2022–2023 test and 6.75 on the locked 2024–2025 confirmation. The official score penalizes only
   coverage error and has no width or sharpness term. The rule is independently confirmed and
   width-minimal within the selected grid, but it should not be interpreted as a tight economic
   confidence bound.
+- The bank EPS interval is also deliberately broad: the accepted historical rule has a 100
+  percentage-point minimum half-width and raised locked-confirmation mean full width from 49.1 to
+  200.1 points. Width is not scored. It improved calibration loss on time-forward test and
+  confirmation, but the retired public bank unit over-covers at 100% and its calibration loss
+  worsens from 0.025 to 0.10. This is evidence of regime and sample-size risk, not a tight economic
+  confidence interval.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
 - The dated-table fallback supports only pipe tables with an exact target or series header and an
   explicit matching unit. It deliberately abstains on synonyms, missing units, derived changes and
