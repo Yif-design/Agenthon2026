@@ -1878,3 +1878,10 @@ generation model or local language model was used.
 Reports: `evaluation/reports/bank-eps-interval-calibration-v1.json`,
 `evaluation/reports/bank-eps-interval-public-ab-v1.json`, and
 `evaluation/reports/nli/bank-eps-interval-{cross,moritz,ensemble}.json`.
+
+The adopted production commit is `af25dc76e2e5acf4f1f937b95e5abbfaf4aeec89`. GitHub Actions run
+`36694555608` passed the Python 3.13 suite, built and pushed a Linux/amd64 OCI image, and smoke-tested
+the `analyze` command. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:19ce8df06d5c9dfbadf1fe2465500d55a68c06b9851a7ea02292421e33fd903a`.
+An unauthenticated GHCR token and manifest request returned HTTP 200; the config reports Linux,
+amd64 and `qfbench2.interface_version=2.0`. No formal competition submission was performed.
