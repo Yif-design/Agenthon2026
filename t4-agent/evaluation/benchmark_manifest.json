@@ -304,6 +304,24 @@
       "official_522_reason_rail_findings": 0,
       "decision": "accept",
       "rollback": "T4_ENABLE_SUBMITTED_REASONS=0"
+    },
+    "reason_evidence_relevance_v1": {
+      "path": "evaluation/reports/reason-evidence-relevance-final-v1.json",
+      "sha256": "160d07aca7fe25f629fb571d73b5d26466cc1ebf4a74a00958d92f75f3474a87",
+      "screen_report": "evaluation/reports/reason-evidence-relevance-screen-v1.json",
+      "screen_sha256": "36f9dc0a4286e5fc6d9da8efe956753b2628bac585cd06908f34a795a2bad571",
+      "public_ab_report": "evaluation/reports/reason-evidence-relevance-public-ab-v1.json",
+      "public_ab_sha256": "b64b09f78ce8baf922c54343c936170d90a79ccd6c66dd8a1802e969ec46ca94",
+      "official_rail_report": "evaluation/reports/reason-evidence-relevance-official-522-rail-v1.json",
+      "official_rail_sha256": "aa6213d79ef4d92e0e6e3c416edcb3695b18c0519f56a71d38d7baec474a7036",
+      "broad_proxy_report": "evaluation/reports/reason-evidence-relevance-quality-proxy-broad-v1.json",
+      "broad_proxy_sha256": "022bfe71dfc9eb96b02153829ff752f271cd15dbd87f3d94c765f08a38514d1e",
+      "scope": "L1/L2 cross-family Final reason evidence selection",
+      "changed_public_reasons": 4,
+      "analysis_fields_identical_units": 11,
+      "official_522_reason_findings": 0,
+      "decision": "accept",
+      "rollback": "T4_ENABLE_REASON_RELEVANCE=0"
     }
   },
   "official_scorer_version": "5.2.2",

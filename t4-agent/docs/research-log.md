@@ -2015,6 +2015,52 @@ Anonymous GHCR manifest and config requests both returned HTTP 200; the digest m
 the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
 template now points to that digest. No formal competition submission was performed.
 
+## 2026-10-01: method-aware context evidence for submitted reasons — accepted
+
+The first submitted-reason formatter preferred non-context facts but otherwise used the first valid
+context span. Fresh traces found 15 computed-input reasons and 16 context-only reasons among the 31
+public reasons. Several context-only premises were filing headers, table-of-contents fragments or
+generic accounting text even when a more relevant exact span was already in the row's cutoff-safe,
+entity-scoped retrieved chunks.
+
+The candidate scores bounded exact windows with a fixed vocabulary for the selected deterministic
+method, penalizes common filing noise, and replaces the prior span only with a four-point relevance
+gain. It performs no new retrieval or model call. The final public A/B changes four premises and
+their reason citations: BBBY liquidity/going-concern/default evidence, AMD period-matched EPS data,
+DOW period-matched net-income/EPS calculations and AAPL operating-result data. All 15
+computed-input controls remain unchanged. Removing `submitted_reasons` makes all 11 candidate
+answers identical to the baseline; reason IDs, mechanisms, implications, scopes and order are also
+unchanged. `T4_ENABLE_REASON_RELEVANCE=0` is the isolated rollback.
+
+A broader six-replacement screen was not adopted. One blind, thinking-disabled
+`gemini-2.5-flash-lite` call used 4,081 prompt and 928 completion tokens and returned five candidate
+preferences, five baseline preferences and two ties across grounding and link. It preferred the
+new BBBY, AMD and AAPL premises, but preferred the old BBY and AMZN premises and rejected an early
+DOW anti-dilution fragment. The final selector therefore rewards credit-rating evidence, penalizes
+anti-dilution fragments and requires the larger gain. DOW then moved to a different exact numeric
+EPS table; it was not re-judged to avoid a second quota call. The proxy is diagnostic only and
+cannot observe hidden target reasons.
+
+The pinned official repositories remained at Track 4
+`ede7381d8c1ba9d8c84068f9d142f5e093a33892` and shared
+`84221f1b553475b1283cb653145051e916377dd0`. The final outputs pass 11/11 scorer 5.2.2 schemas,
+31/31 reasons are judged, and 286 unchanged claims have zero basic or deterministic findings; the
+reason rail also has zero findings. Python 3.11.7 passed 144 tests. No local LLM or NLI ran.
+
+Public-repository research found no `submitted_reasons` implementation in the inspected MIT-licensed
+`dungcao06/optivex-t4-agent` main branch. The MIT-licensed
+`wangzgui/agenthon-t4-baseline-2026` uses exact bounded quotes and distinct mechanisms, while its own
+notes state that causal and hidden target-reason quality remain unmeasured. These ideas support the
+exact-span and mechanism-distinctness constraints but do not provide an independent score.
+
+Reports:
+
+- `evaluation/reports/reason-evidence-relevance-screen-v1.json`
+- `evaluation/reports/reason-evidence-relevance-public-ab-v1.json`
+- `evaluation/reports/reason-evidence-relevance-official-522-rail-v1.json`
+- `evaluation/reports/reason-evidence-relevance-quality-proxy-broad-v1.json`
+- `evaluation/reports/reason-evidence-relevance-final-v1.json`
+
 ## 2026-10-01: bounded submitted reasons — accepted
 
 Scorer 5.2.2 adds a separate Final-only reasoning bonus of up to 0.25. The current agent omitted

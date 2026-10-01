@@ -17,6 +17,12 @@
   reasoning grader runs only in Final against hidden target reasons, so no current leaderboard or
   proxy result proves a positive reasoning bonus. At worst, a valid but unhelpful reason scores
   zero; `T4_ENABLE_SUBMITTED_REASONS=0` omits the field.
+- Context-only reason evidence now uses a fixed method-aware lexical selector. It replaced four
+  public premises while preserving all 15 computed-input controls and every analysis field, but the
+  11 public units influenced its design. A single blind Gemini proxy rejected the broader six-row
+  selector; the final version reverted two weak replacements and reranked DOW to a numeric EPS
+  table without spending a second call. The selector still cannot prove hidden target-reason
+  coverage or causal relevance. `T4_ENABLE_REASON_RELEVANCE=0` restores first-valid selection.
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.

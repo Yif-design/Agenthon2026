@@ -72,11 +72,13 @@ inputs come from that model. Direct labels, points, intervals, model-selected to
 paths may replace it when a cutoff-safe experiment shows better end-to-end score and still meets the
 official request, time, context, schema, and faithfulness constraints.
 
-The formatter also emits up to three bounded `submitted_reasons`. Each reason takes an exact span
-from an already validated fact, explains the fixed calculator method, and refers to the final
-normalized answer. If the answer, reason, evidence, or citation caps cannot be proven locally, the
-field is omitted. These reasons leave all analysis-scored fields unchanged and target the separate
-Final reasoning bonus introduced in scorer 5.2.2.
+The formatter also emits up to three bounded `submitted_reasons`. Computed-input reasons retain
+their validated calculator fact. For context-only reasons, a deterministic method-aware selector
+may replace an irrelevant first chunk with a short exact slice from the same cutoff-safe,
+entity-scoped retrieval set; a replacement needs a four-point relevance gain and common filing
+boilerplate is penalized. If the answer, reason, evidence, or citation caps cannot be proven
+locally, the field is omitted. `T4_ENABLE_REASON_RELEVANCE=0` restores first-valid citation
+selection, while `T4_ENABLE_SUBMITTED_REASONS=0` omits the entire optional field.
 
 ## Workflow
 
