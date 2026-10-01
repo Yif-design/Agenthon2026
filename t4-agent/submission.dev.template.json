@@ -5,7 +5,7 @@
   "track": "analysis",
   "phase": "dev",
   "category": "api",
-  "image": "ghcr.io/yif-design/agenthon2026-t4@sha256:af2d58bae3f54a1963bace977f80001f9ecff087f9cc65271b92edb6ed02b081",
+  "image": "ghcr.io/yif-design/agenthon2026-t4@sha256:9138e521f7a312a45471489050997693f5cb28fd87539a0852519df9466e6b31",
   "image_access": "public",
   "models": [
     {
