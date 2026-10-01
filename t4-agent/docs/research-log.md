@@ -1941,3 +1941,11 @@ ideas are checked source arithmetic, residual-band guards and optional bounded
 `submitted_reasons`; its own research note says full-pipeline calibration remains future work.
 Those mechanisms are useful candidates for later independent tests, not evidence against the bank
 interval rollback. No code was copied. All four checked repositories declare MIT licenses.
+
+Production commit `2274c25467a4ef3852a862587d03b50069d98bb8` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `36841579367` passed the Python 3.13 suite, built and
+pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:7d3205a2046d67b358f9a4019a445bc9ab70631106730ce45a2a1bce48235a85`.
+Anonymous GHCR manifest and config requests both returned HTTP 200; the config reports Linux,
+amd64 and `qfbench2.interface_version=2.0`. The development submission template now points to that
+digest. No formal competition submission was performed.
