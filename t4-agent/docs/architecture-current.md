@@ -82,6 +82,13 @@ The bounded signal interface provides exact evidence validation, deterministic r
 count and a reliable offline fallback. It also isolates retrieval errors from reasoning and
 calculation errors.
 
+After the final answer is normalized, a bounded reason formatter may add up to three
+`submitted_reasons`. It uses only validated fact spans already admitted for the entity, a fixed
+description of the selected calculator method, and the final label or point. It does not ask the
+House model for free-form reasoning. The formatter omits the whole field when the published
+3,000-byte answer, 6,500-byte reason, 46,500-byte evidence, or 8,000-character citation cap cannot
+be proven. `T4_ENABLE_SUBMITTED_REASONS=0` disables it without changing predictions or claims.
+
 It is not a permanent restriction. The official House model is Nemotron 3 Super 120B A12B, which
 is materially stronger than the 7B model originally assumed. Direct prediction, model-generated
 parameters, tool selection, thinking-enabled prompts and hybrid forecasts must be compared against

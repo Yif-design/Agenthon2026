@@ -4,6 +4,7 @@ from typing import Any
 
 from .llm import Usage
 from .predict import RowResult
+from .reasons import build_submitted_reasons
 from .retrieve import IndexedCorpus
 from .taskio import Task
 from .validate import validate_answer
@@ -31,6 +32,9 @@ def build_answer(task: Task, results: list[RowResult], corpus: IndexedCorpus, us
             },
         },
     }
+    submitted_reasons = build_submitted_reasons(results, corpus)
+    if submitted_reasons:
+        answer["submitted_reasons"] = submitted_reasons
     errors = validate_answer(answer, task, corpus)
     if errors:
         answer["notes"]["validation_errors"] = errors

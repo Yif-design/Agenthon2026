@@ -292,6 +292,18 @@
       "nli_sha256": "2a18f63e19c9dd18ea66392dd558b7010572f1b863603ddfe7ee55308f9141b1",
       "scope": "L1/L2 cross-family House request scheduling",
       "decision": "accept"
+    },
+    "bounded_submitted_reasons_v1": {
+      "path": "evaluation/reports/bounded-submitted-reasons-v1.json",
+      "sha256": "3d570833cfb83dfe7fee473d98f7e7114242e4dddf23c17db8cb0ceffec6744b",
+      "scope": "L1/L2 cross-family Final reasoning bonus",
+      "public_units": 11,
+      "public_rows": 78,
+      "public_reasons": 31,
+      "analysis_fields_identical_units": 11,
+      "official_522_reason_rail_findings": 0,
+      "decision": "accept",
+      "rollback": "T4_ENABLE_SUBMITTED_REASONS=0"
     }
   },
   "official_scorer_version": "5.2.2",

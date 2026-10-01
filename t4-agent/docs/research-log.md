@@ -2015,6 +2015,41 @@ Anonymous GHCR manifest and config requests both returned HTTP 200; the digest m
 the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
 template now points to that digest. No formal competition submission was performed.
 
+## 2026-10-01: bounded submitted reasons — accepted
+
+Scorer 5.2.2 adds a separate Final-only reasoning bonus of up to 0.25. The current agent omitted
+`submitted_reasons`, guaranteeing a zero contribution. Official rules floor weak or refused
+reasoning at zero without reducing analysis, while malformed schema can still invalidate a unit.
+The candidate therefore builds at most three reasons only from already validated `RowResult` facts,
+a fixed description of the deterministic calculator method and the final normalized label or
+point. It omits the field whenever a published answer, reason, evidence or citation cap cannot be
+proven. `T4_ENABLE_SUBMITTED_REASONS=0` is the rollback.
+
+All 11 public units produced reasons: 31 across 78 rows. Removing only the new top-level field made
+every candidate answer byte-identical to the production baseline. The pinned 5.2.2 schema accepted
+11/11, the official submitted-reason rail reported zero findings, and the unchanged 286 claims
+retained zero basic and deterministic false findings. Python 3.11.7 passed 141 tests.
+
+One quota-conscious call to `gemini-2.5-flash-lite` reviewed all 11 public candidates under a
+conservative rendering of the official four components. It used 22,147 prompt and 1,215 completion
+tokens with thinking disabled and returned no contradictions. It rated all four components 1.0 for
+every unit. That uniform result is optimistic and is treated only as a non-official consistency
+proxy, not a score claim. Production reasons equal the proxy inputs in ten units; COT removes rank
+from the implication because the official reasoning judge does not read rank. Premises, mechanisms,
+point implications and citations are unchanged. No local language model or NLI model ran.
+
+Reports:
+
+- `evaluation/reports/bounded-submitted-reasons-v1.json`
+- `evaluation/reports/submitted-reasons-static-screen-v1.json`
+- `evaluation/reports/submitted-reasons-quality-proxy-v1.json`
+- `evaluation/reports/submitted-reasons-public-ab-v1.json`
+- `evaluation/reports/submitted-reasons-official-522-production-rail-v1.json`
+
+The candidate is accepted because every fatal structural condition is proven, all analysis fields
+are invariant, and the official formula makes its remaining quality uncertainty one-sided: useful
+reasons can add a bonus, while valid but unhelpful reasons add zero.
+
 ## 2026-10-01: scorer 5.2.2 Treasury-auction interval rescore — 1.65 restored
 
 The second isolated rollback candidate keeps the accepted recent-six same-tenor mean point forecast

@@ -12,6 +12,11 @@
   The current 11 public outputs have zero deterministic false reasons under the pinned 5.2.2 rail,
   with the tokenizer-specific 400-token cap unchecked; this does not prove hidden-unit
   faithfulness.
+- Bounded submitted reasons pass the official 5.2.2 schema and local reason rail on all 11 public
+  units, and one Gemini Flash-Lite proxy found them grounded and answer-consistent. The official
+  reasoning grader runs only in Final against hidden target reasons, so no current leaderboard or
+  proxy result proves a positive reasoning bonus. At worst, a valid but unhelpful reason scores
+  zero; `T4_ENABLE_SUBMITTED_REASONS=0` omits the field.
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.

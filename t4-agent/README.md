@@ -72,6 +72,12 @@ inputs come from that model. Direct labels, points, intervals, model-selected to
 paths may replace it when a cutoff-safe experiment shows better end-to-end score and still meets the
 official request, time, context, schema, and faithfulness constraints.
 
+The formatter also emits up to three bounded `submitted_reasons`. Each reason takes an exact span
+from an already validated fact, explains the fixed calculator method, and refers to the final
+normalized answer. If the answer, reason, evidence, or citation caps cannot be proven locally, the
+field is omitted. These reasons leave all analysis-scored fields unchanged and target the separate
+Final reasoning bonus introduced in scorer 5.2.2.
+
 ## Workflow
 
 ```text
@@ -157,7 +163,7 @@ MODEL_TOKEN=<injected per-unit bearer>
 
 The client calls `$MODEL_ENDPOINT/v1/chat/completions`, batches up to three entities per request, uses at most the official 25 attempted calls per unit, and caps `max_tokens` at 4,000. It first atomically writes a complete deterministic answer, then spends at most 420 seconds on model enhancement. Each batch gets two attempts by default; four consecutive failures across batches open the circuit, while a successful response resets it. Endpoint timeouts, rejected credentials, invalid model JSON, and trace failures therefore leave a schema-valid answer in place. In the official House environment it sends `chat_template_kwargs.enable_thinking=false` because the model is only extracting bounded evidence signals.
 
-The safety limits can be tuned locally with `T4_MODEL_BATCH_SIZE`, `T4_MODEL_MAX_CALLS`, `T4_MODEL_TIMEOUT_S`, and `T4_MODEL_BUDGET_S`. The call setting is hard-clamped to 25 and the model phase to 420 seconds, within the official 25-call and 600-second ceilings.
+The safety limits can be tuned locally with `T4_MODEL_BATCH_SIZE`, `T4_MODEL_MAX_CALLS`, `T4_MODEL_TIMEOUT_S`, and `T4_MODEL_BUDGET_S`. The call setting is hard-clamped to 25 and the model phase to 420 seconds, within the official 25-call and 600-second ceilings. `T4_ENABLE_SUBMITTED_REASONS=0` omits the optional Final-reasoning block as an immediate rollback.
 
 OpenRouter exact-family local experiment (free availability can change):
 
