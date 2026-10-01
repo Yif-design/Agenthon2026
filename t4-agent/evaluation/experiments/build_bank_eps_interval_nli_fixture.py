@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Append the public bank-EPS candidate answer to the remote NLI manifest."""
+"""Append the historical wide-interval answer to the NLI manifest at commit ``af25dc7``.
+
+The production feature flag was removed by the scorer-5.2.2 rollback. Run this script from the
+recorded historical commit; it is not a current validation entry point.
+"""
 
 from __future__ import annotations
 

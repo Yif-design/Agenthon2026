@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-30",
-  "baseline_commit": "0cf7a7fe40f2d5184f99140c5064511b8de6f7e2",
-  "official_toolkit_version": "2.4.4",
-  "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+  "updated_at": "2026-10-01",
+  "baseline_commit": "62d5b8a5e0aaee22a41d69bf0ab94fb542affea8",
+  "official_toolkit_version": "2.5.1",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
   "practice_outcomes": {
     "path": "evaluation/realized/public_all_realized.json",
     "tracked": false,
@@ -155,6 +155,34 @@
       "mean_composite_before_faithfulness_gate": 0.1938936377136666,
       "bank_eps_time_forward_report": "evaluation/reports/bank-eps-interval-calibration-v1.json",
       "bank_eps_nli_report": "evaluation/reports/nli/bank-eps-interval-ensemble.json"
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-official-522-bank-revert-v9",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1",
+        "artifact_availability_gates_v1",
+        "eps_yoy_interval_calibration_v1",
+        "bank_eps_interval_official_522_revert_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.7090810704447068,
+      "mean_composite_before_faithfulness_gate": 0.19593909225912115,
+      "eps_yoy_time_forward_report": "evaluation/reports/eps-yoy-interval-calibration-v1.json",
+      "public_diagnostic_report": "evaluation/reports/eps-yoy-interval-public-diagnostic-v1.json",
+      "official_522_bank_rescore_report": "evaluation/reports/bank-eps-interval-official-522-rescore-v1.json",
+      "official_522_claim_rail_report": "evaluation/reports/bank-eps-interval-official-522-claim-rail-v1.json",
+      "current_official_score_available": false,
+      "current_official_score_reason": "Public units ship neither resolved outcomes nor declared naive answers for participant scoring."
     }
   ],
   "cross_family_outcome_benchmarks": {
@@ -225,5 +253,7 @@
       "scope": "L1/L2 cross-family House request scheduling",
       "decision": "accept"
     }
-  }
+  },
+  "official_scorer_version": "5.2.2",
+  "configuration_metrics_semantics": "Historical pre-5.2 public-practice diagnostics; not current official scores."
 }

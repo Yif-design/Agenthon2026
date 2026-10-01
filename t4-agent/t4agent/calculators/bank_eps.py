@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import re
 from typing import Any
 
@@ -113,10 +112,7 @@ def solve(
     recent_delta = latest - latest_prior
     forecast_eps = target_prior + recent_delta
     point = (forecast_eps - target_prior) / abs(target_prior) * 100.0
-    if os.environ.get("T4_ENABLE_BANK_EPS_INTERVAL", "1") == "1":
-        half = max(100.0, abs(point))
-    else:
-        half = max(20.0, abs(point) * 0.75)
+    half = max(20.0, abs(point) * 0.75)
     return ModelOutput(
         point,
         None,

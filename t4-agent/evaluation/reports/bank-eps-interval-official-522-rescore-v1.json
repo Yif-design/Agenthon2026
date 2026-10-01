@@ -1,0 +1,167 @@
+{
+  "adoption_gate": {
+    "candidate_beats_current_on_test_and_confirmation": false,
+    "candidate_not_worse_than_legacy_on_test_and_confirmation": false,
+    "passed": false
+  },
+  "baseline_git_commit": "62d5b8a5e0aaee22a41d69bf0ab94fb542affea8",
+  "candidate": {
+    "confirmation": {
+      "coverage_diagnostic": 1.0,
+      "mean_full_width": 200.0,
+      "mean_interval_score": 200.0,
+      "rows": 32
+    },
+    "dev": {
+      "coverage_diagnostic": 0.8571428571428571,
+      "mean_full_width": 370.09922447760374,
+      "mean_interval_score": 573.8786650997679,
+      "rows": 28
+    },
+    "test": {
+      "coverage_diagnostic": 1.0,
+      "mean_full_width": 200.0,
+      "mean_interval_score": 200.0,
+      "rows": 29
+    },
+    "train": {
+      "coverage_diagnostic": 0.9855072463768116,
+      "mean_full_width": 202.201072509997,
+      "mean_interval_score": 239.6040881738822,
+      "rows": 69
+    }
+  },
+  "candidate_grid": {
+    "floors": [
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      75.0,
+      100.0
+    ],
+    "point_multipliers": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+    ],
+    "provenance": "Same fixed grid as bank_eps_interval_calibration_v1."
+  },
+  "current": {
+    "confirmation": {
+      "coverage_diagnostic": 1.0,
+      "mean_full_width": 200.07998171846435,
+      "mean_interval_score": 200.07998171846435,
+      "rows": 32
+    },
+    "dev": {
+      "coverage_diagnostic": 0.9285714285714286,
+      "mean_full_width": 448.0346136456729,
+      "mean_interval_score": 592.3612117170518,
+      "rows": 28
+    },
+    "test": {
+      "coverage_diagnostic": 1.0,
+      "mean_full_width": 200.0,
+      "mean_interval_score": 200.0,
+      "rows": 29
+    },
+    "train": {
+      "coverage_diagnostic": 0.9855072463768116,
+      "mean_full_width": 205.83331407130035,
+      "mean_interval_score": 231.30542649993453,
+      "rows": 69
+    }
+  },
+  "current_rule": {
+    "floor": 100.0,
+    "point_multiplier": 1.0
+  },
+  "current_rule_audit": {
+    "confirmation_interval_score_change_vs_legacy": 73.65885346083495,
+    "not_worse_than_legacy_on_test_and_confirmation": false,
+    "test_interval_score_change_vs_legacy": 66.8286058543317
+  },
+  "date": "2026-10-01",
+  "decision": "revert_current_to_legacy",
+  "experiment": "bank_eps_interval_official_522_rescore_v1",
+  "feature_rows": 158,
+  "hypothesis": "The coverage-selected production interval is harmful under official mean interval score, and a development-selected rule must beat it on both held-out splits without being worse than the legacy rule.",
+  "legacy": {
+    "confirmation": {
+      "coverage_diagnostic": 0.65625,
+      "mean_full_width": 49.06650035204622,
+      "mean_interval_score": 126.4211282576294,
+      "rows": 32
+    },
+    "dev": {
+      "coverage_diagnostic": 0.5,
+      "mean_full_width": 290.9986510135715,
+      "mean_interval_score": 729.4298175932612,
+      "rows": 28
+    },
+    "test": {
+      "coverage_diagnostic": 0.7241379310344828,
+      "mean_full_width": 54.565503273596605,
+      "mean_interval_score": 133.1713941456683,
+      "rows": 29
+    },
+    "train": {
+      "coverage_diagnostic": 0.855072463768116,
+      "mean_full_width": 55.01782585851805,
+      "mean_interval_score": 154.98190879346365,
+      "rows": 69
+    }
+  },
+  "legacy_rule": {
+    "floor": 20.0,
+    "point_multiplier": 0.75
+  },
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "model_api_calls": 0,
+  "official_interval_metric": {
+    "alpha": 0.1,
+    "formula": "width + 20 * lower_miss + 20 * upper_miss",
+    "interval_level": 0.9,
+    "lower_is_better": true,
+    "name": "mean_interval_score"
+  },
+  "official_scorer_version": "5.2.2",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "production_rule_after_decision": {
+    "floor": 20.0,
+    "point_multiplier": 0.75
+  },
+  "reason": "The development-selected candidate fails the preregistered held-out gate, while the current wide rule has a higher mean interval score than legacy on both test and confirmation. Restore the legacy interval; keep the point model unchanged.",
+  "schema_version": 1,
+  "selected_on_dev": {
+    "coverage_diagnostic": 0.8571428571428571,
+    "floor": 100.0,
+    "mean_full_width": 370.09922447760374,
+    "mean_interval_score": 573.8786650997679,
+    "point_multiplier": 0.75,
+    "rows": 28
+  },
+  "selection_rule": "Minimize development mean interval score, then mean full width.",
+  "source": "SEC Company Concept API, us-gaap:EarningsPerShareDiluted",
+  "source_sha256_by_ticker": {
+    "BAC": "2133ba4c4365fb48817dd9557c0244519a99aced91693b3e6372c39f706da786",
+    "C": "23820b28db5ee74137fd4703a7baa9ec4e2d51065391919d7da75d35651add13",
+    "GS": "b8c3d05e883361ebd8543b3dfce7c0f40fda35a90cb1f604416f352a871b64db",
+    "JPM": "39a48e8fed3c70d6a3adf5fd6f4fa529e10d1849dc918cfee2650b0d69cb7fc8",
+    "MS": "ed8de86db84b91eca61826bfd35604582ccd31ef5be4b51eac9dd24f69249358",
+    "PNC": "f92fe3a631659ab0423319adcdd8fb7fb4fe26cce69b93758012a4e370683375",
+    "USB": "562214f55ce0ec284e2d94246314b6a35b853f0d8fe75e520c6bf003e028ede1",
+    "WFC": "1e20e27e2c96f370b20dabf8d8cc6e1af5ec2904899c9b627fbe47866b92eaa6"
+  },
+  "split_counts": {
+    "confirmation": 32,
+    "dev": 28,
+    "test": 29,
+    "train": 69
+  }
+}

@@ -75,9 +75,13 @@
     ]
   },
   "confirmation_width_ratio": 4.077730840449484,
+  "current_production_rule": "max(20, 0.75 * abs(point))",
+  "current_status": "superseded_and_reverted_under_scorer_5.2.2",
+  "current_status_note": "The acceptance remains historical. Scorer 5.2.2 charges interval width through mean interval score, under which this rule is worse than legacy on test and confirmation.",
   "date": "2026-09-28",
   "experiment": "bank_eps_interval_calibration_v1",
   "feature_rows": 158,
+  "historical_scorer_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
   "hypothesis": "A development-selected floor and point-magnitude multiplier improve 90% interval calibration for bank EPS growth over max(20, 0.75 * abs(point)).",
   "local_llm_run": false,
   "model_api_calls": 0,
@@ -147,5 +151,6 @@
     "train": 69
   },
   "statistical_result": "The candidate improves calibration loss on both test and locked confirmation.",
+  "superseded_by": "evaluation/reports/bank-eps-interval-official-522-rescore-v1.json",
   "tests": "139 passed on Python 3.11.7"
 }

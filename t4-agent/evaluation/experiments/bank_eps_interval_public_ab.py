@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Verify the accepted bank-EPS interval changes only the intended public fields."""
+"""Reproduce the historical wide-interval A/B at commit ``af25dc7``.
+
+The production feature flag was removed by the scorer-5.2.2 rollback. Run this script from the
+recorded historical commit; it is not a current validation entry point.
+"""
 
 from __future__ import annotations
 

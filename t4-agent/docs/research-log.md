@@ -1885,3 +1885,59 @@ the `analyze` command. The immutable image is
 `ghcr.io/yif-design/agenthon2026-t4@sha256:19ce8df06d5c9dfbadf1fe2465500d55a68c06b9851a7ea02292421e33fd903a`.
 An unauthenticated GHCR token and manifest request returned HTTP 200; the config reports Linux,
 amd64 and `qfbench2.interface_version=2.0`. No formal competition submission was performed.
+
+## 2026-10-01: scorer 5.2.2 bank EPS interval rescore — wide rule reverted
+
+The official preflight found a scoring-contract change rather than a small documentation update.
+Track 4 main is now `ede7381d8c1ba9d8c84068f9d142f5e093a33892` (scorer 5.2.2), shared main is
+`8c0b3f7bf031b595c2e45c2e488cdd33fbf0c7fd`, and the latest toolkit tag is `v2.5.1`.
+The current composite compares prediction error and mean interval score against each unit's declared
+naive answer. Interval width is charged directly; coverage is diagnostic. The former roster-level
+0.80 NLI gate is also replaced by a per-claim soft penalty, with deterministic claim rules running
+in Development and contradiction NLI added in Final.
+
+This change invalidated the metric used to accept the bank EPS 100-point floor. All eight SEC
+Company Concept files were downloaded again into a temporary cache; every SHA-256 matched the
+recorded source, and the experiment reproduced 158 rows split 69/28/29/32 across
+train/development/test/confirmation.
+
+Using the official 90% mean interval score, where lower is better:
+
+| Rule | Development | Test | Confirmation |
+|---|---:|---:|---:|
+| restored legacy `max(20, 0.75 × abs(point))` | 729.43 | 133.17 | 126.42 |
+| current wide `max(100, abs(point))` | 592.36 | 200.00 | 200.08 |
+| development-selected grid rule `max(100, 0.75 × abs(point))` | 573.88 | 200.00 | 200.00 |
+
+The grid candidate failed both preregistered held-out conditions: it did not strictly improve the
+current rule on test and confirmation, and it was worse than legacy on both. More importantly, the
+adopted wide rule itself increased interval score versus legacy by 66.83 on test and 73.66 on
+confirmation. Production therefore restores the legacy half-width and removes the obsolete feature
+flag. The point model, labels, ranks, retrieval and citations are unchanged.
+
+A commit-level A/B over the 11 published units and 78 rows changed exactly the eight bank interval
+objects, preserved all non-interval fields, and produced zero validation errors. The pinned 5.2.2
+schema accepted all 11 answers. Its deterministic claim rail checked 286 claims with zero basic
+findings and zero deterministic false reasons. The judge-tokenizer-specific 400-token cap was not
+checked; every claim is short, but that is recorded as an unchecked condition rather than a pass.
+No local or remote language model and no NLI model ran. The complete Python suite passed 138 tests.
+
+Reports:
+
+- `evaluation/reports/bank-eps-interval-official-522-rescore-v1.json`
+- `evaluation/reports/bank-eps-interval-official-522-public-ab-v1.json`
+- `evaluation/reports/bank-eps-interval-official-522-claim-rail-v1.json`
+
+The earlier calibration report and NLI reports remain historical evidence for the scorer version
+that produced them; the calibration report now points to this superseding rescore. The next interval
+round should screen the other coverage-selected family rules under mean interval score before
+changing another production family.
+
+A same-day public-repository check found no indexed implementation of `mean_interval_score` or a
+5.2.2 interval rescore in the four previously tracked participant repositories. The most recently
+updated reference, `wangzgui/agenthon-t4-baseline-2026` at commit `1fe5fa4`, does acknowledge scorer
+5.2.2 and reports participant-supplied S1.6 score 0.4793, but S1.7 has no official score. Its new
+ideas are checked source arithmetic, residual-band guards and optional bounded
+`submitted_reasons`; its own research note says full-pipeline calibration remains future work.
+Those mechanisms are useful candidates for later independent tests, not evidence against the bank
+interval rollback. No code was copied. All four checked repositories declare MIT licenses.

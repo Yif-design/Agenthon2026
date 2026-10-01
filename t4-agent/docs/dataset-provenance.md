@@ -103,8 +103,9 @@ produced the tracked dataset byte-for-byte.
 
 Interval selection used the current no-positive-signal fallback point so calibration does not assume
 that the text model gets direction right. Among a fixed grid, development selected half-width
-`max(2.75 USD/share, 1.15 * abs(prior EPS))`. The official score has no interval-width term, but the
-selection still minimizes mean width after matching 90% development coverage. The 2022–2023 test
+`max(2.75 USD/share, 1.15 * abs(prior EPS))`. This selection used the retired coverage-gap scorer
+and minimized mean width only after matching 90% development coverage. Scorer 5.2.2 now uses mean
+interval score, so this rule is queued for a fresh rescore. The 2022–2023 test
 was read after selection but before the comparability audit was added, so it is not claimed as a
 pristine holdout. Extraction and candidate were then locked before the one-time 2024–2025
 confirmation read.

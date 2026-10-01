@@ -711,9 +711,9 @@ hi = point_forecast + z × sigma_family × uncertainty_multiplier
 
 分类题仍然需要区间。区间覆盖对应的连续点预测，例如 EPS、信用事件概率或异常收益，而不是对标签本身给区间。
 
-官方 scorer 主要惩罚实际覆盖率偏离目标覆盖率，不奖励无限窄，也不应通过无限宽区间长期获得优势。因此后续必须利用可获得的开发结果校准每个 family 的误差尺度。
+官方 scorer 5.2.2 使用 mean interval score：区间越宽成本越高，真实值落在区间外还会按越界距离追加惩罚，再与该 unit 声明的 naive interval 比较。因此应在 development 上最小化 interval score，并在时间外 test/confirmation 验证；coverage 和宽度只作为辅助诊断。
 
-## 五、引用怎么做才不会被 faithfulness gate 拒绝
+## 五、引用怎么做才能避免 claim faithfulness 扣分
 
 每条引用必须同时满足：
 
@@ -723,7 +723,7 @@ hi = point_forecast + z × sigma_family × uncertainty_multiplier
 4. 引文支持本行预测所使用的关键前提。
 5. 引文属于当前 entity，而不是拿另一家公司或另一分项的证据复用。
 
-正确的 claim 应描述证据本身和它支持的方向，例如“管理层预计下一季度毛利率为 X–Y，支持利润率保持稳定”。不要声称引文本身证明“EPS 必然为 1.53”；财报前文档通常只能支持驱动因素，数值预测是模型和工具的推断结果。
+正确的 claim 应是引用原文能够逐字支持的简短事实，例如“管理层预计下一季度毛利率为 X–Y”。不要把“支持利润率保持稳定”或“EPS 必然为 1.53”混入 extractive claim；计算、关系判断和预测推导应放入可选的 `submitted_reasons`。5.2.2 在 Development 执行 deterministic claim rules，在 Final 还会加入逐 claim contradiction 判断；旧版 0.80 roster-level hard gate 已取消。
 
 需要实现：
 

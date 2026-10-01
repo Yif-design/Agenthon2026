@@ -1,4 +1,10 @@
-# Track 4 NLI gate audit
+# Track 4 historical NLI audit
+
+> Scorer note (2026-10-01): the experiments below reproduce the pre-5.2 roster-level 0.80 gate and
+> remain useful wording diagnostics. Scorer 5.2.2 no longer uses that hard gate. It applies
+> deterministic per-claim rules in Development and a per-claim contradiction penalty in Final.
+> Current decisions must use `docs/official-rules-current.md`; the old pass/fail language below is
+> historical and must not be used as a current adoption criterion.
 
 Last updated: 2026-09-29
 

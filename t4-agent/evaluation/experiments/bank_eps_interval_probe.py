@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Evaluate bank EPS-growth interval rules without changing production output."""
+"""Reproduce the retired coverage-gap experiment from the pre-5.2 scorer.
+
+Use ``bank_eps_interval_522_probe.py`` for current interval decisions. This file remains only so
+the historical report can be reproduced from its recorded source cache and commit.
+"""
 
 from __future__ import annotations
 

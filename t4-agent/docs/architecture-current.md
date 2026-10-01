@@ -1,6 +1,6 @@
 # Current Track 4 architecture
 
-Last updated: 2026-09-29
+Last updated: 2026-10-01
 
 The submitted path is a baseline-first bounded workflow:
 
@@ -89,9 +89,14 @@ this baseline on cutoff-safe held-out outcomes before adoption.
 
 ## Current measured result
 
+The table below is retained as a historical practice-set diagnostic from the pre-5.2 scorer. Its
+coverage-gap composite is not the current official score and must not select new intervals. Scorer
+5.2.2 compares point error and mean interval score with each unit's declared naive answer; those
+quantities require the organizer's outcome and naive-answer artifacts.
+
 On the 11 retired public practice units with 78 independently reconstructed outcomes:
 
-| Configuration | Calls | Input tokens | Output tokens | Cost | Mean predictive quality | Mean coverage | Mean pre-gate composite |
+| Configuration | Calls | Input tokens | Output tokens | Cost | Legacy predictive quality | Mean coverage | Legacy pre-gate composite |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Model-free | 0 | 0 | 0 | 0 | 0.3122 | 0.5454 | 0.1058 |
 | Nemotron 3 Super free, thinking off | 9 | 83,198 | 5,951 | 0 | 0.3804 | 0.5606 | 0.1581 |
@@ -128,13 +133,12 @@ interval. Earlier cutoffs retain the prior 15%-of-EPS half-width. The retired pu
 diagnostic moved from 50% to 100% coverage; points, labels and claims are unchanged.
 
 For bank EPS growth, the seasonal-delta point forecast is unchanged. The 90% interval half-width is
-now the larger of 100 percentage points and the absolute point forecast. On the time-forward SEC
-history, calibration loss fell from 0.1759 to 0.1000 on test and from 0.2438 to 0.1000 on locked
-confirmation. The retired public bank unit moved from 87.5% to 100% coverage, which worsens that
-single development-influenced diagnostic from 0.025 to 0.10 calibration loss; it was not used for
-adoption. The official scorer has no width term. `T4_ENABLE_BANK_EPS_INTERVAL=0` restores the old
-`max(20, 0.75 * abs(point))` interval. A fresh remote run of both pinned official NLI members passed
-the changed eight-row public answer at 0.875 ensemble faithfulness.
+`max(20 percentage points, 0.75 * abs(point forecast))`. A rule with a 100-point floor was briefly
+adopted under the retired coverage-gap scorer. Scorer 5.2.2 instead charges both interval width and
+miss distance. On the frozen SEC panel, the wide rule's mean interval score was 200.00 versus
+133.17 for the restored rule on the 2022-2023 test and 200.08 versus 126.42 on the locked 2024-2025
+confirmation split. The wide rule was therefore reverted. Point, label, retrieval and citations did
+not change.
 
 For Treasury auctions with cutoffs on or after 2022-01-01, the calculator uses the mean of the last
 six same-tenor bid-to-cover ratios. Its 90% half-width is the larger of 0.15 and 2.5 times their
@@ -167,9 +171,10 @@ year without reducing direction accuracy. Earlier tasks and all other CPI compon
 Every prediction preserves up to three compact calculator/model facts and can additionally cite up
 to three distinct full BM25 chunks. These context candidates come only from the same cutoff-safe,
 entity-scoped retrieval result already used for reasoning. Their exact source slice is rechecked
-before output. This fixes cases where a short fact or the beginning of a relevant chunk omitted the
-table header or later passage needed by the prediction-bound NLI hypothesis. It changes no forecast
-and raised local public NLI gate passage from 6/11 to 11/11.
+before output. This fixed cases where a short fact or the beginning of a relevant chunk omitted the
+table header or later passage needed by the former prediction-bound NLI diagnostic. It changes no
+forecast. The saved 6/11 to 11/11 result is historical evidence under the pre-5.2 gate; current
+faithfulness is claim-level.
 
 Unknown regression and ranking targets use a target-aware numeric baseline instead of the median of
 every number in an entity row or the row's input position. Field names are matched against the
@@ -187,7 +192,8 @@ schema has no sufficient direct baseline. The parser requires increasing unique 
 target or series column, a matching explicit unit, finite complete values, and entity-bound documents
 when more than one document is visible. It uses only the latest directly stated observation. It does
 not derive changes, convert units, cross malformed rows, or infer a column synonym. This path passed
-two independent time-forward outcome panels and a remote two-model NLI gate; setting
+two independent time-forward outcome panels and a remote two-model NLI diagnostic under the
+pre-5.2 scorer; setting
 `T4_ENABLE_DATED_TABLE_BASELINE=0` disables it for rollback.
 
 For unknown families only, the model packet and BM25 query also retain official scalar table

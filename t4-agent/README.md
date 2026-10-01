@@ -284,7 +284,9 @@ Evidence-chain hardening tested on 2026-09-19:
 
 Public units generally do not include resolved outcomes, so local smoke score is `null`; it checks admissibility, schema, roster, cutoff, and citation plumbing rather than leaderboard predictive quality.
 
-Submission hardening tested on 2026-09-26 with `qfbench2-common==2.4.4` and the current official Track 4 checkout:
+Submission hardening tested on 2026-09-26 with the then-current
+`qfbench2-common==2.4.4` and Track 4 checkout (historical environment; current rules are pinned in
+`docs/official-rules-current.md`):
 
 - 29 unit tests pass, including batching, deadline, request-budget, missing-credential, and authorization-failure paths;
 - all 11 public units produce schema-valid, smoke-admissible answers without a model endpoint;

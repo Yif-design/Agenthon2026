@@ -5,25 +5,25 @@
   fixed character cap; an explicit context-length HTTP 400 splits a multi-row batch into single-row
   attempts while allowing later shorter batches to continue under the existing limits. A single-row
   prompt that still exceeds the serving limit uses the deterministic fallback.
-- Official Development House access is not yet open; OpenRouter is only an analogue.
-- All eleven public units have a proven passing lower bound under the local official two-model NLI
-  path, but this does not establish hidden-unit faithfulness. The local CPU/runtime package set is
-  not guaranteed byte-identical to production.
+- The official runtime guide specifies conditions at the participant Development opening but does
+  not itself announce account-specific access. OpenRouter remains only a development analogue.
+- Saved two-model NLI reports were produced for the pre-5.2 roster gate. Scorer 5.2.2 instead uses
+  deterministic per-claim rules in Development and a claim-level contradiction penalty in Final.
+  The current 11 public outputs have zero deterministic false reasons under the pinned 5.2.2 rail,
+  with the tokenizer-specific 400-token cap unchecked; this does not prove hidden-unit
+  faithfulness.
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
-- Accepted interval changes lift diagnostic mean coverage to 72.0%, still below the 90% target.
+- The recorded 72.0% practice-set coverage is a legacy diagnostic. Current interval selection must
+  minimize mean interval score relative to the unit's naive interval; coverage alone is insufficient.
 - The EPS YoY interval is deliberately broad: mean full width was 8.44 USD/share on the inspected
-  2022–2023 test and 6.75 on the locked 2024–2025 confirmation. The official score penalizes only
-  coverage error and has no width or sharpness term. The rule is independently confirmed and
-  width-minimal within the selected grid, but it should not be interpreted as a tight economic
-  confidence bound.
-- The bank EPS interval is also deliberately broad: the accepted historical rule has a 100
-  percentage-point minimum half-width and raised locked-confirmation mean full width from 49.1 to
-  200.1 points. Width is not scored. It improved calibration loss on time-forward test and
-  confirmation, but the retired public bank unit over-covers at 100% and its calibration loss
-  worsens from 0.025 to 0.10. This is evidence of regime and sample-size risk, not a tight economic
-  confidence interval.
+  2022–2023 test and 6.75 on the locked 2024–2025 confirmation. It was selected under the retired
+  coverage-gap scorer and has not yet been reselected under scorer 5.2.2 mean interval score.
+- The bank EPS 100-point minimum half-width was reverted after scorer 5.2.2 made interval width
+  explicit. The restored `max(20, 0.75 * abs(point))` rule lowers held-out mean interval score, but
+  the development split contains extreme percentage-growth errors around small EPS denominators;
+  a new interval rule still needs a robust, predeclared selection hypothesis.
 - Rate-curve and post-earnings predictions have zero predictive quality on the public diagnostics.
 - The dated-table fallback supports only pipe tables with an exact target or series header and an
   explicit matching unit. It deliberately abstains on synonyms, missing units, derived changes and

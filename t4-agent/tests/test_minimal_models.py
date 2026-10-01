@@ -775,24 +775,6 @@ class MinimalModelTests(unittest.TestCase):
         )
         self.assertAlmostEqual(result.point, 10.0)
         self.assertEqual(result.interval["level"], 0.9)
-        self.assertAlmostEqual(result.interval["lo"], -90.0)
-        self.assertAlmostEqual(result.interval["hi"], 110.0)
-
-    def test_bank_eps_legacy_interval_is_available_for_rollback(self) -> None:
-        current = task("eps_yoy_growth_pct", "regression")
-        with patch.dict("os.environ", {"T4_ENABLE_BANK_EPS_INTERVAL": "0"}):
-            result = solve_minimal(
-                current,
-                {"prior_year_q_eps": 2.0},
-                SPECS["bank_eps"],
-                {},
-                EMPTY_CORPUS,
-                0,
-                1,
-                {"latest_reported_eps": 1.8, "latest_reported_prior_year_eps": 1.6},
-            )
-        self.assertAlmostEqual(result.point, 10.0)
-        self.assertEqual(result.interval["level"], 0.9)
         self.assertAlmostEqual(result.interval["lo"], -10.0)
         self.assertAlmostEqual(result.interval["hi"], 30.0)
 
