@@ -217,6 +217,26 @@
       "role": "transformed_unknown_schema_time_forward_test_and_confirmation",
       "decision": "accept",
       "nli_report": "evaluation/reports/nli/dated-table-direct-ensemble.json"
+    },
+    "official_522_interval_rescore_screen_v1": {
+      "path": "evaluation/reports/official-522-interval-rescore-screen-v1.json",
+      "sha256": "cf4394e23871147aaea3f6f7d2283a0a938c65bfbea6e679c42a3ceee8293eca",
+      "families": [
+        "eps_yoy",
+        "cpi",
+        "cot",
+        "auction",
+        "postearn",
+        "generic",
+        "fomc_control"
+      ],
+      "role": "official_5.2.2_mean_interval_score_forward_screen",
+      "decision": "proceed_one_candidate_at_a_time",
+      "rollback_candidates": [
+        "cpi",
+        "auction"
+      ],
+      "production_change": "none"
     }
   },
   "family_outcome_benchmarks": {
@@ -255,5 +275,6 @@
     }
   },
   "official_scorer_version": "5.2.2",
-  "configuration_metrics_semantics": "Historical pre-5.2 public-practice diagnostics; not current official scores."
+  "configuration_metrics_semantics": "Historical pre-5.2 public-practice diagnostics; not current official scores.",
+  "official_shared_commit": "84221f1b553475b1283cb653145051e916377dd0"
 }

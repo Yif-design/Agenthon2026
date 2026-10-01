@@ -4,7 +4,7 @@ Last verified: 2026-10-01.
 
 Pinned official sources checked for this development round:
 
-- Shared starter/toolkit main: `8c0b3f7bf031b595c2e45c2e488cdd33fbf0c7fd`
+- Shared starter/toolkit main: `84221f1b553475b1283cb653145051e916377dd0`
 - Latest shared toolkit tag: `v2.5.1` (`50fb2dc2b39c70f4cf81fcd269943782eddfaed0`)
 - Track 4 public main: `ede7381d8c1ba9d8c84068f9d142f5e093a33892`
 - Track 4 scorer: `5.2.2`

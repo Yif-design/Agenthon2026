@@ -1949,3 +1949,35 @@ pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The
 Anonymous GHCR manifest and config requests both returned HTTP 200; the config reports Linux,
 amd64 and `qfbench2.interface_version=2.0`. The development submission template now points to that
 digest. No formal competition submission was performed.
+
+## 2026-10-01: scorer 5.2.2 cross-family interval rescore — two rollback candidates
+
+The shared official repository advanced to `84221f1b553475b1283cb653145051e916377dd0`.
+The update removes review/manual-review promises and documents the existing 5.2.x Final
+contradiction rule: two NLI models are averaged and a three-way contradiction probability above
+0.9 marks the claim false. Track 4 remains at
+`ede7381d8c1ba9d8c84068f9d142f5e093a33892`, scorer 5.2.2, and toolkit tag `v2.5.1`; there is no
+new scoring behavior to implement.
+
+The next preregistered screen held every point forecast fixed and rescored the accepted family
+intervals against their immediate predecessors with the official 90% interval score. A family was
+flagged only if its current rule had a strictly higher mean score on both forward test and
+confirmation. Results were:
+
+| Family | Test current / predecessor | Confirmation current / predecessor | Decision |
+|---|---:|---:|---|
+| EPS YoY | 16.63 / 36.60 | 9.57 / 18.94 | retain |
+| CPI | 9.84 / 9.64 | 3.97 / 3.66 | rollback candidate |
+| COT | 31.56 / 34.52 | 41.59 / 47.56 | retain |
+| Treasury auction | 0.603 / 0.585 | 0.470 / 0.463 | rollback candidate |
+| Post-earnings | 37.05 / 68.31 | 39.53 / 71.85 | retain |
+
+The generic final-width multiplier of 2.0 also beat its 1.0 predecessor in CPI, COT and macro
+revision on both periods. An unchanged 50-basis-point FOMC control reproduced exactly. The
+hypothesis was supported: CPI and auction coverage-selected intervals are worse under the current
+official loss. The screen makes no production change. CPI is selected for the next isolated round
+because its confirmation deterioration is larger; auction remains queued. No model API or local
+language model was used.
+
+Script: `evaluation/experiments/official_522_interval_rescore_screen.py`. Report:
+`evaluation/reports/official-522-interval-rescore-screen-v1.json`.

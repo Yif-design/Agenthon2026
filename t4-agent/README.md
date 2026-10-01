@@ -301,6 +301,10 @@ Auction calibration tested on 2026-09-27:
   from 0.0714 to 0.0286;
 - all 33 tests pass and all 11 public units remain smoke-admissible with 78/78 rows.
 
+Under the current scorer 5.2.2 mean interval score, the 2.5 standard-deviation auction interval is
+worse than its 1.65 predecessor on both the 2022–2023 test and 2024 confirmation. It is recorded as
+a rollback candidate; the mean-six point forecast remains supported and unchanged.
+
 EPS YoY interval calibration tested on 2026-09-27:
 
 - 2,321 SEC first-filed, split/recast-comparable quarterly diluted-EPS pairs were split forward into
@@ -310,3 +314,7 @@ EPS YoY interval calibration tested on 2026-09-27:
 - the calibrated rule is cutoff-gated to 2022-01-01 and later tasks;
 - all 54 tests pass and both fresh offline and saved-signal answers pass official smoke for all
   11 public units and 78 rows.
+
+The scorer 5.2.2 rescore retained the wide EPS YoY interval relative to its predecessor on both
+forward periods. The same screen found the CPI 0.75 floor inferior to its 0.35 predecessor on both
+forward periods; that family is evaluated separately before any production rollback.
