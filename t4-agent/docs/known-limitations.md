@@ -22,9 +22,10 @@
   still beats its narrow predecessor on both periods, but it has not been re-optimized against a
   broader candidate grid under mean interval score.
 - The scorer 5.2.2 cross-family rescore found that the accepted CPI 0.75 floor and Treasury-auction
-  2.5 standard-deviation multiplier are worse than their immediate predecessors on both forward
-  test and confirmation mean interval score. They are rollback candidates awaiting separate
-  production validation; the screen itself made no runtime change.
+  2.5 standard-deviation multiplier were worse than their immediate predecessors on both forward
+  test and confirmation mean interval score. CPI has been restored to its 0.35 floor after isolated
+  production validation. The auction interval remains a rollback candidate awaiting a separate
+  round; its mean-six point forecast is unaffected.
 - The bank EPS 100-point minimum half-width was reverted after scorer 5.2.2 made interval width
   explicit. The restored `max(20, 0.75 * abs(point))` rule lowers held-out mean interval score, but
   the development split contains extreme percentage-growth errors around small EPS denominators;

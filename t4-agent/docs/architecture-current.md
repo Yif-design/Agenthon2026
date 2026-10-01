@@ -120,9 +120,11 @@ the retired example date. Its 90% interval has a fixed 11.3 percentage-point hal
 only from the historical training/development period.
 
 For CPI components, the existing point formula remains unchanged. The 90% interval uses the larger
-of 1.65 times the nine-month historical standard deviation and a 0.75 percentage-point half-width.
-The higher floor was selected on real-time ALFRED vintages and improved time-forward calibration;
-it did not happen to change coverage on the single retired public CPI unit.
+of 1.65 times the nine-month historical standard deviation and a 0.35 percentage-point half-width.
+The earlier 0.75 floor was selected under the retired coverage-gap metric and reverted after it
+worsened scorer 5.2.2 mean interval score on both forward periods.
+That historical selection used real-time ALFRED vintages and improved coverage calibration, which
+is retained as provenance rather than treated as evidence under the current width-sensitive loss.
 
 For EPS YoY direction tasks with cutoffs on or after 2022-01-01, the point and label still come from
 the bounded direction signal and the same five-percent step. Only the interval changes: its

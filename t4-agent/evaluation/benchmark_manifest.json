@@ -258,6 +258,16 @@
       "decision": "accept",
       "nli_report": "evaluation/reports/nli/bank-eps-interval-ensemble.json",
       "public_ab_report": "evaluation/reports/bank-eps-interval-public-ab-v1.json"
+    },
+    "cpi_interval_official_522_revert_v1": {
+      "path": "evaluation/reports/cpi-interval-official-522-revert-v1.json",
+      "sha256": "95de5aedae1e6164e50e95a20c18250dc71432d3d5bbfc85330dfb04a7afec09",
+      "dataset": "evaluation/datasets/cpi/components_2015_2023.json plus components_2024_2025_confirmation.json",
+      "rows": 509,
+      "role": "official_5.2.2_forward_test_and_locked_confirmation",
+      "decision": "accept_revert",
+      "public_ab_report": "evaluation/reports/cpi-interval-official-522-public-ab-v1.json",
+      "claim_rail_report": "evaluation/reports/cpi-interval-official-522-claim-rail-v1.json"
     }
   },
   "cross_family_engineering_benchmarks": {

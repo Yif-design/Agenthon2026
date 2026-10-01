@@ -40,8 +40,11 @@ def solve(
     elif gasoline_change is not None and entity_id == "CPI_ENERGY":
         point = 0.4 * clip(gasoline_change, -5.0, 5.0)
     calibrated = artifact_available(task.cutoff_date, ARTIFACT_AVAILABLE_DATE)
-    floor = 0.75 if calibrated else 0.35
-    half = max(floor, 1.65 * pstdev(history)) if len(history) > 1 else (0.75 if calibrated else 0.6)
+    # Scorer 5.2.2 charges interval width directly.  The former 0.75 floor was
+    # selected for coverage-gap calibration and is worse than the preceding
+    # 0.35 floor on both forward mean-interval-score periods.
+    floor = 0.35
+    half = max(floor, 1.65 * pstdev(history)) if len(history) > 1 else 0.6
     evidence = history_evidence
     if entity_id in {"CPI_GASOLINE", "CPI_ENERGY"} and gasoline_evidence:
         evidence = evidence + gasoline_evidence

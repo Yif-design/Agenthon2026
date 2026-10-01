@@ -317,4 +317,5 @@ EPS YoY interval calibration tested on 2026-09-27:
 
 The scorer 5.2.2 rescore retained the wide EPS YoY interval relative to its predecessor on both
 forward periods. The same screen found the CPI 0.75 floor inferior to its 0.35 predecessor on both
-forward periods; that family is evaluated separately before any production rollback.
+forward periods. Production now restores the 0.35 floor: mean interval score improves from 9.84 to
+9.64 on 2022–2023 and from 3.97 to 3.66 on 2024–2025, with the point rule unchanged.

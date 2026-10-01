@@ -1981,3 +1981,28 @@ language model was used.
 
 Script: `evaluation/experiments/official_522_interval_rescore_screen.py`. Report:
 `evaluation/reports/official-522-interval-rescore-screen-v1.json`.
+
+## 2026-10-01: scorer 5.2.2 CPI interval rescore — 0.35 floor restored
+
+The first isolated rollback candidate restores the CPI component interval floor from 0.75 to 0.35
+percentage points while retaining the 1.65 historical-volatility multiplier and every point,
+component override, retrieval and citation rule. With the point forecast fixed, official mean
+interval score fell from 9.8414 to 9.6351 across 264 rows in 2022–2023 and from 3.9671 to 3.6630
+across 245 rows in the locked 2024–2025 confirmation. Both preregistered outcome gates therefore
+passed.
+
+The 11-unit, 78-row public A/B changed seven CPI interval objects and no other field. All outputs
+had zero local validation errors. The pinned scorer 5.2.2 schema accepted 11/11 units; its claim
+rail inspected 286 claims with zero basic findings and zero deterministic false reasons. The judge
+tokenizer-specific 400-token cap remains unchecked. Contradiction NLI was not repeated because all
+claims and citations are byte-identical. Python 3.11.7 passed 138 tests. No model API, local
+language model or NLI model was used.
+
+Reports:
+
+- `evaluation/reports/cpi-interval-official-522-revert-v1.json`
+- `evaluation/reports/cpi-interval-official-522-public-ab-v1.json`
+- `evaluation/reports/cpi-interval-official-522-claim-rail-v1.json`
+
+The CPI rollback is accepted. The Treasury-auction interval remains the next independent candidate;
+its point-model evidence must stay separate from its interval-width comparison.

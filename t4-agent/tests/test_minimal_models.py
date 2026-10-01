@@ -807,8 +807,9 @@ class MinimalModelTests(unittest.TestCase):
             1,
         )
         self.assertAlmostEqual(result.point, 0.301)
-        self.assertAlmostEqual(result.interval["lo"], -0.449)
-        self.assertAlmostEqual(result.interval["hi"], 1.051)
+        self.assertAlmostEqual(result.interval["lo"], result.point - 0.35)
+        self.assertAlmostEqual(result.interval["hi"], result.point + 0.35)
+        self.assertTrue(result.derivation["calibrated_artifact_available"])
         historical = solve_minimal(
             replace(current, cutoff_date="2021-12-31"),
             {"entity_id": "CPI_CORE", "name": "All items less food and energy (core CPI)", "latest_published_mom_pct": 0.31},
