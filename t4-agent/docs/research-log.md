@@ -2038,3 +2038,11 @@ Reports:
 
 The interval rollback is accepted. The recent-six mean point rule and verified concise citation
 remain unchanged; the retired coverage-calibration evidence remains historical provenance.
+
+Production commit `183d5808a070ecfd22fd4b120e8f977bf67f1ee3` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `36844089943` passed the Python 3.13 suite, built and
+pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:13f970a7d96b5ce5e8edb56d1e0176805c4c593b208af593b0d2e7883eeda841`.
+Anonymous GHCR manifest and config requests both returned HTTP 200; the digest matched exactly and
+the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
+template now points to that digest. No formal competition submission was performed.
