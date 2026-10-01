@@ -2006,3 +2006,11 @@ Reports:
 
 The CPI rollback is accepted. The Treasury-auction interval remains the next independent candidate;
 its point-model evidence must stay separate from its interval-width comparison.
+
+Production commit `a2d93761e9bf5c5cb7255560791498fe24bd0371` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `36843546337` passed the Python 3.13 suite, built and
+pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:ab4cdc59ee4b5b87a99bce52fe75f716668595b697843f4cf19f22c3cb5da58b`.
+Anonymous GHCR manifest and config requests both returned HTTP 200; the digest matched exactly and
+the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
+template now points to that digest. No formal competition submission was performed.
