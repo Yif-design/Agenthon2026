@@ -9,7 +9,7 @@ from ..taskio import Task
 from .common import ModelOutput, artifact_available, clip, interval, number
 
 
-INTERVAL_PSTDEV_MULTIPLIER = 2.5
+INTERVAL_PSTDEV_MULTIPLIER = 1.65
 ARTIFACT_AVAILABLE_DATE = "2022-01-01"
 
 

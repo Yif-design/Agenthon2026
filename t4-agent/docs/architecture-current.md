@@ -143,12 +143,12 @@ confirmation split. The wide rule was therefore reverted. Point, label, retrieva
 not change.
 
 For Treasury auctions with cutoffs on or after 2022-01-01, the calculator uses the mean of the last
-six same-tenor bid-to-cover ratios. Its 90% half-width is the larger of 0.15 and 2.5 times their
-population standard deviation. A Treasury history panel selected both choices on 2020-2021 and
-confirmed them on 2022-2023 and an untouched January-October 2024 period. Earlier task cutoffs use
-the preceding heuristic so the later selection data cannot leak backward. This improved historical
-accuracy and calibration but did not change the retired public aggregate diagnostic because that
-single auction unit remains at the scorer's zero-skill floor and its coverage stayed 5/7.
+six same-tenor bid-to-cover ratios. Its 90% half-width is the larger of 0.15 and 1.65 times their
+population standard deviation. A Treasury history panel selected the point rule and formerly
+selected a 2.5 interval multiplier under the retired coverage-gap metric. Scorer 5.2.2 made the
+width cost explicit, so isolated forward tests restored the preceding 1.65 multiplier. Earlier task
+cutoffs retain the preceding trend-adjusted point heuristic so later point-selection data cannot
+leak backward.
 
 Auction citations now prefer a concise corpus sentence that explicitly reports the recent-six
 average only after the calculator independently reproduces that value from the raw rows. A missing

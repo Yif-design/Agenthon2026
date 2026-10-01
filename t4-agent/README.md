@@ -302,8 +302,9 @@ Auction calibration tested on 2026-09-27:
 - all 33 tests pass and all 11 public units remain smoke-admissible with 78/78 rows.
 
 Under the current scorer 5.2.2 mean interval score, the 2.5 standard-deviation auction interval is
-worse than its 1.65 predecessor on both the 2022–2023 test and 2024 confirmation. It is recorded as
-a rollback candidate; the mean-six point forecast remains supported and unchanged.
+worse than its 1.65 predecessor on both the 2022–2023 test and 2024 confirmation. Production now
+restores 1.65: mean interval score improves from 0.603 to 0.585 and from 0.470 to 0.463,
+respectively; the mean-six point forecast remains supported and unchanged.
 
 EPS YoY interval calibration tested on 2026-09-27:
 

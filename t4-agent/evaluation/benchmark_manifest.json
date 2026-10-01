@@ -268,6 +268,16 @@
       "decision": "accept_revert",
       "public_ab_report": "evaluation/reports/cpi-interval-official-522-public-ab-v1.json",
       "claim_rail_report": "evaluation/reports/cpi-interval-official-522-claim-rail-v1.json"
+    },
+    "auction_interval_official_522_revert_v1": {
+      "path": "evaluation/reports/auction-interval-official-522-revert-v1.json",
+      "sha256": "6d4b6fb715167fb6157b26ff23b009ae3c4ea6bcfdd8543dbbc221a524067697",
+      "dataset": "evaluation/datasets/auction/nominal_coupon_2010_2024-10-31.json",
+      "rows": 238,
+      "role": "official_5.2.2_forward_test_and_locked_confirmation",
+      "decision": "accept_revert",
+      "public_ab_report": "evaluation/reports/auction-interval-official-522-public-ab-v1.json",
+      "claim_rail_report": "evaluation/reports/auction-interval-official-522-claim-rail-v1.json"
     }
   },
   "cross_family_engineering_benchmarks": {

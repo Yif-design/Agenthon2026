@@ -1,0 +1,76 @@
+{
+  "after_rule": "max(0.15, 1.65 * recent-six pstdev)",
+  "baseline_git_commit": "ebc4f51dabcd8e21acf229678fe471216aa22ecc",
+  "before_rule": "max(0.15, 2.5 * recent-six pstdev)",
+  "claim_rail": {
+    "basic_finding_count": 0,
+    "claims": 286,
+    "deterministic_false_reason_count": 0,
+    "nli_contradiction_check": "not run; claims and citations are byte-identical to the baseline output",
+    "schema_valid_units": 11,
+    "token_cap_check": "unchecked because official tokenizer was not installed; all claims remain subject to the 400-token scorer cap",
+    "units": 11
+  },
+  "confirmation": {
+    "current": {
+      "coverage": 0.9285714285714286,
+      "mean_full_width": 0.44831571163185185,
+      "mean_interval_score": 0.46974867756356614,
+      "rows": 70
+    },
+    "current_minus_predecessor_mean_interval_score": 0.006878679076014527,
+    "predecessor": {
+      "coverage": 0.8428571428571429,
+      "mean_full_width": 0.33939336080240623,
+      "mean_interval_score": 0.4628699984875516,
+      "rows": 70
+    }
+  },
+  "date": "2026-10-01",
+  "decision": "accept_revert",
+  "experiment": "auction_interval_official_522_revert_v1",
+  "gates": {
+    "confirmation_mean_interval_score_strictly_improved": true,
+    "official_522_deterministic_false_reasons_zero": true,
+    "official_522_schema_valid": true,
+    "public_non_interval_fields_identical": true,
+    "public_validation_errors_zero": true,
+    "test_mean_interval_score_strictly_improved": true,
+    "tests_passed": 138
+  },
+  "hypothesis": "Restoring the Treasury-auction interval multiplier to 1.65 lowers official scorer 5.2.2 mean interval score on both forward test and confirmation while preserving the accepted recent-six mean point forecast and all evidence.",
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "official_toolkit_version": "2.5.1",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "point_rule": "mean of the six most recent same-tenor bid-to-cover observations",
+  "production_change": "restore auction interval multiplier 1.65; retain mean-six point and evidence behavior",
+  "public_ab": {
+    "changed_interval_rows": 6,
+    "non_interval_fields_identical_units": 11,
+    "rows": 78,
+    "units": 11,
+    "validation_error_units": 0
+  },
+  "schema_version": 1,
+  "test": {
+    "current": {
+      "coverage": 0.9107142857142857,
+      "mean_full_width": 0.5228032885186918,
+      "mean_interval_score": 0.602777943250648,
+      "rows": 168
+    },
+    "current_minus_predecessor_mean_interval_score": 0.01751602561345844,
+    "predecessor": {
+      "coverage": 0.8273809523809523,
+      "mean_full_width": 0.3724398631193465,
+      "mean_interval_score": 0.5852619176371896,
+      "rows": 168
+    }
+  }
+}

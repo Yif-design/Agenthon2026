@@ -2014,3 +2014,27 @@ pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The
 Anonymous GHCR manifest and config requests both returned HTTP 200; the digest matched exactly and
 the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
 template now points to that digest. No formal competition submission was performed.
+
+## 2026-10-01: scorer 5.2.2 Treasury-auction interval rescore — 1.65 restored
+
+The second isolated rollback candidate keeps the accepted recent-six same-tenor mean point forecast
+and changes only the 90% interval multiplier from 2.5 to 1.65. The 0.15 ratio floor is unchanged.
+Official mean interval score fell from 0.6028 to 0.5853 across 168 rows in 2022–2023 and from 0.4697
+to 0.4629 across 70 rows in the untouched January–October 2024 confirmation. The improvement is
+small but strictly positive on both preregistered periods.
+
+The 11-unit, 78-row public A/B changed six auction interval objects and no other field. All outputs
+had zero local validation errors. The pinned scorer 5.2.2 schema accepted 11/11 units; its claim
+rail inspected 286 claims with zero basic findings and zero deterministic false reasons. The judge
+tokenizer-specific 400-token cap remains unchecked. Contradiction NLI was not repeated because all
+claims and citations are byte-identical. Python 3.11.7 passed 138 tests. No model API, local
+language model or NLI model was used.
+
+Reports:
+
+- `evaluation/reports/auction-interval-official-522-revert-v1.json`
+- `evaluation/reports/auction-interval-official-522-public-ab-v1.json`
+- `evaluation/reports/auction-interval-official-522-claim-rail-v1.json`
+
+The interval rollback is accepted. The recent-six mean point rule and verified concise citation
+remain unchanged; the retired coverage-calibration evidence remains historical provenance.

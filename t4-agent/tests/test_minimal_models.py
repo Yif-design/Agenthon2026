@@ -648,7 +648,7 @@ class MinimalModelTests(unittest.TestCase):
         )
         recent = values[-6:]
         point = sum(recent) / len(recent)
-        half = max(0.15, 2.5 * pstdev(recent))
+        half = max(0.15, 1.65 * pstdev(recent))
         self.assertAlmostEqual(result.point, point)
         self.assertAlmostEqual(result.interval["lo"], point - half)
         self.assertAlmostEqual(result.interval["hi"], point + half)
