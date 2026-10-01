@@ -2081,3 +2081,11 @@ pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The
 Anonymous GHCR manifest and config requests both returned HTTP 200; the digest matched exactly and
 the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
 template now points to that digest. No formal competition submission was performed.
+
+Production commit `d7a731f7b4e64816fd387a79280f7ade4aa8e65b` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `36845475381` passed 141 tests on Python 3.13, built
+and pushed Linux/amd64, pulled the published image, and passed `analyze --help`. The immutable image
+is `ghcr.io/yif-design/agenthon2026-t4@sha256:af2d58bae3f54a1963bace977f80001f9ecff087f9cc65271b92edb6ed02b081`.
+Anonymous GHCR manifest and config requests both returned HTTP 200; the digest matched exactly and
+the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development submission
+template now points to that digest. No formal competition submission was performed.
