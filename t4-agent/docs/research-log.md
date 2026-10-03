@@ -38,6 +38,15 @@ not justify copying a candidate without held-out evidence.
 
 Report: `evaluation/reports/proxy-16-energy-control-v1.json`.
 
+Release record for the accepted benchmark infrastructure: commit
+`2534a9cbde1b061cb9e5a146af22c74b0aa0dab2` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37096947579` passed 156 tests on Python 3.13.15, passed the pinned toolkit 2.6 submission-packer
+smoke, built and pushed Linux/amd64, and passed `analyze --help`. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:ec09dd73a7f31bcd3ca5cb415c4daf67a8d34719578ff4bf119652799d6212e1`.
+Anonymous manifest and config requests returned HTTP 200; the OCI digest matched exactly and the
+config carries `qfbench2.interface_version=2.0`. The development submission template now points to
+that digest. No formal competition submission was performed.
+
 ## 2026-10-03: target-semantic dated-table alias — rejected and rolled back
 
 Proxy-15 showed that an unknown regression target renamed from indirect-bidder share to
