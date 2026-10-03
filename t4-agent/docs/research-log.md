@@ -1,5 +1,41 @@
 # Research log
 
+## 2026-10-03: fixed recent-six corpus prior — rejected, production unchanged
+
+The first cross-family prior screen isolated forecasting from target resolution. Evaluation-only
+adapters supplied each entity's correctly resolved, cutoff-safe target history; the candidate then
+used one fixed rule everywhere: the mean of the latest six observations and a 90% interval of plus
+or minus 1.65 population standard deviations over the same window. No target outcome selected the
+window, statistic or multiplier, and explicit/transformed variants received identical forecasts by
+entity.
+
+Across Proxy-15 and Proxy-16, the mean pre-claim composite increased from 0.3308 to 0.4601. The
+Proxy-15 family mean rose from 0.2828 to 0.5000 because the candidate removed the transformed
+schema's unrelated-scalar failure. Proxy-16 also improved from 0.3788 to 0.4202, but both energy
+cases remained below the preregistered 0.45 per-case floor. The recent-six point MAE was 1.4289
+million barrels versus 1.0379 for the declared same-week seasonal naive. The overall and both
+family-average gates passed; the per-case quality gate failed, so the fixed prior is rejected and
+was not integrated into production.
+
+The result narrows the next hypothesis. A resolved history is materially better than arbitrary
+entity scalars, but a universal recent-window mean discards useful calendar structure. Do not tune
+the window on these outcomes or add an EIA special case. A future candidate needs a cutoff-only
+selection rule across persistence, recent means, trend and seasonal candidates, and more than one
+seasonal event before production adoption.
+
+The report was byte-identical across two runs (`22fe67c415937a5ecffa6bf88811b7412af005803f54ac59d1274a5de98cf671`).
+All four candidate answers passed the official toolkit 2.6 analysis schema. Python 3.11.7 passed
+156 tests, and the proxy validator accepted six units and three schema pairs with zero errors. No
+model API or NLI ran.
+
+Official Track 4 main remains `1c744e1d6725340643a533f436517d72b53ca0e1`, shared main remains
+`bd01548e34d21fd660d88fd06157078fb25ece4e`, and toolkit v2.6.0/scorer 5.2.2 are unchanged. Open
+issues 18-20 still concern deployed-run diagnostics and scoring-version clarification, with no new
+published rule that changes this screen. The public `wangzgui/agenthon-t4-baseline-2026` repository
+also remains at `a32950da279905956269c1a60a9141988849e99d`; no competitor code was copied.
+
+Report: `evaluation/reports/corpus-recent6-prior-screen-v1.json`.
+
 ## 2026-10-03: EIA crude-inventory proxy-16 confirmation benchmark — accepted
 
 The benchmark previously had only one regression family, so the rejected Proxy-15 semantic matcher

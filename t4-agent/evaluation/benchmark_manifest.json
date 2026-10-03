@@ -386,5 +386,20 @@
   },
   "official_scorer_version": "5.2.2",
   "configuration_metrics_semantics": "Historical pre-5.2 public-practice diagnostics; not current official scores.",
-  "official_shared_commit": "bd01548e34d21fd660d88fd06157078fb25ece4e"
+  "official_shared_commit": "bd01548e34d21fd660d88fd06157078fb25ece4e",
+  "experiments": {
+    "corpus_recent6_prior_screen_v1": {
+      "path": "evaluation/reports/corpus-recent6-prior-screen-v1.json",
+      "sha256": "22fe67c415937a5ecffa6bf88811b7412af005803f54ac59d1274a5de98cf671",
+      "target_type": "regression",
+      "proxy_families": [
+        "proxy-15",
+        "proxy-16"
+      ],
+      "schema_cases": 4,
+      "role": "fixed_corpus_prior_cross_family_screen",
+      "decision": "reject_prior_candidate",
+      "production_change": "none"
+    }
+  }
 }

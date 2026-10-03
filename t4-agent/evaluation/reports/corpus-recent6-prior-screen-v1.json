@@ -1,0 +1,236 @@
+{
+  "adoption_gates": {
+    "candidate_generated_before_outcome_scoring": true,
+    "each_family_mean_strictly_improved": true,
+    "every_case_composite_at_least_0_45": false,
+    "mean_composite_improvement_at_least_0_05": true,
+    "model_api_calls_zero": true,
+    "schema_pair_forecasts_identical": true
+  },
+  "aggregate": {
+    "baseline_mean_composite": 0.33079648508467996,
+    "candidate_mean_composite": 0.46011262960148425,
+    "family_baseline_mean": {
+      "proxy-15": 0.28275042508494597,
+      "proxy-16": 0.37884254508441395
+    },
+    "family_candidate_mean": {
+      "proxy-15": 0.5,
+      "proxy-16": 0.42022525920296855
+    },
+    "family_improved": {
+      "proxy-15": true,
+      "proxy-16": true
+    },
+    "mean_composite_delta": 0.1293161445168043,
+    "schema_pair_forecasts_identical": {
+      "proxy-15": true,
+      "proxy-16": true
+    }
+  },
+  "baseline_results": [
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.5000000018102672,
+      "fallback_rows": 0,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.5000000018102672,
+      "interval_score": 25.366323763704177,
+      "mae": 9.036958868285323,
+      "methods": [
+        "same_tenor_recent_history"
+      ],
+      "naive_interval_score": 25.366324303574846,
+      "naive_mae": 9.03695893372256,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.5000000018102672,
+      "proxy_family": "proxy-15",
+      "raw_interval_quality": 0.5000000053207421,
+      "raw_predictive_quality": 0.5000000018102672,
+      "target_type": "regression",
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+    },
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.06550084835962477,
+      "fallback_rows": 3,
+      "interval_coverage": 1.0,
+      "interval_quality": 0.06867524902656466,
+      "interval_score": 344.0,
+      "mae": 131.85645943432556,
+      "methods": [
+        "generic_baseline"
+      ],
+      "naive_interval_score": 25.366324303574846,
+      "naive_mae": 9.03695893372256,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.06414039093093625,
+      "proxy_family": "proxy-15",
+      "raw_interval_quality": 0.06867524902656466,
+      "raw_predictive_quality": 0.06414039093093625,
+      "target_type": "regression",
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+    },
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.3562033155348414,
+      "fallback_rows": 6,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.29475877733828526,
+      "interval_score": 14.341166666666668,
+      "mae": 1.67525,
+      "methods": [
+        "generic_baseline"
+      ],
+      "naive_interval_score": 5.993955850052324,
+      "naive_mae": 1.0378666666666667,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.38253668904765126,
+      "proxy_family": "proxy-16",
+      "raw_interval_quality": 0.29475877733828526,
+      "raw_predictive_quality": 0.38253668904765126,
+      "target_type": "regression",
+      "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+    },
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.40148177463398654,
+      "fallback_rows": 6,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.3786304577550254,
+      "interval_score": 9.836666666666668,
+      "mae": 1.4856666666666667,
+      "methods": [
+        "generic_baseline"
+      ],
+      "naive_interval_score": 5.993955850052324,
+      "naive_mae": 1.0378666666666667,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.41127519615354136,
+      "proxy_family": "proxy-16",
+      "raw_interval_quality": 0.3786304577550254,
+      "raw_predictive_quality": 0.41127519615354136,
+      "target_type": "regression",
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+    }
+  ],
+  "candidate": {
+    "interval": "point plus/minus 1.65 population standard deviations of the same six values",
+    "interval_multiplier": 1.65,
+    "outcome_used_for_selection": false,
+    "point": "mean of the six most recent cutoff-safe resolved-target observations",
+    "target_resolution": "evaluation adapters; TargetSpec/runtime field resolution is out of scope",
+    "window": 6
+  },
+  "candidate_results": [
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.5,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.5,
+      "interval_score": 25.366324303574846,
+      "mae": 9.03695893372256,
+      "naive_interval_score": 25.366324303574846,
+      "naive_mae": 9.03695893372256,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.5,
+      "proxy_family": "proxy-15",
+      "raw_interval_quality": 0.5,
+      "raw_predictive_quality": 0.5,
+      "target_type": "regression",
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+      "variant": "explicit"
+    },
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.5,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.5,
+      "interval_score": 25.366324303574846,
+      "mae": 9.03695893372256,
+      "naive_interval_score": 25.366324303574846,
+      "naive_mae": 9.03695893372256,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.5,
+      "proxy_family": "proxy-15",
+      "raw_interval_quality": 0.5,
+      "raw_predictive_quality": 0.5,
+      "target_type": "regression",
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed",
+      "variant": "transformed"
+    },
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.42022525920296855,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.41904258566583424,
+      "interval_score": 8.30997423984123,
+      "mae": 1.4289444444444444,
+      "naive_interval_score": 5.993955850052324,
+      "naive_mae": 1.0378666666666667,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.42073211929031185,
+      "proxy_family": "proxy-16",
+      "raw_interval_quality": 0.41904258566583424,
+      "raw_predictive_quality": 0.42073211929031185,
+      "target_type": "regression",
+      "unit": "proxy-16-crude-inventory-change-20260923-explicit",
+      "variant": "explicit"
+    },
+    {
+      "claim_penalty_evaluated": false,
+      "composite_before_claim_penalty": 0.42022525920296855,
+      "interval_coverage": 0.6666666666666666,
+      "interval_quality": 0.41904258566583424,
+      "interval_score": 8.30997423984123,
+      "mae": 1.4289444444444444,
+      "naive_interval_score": 5.993955850052324,
+      "naive_mae": 1.0378666666666667,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.42073211929031185,
+      "proxy_family": "proxy-16",
+      "raw_interval_quality": 0.41904258566583424,
+      "raw_predictive_quality": 0.42073211929031185,
+      "target_type": "regression",
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed",
+      "variant": "transformed"
+    }
+  ],
+  "date": "2026-10-03",
+  "decision": "reject_prior_candidate",
+  "experiment": "corpus_recent6_prior_screen_v1",
+  "hypothesis": "A fixed recent-six mean with a 1.65 population-standard-deviation interval improves the current control across both resolved regression proxy families and remains invariant to equivalent schema transformations.",
+  "limitations": [
+    "Only two regression events are runnable; this cannot satisfy the full cross-target-type production gate.",
+    "Evaluation adapters provide the resolved target history and are not production TargetSpec logic.",
+    "The screen tests one fixed prior and does not select among windows using target outcomes.",
+    "Claim penalty and reasoning bonus are outside this metric-only screen."
+  ],
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "model_api_calls": 0,
+  "production_change": "none",
+  "scope": "L1/L2 corpus-derived numerical prior screen after resolved target history",
+  "source_hashes": {
+    "proxy-15": {
+      "baseline_report": "evaluation/reports/proxy-15-auction-control-v1.json",
+      "baseline_report_sha256": "087fe4d27d7c3aa5fda51d3f40ec99ffd7c2dafac4d6648a01fcf5be3eed5d0e",
+      "source_snapshot": "proxy-benchmark/sources/proxy-15-auctions-2023.json",
+      "source_snapshot_sha256": "0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d"
+    },
+    "proxy-16": {
+      "baseline_report": "evaluation/reports/proxy-16-energy-control-v1.json",
+      "baseline_report_sha256": "0ecc2da42f426adc2a5a66bb3782a60d887833f82d53d4ea550d9d21cc79a092",
+      "source_snapshot": "proxy-benchmark/sources/proxy-16-eia-crude-2026.json",
+      "source_snapshot_sha256": "16a1c0e4cd11f6a2177ca715fb9655fbc69297536e71578f80b3b20d466041ad"
+    }
+  }
+}
