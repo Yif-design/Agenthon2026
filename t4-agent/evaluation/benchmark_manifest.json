@@ -265,6 +265,14 @@
       "role": "second_runnable_proxy_schema_invariance_control",
       "decision": "infrastructure_accept_hypothesis_reject",
       "production_change": "none"
+    },
+    "target_semantic_table_alias_proxy15_v1": {
+      "path": "evaluation/reports/target-semantic-table-alias-proxy15-v1.json",
+      "sha256": "a4971dcab13a035bc473e8c0fa8df822766e6a725998636b33e5c2a97345ed42",
+      "based_on": "proxy_15_auction_control_v1",
+      "role": "target_semantic_alias_candidate",
+      "decision": "reject_and_rollback",
+      "production_change": "none"
     }
   },
   "family_outcome_benchmarks": {

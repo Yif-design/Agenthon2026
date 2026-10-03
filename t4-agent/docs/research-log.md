@@ -1,5 +1,28 @@
 # Research log
 
+## 2026-10-03: target-semantic dated-table alias — rejected and rolled back
+
+Proxy-15 showed that an unknown regression target renamed from indirect-bidder share to
+`remote_allotment_fraction_pct` fell through to an unrelated entity scalar. A deterministic
+candidate compiled the target name, definition and unit into normalized tokens. Exact table-column
+matches remained first; an alias was accepted only when its unit matched, it had at least three
+semantic overlaps including one distinctive token, and the best score was unique. The candidate
+contained no auction field names and made no model call.
+
+The focused safety suite passed 52 tests. On the transformed Proxy-15 unit the selected method
+changed from `generic_baseline` to `generic_dated_table_baseline`, MAE fell from 131.8565 to 16.8629,
+and composite before claim penalty rose from 0.0655 to 0.2911. This proves the target contract found
+the intended percentage series and eliminated the 36/120/360 tenor-month forecasts.
+
+The result still failed the preregistered adoption rule: transformed composite had to reach 0.45
+and finish within 0.05 of the explicit unit's 0.5000, but remained 0.2089 behind. The generic table
+calculator persisted the latest observation, while the stronger control used a recent-window mean.
+Because the first score gate failed, Proxy-18, the public 11-unit byte comparison and the full suite
+were not run. Production code and candidate tests were rolled back. A future round must evaluate
+the table statistic across more than one proxy family before combining it with semantic matching.
+
+Report: `evaluation/reports/target-semantic-table-alias-proxy15-v1.json`.
+
 ## 2026-10-03: toolkit 2.6.0 compatibility and C5 descriptor repair — accepted
 
 Official state advanced to shared toolkit `v2.6.0` at
