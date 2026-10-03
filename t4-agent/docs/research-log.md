@@ -22,6 +22,13 @@ normalization as a general weakness.
 
 Report: `evaluation/reports/proxy-19-fx-control-v1.json`.
 
+Release record: commit `b58c14a5be2875ffd85073fba649986fa5c398c5` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `37116828084` passed 164 tests, the pinned toolkit
+2.6 packer smoke, the Linux/amd64 build and the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:9bac7fb188c57b7cd78931b64b84536b1b2833fb72ba6fd7f47c000794f8ff64`.
+Anonymous manifest and config requests returned HTTP 200; the OCI digest matched, and the interface
+label is `2.0`. No formal competition submission was performed.
+
 ## 2026-10-03: payroll first-print proxy-10 classification benchmark — accepted
 
 Proxy-10 adds the first runnable pure-label classification question to the expanded benchmark. It
