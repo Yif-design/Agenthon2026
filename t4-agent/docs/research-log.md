@@ -1,5 +1,36 @@
 # Research log
 
+## 2026-10-03: toolkit 2.6.0 compatibility and C5 descriptor repair — accepted
+
+Official state advanced to shared toolkit `v2.6.0` at
+`bd01548e34d21fd660d88fd06157078fb25ece4e` and Track 4 main
+`1c744e1d6725340643a533f436517d72b53ca0e1`. The release describes organizer-side trust-purpose,
+`not_reached`, unit-handle and Final leakage-scan changes and explicitly says 2.5.1 submissions
+remain valid. Direct downloads at both pins show byte-identical Track 4 scorer 5.2.2,
+`analysis.schema.json` and `submission.schema.json` content.
+
+The preregistered assumption that no local change was required nevertheless failed. Running the
+official v2.6.0 packer with a synthetic non-secret team key rejected the tracked template because
+its `image` was a string. The unchanged C5 schema requires an object containing `registry`,
+`repository` and `digest`, so this was a pre-existing local template defect rather than a 2.6.0
+breaking change. After the minimal shape repair, the same pack command succeeded, generated
+`team_id` and `descriptor_digest`, and produced a ZIP containing exactly `submission.json` and
+`team-claim.json`; no key field appeared in either artifact. No real team key was read and no
+competition submission was made.
+
+The image workflow now repeats this smoke on remote Python 3.13 with the pinned v2.6.0 package and
+a visibly synthetic key before building the container. This closes the gap where unit tests and an
+image command smoke could pass while the submission descriptor remained unpackable.
+
+The same audit incorporated official Track 4 Issues 19 and 20. Development displays
+`-0.27 + 1.27 * analysis_score`; reasons are Final-only and do not appear on the Development board.
+Issue 20 confirms that a missing `qfbench2.interface_version=2.0` label can stop scoring after all
+units run, that on-demand image pull time counts against a unit, and that the House route was active
+for all ten diagnosed units. The current image is anonymously readable, Linux/amd64, correctly
+labelled and about 44.2 MiB compressed. Production prediction code and the image were unchanged.
+
+Report: `evaluation/reports/toolkit-260-submission-compatibility-v1.json`.
+
 ## 2026-10-03: Treasury auction proxy-15 schema invariance — rejected
 
 The second runnable proxy question forecasts indirect-bidder acceptance share for the 3-, 10-, and

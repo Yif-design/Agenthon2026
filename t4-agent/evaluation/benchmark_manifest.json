@@ -2,8 +2,8 @@
   "schema_version": 1,
   "updated_at": "2026-10-03",
   "baseline_commit": "62d5b8a5e0aaee22a41d69bf0ab94fb542affea8",
-  "official_toolkit_version": "2.5.1",
-  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "official_toolkit_version": "2.6.0",
+  "official_track4_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
   "practice_outcomes": {
     "path": "evaluation/realized/public_all_realized.json",
     "tracked": false,
@@ -350,9 +350,18 @@
       "official_522_reason_findings": 0,
       "decision": "accept",
       "rollback": "T4_ENABLE_REASON_RELEVANCE=0"
+    },
+    "toolkit_260_submission_compatibility_v1": {
+      "path": "evaluation/reports/toolkit-260-submission-compatibility-v1.json",
+      "sha256": "b24501d28f244a71bca14a3759e31c54f900175f854f7fb0ad28fe52de48d796",
+      "scope": "L1 official contract and submission packaging compatibility",
+      "official_toolkit_version": "2.6.0",
+      "official_scorer_version": "5.2.2",
+      "production_prediction_change": "none",
+      "decision": "accept_local_submission_template_fix"
     }
   },
   "official_scorer_version": "5.2.2",
   "configuration_metrics_semantics": "Historical pre-5.2 public-practice diagnostics; not current official scores.",
-  "official_shared_commit": "84221f1b553475b1283cb653145051e916377dd0"
+  "official_shared_commit": "bd01548e34d21fd660d88fd06157078fb25ece4e"
 }

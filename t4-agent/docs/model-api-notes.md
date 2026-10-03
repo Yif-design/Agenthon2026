@@ -1,6 +1,6 @@
 # Model API notes
 
-Last updated: 2026-09-28
+Last updated: 2026-10-03
 
 ## Official House
 
@@ -10,7 +10,8 @@ Last updated: 2026-09-28
 - API: injected origin plus `/v1/chat/completions`
 - Authentication: injected `MODEL_TOKEN`
 - Thinking: enabled by default; controlled with `chat_template_kwargs.enable_thinking`
-- Development participant access: not yet announced as open
+- Development participant access: active; an organizer diagnosis on 2026-10-03 confirmed 5–21
+  successful House requests on each of ten units in a participant run
 
 The competition does not suppress reasoning. The House model thinks by default, and the official
 route lets the client disable it with

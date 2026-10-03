@@ -37,6 +37,30 @@ jobs:
           python -m pip install pytest .
           python -m pytest -q
 
+      - name: Smoke-test the pinned submission packer
+        working-directory: t4-agent
+        run: |
+          python -m pip install "qfbench2-common @ git+https://github.com/Agenthon-2026/Agenthon2026-public.git@v2.6.0#subdirectory=common"
+          umask 077
+          printf '%s\n' 'test-only-nonsecret-key-260' > /tmp/agenthon-test-team-key
+          qfbench2 submission pack \
+            --descriptor submission.dev.template.json \
+            --team-number 1 \
+            --team-key-file /tmp/agenthon-test-team-key \
+            --out /tmp/agenthon-test-submission.zip
+          python - <<'PY'
+          import json
+          import zipfile
+
+          with zipfile.ZipFile("/tmp/agenthon-test-submission.zip") as archive:
+              assert archive.namelist() == ["submission.json", "team-claim.json"]
+              descriptor = json.loads(archive.read("submission.json"))
+              claim = json.loads(archive.read("team-claim.json"))
+              assert descriptor["image"]["digest"].startswith("sha256:")
+              assert descriptor["descriptor_digest"].startswith("sha256:")
+              assert "team_key" not in claim
+          PY
+
       - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
 
       - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0

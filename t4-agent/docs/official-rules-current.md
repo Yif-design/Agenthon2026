@@ -1,13 +1,19 @@
 # Agenthon Track 4 current rules
 
-Last verified: 2026-10-01.
+Last verified: 2026-10-03.
 
 Pinned official sources checked for this development round:
 
-- Shared starter/toolkit main: `84221f1b553475b1283cb653145051e916377dd0`
-- Latest shared toolkit tag: `v2.5.1` (`50fb2dc2b39c70f4cf81fcd269943782eddfaed0`)
-- Track 4 public main: `ede7381d8c1ba9d8c84068f9d142f5e093a33892`
+- Shared starter/toolkit main: `bd01548e34d21fd660d88fd06157078fb25ece4e`
+- Latest shared toolkit tag: `v2.6.0` (`bd01548e34d21fd660d88fd06157078fb25ece4e`)
+- Track 4 public main: `1c744e1d6725340643a533f436517d72b53ca0e1`
 - Track 4 scorer: `5.2.2`
+
+Toolkit 2.6.0 is an organizer-side contract/runtime update. The official release says existing
+2.5.1 submissions remain valid. A direct blob comparison confirms that the Track 4 scorer,
+`analysis.schema.json` and `submission.schema.json` are byte-identical to their preceding pinned
+versions. The toolkit adds purpose-bound trust-store keys, the scored `not_reached` failure code,
+stricter unit handles and Final leakage-scan support; none changes the T4 answer contract.
 
 The preceding project baseline used scorer semantics from Track 4 commit `7b2bce1` and toolkit
 2.4.4. Its coverage-gap composite and roster-level 0.80 NLI gate are historical results, not the
@@ -20,14 +26,17 @@ A structurally valid unit uses:
 ```text
 composite = 0.70 * predictive_quality + 0.30 * interval_quality
 analysis_score = composite * (1 - F / (F + min(T, 3 * E)))
-leaderboard_final = -0.27 + 1.27 * analysis_score + 0.25 * reasoning_score
+development_board = -0.27 + 1.27 * analysis_score
+final_score = -0.27 + 1.27 * analysis_score + 0.25 * reasoning_score
 ```
 
 Here `F` is the number of false claims, `T` the number of other claims and `E` the roster
 size. With no false claim, the factor is 1. The reasoning score is in `[0, 1]`; the bonus is
 uncapped, so the maximum final score is 1.25. With no judged reasons the reasoning contribution is
-zero, so omitting reasons never subtracts from the analysis result. A structurally inadmissible unit
-has analysis score 0 and is displayed as -0.27 before any reasoning bonus.
+zero, so omitting reasons never subtracts from the analysis result. Development does not grade
+submitted reasons and its board shows only the analysis mapping. A structurally inadmissible unit
+has analysis score 0 and is displayed as -0.27. The `-1000000000` sentinel means no unit was
+scored; it is not a metric value.
 
 - Regression predictive quality is `naive_MAE / (naive_MAE + own_MAE)`.
 - Classification quality is accuracy anchored so the unit's declared naive answer scores 0.5.
@@ -108,6 +117,12 @@ The current runtime document describes limits at the participant Development ope
 serve as an access-status announcement. Do not infer current account access from that wording;
 check the competition site or an authorized Development run when access status matters.
 
+The organizer's 2026-10-03 diagnosis in Track 4 Issue 20 confirms that Development House requests
+are active: all ten units in the diagnosed run made 5–21 requests and none was refused. Image pull
+time counts against each unit when pre-pull does not finish, so image size remains a reliability
+concern. The current project image is about 44.2 MiB compressed, far below the 6 GiB image in that
+diagnosis.
+
 Source:
 <https://github.com/Agenthon-2026/Agenthon2026-public/blob/main/docs/DEVELOPMENT-RUNTIME.md>.
 
@@ -133,6 +148,16 @@ The image implements
 The current project builds on GitHub's Ubuntu runner, publishes Linux/amd64, then pulls and runs the
 immutable image. This avoids the macOS `com.apple.provenance` layer issue reported in Track 4
 Issue 16.
+
+Every image must carry `qfbench2.interface_version="2.0"`. A missing label can allow every unit to
+run yet stop record creation and scoring, as confirmed in Issue 20. The current image has the label.
+The complete output tree also has a 4,096-node cap and stricter UTF-8/NFC path checks. A nonzero
+process exit is `container_crashed` even when an answer exists; timeout and OOM retain their own
+failure codes.
+
+The C5 submission descriptor uses an `image` object with `registry`, `repository` and immutable
+`digest` fields. A string image reference is invalid. `qfbench2 submission pack` derives `team_id`
+and `descriptor_digest`; the tracked template deliberately omits those two generated fields.
 
 Development allows 5 uploads per team per day and 20 total for Track 4 at the participant opening.
 This development loop must not perform a formal competition submission or use the team key.

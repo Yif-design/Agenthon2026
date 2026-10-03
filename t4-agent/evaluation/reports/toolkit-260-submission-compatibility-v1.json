@@ -1,0 +1,125 @@
+{
+  "experiment": "toolkit_260_submission_compatibility_v1",
+  "date": "2026-10-03",
+  "baseline_git_commit": "fb5d2b821331c76eff098bb25de91b2652b1559c",
+  "hypothesis": "Toolkit 2.6.0 changes organizer-side runtime records only, leaves Track 4 scorer and submission contracts compatible, and requires no project change.",
+  "official": {
+    "shared_before_tag": "v2.5.1",
+    "shared_before_commit": "50fb2dc2b39c70f4cf81fcd269943782eddfaed0",
+    "shared_main_and_tag_v260": "bd01548e34d21fd660d88fd06157078fb25ece4e",
+    "track4_before_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+    "track4_current_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+    "scorer_version": "5.2.2",
+    "release_statement": "No action needed for submissions; v2.5.1 keeps working.",
+    "toolkit_changes": [
+      "trust-store key purposes",
+      "not_reached failure code",
+      "strict unit-handle full match",
+      "organizer-side Final leakage scan"
+    ]
+  },
+  "file_identity_checks": {
+    "track4_scorer": {
+      "path": "qfbench2_track_analysis/scoring.py",
+      "before": {
+        "ref": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+        "git_blob_sha": "a35c7747f5afe50c4105ec7718b6cd7c78e7c985",
+        "sha256": "2fb01cceb9dfb4f77d0dc8e59fb4fc81157cb1d751fa67860b37e515cc799f47",
+        "bytes": 110558
+      },
+      "after": {
+        "ref": "1c744e1d6725340643a533f436517d72b53ca0e1",
+        "git_blob_sha": "a35c7747f5afe50c4105ec7718b6cd7c78e7c985",
+        "sha256": "2fb01cceb9dfb4f77d0dc8e59fb4fc81157cb1d751fa67860b37e515cc799f47",
+        "bytes": 110558
+      },
+      "byte_identical": true
+    },
+    "analysis_schema": {
+      "path": "common/qfbench2_common/schemas/analysis.schema.json",
+      "before": {
+        "ref": "50fb2dc2b39c70f4cf81fcd269943782eddfaed0",
+        "git_blob_sha": "ce1b927b7ed596d7191a5de7f74baed048560733",
+        "sha256": "8a997f21a929f09596db805430839b281548ad0babab29bd1f3daa8456d38049",
+        "bytes": 6946
+      },
+      "after": {
+        "ref": "bd01548e34d21fd660d88fd06157078fb25ece4e",
+        "git_blob_sha": "ce1b927b7ed596d7191a5de7f74baed048560733",
+        "sha256": "8a997f21a929f09596db805430839b281548ad0babab29bd1f3daa8456d38049",
+        "bytes": 6946
+      },
+      "byte_identical": true
+    },
+    "submission_schema": {
+      "path": "common/qfbench2_common/schemas/submission.schema.json",
+      "before": {
+        "ref": "50fb2dc2b39c70f4cf81fcd269943782eddfaed0",
+        "git_blob_sha": "9c71b5252d930d314c9898629ca9f5153f39b948",
+        "sha256": "66c97b08ee7b3262d3ecdf471e93fa1a4d2143dd72d173dec3eb0b7c77257904",
+        "bytes": 3655
+      },
+      "after": {
+        "ref": "bd01548e34d21fd660d88fd06157078fb25ece4e",
+        "git_blob_sha": "9c71b5252d930d314c9898629ca9f5153f39b948",
+        "sha256": "66c97b08ee7b3262d3ecdf471e93fa1a4d2143dd72d173dec3eb0b7c77257904",
+        "bytes": 3655
+      },
+      "byte_identical": true
+    }
+  },
+  "baseline_pack": {
+    "toolkit": "v2.6.0 source tree",
+    "python": "3.11.7 compatibility execution; package metadata requires 3.13 for installation",
+    "descriptor": "submission.dev.template.json at baseline commit",
+    "synthetic_team_key": true,
+    "real_team_key_used": false,
+    "exit_status": 1,
+    "error": "descriptor is not a valid C5: descriptor.image must be an object of registry/repository/digest"
+  },
+  "candidate": {
+    "change": "Replace string image reference with C5 registry/repository/digest object and add regression tests.",
+    "pack_exit_status": 0,
+    "zip_members": [
+      "submission.json",
+      "team-claim.json"
+    ],
+    "zip_member_count": 2,
+    "descriptor_digest_generated": true,
+    "team_id_generated": true,
+    "team_key_in_zip": false,
+    "real_team_key_used": false,
+    "ci_pack_smoke_added": true,
+    "ci_python": "3.13"
+  },
+  "current_image": {
+    "reference": "ghcr.io/yif-design/agenthon2026-t4@sha256:f936ed8640d59a1728295b4e27ce8053786ed136823c3a846effc4363607ac18",
+    "anonymous_manifest_http_status": 200,
+    "anonymous_config_http_status": 200,
+    "media_type": "application/vnd.oci.image.manifest.v1+json",
+    "os": "linux",
+    "architecture": "amd64",
+    "interface_label": "2.0",
+    "compressed_layer_bytes": 46358507,
+    "compressed_layer_mib": 44.211,
+    "layer_count": 8,
+    "container_cli_smoke": "passed in GitHub Actions run 37092982061"
+  },
+  "runtime_clarifications": {
+    "development_board": "-0.27 + 1.27 * analysis_score",
+    "submitted_reasons": "Final-only grading; absent from Development board",
+    "house_development": "Official Issue 20 diagnosis observed 5-21 successful House requests on every one of ten units.",
+    "required_image_label": "qfbench2.interface_version=2.0",
+    "pull_time_counts_toward_unit": true,
+    "output_tree_node_cap": 4096,
+    "nonzero_exit": "container_crashed regardless of output tree"
+  },
+  "tests": "154 passed on Python 3.11.7",
+  "model_api_calls": 0,
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "decision": "accept_local_submission_template_fix",
+  "production_prediction_change": "none",
+  "conclusion": "Official scoring and answer contracts are unchanged, but the local descriptor template was invalid under both 2.5.1 and 2.6.0. The minimal C5 image-object fix passes the official packer.",
+  "official_pack_smoke": "passed with synthetic non-secret key; exactly two ZIP members"
+}

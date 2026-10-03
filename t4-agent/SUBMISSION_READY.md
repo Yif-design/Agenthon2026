@@ -23,9 +23,18 @@ Verified properties:
 - all 8 OCI layers and 5,893 tar entries were streamed and checked for the macOS
   `com.apple.provenance` attribute reported in official Track 4 issue #16; none contained it;
 - descriptor declares the official House Nemotron snapshot and Apache-2.0 license.
+- the tracked template uses the required C5 `image` object rather than a string reference;
+- toolkit v2.6.0 accepted the template and produced exactly `submission.json` and
+  `team-claim.json` in a test pack using a non-secret synthetic key.
 
-Install the official toolkit in a temporary directory or other clean Python 3.13 environment,
-then pack from `t4-agent`:
+Install the pinned official toolkit in a temporary directory or other clean Python 3.13
+environment, then pack from `t4-agent`:
+
+```bash
+pip install "qfbench2-common @ git+https://github.com/Agenthon-2026/Agenthon2026-public.git@v2.6.0#subdirectory=common"
+```
+
+Then pack:
 
 ```bash
 qfbench2 submission pack \

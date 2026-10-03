@@ -26,6 +26,9 @@
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
+- The C5 descriptor template has been pack-tested only with a synthetic team number and non-secret
+  key. The official packer accepted its shape, but this optimization loop does not use the real team
+  key or perform a competition upload; account linkage and platform intake remain team-operated.
 - The proxy catalog has twenty question designs, but only proxy-15 Treasury auction share and
   proxy-18 COT positioning are runnable, with one 2023 event and two schema variants each. They
   cover regression and ranking and expose transformed-schema failures, but do not yet provide

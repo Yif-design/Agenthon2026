@@ -1,6 +1,6 @@
 # Current Track 4 architecture
 
-Last updated: 2026-10-01
+Last updated: 2026-10-03
 
 The submitted path is a baseline-first bounded workflow:
 
@@ -17,6 +17,12 @@ The submitted path is a baseline-first bounded workflow:
 8. Re-run the deterministic family calculator with accepted signals and parameters.
 9. Normalize rankings, validate the complete answer, and atomically replace the baseline only when
    the enhanced answer is valid.
+
+The submission boundary is separately verified. The image is Linux/amd64, anonymously readable,
+about 44.2 MiB compressed and labelled `qfbench2.interface_version=2.0`. The tracked Development
+descriptor uses the canonical C5 image object (`registry`, `repository`, immutable `digest`) and
+omits the packer-derived `team_id` and `descriptor_digest`. Toolkit v2.6.0 accepted it in a
+synthetic-key pack smoke and emitted exactly the two required ZIP members.
 
 The formal CLI writes only the required answer by default. Full route, row and usage traces repeat
 retrieved corpus passages for every entity and are therefore emitted only when development code
