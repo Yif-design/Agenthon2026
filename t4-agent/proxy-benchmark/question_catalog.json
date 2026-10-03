@@ -422,17 +422,14 @@
       "cutoff_rule": "the day before the Employment Situation release",
       "resolution_rule": "values in the first published release, before later revisions",
       "visible_inputs": [
-        "recent payroll vintages",
-        "weekly claims",
-        "hours",
-        "industry indicators",
+        "cutoff-vintage payroll levels and monthly changes",
+        "recent change volatility",
         "reference expectation"
       ],
-      "corpus_design": "shared BLS and DOL releases with first-print and revision distractors",
+      "corpus_design": "entity-scoped ALFRED cutoff-vintage history; first-print values remain hidden in the outcome snapshot",
       "naive_answer": "inline / zero surprise",
       "source_ids": [
         "bls-release",
-        "dol-claims",
         "fred-alfred"
       ],
       "stressors": [

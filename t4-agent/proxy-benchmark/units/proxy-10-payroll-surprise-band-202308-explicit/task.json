@@ -1,0 +1,128 @@
+{
+  "cutoff_date": "2023-08-31",
+  "entities": [
+    {
+      "corpus_ref": "corpus/BLS_PAYEMS_202308.json",
+      "entity_id": "BLS_PAYEMS_202308",
+      "latest_monthly_change_thousands": 187.0,
+      "name": "Total nonfarm payrolls",
+      "reference_change_thousands": 217.66666666666666,
+      "series_id": "PAYEMS",
+      "six_month_change_volatility_thousands": 33.66377875402582,
+      "surprise_band_half_width_thousands": 16.83188937701291
+    },
+    {
+      "corpus_ref": "corpus/BLS_USCONS_202308.json",
+      "entity_id": "BLS_USCONS_202308",
+      "latest_monthly_change_thousands": 19.0,
+      "name": "Construction",
+      "reference_change_thousands": 23.333333333333332,
+      "series_id": "USCONS",
+      "six_month_change_volatility_thousands": 11.742609969205692,
+      "surprise_band_half_width_thousands": 5.871304984602846
+    },
+    {
+      "corpus_ref": "corpus/BLS_MANEMP_202308.json",
+      "entity_id": "BLS_MANEMP_202308",
+      "latest_monthly_change_thousands": -2.0,
+      "name": "Manufacturing",
+      "reference_change_thousands": 0.0,
+      "series_id": "MANEMP",
+      "six_month_change_volatility_thousands": 6.95221787153807,
+      "surprise_band_half_width_thousands": 5.0
+    },
+    {
+      "corpus_ref": "corpus/BLS_USTPU_202308.json",
+      "entity_id": "BLS_USTPU_202308",
+      "latest_monthly_change_thousands": 18.0,
+      "name": "Trade, transportation, and utilities",
+      "reference_change_thousands": 11.666666666666666,
+      "series_id": "USTPU",
+      "six_month_change_volatility_thousands": 27.813366091383713,
+      "surprise_band_half_width_thousands": 13.906683045691857
+    },
+    {
+      "corpus_ref": "corpus/BLS_USWTRADE_202308.json",
+      "entity_id": "BLS_USWTRADE_202308",
+      "latest_monthly_change_thousands": 17.900000000000546,
+      "name": "Wholesale trade",
+      "reference_change_thousands": 5.800000000000182,
+      "series_id": "USWTRADE",
+      "six_month_change_volatility_thousands": 8.091095929065451,
+      "surprise_band_half_width_thousands": 5.0
+    },
+    {
+      "corpus_ref": "corpus/BLS_USINFO_202308.json",
+      "entity_id": "BLS_USINFO_202308",
+      "latest_monthly_change_thousands": -12.0,
+      "name": "Information",
+      "reference_change_thousands": -7.0,
+      "series_id": "USINFO",
+      "six_month_change_volatility_thousands": 5.4594464513864,
+      "surprise_band_half_width_thousands": 5.0
+    },
+    {
+      "corpus_ref": "corpus/BLS_USFIRE_202308.json",
+      "entity_id": "BLS_USFIRE_202308",
+      "latest_monthly_change_thousands": 19.0,
+      "name": "Financial activities",
+      "reference_change_thousands": 13.666666666666666,
+      "series_id": "USFIRE",
+      "six_month_change_volatility_thousands": 10.828203913853857,
+      "surprise_band_half_width_thousands": 5.414101956926928
+    },
+    {
+      "corpus_ref": "corpus/BLS_USPBS_202308.json",
+      "entity_id": "BLS_USPBS_202308",
+      "latest_monthly_change_thousands": -8.0,
+      "name": "Professional and business services",
+      "reference_change_thousands": 20.0,
+      "series_id": "USPBS",
+      "six_month_change_volatility_thousands": 19.75685535031659,
+      "surprise_band_half_width_thousands": 9.878427675158296
+    },
+    {
+      "corpus_ref": "corpus/BLS_USEHS_202308.json",
+      "entity_id": "BLS_USEHS_202308",
+      "latest_monthly_change_thousands": 100.0,
+      "name": "Education and health services",
+      "reference_change_thousands": 86.33333333333333,
+      "series_id": "USEHS",
+      "six_month_change_volatility_thousands": 12.202003478482084,
+      "surprise_band_half_width_thousands": 6.101001739241042
+    },
+    {
+      "corpus_ref": "corpus/BLS_USLAH_202308.json",
+      "entity_id": "BLS_USLAH_202308",
+      "latest_monthly_change_thousands": 17.0,
+      "name": "Leisure and hospitality",
+      "reference_change_thousands": 21.333333333333332,
+      "series_id": "USLAH",
+      "six_month_change_volatility_thousands": 16.529435024289917,
+      "surprise_band_half_width_thousands": 8.264717512144959
+    },
+    {
+      "corpus_ref": "corpus/BLS_USGOVT_202308.json",
+      "entity_id": "BLS_USGOVT_202308",
+      "latest_monthly_change_thousands": 15.0,
+      "name": "Government",
+      "reference_change_thousands": 32.666666666666664,
+      "series_id": "USGOVT",
+      "six_month_change_volatility_thousands": 16.925490309654908,
+      "surprise_band_half_width_thousands": 8.462745154827454
+    }
+  ],
+  "interval_level": 0.9,
+  "prompt": "Forecast the August 2023 first-print monthly payroll change relative to each row's frozen reference. Return positive_surprise above +band, negative_surprise below -band, and inline otherwise.",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "positive_surprise",
+      "inline",
+      "negative_surprise"
+    ],
+    "name": "payroll_surprise_band",
+    "type": "classification"
+  },
+  "task_id": "proxy-10-payroll-surprise-band-202308-explicit"
+}

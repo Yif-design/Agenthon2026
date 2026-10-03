@@ -7,17 +7,18 @@ units.
 
 ## Status
 
-`question_catalog.json` contains twenty question specifications. Three questions, proxy-15 Treasury
-auction share, proxy-16 EIA crude-inventory change and proxy-18 COT positioning rank, are
-materialized with two runnable schema variants each; the other seventeen remain design records. A
+`question_catalog.json` contains twenty question specifications. Five questions are materialized:
+proxy-10 payroll surprise classification, proxy-15 Treasury auction share, proxy-16 EIA crude-
+inventory change, proxy-17 EIA natural-gas storage change, and proxy-18 COT positioning rank. Each
+has two runnable schema variants; the other fifteen remain design records. A
 question becomes runnable only after its generator has produced a cutoff-safe
 `task.json`, `card.toml`, `manifest.json`, frozen `corpus/`, hidden `reference/outcome.json`, and
 `reference/naive_answer.json` with complete provenance.
 
 The control runs are in `baselines/control-v1/` and `../evaluation/reports/`. Neither makes a
 production-change claim. Proxy-15 exposes target-field selection failure under a transformed schema;
-proxy-16 adds an independently archived confirmation regression and shows both generic controls below
-the seasonal naive. Three events can verify benchmark plumbing and reveal weaknesses, but cannot
+proxy-16 and proxy-17 add energy regressions below their seasonal naive, while proxy-10 establishes
+pure-label classification scoring and a first-print vintage boundary. Five events can verify benchmark plumbing and reveal weaknesses, but cannot
 establish hidden-family generalization.
 
 ## Reproduce the materialized slice
@@ -27,16 +28,21 @@ required.
 
 ```bash
 python3.13 proxy-benchmark/build_cot_proxy.py
+python3.13 proxy-benchmark/build_payroll_proxy.py
 python3.13 proxy-benchmark/build_auction_proxy.py
 python3.13 proxy-benchmark/build_energy_proxy.py
+python3.13 proxy-benchmark/build_gas_proxy.py
 python3.13 proxy-benchmark/validate_proxy.py
 python3.13 proxy-benchmark/run_control.py --experiment proxy-18
 python3.13 proxy-benchmark/run_control.py --experiment proxy-15
 python3.13 proxy-benchmark/run_control.py --experiment proxy-16
+python3.13 proxy-benchmark/run_control.py --experiment proxy-17
+python3.13 proxy-benchmark/run_control.py --experiment proxy-10
 python3.13 -m unittest tests.test_proxy_benchmark -v
 ```
 
-The tracked source snapshots are sufficient for rebuilds. `--raw-cache
+The tracked source snapshots are sufficient for rebuilds. `build_payroll_proxy.py --fetch` refreshes
+the two historical ALFRED vintages used by proxy-10. `--raw-cache
 evaluation/cache/cot/legacy_2015_2023.json` recreates that snapshot from the earlier CFTC download,
 while `build_energy_proxy.py --raw-dir <dir>` recreates proxy-16 from its 57 dated EIA `table4.csv`
 archives. Raw caches are git-ignored and are not required for ordinary runs.

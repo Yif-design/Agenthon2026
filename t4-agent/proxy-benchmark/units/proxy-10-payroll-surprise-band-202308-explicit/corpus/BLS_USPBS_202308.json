@@ -1,0 +1,8 @@
+{
+  "doc_date": "2023-08-31",
+  "doc_id": "ALFRED_USPBS_VINTAGE_20230831",
+  "entity_id": "BLS_USPBS_202308",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "text": "Series: Professional and business services (USPBS).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 20.000000 thousand persons.\nClassification half-band: 9.878428 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 22814.000 thousand persons.\n2023-01-01: 22858.000 thousand persons.\n2023-02-01: 22879.000 thousand persons.\n2023-03-01: 22924.000 thousand persons.\n2023-04-01: 22972.000 thousand persons.\n2023-05-01: 23017.000 thousand persons.\n2023-06-01: 23040.000 thousand persons.\n2023-07-01: 23032.000 thousand persons.",
+  "title": "Cutoff-vintage payroll history for Professional and business services"
+}

@@ -13,7 +13,7 @@ The machine-readable definitions are in `question_catalog.json`. This table is t
 | 07 | Ranking | Novel | Share-repurchase intensity | SEC | Authorization versus execution |
 | 08 | Classification | Novel | Twelve-month liquidity stress | SEC | Boilerplate versus active warnings |
 | 09 | Ranking | Novel | Business-segment growth | SEC | Shared documents and segment identity |
-| 10 | Classification | Novel | Payroll first-print surprise | BLS, DOL, ALFRED | First print versus revision |
+| 10 | Classification | Novel | Payroll first-print surprise | BLS, ALFRED | First print versus revision |
 | 11 | Classification | Novel | Weekly initial-claims direction | DOL, ALFRED | Seasonality and release vintages |
 | 12 | Regression | Control | PCE component first-print nowcast | BEA, BLS, ALFRED | PCE/CPI mapping |
 | 13 | Regression | Control | GDP revision magnitude | BEA, ALFRED | Revision stage and annualization |
@@ -25,10 +25,10 @@ The machine-readable definitions are in `question_catalog.json`. This table is t
 | 19 | Ranking | Novel | Forward FX realized volatility | FRED, Fed | Quote convention and nonstationarity |
 | 20 | Ranking | Novel | Cross-asset forward-return quintile | FRED, Fed, EIA, CFTC | Relative forecast and regime shifts |
 
-Materialization status: questions 15 and 18 have cutoff-safe time-forward events and question 16
-has a cutoff-safe 2026 confirmation event. All three have explicit and transformed schemas,
-complete references and recorded production-control baselines. Questions 01-14, 17 and 19-20
-remain specifications.
+Materialization status: questions 10, 15, 17 and 18 have cutoff-safe time-forward events and
+question 16 has a cutoff-safe 2026 confirmation event. All five have explicit and transformed
+schemas, complete references and recorded production-control baselines. The other fifteen remain
+specifications.
 
 ## Build waves
 

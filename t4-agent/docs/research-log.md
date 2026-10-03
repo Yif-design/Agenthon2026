@@ -1,5 +1,47 @@
 # Research log
 
+## 2026-10-03: payroll first-print proxy-10 classification benchmark — accepted
+
+Proxy-10 adds the first runnable pure-label classification question to the expanded benchmark. It
+uses eleven BLS payroll series as exposed through two frozen ALFRED vintages: the 2023-08-31 input
+vintage ends in July, while the 2023-09-01 vintage supplies the initially published August level
+only to the hidden outcome. Each row's reference is the mean of its latest three cutoff-vintage
+monthly changes. The symmetric classification band is the larger of 5 thousand jobs and half the
+population standard deviation of its latest six changes.
+
+The outcome has three positive, three inline and five negative surprises. The explicit and
+transformed units preserve those labels while reversing the roster, renaming the target and fields,
+and converting thousands of persons to persons. The card declares `interval_leg = false`, matching
+the official 5.2.2 pure-label rule. The local scorer now implements the same label-accuracy anchor:
+the always-inline naive has accuracy 3/11 and scores 0.5.
+
+All 35 snapshot and generated-unit files were byte-identical after a second build. The validator
+accepted ten units and five pairs with zero errors; both control answers passed toolkit 2.6's
+analysis schema. Python 3.11.7 passed 161 tests. The existing agent completed all 22 rows without a
+model call but returned inline throughout, so both variants matched the naive at composite 0.5000.
+The transformed result did not fall below explicit, accepting the benchmark-infrastructure
+hypothesis. This is evidence of schema stability only; it exposes that the current control has no
+useful payroll-surprise classification skill. Production logic remains unchanged.
+
+Report: `evaluation/reports/proxy-10-payroll-control-v1.json`.
+
+## 2026-10-03: natural-gas storage proxy-17 benchmark — accepted
+
+Proxy-17 forecasts the next weekly storage change for the Lower 48 and five EIA regions. Its
+snapshot records the official history, revisions workbook and target release, including explicit
+no-revision and no-reclassification flags. The visible inputs contain 52 recent weeks and five
+same-ISO-week seasonal observations; the target week is confined to the hidden outcome. Explicit
+and transformed variants reverse the roster, rename fields and convert billion to million cubic
+feet.
+
+The benchmark pair built reproducibly and passed its cutoff, roster and variant checks. The current
+agent used generic fallback for all twelve rows. It trailed the declared seasonal naive on both
+variants: explicit composite 0.3633 and transformed 0.2179 before claim penalty. This accepts the
+new benchmark infrastructure without selecting a production forecasting change and gives the
+expanded suite a second independent energy inventory target.
+
+Report: `evaluation/reports/proxy-17-gas-control-v1.json`.
+
 ## 2026-10-03: fixed recent-six corpus prior — rejected, production unchanged
 
 The first cross-family prior screen isolated forecasting from target resolution. Evaluation-only

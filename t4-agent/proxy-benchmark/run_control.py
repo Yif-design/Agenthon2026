@@ -13,6 +13,38 @@ from score_proxy import score
 
 
 EXPERIMENTS = {
+    "proxy-10": {
+        "unit_prefix": "proxy-10-payroll-surprise-band-202308-",
+        "report": "proxy-10-payroll-control-v1.json",
+        "experiment": "proxy-10-payroll-control-v1",
+        "hypothesis": (
+            "The pure-label classification benchmark remains runnable and economically equivalent after "
+            "field renaming, unit scaling, and roster reversal, with transformed composite no more than 0.10 below explicit."
+        ),
+        "decision": "accept_benchmark_infrastructure",
+        "finding": (
+            "Both variants ran without model access and matched the declared always-inline naive at composite 0.5000. "
+            "The transformed schema did not degrade this control, so the pair adds classification coverage without "
+            "selecting a production change."
+        ),
+        "limitations": [
+            "One historical Employment Situation release with eleven related payroll series.",
+            "The current control predicts inline for every entity and therefore does not demonstrate useful classification skill.",
+            "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+        ],
+        "benchmark_validation": {
+            "series": 11,
+            "positive_surprise": 3,
+            "inline": 3,
+            "negative_surprise": 5,
+            "schema_variants": 2,
+            "interval_leg": False,
+            "generated_files_checked": 35,
+            "second_build_byte_identical": True,
+            "local_validator_errors": 0,
+            "official_schema_answers_checked": 2,
+        },
+    },
     "proxy-18": {
         "unit_prefix": "proxy-18-cot-positioning-rank-20230926-",
         "report": "proxy-18-cot-control-v1.json",
@@ -71,6 +103,39 @@ EXPERIMENTS = {
             "first_release_archives": 57,
             "series": 6,
             "visible_releases_per_series": 52,
+            "generated_files_checked": 25,
+            "second_build_byte_identical": True,
+            "local_validator_errors": 0,
+            "official_260_analysis_schema_errors": 0,
+            "official_schema_answers_checked": 2,
+        },
+    },
+    "proxy-17": {
+        "unit_prefix": "proxy-17-natural-gas-storage-change-20260924-",
+        "report": "proxy-17-gas-control-v1.json",
+        "experiment": "proxy-17-gas-control-v1",
+        "hypothesis": (
+            "The frozen EIA natural-gas event is sufficient to run and score the current control in both "
+            "economically equivalent schema variants without model access or outcome leakage."
+        ),
+        "decision": "accept_benchmark_infrastructure",
+        "finding": (
+            "Both variants ran without model access and trailed the declared seasonal naive: explicit "
+            "composite was 0.3633 and transformed was 0.2179. The event expands seasonal regression "
+            "coverage without selecting or changing production forecasting logic."
+        ),
+        "limitations": [
+            "One time-forward event with six mechanically related regions.",
+            "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+            "The official history is current at the target release rather than a separate archive per visible week.",
+        ],
+        "benchmark_validation": {
+            "official_source_files": 3,
+            "series": 6,
+            "visible_weeks_per_series": 52,
+            "seasonal_observations_per_series": 5,
+            "target_revision_flags": 0,
+            "target_reclassification_flags": 0,
             "generated_files_checked": 25,
             "second_build_byte_identical": True,
             "local_validator_errors": 0,

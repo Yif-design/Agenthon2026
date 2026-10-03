@@ -50,14 +50,19 @@ def compare_variants(explicit: Path, transformed: Path) -> list[str]:
     errors: list[str] = []
     left = json.loads((explicit / "reference/outcome.json").read_text())["outcomes"]
     right = json.loads((transformed / "reference/outcome.json").read_text())["outcomes"]
-    lmap = {row["entity_id"]: row["y"] for row in left}
-    rmap = {row["entity_id"]: row["y"] for row in right}
+    def resolved(row):
+        return row["y"] if "y" in row else row.get("true_label")
+    lmap = {row["entity_id"]: resolved(row) for row in left}
+    rmap = {row["entity_id"]: resolved(row) for row in right}
     if lmap != rmap:
         errors.append("schema variants have different resolved outcomes")
     ln = json.loads((explicit / "reference/naive_answer.json").read_text())["entity_predictions"]
     rn = json.loads((transformed / "reference/naive_answer.json").read_text())["entity_predictions"]
     def project(rows):
-        return {row["entity_id"]: (row["point_forecast"], row["interval"]) for row in rows}
+        return {
+            row["entity_id"]: (row.get("label"), row["point_forecast"], row["interval"])
+            for row in rows
+        }
     if project(ln) != project(rn):
         errors.append("schema variants have different naive forecasts")
     return errors

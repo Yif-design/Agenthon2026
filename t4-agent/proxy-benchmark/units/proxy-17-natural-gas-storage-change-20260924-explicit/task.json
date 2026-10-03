@@ -1,0 +1,79 @@
+{
+  "cutoff_date": "2026-09-24",
+  "entities": [
+    {
+      "corpus_ref": "corpus/EIA_GAS_LOWER48_20260925.json",
+      "entity_id": "EIA_GAS_LOWER48_20260925",
+      "last_week_change_bcf": 53,
+      "latest_working_gas_bcf": 3351,
+      "name": "Total Lower 48",
+      "region": "LOWER48",
+      "seasonal_change_mean_bcf": 88.0,
+      "unit": "billion_cubic_feet_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_GAS_EAST_20260925.json",
+      "entity_id": "EIA_GAS_EAST_20260925",
+      "last_week_change_bcf": 20,
+      "latest_working_gas_bcf": 815,
+      "name": "East",
+      "region": "EAST",
+      "seasonal_change_mean_bcf": 29.0,
+      "unit": "billion_cubic_feet_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_GAS_MIDWEST_20260925.json",
+      "entity_id": "EIA_GAS_MIDWEST_20260925",
+      "last_week_change_bcf": 25,
+      "latest_working_gas_bcf": 959,
+      "name": "Midwest",
+      "region": "MIDWEST",
+      "seasonal_change_mean_bcf": 29.8,
+      "unit": "billion_cubic_feet_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_GAS_MOUNTAIN_20260925.json",
+      "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+      "last_week_change_bcf": 3,
+      "latest_working_gas_bcf": 244,
+      "name": "Mountain",
+      "region": "MOUNTAIN",
+      "seasonal_change_mean_bcf": 5.0,
+      "unit": "billion_cubic_feet_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_GAS_PACIFIC_20260925.json",
+      "entity_id": "EIA_GAS_PACIFIC_20260925",
+      "last_week_change_bcf": 3,
+      "latest_working_gas_bcf": 292,
+      "name": "Pacific",
+      "region": "PACIFIC",
+      "seasonal_change_mean_bcf": 4.6,
+      "unit": "billion_cubic_feet_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_GAS_SOUTH_CENTRAL_20260925.json",
+      "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+      "last_week_change_bcf": 2,
+      "latest_working_gas_bcf": 1041,
+      "name": "South Central",
+      "region": "SOUTH_CENTRAL",
+      "seasonal_change_mean_bcf": 20.2,
+      "unit": "billion_cubic_feet_change"
+    }
+  ],
+  "family": "natural_gas_storage_change",
+  "interval_level": 0.9,
+  "prompt": "Forecast the next weekly net change in working gas in underground storage for the Lower 48 and each listed EIA region. Positive values are injections and negative values are withdrawals. Use only information public with the 2026-09-24 report and return Bcf with a 90% interval.",
+  "resolution_date": "2026-10-01",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "definition": "target-week working-gas stock minus prior-week stock",
+    "horizon": "next EIA Weekly Natural Gas Storage Report",
+    "name": "weekly_working_gas_change_bcf",
+    "type": "regression",
+    "unit": "billion_cubic_feet_change"
+  },
+  "task_id": "proxy-17-natural-gas-storage-change-20260924-explicit"
+}

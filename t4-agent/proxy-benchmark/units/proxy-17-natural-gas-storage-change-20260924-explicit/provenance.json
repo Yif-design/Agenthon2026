@@ -1,0 +1,27 @@
+{
+  "cutoff_date": "2026-09-24",
+  "cutoff_week_ending": "2026-09-18",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_gas_proxy.py",
+  "generator_version": "1.0.0",
+  "license": "Public domain (U.S. Energy Information Administration data)",
+  "question_id": "proxy-17-natural-gas-storage-change",
+  "resolution_date": "2026-10-01",
+  "source_raw_sha256": {
+    "https://ir.eia.gov/ngs/ngshistory.xls": "5004e065a45b4bfbeab11ec615112126881992ec722939bfc5ac2110c02f287b",
+    "https://ir.eia.gov/ngs/revisions.xls": "ee7c703c6d30176d0253b879aa4c8c6dc0178b411c36d73036d89aeff412dd3c",
+    "https://ir.eia.gov/ngs/wngsr.json": "8b885c21a58d5e588154a5eb74731e6e5097b03b855ab3eb0f0648497dbdfbc6"
+  },
+  "source_snapshot": "proxy-benchmark/sources/proxy-17-eia-gas-2026.json",
+  "source_snapshot_sha256": "61e33e904b3e92b3938365ad8cdc7b94d0ec0bf8e4696abc9f0530a3e63b06b2",
+  "source_urls": [
+    "https://ir.eia.gov/ngs/wngsr.json",
+    "https://ir.eia.gov/ngs/ngshistory.xls",
+    "https://ir.eia.gov/ngs/revisions.xls"
+  ],
+  "split": "time_forward_test",
+  "target_reclassification_flag": false,
+  "target_revision_flag": false,
+  "target_week_ending": "2026-09-25",
+  "variant": "explicit"
+}

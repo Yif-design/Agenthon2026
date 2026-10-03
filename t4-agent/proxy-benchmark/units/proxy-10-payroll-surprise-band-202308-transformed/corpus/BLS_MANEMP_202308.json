@@ -1,0 +1,8 @@
+{
+  "doc_date": "2023-08-31",
+  "doc_id": "ALFRED_MANEMP_VINTAGE_20230831",
+  "entity_id": "BLS_MANEMP_202308",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "text": "Series: Manufacturing (MANEMP).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted persons.\nFrozen reference change: 0.000000 persons.\nClassification half-band: 5000.000000 persons.\nCutoff-vintage monthly levels:\n2022-12-01: 12974000.000 persons.\n2023-01-01: 12985000.000 persons.\n2023-02-01: 12988000.000 persons.\n2023-03-01: 12976000.000 persons.\n2023-04-01: 12985000.000 persons.\n2023-05-01: 12981000.000 persons.\n2023-06-01: 12987000.000 persons.\n2023-07-01: 12985000.000 persons.",
+  "title": "Cutoff-vintage payroll history for Manufacturing"
+}

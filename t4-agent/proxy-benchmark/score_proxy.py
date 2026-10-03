@@ -48,13 +48,17 @@ def interval_score(rows: list[dict[str, Any]], truth: list[float], level: float)
     return statistics.fmean(costs)
 
 
-def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, Any]], list[float], str]:
+def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, Any]], list[Any], str]:
     task = json.loads((unit / "task.json").read_text())
     answer = json.loads(answer_path.read_text())
     outcome = json.loads((unit / "reference/outcome.json").read_text())
     ids = [row["entity_id"] for row in task["entities"]]
     predictions = {row["entity_id"]: row for row in answer["entity_predictions"]}
-    outcomes = {row["entity_id"]: float(row["y"]) for row in outcome["outcomes"]}
+    target_type = str(task["target"]["type"])
+    if target_type == "classification":
+        outcomes = {row["entity_id"]: str(row["true_label"]) for row in outcome["outcomes"]}
+    else:
+        outcomes = {row["entity_id"]: float(row["y"]) for row in outcome["outcomes"]}
     if set(predictions) != set(ids) or set(outcomes) != set(ids) or len(predictions) != len(ids):
         raise ValueError("answer/outcome roster differs from task roster")
     rows = [predictions[entity_id] for entity_id in ids]
@@ -64,7 +68,11 @@ def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, An
         lo, hi, level = (float(row["interval"][key]) for key in ("lo", "hi", "level"))
         if not all(math.isfinite(value) for value in (point, lo, hi, level)) or lo > point or point > hi or level != 0.9:
             raise ValueError("invalid point or interval")
-    return ids, rows, truth, str(task["target"]["type"])
+    if target_type == "classification":
+        labels = set(task["target"].get("labels", []))
+        if not labels or any(row.get("label") not in labels for row in rows):
+            raise ValueError("classification answer carries an unknown label")
+    return ids, rows, truth, target_type
 
 
 def anchored_quality(raw: float, anchor: float) -> float:
@@ -81,6 +89,22 @@ def score(unit: Path, answer_path: Path) -> dict[str, Any]:
     points = [float(row["point_forecast"]) for row in rows]
     naive_points = [float(row["point_forecast"]) for row in naive]
     metric_parts: dict[str, Any]
+    if target_type == "classification":
+        raw = statistics.fmean(row["label"] == label for row, label in zip(rows, truth, strict=True))
+        naive_raw = statistics.fmean(row["label"] == label for row, label in zip(naive, truth, strict=True))
+        anchor = naive_raw
+        predictive = anchored_quality(raw, anchor)
+        metric_parts = {"raw_accuracy": raw, "naive_accuracy": naive_raw}
+        return {
+            "unit": unit.name, **metric_parts,
+            "raw_predictive_quality": raw, "naive_predictive_quality": naive_raw,
+            "predictive_anchor": anchor, "predictive_quality": predictive,
+            "interval_coverage": None, "interval_score": None,
+            "naive_interval_score": None, "raw_interval_quality": None,
+            "interval_quality": None,
+            "composite_before_claim_penalty": predictive,
+            "claim_penalty_evaluated": False,
+        }
     if target_type == "ranking":
         rho = spearman(points, truth)
         naive_rho = spearman(naive_points, truth)
