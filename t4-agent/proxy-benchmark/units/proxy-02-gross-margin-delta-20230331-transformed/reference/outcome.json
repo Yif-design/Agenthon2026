@@ -1,0 +1,33 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "y": 112.19853534284425
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "y": -90.11111659888087
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "y": -32.16105608085584
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "y": -1615.5239267368152
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "y": 102.149723061153
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "y": -8.109221619222495
+    },
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "y": 456.3598093399209
+    }
+  ],
+  "task_id": "proxy-02-gross-margin-delta-20230331-transformed"
+}

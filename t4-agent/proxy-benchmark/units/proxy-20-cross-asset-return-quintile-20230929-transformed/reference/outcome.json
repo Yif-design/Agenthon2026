@@ -1,0 +1,85 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "XASSET_DHHNGSP_20230929",
+      "y": 18.28358208955223
+    },
+    {
+      "entity_id": "XASSET_DCOILBRENTEU_20230929",
+      "y": -5.351554350093879
+    },
+    {
+      "entity_id": "XASSET_DCOILWTICO_20230929",
+      "y": -8.527046380962865
+    },
+    {
+      "entity_id": "XASSET_DGS30_20230929",
+      "y": 6.553911205073981
+    },
+    {
+      "entity_id": "XASSET_DGS20_20230929",
+      "y": 5.894308943089421
+    },
+    {
+      "entity_id": "XASSET_DGS10_20230929",
+      "y": 6.318082788671031
+    },
+    {
+      "entity_id": "XASSET_DGS7_20230929",
+      "y": 5.856832971800419
+    },
+    {
+      "entity_id": "XASSET_DGS5_20230929",
+      "y": 4.347826086956519
+    },
+    {
+      "entity_id": "XASSET_DGS3_20230929",
+      "y": 1.4583333333333393
+    },
+    {
+      "entity_id": "XASSET_DGS2_20230929",
+      "y": 0.0
+    },
+    {
+      "entity_id": "XASSET_DEXSFUS_20230929",
+      "y": -0.5105175079966884
+    },
+    {
+      "entity_id": "XASSET_DEXINUS_20230929",
+      "y": 0.20462205103515263
+    },
+    {
+      "entity_id": "XASSET_DEXBZUS_20230929",
+      "y": 0.7376901701285243
+    },
+    {
+      "entity_id": "XASSET_DEXMXUS_20230929",
+      "y": 3.530885191653632
+    },
+    {
+      "entity_id": "XASSET_DEXKOUS_20230929",
+      "y": 0.23147804668142147
+    },
+    {
+      "entity_id": "XASSET_DEXCHUS_20230929",
+      "y": 0.23711622807016663
+    },
+    {
+      "entity_id": "XASSET_DEXCAUS_20230929",
+      "y": 2.1721462874030317
+    },
+    {
+      "entity_id": "XASSET_DEXUSUK_20230929",
+      "y": -0.4666775831013603
+    },
+    {
+      "entity_id": "XASSET_DEXJPUS_20230929",
+      "y": -0.28106805862277984
+    },
+    {
+      "entity_id": "XASSET_DEXUSEU_20230929",
+      "y": 0.3401360544217802
+    }
+  ],
+  "task_id": "proxy-20-cross-asset-return-quintile-20230929-transformed"
+}

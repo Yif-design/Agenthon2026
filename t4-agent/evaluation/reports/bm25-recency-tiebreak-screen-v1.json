@@ -1,0 +1,52 @@
+{
+  "baseline_git_commit": "751d04db14b1d464e3e7ec6916913c6c5900f51a",
+  "decision": "proceed_to_implementation",
+  "decision_rule": "Proceed only if 3/3 families move from wrong to correct, public top-1 changes are <=3/78, and every public top-1 change is an exact score tie.",
+  "experiment": "bm25_recency_tiebreak_screen_v1",
+  "hypothesis": "For exactly equal BM25 scores, newer cutoff-safe documents are a safer cross-family tie-break than lexicographic doc_id order.",
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "public": {
+    "changed_top1_all_exact_ties": true,
+    "rows": 78,
+    "top1_changed": 0,
+    "top1_changes": [],
+    "top3_changed": 0,
+    "units": 11
+  },
+  "schema_version": 1,
+  "synthetic": {
+    "baseline_correct": 0,
+    "candidate_correct": 3,
+    "cases": [
+      {
+        "baseline_correct": false,
+        "baseline_top1": "A_OLD",
+        "candidate_correct": true,
+        "candidate_top1": "Z_NEW",
+        "family": "eps_beat_consensus",
+        "scores_equal": true
+      },
+      {
+        "baseline_correct": false,
+        "baseline_top1": "A_OLD",
+        "candidate_correct": true,
+        "candidate_top1": "Z_NEW",
+        "family": "rate_curve",
+        "scores_equal": true
+      },
+      {
+        "baseline_correct": false,
+        "baseline_top1": "A_OLD",
+        "candidate_correct": true,
+        "candidate_top1": "Z_NEW",
+        "family": "auction_demand",
+        "scores_equal": true
+      }
+    ],
+    "total": 3
+  }
+}

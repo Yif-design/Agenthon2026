@@ -1,0 +1,76 @@
+{
+  "after_rule": "max(0.35, 1.65 * history pstdev)",
+  "baseline_git_commit": "2f6ea4594f33d65b87304975edd8702bb085ebbf",
+  "before_rule": "max(0.75, 1.65 * history pstdev) for cutoff dates on or after 2022-01-01",
+  "claim_rail": {
+    "basic_finding_count": 0,
+    "claims": 286,
+    "deterministic_false_reason_count": 0,
+    "nli_contradiction_check": "not run; claims and citations are byte-identical to the baseline output",
+    "schema_valid_units": 11,
+    "token_cap_check": "unchecked because official tokenizer was not installed; all claims remain subject to the 400-token scorer cap",
+    "units": 11
+  },
+  "confirmation": {
+    "current": {
+      "coverage": 0.9224489795918367,
+      "mean_full_width": 2.9889201852457092,
+      "mean_interval_score": 3.9671481665681143,
+      "rows": 245
+    },
+    "current_minus_predecessor_mean_interval_score": 0.3041101246601978,
+    "predecessor": {
+      "coverage": 0.8938775510204081,
+      "mean_full_width": 2.560807049336428,
+      "mean_interval_score": 3.6630380419079165,
+      "rows": 245
+    }
+  },
+  "date": "2026-10-01",
+  "decision": "accept_revert",
+  "experiment": "cpi_interval_official_522_revert_v1",
+  "gates": {
+    "confirmation_mean_interval_score_strictly_improved": true,
+    "official_522_deterministic_false_reasons_zero": true,
+    "official_522_schema_valid": true,
+    "public_non_interval_fields_identical": true,
+    "public_validation_errors_zero": true,
+    "test_mean_interval_score_strictly_improved": true,
+    "tests_passed": 138
+  },
+  "hypothesis": "Restoring the CPI 0.35 percentage-point half-width floor lowers official scorer 5.2.2 mean interval score on both forward test and confirmation without changing points, labels, retrieval, citations, or non-CPI outputs.",
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "official_toolkit_version": "2.5.1",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "point_rule": "0.7 * latest + 0.3 * median(last 3), with existing component-specific overrides unchanged",
+  "production_change": "restore CPI 0.35 interval floor; retain all point and evidence behavior",
+  "public_ab": {
+    "changed_interval_rows": 7,
+    "non_interval_fields_identical_units": 11,
+    "rows": 78,
+    "units": 11,
+    "validation_error_units": 0
+  },
+  "schema_version": 1,
+  "test": {
+    "current": {
+      "coverage": 0.8901515151515151,
+      "mean_full_width": 4.48366469867067,
+      "mean_interval_score": 9.841363009087697,
+      "rows": 264
+    },
+    "current_minus_predecessor_mean_interval_score": 0.2062942350412662,
+    "predecessor": {
+      "coverage": 0.8522727272727273,
+      "mean_full_width": 4.1215385649622345,
+      "mean_interval_score": 9.635068774046431,
+      "rows": 264
+    }
+  }
+}

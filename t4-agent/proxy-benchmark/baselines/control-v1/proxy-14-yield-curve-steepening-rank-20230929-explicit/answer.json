@@ -1,0 +1,199 @@
+{
+  "task_id": "proxy-14-yield-curve-steepening-rank-20230929-explicit",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "UST_DGS2_20230929",
+      "point_forecast": 9.00000000000003,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.7763568394002505e-15,
+        "hi": 18.000000000000064
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS2_20230929_explicit",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 2-year constant-maturity yield (DGS2); percent.\ndate | yield_percent\n2023-06-06 | 4.5100\n2023-06-07 | 4.5600\n2023-06-08 | 4.5200\n2023-06-09 | 4.5900\n2023-06-12 | 4.5500\n2023-06-13 | 4.6700\n2023-06-14 | 4.7400\n2023-06-15 | 4.6200\n2023-06-16 | 4.7000\n2023-06-20 | 4.6800\n2023-06-21 | 4.6800\n2023-06-22 | 4.7700\n2023-06-23 | 4.7100\n2023-06-26 | 4.6500\n2023-06-27 | 4.7400\n2023-06-28 | 4.7100\n2023-06-29 | 4.8700\n2023-06-30 | 4.8700\n2023-07-03 | 4.9400\n2023-07-05 | 4.9400\n2023-07-06 | 4.9900"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS2_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1697,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "entity_id": "UST_DGS3_20230929",
+      "point_forecast": 12.99999999999999,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.7763568394002505e-15,
+        "hi": 25.99999999999998
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS3_20230929_explicit",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 3-year constant-maturity yield (DGS3); percent.\ndate | yield_percent\n2023-06-06 | 4.1500\n2023-06-07 | 4.2100\n2023-06-08 | 4.1700\n2023-06-09 | 4.2300\n2023-06-12 | 4.1600\n2023-06-13 | 4.3000\n2023-06-14 | 4.3700\n2023-06-15 | 4.2300\n2023-06-16 | 4.3200\n2023-06-20 | 4.2900\n2023-06-21 | 4.2900\n2023-06-22 | 4.3700\n2023-06-23 | 4.3200\n2023-06-26 | 4.3000\n2023-06-27 | 4.3800\n2023-06-28 | 4.3200\n2023-06-29 | 4.4900\n2023-06-30 | 4.4900\n2023-07-03 | 4.5600\n2023-07-05 | 4.5900\n2023-07-06 | 4.6800"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS3_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1697,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "UST_DGS5_20230929",
+      "point_forecast": 18.49999999999996,
+      "interval": {
+        "level": 0.9,
+        "lo": -3.552713678800501e-15,
+        "hi": 36.99999999999993
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS5_20230929_explicit",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 5-year constant-maturity yield (DGS5); percent.\ndate | yield_percent\n2023-06-06 | 3.8500\n2023-06-07 | 3.9300\n2023-06-08 | 3.8700\n2023-06-09 | 3.9200\n2023-06-12 | 3.8900\n2023-06-13 | 4.0100\n2023-06-14 | 4.0600\n2023-06-15 | 3.9100\n2023-06-16 | 3.9900\n2023-06-20 | 3.9600\n2023-06-21 | 3.9500\n2023-06-22 | 4.0300\n2023-06-23 | 3.9900\n2023-06-26 | 3.9600\n2023-06-27 | 4.0200\n2023-06-28 | 3.9700\n2023-06-29 | 4.1400\n2023-06-30 | 4.1300\n2023-07-03 | 4.1900\n2023-07-05 | 4.2500\n2023-07-06 | 4.3700"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS5_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1697,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "UST_DGS7_20230929",
+      "point_forecast": 20.999999999999996,
+      "interval": {
+        "level": 0.9,
+        "lo": 3.552713678800501e-15,
+        "hi": 41.999999999999986
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS7_20230929_explicit",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 7-year constant-maturity yield (DGS7); percent.\ndate | yield_percent\n2023-06-06 | 3.7800\n2023-06-07 | 3.8800\n2023-06-08 | 3.8000\n2023-06-09 | 3.8400\n2023-06-12 | 3.8200\n2023-06-13 | 3.9400\n2023-06-14 | 3.9500\n2023-06-15 | 3.8200\n2023-06-16 | 3.8800\n2023-06-20 | 3.8500\n2023-06-21 | 3.8400\n2023-06-22 | 3.9200\n2023-06-23 | 3.8800\n2023-06-26 | 3.8500\n2023-06-27 | 3.9000\n2023-06-28 | 3.8300\n2023-06-29 | 3.9900\n2023-06-30 | 3.9700\n2023-07-03 | 4.0300\n2023-07-05 | 4.1100\n2023-07-06 | 4.2200"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS7_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1697,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "UST_DGS10_20230929",
+      "point_forecast": 25.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 50.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS10_20230929_explicit",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "Treasury 10-year constant-maturity yield (DGS10); percent.\ndate | yield_percent\n2023-06-06 | 3.7000\n2023-06-07 | 3.7900\n2023-06-08 | 3.7300\n2023-06-09 | 3.7500\n2023-06-12 | 3.7300\n2023-06-13 | 3.8400\n2023-06-14 | 3.8300\n2023-06-15 | 3.7200\n2023-06-16 | 3.7700\n2023-06-20 | 3.7400\n2023-06-21 | 3.7200\n2023-06-22 | 3.8000\n2023-06-23 | 3.7400\n2023-06-26 | 3.7200\n2023-06-27 | 3.7700\n2023-06-28 | 3.7100\n2023-06-29 | 3.8500\n2023-06-30 | 3.8100\n2023-07-03 | 3.8600\n2023-07-05 | 3.9500\n2023-07-06 | 4.0500"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS10_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1699,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "UST_DGS20_20230929",
+      "point_forecast": 26.500000000000014,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 53.00000000000003
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS20_20230929_explicit",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "Treasury 20-year constant-maturity yield (DGS20); percent.\ndate | yield_percent\n2023-06-06 | 4.0200\n2023-06-07 | 4.1200\n2023-06-08 | 4.0500\n2023-06-09 | 4.0500\n2023-06-12 | 4.0400\n2023-06-13 | 4.1200\n2023-06-14 | 4.0900\n2023-06-15 | 4.0200\n2023-06-16 | 4.0500\n2023-06-20 | 4.0100\n2023-06-21 | 3.9900\n2023-06-22 | 4.0600\n2023-06-23 | 4.0100\n2023-06-26 | 4.0100\n2023-06-27 | 4.0300\n2023-06-28 | 4.0000\n2023-06-29 | 4.1100\n2023-06-30 | 4.0600\n2023-07-03 | 4.0800\n2023-07-05 | 4.1700\n2023-07-06 | 4.2300"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS20_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1699,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "UST_DGS30_20230929",
+      "point_forecast": 26.500000000000014,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 53.00000000000003
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS30_20230929_explicit",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "Treasury 30-year constant-maturity yield (DGS30); percent.\ndate | yield_percent\n2023-06-06 | 3.8700\n2023-06-07 | 3.9500\n2023-06-08 | 3.8900\n2023-06-09 | 3.8900\n2023-06-12 | 3.8700\n2023-06-13 | 3.9400\n2023-06-14 | 3.9000\n2023-06-15 | 3.8500\n2023-06-16 | 3.8600\n2023-06-20 | 3.8300\n2023-06-21 | 3.8100\n2023-06-22 | 3.8800\n2023-06-23 | 3.8200\n2023-06-26 | 3.8300\n2023-06-27 | 3.8400\n2023-06-28 | 3.8100\n2023-06-29 | 3.9200\n2023-06-30 | 3.8500\n2023-07-03 | 3.8700\n2023-07-05 | 3.9500\n2023-07-06 | 4.0100"
+        },
+        {
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS30_20230929_explicit",
+          "span_start": 0,
+          "span_end": 1699,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 2
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "UST_DGS2_20230929",
+      "UST_DGS3_20230929",
+      "UST_DGS5_20230929",
+      "UST_DGS7_20230929",
+      "UST_DGS10_20230929",
+      "UST_DGS20_20230929",
+      "UST_DGS30_20230929"
+    ],
+    "methods": {
+      "UST_DGS2_20230929": "generic_baseline",
+      "UST_DGS3_20230929": "generic_baseline",
+      "UST_DGS5_20230929": "generic_baseline",
+      "UST_DGS7_20230929": "generic_baseline",
+      "UST_DGS10_20230929": "generic_baseline",
+      "UST_DGS20_20230929": "generic_baseline",
+      "UST_DGS30_20230929": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

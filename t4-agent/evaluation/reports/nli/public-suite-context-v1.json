@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "judge": "Official public check_answer with two fixed DeBERTa members; citation scores averaged before entity max and threshold.",
+  "production_candidate": "Preserve up to three compact facts and append up to three distinct exact entity-scoped retrieved chunks.",
+  "units": [
+    {
+      "unit_id": "t4-EXAMPLE-eps-beat",
+      "baseline_faithfulness": 1.0,
+      "baseline_gate_pass": true,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "baseline_lower_bound_old_spans_preserved"
+    },
+    {
+      "unit_id": "t4-auction-btc-202411-us7",
+      "baseline_faithfulness": 1.0,
+      "baseline_gate_pass": true,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "baseline_lower_bound_old_spans_preserved"
+    },
+    {
+      "unit_id": "t4-cotpos-202411-us10",
+      "baseline_faithfulness": 1.0,
+      "baseline_gate_pass": true,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "baseline_lower_bound_old_spans_preserved"
+    },
+    {
+      "unit_id": "t4-cpicomp-202410-us11",
+      "baseline_faithfulness": 0.9090909090909091,
+      "baseline_gate_pass": true,
+      "candidate_faithfulness_lower_bound": 0.9090909090909091,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "baseline_lower_bound_old_spans_preserved"
+    },
+    {
+      "unit_id": "t4-credit-event-2023",
+      "baseline_faithfulness": 0.25,
+      "baseline_gate_pass": false,
+      "candidate_faithfulness_lower_bound": 0.875,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "exact_top3"
+    },
+    {
+      "unit_id": "t4-eps-growth-2024Q3-banks",
+      "baseline_faithfulness": 0.0,
+      "baseline_gate_pass": false,
+      "candidate_faithfulness_lower_bound": 0.875,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "exact_top3"
+    },
+    {
+      "unit_id": "t4-eps-yoy-2023Q2-mixed",
+      "baseline_faithfulness": 0.3333333333333333,
+      "baseline_gate_pass": false,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "top1_lower_bound_for_top3_superset"
+    },
+    {
+      "unit_id": "t4-fomc-curve-20220728",
+      "baseline_faithfulness": 1.0,
+      "baseline_gate_pass": true,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "baseline_lower_bound_old_spans_preserved"
+    },
+    {
+      "unit_id": "t4-fomc-curve-20240918",
+      "baseline_faithfulness": 0.8333333333333334,
+      "baseline_gate_pass": true,
+      "candidate_faithfulness_lower_bound": 0.8333333333333334,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "baseline_lower_bound_old_spans_preserved"
+    },
+    {
+      "unit_id": "t4-macrorev-20240930-us6",
+      "baseline_faithfulness": 0.6666666666666666,
+      "baseline_gate_pass": false,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "top1_lower_bound_for_top3_superset"
+    },
+    {
+      "unit_id": "t4-postearn-20240201-megacap",
+      "baseline_faithfulness": 0.6666666666666666,
+      "baseline_gate_pass": false,
+      "candidate_faithfulness_lower_bound": 1.0,
+      "candidate_gate_pass_proven": true,
+      "proof_mode": "exact_top3"
+    }
+  ],
+  "baseline_gates_passed": 6,
+  "candidate_gates_passed_proven": 11,
+  "public_smoke": "11/11 admissible; 78/78 roster rows",
+  "prediction_change": "none; labels exact and numeric outputs equal within 1e-12",
+  "runtime_caveat": "Local CPU/package runtime approximates the scoring environment.",
+  "monotonicity_note": "Official entity support is max over per-citation ensemble scores. Candidate preserves every baseline citation, so unrerun passing units cannot regress."
+}

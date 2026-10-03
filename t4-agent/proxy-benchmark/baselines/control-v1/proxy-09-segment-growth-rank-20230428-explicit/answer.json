@@ -1,0 +1,137 @@
+{
+  "task_id": "proxy-09-segment-growth-rank-20230428-explicit",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "AMZN_NorthAmericaSegment",
+      "point_forecast": 5.514557217953897,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 11.029114435907793
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_NorthAmericaSegment_explicit",
+          "span_start": 0,
+          "span_end": 155,
+          "claim": "SEC inline XBRL segment facts for AMZN North America. Q1 2022 revenue USD 69244 million; Q1 2023 revenue USD 76881 million. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "AMZN_InternationalSegment",
+      "point_forecast": 0.6328453701449965,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.3671546298550035,
+        "hi": 2.6328453701449965
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_InternationalSegment_explicit",
+          "span_start": 0,
+          "span_end": 155,
+          "claim": "SEC inline XBRL segment facts for AMZN International. Q1 2022 revenue USD 28759 million; Q1 2023 revenue USD 29123 million. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "AMZN_AmazonWebServicesSegment",
+      "point_forecast": 7.8981617048967,
+      "interval": {
+        "level": 0.9,
+        "lo": 8.881784197001252e-16,
+        "hi": 15.796323409793398
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_AmazonWebServicesSegment_explicit",
+          "span_start": 0,
+          "span_end": 161,
+          "claim": "SEC inline XBRL segment facts for AMZN Amazon Web Services. Q1 2022 revenue USD 18441 million; Q1 2023 revenue USD 21354 million. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+      "point_forecast": 5.468997403255427,
+      "interval": {
+        "level": 0.9,
+        "lo": 8.881784197001252e-16,
+        "hi": 10.937994806510854
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_ProductivityAndBusinessProcesses_explicit",
+          "span_start": 0,
+          "span_end": 177,
+          "claim": "SEC inline XBRL segment facts for MSFT Productivity and Business Processes. Q1 2022 revenue USD 15789 million; Q1 2023 revenue USD 17516 million. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "MSFT_IntelligentCloud",
+      "point_forecast": 8.147679991573186,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.7763568394002505e-15,
+        "hi": 16.295359983146376
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_IntelligentCloud_explicit",
+          "span_start": 0,
+          "span_end": 159,
+          "claim": "SEC inline XBRL segment facts for MSFT Intelligent Cloud. Q1 2022 revenue USD 18987 million; Q1 2023 revenue USD 22081 million. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "MSFT_MorePersonalComputing",
+      "point_forecast": -4.539221064179921,
+      "interval": {
+        "level": 0.9,
+        "lo": -9.078442128359843,
+        "hi": 0.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_MorePersonalComputing_explicit",
+          "span_start": 0,
+          "span_end": 165,
+          "claim": "SEC inline XBRL segment facts for MSFT More Personal Computing. Q1 2022 revenue USD 14584 million; Q1 2023 revenue USD 13260 million. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 6
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "AMZN_NorthAmericaSegment",
+      "AMZN_InternationalSegment",
+      "AMZN_AmazonWebServicesSegment",
+      "MSFT_ProductivityAndBusinessProcesses",
+      "MSFT_IntelligentCloud",
+      "MSFT_MorePersonalComputing"
+    ],
+    "methods": {
+      "AMZN_NorthAmericaSegment": "generic_baseline",
+      "AMZN_InternationalSegment": "generic_baseline",
+      "AMZN_AmazonWebServicesSegment": "generic_baseline",
+      "MSFT_ProductivityAndBusinessProcesses": "generic_baseline",
+      "MSFT_IntelligentCloud": "generic_baseline",
+      "MSFT_MorePersonalComputing": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

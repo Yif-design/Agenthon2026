@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-08-30",
+  "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DDURRG3M086SBEA_202307_explicit",
+  "entities": [
+    "PCE_DDURRG3M086SBEA_202307"
+  ],
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "source": "BEA via ALFRED",
+  "text": "PCE durable-goods price index (DDURRG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 95.872000\n2022-02-01 | 96.036000\n2022-03-01 | 95.871000\n2022-04-01 | 96.035000\n2022-05-01 | 96.398000\n2022-06-01 | 97.090000\n2022-07-01 | 96.880000\n2022-08-01 | 97.347000\n2022-09-01 | 97.782000\n2022-10-01 | 97.399000\n2022-11-01 | 96.848000\n2022-12-01 | 96.632000\n2023-01-01 | 96.875000\n2023-02-01 | 96.696000\n2023-03-01 | 96.614000\n2023-04-01 | 96.809000\n2023-05-01 | 97.041000\n2023-06-01 | 96.742000"
+}

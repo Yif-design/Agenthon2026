@@ -1,0 +1,356 @@
+diff --git a/t4-agent/t4agent/evidence.py b/t4-agent/t4agent/evidence.py
+index e5002e0..d9c2e1c 100644
+--- a/t4-agent/t4agent/evidence.py
++++ b/t4-agent/t4agent/evidence.py
+@@ -117,6 +117,7 @@ def validate_model_output(
+     entity_id: str,
+     corpus: IndexedCorpus,
+     allowed_doc_ids: set[str],
++    evidence_refs: dict[str, dict[str, Any]] | None = None,
+ ) -> tuple[dict[str, int], dict[str, float | None], list[EvidenceFact], list[RejectedFact]]:
+     signals: dict[str, int] = {}
+     parameters: dict[str, float | None] = {}
+@@ -140,6 +141,7 @@ def validate_model_output(
+             corpus=corpus,
+             allowed_doc_ids=allowed_doc_ids,
+             require_number=False,
++            evidence_refs=evidence_refs,
+         )
+         if fact is None:
+             signals[signal_spec.name] = 0
+@@ -166,6 +168,7 @@ def validate_model_output(
+             corpus=corpus,
+             allowed_doc_ids=allowed_doc_ids,
+             require_number=True,
++            evidence_refs=evidence_refs,
+         )
+         if fact is None:
+             parameters[parameter_spec.name] = None
+@@ -181,6 +184,7 @@ def validated_context_fact(
+     entity_id: str,
+     corpus: IndexedCorpus,
+     allowed_doc_ids: set[str],
++    evidence_refs: dict[str, dict[str, Any]] | None = None,
+ ) -> tuple[EvidenceFact | None, RejectedFact | None]:
+     item = parsed.get("context") if isinstance(parsed, dict) else None
+     if not isinstance(item, dict):
+@@ -194,6 +198,7 @@ def validated_context_fact(
+         corpus=corpus,
+         allowed_doc_ids=allowed_doc_ids,
+         require_number=False,
++        evidence_refs=evidence_refs,
+     )
+     if fact is None:
+         return None, RejectedFact(entity_id, "context", reason, item)
+@@ -210,7 +215,45 @@ def _validated_item(
+     corpus: IndexedCorpus,
+     allowed_doc_ids: set[str],
+     require_number: bool,
++    evidence_refs: dict[str, dict[str, Any]] | None,
+ ) -> tuple[EvidenceFact | None, str]:
++    evidence_id = item.get("evidence_id")
++    if evidence_id is not None:
++        ref = evidence_refs.get(evidence_id) if isinstance(evidence_id, str) and evidence_refs else None
++        if not isinstance(ref, dict):
++            return None, "evidence_id_not_in_entity_scope"
++        doc_id = str(ref.get("doc_id") or "")
++        quote = str(ref.get("quote") or "")
++        span_start = ref.get("span_start")
++        span_end = ref.get("span_end")
++        claim = str(item.get("claim") or item.get("reason") or "").strip()
++        if doc_id not in allowed_doc_ids:
++            return None, "doc_not_in_entity_scope"
++        text = corpus.doc_texts.get(doc_id, "")
++        if (
++            not isinstance(span_start, int)
++            or not isinstance(span_end, int)
++            or not (0 <= span_start < span_end <= len(text))
++            or text[span_start:span_end] != quote
++        ):
++            return None, "evidence_id_span_mismatch"
++        if not claim:
++            return None, "missing_claim"
++        if require_number and not _quote_contains_number(quote, float(value)):
++            return None, "numeric_value_not_in_evidence"
++        return EvidenceFact(
++            fact_id=f"{entity_id}.{name}.{doc_id}.{span_start}",
++            entity_id=entity_id,
++            name=name,
++            kind=kind,
++            value=value,
++            doc_id=doc_id,
++            span_start=span_start,
++            span_end=span_end,
++            quote=quote,
++            claim=claim,
++            extractor="model_evidence_id",
++        ), ""
+     doc_id = str(item.get("doc_id") or "")
+     quote = str(item.get("quote") or "")
+     claim = str(item.get("claim") or item.get("reason") or "").strip()
+diff --git a/t4-agent/t4agent/predict.py b/t4-agent/t4agent/predict.py
+index 49fe930..968b538 100644
+--- a/t4-agent/t4agent/predict.py
++++ b/t4-agent/t4agent/predict.py
+@@ -161,6 +161,7 @@ def _retry_batch_as_single_rows(
+ 
+ 
+ def _batch_prompt(task: Task, rows: list[PreparedRow], spec: FamilySpec) -> str:
++    use_evidence_ids = _use_evidence_ids()
+     items = []
+     for row in rows:
+         items.append(
+@@ -169,7 +170,7 @@ def _batch_prompt(task: Task, rows: list[PreparedRow], spec: FamilySpec) -> str:
+                 "entity_id": str(row.entity.get("entity_id", "")),
+                 "entity": project_entity(row.entity, spec),
+                 "calculated_facts": numeric_facts(project_entity(row.entity, spec)),
+-                "evidence": _evidence_json(row.chunks),
++                "evidence": _evidence_json(row.chunks, use_evidence_ids=use_evidence_ids),
+             }
+         )
+     request = {
+@@ -190,7 +191,7 @@ def _batch_prompt(task: Task, rows: list[PreparedRow], spec: FamilySpec) -> str:
+             {
+                 "item_id": "copy the integer item_id",
+                 "entity_id": "copy the entity_id",
+-                **_output_schema(spec),
++                **_output_schema(spec, use_evidence_ids=use_evidence_ids),
+             }
+         ]
+     }
+@@ -201,7 +202,7 @@ def _batch_prompt(task: Task, rows: list[PreparedRow], spec: FamilySpec) -> str:
+             json.dumps(request, ensure_ascii=False, sort_keys=True),
+             "OUTPUT_SCHEMA_JSON:",
+             json.dumps(schema, ensure_ascii=False),
+-            _output_rules(),
++            _output_rules(use_evidence_ids=use_evidence_ids),
+         ]
+     )
+ 
+@@ -241,6 +242,7 @@ def _unpack_batch(parsed: dict[str, Any] | None, rows: list[PreparedRow]) -> dic
+ 
+ 
+ def _prompt(task: Task, entity: dict, chunks: list[Chunk], spec: FamilySpec) -> str:
++    use_evidence_ids = _use_evidence_ids()
+     signal_rules = [{"name": signal.name, "meaning": signal.description} for signal in spec.signals]
+     parameter_rules = [
+         {"name": parameter.name, "meaning": parameter.description} for parameter in spec.numeric_parameters
+@@ -263,15 +265,24 @@ def _prompt(task: Task, entity: dict, chunks: list[Chunk], spec: FamilySpec) ->
+         "CALCULATED_FACTS_JSON:",
+         json.dumps(numeric_facts(project_entity(entity, spec)), ensure_ascii=False, sort_keys=True),
+         "EVIDENCE_JSON:",
+-        json.dumps(_evidence_json(chunks), ensure_ascii=False),
++        json.dumps(_evidence_json(chunks, use_evidence_ids=use_evidence_ids), ensure_ascii=False),
+         "OUTPUT_SCHEMA_JSON:",
+-        json.dumps(_output_schema(spec), ensure_ascii=False),
+-        _output_rules(),
++        json.dumps(_output_schema(spec, use_evidence_ids=use_evidence_ids), ensure_ascii=False),
++        _output_rules(use_evidence_ids=use_evidence_ids),
+     ]
+     return "\n".join(lines)
+ 
+ 
+-def _evidence_json(chunks: list[Chunk]) -> list[dict[str, Any]]:
++def _evidence_json(chunks: list[Chunk], *, use_evidence_ids: bool = False) -> list[dict[str, Any]]:
++    if use_evidence_ids:
++        return [
++            {
++                "evidence_id": f"E{idx}",
++                "doc_date": chunk.doc_date,
++                "text": chunk.text[:1400],
++            }
++            for idx, chunk in enumerate(chunks, 1)
++        ]
+     return [
+         {
+             "n": idx,
+@@ -285,18 +296,21 @@ def _evidence_json(chunks: list[Chunk]) -> list[dict[str, Any]]:
+     ]
+ 
+ 
+-def _output_schema(spec: FamilySpec) -> dict[str, Any]:
++def _output_schema(spec: FamilySpec, *, use_evidence_ids: bool = False) -> dict[str, Any]:
++    source_fields = (
++        {"evidence_id": "provided item-local evidence_id"}
++        if use_evidence_ids
++        else {"doc_id": "provided entity-scoped doc_id", "quote": "verbatim evidence substring"}
++    )
+     schema: dict[str, Any] = {
+         "context": {
+-            "doc_id": "provided entity-scoped doc_id",
+-            "quote": "one verbatim factual passage relevant to this entity and target",
++            **source_fields,
+             "claim": "short factual statement supported by the quote",
+         },
+         "signals": {
+             signal.name: {
+                 "level": "integer -2, -1, 0, 1, or 2",
+-                "doc_id": "provided doc_id or null when level is 0",
+-                "quote": "verbatim evidence substring or empty when level is 0",
++                **source_fields,
+                 "claim": "short fact supported by quote or empty when level is 0",
+             }
+             for signal in spec.signals
+@@ -306,8 +320,7 @@ def _output_schema(spec: FamilySpec) -> dict[str, Any]:
+         schema["parameters"] = {
+             parameter.name: {
+                 "value": "number copied from evidence, or null",
+-                "doc_id": "provided doc_id or null",
+-                "quote": "verbatim table text containing the value, or empty",
++                **source_fields,
+                 "claim": "identify the period and GAAP diluted EPS value, or empty",
+             }
+             for parameter in spec.numeric_parameters
+@@ -315,15 +328,36 @@ def _output_schema(spec: FamilySpec) -> dict[str, Any]:
+     return schema
+ 
+ 
+-def _output_rules() -> str:
++def _output_rules(*, use_evidence_ids: bool = False) -> str:
++    source_rule = (
++        "Non-zero signals and non-null numeric parameters require an evidence_id copied exactly from that item. "
++        if use_evidence_ids
++        else "Non-zero signals and non-null numeric parameters require a provided doc_id and an exact quote. "
++    )
+     return (
+         "Rules: return one entity-specific context passage, every named signal, and every numeric parameter. "
+-        "Level 0 needs no signal citation. Non-zero signals and non-null numeric parameters require a provided "
+-        "doc_id and an exact quote. Numeric parameters must be copied from evidence, never estimated. Do not "
++        "Level 0 needs no signal citation. " + source_rule +
++        "Numeric parameters must be copied from evidence, never estimated. Do not "
+         "output a label, forecast, probability, interval, beta, or confidence."
+     )
+ 
+ 
++def _use_evidence_ids() -> bool:
++    return os.environ.get("T4_EVIDENCE_IDS", "0") == "1"
++
++
++def _evidence_refs(chunks: list[Chunk]) -> dict[str, dict[str, Any]]:
++    return {
++        f"E{idx}": {
++            "doc_id": chunk.doc_id,
++            "span_start": chunk.span_start,
++            "span_end": chunk.span_start + len(chunk.text[:1400]),
++            "quote": chunk.text[:1400],
++        }
++        for idx, chunk in enumerate(chunks, 1)
++    }
++
++
+ def _prediction_from_model(
+     task: Task,
+     entity: dict,
+@@ -342,8 +376,9 @@ def _prediction_from_model(
+     fallback_reason = None
+     entity_id = str(entity.get("entity_id", ""))
+     allowed_doc_ids = allowed_doc_ids or set(corpus.doc_texts)
++    evidence_refs = _evidence_refs(chunks)
+     signals, parameters, model_facts, rejected = validate_model_output(
+-        parsed, spec, entity_id, corpus, allowed_doc_ids
++        parsed, spec, entity_id, corpus, allowed_doc_ids, evidence_refs
+     )
+     parameters.update(extracted_parameters or {})
+     still_needs_model = bool(spec.signals) or any(value is None for value in parameters.values())
+@@ -371,7 +406,9 @@ def _prediction_from_model(
+         raise RuntimeError(f"calculator emitted ungrounded evidence for {entity_id}: {reasons}")
+     facts = list(extracted_facts or []) + model_facts + output_facts
+     used_fact_ids = tuple(fact.fact_id for fact in facts)
+-    context_fact, context_rejected = validated_context_fact(parsed, entity_id, corpus, allowed_doc_ids)
++    context_fact, context_rejected = validated_context_fact(
++        parsed, entity_id, corpus, allowed_doc_ids, evidence_refs
++    )
+     if context_fact is not None:
+         facts.append(context_fact)
+     elif not facts:
+diff --git a/t4-agent/tests/test_evidence_pipeline.py b/t4-agent/tests/test_evidence_pipeline.py
+index 8e80392..5cf8ba6 100644
+--- a/t4-agent/tests/test_evidence_pipeline.py
++++ b/t4-agent/tests/test_evidence_pipeline.py
+@@ -384,6 +384,86 @@ def test_nonexact_quote_is_rejected_and_neutralized() -> None:
+     assert rejected[0].reason == "quote_not_exact_substring"
+ 
+ 
++def test_prompt_local_evidence_id_restores_exact_source_span() -> None:
++    text = "Management raised full-year revenue guidance."
++    corpus = IndexedCorpus([], {"A": text}, {"A": "2023-01-01"})
++    parsed = {
++        "signals": {
++            "yoy_earnings_signal": {
++                "level": 2,
++                "evidence_id": "E1",
++                "claim": "Management raised guidance.",
++            }
++        }
++    }
++    refs = {"E1": {"doc_id": "A", "span_start": 0, "span_end": len(text), "quote": text}}
++
++    signals, _, facts, rejected = validate_model_output(
++        parsed, SPECS["eps_yoy"], "ENTITY", corpus, {"A"}, refs
++    )
++
++    assert signals["yoy_earnings_signal"] == 2
++    assert not rejected
++    assert facts[0].extractor == "model_evidence_id"
++    assert facts[0].quote == text
++    assert (facts[0].span_start, facts[0].span_end) == (0, len(text))
++
++
++@pytest.mark.parametrize(
++    ("evidence_id", "refs", "reason"),
++    [
++        ("E9", {"E1": {"doc_id": "A", "span_start": 0, "span_end": 8, "quote": "evidence"}}, "evidence_id_not_in_entity_scope"),
++        ("E1", {"E1": {"doc_id": "B", "span_start": 0, "span_end": 8, "quote": "evidence"}}, "doc_not_in_entity_scope"),
++        ("E1", {"E1": {"doc_id": "A", "span_start": 1, "span_end": 9, "quote": "evidence"}}, "evidence_id_span_mismatch"),
++    ],
++)
++def test_prompt_local_evidence_id_fails_closed(evidence_id, refs, reason) -> None:
++    corpus = IndexedCorpus([], {"A": "evidence"}, {"A": "2023-01-01"})
++    parsed = {
++        "signals": {
++            "yoy_earnings_signal": {
++                "level": 2,
++                "evidence_id": evidence_id,
++                "claim": "Guidance improved.",
++            }
++        }
++    }
++
++    signals, _, facts, rejected = validate_model_output(
++        parsed, SPECS["eps_yoy"], "ENTITY", corpus, {"A"}, refs
++    )
++
++    assert signals["yoy_earnings_signal"] == 0
++    assert not facts
++    assert rejected[0].reason == reason
++
++
++def test_evidence_id_prompt_omits_copyable_doc_and_span_fields(monkeypatch) -> None:
++    text = "Management raised full-year revenue guidance."
++    chunk = Chunk("A", "2023-01-01", 0, len(text), text)
++    corpus = IndexedCorpus([chunk], {"A": text}, {"A": "2023-01-01"})
++    task = make_task("eps_yoy_direction", "eps_yoy_direction", [{"entity_id": "ENTITY"}])
++    monkeypatch.setenv("T4_EVIDENCE_IDS", "1")
++
++    class FakeLLM:
++        prompt = ""
++
++        def chat_json(self, system: str, user: str, max_tokens: int) -> dict:
++            self.prompt = user
++            return {
++                "context": {"evidence_id": "E1", "claim": "Management discussed guidance."},
++                "signals": {"yoy_earnings_signal": {"level": 0}},
++            }
++
++    llm = FakeLLM()
++    results = predict_rows(task, BM25([chunk]), corpus, llm, top_k=1)
++
++    evidence_json = llm.prompt.split("EVIDENCE_JSON:\n", 1)[1].split("\nOUTPUT_SCHEMA_JSON:", 1)[0]
++    evidence = json.loads(evidence_json)
++    assert evidence == [{"evidence_id": "E1", "doc_date": "2023-01-01", "text": text}]
++    assert results[0].facts[-1].quote == text
++
++
+ def test_exact_quote_produces_a_span_bound_fact() -> None:
+     text = "prefix explicit guidance improved suffix"
+     corpus = IndexedCorpus([], {"A": text}, {"A": "2023-01-01"})

@@ -1,0 +1,98 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "baseline_fraction": 0.017164689781021897,
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "executed_capital_millions": 2408.0,
+      "frozen_scale_millions": 140288.0,
+      "issuer_key": "CIK-0000104169",
+      "name": "WALMART INC."
+    },
+    {
+      "baseline_fraction": 0.007191100516487883,
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "executed_capital_millions": 181.0,
+      "frozen_scale_millions": 25170.0,
+      "issuer_key": "CIK-0000027419",
+      "name": "Target Corporation"
+    },
+    {
+      "baseline_fraction": 0.01191358024691358,
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "executed_capital_millions": 193.0,
+      "frozen_scale_millions": 16200.0,
+      "issuer_key": "CIK-0000077476",
+      "name": "PepsiCo, Inc."
+    },
+    {
+      "baseline_fraction": 0.24083011583011582,
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "executed_capital_millions": 1996.0,
+      "frozen_scale_millions": 8288.0,
+      "issuer_key": "CIK-0001045810",
+      "name": "NVIDIA CORP"
+    },
+    {
+      "baseline_fraction": 0.2659029935046597,
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "executed_capital_millions": 1506.5,
+      "frozen_scale_millions": 5665.6,
+      "issuer_key": "CIK-0000063908",
+      "name": "McDONALD’S CORPORATION"
+    },
+    {
+      "baseline_fraction": 0.05204460966542751,
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "executed_capital_millions": 546.0,
+      "frozen_scale_millions": 10491.0,
+      "issuer_key": "CIK-0000021344",
+      "name": "COCA COLA CO"
+    },
+    {
+      "baseline_fraction": 0.05931942017065899,
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "executed_capital_millions": 2308.0,
+      "frozen_scale_millions": 38908.0,
+      "issuer_key": "CIK-0000354950",
+      "name": "The Home Depot, Inc."
+    },
+    {
+      "baseline_fraction": 0.0,
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "executed_capital_millions": 0.0,
+      "frozen_scale_millions": 34476.0,
+      "issuer_key": "CIK-0000037996",
+      "name": "Ford Motor Co"
+    },
+    {
+      "baseline_fraction": 0.022895125553914326,
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "executed_capital_millions": 2666.0,
+      "frozen_scale_millions": 116444.0,
+      "issuer_key": "CIK-0001018724",
+      "name": "AMAZON COM INC"
+    }
+  ],
+  "family": "executed_capital_ratio",
+  "interval_level": 0.9,
+  "prompt": "Rank issuers by Q1 executed common-stock repurchases divided by Q1 revenue; rank 1 is highest.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "next_executed_capital_ratio_order",
+    "type": "ranking",
+    "unit": "percent_of_revenue"
+  },
+  "task_id": "proxy-07-buyback-intensity-rank-20230331-transformed"
+}

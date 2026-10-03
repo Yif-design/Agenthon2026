@@ -1,0 +1,15 @@
+{
+  "unit": "proxy-19-fx-volatility-rank-20230929-transformed",
+  "raw_spearman": 0.8424242424242423,
+  "raw_predictive_quality": 0.9212121212121211,
+  "naive_predictive_quality": 0.9515151515151515,
+  "predictive_anchor": 0.9515151515151515,
+  "predictive_quality": 0.48407643312101906,
+  "interval_coverage": 0.2,
+  "interval_score": 122.10058127416724,
+  "naive_interval_score": 13.701720102114132,
+  "raw_interval_quality": 0.10089460902543448,
+  "interval_quality": 0.10089460902543448,
+  "composite_before_claim_penalty": 0.3691218858923436,
+  "claim_penalty_evaluated": false
+}

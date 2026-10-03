@@ -1,0 +1,94 @@
+{
+  "byte_identical_count": 11,
+  "unit_count": 11,
+  "units": [
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+      "unit_id": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "afd8d01a034513970c3c480f6d9b7dd44ce9cd0a36c1b8e235a68506a8f8d3a5",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "afd8d01a034513970c3c480f6d9b7dd44ce9cd0a36c1b8e235a68506a8f8d3a5",
+      "unit_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+      "unit_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+      "unit_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+      "unit_id": "t4-credit-event-2023"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+      "unit_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+      "unit_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+      "unit_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+      "unit_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+      "unit_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "baseline_returncode": 0,
+      "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+      "byte_identical": true,
+      "candidate_returncode": 0,
+      "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+      "unit_id": "t4-postearn-20240201-megacap"
+    }
+  ]
+}

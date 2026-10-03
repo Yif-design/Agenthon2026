@@ -1,0 +1,141 @@
+{
+  "baseline_git_commit": "03dbf4d31065a77f9b0854aafdd9407ac9b9b63e",
+  "candidates": [
+    {
+      "fact_retention_pct": 36.734693877551024,
+      "facts_preserved": 18,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 800,
+      "maximum_possible_evidence_text_savings_pct": 42.857142857142854,
+      "passes": false
+    },
+    {
+      "fact_retention_pct": 53.06122448979592,
+      "facts_preserved": 26,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 900,
+      "maximum_possible_evidence_text_savings_pct": 35.714285714285715,
+      "passes": false
+    },
+    {
+      "fact_retention_pct": 73.46938775510205,
+      "facts_preserved": 36,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_beat_consensus",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 1000,
+      "maximum_possible_evidence_text_savings_pct": 28.571428571428573,
+      "passes": false
+    },
+    {
+      "fact_retention_pct": 89.79591836734694,
+      "facts_preserved": 44,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_beat_consensus",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 1100,
+      "maximum_possible_evidence_text_savings_pct": 21.428571428571427,
+      "passes": false
+    },
+    {
+      "fact_retention_pct": 89.79591836734694,
+      "facts_preserved": 44,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_beat_consensus",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 1200,
+      "maximum_possible_evidence_text_savings_pct": 14.285714285714286,
+      "passes": false
+    },
+    {
+      "fact_retention_pct": 97.95918367346938,
+      "facts_preserved": 48,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_beat_consensus",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 1300,
+      "maximum_possible_evidence_text_savings_pct": 7.142857142857143,
+      "passes": false
+    },
+    {
+      "fact_retention_pct": 100.0,
+      "facts_preserved": 49,
+      "facts_total": 49,
+      "families_preserved": [
+        "credit_event",
+        "eps_beat_consensus",
+        "eps_yoy_direction",
+        "post_earnings_reaction",
+        "rate_curve_cross_section"
+      ],
+      "limit_chars": 1400,
+      "maximum_possible_evidence_text_savings_pct": 0.0,
+      "passes": false
+    }
+  ],
+  "caveat": "The savings percentage is an upper bound because excerpts shorter than the cap cannot save the full cap difference.",
+  "decision": "reject_before_code",
+  "decision_rule": "Proceed only if a limit preserves 100% of validated qwen facts across at least two families and can save at least 10% of evidence text.",
+  "experiment": "evidence_prefix_limit_screen_v1",
+  "facts": {
+    "families": [
+      "credit_event",
+      "eps_beat_consensus",
+      "eps_yoy_direction",
+      "post_earnings_reaction",
+      "rate_curve_cross_section"
+    ],
+    "maximum_quote_end": 1389,
+    "tasks": [
+      "t4-EXAMPLE-eps-beat",
+      "t4-credit-event-2023",
+      "t4-eps-yoy-2023Q2-mixed",
+      "t4-fomc-curve-20220728",
+      "t4-fomc-curve-20240918",
+      "t4-postearn-20240201-megacap"
+    ],
+    "total": 49
+  },
+  "hypothesis": "One shorter global evidence prefix preserves every validated weak-model fact while reducing evidence text by at least 10% across multiple families.",
+  "local_llm_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "production_change": "none",
+  "schema_version": 1,
+  "source_trace_root": "evaluation/runs/20260926-current/nemotron-free-nothink"
+}

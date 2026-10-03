@@ -1,0 +1,112 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A822RL1Q225SBEA_2023Q2_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GDP_A822RL1Q225SBEA_2023Q2",
+      "interval": {
+        "hi": 1.3999999999999995,
+        "level": 0.9,
+        "lo": -1.3999999999999995
+      },
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A011RL1Q225SBEA_2023Q2_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GDP_A011RL1Q225SBEA_2023Q2",
+      "interval": {
+        "hi": 1.2000000000000002,
+        "level": 0.9,
+        "lo": -1.2000000000000002
+      },
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A008RL1Q225SBEA_2023Q2_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GDP_A008RL1Q225SBEA_2023Q2",
+      "interval": {
+        "hi": 3.200000000000001,
+        "level": 0.9,
+        "lo": -3.200000000000001
+      },
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A007RL1Q225SBEA_2023Q2_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GDP_A007RL1Q225SBEA_2023Q2",
+      "interval": {
+        "hi": 2.000000000000001,
+        "level": 0.9,
+        "lo": -2.000000000000001
+      },
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A006RL1Q225SBEA_2023Q2_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GDP_A006RL1Q225SBEA_2023Q2",
+      "interval": {
+        "hi": 4.800000000000001,
+        "level": 0.9,
+        "lo": -4.800000000000001
+      },
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A191RL1Q225SBEA_2023Q2_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GDP_A191RL1Q225SBEA_2023Q2",
+      "interval": {
+        "hi": 0.5999999999999996,
+        "level": 0.9,
+        "lo": -0.5999999999999996
+      },
+      "point_forecast": 0.0
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "regression",
+  "task_id": "proxy-13-gdp-revision-magnitude-20230829-transformed"
+}

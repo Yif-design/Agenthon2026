@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_CVNA_2023Q1_explicit",
+  "entities": [
+    "SEC_CVNA_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for CARVANA CO. (CVNA); facts include original accession and filed date.\nPrior Q1 revenue USD 3497000000; operating cash flow USD -593000000; capital expenditure USD 220000000."
+}

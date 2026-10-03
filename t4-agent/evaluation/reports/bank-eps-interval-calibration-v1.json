@@ -1,0 +1,156 @@
+{
+  "baseline": {
+    "confirmation": {
+      "calibration_loss": 0.24375000000000002,
+      "coverage": 0.65625,
+      "mean_full_width": 49.06650035204622,
+      "rows": 32
+    },
+    "dev": {
+      "calibration_loss": 0.4,
+      "coverage": 0.5,
+      "mean_full_width": 290.9986510135715,
+      "rows": 28
+    },
+    "test": {
+      "calibration_loss": 0.17586206896551726,
+      "coverage": 0.7241379310344828,
+      "mean_full_width": 54.565503273596605,
+      "rows": 29
+    },
+    "train": {
+      "calibration_loss": 0.04492753623188406,
+      "coverage": 0.855072463768116,
+      "mean_full_width": 55.01782585851805,
+      "rows": 69
+    }
+  },
+  "baseline_git_commit": "d9e6b13015fb12f87cde8e68d740c46e329031fd",
+  "baseline_rule": {
+    "floor": 20.0,
+    "point_multiplier": 0.75
+  },
+  "candidate": {
+    "confirmation": {
+      "calibration_loss": 0.09999999999999998,
+      "coverage": 1.0,
+      "mean_full_width": 200.07998171846435,
+      "rows": 32
+    },
+    "dev": {
+      "calibration_loss": 0.02857142857142858,
+      "coverage": 0.9285714285714286,
+      "mean_full_width": 448.0346136456729,
+      "rows": 28
+    },
+    "test": {
+      "calibration_loss": 0.09999999999999998,
+      "coverage": 1.0,
+      "mean_full_width": 200.0,
+      "rows": 29
+    },
+    "train": {
+      "calibration_loss": 0.08550724637681162,
+      "coverage": 0.9855072463768116,
+      "mean_full_width": 205.83331407130035,
+      "rows": 69
+    }
+  },
+  "candidate_grid": {
+    "floors": [
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      75.0,
+      100.0
+    ],
+    "point_multipliers": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+    ]
+  },
+  "confirmation_width_ratio": 4.077730840449484,
+  "current_production_rule": "max(20, 0.75 * abs(point))",
+  "current_status": "superseded_and_reverted_under_scorer_5.2.2",
+  "current_status_note": "The acceptance remains historical. Scorer 5.2.2 charges interval width through mean interval score, under which this rule is worse than legacy on test and confirmation.",
+  "date": "2026-09-28",
+  "experiment": "bank_eps_interval_calibration_v1",
+  "feature_rows": 158,
+  "historical_scorer_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+  "hypothesis": "A development-selected floor and point-magnitude multiplier improve 90% interval calibration for bank EPS growth over max(20, 0.75 * abs(point)).",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "official_scoring_formula": "0.70 * predictive_quality - 0.30 * abs(interval_coverage - interval_level)",
+  "official_width_penalty": false,
+  "production_change": "enabled_by_default_with_T4_ENABLE_BANK_EPS_INTERVAL=0_rollback",
+  "production_decision": "accept",
+  "production_reason": "The development-selected rule improves official calibration loss on time-forward test and independent confirmation. The official scorer has no interval-width penalty. A fresh remote run of both pinned official NLI members passes the public bank roster at 7/8 ensemble faithfulness (0.875), above the 0.80 gate.",
+  "public_ab_report": "evaluation/reports/bank-eps-interval-public-ab-v1.json",
+  "public_diagnostic": {
+    "candidate_calibration_loss": 0.09999999999999998,
+    "candidate_coverage": 1.0,
+    "interpretation": "Retired public bank unit worsens; it was development-influenced and is not the adoption set. Time-forward test and locked confirmation both improve.",
+    "legacy_calibration_loss": 0.025000000000000022,
+    "legacy_coverage": 0.875
+  },
+  "remote_official_nli": {
+    "cross_member_faithfulness": 0.875,
+    "ensemble_faithfulness": 0.875,
+    "gate_pass": true,
+    "gate_threshold": 0.8,
+    "moritz_member_faithfulness": 1.0,
+    "reports": [
+      "evaluation/reports/nli/bank-eps-interval-cross.json",
+      "evaluation/reports/nli/bank-eps-interval-moritz.json",
+      "evaluation/reports/nli/bank-eps-interval-ensemble.json"
+    ],
+    "track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "unsupported_entities": [
+      "BAC"
+    ],
+    "workflow_run": 36605861989
+  },
+  "saved_public_nli": {
+    "candidate_reusable": false,
+    "faithfulness": 0.875,
+    "gate_threshold": 0.8,
+    "roster_entities": 8,
+    "source": "evaluation/reports/nli/context-top3-ensemble.json",
+    "supported_entities": 7
+  },
+  "schema_version": 1,
+  "selected_on_dev": {
+    "calibration_loss": 0.02857142857142858,
+    "coverage": 0.9285714285714286,
+    "floor": 100.0,
+    "mean_full_width": 448.0346136456729,
+    "point_multiplier": 1.0,
+    "rows": 28
+  },
+  "selection_rule": "Minimize development abs(coverage - 0.90), then mean full width.",
+  "source": "SEC Company Concept API, us-gaap:EarningsPerShareDiluted",
+  "source_sha256_by_ticker": {
+    "BAC": "2133ba4c4365fb48817dd9557c0244519a99aced91693b3e6372c39f706da786",
+    "C": "23820b28db5ee74137fd4703a7baa9ec4e2d51065391919d7da75d35651add13",
+    "GS": "b8c3d05e883361ebd8543b3dfce7c0f40fda35a90cb1f604416f352a871b64db",
+    "JPM": "39a48e8fed3c70d6a3adf5fd6f4fa529e10d1849dc918cfee2650b0d69cb7fc8",
+    "MS": "ed8de86db84b91eca61826bfd35604582ccd31ef5be4b51eac9dd24f69249358",
+    "PNC": "f92fe3a631659ab0423319adcdd8fb7fb4fe26cce69b93758012a4e370683375",
+    "USB": "562214f55ce0ec284e2d94246314b6a35b853f0d8fe75e520c6bf003e028ede1",
+    "WFC": "1e20e27e2c96f370b20dabf8d8cc6e1af5ec2904899c9b627fbe47866b92eaa6"
+  },
+  "split_counts": {
+    "confirmation": 32,
+    "dev": 28,
+    "test": 29,
+    "train": 69
+  },
+  "statistical_result": "The candidate improves calibration loss on both test and locked confirmation.",
+  "superseded_by": "evaluation/reports/bank-eps-interval-official-522-rescore-v1.json",
+  "tests": "139 passed on Python 3.11.7"
+}

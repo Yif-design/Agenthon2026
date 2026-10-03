@@ -1,0 +1,33 @@
+schema_version = "2.0"
+
+[task]
+id = "proxy-17-natural-gas-storage-change-20260924-transformed"
+track = "analysis"
+title = "Weekly natural-gas storage change (transformed)"
+split = "time_forward_test"
+family = "underground_reserve_flow"
+target_type = "regression"
+cutoff_date = "2026-09-24"
+resolution_date = "2026-10-01"
+
+[provenance]
+license = "Public domain (U.S. Energy Information Administration data)"
+data_source = "https://ir.eia.gov/ngs/"
+data_cutoff = "2026-09-24"
+redistributable = true
+manifest = "manifest.json"
+
+[scoring]
+verifier = "t4.faithful_analysis"
+metric = "analysis_composite"
+admissibility_gates = ["g0_integrity", "g1_schema", "g2_cutoff_resource", "g3_domain_semantics"]
+
+[scoring.params]
+faithfulness_threshold = 0.80
+interval_level = 0.90
+target_type = "regression"
+composite_weights = [0.7, 0.3]
+tau_citation = 0.5
+
+[agent]
+timeout_sec = 600.0

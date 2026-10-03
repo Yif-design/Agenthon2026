@@ -1,0 +1,537 @@
+{
+  "task_id": "proxy-20-cross-asset-return-quintile-20230929-transformed",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "XASSET_DHHNGSP_20230929",
+      "point_forecast": 0.046875,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.953125,
+        "hi": 2.046875
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DHHNGSP_20230929_transformed",
+          "span_start": 0,
+          "span_end": 489,
+          "claim": "Henry Hub natural gas spot price (DHHNGSP); public daily level; asset class commodity.\ndate | level_x1000\n2023-06-05 | 1.92000000\n2023-06-06 | 1.95000000\n2023-06-07 | 2.13000000\n2023-06-08 | 2.10000000\n2023-06-09 | 1.85000000\n2023-06-12 | 1.90000000\n2023-06-13 | 2.00000000\n2023-06-14 | 2.05000000\n2023-06-15 | 2.18000000\n2023-06-16 | 2.13000000\n2023-06-20 | 2.38000000\n2023-06-21 | 2.24000000\n2023-06-22 | 2.27000000\n2023-06-23 | 2.22000000\n2023-06-26 | 2.62000000\n2023-06-27 | 2.68000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DHHNGSP_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2049,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "entity_id": "XASSET_DCOILBRENTEU_20230929",
+      "point_forecast": 0.0981784855080765,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9018215144919235,
+        "hi": 2.0981784855080763
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DCOILBRENTEU_20230929_transformed",
+          "span_start": 0,
+          "span_end": 475,
+          "claim": "Brent crude spot price (DCOILBRENTEU); public daily level; asset class commodity.\ndate | level_x1000\n2023-06-05 | 76.61000000\n2023-06-06 | 76.22000000\n2023-06-07 | 76.85000000\n2023-06-08 | 75.88000000\n2023-06-09 | 74.74000000\n2023-06-12 | 71.80000000\n2023-06-13 | 74.24000000\n2023-06-14 | 73.39000000\n2023-06-15 | 75.75000000\n2023-06-16 | 76.76000000\n2023-06-20 | 75.79000000\n2023-06-21 | 76.92000000\n2023-06-22 | 73.93000000\n2023-06-23 | 73.56000000\n2023-06-26 | 73.86000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DCOILBRENTEU_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2125,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "XASSET_DCOILWTICO_20230929",
+      "point_forecast": 0.08641532016756436,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9135846798324356,
+        "hi": 2.086415320167564
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DCOILWTICO_20230929_transformed",
+          "span_start": 0,
+          "span_end": 496,
+          "claim": "WTI crude spot price (DCOILWTICO); public daily level; asset class commodity.\ndate | level_x1000\n2023-06-05 | 72.14000000\n2023-06-06 | 71.71000000\n2023-06-07 | 72.52000000\n2023-06-08 | 71.28000000\n2023-06-09 | 70.16000000\n2023-06-12 | 67.08000000\n2023-06-13 | 69.39000000\n2023-06-14 | 68.22000000\n2023-06-15 | 70.61000000\n2023-06-16 | 71.81000000\n2023-06-20 | 70.94000000\n2023-06-21 | 72.55000000\n2023-06-22 | 69.22000000\n2023-06-23 | 68.91000000\n2023-06-26 | 69.09000000\n2023-06-27 | 67.68000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DCOILWTICO_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2121,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "entity_id": "XASSET_DGS30_20230929",
+      "point_forecast": 0.1261904761904762,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.8738095238095238,
+        "hi": 2.126190476190476
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS30_20230929_transformed",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 30-year yield (DGS30); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 3.89000000\n2023-06-06 | 3.87000000\n2023-06-07 | 3.95000000\n2023-06-08 | 3.89000000\n2023-06-09 | 3.89000000\n2023-06-12 | 3.87000000\n2023-06-13 | 3.94000000\n2023-06-14 | 3.90000000\n2023-06-15 | 3.85000000\n2023-06-16 | 3.86000000\n2023-06-20 | 3.83000000\n2023-06-21 | 3.81000000\n2023-06-22 | 3.88000000\n2023-06-23 | 3.82000000\n2023-06-26 | 3.83000000\n2023-06-27 | 3.84000000\n2023-06-28 | 3.81000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS30_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2033,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "XASSET_DGS20_20230929",
+      "point_forecast": 0.12072892938496584,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.8792710706150342,
+        "hi": 2.120728929384966
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS20_20230929_transformed",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 20-year yield (DGS20); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 4.03000000\n2023-06-06 | 4.02000000\n2023-06-07 | 4.12000000\n2023-06-08 | 4.05000000\n2023-06-09 | 4.05000000\n2023-06-12 | 4.04000000\n2023-06-13 | 4.12000000\n2023-06-14 | 4.09000000\n2023-06-15 | 4.02000000\n2023-06-16 | 4.05000000\n2023-06-20 | 4.01000000\n2023-06-21 | 3.99000000\n2023-06-22 | 4.06000000\n2023-06-23 | 4.01000000\n2023-06-26 | 4.01000000\n2023-06-27 | 4.03000000\n2023-06-28 | 4.00000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS20_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2033,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "XASSET_DGS10_20230929",
+      "point_forecast": 0.12224938875305626,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.8777506112469438,
+        "hi": 2.1222493887530565
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS10_20230929_transformed",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "Treasury 10-year yield (DGS10); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 3.69000000\n2023-06-06 | 3.70000000\n2023-06-07 | 3.79000000\n2023-06-08 | 3.73000000\n2023-06-09 | 3.75000000\n2023-06-12 | 3.73000000\n2023-06-13 | 3.84000000\n2023-06-14 | 3.83000000\n2023-06-15 | 3.72000000\n2023-06-16 | 3.77000000\n2023-06-20 | 3.74000000\n2023-06-21 | 3.72000000\n2023-06-22 | 3.80000000\n2023-06-23 | 3.74000000\n2023-06-26 | 3.72000000\n2023-06-27 | 3.77000000\n2023-06-28 | 3.71000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS10_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2033,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "XASSET_DGS7_20230929",
+      "point_forecast": 0.10023866348448696,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.899761336515513,
+        "hi": 2.100238663484487
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS7_20230929_transformed",
+          "span_start": 0,
+          "span_end": 495,
+          "claim": "Treasury 7-year yield (DGS7); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 3.77000000\n2023-06-06 | 3.78000000\n2023-06-07 | 3.88000000\n2023-06-08 | 3.80000000\n2023-06-09 | 3.84000000\n2023-06-12 | 3.82000000\n2023-06-13 | 3.94000000\n2023-06-14 | 3.95000000\n2023-06-15 | 3.82000000\n2023-06-16 | 3.88000000\n2023-06-20 | 3.85000000\n2023-06-21 | 3.84000000\n2023-06-22 | 3.92000000\n2023-06-23 | 3.88000000\n2023-06-26 | 3.85000000\n2023-06-27 | 3.90000000\n2023-06-28 | 3.83000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS7_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2031,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "XASSET_DGS5_20230929",
+      "point_forecast": 0.08747044917257663,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9125295508274234,
+        "hi": 2.0874704491725766
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS5_20230929_transformed",
+          "span_start": 0,
+          "span_end": 495,
+          "claim": "Treasury 5-year yield (DGS5); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 3.82000000\n2023-06-06 | 3.85000000\n2023-06-07 | 3.93000000\n2023-06-08 | 3.87000000\n2023-06-09 | 3.92000000\n2023-06-12 | 3.89000000\n2023-06-13 | 4.01000000\n2023-06-14 | 4.06000000\n2023-06-15 | 3.91000000\n2023-06-16 | 3.99000000\n2023-06-20 | 3.96000000\n2023-06-21 | 3.95000000\n2023-06-22 | 4.03000000\n2023-06-23 | 3.99000000\n2023-06-26 | 3.96000000\n2023-06-27 | 4.02000000\n2023-06-28 | 3.97000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS5_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2031,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "XASSET_DGS3_20230929",
+      "point_forecast": 0.05726872246696035,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9427312775330396,
+        "hi": 2.0572687224669606
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS3_20230929_transformed",
+          "span_start": 0,
+          "span_end": 495,
+          "claim": "Treasury 3-year yield (DGS3); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 4.10000000\n2023-06-06 | 4.15000000\n2023-06-07 | 4.21000000\n2023-06-08 | 4.17000000\n2023-06-09 | 4.23000000\n2023-06-12 | 4.16000000\n2023-06-13 | 4.30000000\n2023-06-14 | 4.37000000\n2023-06-15 | 4.23000000\n2023-06-16 | 4.32000000\n2023-06-20 | 4.29000000\n2023-06-21 | 4.29000000\n2023-06-22 | 4.37000000\n2023-06-23 | 4.32000000\n2023-06-26 | 4.30000000\n2023-06-27 | 4.38000000\n2023-06-28 | 4.32000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS3_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2031,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "entity_id": "XASSET_DGS2_20230929",
+      "point_forecast": 0.03711340206185576,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9628865979381442,
+        "hi": 2.0371134020618555
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS2_20230929_transformed",
+          "span_start": 0,
+          "span_end": 495,
+          "claim": "Treasury 2-year yield (DGS2); public daily level; asset class rates.\ndate | level_x1000\n2023-06-05 | 4.46000000\n2023-06-06 | 4.51000000\n2023-06-07 | 4.56000000\n2023-06-08 | 4.52000000\n2023-06-09 | 4.59000000\n2023-06-12 | 4.55000000\n2023-06-13 | 4.67000000\n2023-06-14 | 4.74000000\n2023-06-15 | 4.62000000\n2023-06-16 | 4.70000000\n2023-06-20 | 4.68000000\n2023-06-21 | 4.68000000\n2023-06-22 | 4.77000000\n2023-06-23 | 4.71000000\n2023-06-26 | 4.65000000\n2023-06-27 | 4.74000000\n2023-06-28 | 4.71000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS2_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2031,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 10
+    },
+    {
+      "entity_id": "XASSET_DEXSFUS_20230929",
+      "point_forecast": -0.0012324064719851924,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0012324064719853,
+        "hi": 1.9987675935280147
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXSFUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 498,
+          "claim": "South African rand exchange rate (DEXSFUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 19.29040000\n2023-06-06 | 19.23370000\n2023-06-07 | 19.09030000\n2023-06-08 | 18.84950000\n2023-06-09 | 18.71790000\n2023-06-12 | 18.56840000\n2023-06-13 | 18.55330000\n2023-06-14 | 18.31430000\n2023-06-15 | 18.24730000\n2023-06-16 | 18.20330000\n2023-06-20 | 18.37730000\n2023-06-21 | 18.38690000\n2023-06-22 | 18.50760000\n2023-06-23 | 18.75250000\n2023-06-26 | 18.66020000\n2023-06-27 | 18.50020000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXSFUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2123,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 18
+    },
+    {
+      "entity_id": "XASSET_DEXINUS_20230929",
+      "point_forecast": 0.0036240637835225353,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9963759362164775,
+        "hi": 2.0036240637835228
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXINUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 492,
+          "claim": "Indian rupee exchange rate (DEXINUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 82.67000000\n2023-06-06 | 82.61000000\n2023-06-07 | 82.50000000\n2023-06-08 | 82.57000000\n2023-06-09 | 82.46000000\n2023-06-12 | 82.43000000\n2023-06-13 | 82.38000000\n2023-06-14 | 82.10000000\n2023-06-15 | 82.18000000\n2023-06-16 | 81.89000000\n2023-06-20 | 82.11000000\n2023-06-21 | 82.04000000\n2023-06-22 | 81.93000000\n2023-06-23 | 82.01000000\n2023-06-26 | 82.00000000\n2023-06-27 | 81.98000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXINUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2117,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 16
+    },
+    {
+      "entity_id": "XASSET_DEXBZUS_20230929",
+      "point_forecast": 0.014131051820614804,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9858689481793852,
+        "hi": 2.014131051820615
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXBZUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 478,
+          "claim": "Brazilian real exchange rate (DEXBZUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 4.91710000\n2023-06-06 | 4.91080000\n2023-06-07 | 4.90820000\n2023-06-08 | 4.92350000\n2023-06-09 | 4.88460000\n2023-06-12 | 4.87730000\n2023-06-13 | 4.85670000\n2023-06-14 | 4.84240000\n2023-06-15 | 4.81110000\n2023-06-16 | 4.83090000\n2023-06-20 | 4.79590000\n2023-06-21 | 4.76400000\n2023-06-22 | 4.77640000\n2023-06-23 | 4.77340000\n2023-06-26 | 4.77000000\n2023-06-27 | 4.80420000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXBZUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2038,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 14
+    },
+    {
+      "entity_id": "XASSET_DEXMXUS_20230929",
+      "point_forecast": 0.03112374859309286,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9688762514069071,
+        "hi": 2.031123748593093
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXMXUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 492,
+          "claim": "Mexican peso exchange rate (DEXMXUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 17.46400000\n2023-06-06 | 17.41240000\n2023-06-07 | 17.34110000\n2023-06-08 | 17.40950000\n2023-06-09 | 17.29120000\n2023-06-12 | 17.30800000\n2023-06-13 | 17.21400000\n2023-06-14 | 17.11000000\n2023-06-15 | 17.17870000\n2023-06-16 | 17.07650000\n2023-06-20 | 17.19080000\n2023-06-21 | 17.16010000\n2023-06-22 | 17.14720000\n2023-06-23 | 17.17230000\n2023-06-26 | 17.13450000\n2023-06-27 | 17.08330000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXMXUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2117,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 11
+    },
+    {
+      "entity_id": "XASSET_DEXKOUS_20230929",
+      "point_forecast": 0.019229751291183428,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9807702487088166,
+        "hi": 2.019229751291183
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXKOUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 474,
+          "claim": "South Korean won exchange rate (DEXKOUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 1308.16000000\n2023-06-06 | 1297.93000000\n2023-06-07 | 1303.62000000\n2023-06-08 | 1304.26000000\n2023-06-09 | 1291.46000000\n2023-06-12 | 1288.61000000\n2023-06-13 | 1271.48000000\n2023-06-14 | 1278.44000000\n2023-06-15 | 1279.99000000\n2023-06-16 | 1272.68000000\n2023-06-20 | 1280.21000000\n2023-06-21 | 1291.78000000\n2023-06-22 | 1294.75000000\n2023-06-23 | 1304.19000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXKOUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2283,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 13
+    },
+    {
+      "entity_id": "XASSET_DEXCHUS_20230929",
+      "point_forecast": 0.005207902785814733,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9947920972141853,
+        "hi": 2.0052079027858145
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXCHUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 476,
+          "claim": "Chinese yuan exchange rate (DEXCHUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 7.10500000\n2023-06-06 | 7.11900000\n2023-06-07 | 7.12870000\n2023-06-08 | 7.11090000\n2023-06-09 | 7.12730000\n2023-06-12 | 7.14370000\n2023-06-13 | 7.15850000\n2023-06-14 | 7.14800000\n2023-06-15 | 7.13000000\n2023-06-16 | 7.12500000\n2023-06-20 | 7.18110000\n2023-06-21 | 7.17790000\n2023-06-22 | 7.17770000\n2023-06-23 | 7.17770000\n2023-06-26 | 7.23640000\n2023-06-27 | 7.21930000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXCHUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2036,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 15
+    },
+    {
+      "entity_id": "XASSET_DEXCAUS_20230929",
+      "point_forecast": -0.0002954427948890226,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.000295442794889,
+        "hi": 1.9997045572051109
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXCAUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 479,
+          "claim": "Canadian dollar exchange rate (DEXCAUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 1.34190000\n2023-06-06 | 1.34030000\n2023-06-07 | 1.33630000\n2023-06-08 | 1.33800000\n2023-06-09 | 1.33420000\n2023-06-12 | 1.33770000\n2023-06-13 | 1.32980000\n2023-06-14 | 1.32830000\n2023-06-15 | 1.32370000\n2023-06-16 | 1.31940000\n2023-06-20 | 1.32460000\n2023-06-21 | 1.31790000\n2023-06-22 | 1.31640000\n2023-06-23 | 1.31960000\n2023-06-26 | 1.31450000\n2023-06-27 | 1.31750000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXCAUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2039,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 17
+    },
+    {
+      "entity_id": "XASSET_DEXUSUK_20230929",
+      "point_forecast": -0.035762216783768785,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.035762216783769,
+        "hi": 1.9642377832162312
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXUSUK_20230929_transformed",
+          "span_start": 0,
+          "span_end": 477,
+          "claim": "British pound exchange rate (DEXUSUK); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 1.24400000\n2023-06-06 | 1.24180000\n2023-06-07 | 1.24510000\n2023-06-08 | 1.25470000\n2023-06-09 | 1.25790000\n2023-06-12 | 1.24890000\n2023-06-13 | 1.26110000\n2023-06-14 | 1.26960000\n2023-06-15 | 1.27620000\n2023-06-16 | 1.28150000\n2023-06-20 | 1.27320000\n2023-06-21 | 1.27370000\n2023-06-22 | 1.27500000\n2023-06-23 | 1.27010000\n2023-06-26 | 1.27240000\n2023-06-27 | 1.27520000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXUSUK_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2037,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 20
+    },
+    {
+      "entity_id": "XASSET_DEXJPUS_20230929",
+      "point_forecast": 0.025741350906095528,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9742586490939045,
+        "hi": 2.0257413509060953
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXJPUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 482,
+          "claim": "Japanese yen exchange rate (DEXJPUS); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 139.64000000\n2023-06-06 | 139.67000000\n2023-06-07 | 139.98000000\n2023-06-08 | 138.83000000\n2023-06-09 | 139.35000000\n2023-06-12 | 139.72000000\n2023-06-13 | 140.00000000\n2023-06-14 | 139.33000000\n2023-06-15 | 140.49000000\n2023-06-16 | 141.82000000\n2023-06-20 | 141.46000000\n2023-06-21 | 142.09000000\n2023-06-22 | 142.89000000\n2023-06-23 | 143.78000000\n2023-06-26 | 143.55000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXJPUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2198,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 12
+    },
+    {
+      "entity_id": "XASSET_DEXUSEU_20230929",
+      "point_forecast": -0.02352615554940496,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.023526155549405,
+        "hi": 1.9764738444505952
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXUSEU_20230929_transformed",
+          "span_start": 0,
+          "span_end": 492,
+          "claim": "Euro exchange rate (DEXUSEU); public daily level; asset class fx.\ndate | level_x1000\n2023-06-05 | 1.07210000\n2023-06-06 | 1.06950000\n2023-06-07 | 1.07020000\n2023-06-08 | 1.07800000\n2023-06-09 | 1.07490000\n2023-06-12 | 1.07470000\n2023-06-13 | 1.07920000\n2023-06-14 | 1.08590000\n2023-06-15 | 1.09330000\n2023-06-16 | 1.09250000\n2023-06-20 | 1.09000000\n2023-06-21 | 1.09510000\n2023-06-22 | 1.09530000\n2023-06-23 | 1.08870000\n2023-06-26 | 1.09100000\n2023-06-27 | 1.09610000\n2023-06-28 | 1.09040000"
+        },
+        {
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXUSEU_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2028,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 19
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "XASSET_DHHNGSP_20230929",
+      "XASSET_DCOILBRENTEU_20230929",
+      "XASSET_DCOILWTICO_20230929",
+      "XASSET_DGS30_20230929",
+      "XASSET_DGS20_20230929",
+      "XASSET_DGS10_20230929",
+      "XASSET_DGS7_20230929",
+      "XASSET_DGS5_20230929",
+      "XASSET_DGS3_20230929",
+      "XASSET_DGS2_20230929",
+      "XASSET_DEXSFUS_20230929",
+      "XASSET_DEXINUS_20230929",
+      "XASSET_DEXBZUS_20230929",
+      "XASSET_DEXMXUS_20230929",
+      "XASSET_DEXKOUS_20230929",
+      "XASSET_DEXCHUS_20230929",
+      "XASSET_DEXCAUS_20230929",
+      "XASSET_DEXUSUK_20230929",
+      "XASSET_DEXJPUS_20230929",
+      "XASSET_DEXUSEU_20230929"
+    ],
+    "methods": {
+      "XASSET_DHHNGSP_20230929": "generic_baseline",
+      "XASSET_DCOILBRENTEU_20230929": "generic_baseline",
+      "XASSET_DCOILWTICO_20230929": "generic_baseline",
+      "XASSET_DGS30_20230929": "generic_baseline",
+      "XASSET_DGS20_20230929": "generic_baseline",
+      "XASSET_DGS10_20230929": "generic_baseline",
+      "XASSET_DGS7_20230929": "generic_baseline",
+      "XASSET_DGS5_20230929": "generic_baseline",
+      "XASSET_DGS3_20230929": "generic_baseline",
+      "XASSET_DGS2_20230929": "generic_baseline",
+      "XASSET_DEXSFUS_20230929": "generic_baseline",
+      "XASSET_DEXINUS_20230929": "generic_baseline",
+      "XASSET_DEXBZUS_20230929": "generic_baseline",
+      "XASSET_DEXMXUS_20230929": "generic_baseline",
+      "XASSET_DEXKOUS_20230929": "generic_baseline",
+      "XASSET_DEXCHUS_20230929": "generic_baseline",
+      "XASSET_DEXCAUS_20230929": "generic_baseline",
+      "XASSET_DEXUSUK_20230929": "generic_baseline",
+      "XASSET_DEXJPUS_20230929": "generic_baseline",
+      "XASSET_DEXUSEU_20230929": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

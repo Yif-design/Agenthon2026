@@ -1,0 +1,66 @@
+{
+  "files": [
+    {
+      "bytes": 885,
+      "path": "card.toml",
+      "sha256": "663665bb1f729fbe5d1c0a2ef192c143fbdd87a57f6c2dac479d44bdf7cd4b01"
+    },
+    {
+      "bytes": 2102,
+      "path": "corpus/UST_DGS10_20230929.json",
+      "sha256": "80e3ec4eeaed17a519617ff38ab3656a0bd827ec3f1df1c231668b4859fe86e6"
+    },
+    {
+      "bytes": 2102,
+      "path": "corpus/UST_DGS20_20230929.json",
+      "sha256": "d849a00181221b3883f2276faf093e1384acf6385e6d4af3aed31a8aa8e89f1c"
+    },
+    {
+      "bytes": 2098,
+      "path": "corpus/UST_DGS2_20230929.json",
+      "sha256": "d64180beb37c99f10a12e9f976f9af4c3752d6618d1beb44190a6d881ce96144"
+    },
+    {
+      "bytes": 2102,
+      "path": "corpus/UST_DGS30_20230929.json",
+      "sha256": "0d9d9570ce74e921944c565a3f277f390b417753e4e15a57778c1a54718396d8"
+    },
+    {
+      "bytes": 2098,
+      "path": "corpus/UST_DGS3_20230929.json",
+      "sha256": "5922f9b30efb0b81561adc7a3612c9acac39543d6d333fc0760f6b75ac718184"
+    },
+    {
+      "bytes": 2098,
+      "path": "corpus/UST_DGS5_20230929.json",
+      "sha256": "feb456f79588d5e3f25046b06f7311e737bdc8bd200525b0db94c99444cde87f"
+    },
+    {
+      "bytes": 2098,
+      "path": "corpus/UST_DGS7_20230929.json",
+      "sha256": "be25b491d23e6ab2276e33b095571352bbc9ed978601d5ab8c383715214ba0ce"
+    },
+    {
+      "bytes": 2186,
+      "path": "provenance.json",
+      "sha256": "fe71a93095cd89575fd2a5e511b520dad34b52890c53084b8a71390e2de64412"
+    },
+    {
+      "bytes": 3539,
+      "path": "reference/naive_answer.json",
+      "sha256": "da08c3e8086179c883dc6754fe74cbb55124c590fe15300b92cef2fd96fd14fd"
+    },
+    {
+      "bytes": 661,
+      "path": "reference/outcome.json",
+      "sha256": "f610fd2cdf57a7db087c4c50d02aa1b015e645eef5d24258256f91c5c8bb35f4"
+    },
+    {
+      "bytes": 2389,
+      "path": "task.json",
+      "sha256": "3c01835067230e5ead3c952c3bffc6ed392ea620ac0388fd2a05a5c2ea153d0e"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-14-yield-curve-steepening-rank-20230929-explicit"
+}

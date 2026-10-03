@@ -1,0 +1,114 @@
+{
+  "experiment": "cpi_core_food_mean12_confirmation_v1",
+  "hypothesis": "A fixed 12-month mean lowers MAE and RMSE without reducing direction accuracy versus the production current_mix in each untouched confirmation year.",
+  "scope": [
+    "CPI_CORE",
+    "CPI_FOOD"
+  ],
+  "dataset": "evaluation/datasets/cpi/components_2024_2025_confirmation.json",
+  "dataset_sha256": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb",
+  "dataset_raw_cache_sha256": "1541c671dcaf03bf5ca1baeeb5a143cbf0e4adf8e206d543d965ff4d5d904a2b",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "selection_reference": "Cleveland Fed Inflation Nowcasting FAQ: core and food CPI use J=12 moving averages.",
+  "acceptance_rule": "Accept only if mean12 has strictly lower MAE and RMSE and non-inferior direction accuracy in 2024 and 2025 separately.",
+  "years": {
+    "2024": {
+      "baseline_current_mix": {
+        "rows": 24,
+        "mae": 0.10523223110145197,
+        "rmse": 0.13182556290051747,
+        "direction_accuracy": 1.0
+      },
+      "candidate_mean12": {
+        "rows": 24,
+        "mae": 0.09135418446021128,
+        "rmse": 0.11443710798868556,
+        "direction_accuracy": 1.0
+      },
+      "candidate_minus_baseline": {
+        "mae": -0.01387804664124069,
+        "rmse": -0.017388454911831913,
+        "direction_accuracy": 0.0
+      },
+      "passed": true
+    },
+    "2025": {
+      "baseline_current_mix": {
+        "rows": 18,
+        "mae": 0.17869178434202204,
+        "rmse": 0.2107828979162471,
+        "direction_accuracy": 0.8888888888888888
+      },
+      "candidate_mean12": {
+        "rows": 18,
+        "mae": 0.1147377870225996,
+        "rmse": 0.1456629875667073,
+        "direction_accuracy": 0.9444444444444444
+      },
+      "candidate_minus_baseline": {
+        "mae": -0.06395399731942245,
+        "rmse": -0.06511991034953979,
+        "direction_accuracy": 0.05555555555555558
+      },
+      "passed": true
+    }
+  },
+  "excluded_incomplete_histories": [
+    {
+      "ref_month": "2025-12",
+      "entity_id": "CPI_CORE",
+      "history_length": 10
+    },
+    {
+      "ref_month": "2025-12",
+      "entity_id": "CPI_FOOD",
+      "history_length": 10
+    }
+  ],
+  "decision": "accept",
+  "model_api_calls": 0,
+  "local_llm_run": false,
+  "baseline_git_commit": "03c1f218fd816918751d527587ed6dc91d39c66d",
+  "selection_reference_url": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting",
+  "artifact_available_date": "2026-02-01",
+  "decision_reason": "The fixed mean12 rule lowers MAE and RMSE and preserves or improves direction accuracy in 2024 and 2025 separately; production is limited to core/food, exact 12-value histories, and post-artifact cutoffs.",
+  "builder_regression": {
+    "range": [
+      "2015-01",
+      "2023-12"
+    ],
+    "rows": 1188,
+    "rows_identical": true,
+    "raw_cache_hash_identical": true
+  },
+  "verification": {
+    "python": "3.13",
+    "tests_passed": 124,
+    "public_units": 11,
+    "public_rows": 78,
+    "public_outputs_byte_identical": 11,
+    "schema_validation_errors": 0,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "Candidate bytes are identical to baseline 03c1f21, whose production path is unchanged from source-pinned 416cfa2 with 11/11 recorded smoke admission.",
+    "persistent_virtual_environment_created": false,
+    "temporary_pytest_dependencies_removed": true
+  },
+  "official_state": {
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "toolkit_tag": "v2.4.4",
+    "toolkit_tag_object": "1bc80b542359832fd50341992459687456459450",
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ]
+  },
+  "limitations": [
+    "The confirmation covers only CPI_CORE and CPI_FOOD.",
+    "The decision subset has 42 rows; 2025-12 is excluded because only ten prior changes are calculable.",
+    "Public competition outputs are unchanged because their cutoffs predate the artifact gate."
+  ]
+}

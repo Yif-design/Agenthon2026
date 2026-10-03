@@ -1,0 +1,130 @@
+{
+  "baseline_commit": "2ec2a5b",
+  "candidate_flag": "T4_ENABLE_REASON_RELEVANCE=1 (default)",
+  "changed_premises": 4,
+  "changed_reasons": 4,
+  "date": "2026-10-01",
+  "details": [
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 1,
+      "rows": 1,
+      "task_id": "t4-EXAMPLE-eps-beat",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 7,
+      "task_id": "t4-auction-btc-202411-us7",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 10,
+      "task_id": "t4-cotpos-202411-us10",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 11,
+      "task_id": "t4-cpicomp-202410-us11",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 1,
+      "changed_reasons": 1,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 8,
+      "task_id": "t4-credit-event-2023",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 8,
+      "task_id": "t4-eps-growth-2024Q3-banks",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 2,
+      "changed_reasons": 2,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 6,
+      "task_id": "t4-eps-yoy-2023Q2-mixed",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 6,
+      "task_id": "t4-fomc-curve-20220728",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 6,
+      "task_id": "t4-fomc-curve-20240918",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 0,
+      "changed_reasons": 0,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 12,
+      "task_id": "t4-macrorev-20240930-us6",
+      "validation_errors": 0
+    },
+    {
+      "changed_premises": 1,
+      "changed_reasons": 1,
+      "non_reason_fields_identical": true,
+      "reason_structure_invariant": true,
+      "reasons": 3,
+      "rows": 3,
+      "task_id": "t4-postearn-20240201-megacap",
+      "validation_errors": 0
+    }
+  ],
+  "experiment": "reason_evidence_relevance_public_ab_v1",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "non_reason_fields_identical_units": 11,
+  "reason_structure_invariant_units": 11,
+  "reasons": 31,
+  "rollback_flag": "T4_ENABLE_REASON_RELEVANCE=0",
+  "rows": 78,
+  "schema_version": 1,
+  "units": 11,
+  "validation_error_units": 0
+}

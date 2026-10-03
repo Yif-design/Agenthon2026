@@ -1,0 +1,76 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/CLAIMS_IURNSA_20231005.json",
+      "entity_id": "CLAIMS_IURNSA_20231005",
+      "measure_code": "UI-36",
+      "name": "Insured unemployment rate, not seasonally adjusted",
+      "one_period_delta_raw": 0.0,
+      "raw_scale": 0.001,
+      "terminal_value_raw": 1.1
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_IURSA_20231005.json",
+      "entity_id": "CLAIMS_IURSA_20231005",
+      "measure_code": "UI-35",
+      "name": "Insured unemployment rate, seasonally adjusted",
+      "one_period_delta_raw": 0.0,
+      "raw_scale": 0.001,
+      "terminal_value_raw": 1.1
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_CCNSA_20231005.json",
+      "entity_id": "CLAIMS_CCNSA_20231005",
+      "measure_code": "UI-34",
+      "name": "Continuing claims, not seasonally adjusted",
+      "one_period_delta_raw": -53098.0,
+      "raw_scale": 1.0,
+      "terminal_value_raw": 1592819.0
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_CCSA_20231005.json",
+      "entity_id": "CLAIMS_CCSA_20231005",
+      "measure_code": "UI-33",
+      "name": "Continuing claims, seasonally adjusted",
+      "one_period_delta_raw": 12000.0,
+      "raw_scale": 1.0,
+      "terminal_value_raw": 1670000.0
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_ICNSA_20231005.json",
+      "entity_id": "CLAIMS_ICNSA_20231005",
+      "measure_code": "UI-32",
+      "name": "Initial claims, not seasonally adjusted",
+      "one_period_delta_raw": -1996.0,
+      "raw_scale": 1.0,
+      "terminal_value_raw": 174590.0
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_ICSA_20231005.json",
+      "entity_id": "CLAIMS_ICSA_20231005",
+      "measure_code": "UI-31",
+      "name": "Initial claims, seasonally adjusted",
+      "one_period_delta_raw": 2000.0,
+      "raw_scale": 1.0,
+      "terminal_value_raw": 204000.0
+    }
+  ],
+  "family": "weekly_labor_flow_class",
+  "interval_level": 0.9,
+  "prompt": "Classify the next first-published weekly change as increase, flat, or decrease.",
+  "resolution_date": "2023-10-05",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "increase",
+      "flat",
+      "decrease"
+    ],
+    "name": "next_ui_measure_direction",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-11-initial-claims-direction-20230929-transformed"
+}

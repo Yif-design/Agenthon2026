@@ -1,0 +1,29 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "MSFT_MorePersonalComputing",
+      "y": -3.8448240094046016
+    },
+    {
+      "entity_id": "MSFT_IntelligentCloud",
+      "y": 15.328782926360308
+    },
+    {
+      "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+      "y": 10.18674698795181
+    },
+    {
+      "entity_id": "AMZN_AmazonWebServicesSegment",
+      "y": 12.163736764780374
+    },
+    {
+      "entity_id": "AMZN_InternationalSegment",
+      "y": 9.724736744873464
+    },
+    {
+      "entity_id": "AMZN_NorthAmericaSegment",
+      "y": 10.904205293564416
+    }
+  ],
+  "task_id": "proxy-09-segment-growth-rank-20230428-transformed"
+}

@@ -1,0 +1,37 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "y": 0.13509575905274032
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "y": -1.34270594739752
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "y": 32.51042761707755
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "y": -1.0564663023679417
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "y": -78.51472471190782
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "y": 24.375526241930956
+    },
+    {
+      "entity_id": "SEC_GM_2023Q1",
+      "y": 1.7873710636904436
+    },
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "y": -3.760552570990023
+    }
+  ],
+  "task_id": "proxy-03-free-cash-flow-margin-20230331-transformed"
+}

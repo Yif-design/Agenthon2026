@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_IBM_2023Q1_transformed",
+  "entities": [
+    "SEC_IBM_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 14197000000; operating cash flow scaled currency units 3248000000; capital expenditure scaled currency units 281000000."
+}

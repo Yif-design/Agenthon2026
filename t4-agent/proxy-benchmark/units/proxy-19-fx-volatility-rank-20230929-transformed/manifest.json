@@ -1,0 +1,81 @@
+{
+  "files": [
+    {
+      "bytes": 898,
+      "path": "card.toml",
+      "sha256": "cf394e2780cac94337bcc87cf3d7b6de64eb40650327fcebecddbeb128fe4a30"
+    },
+    {
+      "bytes": 2679,
+      "path": "corpus/FX_DEXBZUS_20230929.json",
+      "sha256": "5ec15571a15c76f475938963c3dc85cfde5ca0e441f0fba383353e06cd5f59f9"
+    },
+    {
+      "bytes": 2680,
+      "path": "corpus/FX_DEXCAUS_20230929.json",
+      "sha256": "8b0e4c10009a04c22c7f12356307e3b34c40fdce925b692352c5171feb14c96d"
+    },
+    {
+      "bytes": 2677,
+      "path": "corpus/FX_DEXCHUS_20230929.json",
+      "sha256": "e2c1fd2b7ddb7680a1403dbc9ee937e5a3b4f94f36afe97d0f06785a43c7504c"
+    },
+    {
+      "bytes": 2677,
+      "path": "corpus/FX_DEXINUS_20230929.json",
+      "sha256": "fab17384c056eff47daffbbc3c4e4700b5040113d2cfdfca2890e91856d48b4c"
+    },
+    {
+      "bytes": 2677,
+      "path": "corpus/FX_DEXJPUS_20230929.json",
+      "sha256": "4addc3b9eb1bdf07c8c56b75539d81b7164c8df3f388e0a2f775f2cc496f5317"
+    },
+    {
+      "bytes": 2681,
+      "path": "corpus/FX_DEXKOUS_20230929.json",
+      "sha256": "9370b6e98390798f66d9194f1731ae197ef639594d2f7d5fd4a3c3c2b3ae7163"
+    },
+    {
+      "bytes": 2677,
+      "path": "corpus/FX_DEXMXUS_20230929.json",
+      "sha256": "4dedf91c09decc3d91a0faf7993ca60b16067a43cebbacd38206b366957c7978"
+    },
+    {
+      "bytes": 2683,
+      "path": "corpus/FX_DEXSFUS_20230929.json",
+      "sha256": "763818b22d7ecdab2ee2890c1ac375a9a1467d8e4da08a68ad2492b86ef55909"
+    },
+    {
+      "bytes": 2669,
+      "path": "corpus/FX_DEXUSEU_20230929.json",
+      "sha256": "538b592df51fbe3c86d79adee2f74550d8bd58f731121aa244e13f28a1f67566"
+    },
+    {
+      "bytes": 2678,
+      "path": "corpus/FX_DEXUSUK_20230929.json",
+      "sha256": "d50753068772fd610caec81fafd0e868b3071d74e9ac272550bba65088b45b31"
+    },
+    {
+      "bytes": 2408,
+      "path": "provenance.json",
+      "sha256": "bb57ef1cef1dc8de6a1d30f0cd48747bf0b610c15f5dca5415a9d18f9bd7c327"
+    },
+    {
+      "bytes": 4552,
+      "path": "reference/naive_answer.json",
+      "sha256": "0c4be1cc008fe445dcdbc4648e0b6023938cd87b3ce8113bd6d02c5b34e1a3ad"
+    },
+    {
+      "bytes": 932,
+      "path": "reference/outcome.json",
+      "sha256": "d34f7ca5b33eb08a568cb65588c4d8067e993d354d3f745b8a300073f52def81"
+    },
+    {
+      "bytes": 5232,
+      "path": "task.json",
+      "sha256": "9c39160039e3235e28c83e62cc9297c186d234ee8b40d265da426d00b225b4f0"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-19-fx-volatility-rank-20230929-transformed"
+}

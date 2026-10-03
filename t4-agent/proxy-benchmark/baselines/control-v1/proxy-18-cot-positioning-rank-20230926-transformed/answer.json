@@ -1,0 +1,277 @@
+{
+  "task_id": "proxy-18-cot-positioning-rank-20230926-transformed",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "WTI_NYMEX",
+      "point_forecast": 0.0329058239,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9670941761,
+        "hi": 2.0329058239
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_WTI_NYMEX_20230929",
+          "span_start": 0,
+          "span_end": 455,
+          "claim": "CFTC legacy futures-only history for WTI crude oil futures (WTI_NYMEX).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 1785807 | 289653 | 108584 | 181069 | 10.139338\n2023-04-04 | 1858446 | 307515 | 81388 | 226127 | 12.167531\n2023-04-11 | 1875140 | 309997 | 74365 | 235632 | 12.566102\n2023-04-18 | 1913192 | 322133 | 77558 | 244575 | 12.783610\n2023-04-25 | 1826195 | 323831 | 87393 | 236438 | 12.947029"
+        },
+        {
+          "doc_id": "CFTC_WTI_NYMEX_20230929",
+          "span_start": 0,
+          "span_end": 1851,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "UST_2Y",
+      "point_forecast": -0.00538080605,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.00538080605,
+        "hi": 1.99461919395
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_UST_2Y_20230929",
+          "span_start": 0,
+          "span_end": 478,
+          "claim": "CFTC legacy futures-only history for U.S. Treasury 2-Year Note futures (UST_2Y).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 2356318 | 133376 | 658853 | -525477 | -22.300768\n2023-04-04 | 2351682 | 131369 | 633424 | -502055 | -21.348762\n2023-04-11 | 2531969 | 221139 | 717980 | -496841 | -19.622713\n2023-04-18 | 2642314 | 227652 | 802566 | -574914 | -21.757974\n2023-04-25 | 2719441 | 265711 | 812018 | -546307 | -20.088945"
+        },
+        {
+          "doc_id": "CFTC_UST_2Y_20230929",
+          "span_start": 0,
+          "span_end": 1962,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "UST_10Y",
+      "point_forecast": 0.00762189435,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.99237810565,
+        "hi": 2.00762189435
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_UST_10Y_20230929",
+          "span_start": 0,
+          "span_end": 483,
+          "claim": "CFTC legacy futures-only history for U.S. Treasury 10-Year Note futures (UST_10Y).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 4127917 | 430598 | 902176 | -471578 | -11.424115\n2023-04-04 | 4263195 | 366793 | 987824 | -621031 | -14.567267\n2023-04-11 | 4275293 | 418080 | 1057117 | -639037 | -14.947209\n2023-04-18 | 4393559 | 473072 | 1153153 | -680081 | -15.479046\n2023-04-25 | 4362222 | 389728 | 1129989 | -740261 | -16.969815"
+        },
+        {
+          "doc_id": "CFTC_UST_10Y_20230929",
+          "span_start": 0,
+          "span_end": 1952,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "SILVER_CMX",
+      "point_forecast": -0.0260309794,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0260309794,
+        "hi": 1.9739690206
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_SILVER_CMX_20230929",
+          "span_start": 0,
+          "span_end": 489,
+          "claim": "CFTC legacy futures-only history for Silver futures (SILVER_CMX).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 117395 | 42254 | 28893 | 13361 | 11.381234\n2023-04-04 | 131210 | 50327 | 29044 | 21283 | 16.220562\n2023-04-11 | 142699 | 55583 | 31865 | 23718 | 16.620999\n2023-04-18 | 158371 | 62968 | 36373 | 26595 | 16.792847\n2023-04-25 | 149692 | 66145 | 35542 | 30603 | 20.443978\n2023-05-02 | 142538 | 68219 | 36267 | 31952 | 22.416478"
+        },
+        {
+          "doc_id": "CFTC_SILVER_CMX_20230929",
+          "span_start": 0,
+          "span_end": 1744,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "entity_id": "NATGAS_NYMEX",
+      "point_forecast": 0.0095288012,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9904711988,
+        "hi": 2.0095288012
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_NATGAS_NYMEX_20230929",
+          "span_start": 0,
+          "span_end": 478,
+          "claim": "CFTC legacy futures-only history for Henry Hub natural gas futures (NATGAS_NYMEX).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 1279180 | 293519 | 419716 | -126197 | -9.865461\n2023-04-04 | 1365656 | 315952 | 446437 | -130485 | -9.554749\n2023-04-11 | 1355672 | 288362 | 429257 | -140895 | -10.393001\n2023-04-18 | 1330947 | 269012 | 408998 | -139986 | -10.517774\n2023-04-25 | 1274536 | 259864 | 396014 | -136150 | -10.682319"
+        },
+        {
+          "doc_id": "CFTC_NATGAS_NYMEX_20230929",
+          "span_start": 0,
+          "span_end": 1898,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "JPY_CME",
+      "point_forecast": -0.02248708505,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.02248708505,
+        "hi": 1.97751291495
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_JPY_CME_20230929",
+          "span_start": 0,
+          "span_end": 445,
+          "claim": "CFTC legacy futures-only history for Japanese yen futures (JPY_CME).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 169473 | 9717 | 63692 | -53975 | -31.848731\n2023-04-04 | 178828 | 11523 | 68559 | -57036 | -31.894334\n2023-04-11 | 176822 | 11933 | 69140 | -57207 | -32.352875\n2023-04-18 | 177507 | 15661 | 72530 | -56869 | -32.037610\n2023-04-25 | 184041 | 13680 | 82424 | -68744 | -37.352546"
+        },
+        {
+          "doc_id": "CFTC_JPY_CME_20230929",
+          "span_start": 0,
+          "span_end": 1831,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "entity_id": "GOLD_CMX",
+      "point_forecast": -0.00842016595,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.00842016595,
+        "hi": 1.99157983405
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_GOLD_CMX_20230929",
+          "span_start": 0,
+          "span_end": 497,
+          "claim": "CFTC legacy futures-only history for Gold futures (GOLD_CMX).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 478611 | 245135 | 63505 | 181630 | 37.949399\n2023-04-04 | 476592 | 266164 | 70948 | 195216 | 40.960822\n2023-04-11 | 476567 | 260165 | 67420 | 192745 | 40.444471\n2023-04-18 | 482254 | 260061 | 70168 | 189893 | 39.376138\n2023-04-25 | 473209 | 253186 | 67922 | 185264 | 39.150566\n2023-05-02 | 493804 | 262413 | 66846 | 195567 | 39.604175"
+        },
+        {
+          "doc_id": "CFTC_GOLD_CMX_20230929",
+          "span_start": 0,
+          "span_end": 1804,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "EURO_FX",
+      "point_forecast": -0.03226724875,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.03226724875,
+        "hi": 1.96773275125
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_EURO_FX_20230929",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "CFTC legacy futures-only history for Euro FX futures (EURO_FX).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 732506 | 222918 | 77893 | 145025 | 19.798473\n2023-04-04 | 747095 | 225416 | 82023 | 143393 | 19.193409\n2023-04-11 | 759439 | 244180 | 80842 | 163338 | 21.507718\n2023-04-18 | 766374 | 242369 | 78008 | 164361 | 21.446578\n2023-04-25 | 772882 | 243516 | 74116 | 169400 | 21.917964\n2023-05-02 | 779458 | 246832 | 73343 | 173489 | 22.257646"
+        },
+        {
+          "doc_id": "CFTC_EURO_FX_20230929",
+          "span_start": 0,
+          "span_end": 1801,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "entity_id": "ES_SP500",
+      "point_forecast": 0.0116479212,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9883520788,
+        "hi": 2.0116479212
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_ES_SP500_20230929",
+          "span_start": 0,
+          "span_end": 469,
+          "claim": "CFTC legacy futures-only history for E-mini S&P 500 futures (ES_SP500).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 2142232 | 199472 | 424128 | -224656 | -10.487006\n2023-04-04 | 2219512 | 163766 | 485225 | -321459 | -14.483319\n2023-04-11 | 2248469 | 207007 | 514619 | -307612 | -13.680954\n2023-04-18 | 2278321 | 204558 | 548815 | -344257 | -15.110118\n2023-04-25 | 2265794 | 207333 | 570600 | -363267 | -16.032658"
+        },
+        {
+          "doc_id": "CFTC_ES_SP500_20230929",
+          "span_start": 0,
+          "span_end": 1903,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "CORN_CBT",
+      "point_forecast": -0.0340463587,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0340463587,
+        "hi": 1.9659536413
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_CORN_CBT_20230929",
+          "span_start": 0,
+          "span_end": 441,
+          "claim": "CFTC legacy futures-only history for Corn futures (CORN_CBT).\nreport_as_of | open_interest | noncommercial_long | noncommercial_short | net | net_%OI\n2023-03-28 | 1345886 | 317171 | 245643 | 71528 | 5.314566\n2023-04-04 | 1334671 | 310288 | 224598 | 85690 | 6.420309\n2023-04-11 | 1338484 | 336195 | 232886 | 103309 | 7.718359\n2023-04-18 | 1319551 | 340625 | 234989 | 105636 | 8.005450\n2023-04-25 | 1242943 | 297251 | 272603 | 24648 | 1.983035"
+        },
+        {
+          "doc_id": "CFTC_CORN_CBT_20230929",
+          "span_start": 0,
+          "span_end": 1829,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 10
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "WTI_NYMEX",
+      "UST_2Y",
+      "UST_10Y",
+      "SILVER_CMX",
+      "NATGAS_NYMEX",
+      "JPY_CME",
+      "GOLD_CMX",
+      "EURO_FX",
+      "ES_SP500",
+      "CORN_CBT"
+    ],
+    "methods": {
+      "WTI_NYMEX": "generic_baseline",
+      "UST_2Y": "generic_baseline",
+      "UST_10Y": "generic_baseline",
+      "SILVER_CMX": "generic_baseline",
+      "NATGAS_NYMEX": "generic_baseline",
+      "JPY_CME": "generic_baseline",
+      "GOLD_CMX": "generic_baseline",
+      "EURO_FX": "generic_baseline",
+      "ES_SP500": "generic_baseline",
+      "CORN_CBT": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

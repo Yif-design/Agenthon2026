@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_WMT_2023Q1_transformed",
+  "entities": [
+    "SEC_WMT_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 140288000000; operating cash flow scaled currency units -3758000000; capital expenditure scaled currency units 3539000000."
+}

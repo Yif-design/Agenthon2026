@@ -1,0 +1,143 @@
+{
+  "baseline_git_commit": "f9520d92920d16a67c9f079a0a4634ff4cb7d4dd",
+  "change": "Replace first-open/last-close slicing with JSONDecoder.raw_decode scanning that skips decoded nested containers and returns only when exactly one top-level dictionary is found.",
+  "decision": "accept",
+  "experiment": "unambiguous_json_framing_v1",
+  "external_comparison": {
+    "copied_code": false,
+    "official_strong_rag_parser": "greedy regular expression from first opening brace to last closing brace",
+    "participant_search_result": "no reusable balanced decoder found in the two previously inspected repositories"
+  },
+  "fault_injection": {
+    "cases": {
+      "exact_nested_object": {
+        "baseline": "accepted",
+        "candidate": "accepted"
+      },
+      "invalid_brace_prefix_then_object": {
+        "baseline": "rejected",
+        "candidate": "accepted"
+      },
+      "markdown_fenced_single_object": {
+        "baseline": "accepted",
+        "candidate": "accepted"
+      },
+      "object_then_invalid_brace_suffix": {
+        "baseline": "rejected",
+        "candidate": "accepted"
+      },
+      "plain_text": {
+        "baseline": "rejected",
+        "candidate": "rejected"
+      },
+      "top_level_array_containing_object": {
+        "baseline": "accepted nested object",
+        "candidate": "rejected"
+      },
+      "truncated_object": {
+        "baseline": "rejected",
+        "candidate": "rejected"
+      },
+      "two_valid_objects": {
+        "baseline": "rejected",
+        "candidate": "rejected"
+      }
+    },
+    "llm_integration_calls_for_recovered_response": 1,
+    "recovery_checks_after": 2,
+    "recovery_checks_before": 0,
+    "recovery_checks_total": 2,
+    "strict_rejection_checks_after": 4
+  },
+  "historical_signal": {
+    "interpretation": "frequency evidence only; no claim that all historical failures match the fixed framing shape",
+    "raw_unparsed_content_available": false,
+    "recorded_parser_error_entries": 17,
+    "reports_with_entries": 8
+  },
+  "hypothesis": "Sequentially decoding complete top-level JSON containers recovers one unambiguous model object surrounded by invalid thinking braces, without accepting arrays, truncation or multiple valid objects.",
+  "layer": "L2 shared structured-output parsing",
+  "predictive_quality_claim": "none; structured-output completion and request-efficiency improvement only",
+  "public_no_model_ab": {
+    "byte_identical_count": 11,
+    "rows": 78,
+    "unit_count": 11,
+    "units": [
+      {
+        "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "byte_identical": true,
+        "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "unit_id": "t4-EXAMPLE-eps-beat"
+      },
+      {
+        "baseline_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "byte_identical": true,
+        "candidate_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "unit_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "byte_identical": true,
+        "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "unit_id": "t4-cotpos-202411-us10"
+      },
+      {
+        "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "byte_identical": true,
+        "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "unit_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "byte_identical": true,
+        "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "unit_id": "t4-credit-event-2023"
+      },
+      {
+        "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "byte_identical": true,
+        "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "unit_id": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "byte_identical": true,
+        "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "unit_id": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "byte_identical": true,
+        "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "unit_id": "t4-fomc-curve-20220728"
+      },
+      {
+        "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "byte_identical": true,
+        "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "unit_id": "t4-fomc-curve-20240918"
+      },
+      {
+        "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "byte_identical": true,
+        "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "unit_id": "t4-macrorev-20240930-us6"
+      },
+      {
+        "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "byte_identical": true,
+        "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "unit_id": "t4-postearn-20240201-megacap"
+      }
+    ]
+  },
+  "reason": "Two deterministic framing failures now recover in one call, all ambiguous or wrong top-level shapes remain fail-closed, and every public output, schema, smoke and unit-test gate passes.",
+  "schema_version": 1,
+  "validation": {
+    "analysis_schema_valid": "11/11",
+    "normal_path_model_requests_added": 0,
+    "prompt_tokens_added": 0,
+    "qfbench2_smoke_admissible": "11/11",
+    "tests": "83 passed"
+  }
+}

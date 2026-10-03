@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "bytes": 872,
+      "path": "card.toml",
+      "sha256": "97d812fbd1486f8d7191fe67c20875267792c64c481cb246d988a6d4e2c3996f"
+    },
+    {
+      "bytes": 1723,
+      "path": "corpus/EIA_GAS_EAST_20260925.json",
+      "sha256": "54db22fc36b1ca74f1f094efddc7d09e1ce90fcb43718a6027d4cf7694e8ce09"
+    },
+    {
+      "bytes": 1812,
+      "path": "corpus/EIA_GAS_LOWER48_20260925.json",
+      "sha256": "1c21617af8e6f43f91a60710611123c65f003e23ab8e6235cd2acbd5b2d1585f"
+    },
+    {
+      "bytes": 1745,
+      "path": "corpus/EIA_GAS_MIDWEST_20260925.json",
+      "sha256": "48fc310fd033e66d9681dd7088c95d9979376bdbdfe800285af39c870fdd5b9a"
+    },
+    {
+      "bytes": 1688,
+      "path": "corpus/EIA_GAS_MOUNTAIN_20260925.json",
+      "sha256": "44e528e1d0a1fd3181d6c2043435de0e4643587a3e259081436ee9e078a08495"
+    },
+    {
+      "bytes": 1687,
+      "path": "corpus/EIA_GAS_PACIFIC_20260925.json",
+      "sha256": "d9f235a7188e178411d9d71f2ec83a070de4f78770637734da9cf65fd781cab6"
+    },
+    {
+      "bytes": 1780,
+      "path": "corpus/EIA_GAS_SOUTH_CENTRAL_20260925.json",
+      "sha256": "95ac98cc0c6ffbe8aa252d7a2841b6a73b99e67b535d346fa93508d0f826d416"
+    },
+    {
+      "bytes": 1216,
+      "path": "provenance.json",
+      "sha256": "437f2dbc521b9904d4c89fa7537ab25ef4d4a085ea9ef219ef2f09469dfc9c91"
+    },
+    {
+      "bytes": 2604,
+      "path": "reference/naive_answer.json",
+      "sha256": "e99109f40991ad1ad08c6100962e827b001e504dd764ab541fb2b13b7ae9dcab"
+    },
+    {
+      "bytes": 553,
+      "path": "reference/outcome.json",
+      "sha256": "f00ffa71c61a73070a253c380964986e783ff376ce7ccd2ef8063600e6ff6b86"
+    },
+    {
+      "bytes": 3090,
+      "path": "task.json",
+      "sha256": "84824b55fee7c2d0195685940138435ec5b841fde2c8ee2cfa0ea1fd6e5f5bfb"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-17-natural-gas-storage-change-20260924-transformed"
+}

@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "bytes": 860,
+      "path": "card.toml",
+      "sha256": "faf1a105a162de485e8be49c67619b2699500ea31ab3c6f79a4a2639e81e1ab8"
+    },
+    {
+      "bytes": 470,
+      "path": "corpus/SEC_AMZN_2023Q1.json",
+      "sha256": "279933e19d121acb91a519faa845564ea9240cd2d12af4cc461571a9bb3bc0a7"
+    },
+    {
+      "bytes": 450,
+      "path": "corpus/SEC_F_2023Q1.json",
+      "sha256": "f89dd4b02a25a9068fa4a177676a10d9cde0be9d016a61f3baef90fe50a72aa0"
+    },
+    {
+      "bytes": 469,
+      "path": "corpus/SEC_HD_2023Q1.json",
+      "sha256": "76c5eabfcab4a8bb107b5937dbf91732a59439be9a9f124248d824d8a363bfc3"
+    },
+    {
+      "bytes": 460,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "5d165e0c9ba17b8ed0f2b6dd762ed3a46fb2cab4a0309558118f91156d9db4d5"
+    },
+    {
+      "bytes": 475,
+      "path": "corpus/SEC_MCD_2023Q1.json",
+      "sha256": "dc2b770f448e0ac7acd294ed89c0ee099c0d2ff60e2e7b556515dca2e8db0765"
+    },
+    {
+      "bytes": 465,
+      "path": "corpus/SEC_NVDA_2023Q1.json",
+      "sha256": "cd26ec4ab1cd955f65e5d3a2c0297253d3ad76a14465d5ee5483b1a66c6c916e"
+    },
+    {
+      "bytes": 464,
+      "path": "corpus/SEC_PEP_2023Q1.json",
+      "sha256": "c00be0c3b52aa716ebf63fdd8815017d2c324f11618c36bafc8303a3004f7ffe"
+    },
+    {
+      "bytes": 469,
+      "path": "corpus/SEC_TGT_2023Q1.json",
+      "sha256": "bf4ea308324fe37097a51a4a349b56cbb8152d75819a8f76a1bdbcdf9496570a"
+    },
+    {
+      "bytes": 465,
+      "path": "corpus/SEC_WMT_2023Q1.json",
+      "sha256": "eb7dd114d8ded31d137ddfa9a467e957239c9457c27ba6e86ab10e88598c8607"
+    },
+    {
+      "bytes": 4718,
+      "path": "provenance.json",
+      "sha256": "082a90478d335c4a73941a680152e38ed42238fd978e80712ca0b2e15d8659b5"
+    },
+    {
+      "bytes": 4222,
+      "path": "reference/naive_answer.json",
+      "sha256": "54e95fa9415342b8bfe1bb5919447aaf25f296166738fc502880fac6cc0591a5"
+    },
+    {
+      "bytes": 744,
+      "path": "reference/outcome.json",
+      "sha256": "05c2fdf95a0cc1e3d849c9004a539153a69622b81e817ab764cfa43d0f6b5856"
+    },
+    {
+      "bytes": 3261,
+      "path": "task.json",
+      "sha256": "3f36a76ae737fe4bc7d36ac3b2e8daa4a74c1bad7af5fe642ca8e4422542bc28"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-07-buyback-intensity-rank-20230331-explicit"
+}

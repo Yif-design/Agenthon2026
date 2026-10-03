@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "bytes": 930,
+      "path": "card.toml",
+      "sha256": "0601177c8b52ab0593c5ae3a969f48c71468dc7ba9f9a765caedd71de1b40adb"
+    },
+    {
+      "bytes": 1277,
+      "path": "corpus/TREASURY_10YEAR_20230809.json",
+      "sha256": "846e92fbe55bf27bed466a5184ff5534e6d644fa928766971e7e40d76b5572bb"
+    },
+    {
+      "bytes": 1277,
+      "path": "corpus/TREASURY_30YEAR_20230810.json",
+      "sha256": "d4428b82230f4e16763c4bf0aaa4b3e6d50e0078e64e3e37aeea03029e6becec"
+    },
+    {
+      "bytes": 1226,
+      "path": "corpus/TREASURY_3YEAR_20230808.json",
+      "sha256": "235f931c499ae7cce46fd53813e90bf955b29482adf825ea85bde509a58fbf06"
+    },
+    {
+      "bytes": 849,
+      "path": "provenance.json",
+      "sha256": "1d4262bd2ec61401d0384f88d58a814798dd508a352d30b5c95b69842c19fcf9"
+    },
+    {
+      "bytes": 1462,
+      "path": "reference/naive_answer.json",
+      "sha256": "1d573df35f374b969c8017c66e972a40a0c1d7257afc8060e66c3dd2637664d2"
+    },
+    {
+      "bytes": 362,
+      "path": "reference/outcome.json",
+      "sha256": "9cc85e7f29f1295071fd55774ab6c1733b7044a01ce1ef70a696b46d824209d3"
+    },
+    {
+      "bytes": 1934,
+      "path": "task.json",
+      "sha256": "b7ad3bb34c3bf05c53571250b64b85eee03dc7717df1a224285c2817476a87cf"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+}

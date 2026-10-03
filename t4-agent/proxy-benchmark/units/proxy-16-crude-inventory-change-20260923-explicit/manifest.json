@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "bytes": 884,
+      "path": "card.toml",
+      "sha256": "e963160da7894af218f02d02e8b3b1aec5417d7c6b8606cbaf7e2a6843ae10bb"
+    },
+    {
+      "bytes": 2104,
+      "path": "corpus/EIA_CRUDE_PADD1_20260925.json",
+      "sha256": "d53451b1baf95d625c020ef540040aac6db815c4323e836cff58f6bbe7739361"
+    },
+    {
+      "bytes": 2192,
+      "path": "corpus/EIA_CRUDE_PADD2_20260925.json",
+      "sha256": "420f17ed2523755e122aadbd89cc2876c72fb00873c461eff2e5c7193f2715e2"
+    },
+    {
+      "bytes": 2212,
+      "path": "corpus/EIA_CRUDE_PADD3_20260925.json",
+      "sha256": "86d50afbc8ed214b5df60f92e48de654fce7c7dae26769fffa97f3350ba0c7da"
+    },
+    {
+      "bytes": 2154,
+      "path": "corpus/EIA_CRUDE_PADD4_20260925.json",
+      "sha256": "7f6efa01473e68dfedcc10044137bacce876adde8d2eb24197d4b34cdce4fadb"
+    },
+    {
+      "bytes": 2153,
+      "path": "corpus/EIA_CRUDE_PADD5_20260925.json",
+      "sha256": "c3278ea91bb4845b35ebd9d385783d73be0bee8dac651c06dce39598d0e8bc52"
+    },
+    {
+      "bytes": 2195,
+      "path": "corpus/EIA_CRUDE_US_20260925.json",
+      "sha256": "1be6064933d02d1feef3422f43aa90445167bd8162980a227d4caab23d555a68"
+    },
+    {
+      "bytes": 10815,
+      "path": "provenance.json",
+      "sha256": "f2b4db1300aad3a0e3c5ac5ad68dfbcde9bf0e68fde99d449af0b29cd49e74a1"
+    },
+    {
+      "bytes": 2655,
+      "path": "reference/naive_answer.json",
+      "sha256": "e4ec3d9a7bab0e1f3f894b3271f67357869f6822b91937479e4e816d441eb73b"
+    },
+    {
+      "bytes": 550,
+      "path": "reference/outcome.json",
+      "sha256": "b1d74d40366914d6ef425896a9bcbedb49e009b8d4abcf971f28e372d0a9bc78"
+    },
+    {
+      "bytes": 3137,
+      "path": "task.json",
+      "sha256": "58807ddd011982a4d3bddec1e14bdf412bb8b313f7916bda78d6bccaac6f9e5a"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-16-crude-inventory-change-20260923-explicit"
+}

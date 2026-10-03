@@ -1,0 +1,1509 @@
+{
+  "baseline_git_commit": "2ec2a5b",
+  "changed_context_rows": 4,
+  "changed_rows_strictly_better": true,
+  "computed_input_controls": 15,
+  "computed_input_controls_unchanged": true,
+  "context_only_rows": 16,
+  "decision": "proceed_to_production_candidate",
+  "decision_rule": "Proceed only if at least one context-only premise changes, every changed row improves the predeclared relevance total by at least four points, all computed-input controls are unchanged, and every replacement is an exact retrieved corpus slice.",
+  "experiment": "reason_evidence_relevance_screen_v1",
+  "hypothesis": "Method-aware exact-window selection can strictly improve context-only reason relevance while leaving computed-input premises unchanged.",
+  "local_llm_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "official_versions_unchanged": true,
+  "production_change": "none",
+  "public_trace_sha256": "bdc75013abd33f301296b9067abbec02718c580084279a9e404659289ae5a4a5",
+  "replacement_spans_exact": true,
+  "rows": [
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000320193_10Q_20240202",
+        "premise": "Apple Inc. reports net sales of $119.6 billion for the three months ended December 30, 2023, compared to $117.2 billion for the three months ended December 31, 2022, an increase of approximately 2%. Diluted earnings per share were $2.18, compared to $1.88 in the same quarter of the prior year. Services net sales were $23.1 billion for the three months ended December 30, 2023, an increase of $2.3 billion, or 11.3%, year over year.",
+        "score": {
+          "anchor_count": 3,
+          "anchor_weight": 7,
+          "high_value_count": 2,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted earnings per share",
+            "earnings per share",
+            "earnings"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 10
+        },
+        "span_end": 433,
+        "span_start": 0
+      },
+      "candidate_count": 4,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "AAPL",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "consensus_strong_signal",
+      "selected": {
+        "doc_id": "EDGAR_0000320193_10Q_20240202",
+        "premise": "Apple Inc. reports net sales of $119.6 billion for the three months ended December 30, 2023, compared to $117.2 billion for the three months ended December 31, 2022, an increase of approximately 2%. Diluted earnings per share were $2.18, compared to $1.88 in the same quarter of the prior year. Services net sales were $23.1 billion for the three months ended December 30, 2023, an increase of $2.3 billion, or 11.3%, year over year.",
+        "score": {
+          "anchor_count": 3,
+          "anchor_weight": 7,
+          "high_value_count": 2,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted earnings per share",
+            "earnings per share",
+            "earnings"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 10
+        },
+        "span_end": 433,
+        "span_start": 0
+      },
+      "unit": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "baseline": {
+        "doc_id": "TDIRECT_AUCTIONS_10Y_20241031",
+        "premise": "NOTES (derived from the table above): across the 13 auctions shown, the bid-to-cover ratio ranged from 2.32 to 2.67; the average over the six most recent auctions is 2.530. The most recent auction (2024-10-09) drew a bid-to-cover of 2.48.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1629,
+        "span_start": 1391
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "AUC_10Y_20241105",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "same_tenor_recent_history",
+      "selected": {
+        "doc_id": "TDIRECT_AUCTIONS_10Y_20241031",
+        "premise": "NOTES (derived from the table above): across the 13 auctions shown, the bid-to-cover ratio ranged from 2.32 to 2.67; the average over the six most recent auctions is 2.530. The most recent auction (2024-10-09) drew a bid-to-cover of 2.48.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1629,
+        "span_start": 1391
+      },
+      "unit": "t4-auction-btc-202411-us7"
+    },
+    {
+      "baseline": {
+        "doc_id": "TDIRECT_AUCTIONS_20Y_20241031",
+        "premise": "NOTES (derived from the table above): across the 13 auctions shown, the bid-to-cover ratio ranged from 2.39 to 2.82; the average over the six most recent auctions is 2.595. The most recent auction (2024-10-23) drew a bid-to-cover of 2.59.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1638,
+        "span_start": 1400
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "AUC_20Y_20241120",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "same_tenor_recent_history",
+      "selected": {
+        "doc_id": "TDIRECT_AUCTIONS_20Y_20241031",
+        "premise": "NOTES (derived from the table above): across the 13 auctions shown, the bid-to-cover ratio ranged from 2.39 to 2.82; the average over the six most recent auctions is 2.595. The most recent auction (2024-10-23) drew a bid-to-cover of 2.59.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1638,
+        "span_start": 1400
+      },
+      "unit": "t4-auction-btc-202411-us7"
+    },
+    {
+      "baseline": {
+        "doc_id": "TDIRECT_AUCTIONS_2Y_20241031",
+        "premise": "NOTES (derived from the table above): across the 13 auctions shown, the bid-to-cover ratio ranged from 2.41 to 2.81; the average over the six most recent auctions is 2.623. The most recent auction (2024-10-28) drew a bid-to-cover of 2.50.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1489,
+        "span_start": 1251
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "AUC_2Y_20241125",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "same_tenor_recent_history",
+      "selected": {
+        "doc_id": "TDIRECT_AUCTIONS_2Y_20241031",
+        "premise": "NOTES (derived from the table above): across the 13 auctions shown, the bid-to-cover ratio ranged from 2.41 to 2.81; the average over the six most recent auctions is 2.623. The most recent auction (2024-10-28) drew a bid-to-cover of 2.50.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1489,
+        "span_start": 1251
+      },
+      "unit": "t4-auction-btc-202411-us7"
+    },
+    {
+      "baseline": {
+        "doc_id": "COT_CORN_CBT_20241025",
+        "premise": "2024-04-30 | 1,417,715 | 284,015 | 427,439 | -143,424 | -10.12 | \n2024-05-07 | 1,456,699 | 311,911 | 343,265 | -31,354 | -2.15 | +112,070\n2024-05-14 | 1,513,128 | 337,217 | 336,993 | +224 | +0.01 | +31,578\n2024-05-21 | 1,535,429 | 332,720 | 374,547 | -41,827 | -2.72 | -42,051\n2024-05-28 | 1,542,346 | 337,903 | 389,535 | -51,632 | -3.35 | -9,805\n2024-06-04 | 1,635,740 | 339,144 | 459,077 | -119,933 | -7.33 | -68,301\n2024-06-11 | 1,600,311 | 367,952 | 468,984 | -101,032 | -6.31 | +18,901\n2024-06-18 | 1,566,775 | 382,946 | 459,657 | -76,711 | -4.90 | +24,321\n2024-06-25 | 1,519,023 | 350,579 | 520,362 | -169,783 | -11.18 | -93,072\n2024-07-02 | 1,520,100 | 313,757 | 542,468 | -228,711 | -15.05 | -58,928\n2024-07-09 | 1,561,542 | 309,195 | 549,136 | -239,941 | -15.37 | -11,230\n2024-07-16 | 1,573,324 | 307,784 | 546,600 | -238,816 | -15.18 | +1,125\n2024-07-23 | 1,597,184 | 322,869 | 544,821 | -221,952 | -13.90 | +16,864\n2024-07-30 | 1,597,889 | 308,633 | 521,075 | -212,442 | -13.30 | +9,510\n2024-08-06 | 1,578,304 | 320,403 | 472,372 | -151,969 | -9.63 | +60,473\n2024-08-13 | 1,578,796 | 328,996 | 483,001 | -154,005 | -9.75 | -2,036\n2024-08-20 | 1,552,961 | 319,844 | 485,140 | -165,296 | -10.64 | -11,291\n2024-08-27 | 1,452,969 | 317,652 | 466,186 | -148,534 | -10.22 | +16,762\n2024-09-03 | 1,359,772 | 335,231 | 425,714 | -90,483 | -6.65 | +58,051\n2024-09-10 | 1,360,059 | 339,497 | 387,257 | -47,760 | -3.51 | +42,723\n2024-09-17 | 1,421,907 | 337,834 | 404,129 | -66,295 | -4.66 | -18,535\n2024-09-24 | 1,467,170 | 326,166 | 390,388 | -64,222 | -4.38 | +2,073\n2024-10-01 | 1,484,174 | 321,301 | 328,494 | -7,193 | -0.48 | +57,029\n2024-10-08 | 1,494,666 | 323,640 | 287,569 | +36,071 | +2.41 | +43,264\n2024-10-15 | 1,554,671 | 333,139 | 338,291 | -5,152 | -0.33 | -41,223\n2024-10-22 | 1,643,455 | 377,721 | 359,881 | +17,840 | +1.09 | +22,992",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2567,
+        "span_start": 716
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "CORN_CBT",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "net_position_mean_reversion",
+      "selected": {
+        "doc_id": "COT_CORN_CBT_20241025",
+        "premise": "2024-04-30 | 1,417,715 | 284,015 | 427,439 | -143,424 | -10.12 | \n2024-05-07 | 1,456,699 | 311,911 | 343,265 | -31,354 | -2.15 | +112,070\n2024-05-14 | 1,513,128 | 337,217 | 336,993 | +224 | +0.01 | +31,578\n2024-05-21 | 1,535,429 | 332,720 | 374,547 | -41,827 | -2.72 | -42,051\n2024-05-28 | 1,542,346 | 337,903 | 389,535 | -51,632 | -3.35 | -9,805\n2024-06-04 | 1,635,740 | 339,144 | 459,077 | -119,933 | -7.33 | -68,301\n2024-06-11 | 1,600,311 | 367,952 | 468,984 | -101,032 | -6.31 | +18,901\n2024-06-18 | 1,566,775 | 382,946 | 459,657 | -76,711 | -4.90 | +24,321\n2024-06-25 | 1,519,023 | 350,579 | 520,362 | -169,783 | -11.18 | -93,072\n2024-07-02 | 1,520,100 | 313,757 | 542,468 | -228,711 | -15.05 | -58,928\n2024-07-09 | 1,561,542 | 309,195 | 549,136 | -239,941 | -15.37 | -11,230\n2024-07-16 | 1,573,324 | 307,784 | 546,600 | -238,816 | -15.18 | +1,125\n2024-07-23 | 1,597,184 | 322,869 | 544,821 | -221,952 | -13.90 | +16,864\n2024-07-30 | 1,597,889 | 308,633 | 521,075 | -212,442 | -13.30 | +9,510\n2024-08-06 | 1,578,304 | 320,403 | 472,372 | -151,969 | -9.63 | +60,473\n2024-08-13 | 1,578,796 | 328,996 | 483,001 | -154,005 | -9.75 | -2,036\n2024-08-20 | 1,552,961 | 319,844 | 485,140 | -165,296 | -10.64 | -11,291\n2024-08-27 | 1,452,969 | 317,652 | 466,186 | -148,534 | -10.22 | +16,762\n2024-09-03 | 1,359,772 | 335,231 | 425,714 | -90,483 | -6.65 | +58,051\n2024-09-10 | 1,360,059 | 339,497 | 387,257 | -47,760 | -3.51 | +42,723\n2024-09-17 | 1,421,907 | 337,834 | 404,129 | -66,295 | -4.66 | -18,535\n2024-09-24 | 1,467,170 | 326,166 | 390,388 | -64,222 | -4.38 | +2,073\n2024-10-01 | 1,484,174 | 321,301 | 328,494 | -7,193 | -0.48 | +57,029\n2024-10-08 | 1,494,666 | 323,640 | 287,569 | +36,071 | +2.41 | +43,264\n2024-10-15 | 1,554,671 | 333,139 | 338,291 | -5,152 | -0.33 | -41,223\n2024-10-22 | 1,643,455 | 377,721 | 359,881 | +17,840 | +1.09 | +22,992",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2567,
+        "span_start": 716
+      },
+      "unit": "t4-cotpos-202411-us10"
+    },
+    {
+      "baseline": {
+        "doc_id": "COT_ES_SP500_20241025",
+        "premise": "2024-04-30 | 2,006,204 | 272,813 | 229,680 | +43,133 | +2.15 | \n2024-05-07 | 2,030,975 | 262,778 | 272,473 | -9,695 | -0.48 | -52,828\n2024-05-14 | 2,081,097 | 273,398 | 298,682 | -25,284 | -1.21 | -15,589\n2024-05-21 | 2,148,201 | 304,226 | 327,000 | -22,774 | -1.06 | +2,510\n2024-05-28 | 2,179,731 | 330,937 | 333,145 | -2,208 | -0.10 | +20,566\n2024-06-04 | 2,160,026 | 265,433 | 330,433 | -65,000 | -3.01 | -62,792\n2024-06-11 | 2,266,096 | 270,380 | 381,794 | -111,414 | -4.92 | -46,414\n2024-06-18 | 2,595,590 | 314,990 | 429,100 | -114,110 | -4.40 | -2,696\n2024-06-25 | 1,976,080 | 271,908 | 337,155 | -65,247 | -3.30 | +48,863\n2024-07-02 | 2,037,086 | 317,417 | 329,225 | -11,808 | -0.58 | +53,439\n2024-07-09 | 2,048,220 | 309,758 | 364,769 | -55,011 | -2.69 | -43,203\n2024-07-16 | 2,090,007 | 333,866 | 399,310 | -65,444 | -3.13 | -10,433\n2024-07-23 | 2,047,183 | 336,386 | 349,607 | -13,221 | -0.65 | +52,223\n2024-07-30 | 2,046,205 | 335,181 | 323,225 | +11,956 | +0.58 | +25,177\n2024-08-06 | 2,025,834 | 326,376 | 292,386 | +33,990 | +1.68 | +22,034\n2024-08-13 | 2,033,008 | 285,987 | 309,438 | -23,451 | -1.15 | -57,441\n2024-08-20 | 2,050,976 | 277,634 | 362,437 | -84,803 | -4.13 | -61,352\n2024-08-27 | 2,098,974 | 302,165 | 384,073 | -81,908 | -3.90 | +2,895\n2024-09-03 | 2,106,791 | 322,215 | 371,034 | -48,819 | -2.32 | +33,089\n2024-09-10 | 2,156,591 | 337,420 | 396,808 | -59,388 | -2.75 | -10,569\n2024-09-17 | 2,579,860 | 298,516 | 421,464 | -122,948 | -4.77 | -63,560\n2024-09-24 | 2,046,032 | 289,938 | 325,691 | -35,753 | -1.75 | +87,195\n2024-10-01 | 2,081,475 | 310,708 | 303,163 | +7,545 | +0.36 | +43,298\n2024-10-08 | 2,132,773 | 322,686 | 328,330 | -5,644 | -0.26 | -13,189\n2024-10-15 | 2,185,413 | 350,227 | 322,092 | +28,135 | +1.29 | +33,779\n2024-10-22 | 2,186,686 | 360,779 | 337,798 | +22,981 | +1.05 | -5,154",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2564,
+        "span_start": 731
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "ES_SP500",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "net_position_mean_reversion",
+      "selected": {
+        "doc_id": "COT_ES_SP500_20241025",
+        "premise": "2024-04-30 | 2,006,204 | 272,813 | 229,680 | +43,133 | +2.15 | \n2024-05-07 | 2,030,975 | 262,778 | 272,473 | -9,695 | -0.48 | -52,828\n2024-05-14 | 2,081,097 | 273,398 | 298,682 | -25,284 | -1.21 | -15,589\n2024-05-21 | 2,148,201 | 304,226 | 327,000 | -22,774 | -1.06 | +2,510\n2024-05-28 | 2,179,731 | 330,937 | 333,145 | -2,208 | -0.10 | +20,566\n2024-06-04 | 2,160,026 | 265,433 | 330,433 | -65,000 | -3.01 | -62,792\n2024-06-11 | 2,266,096 | 270,380 | 381,794 | -111,414 | -4.92 | -46,414\n2024-06-18 | 2,595,590 | 314,990 | 429,100 | -114,110 | -4.40 | -2,696\n2024-06-25 | 1,976,080 | 271,908 | 337,155 | -65,247 | -3.30 | +48,863\n2024-07-02 | 2,037,086 | 317,417 | 329,225 | -11,808 | -0.58 | +53,439\n2024-07-09 | 2,048,220 | 309,758 | 364,769 | -55,011 | -2.69 | -43,203\n2024-07-16 | 2,090,007 | 333,866 | 399,310 | -65,444 | -3.13 | -10,433\n2024-07-23 | 2,047,183 | 336,386 | 349,607 | -13,221 | -0.65 | +52,223\n2024-07-30 | 2,046,205 | 335,181 | 323,225 | +11,956 | +0.58 | +25,177\n2024-08-06 | 2,025,834 | 326,376 | 292,386 | +33,990 | +1.68 | +22,034\n2024-08-13 | 2,033,008 | 285,987 | 309,438 | -23,451 | -1.15 | -57,441\n2024-08-20 | 2,050,976 | 277,634 | 362,437 | -84,803 | -4.13 | -61,352\n2024-08-27 | 2,098,974 | 302,165 | 384,073 | -81,908 | -3.90 | +2,895\n2024-09-03 | 2,106,791 | 322,215 | 371,034 | -48,819 | -2.32 | +33,089\n2024-09-10 | 2,156,591 | 337,420 | 396,808 | -59,388 | -2.75 | -10,569\n2024-09-17 | 2,579,860 | 298,516 | 421,464 | -122,948 | -4.77 | -63,560\n2024-09-24 | 2,046,032 | 289,938 | 325,691 | -35,753 | -1.75 | +87,195\n2024-10-01 | 2,081,475 | 310,708 | 303,163 | +7,545 | +0.36 | +43,298\n2024-10-08 | 2,132,773 | 322,686 | 328,330 | -5,644 | -0.26 | -13,189\n2024-10-15 | 2,185,413 | 350,227 | 322,092 | +28,135 | +1.29 | +33,779\n2024-10-22 | 2,186,686 | 360,779 | 337,798 | +22,981 | +1.05 | -5,154",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2564,
+        "span_start": 731
+      },
+      "unit": "t4-cotpos-202411-us10"
+    },
+    {
+      "baseline": {
+        "doc_id": "COT_EURO_FX_20241025",
+        "premise": "2024-04-30 | 652,297 | 167,185 | 173,962 | -6,777 | -1.04 | \n2024-05-07 | 654,804 | 170,594 | 166,004 | +4,590 | +0.70 | +11,367\n2024-05-14 | 656,802 | 178,398 | 161,243 | +17,155 | +2.61 | +12,565\n2024-05-21 | 653,081 | 182,574 | 141,099 | +41,475 | +6.35 | +24,320\n2024-05-28 | 664,864 | 184,656 | 127,084 | +57,572 | +8.66 | +16,097\n2024-06-04 | 671,736 | 188,957 | 121,087 | +67,870 | +10.10 | +10,298\n2024-06-11 | 712,894 | 187,697 | 144,053 | +43,644 | +6.12 | -24,226\n2024-06-18 | 650,388 | 171,464 | 163,513 | +7,951 | +1.22 | -35,693\n2024-06-25 | 650,087 | 167,370 | 175,801 | -8,431 | -1.30 | -16,382\n2024-07-02 | 636,895 | 164,369 | 173,888 | -9,519 | -1.49 | -1,088\n2024-07-09 | 637,266 | 165,829 | 162,206 | +3,623 | +0.57 | +13,142\n2024-07-16 | 649,251 | 179,937 | 155,188 | +24,749 | +3.81 | +21,126\n2024-07-23 | 672,022 | 188,929 | 153,023 | +35,906 | +5.34 | +11,157\n2024-07-30 | 667,299 | 183,006 | 165,207 | +17,799 | +2.67 | -18,107\n2024-08-06 | 671,104 | 185,799 | 152,219 | +33,580 | +5.00 | +15,781\n2024-08-13 | 667,350 | 182,212 | 155,229 | +26,983 | +4.04 | -6,597\n2024-08-20 | 692,017 | 194,350 | 138,333 | +56,017 | +8.09 | +29,034\n2024-08-27 | 726,519 | 218,381 | 125,543 | +92,838 | +12.78 | +36,821\n2024-09-03 | 740,311 | 215,969 | 115,951 | +100,018 | +13.51 | +7,180\n2024-09-10 | 741,888 | 192,821 | 111,388 | +81,433 | +10.98 | -18,585\n2024-09-17 | 678,001 | 182,281 | 112,635 | +69,646 | +10.27 | -11,787\n2024-09-24 | 679,514 | 187,795 | 116,097 | +71,698 | +10.55 | +2,052\n2024-10-01 | 674,734 | 178,273 | 122,946 | +55,327 | +8.20 | -16,371\n2024-10-08 | 669,131 | 173,866 | 134,768 | +39,098 | +5.84 | -16,229\n2024-10-15 | 658,481 | 169,319 | 152,169 | +17,150 | +2.60 | -21,948\n2024-10-22 | 650,759 | 153,159 | 181,683 | -28,524 | -4.38 | -45,674",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2507,
+        "span_start": 724
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "EURO_FX",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "net_position_mean_reversion",
+      "selected": {
+        "doc_id": "COT_EURO_FX_20241025",
+        "premise": "2024-04-30 | 652,297 | 167,185 | 173,962 | -6,777 | -1.04 | \n2024-05-07 | 654,804 | 170,594 | 166,004 | +4,590 | +0.70 | +11,367\n2024-05-14 | 656,802 | 178,398 | 161,243 | +17,155 | +2.61 | +12,565\n2024-05-21 | 653,081 | 182,574 | 141,099 | +41,475 | +6.35 | +24,320\n2024-05-28 | 664,864 | 184,656 | 127,084 | +57,572 | +8.66 | +16,097\n2024-06-04 | 671,736 | 188,957 | 121,087 | +67,870 | +10.10 | +10,298\n2024-06-11 | 712,894 | 187,697 | 144,053 | +43,644 | +6.12 | -24,226\n2024-06-18 | 650,388 | 171,464 | 163,513 | +7,951 | +1.22 | -35,693\n2024-06-25 | 650,087 | 167,370 | 175,801 | -8,431 | -1.30 | -16,382\n2024-07-02 | 636,895 | 164,369 | 173,888 | -9,519 | -1.49 | -1,088\n2024-07-09 | 637,266 | 165,829 | 162,206 | +3,623 | +0.57 | +13,142\n2024-07-16 | 649,251 | 179,937 | 155,188 | +24,749 | +3.81 | +21,126\n2024-07-23 | 672,022 | 188,929 | 153,023 | +35,906 | +5.34 | +11,157\n2024-07-30 | 667,299 | 183,006 | 165,207 | +17,799 | +2.67 | -18,107\n2024-08-06 | 671,104 | 185,799 | 152,219 | +33,580 | +5.00 | +15,781\n2024-08-13 | 667,350 | 182,212 | 155,229 | +26,983 | +4.04 | -6,597\n2024-08-20 | 692,017 | 194,350 | 138,333 | +56,017 | +8.09 | +29,034\n2024-08-27 | 726,519 | 218,381 | 125,543 | +92,838 | +12.78 | +36,821\n2024-09-03 | 740,311 | 215,969 | 115,951 | +100,018 | +13.51 | +7,180\n2024-09-10 | 741,888 | 192,821 | 111,388 | +81,433 | +10.98 | -18,585\n2024-09-17 | 678,001 | 182,281 | 112,635 | +69,646 | +10.27 | -11,787\n2024-09-24 | 679,514 | 187,795 | 116,097 | +71,698 | +10.55 | +2,052\n2024-10-01 | 674,734 | 178,273 | 122,946 | +55,327 | +8.20 | -16,371\n2024-10-08 | 669,131 | 173,866 | 134,768 | +39,098 | +5.84 | -16,229\n2024-10-15 | 658,481 | 169,319 | 152,169 | +17,150 | +2.60 | -21,948\n2024-10-22 | 650,759 | 153,159 | 181,683 | -28,524 | -4.38 | -45,674",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2507,
+        "span_start": 724
+      },
+      "unit": "t4-cotpos-202411-us10"
+    },
+    {
+      "baseline": {
+        "doc_id": "ALFRED_CPI_COMPONENTS_20241031",
+        "premise": "2024-01 | +0.31 | +0.39 | +0.63 | -0.91 | -3.28 | +0.39 | -0.04 | -3.37 | -0.70 | +0.45 | +0.97\n2024-02 | +0.44 | +0.36 | +0.43 | +2.26 | +3.76 | +0.02 | -0.10 | +0.52 | +0.55 | -0.03 | +1.39\n2024-03 | +0.38 | +0.36 | +0.42 | +1.13 | +1.74 | +0.10 | -0.17 | -1.11 | +0.65 | +0.49 | +1.52\n2024-04 | +0.31 | +0.29 | +0.38 | +1.12 | +2.78 | +0.02 | -0.45 | -1.38 | +1.20 | +0.45 | +0.86\n2024-05 | +0.01 | +0.16 | +0.40 | -2.03 | -3.64 | +0.14 | -0.49 | +0.60 | -0.34 | +0.51 | -0.50\n2024-06 | -0.06 | +0.06 | +0.17 | -2.04 | -3.79 | +0.24 | -0.16 | -1.53 | +0.11 | +0.17 | -0.55\n2024-07 | +0.15 | +0.17 | +0.38 | +0.03 | +0.01 | +0.16 | -0.19 | -2.30 | -0.45 | -0.25 | +0.41\n2024-08 | +0.19 | +0.28 | +0.52 | -0.78 | -0.57 | +0.12 | +0.05 | -0.96 | +0.26 | -0.12 | +0.89\n2024-09 | +0.18 | +0.31 | +0.22 | -1.85 | -4.10 | +0.40 | +0.15 | +0.31 | +1.14 | +0.41 | +1.35",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1921,
+        "span_start": 1058
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "CPI_ALLITEMS",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "component_history",
+      "selected": {
+        "doc_id": "ALFRED_CPI_COMPONENTS_20241031",
+        "premise": "2024-01 | +0.31 | +0.39 | +0.63 | -0.91 | -3.28 | +0.39 | -0.04 | -3.37 | -0.70 | +0.45 | +0.97\n2024-02 | +0.44 | +0.36 | +0.43 | +2.26 | +3.76 | +0.02 | -0.10 | +0.52 | +0.55 | -0.03 | +1.39\n2024-03 | +0.38 | +0.36 | +0.42 | +1.13 | +1.74 | +0.10 | -0.17 | -1.11 | +0.65 | +0.49 | +1.52\n2024-04 | +0.31 | +0.29 | +0.38 | +1.12 | +2.78 | +0.02 | -0.45 | -1.38 | +1.20 | +0.45 | +0.86\n2024-05 | +0.01 | +0.16 | +0.40 | -2.03 | -3.64 | +0.14 | -0.49 | +0.60 | -0.34 | +0.51 | -0.50\n2024-06 | -0.06 | +0.06 | +0.17 | -2.04 | -3.79 | +0.24 | -0.16 | -1.53 | +0.11 | +0.17 | -0.55\n2024-07 | +0.15 | +0.17 | +0.38 | +0.03 | +0.01 | +0.16 | -0.19 | -2.30 | -0.45 | -0.25 | +0.41\n2024-08 | +0.19 | +0.28 | +0.52 | -0.78 | -0.57 | +0.12 | +0.05 | -0.96 | +0.26 | -0.12 | +0.89\n2024-09 | +0.18 | +0.31 | +0.22 | -1.85 | -4.10 | +0.40 | +0.15 | +0.31 | +1.14 | +0.41 | +1.35",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1921,
+        "span_start": 1058
+      },
+      "unit": "t4-cpicomp-202410-us11"
+    },
+    {
+      "baseline": {
+        "doc_id": "ALFRED_CPI_COMPONENTS_20241031",
+        "premise": "2024-01 | +0.31 | +0.39 | +0.63 | -0.91 | -3.28 | +0.39 | -0.04 | -3.37 | -0.70 | +0.45 | +0.97\n2024-02 | +0.44 | +0.36 | +0.43 | +2.26 | +3.76 | +0.02 | -0.10 | +0.52 | +0.55 | -0.03 | +1.39\n2024-03 | +0.38 | +0.36 | +0.42 | +1.13 | +1.74 | +0.10 | -0.17 | -1.11 | +0.65 | +0.49 | +1.52\n2024-04 | +0.31 | +0.29 | +0.38 | +1.12 | +2.78 | +0.02 | -0.45 | -1.38 | +1.20 | +0.45 | +0.86\n2024-05 | +0.01 | +0.16 | +0.40 | -2.03 | -3.64 | +0.14 | -0.49 | +0.60 | -0.34 | +0.51 | -0.50\n2024-06 | -0.06 | +0.06 | +0.17 | -2.04 | -3.79 | +0.24 | -0.16 | -1.53 | +0.11 | +0.17 | -0.55\n2024-07 | +0.15 | +0.17 | +0.38 | +0.03 | +0.01 | +0.16 | -0.19 | -2.30 | -0.45 | -0.25 | +0.41\n2024-08 | +0.19 | +0.28 | +0.52 | -0.78 | -0.57 | +0.12 | +0.05 | -0.96 | +0.26 | -0.12 | +0.89\n2024-09 | +0.18 | +0.31 | +0.22 | -1.85 | -4.10 | +0.40 | +0.15 | +0.31 | +1.14 | +0.41 | +1.35",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1921,
+        "span_start": 1058
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "CPI_APPAREL",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "component_history",
+      "selected": {
+        "doc_id": "ALFRED_CPI_COMPONENTS_20241031",
+        "premise": "2024-01 | +0.31 | +0.39 | +0.63 | -0.91 | -3.28 | +0.39 | -0.04 | -3.37 | -0.70 | +0.45 | +0.97\n2024-02 | +0.44 | +0.36 | +0.43 | +2.26 | +3.76 | +0.02 | -0.10 | +0.52 | +0.55 | -0.03 | +1.39\n2024-03 | +0.38 | +0.36 | +0.42 | +1.13 | +1.74 | +0.10 | -0.17 | -1.11 | +0.65 | +0.49 | +1.52\n2024-04 | +0.31 | +0.29 | +0.38 | +1.12 | +2.78 | +0.02 | -0.45 | -1.38 | +1.20 | +0.45 | +0.86\n2024-05 | +0.01 | +0.16 | +0.40 | -2.03 | -3.64 | +0.14 | -0.49 | +0.60 | -0.34 | +0.51 | -0.50\n2024-06 | -0.06 | +0.06 | +0.17 | -2.04 | -3.79 | +0.24 | -0.16 | -1.53 | +0.11 | +0.17 | -0.55\n2024-07 | +0.15 | +0.17 | +0.38 | +0.03 | +0.01 | +0.16 | -0.19 | -2.30 | -0.45 | -0.25 | +0.41\n2024-08 | +0.19 | +0.28 | +0.52 | -0.78 | -0.57 | +0.12 | +0.05 | -0.96 | +0.26 | -0.12 | +0.89\n2024-09 | +0.18 | +0.31 | +0.22 | -1.85 | -4.10 | +0.40 | +0.15 | +0.31 | +1.14 | +0.41 | +1.35",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1921,
+        "span_start": 1058
+      },
+      "unit": "t4-cpicomp-202410-us11"
+    },
+    {
+      "baseline": {
+        "doc_id": "ALFRED_CPI_COMPONENTS_20241031",
+        "premise": "2024-01 | +0.31 | +0.39 | +0.63 | -0.91 | -3.28 | +0.39 | -0.04 | -3.37 | -0.70 | +0.45 | +0.97\n2024-02 | +0.44 | +0.36 | +0.43 | +2.26 | +3.76 | +0.02 | -0.10 | +0.52 | +0.55 | -0.03 | +1.39\n2024-03 | +0.38 | +0.36 | +0.42 | +1.13 | +1.74 | +0.10 | -0.17 | -1.11 | +0.65 | +0.49 | +1.52\n2024-04 | +0.31 | +0.29 | +0.38 | +1.12 | +2.78 | +0.02 | -0.45 | -1.38 | +1.20 | +0.45 | +0.86\n2024-05 | +0.01 | +0.16 | +0.40 | -2.03 | -3.64 | +0.14 | -0.49 | +0.60 | -0.34 | +0.51 | -0.50\n2024-06 | -0.06 | +0.06 | +0.17 | -2.04 | -3.79 | +0.24 | -0.16 | -1.53 | +0.11 | +0.17 | -0.55\n2024-07 | +0.15 | +0.17 | +0.38 | +0.03 | +0.01 | +0.16 | -0.19 | -2.30 | -0.45 | -0.25 | +0.41\n2024-08 | +0.19 | +0.28 | +0.52 | -0.78 | -0.57 | +0.12 | +0.05 | -0.96 | +0.26 | -0.12 | +0.89\n2024-09 | +0.18 | +0.31 | +0.22 | -1.85 | -4.10 | +0.40 | +0.15 | +0.31 | +1.14 | +0.41 | +1.35",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1921,
+        "span_start": 1058
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "CPI_CORE",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "component_history",
+      "selected": {
+        "doc_id": "ALFRED_CPI_COMPONENTS_20241031",
+        "premise": "2024-01 | +0.31 | +0.39 | +0.63 | -0.91 | -3.28 | +0.39 | -0.04 | -3.37 | -0.70 | +0.45 | +0.97\n2024-02 | +0.44 | +0.36 | +0.43 | +2.26 | +3.76 | +0.02 | -0.10 | +0.52 | +0.55 | -0.03 | +1.39\n2024-03 | +0.38 | +0.36 | +0.42 | +1.13 | +1.74 | +0.10 | -0.17 | -1.11 | +0.65 | +0.49 | +1.52\n2024-04 | +0.31 | +0.29 | +0.38 | +1.12 | +2.78 | +0.02 | -0.45 | -1.38 | +1.20 | +0.45 | +0.86\n2024-05 | +0.01 | +0.16 | +0.40 | -2.03 | -3.64 | +0.14 | -0.49 | +0.60 | -0.34 | +0.51 | -0.50\n2024-06 | -0.06 | +0.06 | +0.17 | -2.04 | -3.79 | +0.24 | -0.16 | -1.53 | +0.11 | +0.17 | -0.55\n2024-07 | +0.15 | +0.17 | +0.38 | +0.03 | +0.01 | +0.16 | -0.19 | -2.30 | -0.45 | -0.25 | +0.41\n2024-08 | +0.19 | +0.28 | +0.52 | -0.78 | -0.57 | +0.12 | +0.05 | -0.96 | +0.26 | -0.12 | +0.89\n2024-09 | +0.18 | +0.31 | +0.22 | -1.85 | -4.10 | +0.40 | +0.15 | +0.31 | +1.14 | +0.41 | +1.35",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1921,
+        "span_start": 1058
+      },
+      "unit": "t4-cpicomp-202410-us11"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000886158_10Q_20230126",
+        "premise": "companying consolidated financial statements contain all adjustments (consisting of only normal recurring accruals and elimination of intercompany balances and transactions) necessary to present fairly the financial position of Bed Bath & Beyond Inc.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 0,
+          "total": 0
+        },
+        "span_end": 17217,
+        "span_start": 16967
+      },
+      "candidate_count": 18,
+      "changed": true,
+      "context_only": true,
+      "entity_id": "BBBY",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "explicit_credit_flags",
+      "selected": {
+        "doc_id": "EDGAR_0000886158_10Q_20230126",
+        "premise": "As the Company operates in the retail industry, its results of operations are affected by general economic conditions and consumer spending habits. \u00a0 2) LIQUIDITY AND GOING CONCERN \u00a0 The Company\u2019s net cash used in operating activities was $ 307.6 \u00a0million and $ 890.0 \u00a0million for the three and nine months ended November 26, 2022. Cash, cash equivalents and restricted cash were $ 225.7 \u00a0million as of November\u00a026, 2022. On or around January 13, 2023, certain events of default were triggered under the Company\u2019s Credit Facilities (as defined below) as a result of the Company\u2019s failure to prepay an overadvance and satisfy a financial covenant, among other things.",
+        "score": {
+          "anchor_count": 6,
+          "anchor_weight": 14,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "going concern",
+            "default",
+            "covenant",
+            "rating",
+            "liquidity",
+            "cash"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 17
+        },
+        "span_end": 18948,
+        "span_start": 18282
+      },
+      "unit": "t4-credit-event-2023"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000764478_10K_20230317",
+        "premise": "nder the Five-Year Facility Agreement as well. \n 29 \n Our credit ratings and outlook as of March\u00a015, 2023, remained unchanged from those disclosed in our Annual Report on Form 10-K for the fiscal year ended January 29, 2022, and are summarized below. Rating Agency Rating Outlook Standard & Poor's BBB+ Stable Moody's A3 Stable Credit rating agencies review their ratings periodically, and, therefore, the credit rating assigned to us by each agency may be subject to revision at any time.",
+        "score": {
+          "anchor_count": 3,
+          "anchor_weight": 9,
+          "high_value_count": 3,
+          "junk_count": 0,
+          "matched_anchors": [
+            "credit rating",
+            "rating",
+            "outlook"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 12
+        },
+        "span_end": 137721,
+        "span_start": 137232
+      },
+      "candidate_count": 8,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "BBY",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "explicit_credit_flags",
+      "selected": {
+        "doc_id": "EDGAR_0000764478_10K_20230317",
+        "premise": "nder the Five-Year Facility Agreement as well. \n 29 \n Our credit ratings and outlook as of March\u00a015, 2023, remained unchanged from those disclosed in our Annual Report on Form 10-K for the fiscal year ended January 29, 2022, and are summarized below. Rating Agency Rating Outlook Standard & Poor's BBB+ Stable Moody's A3 Stable Credit rating agencies review their ratings periodically, and, therefore, the credit rating assigned to us by each agency may be subject to revision at any time.",
+        "score": {
+          "anchor_count": 3,
+          "anchor_weight": 9,
+          "high_value_count": 3,
+          "junk_count": 0,
+          "matched_anchors": [
+            "credit rating",
+            "rating",
+            "outlook"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 12
+        },
+        "span_end": 137721,
+        "span_start": 137232
+      },
+      "unit": "t4-credit-event-2023"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000794367_10K_20230324",
+        "premise": "Credit Agreement, dated as of May 9, 2019, among the Company, Macy's Retail and Bank of America, N.A., as administrative agent Exhibit 10.1 to the Company's Current Report on Form 8-K filed May 15, 2019 (\u201cMay 15, 2019 Form 8-K\u201d) 10.1.1 Amendment No.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 289405,
+        "span_start": 289156
+      },
+      "candidate_count": 3,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "M",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "explicit_credit_flags",
+      "selected": {
+        "doc_id": "EDGAR_0000794367_10K_20230324",
+        "premise": "Credit Agreement, dated as of May 9, 2019, among the Company, Macy's Retail and Bank of America, N.A., as administrative agent Exhibit 10.1 to the Company's Current Report on Form 8-K filed May 15, 2019 (\u201cMay 15, 2019 Form 8-K\u201d) 10.1.1 Amendment No.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 289405,
+        "span_start": 289156
+      },
+      "unit": "t4-credit-event-2023"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000070858_10Q_20240730",
+        "premise": "Per common share information \u00a0 \u00a0 \u00a0 \u00a0 Earnings $ 0.83 \u00a0 $ 0.88\u00a0 $ 1.60 \u00a0 $ 1.83\u00a0 Diluted earnings 0.83 \u00a0 0.88",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 1,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 4
+        },
+        "span_end": 21298,
+        "span_start": 21190
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "BAC",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "seasonal_eps_delta_persistence",
+      "selected": {
+        "doc_id": "EDGAR_0000070858_10Q_20240730",
+        "premise": "Per common share information \u00a0 \u00a0 \u00a0 \u00a0 Earnings $ 0.83 \u00a0 $ 0.88\u00a0 $ 1.60 \u00a0 $ 1.83\u00a0 Diluted earnings 0.83 \u00a0 0.88",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 1,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 4
+        },
+        "span_end": 21298,
+        "span_start": 21190
+      },
+      "unit": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000831001_10Q_20240802",
+        "premise": "Diluted Income from continuing operations $ 1.52 \u00a0 $ 1.33",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 1,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 2,
+          "total": 3
+        },
+        "span_end": 46847,
+        "span_start": 46790
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "C",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "seasonal_eps_delta_persistence",
+      "selected": {
+        "doc_id": "EDGAR_0000831001_10Q_20240802",
+        "premise": "Diluted Income from continuing operations $ 1.52 \u00a0 $ 1.33",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 1,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 2,
+          "total": 3
+        },
+        "span_end": 46847,
+        "span_start": 46790
+      },
+      "unit": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000886982_10Q_20240802",
+        "premise": "Earnings per common share \u00a0 \u00a0 Basic $ 8.73 \u00a0 $ 3.09 \u00a0 $ 20.44 \u00a0 $ 12.00 \u00a0 Diluted $ 8.62 \u00a0 $ 3.08",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 1,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 4
+        },
+        "span_end": 7956,
+        "span_start": 7859
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "GS",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "seasonal_eps_delta_persistence",
+      "selected": {
+        "doc_id": "EDGAR_0000886982_10Q_20240802",
+        "premise": "Earnings per common share \u00a0 \u00a0 Basic $ 8.73 \u00a0 $ 3.09 \u00a0 $ 20.44 \u00a0 $ 12.00 \u00a0 Diluted $ 8.62 \u00a0 $ 3.08",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 1,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 4
+        },
+        "span_end": 7956,
+        "span_start": 7859
+      },
+      "unit": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000002488_10Q_20230503",
+        "premise": "Risk Factors 30 Item 2 Unregistered Sales of Equity Securities and Use of Proceeds 54 Item\u00a06 Exhibits 55 Signature 56 2 Table of Contents PART I. FINANCIAL INFORMATION \u00a0 ITEM\u00a01. CONDENSED CONSOLIDATED FINANCIAL STATEMENTS Advanced Micro Devices, Inc.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 1,
+          "matched_anchors": [],
+          "matched_junk": [
+            "table of contents"
+          ],
+          "number_count_capped": 3,
+          "total": -1
+        },
+        "span_end": 3701,
+        "span_start": 3451
+      },
+      "candidate_count": 5,
+      "changed": true,
+      "context_only": true,
+      "entity_id": "AMD",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "prior_eps_direction_only",
+      "selected": {
+        "doc_id": "EDGAR_0000002488_10Q_20230503",
+        "premise": "17 NOTE 9 \u2013 Earnings (Loss) Per Share The following table sets forth the components of basic and diluted earnings (loss) per share: Three Months Ended April 1, 2023 March 26, 2022 (In\u00a0millions,\u00a0except\u00a0per\u00a0share\u00a0amounts) Numerator Net income (loss) for basic earnings per share $ ( 139 ) $ 786 \u00a0 Denominator Basic weighted average shares 1,611 \u00a0 1,393 \u00a0 Potentially dilutive shares from employee equity plans and warrants \u2014 \u00a0 17 \u00a0 Diluted weighted average shares 1,611 \u00a0 1,410 \u00a0 Earnings (loss) per share: Basic $ ( 0.09 ) $ 0.56 \u00a0 Diluted $ ( 0.09 ) $ 0.56 \u00a0 Securities which would have been anti-dilutive are insignificant and are excluded from the computation of diluted earnings per share in all periods",
+        "score": {
+          "anchor_count": 4,
+          "anchor_weight": 8,
+          "high_value_count": 2,
+          "junk_count": 0,
+          "matched_anchors": [
+            "diluted earnings per share",
+            "earnings per share",
+            "diluted",
+            "net income"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 11
+        },
+        "span_end": 37065,
+        "span_start": 36359
+      },
+      "unit": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000318154_10Q_20230428",
+        "premise": "the current year. Substantially all of the UTBs as of March 31, 2023, if recognized, would affect our effective tax rate. 10 6. Earnings per share The computation of basic EPS is based on the weighted-average number of our common shares outstanding.",
+        "score": {
+          "anchor_count": 2,
+          "anchor_weight": 4,
+          "high_value_count": 1,
+          "junk_count": 0,
+          "matched_anchors": [
+            "earnings per share",
+            "eps"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 7
+        },
+        "span_end": 30863,
+        "span_start": 30614
+      },
+      "candidate_count": 7,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "AMGN",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "prior_eps_direction_only",
+      "selected": {
+        "doc_id": "EDGAR_0000318154_10Q_20230428",
+        "premise": "the current year. Substantially all of the UTBs as of March 31, 2023, if recognized, would affect our effective tax rate. 10 6. Earnings per share The computation of basic EPS is based on the weighted-average number of our common shares outstanding.",
+        "score": {
+          "anchor_count": 2,
+          "anchor_weight": 4,
+          "high_value_count": 1,
+          "junk_count": 0,
+          "matched_anchors": [
+            "earnings per share",
+            "eps"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 7
+        },
+        "span_end": 30863,
+        "span_start": 30614
+      },
+      "unit": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0001751788_10Q_20230426",
+        "premise": "\u201cAccounts payable \u2013 Trade\u201d in the consolidated balance sheets. 19 Table of Contents NOTE 6 - EARNINGS PER SHARE CALCULATIONS The following tables provide earnings per share calculations for Dow Inc. for the three months ended March\u00a031, 2023 and\u00a02022. Earnings per share of TDCC is not presented as this information is not required in financial statements of wholly owned subsidiaries.",
+        "score": {
+          "anchor_count": 1,
+          "anchor_weight": 3,
+          "high_value_count": 1,
+          "junk_count": 1,
+          "matched_anchors": [
+            "earnings per share"
+          ],
+          "matched_junk": [
+            "table of contents"
+          ],
+          "number_count_capped": 3,
+          "total": 2
+        },
+        "span_end": 45633,
+        "span_start": 45249
+      },
+      "candidate_count": 6,
+      "changed": true,
+      "context_only": true,
+      "entity_id": "DOW",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "prior_eps_direction_only",
+      "selected": {
+        "doc_id": "EDGAR_0001751788_10Q_20230426",
+        "premise": "Net Income (Loss) for Earnings Per Share Calculations Three Months Ended In millions Mar 31, 2023 Mar 31, 2022 Net income (loss) $ ( 73 ) $ 1,552 \u00a0 Net income (loss) attributable to noncontrolling interests 20 \u00a0 ( 17 ) Net income attributable to participating securities 1 3 \u00a0 8 \u00a0 Net income (loss) attributable to common stockholders $ ( 96 ) $ 1,561 \u00a0 Earnings (Loss) Per Share - Basic and Diluted Three Months Ended Dollars per share Mar 31, 2023 Mar 31, 2022 Earnings (loss) per common share - basic $ ( 0.13 ) $ 2.12 \u00a0 Earnings (loss) per common share - diluted $ ( 0.13 ) $ 2.11 \u00a0 Share Count Information Three Months Ended Shares in millions Mar 31, 2023 Mar 31, 2022 Weighted-average common shares",
+        "score": {
+          "anchor_count": 3,
+          "anchor_weight": 5,
+          "high_value_count": 1,
+          "junk_count": 0,
+          "matched_anchors": [
+            "earnings per share",
+            "diluted",
+            "net income"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 8
+        },
+        "span_end": 46339,
+        "span_start": 45634
+      },
+      "unit": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "baseline": {
+        "doc_id": "RATES_SNAPSHOT_20220728",
+        "premise": "Rates and macro snapshot as of the 2022-07-28 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2022-07-28 close.\n\nMonetary policy. On 2022-07-27 the Federal Open Market Committee raised the target range for the federal funds rate to 2-1/4 to 2-1/2 percent, its second consecutive 75 basis point increase, and signaled that ongoing increases would be appropriate.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "raised",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 472,
+        "span_start": 0
+      },
+      "candidate_count": 15,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "UST10Y",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "policy_direction_maturity_decay",
+      "selected": {
+        "doc_id": "RATES_SNAPSHOT_20220728",
+        "premise": "Rates and macro snapshot as of the 2022-07-28 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2022-07-28 close.\n\nMonetary policy. On 2022-07-27 the Federal Open Market Committee raised the target range for the federal funds rate to 2-1/4 to 2-1/2 percent, its second consecutive 75 basis point increase, and signaled that ongoing increases would be appropriate.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "raised",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 472,
+        "span_start": 0
+      },
+      "unit": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline": {
+        "doc_id": "RATES_SNAPSHOT_20220728",
+        "premise": "Rates and macro snapshot as of the 2022-07-28 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2022-07-28 close.\n\nMonetary policy. On 2022-07-27 the Federal Open Market Committee raised the target range for the federal funds rate to 2-1/4 to 2-1/2 percent, its second consecutive 75 basis point increase, and signaled that ongoing increases would be appropriate.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "raised",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 472,
+        "span_start": 0
+      },
+      "candidate_count": 15,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "UST2Y",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "policy_direction_maturity_decay",
+      "selected": {
+        "doc_id": "RATES_SNAPSHOT_20220728",
+        "premise": "Rates and macro snapshot as of the 2022-07-28 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2022-07-28 close.\n\nMonetary policy. On 2022-07-27 the Federal Open Market Committee raised the target range for the federal funds rate to 2-1/4 to 2-1/2 percent, its second consecutive 75 basis point increase, and signaled that ongoing increases would be appropriate.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "raised",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 472,
+        "span_start": 0
+      },
+      "unit": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline": {
+        "doc_id": "RATES_SNAPSHOT_20220728",
+        "premise": "Rates and macro snapshot as of the 2022-07-28 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2022-07-28 close.\n\nMonetary policy. On 2022-07-27 the Federal Open Market Committee raised the target range for the federal funds rate to 2-1/4 to 2-1/2 percent, its second consecutive 75 basis point increase, and signaled that ongoing increases would be appropriate.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "raised",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 472,
+        "span_start": 0
+      },
+      "candidate_count": 15,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "UST30Y",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "policy_direction_maturity_decay",
+      "selected": {
+        "doc_id": "RATES_SNAPSHOT_20220728",
+        "premise": "Rates and macro snapshot as of the 2022-07-28 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2022-07-28 close.\n\nMonetary policy. On 2022-07-27 the Federal Open Market Committee raised the target range for the federal funds rate to 2-1/4 to 2-1/2 percent, its second consecutive 75 basis point increase, and signaled that ongoing increases would be appropriate.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "raised",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 472,
+        "span_start": 0
+      },
+      "unit": "t4-fomc-curve-20220728"
+    },
+    {
+      "baseline": {
+        "doc_id": "RATES_SNAPSHOT_20240919",
+        "premise": "Rates and macro snapshot as of the 2024-09-19 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2024-09-19 close.\n\nMonetary policy. On 2024-09-18 the Federal Open Market Committee lowered the target range for the federal funds rate by 50 basis points to 4-3/4 to 5 percent - the first reduction of this cycle, and a larger-than-standard first step.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "lowered",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 457,
+        "span_start": 0
+      },
+      "candidate_count": 25,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "UST10Y",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "policy_direction_maturity_decay",
+      "selected": {
+        "doc_id": "RATES_SNAPSHOT_20240919",
+        "premise": "Rates and macro snapshot as of the 2024-09-19 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2024-09-19 close.\n\nMonetary policy. On 2024-09-18 the Federal Open Market Committee lowered the target range for the federal funds rate by 50 basis points to 4-3/4 to 5 percent - the first reduction of this cycle, and a larger-than-standard first step.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "lowered",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 457,
+        "span_start": 0
+      },
+      "unit": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline": {
+        "doc_id": "RATES_SNAPSHOT_20240919",
+        "premise": "Rates and macro snapshot as of the 2024-09-19 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2024-09-19 close.\n\nMonetary policy. On 2024-09-18 the Federal Open Market Committee lowered the target range for the federal funds rate by 50 basis points to 4-3/4 to 5 percent - the first reduction of this cycle, and a larger-than-standard first step.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "lowered",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 457,
+        "span_start": 0
+      },
+      "candidate_count": 25,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "UST2Y",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "policy_direction_maturity_decay",
+      "selected": {
+        "doc_id": "RATES_SNAPSHOT_20240919",
+        "premise": "Rates and macro snapshot as of the 2024-09-19 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2024-09-19 close.\n\nMonetary policy. On 2024-09-18 the Federal Open Market Committee lowered the target range for the federal funds rate by 50 basis points to 4-3/4 to 5 percent - the first reduction of this cycle, and a larger-than-standard first step.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "lowered",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 457,
+        "span_start": 0
+      },
+      "unit": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline": {
+        "doc_id": "RATES_SNAPSHOT_20240919",
+        "premise": "Rates and macro snapshot as of the 2024-09-19 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2024-09-19 close.\n\nMonetary policy. On 2024-09-18 the Federal Open Market Committee lowered the target range for the federal funds rate by 50 basis points to 4-3/4 to 5 percent - the first reduction of this cycle, and a larger-than-standard first step.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "lowered",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 457,
+        "span_start": 0
+      },
+      "candidate_count": 25,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "UST30Y",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "policy_direction_maturity_decay",
+      "selected": {
+        "doc_id": "RATES_SNAPSHOT_20240919",
+        "premise": "Rates and macro snapshot as of the 2024-09-19 close. Compiled from public sources: U.S. Treasury constant-maturity yields (FRED DGS1, DGS2, DGS3, DGS5, DGS7, DGS10, DGS20, DGS30). All levels are as of the 2024-09-19 close.\n\nMonetary policy. On 2024-09-18 the Federal Open Market Committee lowered the target range for the federal funds rate by 50 basis points to 4-3/4 to 5 percent - the first reduction of this cycle, and a larger-than-standard first step.",
+        "score": {
+          "anchor_count": 5,
+          "anchor_weight": 13,
+          "high_value_count": 4,
+          "junk_count": 0,
+          "matched_anchors": [
+            "federal funds",
+            "target range",
+            "monetary policy",
+            "lowered",
+            "yield"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 16
+        },
+        "span_end": 457,
+        "span_start": 0
+      },
+      "unit": "t4-fomc-curve-20240918"
+    },
+    {
+      "baseline": {
+        "doc_id": "ALFRED_DGORDER_VINTAGES_20240930",
+        "premise": "revised DOWN from 283925.0 (as of 2024-06-04) to 282778.0 (as of 2024-06-27).\n- The 2024-04 estimate was revised DOWN from 282778.0 (as of 2024-06-27) to 282737.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised DOWN from 283080.0 (as of 2024-06-27) to 282921.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised UP from 282921.0 (as of 2024-07-03) to 283122.0 (as of 2024-07-25).\n- The 2024-05 estimate was revised DOWN from 283122.0 (as of 2024-07-25) to 282987.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264541.0 (as of 2024-07-25) to 264139.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264139.0 (as of 2024-08-02) to 263571.0 (as of 2024-08-26).\n- The 2024-06 estimate was revised DOWN from 263571.0 (as of 2024-08-26) to 263541.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised DOWN from 289645.0 (as of 2024-08-26) to 289454.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised UP from 289454.0 (as of 2024-09-04) to 289587.0",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2478,
+        "span_start": 1480
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "DGORDER_2024-07_20241025",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "median_historical_revision",
+      "selected": {
+        "doc_id": "ALFRED_DGORDER_VINTAGES_20240930",
+        "premise": "revised DOWN from 283925.0 (as of 2024-06-04) to 282778.0 (as of 2024-06-27).\n- The 2024-04 estimate was revised DOWN from 282778.0 (as of 2024-06-27) to 282737.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised DOWN from 283080.0 (as of 2024-06-27) to 282921.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised UP from 282921.0 (as of 2024-07-03) to 283122.0 (as of 2024-07-25).\n- The 2024-05 estimate was revised DOWN from 283122.0 (as of 2024-07-25) to 282987.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264541.0 (as of 2024-07-25) to 264139.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264139.0 (as of 2024-08-02) to 263571.0 (as of 2024-08-26).\n- The 2024-06 estimate was revised DOWN from 263571.0 (as of 2024-08-26) to 263541.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised DOWN from 289645.0 (as of 2024-08-26) to 289454.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised UP from 289454.0 (as of 2024-09-04) to 289587.0",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2478,
+        "span_start": 1480
+      },
+      "unit": "t4-macrorev-20240930-us6"
+    },
+    {
+      "baseline": {
+        "doc_id": "ALFRED_DGORDER_VINTAGES_20240930",
+        "premise": "revised DOWN from 283925.0 (as of 2024-06-04) to 282778.0 (as of 2024-06-27).\n- The 2024-04 estimate was revised DOWN from 282778.0 (as of 2024-06-27) to 282737.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised DOWN from 283080.0 (as of 2024-06-27) to 282921.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised UP from 282921.0 (as of 2024-07-03) to 283122.0 (as of 2024-07-25).\n- The 2024-05 estimate was revised DOWN from 283122.0 (as of 2024-07-25) to 282987.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264541.0 (as of 2024-07-25) to 264139.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264139.0 (as of 2024-08-02) to 263571.0 (as of 2024-08-26).\n- The 2024-06 estimate was revised DOWN from 263571.0 (as of 2024-08-26) to 263541.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised DOWN from 289645.0 (as of 2024-08-26) to 289454.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised UP from 289454.0 (as of 2024-09-04) to 289587.0",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2478,
+        "span_start": 1480
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "DGORDER_2024-08_20241025",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "median_historical_revision",
+      "selected": {
+        "doc_id": "ALFRED_DGORDER_VINTAGES_20240930",
+        "premise": "revised DOWN from 283925.0 (as of 2024-06-04) to 282778.0 (as of 2024-06-27).\n- The 2024-04 estimate was revised DOWN from 282778.0 (as of 2024-06-27) to 282737.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised DOWN from 283080.0 (as of 2024-06-27) to 282921.0 (as of 2024-07-03).\n- The 2024-05 estimate was revised UP from 282921.0 (as of 2024-07-03) to 283122.0 (as of 2024-07-25).\n- The 2024-05 estimate was revised DOWN from 283122.0 (as of 2024-07-25) to 282987.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264541.0 (as of 2024-07-25) to 264139.0 (as of 2024-08-02).\n- The 2024-06 estimate was revised DOWN from 264139.0 (as of 2024-08-02) to 263571.0 (as of 2024-08-26).\n- The 2024-06 estimate was revised DOWN from 263571.0 (as of 2024-08-26) to 263541.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised DOWN from 289645.0 (as of 2024-08-26) to 289454.0 (as of 2024-09-04).\n- The 2024-07 estimate was revised UP from 289454.0 (as of 2024-09-04) to 289587.0",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 2478,
+        "span_start": 1480
+      },
+      "unit": "t4-macrorev-20240930-us6"
+    },
+    {
+      "baseline": {
+        "doc_id": "ALFRED_HOUST_VINTAGES_20240930",
+        "premise": "revised UP from 1352.0 (as of 2024-06-20) to 1377.0 (as of 2024-07-17).\n- The 2024-05 estimate was revised UP from 1277.0 (as of 2024-06-20) to 1314.0 (as of 2024-07-17).\n- The 2024-05 estimate was revised UP from 1314.0 (as of 2024-07-17) to 1315.0 (as of 2024-08-16).\n- The 2024-06 estimate was revised DOWN from 1353.0 (as of 2024-07-17) to 1329.0 (as of 2024-08-16).\n- The 2024-07 estimate was revised DOWN from 1238.0 (as of 2024-08-16) to 1237.0",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1465,
+        "span_start": 1014
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": false,
+      "entity_id": "HOUST_2024-07_20241018",
+      "fact_kinds": [
+        "computed_input"
+      ],
+      "method": "median_historical_revision",
+      "selected": {
+        "doc_id": "ALFRED_HOUST_VINTAGES_20240930",
+        "premise": "revised UP from 1352.0 (as of 2024-06-20) to 1377.0 (as of 2024-07-17).\n- The 2024-05 estimate was revised UP from 1277.0 (as of 2024-06-20) to 1314.0 (as of 2024-07-17).\n- The 2024-05 estimate was revised UP from 1314.0 (as of 2024-07-17) to 1315.0 (as of 2024-08-16).\n- The 2024-06 estimate was revised DOWN from 1353.0 (as of 2024-07-17) to 1329.0 (as of 2024-08-16).\n- The 2024-07 estimate was revised DOWN from 1238.0 (as of 2024-08-16) to 1237.0",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 0,
+          "matched_anchors": [],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 1465,
+        "span_start": 1014
+      },
+      "unit": "t4-macrorev-20240930-us6"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0000320193_10K_20231103",
+        "premise": "not applicable or is not present in amounts sufficient to require submission of the schedule, or because the information required is included in the consolidated financial statements and accompanying notes. Apple Inc. | 2023 Form 10-K | 27 Apple Inc.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 1,
+          "matched_anchors": [],
+          "matched_junk": [
+            "not applicable or is not present"
+          ],
+          "number_count_capped": 3,
+          "total": -1
+        },
+        "span_end": 118575,
+        "span_start": 118325
+      },
+      "candidate_count": 6,
+      "changed": true,
+      "context_only": true,
+      "entity_id": "AAPL",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "flat_unless_strong_outlook",
+      "selected": {
+        "doc_id": "EDGAR_0000320193_10K_20231103",
+        "premise": "sales 383,285 \u00a0 394,328 \u00a0 365,817 \u00a0 Cost of sales: \u00a0\u00a0\u00a0Products 189,282 \u00a0 201,471 \u00a0 192,266 \u00a0 \u00a0\u00a0\u00a0Services 24,855 \u00a0 22,075 \u00a0 20,715 \u00a0 Total cost of sales 214,137 \u00a0 223,546 \u00a0 212,981 \u00a0 Gross margin 169,148 \u00a0 170,782 \u00a0 152,836 \u00a0 Operating expenses: Research and development 29,915 \u00a0 26,251 \u00a0 21,914 \u00a0 Selling, general and administrative 24,932 \u00a0 25,094 \u00a0 21,973 \u00a0 Total operating expenses 54,847 \u00a0 51,345 \u00a0 43,887 \u00a0 Operating income 114,301 \u00a0 119,437 \u00a0 108,949 \u00a0 Other income/(expense), net ( 565 ) ( 334 ) 258 \u00a0 Income before provision for income taxes 113,736 \u00a0 119,103 \u00a0 109,207 \u00a0 Provision for income taxes 16,741 \u00a0 19,300 \u00a0 14,527 \u00a0 Net income $ 96,995 \u00a0 $ 99,803 \u00a0 $ 94,680 \u00a0 Earnings per share: Basic",
+        "score": {
+          "anchor_count": 3,
+          "anchor_weight": 5,
+          "high_value_count": 1,
+          "junk_count": 0,
+          "matched_anchors": [
+            "gross margin",
+            "operating income",
+            "earnings"
+          ],
+          "matched_junk": [],
+          "number_count_capped": 3,
+          "total": 8
+        },
+        "span_end": 119590,
+        "span_start": 118887
+      },
+      "unit": "t4-postearn-20240201-megacap"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0001018724_10Q_20231027",
+        "premise": "the comparable prior year period for operating results. (2) Represents the outcome that would have resulted had foreign exchange rates in the reported period been the same as those in effect in the comparable prior year period for operating results. 30 Table of Contents Guidance We provided guidance on October\u00a026, 2023, in our earnings release furnished on Form\u00a08-K as set forth below.",
+        "score": {
+          "anchor_count": 2,
+          "anchor_weight": 4,
+          "high_value_count": 1,
+          "junk_count": 1,
+          "matched_anchors": [
+            "guidance",
+            "earnings"
+          ],
+          "matched_junk": [
+            "table of contents"
+          ],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 108782,
+        "span_start": 108395
+      },
+      "candidate_count": 4,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "AMZN",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "flat_unless_strong_outlook",
+      "selected": {
+        "doc_id": "EDGAR_0001018724_10Q_20231027",
+        "premise": "the comparable prior year period for operating results. (2) Represents the outcome that would have resulted had foreign exchange rates in the reported period been the same as those in effect in the comparable prior year period for operating results. 30 Table of Contents Guidance We provided guidance on October\u00a026, 2023, in our earnings release furnished on Form\u00a08-K as set forth below.",
+        "score": {
+          "anchor_count": 2,
+          "anchor_weight": 4,
+          "high_value_count": 1,
+          "junk_count": 1,
+          "matched_anchors": [
+            "guidance",
+            "earnings"
+          ],
+          "matched_junk": [
+            "table of contents"
+          ],
+          "number_count_capped": 3,
+          "total": 3
+        },
+        "span_end": 108782,
+        "span_start": 108395
+      },
+      "unit": "t4-postearn-20240201-megacap"
+    },
+    {
+      "baseline": {
+        "doc_id": "EDGAR_0001326801_10Q_20231026",
+        "premise": "rnings 75,205 \u00a0 64,799 \u00a0 Total stockholders' equity 142,873 \u00a0 125,713 \u00a0 Total liabilities and stockholders' equity $ 216,274 \u00a0 $ 185,727 \u00a0 See Accompanying Notes to Condensed Consolidated Financial Statements. 7 Table of Contents META PLATFORMS, INC.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 2,
+          "matched_anchors": [],
+          "matched_junk": [
+            "table of contents",
+            "see accompanying notes"
+          ],
+          "number_count_capped": 3,
+          "total": -5
+        },
+        "span_end": 22142,
+        "span_start": 21892
+      },
+      "candidate_count": 1,
+      "changed": false,
+      "context_only": true,
+      "entity_id": "META",
+      "fact_kinds": [
+        "context"
+      ],
+      "method": "flat_unless_strong_outlook",
+      "selected": {
+        "doc_id": "EDGAR_0001326801_10Q_20231026",
+        "premise": "rnings 75,205 \u00a0 64,799 \u00a0 Total stockholders' equity 142,873 \u00a0 125,713 \u00a0 Total liabilities and stockholders' equity $ 216,274 \u00a0 $ 185,727 \u00a0 See Accompanying Notes to Condensed Consolidated Financial Statements. 7 Table of Contents META PLATFORMS, INC.",
+        "score": {
+          "anchor_count": 0,
+          "anchor_weight": 0,
+          "high_value_count": 0,
+          "junk_count": 2,
+          "matched_anchors": [],
+          "matched_junk": [
+            "table of contents",
+            "see accompanying notes"
+          ],
+          "number_count_capped": 3,
+          "total": -5
+        },
+        "span_end": 22142,
+        "span_start": 21892
+      },
+      "unit": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "rows_with_reasons": 31,
+  "schema_version": 1
+}

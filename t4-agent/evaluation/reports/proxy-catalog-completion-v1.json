@@ -1,0 +1,274 @@
+{
+  "experiment": "proxy_catalog_completion_v1",
+  "date": "2026-10-03",
+  "hypothesis": "All twenty designed question families can be materialized as real-source, cutoff-safe, outcome-equivalent explicit/transformed pairs and executed without model access.",
+  "baseline_git_commit": "329a9f822aed239cb3110432fdb6ddc55388aabf",
+  "catalog_version": "1.0.0",
+  "questions": 20,
+  "units": 40,
+  "target_type_counts": {
+    "classification": 6,
+    "regression": 8,
+    "ranking": 6
+  },
+  "splits": {
+    "time_forward_test": 38,
+    "confirmation": 2
+  },
+  "source_snapshots": {
+    "proxy-09-segments-2023.json": "6fe90c37342b5ee8e279457c3a166021a94f6c82693109f5b9676d36c0fd30d9",
+    "proxy-10-payroll-2023.json": "f889d3f964693e8b838b2a6313c725cfef7a78a0dc143dbdea7c21977976b70a",
+    "proxy-11-claims-2023.json": "5733c69279795e2ce6e236191b0c797269513d702b04137a5c78314b8034a0f8",
+    "proxy-12-pce-2023.json": "57afdc96ceb604655e332e9a0a60bf8173e2bd11b67f3dae38e653e3b867c933",
+    "proxy-13-gdp-2023.json": "485b29feb38c5bf94418aca82565a81d8f9f3f797e4f8198b3a193f35bbaa3d6",
+    "proxy-14-yields-2023.json": "2a26fbf5f5e378e62e852ea353b39da3e4a2a84f625a60d4b803503faeda42fd",
+    "proxy-15-auctions-2023.json": "0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d",
+    "proxy-16-eia-crude-2026.json": "16a1c0e4cd11f6a2177ca715fb9655fbc69297536e71578f80b3b20d466041ad",
+    "proxy-17-eia-gas-2026.json": "61e33e904b3e92b3938365ad8cdc7b94d0ec0bf8e4696abc9f0530a3e63b06b2",
+    "proxy-18-cot-2023.json": "9428ac2f750afa7f8b7395691e1fb29f57d366dd23abd84e43a88d3fdf8c94db",
+    "proxy-19-fx-2023.json": "5175c90917ef826f4ee1eb11bc56cf98a45b8bf3be06f489c22ed4c3743ee163",
+    "proxy-20-cross-asset-2023.json": "2082e3b6201549a914ed69ee747c85ca047c64b45075de1ec1a082cd5de623f4",
+    "proxy-sec-2023q1.json": "0ee082c73dc760125b0c52a2c4ebaa2cb6d38f62ad161305edc35401a1bd2932"
+  },
+  "questions_and_controls": [
+    {
+      "id": "proxy-01-revenue-surprise-band",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-01-control-v1.json",
+      "control_report_sha256": "580ff91ad8a2241a7ca77dfb644e52612ea4f4e8aab57ee6c9b8591cf6700bb1",
+      "control_composites": [
+        0.7272727272727273,
+        0.7272727272727273
+      ]
+    },
+    {
+      "id": "proxy-02-gross-margin-delta",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-02-control-v1.json",
+      "control_report_sha256": "759a22a0daf516a472943ea69e1d5825f4ab04f63af03bb7523cdf0136426daa",
+      "control_composites": [
+        0.4005100950165563,
+        0.4005100950165563
+      ]
+    },
+    {
+      "id": "proxy-03-free-cash-flow-margin",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-03-control-v1.json",
+      "control_report_sha256": "6a032cb6da459bd60c8ea4d59eddde2ce5fbd2c70ee69c8a1972197db4f6ef86",
+      "control_composites": [
+        0.5,
+        0.45741305943423116
+      ]
+    },
+    {
+      "id": "proxy-04-capex-intensity",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-04-control-v1.json",
+      "control_report_sha256": "a1655e4f7775735d6293bc270c733eff7752a30953affb613269bdc72bcb2825",
+      "control_composites": [
+        0.5,
+        0.008832844403908427
+      ]
+    },
+    {
+      "id": "proxy-05-dividend-action",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-05-control-v1.json",
+      "control_report_sha256": "f140240c9137b9403c7fce5f1e528c6d2d1bef00effc5c82125ad317ffffb7c1",
+      "control_composites": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "proxy-06-share-dilution-direction",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-06-control-v1.json",
+      "control_report_sha256": "684c9980f2e72b66b32a1ee1671e181efe6309e2c9fa30c603f53f4fd6bde4cf",
+      "control_composites": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "proxy-07-buyback-intensity-rank",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-07-control-v1.json",
+      "control_report_sha256": "80669b8d736e8901ad48844e0e84dfaa54056a2e11a78be467f906efedd3f8e1",
+      "control_composites": [
+        0.2521752075381947,
+        0.2538913181340993
+      ]
+    },
+    {
+      "id": "proxy-08-liquidity-stress-event",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-08-control-v1.json",
+      "control_report_sha256": "daeb7bae72e0a0aaa5c883633f3e6168247f2ebc74d55a0d203f0d8a196cbc37",
+      "control_composites": [
+        0.045454545454545456,
+        0.045454545454545456
+      ]
+    },
+    {
+      "id": "proxy-09-segment-growth-rank",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-09-control-v1.json",
+      "control_report_sha256": "99f90fc3b5a35718b5e4129ce7a0b2e928799df5223281e443c1f786ec95e988",
+      "control_composites": [
+        0.48625289065416755,
+        0.24000014473266756
+      ]
+    },
+    {
+      "id": "proxy-10-payroll-surprise-band",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-10-payroll-control-v1.json",
+      "control_report_sha256": "673fb05d5f810b563de9d67f837224c3c9e8e7038192a9cc57972d6842a9cec0",
+      "control_composites": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "proxy-11-initial-claims-direction",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-11-control-v1.json",
+      "control_report_sha256": "f16a2d3b934c23be927252002ef7cb4f11e40d01d7bb0867309eb0e78a80933c",
+      "control_composites": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "proxy-12-pce-component-nowcast",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-12-control-v1.json",
+      "control_report_sha256": "57e1403e874c6a9343a786d61acba64b500953bbf947a29bfd907d799b8aa34b",
+      "control_composites": [
+        0.45910740736743255,
+        0.4809192163080535
+      ]
+    },
+    {
+      "id": "proxy-13-gdp-revision-magnitude",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-13-control-v1.json",
+      "control_report_sha256": "a4aef7af8a331cedf484699981e8e99e6eeed29454d13ae3d8cbcca356a2b176",
+      "control_composites": [
+        0.48561643835616436,
+        0.48561643835616436
+      ]
+    },
+    {
+      "id": "proxy-14-yield-curve-steepening-rank",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-14-control-v1.json",
+      "control_report_sha256": "aeba2f2a644d7e52e37a8f4ce644acd9e7f1333d1ccd08976f4d76f769cc7ee2",
+      "control_composites": [
+        0.9383966799426828,
+        0.7907038409193407
+      ]
+    },
+    {
+      "id": "proxy-15-auction-indirect-bidder-share",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-15-auction-control-v1.json",
+      "control_report_sha256": "47336e503c407d841bbf46b220e8bd63305ebae8675eddb34e31ea3d5d4b20f9",
+      "control_composites": [
+        0.5000000018102672,
+        0.06550084835962477
+      ]
+    },
+    {
+      "id": "proxy-16-crude-inventory-change",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-16-energy-control-v1.json",
+      "control_report_sha256": "0ecc2da42f426adc2a5a66bb3782a60d887833f82d53d4ea550d9d21cc79a092",
+      "control_composites": [
+        0.3562033155348414,
+        0.40148177463398654
+      ]
+    },
+    {
+      "id": "proxy-17-natural-gas-storage-change",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-17-gas-control-v1.json",
+      "control_report_sha256": "346de3d62b3bca952a91d7c06ff0741b147d48f5167e618ab6e5c937389a91a5",
+      "control_composites": [
+        0.36326909783991224,
+        0.2179448611140163
+      ]
+    },
+    {
+      "id": "proxy-18-cot-positioning-rank",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-18-cot-control-v1.json",
+      "control_report_sha256": "8ee8e6d58ca95ae43170a4aece23755f3019a0b3923c5bdf2107fc53083aac2f",
+      "control_composites": [
+        0.5560815366103347,
+        0.5949536566951847
+      ]
+    },
+    {
+      "id": "proxy-19-fx-volatility-rank",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-19-fx-control-v1.json",
+      "control_report_sha256": "992e1cd64842c35d1510f611eed08f11124802d24c7fb45948dffbb28fed949b",
+      "control_composites": [
+        0.49637335194885956,
+        0.3691218858923436
+      ]
+    },
+    {
+      "id": "proxy-20-cross-asset-return-quintile",
+      "units": 2,
+      "control_report": "evaluation/reports/proxy-20-control-v1.json",
+      "control_report_sha256": "3402eda5a2497f1543bc78306fdaa7b7dd6f7b16826aded49d59acdf9b5b287b",
+      "control_composites": [
+        0.4838868978002818,
+        0.4558645302904604
+      ]
+    }
+  ],
+  "validation": {
+    "local_validator": {
+      "units": 40,
+      "pairs": 20,
+      "errors": 0
+    },
+    "naive_answers_at_neutral_0_5": 40,
+    "first_rebuild_tree_sha256": "9ab104496886dfa17632e7cc73d3c9c5924fb298f59c6c3e3ff6ea6e3d18a017",
+    "second_rebuild_tree_sha256": "9ab104496886dfa17632e7cc73d3c9c5924fb298f59c6c3e3ff6ea6e3d18a017",
+    "official_toolkit_version": "2.6.0",
+    "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+    "official_schema_valid_answers": 40,
+    "tests": "167 passed on Python 3.11.7"
+  },
+  "model_api_calls": 0,
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "decision": "accept_benchmark_infrastructure",
+  "reason": "All forty units are reproducible, source-traceable, schema-valid, cutoff-separated and scoreable; the catalog expands architecture testing without modifying production predictions.",
+  "production_change": "none",
+  "limitations": [
+    "One historical event per family.",
+    "Only one confirmation event.",
+    "Local score excludes official contradiction and reasoning components."
+  ],
+  "adopted_commit": "a27b8591ab078a68329ee9a8ece721302a4a052c",
+  "release": {
+    "ci_run": 37120097633,
+    "ci_conclusion": "success",
+    "ci_python": "3.13.15",
+    "ci_tests_and_pack_smoke": "passed",
+    "image": "ghcr.io/yif-design/agenthon2026-t4@sha256:66d8e3cc53dfd6ab8e9fdb6c7aeef9d677b9f70b5cd8e34245796445fbacdc57",
+    "image_platform": "linux/amd64",
+    "image_interface_label": "2.0",
+    "anonymous_manifest_http_status": 200,
+    "anonymous_config_http_status": 200,
+    "container_cli_smoke": "passed_in_ci",
+    "formal_submission_performed": false
+  }
+}

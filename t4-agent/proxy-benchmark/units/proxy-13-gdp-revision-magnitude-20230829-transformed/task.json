@@ -1,0 +1,65 @@
+{
+  "cutoff_date": "2023-08-29",
+  "entities": [
+    {
+      "account_code": "NIPA-56",
+      "corpus_ref": "corpus/GDP_A822RL1Q225SBEA_2023Q2.json",
+      "entity_id": "GDP_A822RL1Q225SBEA_2023Q2",
+      "name": "Real government consumption and investment",
+      "published_rate_fraction": 0.026000000000000002,
+      "stage_ordinal": 1
+    },
+    {
+      "account_code": "NIPA-55",
+      "corpus_ref": "corpus/GDP_A011RL1Q225SBEA_2023Q2.json",
+      "entity_id": "GDP_A011RL1Q225SBEA_2023Q2",
+      "name": "Real gross private domestic investment",
+      "published_rate_fraction": -0.042,
+      "stage_ordinal": 1
+    },
+    {
+      "account_code": "NIPA-54",
+      "corpus_ref": "corpus/GDP_A008RL1Q225SBEA_2023Q2.json",
+      "entity_id": "GDP_A008RL1Q225SBEA_2023Q2",
+      "name": "Real services consumption",
+      "published_rate_fraction": 0.077,
+      "stage_ordinal": 1
+    },
+    {
+      "account_code": "NIPA-53",
+      "corpus_ref": "corpus/GDP_A007RL1Q225SBEA_2023Q2.json",
+      "entity_id": "GDP_A007RL1Q225SBEA_2023Q2",
+      "name": "Real goods consumption",
+      "published_rate_fraction": 0.049,
+      "stage_ordinal": 1
+    },
+    {
+      "account_code": "NIPA-52",
+      "corpus_ref": "corpus/GDP_A006RL1Q225SBEA_2023Q2.json",
+      "entity_id": "GDP_A006RL1Q225SBEA_2023Q2",
+      "name": "Real personal consumption expenditures",
+      "published_rate_fraction": 0.057,
+      "stage_ordinal": 1
+    },
+    {
+      "account_code": "NIPA-51",
+      "corpus_ref": "corpus/GDP_A191RL1Q225SBEA_2023Q2.json",
+      "entity_id": "GDP_A191RL1Q225SBEA_2023Q2",
+      "name": "Real GDP",
+      "published_rate_fraction": 0.024,
+      "stage_ordinal": 1
+    }
+  ],
+  "family": "national_accounts_update",
+  "interval_level": 0.9,
+  "prompt": "Forecast the second-estimate minus advance-estimate annualized growth revision in percentage points.",
+  "resolution_date": "2023-08-30",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "subsequent_estimate_delta_pp",
+    "type": "regression",
+    "unit": "percentage_points"
+  },
+  "task_id": "proxy-13-gdp-revision-magnitude-20230829-transformed"
+}

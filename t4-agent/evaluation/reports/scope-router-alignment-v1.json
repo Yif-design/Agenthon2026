@@ -1,0 +1,332 @@
+{
+  "baseline_git_commit": "87704b0729c96237a5518d32aef397b20fce7ae8",
+  "collision_cases": [
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL"
+      ],
+      "baseline_shared_document_preserved": false,
+      "family": "inventory_forecast",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "inventory_position_rank"
+    },
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_shared_document_preserved": true,
+      "family": "housing",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "auction_price_change"
+    },
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_shared_document_preserved": true,
+      "family": "equity_research",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "analyst_revision_probability"
+    },
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL"
+      ],
+      "baseline_shared_document_preserved": false,
+      "family": "agriculture",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "cotton_yield_rank"
+    },
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_shared_document_preserved": true,
+      "family": "marketing",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "credit_eventual_return"
+    },
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_shared_document_preserved": true,
+      "family": "sports",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "rate_curveball_score"
+    },
+    {
+      "allowed_doc_ids": [
+        "ENTITY_A_LOCAL",
+        "GLOBAL_SHARED"
+      ],
+      "baseline_allowed_doc_ids": [
+        "ENTITY_A_LOCAL"
+      ],
+      "baseline_shared_document_preserved": false,
+      "family": "supply_chain",
+      "route": "generic",
+      "shared_document_preserved": true,
+      "target": "positioning_of_inventory"
+    }
+  ],
+  "date": "2026-09-28",
+  "decision": "accept",
+  "decision_reason": "All seven unknown collision cases preserve their corpus_ref scope, all twenty known routes remain correct, and every public output/schema/smoke gate passes without a model call.",
+  "decision_rule": "Require 7/7 unknown collision scopes to preserve shared corpus_ref documents, 20/20 known routes to remain correct, byte-identical public answers, 11/11 schema and smoke, and no extra model calls.",
+  "experiment_id": "scope_router_alignment_v1",
+  "hypothesis": "Dispatching specialist document scopes from the anchored family router preserves shared evidence for incidental-substring unknown tasks while retaining every known family route.",
+  "known_cases": [
+    {
+      "actual": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "family": "eps_beat_consensus",
+      "source": "public",
+      "target": "eps_outcome"
+    },
+    {
+      "actual": "auction",
+      "correct": true,
+      "expected": "auction",
+      "family": "auction_demand",
+      "source": "public",
+      "target": "bid_to_cover_ratio"
+    },
+    {
+      "actual": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "family": "positioning_shift",
+      "source": "public",
+      "target": "net_positioning_change_pct_oi_rank"
+    },
+    {
+      "actual": "cpi",
+      "correct": true,
+      "expected": "cpi",
+      "family": "cpi_component_nowcast",
+      "source": "public",
+      "target": "cpi_component_mom_first_print"
+    },
+    {
+      "actual": "credit",
+      "correct": true,
+      "expected": "credit",
+      "family": "credit_event",
+      "source": "public",
+      "target": "credit_event_12m"
+    },
+    {
+      "actual": "bank_eps",
+      "correct": true,
+      "expected": "bank_eps",
+      "family": "eps_growth_regression",
+      "source": "public",
+      "target": "eps_yoy_growth_pct"
+    },
+    {
+      "actual": "eps_yoy",
+      "correct": true,
+      "expected": "eps_yoy",
+      "family": "eps_yoy_direction",
+      "source": "public",
+      "target": "eps_yoy_direction"
+    },
+    {
+      "actual": "rates",
+      "correct": true,
+      "expected": "rates",
+      "family": "rate_curve_cross_section",
+      "source": "public",
+      "target": "yield_change_bps_intermeeting"
+    },
+    {
+      "actual": "macro_revision",
+      "correct": true,
+      "expected": "macro_revision",
+      "family": "macro_revision_direction",
+      "source": "public",
+      "target": "next_estimate_revision_direction"
+    },
+    {
+      "actual": "reaction",
+      "correct": true,
+      "expected": "reaction",
+      "family": "post_earnings_reaction",
+      "source": "public",
+      "target": "earnings_reaction"
+    },
+    {
+      "actual": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "family": "eps_beat_consensus_v2",
+      "source": "variant",
+      "target": "future_eps_class"
+    },
+    {
+      "actual": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "family": "",
+      "source": "variant",
+      "target": "eps_beat_consensus_probability"
+    },
+    {
+      "actual": "credit",
+      "correct": true,
+      "expected": "credit",
+      "family": "credit_event_cross_section",
+      "source": "variant",
+      "target": "event_probability"
+    },
+    {
+      "actual": "reaction",
+      "correct": true,
+      "expected": "reaction",
+      "family": "post_earnings_reaction_v2",
+      "source": "variant",
+      "target": "abnormal_return_class"
+    },
+    {
+      "actual": "rates",
+      "correct": true,
+      "expected": "rates",
+      "family": "rate_curve_scenario",
+      "source": "variant",
+      "target": "tenor_move"
+    },
+    {
+      "actual": "cpi",
+      "correct": true,
+      "expected": "cpi",
+      "family": "cpi_component_forecast",
+      "source": "variant",
+      "target": "first_print"
+    },
+    {
+      "actual": "macro_revision",
+      "correct": true,
+      "expected": "macro_revision",
+      "family": "macro_revision_panel",
+      "source": "variant",
+      "target": "direction"
+    },
+    {
+      "actual": "auction",
+      "correct": true,
+      "expected": "auction",
+      "family": "auction_demand_panel",
+      "source": "variant",
+      "target": "ratio"
+    },
+    {
+      "actual": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "family": "positioning_shift_panel",
+      "source": "variant",
+      "target": "rank"
+    },
+    {
+      "actual": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "family": "cftc_positioning_panel",
+      "source": "variant",
+      "target": "rank"
+    }
+  ],
+  "layer": "L2 shared retrieval scope and unknown-family isolation",
+  "limitations": [
+    "Synthetic unknown-family collision evidence; organizer-hidden family names remain unavailable.",
+    "A genuinely related hidden task with an unpublished synonym may still use the generic scope and calculator."
+  ],
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "official_reference": {
+    "finding": "Published units are format exemplars; most hidden families have no published counterpart. Entity rows may share evidence documents.",
+    "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md"
+  },
+  "official_snapshots": {
+    "open_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "public_ab": {
+    "answers_byte_identical": 11,
+    "model_mode": "disabled",
+    "rows": 78,
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "toolkit_version": "2.4.4",
+    "units": 11
+  },
+  "public_reference": {
+    "license": "MIT",
+    "method": "Uses one cutoff-safe BM25 index without family-substring document filters.",
+    "name": "official strong RAG baseline",
+    "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/strong_rag_baseline/retriever.py",
+    "used": "Design comparison only; no code copied."
+  },
+  "results": {
+    "baseline_collision_shared_preserved": 4,
+    "collision_shared_preserved": 7,
+    "collision_total": 7,
+    "known_routes_correct": 20,
+    "known_routes_total": 20
+  },
+  "schema_version": 1,
+  "tests": {
+    "git_diff_check": "passed",
+    "python_3_11": "98 passed",
+    "python_3_13": "98 passed"
+  }
+}

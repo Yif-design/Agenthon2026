@@ -1,0 +1,197 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXUSEU_20230929.json",
+      "cutoff_level": 1.0584,
+      "entity_id": "XASSET_DEXUSEU_20230929",
+      "name": "Euro exchange rate",
+      "series_id": "DEXUSEU",
+      "trailing_20d_return_pct": -2.352615554940496
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXJPUS_20230929.json",
+      "cutoff_level": 149.43,
+      "entity_id": "XASSET_DEXJPUS_20230929",
+      "name": "Japanese yen exchange rate",
+      "series_id": "DEXJPUS",
+      "trailing_20d_return_pct": 2.574135090609553
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXUSUK_20230929.json",
+      "cutoff_level": 1.2214,
+      "entity_id": "XASSET_DEXUSUK_20230929",
+      "name": "British pound exchange rate",
+      "series_id": "DEXUSUK",
+      "trailing_20d_return_pct": -3.5762216783768785
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXCAUS_20230929.json",
+      "cutoff_level": 1.3535,
+      "entity_id": "XASSET_DEXCAUS_20230929",
+      "name": "Canadian dollar exchange rate",
+      "series_id": "DEXCAUS",
+      "trailing_20d_return_pct": -0.02954427948890226
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXCHUS_20230929.json",
+      "cutoff_level": 7.296,
+      "entity_id": "XASSET_DEXCHUS_20230929",
+      "name": "Chinese yuan exchange rate",
+      "series_id": "DEXCHUS",
+      "trailing_20d_return_pct": 0.5207902785814733
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXKOUS_20230929.json",
+      "cutoff_level": 1347.86,
+      "entity_id": "XASSET_DEXKOUS_20230929",
+      "name": "South Korean won exchange rate",
+      "series_id": "DEXKOUS",
+      "trailing_20d_return_pct": 1.9229751291183428
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXMXUS_20230929.json",
+      "cutoff_level": 17.4064,
+      "entity_id": "XASSET_DEXMXUS_20230929",
+      "name": "Mexican peso exchange rate",
+      "series_id": "DEXMXUS",
+      "trailing_20d_return_pct": 3.112374859309286
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXBZUS_20230929.json",
+      "cutoff_level": 5.0021,
+      "entity_id": "XASSET_DEXBZUS_20230929",
+      "name": "Brazilian real exchange rate",
+      "series_id": "DEXBZUS",
+      "trailing_20d_return_pct": 1.4131051820614804
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXINUS_20230929.json",
+      "cutoff_level": 83.08,
+      "entity_id": "XASSET_DEXINUS_20230929",
+      "name": "Indian rupee exchange rate",
+      "series_id": "DEXINUS",
+      "trailing_20d_return_pct": 0.36240637835225353
+    },
+    {
+      "asset_class": "fx",
+      "corpus_ref": "corpus/XASSET_DEXSFUS_20230929.json",
+      "cutoff_level": 18.8828,
+      "entity_id": "XASSET_DEXSFUS_20230929",
+      "name": "South African rand exchange rate",
+      "series_id": "DEXSFUS",
+      "trailing_20d_return_pct": -0.12324064719851924
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS2_20230929.json",
+      "cutoff_level": 5.03,
+      "entity_id": "XASSET_DGS2_20230929",
+      "name": "Treasury 2-year yield",
+      "series_id": "DGS2",
+      "trailing_20d_return_pct": 3.711340206185576
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS3_20230929.json",
+      "cutoff_level": 4.8,
+      "entity_id": "XASSET_DGS3_20230929",
+      "name": "Treasury 3-year yield",
+      "series_id": "DGS3",
+      "trailing_20d_return_pct": 5.726872246696035
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS5_20230929.json",
+      "cutoff_level": 4.6,
+      "entity_id": "XASSET_DGS5_20230929",
+      "name": "Treasury 5-year yield",
+      "series_id": "DGS5",
+      "trailing_20d_return_pct": 8.747044917257663
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS7_20230929.json",
+      "cutoff_level": 4.61,
+      "entity_id": "XASSET_DGS7_20230929",
+      "name": "Treasury 7-year yield",
+      "series_id": "DGS7",
+      "trailing_20d_return_pct": 10.023866348448696
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS10_20230929.json",
+      "cutoff_level": 4.59,
+      "entity_id": "XASSET_DGS10_20230929",
+      "name": "Treasury 10-year yield",
+      "series_id": "DGS10",
+      "trailing_20d_return_pct": 12.224938875305625
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS20_20230929.json",
+      "cutoff_level": 4.92,
+      "entity_id": "XASSET_DGS20_20230929",
+      "name": "Treasury 20-year yield",
+      "series_id": "DGS20",
+      "trailing_20d_return_pct": 12.072892938496583
+    },
+    {
+      "asset_class": "rates",
+      "corpus_ref": "corpus/XASSET_DGS30_20230929.json",
+      "cutoff_level": 4.73,
+      "entity_id": "XASSET_DGS30_20230929",
+      "name": "Treasury 30-year yield",
+      "series_id": "DGS30",
+      "trailing_20d_return_pct": 12.619047619047619
+    },
+    {
+      "asset_class": "commodity",
+      "corpus_ref": "corpus/XASSET_DCOILWTICO_20230929.json",
+      "cutoff_level": 90.77,
+      "entity_id": "XASSET_DCOILWTICO_20230929",
+      "name": "WTI crude spot price",
+      "series_id": "DCOILWTICO",
+      "trailing_20d_return_pct": 8.641532016756436
+    },
+    {
+      "asset_class": "commodity",
+      "corpus_ref": "corpus/XASSET_DCOILBRENTEU_20230929.json",
+      "cutoff_level": 95.86,
+      "entity_id": "XASSET_DCOILBRENTEU_20230929",
+      "name": "Brent crude spot price",
+      "series_id": "DCOILBRENTEU",
+      "trailing_20d_return_pct": 9.81784855080765
+    },
+    {
+      "asset_class": "commodity",
+      "corpus_ref": "corpus/XASSET_DHHNGSP_20230929.json",
+      "cutoff_level": 2.68,
+      "entity_id": "XASSET_DHHNGSP_20230929",
+      "name": "Henry Hub natural gas spot price",
+      "series_id": "DHHNGSP",
+      "trailing_20d_return_pct": 4.6875
+    }
+  ],
+  "family": "cross_asset_forward_return",
+  "interval_level": 0.9,
+  "prompt": "Rank the 20 instruments by published-level percentage return through the twentieth common post-cutoff observation; rank 1 is highest.",
+  "resolution_date": "2023-10-30",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "forward_return_quintile_rank",
+    "type": "ranking",
+    "unit": "percent_return"
+  },
+  "task_id": "proxy-20-cross-asset-return-quintile-20230929-explicit"
+}

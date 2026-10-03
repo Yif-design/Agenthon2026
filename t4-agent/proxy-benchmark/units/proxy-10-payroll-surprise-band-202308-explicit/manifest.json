@@ -1,0 +1,86 @@
+{
+  "files": [
+    {
+      "bytes": 986,
+      "path": "card.toml",
+      "sha256": "663a750368f698d985cabe79c19bd830f2ebd73adef606f57bb3eabc37cf5377"
+    },
+    {
+      "bytes": 838,
+      "path": "corpus/BLS_MANEMP_202308.json",
+      "sha256": "f7bf6f1e3cc7378265cc6c6e37bd0feadecff65ebe3ee7147c641e5dea8cd6cf"
+    },
+    {
+      "bytes": 867,
+      "path": "corpus/BLS_PAYEMS_202308.json",
+      "sha256": "e618cc07550fded640c51ce7770e489ad692bdc2a2798169315767effa44375d"
+    },
+    {
+      "bytes": 829,
+      "path": "corpus/BLS_USCONS_202308.json",
+      "sha256": "eb0648585c9afdc0ba34b32998791ece1b031c89d9c54d3b608c5441edc0cc43"
+    },
+    {
+      "bytes": 868,
+      "path": "corpus/BLS_USEHS_202308.json",
+      "sha256": "fac5dbab88c2ce6cb672a27a0ccae47d55d917c54942e8ff5c815702378d8993"
+    },
+    {
+      "bytes": 845,
+      "path": "corpus/BLS_USFIRE_202308.json",
+      "sha256": "3aad833240751dd5d6cd0faf29d25d807664e197f11c1f29a700735c2a9fea48"
+    },
+    {
+      "bytes": 833,
+      "path": "corpus/BLS_USGOVT_202308.json",
+      "sha256": "ca3f7e0e8c1b9906d3ab959ee63aecf175a17e117df691f592ec6789543a81a8"
+    },
+    {
+      "bytes": 827,
+      "path": "corpus/BLS_USINFO_202308.json",
+      "sha256": "a6dab259ac5ef2172a48903db30262d1bd7b8a7a9ff0c1f4d0d2f26fe11e2cfc"
+    },
+    {
+      "bytes": 856,
+      "path": "corpus/BLS_USLAH_202308.json",
+      "sha256": "578c95b3a91ed9ac93c855c1144eff8cf806733592b48f7f56c6e0db4bb3de0a"
+    },
+    {
+      "bytes": 878,
+      "path": "corpus/BLS_USPBS_202308.json",
+      "sha256": "ebb03ddce015af7724216f8a5611e64c2a0f46483543ae80b5f134300fe7ebf6"
+    },
+    {
+      "bytes": 883,
+      "path": "corpus/BLS_USTPU_202308.json",
+      "sha256": "feee03dee021e185a7883936173f52260c0c337436c8429ceb6b94a49782b216"
+    },
+    {
+      "bytes": 840,
+      "path": "corpus/BLS_USWTRADE_202308.json",
+      "sha256": "9913af00f39508b78a5c275cd3bf2ba7fdcbe652ead5bcd8dac6c06d11057f46"
+    },
+    {
+      "bytes": 3533,
+      "path": "provenance.json",
+      "sha256": "ff9952130aabb89dd4d9fbe572fc4b76e60d2a7b2fdad6864baad91c66f94a2c"
+    },
+    {
+      "bytes": 4418,
+      "path": "reference/naive_answer.json",
+      "sha256": "6d3ad1e9ce269bef595a7c5bbfc0364dde28c9f8b7bdcc77030ca1b91a844aa3"
+    },
+    {
+      "bytes": 1074,
+      "path": "reference/outcome.json",
+      "sha256": "6cf1f222f30625db47442a94ae7395627367d3cd5ba067559790adbf62111b09"
+    },
+    {
+      "bytes": 4928,
+      "path": "task.json",
+      "sha256": "cb1e46e1038dc7ff5e6ef2290e9408d6f10575341fe07f06384b59e85ed5e187"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-10-payroll-surprise-band-202308-explicit"
+}

@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "bytes": 850,
+      "path": "card.toml",
+      "sha256": "a4a97a916d20ab9dd6c758c12cf852b067a9728f71f9011b95e4797c2ea37141"
+    },
+    {
+      "bytes": 479,
+      "path": "corpus/SEC_CVNA_2023Q1.json",
+      "sha256": "7da3968f6915f6a6627821377fefb73c02e65ac12ef14d9e5407db446de81583"
+    },
+    {
+      "bytes": 486,
+      "path": "corpus/SEC_GM_2023Q1.json",
+      "sha256": "cb50fec610d3d5d39b25f611de5fec256ae72f4a7b2bd8c353d69ad7b7ffebdd"
+    },
+    {
+      "bytes": 502,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "f9f3f54e214d2b73765c5777e2b0ca50e5b0045149ff1884f477b34265a4c9e2"
+    },
+    {
+      "bytes": 480,
+      "path": "corpus/SEC_INTC_2023Q1.json",
+      "sha256": "d232bfb928d6a5041882f002e90291e2ddf7a0cee393cebbb0bf765cee69d28c"
+    },
+    {
+      "bytes": 474,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "e56e86c3abf67c3b4c6da655d1b02a5dee24c232ae848dc592cec46ced0b7d8c"
+    },
+    {
+      "bytes": 489,
+      "path": "corpus/SEC_MCD_2023Q1.json",
+      "sha256": "83c8ec0f514d8165df251f8d605d43cde2f9572700f2c8dc0dafd7bdd32e4606"
+    },
+    {
+      "bytes": 485,
+      "path": "corpus/SEC_TGT_2023Q1.json",
+      "sha256": "d759c65e0206bec97c45317353649280b83da04366afcc479e83497bfce72db9"
+    },
+    {
+      "bytes": 481,
+      "path": "corpus/SEC_WMT_2023Q1.json",
+      "sha256": "5a9d6b0146975c59605fef50b2c1a00d7986bd25a1ce406ba83c93ee657a1da4"
+    },
+    {
+      "bytes": 4711,
+      "path": "provenance.json",
+      "sha256": "442d8b1ca8bafb7257794a4d121eb270f23c730eb7fd2a3ff400816721ff333e"
+    },
+    {
+      "bytes": 3722,
+      "path": "reference/naive_answer.json",
+      "sha256": "2d6cbdb4c5911f6cfe792968331f1003269fd42636d08eaa0ce12ebf57602dd8"
+    },
+    {
+      "bytes": 717,
+      "path": "reference/outcome.json",
+      "sha256": "99ad483a85cbac21a89279649b0ba40e4419eee6fb9f01a9587dfc3c7a8341e6"
+    },
+    {
+      "bytes": 3303,
+      "path": "task.json",
+      "sha256": "ffc2347edb5530c52bacc854573723f2f00932623906829cb7d05845237d3a36"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-04-capex-intensity-20230331-explicit"
+}

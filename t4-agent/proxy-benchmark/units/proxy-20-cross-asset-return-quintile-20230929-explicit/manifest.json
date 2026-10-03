@@ -1,0 +1,131 @@
+{
+  "files": [
+    {
+      "bytes": 893,
+      "path": "card.toml",
+      "sha256": "ad8a47879e9824076151e4d39167fe71050dd80aced28d5e991da7c786eb7436"
+    },
+    {
+      "bytes": 2555,
+      "path": "corpus/XASSET_DCOILBRENTEU_20230929.json",
+      "sha256": "d757d7178a869c598df5f2259b83e52bc4dd9d16c0c80a0a8917a52cfd384fbe"
+    },
+    {
+      "bytes": 2547,
+      "path": "corpus/XASSET_DCOILWTICO_20230929.json",
+      "sha256": "72edac0d801b08efb5ed54ceb8aa3c3824f4d7f2240483f7115c49dba833316e"
+    },
+    {
+      "bytes": 2458,
+      "path": "corpus/XASSET_DEXBZUS_20230929.json",
+      "sha256": "132b2458291c36931057864a5cc72e87507d44c75cd818696e6aac7f9504fa8e"
+    },
+    {
+      "bytes": 2459,
+      "path": "corpus/XASSET_DEXCAUS_20230929.json",
+      "sha256": "d5da6039a346552387b43bb292cf10483d02b47a6b15bc60eb2ce66e3cf1e5dc"
+    },
+    {
+      "bytes": 2456,
+      "path": "corpus/XASSET_DEXCHUS_20230929.json",
+      "sha256": "21a2b0c9a5fe9ab1d5910c7492198d163108659d6d25f7a13c30dc858e27dcf3"
+    },
+    {
+      "bytes": 2537,
+      "path": "corpus/XASSET_DEXINUS_20230929.json",
+      "sha256": "4b728fc79ce1e354c345e357b61790184bc31c54b9db58614a11e1948810aa7e"
+    },
+    {
+      "bytes": 2618,
+      "path": "corpus/XASSET_DEXJPUS_20230929.json",
+      "sha256": "93050b69f0d87fc46d82e60efeed8865565ee7197f223788a081cc945446033d"
+    },
+    {
+      "bytes": 2703,
+      "path": "corpus/XASSET_DEXKOUS_20230929.json",
+      "sha256": "f7b4879623cb04a2cc7adadd2438fa8000404cfd3b5cf6a7dd22e8f9556a9f08"
+    },
+    {
+      "bytes": 2537,
+      "path": "corpus/XASSET_DEXMXUS_20230929.json",
+      "sha256": "83c7a3f4cae614fd832b7dc535a89fd19759cae793fe36e73f7fa76dbb4123a5"
+    },
+    {
+      "bytes": 2543,
+      "path": "corpus/XASSET_DEXSFUS_20230929.json",
+      "sha256": "9ea36919d20f069df6119f19ac5e2a508369be71d177047587c052d565d43d95"
+    },
+    {
+      "bytes": 2448,
+      "path": "corpus/XASSET_DEXUSEU_20230929.json",
+      "sha256": "5b2159d9f156d81f7ef070181733303603195ffef5354ff495002c20ef6952e9"
+    },
+    {
+      "bytes": 2457,
+      "path": "corpus/XASSET_DEXUSUK_20230929.json",
+      "sha256": "0ee672269215172c9c950ba4d8c6d39322118378c817f563f2ecfeb81a00d238"
+    },
+    {
+      "bytes": 2449,
+      "path": "corpus/XASSET_DGS10_20230929.json",
+      "sha256": "310c681cf427214ac1e7f7f9db38f975d60e39d6c9256f2b1fdf9e22b6a0f4a4"
+    },
+    {
+      "bytes": 2449,
+      "path": "corpus/XASSET_DGS20_20230929.json",
+      "sha256": "32b574978a10220bf13bae0c3ae6c28e6d39860e91c5cefeb07a5b3debd0b87a"
+    },
+    {
+      "bytes": 2445,
+      "path": "corpus/XASSET_DGS2_20230929.json",
+      "sha256": "d9366d4a1f2badf5abe66dd934afc50283a90bc680d47b386959aaacc1c5477f"
+    },
+    {
+      "bytes": 2449,
+      "path": "corpus/XASSET_DGS30_20230929.json",
+      "sha256": "2039b5d6d4910749966606b791b57f5029ee308c25097d2876b0c7d1485e0ebf"
+    },
+    {
+      "bytes": 2445,
+      "path": "corpus/XASSET_DGS3_20230929.json",
+      "sha256": "549acd22e75fa5ffd35c71962e1e3c43b31000dd81edf9dc99fb2721f4e82fea"
+    },
+    {
+      "bytes": 2445,
+      "path": "corpus/XASSET_DGS5_20230929.json",
+      "sha256": "a2c354e66b33736910c18b94de106d6b84dd535b98162197a66b5cd382da7f26"
+    },
+    {
+      "bytes": 2445,
+      "path": "corpus/XASSET_DGS7_20230929.json",
+      "sha256": "3d5bab6984fdfe4a2e0135cbcbe81f48c2db19d0ede747a10e5ed0c6e9c71a2b"
+    },
+    {
+      "bytes": 2469,
+      "path": "corpus/XASSET_DHHNGSP_20230929.json",
+      "sha256": "c9c6c540ef668d05a450c669e637818c39403262c8206b688da1099d7b3a4a09"
+    },
+    {
+      "bytes": 5231,
+      "path": "provenance.json",
+      "sha256": "952a18b3e8841dec6b6647371eb48a6fbc2a76ac1ee21700213315ca22d3b7a7"
+    },
+    {
+      "bytes": 10255,
+      "path": "reference/naive_answer.json",
+      "sha256": "ebc1b6b78aa8e70faaa05edbf1508476af37723c64175f561c6b6c2099c5070c"
+    },
+    {
+      "bytes": 1849,
+      "path": "reference/outcome.json",
+      "sha256": "09a1b675317d18d1b288623ed3a0a7da1bd16a27d56757bd53a8df3c8da8c8f1"
+    },
+    {
+      "bytes": 6519,
+      "path": "task.json",
+      "sha256": "17cc59feb77b56b98fb8fda2fbcbb3a4275eeb81f35e22a4338ba56307db4bae"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-20-cross-asset-return-quintile-20230929-explicit"
+}

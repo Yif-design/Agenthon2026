@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "bytes": 871,
+      "path": "card.toml",
+      "sha256": "371c05984162a8b01b91566a43496634ee5ccd8adf6cda4bedcb15ab3490a3af"
+    },
+    {
+      "bytes": 542,
+      "path": "corpus/SEC_CVNA_2023Q1.json",
+      "sha256": "416a1e1f65595733b669572bb0df6d2286ed7e248742c5374b53760afaf3126e"
+    },
+    {
+      "bytes": 549,
+      "path": "corpus/SEC_GM_2023Q1.json",
+      "sha256": "6b8b6675c78225242b102708340a8d345f1fc588c6973dc1027310935854a70c"
+    },
+    {
+      "bytes": 565,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "0e1715e8a1c8e6d9a7051dd6727994aa4a8328eb410ff3b5668c70b9a4172100"
+    },
+    {
+      "bytes": 543,
+      "path": "corpus/SEC_INTC_2023Q1.json",
+      "sha256": "e704efa763082eec55e87707021ab6bb493e417e1fc7d6542cef3cd5aec1579f"
+    },
+    {
+      "bytes": 537,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "7a91ec88d2993509ef90b8d1fbf4e33659f5e19fb6860704b81cf7649205f75d"
+    },
+    {
+      "bytes": 552,
+      "path": "corpus/SEC_MCD_2023Q1.json",
+      "sha256": "64049b0c5581946a6852c697ab7ea7ae9bbd55ec367b202cfeca7d9c588f6b09"
+    },
+    {
+      "bytes": 548,
+      "path": "corpus/SEC_TGT_2023Q1.json",
+      "sha256": "76e82368cede36b9c13cf134baea16b1a39ae7f96fa1a1044827093968fc3c03"
+    },
+    {
+      "bytes": 544,
+      "path": "corpus/SEC_WMT_2023Q1.json",
+      "sha256": "601f9b673b9318b4e55f66132f687ef453c62a18c3845b3cfe612cf98aaf9475"
+    },
+    {
+      "bytes": 4720,
+      "path": "provenance.json",
+      "sha256": "aaccdfb6946d82c343a18461715ec0417de0d95148281b73565c25876e8c2a8f"
+    },
+    {
+      "bytes": 3812,
+      "path": "reference/naive_answer.json",
+      "sha256": "cf83e968cc1ade08701372e5594251d0ef000278fe383387ef4770cde144edc9"
+    },
+    {
+      "bytes": 731,
+      "path": "reference/outcome.json",
+      "sha256": "4bcff13a6ae47d7902dcff11ffc45b5fe14e3c0d6f406cfba8276bd1126ceeec"
+    },
+    {
+      "bytes": 3239,
+      "path": "task.json",
+      "sha256": "1c6c89ead3297bce631d6fd510edd5eac499cc0469325fd9f03a4582f4973ade"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-03-free-cash-flow-margin-20230331-transformed"
+}

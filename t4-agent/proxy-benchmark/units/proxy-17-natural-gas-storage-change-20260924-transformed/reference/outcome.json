@@ -1,0 +1,29 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+      "y": 7.0
+    },
+    {
+      "entity_id": "EIA_GAS_PACIFIC_20260925",
+      "y": 3.0
+    },
+    {
+      "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+      "y": 4.0
+    },
+    {
+      "entity_id": "EIA_GAS_MIDWEST_20260925",
+      "y": 25.0
+    },
+    {
+      "entity_id": "EIA_GAS_EAST_20260925",
+      "y": 25.0
+    },
+    {
+      "entity_id": "EIA_GAS_LOWER48_20260925",
+      "y": 64.0
+    }
+  ],
+  "task_id": "proxy-17-natural-gas-storage-change-20260924-transformed"
+}

@@ -1,0 +1,122 @@
+{
+  "arms": {
+    "evidence_ids": {
+      "cases": {
+        "synthetic-unknown-ranking": {
+          "context_facts": 3,
+          "model_rows": 3,
+          "non_context_facts": 2,
+          "rejected_facts": {},
+          "rows": 3,
+          "validation_errors": []
+        },
+        "t4-EXAMPLE-eps-beat": {
+          "context_facts": 1,
+          "model_rows": 1,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 1,
+          "validation_errors": []
+        },
+        "t4-credit-event-2023": {
+          "context_facts": 8,
+          "model_rows": 6,
+          "non_context_facts": 2,
+          "rejected_facts": {},
+          "rows": 8,
+          "validation_errors": []
+        },
+        "t4-fomc-curve-20240918": {
+          "context_facts": 6,
+          "model_rows": 6,
+          "non_context_facts": 6,
+          "rejected_facts": {},
+          "rows": 6,
+          "validation_errors": []
+        }
+      },
+      "latency_seconds": [
+        2.5060331020504236,
+        5.1293983639916405,
+        4.191663676057942,
+        2.941881014034152,
+        3.593444742029533,
+        3.0053187999874353
+      ],
+      "prompt_chars": 126044,
+      "usage": {
+        "calls": 6,
+        "circuit_open": false,
+        "completion_tokens": 2023,
+        "disabled_reason": null,
+        "errors": [
+          "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later"
+        ],
+        "prompt_tokens": 29342,
+        "total_cost": 0.0
+      }
+    },
+    "quotes": {
+      "cases": {
+        "synthetic-unknown-ranking": {
+          "context_facts": 3,
+          "model_rows": 3,
+          "non_context_facts": 2,
+          "rejected_facts": {},
+          "rows": 3,
+          "validation_errors": []
+        },
+        "t4-EXAMPLE-eps-beat": {
+          "context_facts": 1,
+          "model_rows": 1,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 1,
+          "validation_errors": []
+        },
+        "t4-credit-event-2023": {
+          "context_facts": 8,
+          "model_rows": 6,
+          "non_context_facts": 2,
+          "rejected_facts": {},
+          "rows": 8,
+          "validation_errors": []
+        },
+        "t4-fomc-curve-20240918": {
+          "context_facts": 6,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 6,
+          "validation_errors": []
+        }
+      },
+      "latency_seconds": [
+        3.2695130589418113,
+        5.834267553058453,
+        6.685301172081381,
+        3.6033366590272635,
+        2.1086426769616082,
+        3.065896559972316
+      ],
+      "prompt_chars": 131897,
+      "usage": {
+        "calls": 6,
+        "circuit_open": false,
+        "completion_tokens": 2741,
+        "disabled_reason": null,
+        "errors": [
+          "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later",
+          "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later"
+        ],
+        "prompt_tokens": 27344,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "model": "gemini-2.5-flash-lite",
+  "provider": "gemini",
+  "schema_version": 1,
+  "seed": 1234,
+  "temperature": 0
+}

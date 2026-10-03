@@ -1,0 +1,112 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+      "interval": {
+        "hi": 53.55123086184376,
+        "level": 0.9,
+        "lo": -13.15123086184376
+      },
+      "point_forecast": 20.2
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_GAS_PACIFIC_20260925",
+      "interval": {
+        "hi": 7.2809326735298665,
+        "level": 0.9,
+        "lo": 1.9190673264701328
+      },
+      "point_forecast": 4.6
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+      "interval": {
+        "hi": 7.7609780875624494,
+        "level": 0.9,
+        "lo": 2.239021912437551
+      },
+      "point_forecast": 5.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_GAS_MIDWEST_20260925",
+      "interval": {
+        "hi": 40.961612786689926,
+        "level": 0.9,
+        "lo": 18.638387213310075
+      },
+      "point_forecast": 29.8
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_GAS_EAST_20260925",
+      "interval": {
+        "hi": 34.994747701113035,
+        "level": 0.9,
+        "lo": 23.005252298886965
+      },
+      "point_forecast": 29.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_GAS_LOWER48_20260925",
+      "interval": {
+        "hi": 140.02081314243367,
+        "level": 0.9,
+        "lo": 35.97918685756633
+      },
+      "point_forecast": 88.0
+    }
+  ],
+  "notes": {
+    "baseline_id": "prior-five-same-iso-week-mean"
+  },
+  "schema_version": "3",
+  "target_type": "regression",
+  "task_id": "proxy-17-natural-gas-storage-change-20260924-transformed"
+}

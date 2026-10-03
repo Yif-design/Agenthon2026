@@ -1,0 +1,97 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "baseline_ratio_fraction": 0.025226676551094892,
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "investment_outflow_millions": 3539.0,
+      "issuer_key": "CIK-0000104169",
+      "name": "WALMART INC.",
+      "operating_flow_millions": -3758.0,
+      "sales_millions": 140288.0
+    },
+    {
+      "baseline_ratio_fraction": 0.0378228049264998,
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "investment_outflow_millions": 952.0,
+      "issuer_key": "CIK-0000027419",
+      "name": "Target Corporation",
+      "operating_flow_millions": -1394.0,
+      "sales_millions": 25170.0
+    },
+    {
+      "baseline_ratio_fraction": 0.07081332956791866,
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "investment_outflow_millions": 401.2,
+      "issuer_key": "CIK-0000063908",
+      "name": "McDONALD’S CORPORATION",
+      "operating_flow_millions": 2133.3,
+      "sales_millions": 5665.6
+    },
+    {
+      "baseline_ratio_fraction": 0.020684396149080162,
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "investment_outflow_millions": 217.0,
+      "issuer_key": "CIK-0000021344",
+      "name": "COCA COLA CO",
+      "operating_flow_millions": 623.0,
+      "sales_millions": 10491.0
+    },
+    {
+      "baseline_ratio_fraction": 0.2508581703263772,
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "investment_outflow_millions": 4604.0,
+      "issuer_key": "CIK-0000050863",
+      "name": "INTEL CORP",
+      "operating_flow_millions": 5891.0,
+      "sales_millions": 18353.0
+    },
+    {
+      "baseline_ratio_fraction": 0.01979291399591463,
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "investment_outflow_millions": 281.0,
+      "issuer_key": "CIK-0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "operating_flow_millions": 3248.0,
+      "sales_millions": 14197.0
+    },
+    {
+      "baseline_ratio_fraction": 0.05060321715817694,
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "investment_outflow_millions": 1661.0,
+      "issuer_key": "CIK-0001467858",
+      "name": "GENERAL MOTORS COMPANY",
+      "operating_flow_millions": 2104.0,
+      "sales_millions": 32824.0
+    },
+    {
+      "baseline_ratio_fraction": 0.06291106662853875,
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "investment_outflow_millions": 220.0,
+      "issuer_key": "CIK-0001690820",
+      "name": "CARVANA CO.",
+      "operating_flow_millions": -593.0,
+      "sales_millions": 3497.0
+    }
+  ],
+  "family": "investment_outflow_ratio",
+  "interval_level": 0.9,
+  "prompt": "Forecast Q1 capital expenditure divided by revenue, in percent.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "next_investment_outflow_ratio_pct",
+    "type": "regression",
+    "unit": "percent"
+  },
+  "task_id": "proxy-04-capex-intensity-20230331-transformed"
+}

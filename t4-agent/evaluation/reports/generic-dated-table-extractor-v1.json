@@ -1,0 +1,92 @@
+{
+  "datasets": {
+    "auction_bid_to_cover": {
+      "confirmation": {
+        "baseline_zero_mae": 2.5250420168067227,
+        "candidate_persistence_mae": 0.12205882352941179,
+        "relative_mae_improvement": 0.9516606762513312,
+        "rows": 238
+      },
+      "test": {
+        "baseline_zero_mae": 2.420121951219512,
+        "candidate_persistence_mae": 0.15475609756097564,
+        "relative_mae_improvement": 0.9360544217687075,
+        "rows": 164
+      }
+    },
+    "quarterly_diluted_eps": {
+      "confirmation": {
+        "baseline_zero_mae": 1.9478,
+        "candidate_persistence_mae": 1.3891333333333333,
+        "relative_mae_improvement": 0.28681931752062156,
+        "rows": 900
+      },
+      "test": {
+        "baseline_zero_mae": 2.80558352402746,
+        "candidate_persistence_mae": 1.8391075514874142,
+        "relative_mae_improvement": 0.3444830511239438,
+        "rows": 437
+      }
+    }
+  },
+  "decision": "accept",
+  "experiment": "generic_dated_table_extractor_v1",
+  "gates": {
+    "all_synthetic_safety": true,
+    "no_model_calls": true,
+    "production_path_unchanged_during_screen": true,
+    "test_and_confirmation_no_reversal": true,
+    "two_independent_datasets": true
+  },
+  "hypothesis": "An exact target-matched cutoff-safe dated-table persistence baseline improves unknown numeric tasks over the current zero fallback without affecting known families or model requests.",
+  "layer": "L2 unknown-family deterministic extraction",
+  "nli_gate": {
+    "all_gates_pass": true,
+    "cases": {
+      "t4-generic-dated-change-synthetic": {
+        "entities": 5,
+        "faithfulness": 1.0,
+        "gate_pass": true
+      },
+      "t4-generic-dated-level-synthetic": {
+        "entities": 5,
+        "faithfulness": 1.0,
+        "gate_pass": true
+      }
+    },
+    "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "report": "evaluation/reports/nli/dated-table-direct-ensemble.json",
+    "toolkit_version": "2.4.4",
+    "workflow_run": 36556813650
+  },
+  "pre_registered_rule": "With one exact target/series column and a confirmed matching unit, use the latest valid pre-cutoff observation; never derive changes or convert units; otherwise abstain.",
+  "rejected_scope": "Derived changes and percent-to-basis-point conversion failed the first remote NLI gate and are not in production.",
+  "safety": {
+    "cases": {
+      "blank_boundary_not_crossed": true,
+      "derived_change_abstains": true,
+      "direct_change_column": true,
+      "duplicate_column_rejected": true,
+      "duplicate_date_rejected": true,
+      "future_stopped": true,
+      "growth_abstains": true,
+      "malformed_boundary_not_crossed": true,
+      "missing_rejected": true,
+      "parser_no_table_on_invalid_cutoff": true,
+      "partial_number_rejected": true,
+      "reverse_date_rejected": true,
+      "unit_mismatch_rejected": true,
+      "unknown_unit_rejected": true,
+      "valid_level": true,
+      "valid_markdown": true,
+      "wrong_column_rejected": true
+    },
+    "passed": 17,
+    "total": 17
+  },
+  "source_reuse": "Frozen project datasets; this screen performs no network access and does not change the source files.",
+  "splits": {
+    "confirmation": "2022 through each frozen dataset end",
+    "test": "2020-2021"
+  }
+}

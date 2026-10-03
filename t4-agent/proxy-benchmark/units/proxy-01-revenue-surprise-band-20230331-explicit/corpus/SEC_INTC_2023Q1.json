@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_INTC_2023Q1_explicit",
+  "entities": [
+    "SEC_INTC_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for INTEL CORP (INTC); facts include original accession and filed date.\nPrior comparable revenue: USD 18353000000, filed 2022-04-29, accession 0000050863-22-000020.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+}

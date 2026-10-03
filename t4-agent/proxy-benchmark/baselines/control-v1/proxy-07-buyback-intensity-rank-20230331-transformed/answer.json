@@ -1,0 +1,197 @@
+{
+  "task_id": "proxy-07-buyback-intensity-rank-20230331-transformed",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "point_forecast": 2408.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 4816.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_WMT_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 208,
+          "claim": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 2408000000; revenue scaled currency units 140288000000."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "point_forecast": 181.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 362.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_TGT_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 212,
+          "claim": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 181000000; revenue scaled currency units 25170000000."
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 193.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 386.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_PEP_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 207,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 193000000; revenue scaled currency units 16200000000."
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 1996.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 3992.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_NVDA_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 206,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 1996000000; revenue scaled currency units 8288000000."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "point_forecast": 1506.5,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 3013.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_MCD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 216,
+          "claim": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 1506500000; revenue scaled currency units 5665600000."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "point_forecast": 546.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 1092.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_KO_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 205,
+          "claim": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 546000000; revenue scaled currency units 10491000000."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 2308.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 4616.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_HD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 214,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 2308000000; revenue scaled currency units 38908000000."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_F_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 197,
+          "claim": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 0; revenue scaled currency units 34476000000."
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "point_forecast": 2666.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 5332.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_AMZN_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 211,
+          "claim": "SEC XBRL facts for AMAZON COM INC (AMZN); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 2666000000; revenue scaled currency units 116444000000."
+        }
+      ],
+      "rank": 1
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_WMT_2023Q1",
+      "SEC_TGT_2023Q1",
+      "SEC_PEP_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_MCD_2023Q1",
+      "SEC_KO_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_F_2023Q1",
+      "SEC_AMZN_2023Q1"
+    ],
+    "methods": {
+      "SEC_WMT_2023Q1": "generic_baseline",
+      "SEC_TGT_2023Q1": "generic_baseline",
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_MCD_2023Q1": "generic_baseline",
+      "SEC_KO_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_F_2023Q1": "generic_baseline",
+      "SEC_AMZN_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

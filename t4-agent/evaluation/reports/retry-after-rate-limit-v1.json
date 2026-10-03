@@ -1,0 +1,174 @@
+{
+  "baseline_git_commit": "820bdab6416da6bc960fb14ca617ed70d1d5c8c1",
+  "change": "Parse Retry-After delay-seconds and HTTP-date values; retain JSON mode across HTTP 429; sleep only when the requested delay fits the configurable 30-second default ceiling and remaining deadline; otherwise fall back for that batch.",
+  "date": "2026-09-28",
+  "decision": "accept",
+  "experiment": "retry_after_rate_limit_v1",
+  "external_research": {
+    "copied_code": false,
+    "openrouter": "OpenRouter documents 429 as rate limiting and advises waiting before retrying.",
+    "references": [
+      "https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after",
+      "https://www.rfc-editor.org/rfc/rfc6585.html#section-4",
+      "https://openrouter.ai/docs/guides/overview/auth/byok"
+    ],
+    "rfc_6585": "A 429 response may include Retry-After.",
+    "rfc_9110": "Retry-After accepts non-negative delay seconds or an HTTP date."
+  },
+  "fault_injection": {
+    "parser_checks": {
+      "delay_seconds": "accepted",
+      "fractional_seconds": "rejected",
+      "future_http_date": "accepted",
+      "invalid_text": "rejected",
+      "past_http_date": "clamped to zero"
+    },
+    "retry_after_5_seconds_with_2_deadline_seconds": {
+      "candidate_calls": 1,
+      "candidate_result": "batch fallback",
+      "candidate_sleep_seconds": []
+    },
+    "retry_after_60_seconds_with_5_second_cap": {
+      "candidate_calls": 1,
+      "candidate_result": "batch fallback",
+      "candidate_sleep_seconds": [],
+      "circuit_open": false
+    },
+    "transient_429_retry_after_3_seconds": {
+      "baseline": {
+        "calls": 2,
+        "json_mode_attempts": 1,
+        "sleep_seconds": [],
+        "success": true
+      },
+      "candidate": {
+        "calls": 2,
+        "json_mode_attempts": 2,
+        "sleep_seconds": [
+          3.0
+        ],
+        "success": true
+      }
+    }
+  },
+  "historical_signal": {
+    "interpretation": "Frequency and engineering evidence only; the saved responses do not retain headers, so no claim is made that those five responses supplied a usable Retry-After value.",
+    "recorded_http_429_responses": 5,
+    "source": "evaluation/reports/public-repo-evidence-id-probe-v1.json"
+  },
+  "hypothesis": "Treating HTTP 429 separately and honoring a bounded Retry-After delay lets a second attempt recover after transient rate limiting without changing request shape, exceeding the model deadline, or retrying before a longer server-requested wait.",
+  "layer": "L1/L2 cross-family House API rate-limit recovery",
+  "official_state": {
+    "material_rule_update": false,
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "predictive_quality_claim": "none; cross-family API reliability improvement only",
+  "public_no_model_ab": {
+    "baseline_source": "clean git archive of baseline_git_commit",
+    "byte_identical_count": 11,
+    "row_count": 78,
+    "runtime": "Python 3.11.7 for both baseline and candidate",
+    "runtime_note": "Some hashes differ in final floating-point digits from earlier Python 3.13 artifacts; the paired baseline and candidate used the same interpreter and are byte-identical.",
+    "unit_count": 11,
+    "units": [
+      {
+        "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "byte_identical": true,
+        "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "rows": 1,
+        "unit_id": "t4-EXAMPLE-eps-beat"
+      },
+      {
+        "baseline_sha256": "afd8d01a034513970c3c480f6d9b7dd44ce9cd0a36c1b8e235a68506a8f8d3a5",
+        "byte_identical": true,
+        "candidate_sha256": "afd8d01a034513970c3c480f6d9b7dd44ce9cd0a36c1b8e235a68506a8f8d3a5",
+        "rows": 7,
+        "unit_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "byte_identical": true,
+        "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "rows": 10,
+        "unit_id": "t4-cotpos-202411-us10"
+      },
+      {
+        "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "byte_identical": true,
+        "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "rows": 11,
+        "unit_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "byte_identical": true,
+        "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "rows": 8,
+        "unit_id": "t4-credit-event-2023"
+      },
+      {
+        "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "byte_identical": true,
+        "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "rows": 8,
+        "unit_id": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "byte_identical": true,
+        "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "rows": 6,
+        "unit_id": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "byte_identical": true,
+        "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "rows": 6,
+        "unit_id": "t4-fomc-curve-20220728"
+      },
+      {
+        "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "byte_identical": true,
+        "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "rows": 6,
+        "unit_id": "t4-fomc-curve-20240918"
+      },
+      {
+        "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "byte_identical": true,
+        "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "rows": 12,
+        "unit_id": "t4-macrorev-20240930-us6"
+      },
+      {
+        "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "byte_identical": true,
+        "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "rows": 3,
+        "unit_id": "t4-postearn-20240201-megacap"
+      }
+    ]
+  },
+  "reason": "The candidate converts a protocol-violating immediate 429 retry into a bounded, deadline-aware retry, preserves the request schema, fails closed when the requested wait cannot be honored, and passes every available unit, schema and byte-regression gate with no normal-path model cost.",
+  "schema_version": 1,
+  "validation": {
+    "analysis_schema_source": "Agenthon-2026/Agenthon2026-public v2.4.4 common/qfbench2_common/schemas/analysis.schema.json",
+    "analysis_schema_valid": "11/11",
+    "focused_llm_tests": "19 passed",
+    "full_tests": "87 passed",
+    "normal_path_model_requests_added": 0,
+    "prompt_tokens_added": 0,
+    "qfbench2_smoke": "No fresh local run: current shell is Python 3.11 and the official package requires Python >=3.13. Candidate no-model answers are 11/11 byte-identical to current HEAD, which retains the previously established 11/11 smoke result.",
+    "remote_model_calls": 0
+  }
+}

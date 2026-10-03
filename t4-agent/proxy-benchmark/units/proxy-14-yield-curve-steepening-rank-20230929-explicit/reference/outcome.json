@@ -1,0 +1,33 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "UST_DGS2_20230929",
+      "y": 0.0
+    },
+    {
+      "entity_id": "UST_DGS3_20230929",
+      "y": 7.000000000000028
+    },
+    {
+      "entity_id": "UST_DGS5_20230929",
+      "y": 20.000000000000018
+    },
+    {
+      "entity_id": "UST_DGS7_20230929",
+      "y": 26.999999999999957
+    },
+    {
+      "entity_id": "UST_DGS10_20230929",
+      "y": 29.000000000000004
+    },
+    {
+      "entity_id": "UST_DGS20_20230929",
+      "y": 29.000000000000004
+    },
+    {
+      "entity_id": "UST_DGS30_20230929",
+      "y": 30.99999999999996
+    }
+  ],
+  "task_id": "proxy-14-yield-curve-steepening-rank-20230929-explicit"
+}

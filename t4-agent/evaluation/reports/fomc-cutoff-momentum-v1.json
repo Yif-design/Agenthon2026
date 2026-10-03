@@ -1,0 +1,62 @@
+{
+  "dataset": "evaluation/datasets/fomc/events_2000_2021.json",
+  "treasury_data": "evaluation/datasets/fomc/treasury",
+  "source": "Federal Reserve policy statements and U.S. Treasury daily par-yield CSVs",
+  "feature_availability": "All features end at the first complete Treasury close after the decision, matching the public task's next-day cutoff pattern.",
+  "split_event_counts": {
+    "train": 102,
+    "dev": 24,
+    "test": 26
+  },
+  "selection_metric": "dev aggregate MAE in basis points",
+  "candidate_count_including_baselines": 30,
+  "selected_on_dev": "cutoff_reaction_x-1",
+  "dev_scores": {
+    "zero_change": {
+      "observations": 144,
+      "mae_bps": 15.090277777777779,
+      "rmse_bps": 19.73522654206601,
+      "direction_accuracy": 0.027777777777777776
+    },
+    "policy_decay": {
+      "observations": 144,
+      "mae_bps": 14.9375,
+      "rmse_bps": 19.828956099603428,
+      "direction_accuracy": 0.24305555555555555
+    },
+    "cutoff_reaction_x-1": {
+      "observations": 144,
+      "mae_bps": 14.652777777777779,
+      "rmse_bps": 19.86586967081426,
+      "direction_accuracy": 0.5277777777777778
+    }
+  },
+  "test_scores": {
+    "zero_change": {
+      "observations": 156,
+      "mae_bps": 14.224358974358974,
+      "rmse_bps": 20.042422956037974,
+      "direction_accuracy": 0.019230769230769232
+    },
+    "policy_decay": {
+      "observations": 156,
+      "mae_bps": 14.576923076923077,
+      "rmse_bps": 20.455078988120686,
+      "direction_accuracy": 0.1346153846153846
+    },
+    "cutoff_reaction_x-1": {
+      "observations": 156,
+      "mae_bps": 14.467948717948717,
+      "rmse_bps": 20.22771011286884,
+      "direction_accuracy": 0.4423076923076923
+    }
+  },
+  "selected_test_improvement_vs_best_baseline_pct": -1.7124831004957126,
+  "decision_rule": "Consider production only if the dev-selected model improves held-out test MAE over both baselines by at least 2 percent and improves direction accuracy.",
+  "decision": "reject",
+  "production_change": "none",
+  "research_context": [
+    "https://www.federalreserve.gov/econres/notes/feds-notes/how-do-principal-trading-firms-and-dealers-trade-around-fomc-statement-releases-20201231.html",
+    "https://www.newyorkfed.org/research/staff_reports/sr773.html"
+  ]
+}

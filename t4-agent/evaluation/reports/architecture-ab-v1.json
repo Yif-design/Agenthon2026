@@ -1,0 +1,506 @@
+{
+  "experiment": "architecture_ab_v1",
+  "date": "2026-09-27",
+  "baseline_commit": "139e4a9dc57f6f84b6664357af5afa03d2c204a4",
+  "role": "development feasibility; public reconstructed outcomes have influenced development and are not held out",
+  "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+  "toolkit_version": "2.4.4",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "endpoint_type": "OpenRouter OpenAI-compatible free endpoint",
+  "temperature": 0.0,
+  "seed": 1234,
+  "thinking": false,
+  "prompt_version": "architecture_ab_v1_task_batch",
+  "batch_size": "one complete task roster per request",
+  "top_k": 3,
+  "max_excerpt_chars": 1400,
+  "request_summary": {
+    "tasks": 11,
+    "entities": 78,
+    "valid_direct_rows": 52,
+    "fallback_rows": 26,
+    "calls": 11,
+    "prompt_tokens": 139272,
+    "completion_tokens": 12927,
+    "cost_usd": 0.0,
+    "mean_latency_s": 15.749333537882194,
+    "errors": []
+  },
+  "raw_output_sha256": "ffb2e84241d31a1607a49f07389f5c8711ec4e79a98ac60a92badb49dd52672d",
+  "row_validation": {
+    "valid": 52,
+    "fallback": 26,
+    "invalid_quote": 13,
+    "invalid_label": 2,
+    "invalid_numeric": 0
+  },
+  "configurations": {
+    "baseline": {
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294,
+      "by_target_type": {
+        "classification": {
+          "units": 5,
+          "mean_predictive_quality": 0.6666666666666667,
+          "mean_interval_coverage": 0.8166666666666667,
+          "mean_composite_before_faithfulness_gate": 0.41566666666666663
+        },
+        "regression": {
+          "units": 5,
+          "mean_predictive_quality": 0.03313386942538887,
+          "mean_interval_coverage": 0.4633116883116883,
+          "mean_composite_before_faithfulness_gate": -0.1078127849087213
+        },
+        "ranking": {
+          "units": 1,
+          "mean_predictive_quality": 0.7515151515151515,
+          "mean_interval_coverage": 0.9,
+          "mean_composite_before_faithfulness_gate": 0.526060606060606
+        }
+      },
+      "tasks": [
+        {
+          "task_id": "t4-EXAMPLE-eps-beat",
+          "family": "eps_beat_consensus",
+          "target_type": "classification",
+          "entities": 1,
+          "predictive_quality": 1.0,
+          "interval_coverage": 1.0,
+          "composite_before_faithfulness_gate": 0.6699999999999999,
+          "mae": 0.030000000000000027,
+          "rmse": 0.030000000000000027,
+          "label_accuracy": 1.0
+        },
+        {
+          "task_id": "t4-auction-btc-202411-us7",
+          "family": "auction_demand",
+          "target_type": "regression",
+          "entities": 7,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.7142857142857143,
+          "composite_before_faithfulness_gate": -0.055714285714285716,
+          "mae": 0.12785714285714292,
+          "rmse": 0.15610715692896487
+        },
+        {
+          "task_id": "t4-cotpos-202411-us10",
+          "family": "positioning_shift",
+          "target_type": "ranking",
+          "entities": 10,
+          "predictive_quality": 0.7515151515151515,
+          "interval_coverage": 0.9,
+          "composite_before_faithfulness_gate": 0.526060606060606,
+          "mae": 5.48835730673,
+          "rmse": 6.7286360317140534
+        },
+        {
+          "task_id": "t4-cpicomp-202410-us11",
+          "family": "cpi_component_nowcast",
+          "target_type": "regression",
+          "entities": 11,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.7272727272727273,
+          "composite_before_faithfulness_gate": -0.05181818181818182,
+          "mae": 0.8095454545454545,
+          "rmse": 1.2510462167176863
+        },
+        {
+          "task_id": "t4-credit-event-2023",
+          "family": "credit_event",
+          "target_type": "classification",
+          "entities": 8,
+          "predictive_quality": 0.75,
+          "interval_coverage": 1.0,
+          "composite_before_faithfulness_gate": 0.49499999999999994,
+          "mae": 0.3375,
+          "rmse": 0.4993746088859545,
+          "label_accuracy": 0.75
+        },
+        {
+          "task_id": "t4-eps-growth-2024Q3-banks",
+          "family": "eps_growth_regression",
+          "target_type": "regression",
+          "entities": 8,
+          "predictive_quality": 0.16566934712694437,
+          "interval_coverage": 0.875,
+          "composite_before_faithfulness_gate": 0.10846854298886104,
+          "mae": 15.267242953461666,
+          "rmse": 21.624763584595243
+        },
+        {
+          "task_id": "t4-eps-yoy-2023Q2-mixed",
+          "family": "eps_yoy_direction",
+          "target_type": "classification",
+          "entities": 6,
+          "predictive_quality": 1.0,
+          "interval_coverage": 0.5,
+          "composite_before_faithfulness_gate": 0.58,
+          "mae": 0.4344166666666666,
+          "rmse": 0.6522850539960781,
+          "label_accuracy": 1.0
+        },
+        {
+          "task_id": "t4-fomc-curve-20220728",
+          "family": "rate_curve_cross_section",
+          "target_type": "regression",
+          "entities": 6,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 85.5,
+          "rmse": 87.11582328524862
+        },
+        {
+          "task_id": "t4-fomc-curve-20240918",
+          "family": "rate_curve_cross_section",
+          "target_type": "regression",
+          "entities": 6,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 80.33333333333333,
+          "rmse": 80.92589202474076
+        },
+        {
+          "task_id": "t4-macrorev-20240930-us6",
+          "family": "macro_revision_direction",
+          "target_type": "classification",
+          "entities": 12,
+          "predictive_quality": 0.5833333333333334,
+          "interval_coverage": 0.9166666666666666,
+          "composite_before_faithfulness_gate": 0.4033333333333333,
+          "mae": 461.76554166666705,
+          "rmse": 836.6492472089459,
+          "label_accuracy": 0.5833333333333334
+        },
+        {
+          "task_id": "t4-postearn-20240201-megacap",
+          "family": "post_earnings_reaction",
+          "target_type": "classification",
+          "entities": 3,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.6666666666666666,
+          "composite_before_faithfulness_gate": -0.07000000000000002,
+          "mae": 9.223997837033332,
+          "rmse": 11.83364263800556,
+          "label_accuracy": 0.0
+        }
+      ]
+    },
+    "direct": {
+      "mean_predictive_quality": 0.25757575757575757,
+      "mean_interval_coverage": 0.3060507674144038,
+      "mean_composite_before_faithfulness_gate": 0.0012091696182605109,
+      "by_target_type": {
+        "classification": {
+          "units": 5,
+          "mean_predictive_quality": 0.4666666666666667,
+          "mean_interval_coverage": 0.275,
+          "mean_composite_before_faithfulness_gate": 0.13716666666666666
+        },
+        "regression": {
+          "units": 5,
+          "mean_predictive_quality": 0.0,
+          "mean_interval_coverage": 0.3383116883116883,
+          "mean_composite_before_faithfulness_gate": -0.16850649350649352
+        },
+        "ranking": {
+          "units": 1,
+          "mean_predictive_quality": 0.5,
+          "mean_interval_coverage": 0.3,
+          "mean_composite_before_faithfulness_gate": 0.16999999999999996
+        }
+      },
+      "tasks": [
+        {
+          "task_id": "t4-EXAMPLE-eps-beat",
+          "family": "eps_beat_consensus",
+          "target_type": "classification",
+          "entities": 1,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 0.6500000000000001,
+          "rmse": 0.6500000000000001,
+          "label_accuracy": 0.0
+        },
+        {
+          "task_id": "t4-auction-btc-202411-us7",
+          "family": "auction_demand",
+          "target_type": "regression",
+          "entities": 7,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.7142857142857143,
+          "composite_before_faithfulness_gate": -0.055714285714285716,
+          "mae": 0.13142857142857148,
+          "rmse": 0.15042796092672214
+        },
+        {
+          "task_id": "t4-cotpos-202411-us10",
+          "family": "positioning_shift",
+          "target_type": "ranking",
+          "entities": 10,
+          "predictive_quality": 0.5,
+          "interval_coverage": 0.3,
+          "composite_before_faithfulness_gate": 0.16999999999999996,
+          "mae": 6.34792777313,
+          "rmse": 8.29787750913883
+        },
+        {
+          "task_id": "t4-cpicomp-202410-us11",
+          "family": "cpi_component_nowcast",
+          "target_type": "regression",
+          "entities": 11,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.7272727272727273,
+          "composite_before_faithfulness_gate": -0.05181818181818182,
+          "mae": 0.8140909090909091,
+          "rmse": 1.2513222461206241
+        },
+        {
+          "task_id": "t4-credit-event-2023",
+          "family": "credit_event",
+          "target_type": "classification",
+          "entities": 8,
+          "predictive_quality": 0.75,
+          "interval_coverage": 0.125,
+          "composite_before_faithfulness_gate": 0.2924999999999999,
+          "mae": 0.295,
+          "rmse": 0.4440720662234903,
+          "label_accuracy": 0.75
+        },
+        {
+          "task_id": "t4-eps-growth-2024Q3-banks",
+          "family": "eps_growth_regression",
+          "target_type": "regression",
+          "entities": 8,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.25,
+          "composite_before_faithfulness_gate": -0.195,
+          "mae": 27.005947654530086,
+          "rmse": 46.856895235668475
+        },
+        {
+          "task_id": "t4-eps-yoy-2023Q2-mixed",
+          "family": "eps_yoy_direction",
+          "target_type": "classification",
+          "entities": 6,
+          "predictive_quality": 1.0,
+          "interval_coverage": 0.3333333333333333,
+          "composite_before_faithfulness_gate": 0.53,
+          "mae": 0.7444166666666668,
+          "rmse": 1.1727199331752944,
+          "label_accuracy": 1.0
+        },
+        {
+          "task_id": "t4-fomc-curve-20220728",
+          "family": "rate_curve_cross_section",
+          "target_type": "regression",
+          "entities": 6,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 79.0,
+          "rmse": 80.48809435769574
+        },
+        {
+          "task_id": "t4-fomc-curve-20240918",
+          "family": "rate_curve_cross_section",
+          "target_type": "regression",
+          "entities": 6,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 82.83333333333333,
+          "rmse": 83.6211695684771
+        },
+        {
+          "task_id": "t4-macrorev-20240930-us6",
+          "family": "macro_revision_direction",
+          "target_type": "classification",
+          "entities": 12,
+          "predictive_quality": 0.5833333333333334,
+          "interval_coverage": 0.9166666666666666,
+          "composite_before_faithfulness_gate": 0.4033333333333333,
+          "mae": 461.76554166666705,
+          "rmse": 836.6492472089459,
+          "label_accuracy": 0.5833333333333334
+        },
+        {
+          "task_id": "t4-postearn-20240201-megacap",
+          "family": "post_earnings_reaction",
+          "target_type": "classification",
+          "entities": 3,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 9.223997837033332,
+          "rmse": 11.83364263800556,
+          "label_accuracy": 0.0
+        }
+      ]
+    },
+    "hybrid": {
+      "mean_predictive_quality": 0.2804407713498623,
+      "mean_interval_coverage": 0.7220680834317198,
+      "mean_composite_before_faithfulness_gate": 0.13111078315623767,
+      "by_target_type": {
+        "classification": {
+          "units": 5,
+          "mean_predictive_quality": 0.4666666666666667,
+          "mean_interval_coverage": 0.8833333333333334,
+          "mean_composite_before_faithfulness_gate": 0.29566666666666663
+        },
+        "regression": {
+          "units": 5,
+          "mean_predictive_quality": 0.0,
+          "mean_interval_coverage": 0.5252164502164502,
+          "mean_composite_before_faithfulness_gate": -0.11243506493506494
+        },
+        "ranking": {
+          "units": 1,
+          "mean_predictive_quality": 0.7515151515151515,
+          "mean_interval_coverage": 0.9,
+          "mean_composite_before_faithfulness_gate": 0.526060606060606
+        }
+      },
+      "tasks": [
+        {
+          "task_id": "t4-EXAMPLE-eps-beat",
+          "family": "eps_beat_consensus",
+          "target_type": "classification",
+          "entities": 1,
+          "predictive_quality": 0.0,
+          "interval_coverage": 1.0,
+          "composite_before_faithfulness_gate": -0.029999999999999992,
+          "mae": 0.31000000000000005,
+          "rmse": 0.31000000000000005,
+          "label_accuracy": 0.0
+        },
+        {
+          "task_id": "t4-auction-btc-202411-us7",
+          "family": "auction_demand",
+          "target_type": "regression",
+          "entities": 7,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.8571428571428571,
+          "composite_before_faithfulness_gate": -0.012857142857142878,
+          "mae": 0.12107142857142872,
+          "rmse": 0.14879509453853038
+        },
+        {
+          "task_id": "t4-cotpos-202411-us10",
+          "family": "positioning_shift",
+          "target_type": "ranking",
+          "entities": 10,
+          "predictive_quality": 0.7515151515151515,
+          "interval_coverage": 0.9,
+          "composite_before_faithfulness_gate": 0.526060606060606,
+          "mae": 5.32137843215,
+          "rmse": 7.147887618169185
+        },
+        {
+          "task_id": "t4-cpicomp-202410-us11",
+          "family": "cpi_component_nowcast",
+          "target_type": "regression",
+          "entities": 11,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.7272727272727273,
+          "composite_before_faithfulness_gate": -0.05181818181818182,
+          "mae": 0.8073636363636364,
+          "rmse": 1.2509825774529832
+        },
+        {
+          "task_id": "t4-credit-event-2023",
+          "family": "credit_event",
+          "target_type": "classification",
+          "entities": 8,
+          "predictive_quality": 0.75,
+          "interval_coverage": 1.0,
+          "composite_before_faithfulness_gate": 0.49499999999999994,
+          "mae": 0.31625,
+          "rmse": 0.4554736545619296,
+          "label_accuracy": 0.75
+        },
+        {
+          "task_id": "t4-eps-growth-2024Q3-banks",
+          "family": "eps_growth_regression",
+          "target_type": "regression",
+          "entities": 8,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.875,
+          "composite_before_faithfulness_gate": -0.007500000000000007,
+          "mae": 19.925433867834442,
+          "rmse": 33.506034556382005
+        },
+        {
+          "task_id": "t4-eps-yoy-2023Q2-mixed",
+          "family": "eps_yoy_direction",
+          "target_type": "classification",
+          "entities": 6,
+          "predictive_quality": 1.0,
+          "interval_coverage": 0.8333333333333334,
+          "composite_before_faithfulness_gate": 0.6799999999999999,
+          "mae": 0.45441666666666675,
+          "rmse": 0.609418148045057,
+          "label_accuracy": 1.0
+        },
+        {
+          "task_id": "t4-fomc-curve-20220728",
+          "family": "rate_curve_cross_section",
+          "target_type": "regression",
+          "entities": 6,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.16666666666666666,
+          "composite_before_faithfulness_gate": -0.22,
+          "mae": 82.25,
+          "rmse": 83.79861772925216
+        },
+        {
+          "task_id": "t4-fomc-curve-20240918",
+          "family": "rate_curve_cross_section",
+          "target_type": "regression",
+          "entities": 6,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.0,
+          "composite_before_faithfulness_gate": -0.27,
+          "mae": 81.58333333333333,
+          "rmse": 82.22707380581329
+        },
+        {
+          "task_id": "t4-macrorev-20240930-us6",
+          "family": "macro_revision_direction",
+          "target_type": "classification",
+          "entities": 12,
+          "predictive_quality": 0.5833333333333334,
+          "interval_coverage": 0.9166666666666666,
+          "composite_before_faithfulness_gate": 0.4033333333333333,
+          "mae": 461.76554166666705,
+          "rmse": 836.6492472089459,
+          "label_accuracy": 0.5833333333333334
+        },
+        {
+          "task_id": "t4-postearn-20240201-megacap",
+          "family": "post_earnings_reaction",
+          "target_type": "classification",
+          "entities": 3,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.6666666666666666,
+          "composite_before_faithfulness_gate": -0.07000000000000002,
+          "mae": 9.223997837033332,
+          "rmse": 11.83364263800556,
+          "label_accuracy": 0.0
+        }
+      ]
+    }
+  },
+  "smoke": {
+    "direct": "11/11",
+    "hybrid": "11/11"
+  },
+  "faithfulness": "official ensemble NLI unavailable; exact quote substring was required for every accepted direct row",
+  "decision": "reject",
+  "reason": "Task-level direct and fixed hybrid both materially reduced predictive quality and pre-gate composite; direct also required fallback for 26 of 78 rows.",
+  "scope_of_rejection": "one complete-roster direct call and the pre-registered fixed 50/50 hybrid; smaller direct batches remain untested"
+}

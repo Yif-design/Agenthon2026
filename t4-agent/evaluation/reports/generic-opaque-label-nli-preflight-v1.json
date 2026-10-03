@@ -1,0 +1,28 @@
+{
+  "baseline_git_commit": "8b39f3a2bd5a36899614878de72fb91553ed06a9",
+  "canonical_hypothesis_contains_task_prompt_definition": false,
+  "canonical_hypothesis_example": "The next observation sign of example is class_b. The 90% prediction interval for the next observation sign of example is -1 to 1.",
+  "decision": "reject_before_remote_nli",
+  "experiment": "generic_opaque_label_nli_preflight_v1",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "official_classification_template_verified": true,
+  "official_hypothesis_source": "/Users/joezhou/PycharmProject/Agenthon2026-team/starter-repos/track4-analysis-public/qfbench2_track_analysis/hypothesis.py",
+  "official_hypothesis_source_sha256": "feed55fad364e5e403beaa2f59a256497508ebda03acee34c0cf7ba5b3d3a74f",
+  "outcome_screen": {
+    "confirmation_accuracy_after": 0.5555555555555556,
+    "confirmation_accuracy_before": 0.5,
+    "confirmation_macro_f1_after": 0.55,
+    "confirmation_macro_f1_before": 0.3333333333333333,
+    "test_accuracy_after": 0.6111111111111112,
+    "test_accuracy_before": 0.5,
+    "test_macro_f1_after": 0.5785953177257526,
+    "test_macro_f1_before": 0.3333333333333333
+  },
+  "production_change": "none; role-keyword code and tests reverted",
+  "reason": "The changed prediction uses an opaque label whose task-prompt definition is absent from both the official canonical hypothesis and every runtime corpus premise. Historical lagged-number citations therefore cannot entail the changed class label.",
+  "remote_nli_run": false,
+  "runtime_evidence_documents": 36,
+  "runtime_evidence_documents_with_opaque_label_definition": 0,
+  "schema_version": 1
+}

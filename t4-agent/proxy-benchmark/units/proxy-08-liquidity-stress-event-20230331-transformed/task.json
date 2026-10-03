@@ -1,0 +1,141 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "base_cash_millions": 11817.0,
+      "base_current_assets_millions": 83220.0,
+      "base_current_liabilities_millions": 96530.0,
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "issuer_key": "CIK-0000104169",
+      "name": "WALMART INC.",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 1112.0,
+      "base_current_assets_millions": 17953.0,
+      "base_current_liabilities_millions": 20724.0,
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "issuer_key": "CIK-0000027419",
+      "name": "Target Corporation",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 6561.0,
+      "base_current_assets_millions": 22342.0,
+      "base_current_liabilities_millions": 25824.0,
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "issuer_key": "CIK-0000077476",
+      "name": "PepsiCo, Inc.",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 3887.0,
+      "base_current_assets_millions": 29575.0,
+      "base_current_liabilities_millions": 5562.0,
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "issuer_key": "CIK-0001045810",
+      "name": "NVIDIA CORP",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 2335.7,
+      "base_current_assets_millions": 4656.4,
+      "base_current_liabilities_millions": 4234.6,
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "issuer_key": "CIK-0000063908",
+      "name": "McDONALD’S CORPORATION",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 7681.0,
+      "base_current_assets_millions": 22156.0,
+      "base_current_liabilities_millions": 18787.0,
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "issuer_key": "CIK-0000021344",
+      "name": "COCA COLA CO",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 9934.0,
+      "base_current_assets_millions": 31330.0,
+      "base_current_liabilities_millions": 34056.0,
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "issuer_key": "CIK-0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 2844.0,
+      "base_current_assets_millions": 33867.0,
+      "base_current_liabilities_millions": 30387.0,
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "issuer_key": "CIK-0000354950",
+      "name": "The Home Depot, Inc.",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 16349.0,
+      "base_current_assets_millions": 88594.0,
+      "base_current_liabilities_millions": 79555.0,
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "issuer_key": "CIK-0001467858",
+      "name": "GENERAL MOTORS COMPANY",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 21013.0,
+      "base_current_assets_millions": 106142.0,
+      "base_current_liabilities_millions": 90352.0,
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "issuer_key": "CIK-0000037996",
+      "name": "Ford Motor Co",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 247.0,
+      "base_current_assets_millions": 5070.0,
+      "base_current_liabilities_millions": 3741.0,
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "issuer_key": "CIK-0001690820",
+      "name": "CARVANA CO.",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    },
+    {
+      "base_cash_millions": 36393.0,
+      "base_current_assets_millions": 133876.0,
+      "base_current_liabilities_millions": 139508.0,
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "issuer_key": "CIK-0001018724",
+      "name": "AMAZON COM INC",
+      "rule_code": "CR_LT_1_AND_CASH_LT_0_1"
+    }
+  ],
+  "family": "balance_sheet_screen",
+  "interval_level": 0.9,
+  "prompt": "Classify the next Q1 balance sheet as stress_screen only when current ratio is below 1 and cash/current liabilities is below 0.1.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "stress_screen",
+      "no_stress_screen"
+    ],
+    "name": "next_balance_sheet_stress_class",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-08-liquidity-stress-event-20230331-transformed"
+}

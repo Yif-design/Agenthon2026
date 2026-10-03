@@ -1,0 +1,53 @@
+{
+  "experiment_id": "explicit_trace_output_v1",
+  "date": "2026-09-28",
+  "baseline_git_commit": "ed2f345d13c52eff2ef2d8b6bc0541f144804357",
+  "layer": "L1 submission output reliability",
+  "hypothesis": "Writing full development traces only when --trace-dir is explicitly supplied removes an unbounded optional contribution to the official 64 MiB output-tree limit without changing answers or development trace contents.",
+  "official_constraint": {
+    "complete_output_tree_mib": 64,
+    "source": "https://github.com/Agenthon-2026/Agenthon2026-public/blob/main/docs/DEVELOPMENT-RUNTIME.md#container-limits"
+  },
+  "synthetic_probe": {
+    "rows": 2000,
+    "answer_bytes": 2043320,
+    "baseline_default_trace_bytes": 8807323,
+    "baseline_trace_to_answer_ratio": 4.31,
+    "candidate_default_trace_bytes": 0
+  },
+  "explicit_trace_contract": {
+    "baseline_files": [
+      "route.json",
+      "rows.json",
+      "usage.json"
+    ],
+    "candidate_files": [
+      "route.json",
+      "rows.json",
+      "usage.json"
+    ],
+    "unchanged": true
+  },
+  "public_ab": {
+    "units": 11,
+    "rows": 78,
+    "answers_byte_identical": 11,
+    "baseline_default_trace_bytes": 1236515,
+    "candidate_extra_output_files": 0,
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "toolkit_version": "2.4.4"
+  },
+  "tests": {
+    "python_3_11": "91 passed",
+    "checks": [
+      "default formal output contains only answer.json",
+      "explicit --trace-dir retains all three trace files",
+      "all previous tests"
+    ]
+  },
+  "remote_model_calls": 0,
+  "prediction_change": "none",
+  "decision": "accept",
+  "reason": "The candidate removes an unbounded optional output tree, preserves explicit local diagnostics, leaves all 11 answers byte-identical, and passes every test, schema and smoke gate."
+}

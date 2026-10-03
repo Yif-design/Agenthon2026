@@ -1,0 +1,120 @@
+{
+  "cutoff_date": "2023-03-31",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_sec_proxies.py",
+  "generator_version": "1.0.0",
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "question_id": "proxy-03-free-cash-flow-margin",
+  "raw_sources": [
+    {
+      "sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+      "ticker": "AAPL",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+    },
+    {
+      "sha256": "86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4",
+      "ticker": "ADBE",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json"
+    },
+    {
+      "sha256": "7549fb68446eee40e1f50a166fa06b2d2ee6349e07c8553a4828757e032d3cd4",
+      "ticker": "AMZN",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json"
+    },
+    {
+      "sha256": "71a4fd99c86f27c3aa27b8f05b3a9705c16f0060b425395bb1a367ce239b7d1f",
+      "ticker": "COST",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000909832.json"
+    },
+    {
+      "sha256": "f9f6cfb3c04bb8102552f121868831471a474165074ccc7c539f6f80f19d1b99",
+      "ticker": "CSCO",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000858877.json"
+    },
+    {
+      "sha256": "d03b53550afaeb6950840e99d4bd65137691cb390f975dc393344eb58e7c82aa",
+      "ticker": "CVNA",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001690820.json"
+    },
+    {
+      "sha256": "db9621054cffb365bcb65cde1f53e4161fb26ac56ebf8a95b9066b3d2375203e",
+      "ticker": "F",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000037996.json"
+    },
+    {
+      "sha256": "0aadbfd12c0d97ba9743acec6b3ad5b0b6082fab7fbc8f1edbbb7d38fe050e38",
+      "ticker": "GM",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001467858.json"
+    },
+    {
+      "sha256": "43df6a94125eb64f98f4cf94dc9ab3afaa28163b05d71c593ec4de6685a4b808",
+      "ticker": "GME",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326380.json"
+    },
+    {
+      "sha256": "aaf03befa1695d87ce1252bc08ca278b65be63782e46dc0b2858aab7a32c1be2",
+      "ticker": "HD",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000354950.json"
+    },
+    {
+      "sha256": "1660477fa5713e5749c3038cf22b3c776414acfc6e1e721d1772c91101dc5e5c",
+      "ticker": "IBM",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000051143.json"
+    },
+    {
+      "sha256": "70056711b8b04d3a27e4a42b6d86e26f85ddaa3d59e480039d66ccfb353eb0b8",
+      "ticker": "INTC",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000050863.json"
+    },
+    {
+      "sha256": "53d363a9aa3071406cda9857654358f4dca42e174a1defb8cc1ce9ad2a4c9e40",
+      "ticker": "KO",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000021344.json"
+    },
+    {
+      "sha256": "0394e814d75510be107679b026e2df6e5d02d4f2029166911aa4924f9556681f",
+      "ticker": "MCD",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json"
+    },
+    {
+      "sha256": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f",
+      "ticker": "MSFT",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+    },
+    {
+      "sha256": "d7aeceae21e6649e163d195729849349b27d909ab1a6eb4630a7c0c227acd890",
+      "ticker": "NKE",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320187.json"
+    },
+    {
+      "sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff",
+      "ticker": "NVDA",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+    },
+    {
+      "sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+      "ticker": "ORCL",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341439.json"
+    },
+    {
+      "sha256": "7694c322779ef273d15b3791729e5f2d261ce6ed1839be8ff014a33f537375be",
+      "ticker": "PEP",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000077476.json"
+    },
+    {
+      "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+      "ticker": "TGT",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000027419.json"
+    },
+    {
+      "sha256": "54ec3fbf36dc203dd00a0333396b3df2b6695ecdf6cbb19b6ec41b053d86b517",
+      "ticker": "WMT",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104169.json"
+    }
+  ],
+  "resolution_date": "2023-06-07",
+  "source_snapshot": "proxy-benchmark/sources/proxy-sec-2023q1.json",
+  "source_snapshot_sha256": "0ee082c73dc760125b0c52a2c4ebaa2cb6d38f62ad161305edc35401a1bd2932",
+  "split": "time_forward_test",
+  "variant": "explicit"
+}

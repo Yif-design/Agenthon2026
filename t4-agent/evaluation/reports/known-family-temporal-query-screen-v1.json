@@ -1,0 +1,121 @@
+{
+  "baseline_git_commit": "751d04db14b1d464e3e7ec6916913c6c5900f51a",
+  "decision": "reject_before_code",
+  "decision_rule": "Proceed to production A/B only if all 3 target families move from wrong to correct top-1 and public changes stay at <=7/78 top-1 and <=15/78 top-3 rows.",
+  "experiment": "known_family_temporal_query_screen_v1",
+  "hypothesis": "Appending bounded task-supplied temporal values improves period-specific retrieval across known families without broad public citation churn.",
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "production_change": "none",
+  "public": {
+    "rows": 78,
+    "top1_changed": 11,
+    "top1_changed_by_family": {
+      "auction_demand": 2,
+      "cpi_component_nowcast": 9
+    },
+    "top1_examples": [
+      {
+        "baseline_top1": "TDIRECT_AUCTIONS_30Y_20241031",
+        "candidate_top1": "TDIRECT_UPCOMING_20241030",
+        "entity_id": "AUC_30Y_20241106",
+        "task_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_top1": "TDIRECT_AUCTIONS_3Y_20241031",
+        "candidate_top1": "TDIRECT_UPCOMING_20241030",
+        "entity_id": "AUC_3Y_20241104",
+        "task_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_APPAREL",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_ENERGY",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_FOOD",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_GASOLINE",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_MEDICAL",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_NEWVEH",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_SHELTER",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_TRANSPSVC",
+        "task_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_top1": "BLS_CPI_RELEASE_20241010",
+        "candidate_top1": "ALFRED_CPI_COMPONENTS_20241031",
+        "entity_id": "CPI_USEDCARS",
+        "task_id": "t4-cpicomp-202410-us11"
+      }
+    ],
+    "top3_changed": 12,
+    "units": 11
+  },
+  "reason": "The baseline was already correct on 1/3 synthetic cases, so the required 0/3 to 3/3 transition failed; 11/78 public top-one citations changed, exceeding the pre-registered limit of 7 without an independent NLI relevance label.",
+  "schema_version": 1,
+  "synthetic": {
+    "baseline_correct": 1,
+    "candidate_correct": 3,
+    "cases": [
+      {
+        "baseline_correct": true,
+        "baseline_top1": "Z_MATCH",
+        "candidate_correct": true,
+        "candidate_top1": "Z_MATCH",
+        "family": "eps_yoy_direction"
+      },
+      {
+        "baseline_correct": false,
+        "baseline_top1": "A_DISTRACTOR",
+        "candidate_correct": true,
+        "candidate_top1": "Z_MATCH",
+        "family": "rate_curve"
+      },
+      {
+        "baseline_correct": false,
+        "baseline_top1": "A_DISTRACTOR",
+        "candidate_correct": true,
+        "candidate_top1": "Z_MATCH",
+        "family": "auction_demand"
+      }
+    ],
+    "total": 3
+  }
+}

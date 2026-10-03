@@ -1,0 +1,322 @@
+{
+  "task_id": "proxy-18-cot-positioning-rank-20230926-explicit",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "CORN_CBT",
+      "point_forecast": 1.769772776,
+      "interval": {
+        "level": 0.9,
+        "lo": -9.530227224,
+        "hi": 13.069772776
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_CORN_CBT_20230929",
+          "span_start": 150,
+          "span_end": 1746,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for Corn futures."
+        },
+        {
+          "doc_id": "CFTC_CORN_CBT_20230929",
+          "span_start": 0,
+          "span_end": 1829,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "ES_SP500",
+      "point_forecast": 0.83531994,
+      "interval": {
+        "level": 0.9,
+        "lo": -10.464680060000001,
+        "hi": 12.13531994
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_ES_SP500_20230929",
+          "span_start": 160,
+          "span_end": 1820,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for E-mini S&P 500 futures."
+        },
+        {
+          "doc_id": "CFTC_ES_SP500_20230929",
+          "span_start": 0,
+          "span_end": 1903,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "EURO_FX",
+      "point_forecast": -2.814330924,
+      "interval": {
+        "level": 0.9,
+        "lo": -14.114330924,
+        "hi": 8.485669076
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_EURO_FX_20230929",
+          "span_start": 152,
+          "span_end": 1718,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for Euro FX futures."
+        },
+        {
+          "doc_id": "CFTC_EURO_FX_20230929",
+          "span_start": 0,
+          "span_end": 1801,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "entity_id": "GOLD_CMX",
+      "point_forecast": -5.317248978,
+      "interval": {
+        "level": 0.9,
+        "lo": -16.617248978,
+        "hi": 5.982751022
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_GOLD_CMX_20230929",
+          "span_start": 150,
+          "span_end": 1721,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for Gold futures."
+        },
+        {
+          "doc_id": "CFTC_GOLD_CMX_20230929",
+          "span_start": 0,
+          "span_end": 1804,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 10
+    },
+    {
+      "entity_id": "JPY_CME",
+      "point_forecast": 7.65887808,
+      "interval": {
+        "level": 0.9,
+        "lo": -3.6411219200000007,
+        "hi": 18.95887808
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_JPY_CME_20230929",
+          "span_start": 157,
+          "span_end": 1748,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for Japanese yen futures."
+        },
+        {
+          "doc_id": "CFTC_JPY_CME_20230929",
+          "span_start": 0,
+          "span_end": 1831,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "NATGAS_NYMEX",
+      "point_forecast": 1.648475066,
+      "interval": {
+        "level": 0.9,
+        "lo": -9.651524934000001,
+        "hi": 12.948475066
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_NATGAS_NYMEX_20230929",
+          "span_start": 171,
+          "span_end": 1815,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for Henry Hub natural gas futures."
+        },
+        {
+          "doc_id": "CFTC_NATGAS_NYMEX_20230929",
+          "span_start": 0,
+          "span_end": 1898,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "SILVER_CMX",
+      "point_forecast": -3.186060884,
+      "interval": {
+        "level": 0.9,
+        "lo": -14.486060884,
+        "hi": 8.113939116000001
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_SILVER_CMX_20230929",
+          "span_start": 154,
+          "span_end": 1661,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for Silver futures."
+        },
+        {
+          "doc_id": "CFTC_SILVER_CMX_20230929",
+          "span_start": 0,
+          "span_end": 1744,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "entity_id": "UST_10Y",
+      "point_forecast": 3.0706559020000004,
+      "interval": {
+        "level": 0.9,
+        "lo": -8.229344098,
+        "hi": 14.370655902000001
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_UST_10Y_20230929",
+          "span_start": 171,
+          "span_end": 1869,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for U.S. Treasury 10-Year Note futures."
+        },
+        {
+          "doc_id": "CFTC_UST_10Y_20230929",
+          "span_start": 0,
+          "span_end": 1952,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "UST_2Y",
+      "point_forecast": 6.201098398,
+      "interval": {
+        "level": 0.9,
+        "lo": -5.098901602000001,
+        "hi": 17.501098398
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_UST_2Y_20230929",
+          "span_start": 169,
+          "span_end": 1879,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for U.S. Treasury 2-Year Note futures."
+        },
+        {
+          "doc_id": "CFTC_UST_2Y_20230929",
+          "span_start": 0,
+          "span_end": 1962,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "WTI_NYMEX",
+      "point_forecast": -3.999351064,
+      "interval": {
+        "level": 0.9,
+        "lo": -15.299351064,
+        "hi": 7.300648936000001
+      },
+      "claims": [
+        {
+          "doc_id": "CFTC_WTI_NYMEX_20230929",
+          "span_start": 160,
+          "span_end": 1768,
+          "claim": "The frozen COT table reports the pre-cutoff positioning history for WTI crude oil futures."
+        },
+        {
+          "doc_id": "CFTC_WTI_NYMEX_20230929",
+          "span_start": 0,
+          "span_end": 1851,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 9
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [],
+    "methods": {
+      "CORN_CBT": "net_position_mean_reversion",
+      "ES_SP500": "net_position_mean_reversion",
+      "EURO_FX": "net_position_mean_reversion",
+      "GOLD_CMX": "net_position_mean_reversion",
+      "JPY_CME": "net_position_mean_reversion",
+      "NATGAS_NYMEX": "net_position_mean_reversion",
+      "SILVER_CMX": "net_position_mean_reversion",
+      "UST_10Y": "net_position_mean_reversion",
+      "UST_2Y": "net_position_mean_reversion",
+      "WTI_NYMEX": "net_position_mean_reversion"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  },
+  "submitted_reasons": [
+    {
+      "reason_id": "r1",
+      "premise": "2023-03-28 | 1345886 | 317171 | 245643 | 71528 | 5.314566\n2023-04-04 | 1334671 | 310288 | 224598 | 85690 | 6.420309\n2023-04-11 | 1338484 | 336195 | 232886 | 103309 | 7.718359\n2023-04-18 | 1319551 | 340625 | 234989 | 105636 | 8.005450\n2023-04-25 | 1242943 | 297251 | 272603 | 24648 | 1.983035\n2023-05-02 | 1223954 | 269161 | 329794 | -60633 | -4.953863\n2023-05-09 | 1269874 | 273098 | 332191 | -59093 | -4.653454\n2023-05-16 | 1299501 | 282281 | 330740 | -48459 | -3.729047\n2023-05-23 | 1299841 | 282880 | 345147 | -62267 | -4.790355\n2023-05-30 | 1319205 | 274956 | 295363 | -20407 | -1.546917\n2023-06-06 | 1322137 | 268763 | 283534 | -14771 | -1.117206\n2023-06-13 | 1295247 | 279814 | 234722 | 45092 | 3.481344\n2023-06-20 | 1290348 | 342125 | 223352 | 118773 | 9.204726\n2023-06-27 | 1246075 | 296186 | 182748 | 113438 | 9.103625\n2023-07-03 | 1246983 | 270772 | 224369 | 46403 | 3.721222\n2023-07-11 | 1241940 | 268196 | 260385 | 7811 | 0.628935\n2023-07-18 | 1285176 | 270722 | 250852 | 19870 | 1.546092\n2023-07-25 | 1280207 | 291631 | 221155 | 70476 | 5.505047\n2023-08-01 | 1317852 | 307432 | 227358 | 80074 | 6.076100\n2023-08-08 | 1284433 | 290414 | 264687 | 25727 | 2.002985\n2023-08-15 | 1287019 | 277537 | 304503 | -26966 | -2.095229\n2023-08-22 | 1301339 | 278071 | 329621 | -51550 | -3.961304\n2023-08-29 | 1214917 | 271797 | 307610 | -35813 | -2.947773\n2023-09-05 | 1229700 | 278322 | 323954 | -45632 | -3.710824\n2023-09-12 | 1268176 | 264473 | 352461 | -87988 | -6.938154\n2023-09-19 | 1292194 | 270874 | 372107 | -101233 | -7.834195\n2023-09-26 | 1339607 | 275064 | 393604 | -118540 | -8.848864",
+      "mechanism": "Current net positioning is treated as a crowding signal: more extreme positioning implies a larger subsequent move in the opposite direction.",
+      "answer_implication": "For CORN_CBT, this supports the submitted point forecast 1.76977.",
+      "scope": {
+        "entities": [
+          "CORN_CBT"
+        ]
+      },
+      "citations": [
+        {
+          "doc_id": "CFTC_CORN_CBT_20230929",
+          "span_start": 150,
+          "span_end": 1746
+        }
+      ]
+    },
+    {
+      "reason_id": "r2",
+      "premise": "2023-03-28 | 2142232 | 199472 | 424128 | -224656 | -10.487006\n2023-04-04 | 2219512 | 163766 | 485225 | -321459 | -14.483319\n2023-04-11 | 2248469 | 207007 | 514619 | -307612 | -13.680954\n2023-04-18 | 2278321 | 204558 | 548815 | -344257 | -15.110118\n2023-04-25 | 2265794 | 207333 | 570600 | -363267 | -16.032658\n2023-05-02 | 2276183 | 208633 | 564044 | -355411 | -15.614342\n2023-05-09 | 2296259 | 204181 | 580204 | -376023 | -16.375461\n2023-05-16 | 2306298 | 201278 | 589999 | -388721 | -16.854760\n2023-05-23 | 2385936 | 195793 | 600085 | -404292 | -16.944797\n2023-05-30 | 2494943 | 187203 | 621373 | -434170 | -17.402001\n2023-06-06 | 2500232 | 258074 | 602605 | -344531 | -13.779961\n2023-06-13 | 2907468 | 258281 | 589694 | -331413 | -11.398681\n2023-06-20 | 2223815 | 210230 | 449561 | -239331 | -10.762181\n2023-06-27 | 2187114 | 222357 | 430607 | -208250 | -9.521680\n2023-07-03 | 2211004 | 223358 | 430597 | -207239 | -9.373072\n2023-07-11 | 2209607 | 224554 | 433533 | -208979 | -9.457745\n2023-07-18 | 2280677 | 235723 | 499408 | -263685 | -11.561699\n2023-07-25 | 2243361 | 238333 | 470948 | -232615 | -10.369040\n2023-08-01 | 2241749 | 236062 | 436110 | -200048 | -8.923747\n2023-08-08 | 2221709 | 240913 | 400483 | -159570 | -7.182309\n2023-08-15 | 2220084 | 258924 | 377332 | -118408 | -5.333492\n2023-08-22 | 2232226 | 235513 | 369004 | -133491 | -5.980174\n2023-08-29 | 2267572 | 262853 | 404959 | -142106 | -6.266879\n2023-09-05 | 2259160 | 245378 | 389589 | -144211 | -6.383390\n2023-09-12 | 2520164 | 279471 | 395804 | -116333 | -4.616088\n2023-09-19 | 2097946 | 202433 | 341424 | -138991 | -6.625099\n2023-09-26 | 2137648 | 266095 | 355376 | -89281 | -4.176600",
+      "mechanism": "Current net positioning is treated as a crowding signal: more extreme positioning implies a larger subsequent move in the opposite direction.",
+      "answer_implication": "For ES_SP500, this supports the submitted point forecast 0.83532.",
+      "scope": {
+        "entities": [
+          "ES_SP500"
+        ]
+      },
+      "citations": [
+        {
+          "doc_id": "CFTC_ES_SP500_20230929",
+          "span_start": 160,
+          "span_end": 1820
+        }
+      ]
+    },
+    {
+      "reason_id": "r3",
+      "premise": "2023-03-28 | 732506 | 222918 | 77893 | 145025 | 19.798473\n2023-04-04 | 747095 | 225416 | 82023 | 143393 | 19.193409\n2023-04-11 | 759439 | 244180 | 80842 | 163338 | 21.507718\n2023-04-18 | 766374 | 242369 | 78008 | 164361 | 21.446578\n2023-04-25 | 772882 | 243516 | 74116 | 169400 | 21.917964\n2023-05-02 | 779458 | 246832 | 73343 | 173489 | 22.257646\n2023-05-09 | 794721 | 260335 | 80913 | 179422 | 22.576728\n2023-05-16 | 789930 | 258736 | 71647 | 187089 | 23.684251\n2023-05-23 | 781123 | 250070 | 76334 | 173736 | 22.241824\n2023-05-30 | 775142 | 241817 | 76092 | 165725 | 21.379954\n2023-06-06 | 781967 | 236060 | 77639 | 158421 | 20.259295\n2023-06-13 | 818294 | 226138 | 74316 | 151822 | 18.553478\n2023-06-20 | 732979 | 229399 | 84750 | 144649 | 19.734399\n2023-06-27 | 732123 | 223977 | 78949 | 145028 | 19.809240\n2023-07-03 | 725927 | 221272 | 78435 | 142837 | 19.676496\n2023-07-11 | 736056 | 224351 | 84189 | 140162 | 19.042301\n2023-07-18 | 783132 | 264514 | 85682 | 178832 | 22.835486\n2023-07-25 | 772408 | 250647 | 73417 | 177230 | 22.945127\n2023-08-01 | 755156 | 240074 | 68012 | 172062 | 22.784961\n2023-08-08 | 760968 | 228048 | 78237 | 149811 | 19.686899\n2023-08-15 | 760233 | 232466 | 72603 | 159863 | 21.028158\n2023-08-22 | 750486 | 239391 | 80631 | 158760 | 21.154292\n2023-08-29 | 748127 | 230542 | 83863 | 146679 | 19.606163\n2023-09-05 | 754263 | 235732 | 99501 | 136231 | 18.061472\n2023-09-12 | 743759 | 212376 | 99296 | 113080 | 15.203850\n2023-09-19 | 695343 | 207424 | 105443 | 101981 | 14.666287\n2023-09-26 | 699271 | 211516 | 113117 | 98399 | 14.071655",
+      "mechanism": "Current net positioning is treated as a crowding signal: more extreme positioning implies a larger subsequent move in the opposite direction.",
+      "answer_implication": "For EURO_FX, this supports the submitted point forecast -2.81433.",
+      "scope": {
+        "entities": [
+          "EURO_FX"
+        ]
+      },
+      "citations": [
+        {
+          "doc_id": "CFTC_EURO_FX_20230929",
+          "span_start": 152,
+          "span_end": 1718
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2160 @@
+{
+  "cutoff_release_date": "2026-09-24",
+  "cutoff_week_ending": "2026-09-18",
+  "definition": "Weekly net change in working gas in underground storage",
+  "license": "Public domain (U.S. Energy Information Administration data)",
+  "raw_sources": [
+    {
+      "bytes": 7191,
+      "role": "target_first_release_with_revision_and_reclassification_flags",
+      "sha256": "8b885c21a58d5e588154a5eb74731e6e5097b03b855ab3eb0f0648497dbdfbc6",
+      "url": "https://ir.eia.gov/ngs/wngsr.json"
+    },
+    {
+      "bytes": 760832,
+      "converted_csv_sha256": "032e4815b2d87af09798f692a19824f1e7bba6af5df76713c5bb7e4f8a5855d5",
+      "role": "official_history_current_at_target_release",
+      "sha256": "5004e065a45b4bfbeab11ec615112126881992ec722939bfc5ac2110c02f287b",
+      "url": "https://ir.eia.gov/ngs/ngshistory.xls"
+    },
+    {
+      "bytes": 121856,
+      "converted_csv_sha256": "b1858ab9cbd3c28db1ee9299b95265e0ff66edaf3f9fba3fb11b0742e5e0c939",
+      "role": "official_revision_and_reclassification_history",
+      "sha256": "ee7c703c6d30176d0253b879aa4c8c6dc0178b411c36d73036d89aeff412dd3c",
+      "url": "https://ir.eia.gov/ngs/revisions.xls"
+    }
+  ],
+  "resolution_release_date": "2026-10-01",
+  "retrieved_at": "2026-10-03",
+  "revision_history_latest_dated_row": "2026-04-10",
+  "rows": [
+    {
+      "history_column": "Total Lower 48",
+      "observations": [
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 118,
+          "stock_bcf": 3288,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 129,
+          "stock_bcf": 3106,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 86,
+          "stock_bcf": 3445,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 55,
+          "stock_bcf": 3548,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 52,
+          "stock_bcf": 3551,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 80,
+          "stock_bcf": 3631,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 81,
+          "stock_bcf": 3712,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 86,
+          "stock_bcf": 3798,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 74,
+          "stock_bcf": 3872,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 33,
+          "stock_bcf": 3905,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 45,
+          "stock_bcf": 3950,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -14,
+          "stock_bcf": 3936,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -12,
+          "stock_bcf": 3924,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -11,
+          "stock_bcf": 3913,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -178,
+          "stock_bcf": 3735,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -166,
+          "stock_bcf": 3569,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -168,
+          "stock_bcf": 3401,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -37,
+          "stock_bcf": 3364,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -120,
+          "stock_bcf": 3244,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -70,
+          "stock_bcf": 3174,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -120,
+          "stock_bcf": 3054,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -241,
+          "stock_bcf": 2813,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -359,
+          "stock_bcf": 2454,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -252,
+          "stock_bcf": 2202,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -143,
+          "stock_bcf": 2059,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -52,
+          "stock_bcf": 2007,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -131,
+          "stock_bcf": 1876,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -38,
+          "stock_bcf": 1838,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 34,
+          "stock_bcf": 1872,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -54,
+          "stock_bcf": 1818,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 33,
+          "stock_bcf": 1851,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 49,
+          "stock_bcf": 1900,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 60,
+          "stock_bcf": 1960,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 103,
+          "stock_bcf": 2063,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 79,
+          "stock_bcf": 2142,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 63,
+          "stock_bcf": 2205,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 85,
+          "stock_bcf": 2290,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 101,
+          "stock_bcf": 2391,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 92,
+          "stock_bcf": 2483,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 95,
+          "stock_bcf": 2578,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 108,
+          "stock_bcf": 2686,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 73,
+          "stock_bcf": 2759,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 76,
+          "stock_bcf": 2835,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 87,
+          "stock_bcf": 2922,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 61,
+          "stock_bcf": 2983,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 41,
+          "stock_bcf": 3024,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 32,
+          "stock_bcf": 3056,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 28,
+          "stock_bcf": 3084,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 33,
+          "stock_bcf": 3117,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 36,
+          "stock_bcf": 3153,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 16,
+          "stock_bcf": 3169,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 15,
+          "stock_bcf": 3184,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 30,
+          "stock_bcf": 3214,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 40,
+          "stock_bcf": 3254,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 44,
+          "stock_bcf": 3298,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 53,
+          "stock_bcf": 3351,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "available_by": "2026-10-01",
+          "change_bcf": 64,
+          "stock_bcf": 3415,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "prior_reclassification_flag": "false",
+      "prior_revision_flag": "false",
+      "region_code": "LOWER48",
+      "region_name": "Total Lower 48",
+      "release_series_id": "png.nw2_epg0_swo_r48_bcf.w",
+      "target_reclassification_flag": "false",
+      "target_revision_flag": "false"
+    },
+    {
+      "history_column": "East Region",
+      "observations": [
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 31,
+          "stock_bcf": 810,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 35,
+          "stock_bcf": 756,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 847,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 28,
+          "stock_bcf": 846,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 25,
+          "stock_bcf": 832,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 28,
+          "stock_bcf": 860,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 23,
+          "stock_bcf": 883,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 16,
+          "stock_bcf": 899,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 14,
+          "stock_bcf": 913,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 909,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 914,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -9,
+          "stock_bcf": 905,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -13,
+          "stock_bcf": 892,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 888,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -45,
+          "stock_bcf": 843,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -46,
+          "stock_bcf": 797,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -46,
+          "stock_bcf": 751,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -15,
+          "stock_bcf": 736,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -39,
+          "stock_bcf": 697,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -33,
+          "stock_bcf": 664,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -32,
+          "stock_bcf": 632,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -55,
+          "stock_bcf": 577,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -75,
+          "stock_bcf": 502,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -65,
+          "stock_bcf": 437,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -49,
+          "stock_bcf": 388,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -24,
+          "stock_bcf": 364,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -42,
+          "stock_bcf": 322,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -28,
+          "stock_bcf": 294,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 8,
+          "stock_bcf": 302,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -31,
+          "stock_bcf": 271,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 270,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 7,
+          "stock_bcf": 277,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 283,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 309,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 23,
+          "stock_bcf": 332,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 29,
+          "stock_bcf": 361,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 27,
+          "stock_bcf": 388,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 31,
+          "stock_bcf": 419,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 28,
+          "stock_bcf": 447,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 33,
+          "stock_bcf": 480,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 34,
+          "stock_bcf": 514,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 18,
+          "stock_bcf": 532,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 558,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 29,
+          "stock_bcf": 587,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 13,
+          "stock_bcf": 600,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 14,
+          "stock_bcf": 614,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 17,
+          "stock_bcf": 631,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 23,
+          "stock_bcf": 654,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 24,
+          "stock_bcf": 678,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 15,
+          "stock_bcf": 693,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 15,
+          "stock_bcf": 708,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 19,
+          "stock_bcf": 727,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 753,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 773,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 22,
+          "stock_bcf": 795,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 815,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "available_by": "2026-10-01",
+          "change_bcf": 25,
+          "stock_bcf": 840,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "prior_reclassification_flag": "false",
+      "prior_revision_flag": "false",
+      "region_code": "EAST",
+      "region_name": "East",
+      "release_series_id": "png.nw2_epg0_swo_r31_bcf.w",
+      "target_reclassification_flag": "false",
+      "target_revision_flag": "false"
+    },
+    {
+      "history_column": "Midwest Region",
+      "observations": [
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 37,
+          "stock_bcf": 971,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 37,
+          "stock_bcf": 916,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 29,
+          "stock_bcf": 991,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 19,
+          "stock_bcf": 1012,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 27,
+          "stock_bcf": 972,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 29,
+          "stock_bcf": 1001,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 30,
+          "stock_bcf": 1031,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 29,
+          "stock_bcf": 1060,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 25,
+          "stock_bcf": 1085,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 1105,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 12,
+          "stock_bcf": 1117,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 1112,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -9,
+          "stock_bcf": 1103,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -15,
+          "stock_bcf": 1088,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -58,
+          "stock_bcf": 1030,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -64,
+          "stock_bcf": 966,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -63,
+          "stock_bcf": 903,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -39,
+          "stock_bcf": 864,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -44,
+          "stock_bcf": 820,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -30,
+          "stock_bcf": 790,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -38,
+          "stock_bcf": 752,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -76,
+          "stock_bcf": 676,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -92,
+          "stock_bcf": 584,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -74,
+          "stock_bcf": 510,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -53,
+          "stock_bcf": 457,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -16,
+          "stock_bcf": 441,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -44,
+          "stock_bcf": 397,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -22,
+          "stock_bcf": 375,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 374,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -23,
+          "stock_bcf": 351,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 350,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 8,
+          "stock_bcf": 358,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 13,
+          "stock_bcf": 371,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 33,
+          "stock_bcf": 404,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 25,
+          "stock_bcf": 429,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 23,
+          "stock_bcf": 452,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 24,
+          "stock_bcf": 476,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 29,
+          "stock_bcf": 505,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 34,
+          "stock_bcf": 539,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 34,
+          "stock_bcf": 573,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 37,
+          "stock_bcf": 610,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 28,
+          "stock_bcf": 638,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 34,
+          "stock_bcf": 672,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 34,
+          "stock_bcf": 706,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 23,
+          "stock_bcf": 729,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 749,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 17,
+          "stock_bcf": 766,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 23,
+          "stock_bcf": 789,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 809,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 829,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 19,
+          "stock_bcf": 848,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 18,
+          "stock_bcf": 866,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 24,
+          "stock_bcf": 890,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 18,
+          "stock_bcf": 908,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 934,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 25,
+          "stock_bcf": 959,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "available_by": "2026-10-01",
+          "change_bcf": 25,
+          "stock_bcf": 984,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "prior_reclassification_flag": "false",
+      "prior_revision_flag": "false",
+      "region_code": "MIDWEST",
+      "region_name": "Midwest",
+      "release_series_id": "png.nw2_epg0_swo_r32_bcf.w",
+      "target_reclassification_flag": "false",
+      "target_revision_flag": "false"
+    },
+    {
+      "history_column": "Mountain Region",
+      "observations": [
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 206,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 8,
+          "stock_bcf": 184,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 239,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 283,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 259,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 264,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 269,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 272,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 276,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 277,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 280,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 281,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 282,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 277,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -11,
+          "stock_bcf": 266,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 261,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -6,
+          "stock_bcf": 255,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 254,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -8,
+          "stock_bcf": 246,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 241,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -9,
+          "stock_bcf": 232,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -13,
+          "stock_bcf": 219,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -16,
+          "stock_bcf": 203,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 198,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 196,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 191,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 187,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 189,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 191,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 193,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 198,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 197,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 200,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 202,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 205,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 203,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 206,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 210,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 213,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 218,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 222,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 226,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 227,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 230,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 236,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 240,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 0,
+          "stock_bcf": 240,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 238,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 237,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 239,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 237,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 238,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 236,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 239,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 241,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 244,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "available_by": "2026-10-01",
+          "change_bcf": 4,
+          "stock_bcf": 248,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "prior_reclassification_flag": "false",
+      "prior_revision_flag": "false",
+      "region_code": "MOUNTAIN",
+      "region_name": "Mountain",
+      "release_series_id": "png.nw2_epg0_swo_r34_bcf.w",
+      "target_reclassification_flag": "false",
+      "target_revision_flag": "false"
+    },
+    {
+      "history_column": "Pacific Region",
+      "observations": [
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 248,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 247,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 7,
+          "stock_bcf": 278,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 294,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 302,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 304,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 307,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 311,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 316,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 318,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 321,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 322,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -3,
+          "stock_bcf": 319,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 315,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -9,
+          "stock_bcf": 306,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 304,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 303,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 307,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -3,
+          "stock_bcf": 304,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 302,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 300,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -9,
+          "stock_bcf": 291,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -19,
+          "stock_bcf": 272,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 273,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 271,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -12,
+          "stock_bcf": 259,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 257,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 259,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 258,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 257,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 258,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 261,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 267,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 269,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 272,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 275,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 4,
+          "stock_bcf": 279,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 7,
+          "stock_bcf": 286,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 292,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 298,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 304,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 309,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 312,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 1,
+          "stock_bcf": 313,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 319,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 0,
+          "stock_bcf": 319,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 314,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -7,
+          "stock_bcf": 307,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -3,
+          "stock_bcf": 304,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 300,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 296,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -3,
+          "stock_bcf": 293,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -8,
+          "stock_bcf": 285,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 5,
+          "stock_bcf": 290,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 289,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 292,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "available_by": "2026-10-01",
+          "change_bcf": 3,
+          "stock_bcf": 295,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "prior_reclassification_flag": "false",
+      "prior_revision_flag": "false",
+      "region_code": "PACIFIC",
+      "region_name": "Pacific",
+      "release_series_id": "png.nw2_epg0_swo_r35_bcf.w",
+      "target_reclassification_flag": "false",
+      "target_revision_flag": "false"
+    },
+    {
+      "history_column": "South Central Region",
+      "observations": [
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 41,
+          "stock_bcf": 1054,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 45,
+          "stock_bcf": 1003,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 19,
+          "stock_bcf": 1090,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 0,
+          "stock_bcf": 1113,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -4,
+          "stock_bcf": 1186,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 15,
+          "stock_bcf": 1201,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 21,
+          "stock_bcf": 1222,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 33,
+          "stock_bcf": 1255,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 27,
+          "stock_bcf": 1282,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 14,
+          "stock_bcf": 1296,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 22,
+          "stock_bcf": 1318,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 1316,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 13,
+          "stock_bcf": 1329,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 16,
+          "stock_bcf": 1345,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -55,
+          "stock_bcf": 1290,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -48,
+          "stock_bcf": 1242,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -52,
+          "stock_bcf": 1190,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 13,
+          "stock_bcf": 1203,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -25,
+          "stock_bcf": 1178,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -1,
+          "stock_bcf": 1177,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -38,
+          "stock_bcf": 1139,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -89,
+          "stock_bcf": 1050,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -158,
+          "stock_bcf": 892,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -108,
+          "stock_bcf": 784,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -37,
+          "stock_bcf": 747,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 6,
+          "stock_bcf": 753,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -41,
+          "stock_bcf": 712,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 9,
+          "stock_bcf": 721,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 747,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -2,
+          "stock_bcf": 745,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 30,
+          "stock_bcf": 775,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 32,
+          "stock_bcf": 807,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 31,
+          "stock_bcf": 838,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 41,
+          "stock_bcf": 879,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 26,
+          "stock_bcf": 905,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 9,
+          "stock_bcf": 914,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 27,
+          "stock_bcf": 941,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 31,
+          "stock_bcf": 972,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 21,
+          "stock_bcf": 993,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 16,
+          "stock_bcf": 1009,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 28,
+          "stock_bcf": 1037,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 16,
+          "stock_bcf": 1053,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 13,
+          "stock_bcf": 1066,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 20,
+          "stock_bcf": 1086,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 14,
+          "stock_bcf": 1100,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 1103,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 1105,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -9,
+          "stock_bcf": 1096,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -6,
+          "stock_bcf": 1090,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 3,
+          "stock_bcf": 1093,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -13,
+          "stock_bcf": 1080,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -19,
+          "stock_bcf": 1061,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -10,
+          "stock_bcf": 1051,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -7,
+          "stock_bcf": 1044,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": -5,
+          "stock_bcf": 1039,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "available_by": "2026-09-24",
+          "change_bcf": 2,
+          "stock_bcf": 1041,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "available_by": "2026-10-01",
+          "change_bcf": 7,
+          "stock_bcf": 1048,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "prior_reclassification_flag": "false",
+      "prior_revision_flag": "false",
+      "region_code": "SOUTH_CENTRAL",
+      "region_name": "South Central",
+      "release_series_id": "png.nw2_epg0_swo_r33_bcf.w",
+      "target_reclassification_flag": "false",
+      "target_revision_flag": "false"
+    }
+  ],
+  "snapshot_version": "1.0.0",
+  "target_week_ending": "2026-09-25",
+  "units": "billion cubic feet"
+}

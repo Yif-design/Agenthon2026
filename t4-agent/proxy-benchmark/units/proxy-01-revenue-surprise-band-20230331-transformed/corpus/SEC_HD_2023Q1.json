@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_HD_2023Q1_transformed",
+  "entities": [
+    "SEC_HD_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior comparable revenue: scaled currency units 38908000000, filed 2022-05-24, accession 0000354950-22-000158.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+}

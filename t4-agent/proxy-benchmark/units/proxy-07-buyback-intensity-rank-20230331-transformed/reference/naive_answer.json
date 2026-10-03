@@ -1,0 +1,172 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_WMT_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_WMT_2023Q1",
+      "interval": {
+        "hi": 3.4329379562043796,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 1.7164689781021898,
+      "rank": 6
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_TGT_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_TGT_2023Q1",
+      "interval": {
+        "hi": 1.4382201032975765,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 0.7191100516487883,
+      "rank": 8
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_PEP_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_PEP_2023Q1",
+      "interval": {
+        "hi": 2.382716049382716,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 1.191358024691358,
+      "rank": 7
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_NVDA_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_NVDA_2023Q1",
+      "interval": {
+        "hi": 48.166023166023166,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 24.083011583011583,
+      "rank": 2
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_MCD_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_MCD_2023Q1",
+      "interval": {
+        "hi": 53.18059870093194,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 26.59029935046597,
+      "rank": 1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_KO_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_KO_2023Q1",
+      "interval": {
+        "hi": 10.408921933085502,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 5.204460966542751,
+      "rank": 4
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_HD_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_HD_2023Q1",
+      "interval": {
+        "hi": 11.863884034131798,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 5.931942017065899,
+      "rank": 3
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_F_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_F_2023Q1",
+      "interval": {
+        "hi": 0.2,
+        "level": 0.9,
+        "lo": -0.2
+      },
+      "point_forecast": 0.0,
+      "rank": 9
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_AMZN_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_AMZN_2023Q1",
+      "interval": {
+        "hi": 4.579025110782865,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "point_forecast": 2.2895125553914326,
+      "rank": 5
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "ranking",
+  "task_id": "proxy-07-buyback-intensity-rank-20230331-transformed"
+}

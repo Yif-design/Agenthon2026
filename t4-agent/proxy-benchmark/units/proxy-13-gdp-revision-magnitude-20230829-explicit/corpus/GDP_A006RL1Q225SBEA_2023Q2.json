@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-08-29",
+  "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A006RL1Q225SBEA_2023Q2_explicit",
+  "entities": [
+    "GDP_A006RL1Q225SBEA_2023Q2"
+  ],
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "source": "BEA via ALFRED",
+  "text": "Real personal consumption expenditures (A006RL1Q225SBEA); annualized growth rates in the 2023-08-29 vintage.\nquarter | annualized_percent\n2021-07-01 | 10.400000\n2021-10-01 | 32.000000\n2022-01-01 | 5.400000\n2022-04-01 | -14.100000\n2022-07-01 | -9.600000\n2022-10-01 | 4.500000\n2023-01-01 | -11.900000\n2023-04-01 | 5.700000"
+}

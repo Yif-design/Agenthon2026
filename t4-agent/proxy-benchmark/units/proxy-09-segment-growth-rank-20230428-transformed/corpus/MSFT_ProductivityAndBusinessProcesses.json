@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-04-28",
+  "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_ProductivityAndBusinessProcesses_transformed",
+  "entities": [
+    "MSFT_ProductivityAndBusinessProcesses"
+  ],
+  "license": "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained",
+  "source": "SEC EDGAR inline XBRL filings",
+  "text": "SEC inline XBRL dimension member msft:ProductivityAndBusinessProcessesMember. Prior period turnover 15789000 thousand scaled units; current period turnover 17516000 thousand scaled units. Filed no later than 2023-04-28."
+}

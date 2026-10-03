@@ -1,0 +1,29 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "GDP_A822RL1Q225SBEA_2023Q2",
+      "y": 0.6999999999999997
+    },
+    {
+      "entity_id": "GDP_A011RL1Q225SBEA_2023Q2",
+      "y": 0.6000000000000001
+    },
+    {
+      "entity_id": "GDP_A008RL1Q225SBEA_2023Q2",
+      "y": -1.6000000000000005
+    },
+    {
+      "entity_id": "GDP_A007RL1Q225SBEA_2023Q2",
+      "y": -1.0000000000000004
+    },
+    {
+      "entity_id": "GDP_A006RL1Q225SBEA_2023Q2",
+      "y": -2.4000000000000004
+    },
+    {
+      "entity_id": "GDP_A191RL1Q225SBEA_2023Q2",
+      "y": -0.2999999999999998
+    }
+  ],
+  "task_id": "proxy-13-gdp-revision-magnitude-20230829-transformed"
+}

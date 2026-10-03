@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-03",
+  "apis": [
+    {
+      "id": "house",
+      "endpoint_source": "MODEL_ENDPOINT",
+      "authentication_source": "MODEL_TOKEN",
+      "available_during_official_evaluation": true,
+      "available_for_participant_development": true,
+      "request_limit_per_unit": 25,
+      "max_output_tokens_per_request": 4000,
+      "cumulative_token_limit": null,
+      "development_availability_verified_at": "2026-10-03",
+      "development_availability_evidence": "Official Track 4 Issue 20 contributor diagnosis: ten units made 5-21 House requests and none was refused."
+    },
+    {
+      "id": "openrouter",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "credential": "git-ignored project secret",
+      "credential_validated": true,
+      "account_tier": "free",
+      "last_observed_daily_request_limit": 50,
+      "last_observed_exhausted_at": "2026-09-28",
+      "last_observed_reset_at": "2026-09-28T00:00:00Z",
+      "free_exact_family_model_available": true,
+      "incremental_cost_in_baseline_run_usd": 0,
+      "official_evaluation_accessible": false
+    },
+    {
+      "id": "google-gemini",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+      "credential": "git-ignored project secret",
+      "credential_validated": true,
+      "validated_at": "2026-09-28",
+      "connectivity_status": 200,
+      "free_tier_supported": true,
+      "billing_status_programmatically_confirmed": false,
+      "active_quota_source": "Google AI Studio rate-limit page",
+      "stable_public_daily_request_limit": null,
+      "default_development_model": "gemini-2.5-flash-lite",
+      "small_model_stress_model": "gemma-4-26b-a4b-it",
+      "official_evaluation_accessible": false,
+      "last_experiment": "evidence_id_remote_ab_v2",
+      "last_observed_errors": [
+        "gemini-2.5-flash-lite HTTP 503",
+        "gemma-4-26b-a4b-it HTTP 429",
+        "gemma-4-26b-a4b-it HTTP 500"
+      ]
+    },
+    {
+      "id": "huggingface-official-nli",
+      "endpoint": "https://router.huggingface.co/hf-inference/models/",
+      "authentication_source": "HF_TOKEN",
+      "credential_available": false,
+      "anonymous_probe_status": 401,
+      "free_credit_usd_monthly": 0.1,
+      "official_models": [
+        {
+          "model": "cross-encoder/nli-deberta-v3-large",
+          "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+          "provider_deployed": false
+        },
+        {
+          "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+          "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+          "provider_deployed": true
+        }
+      ],
+      "official_evaluation_accessible": false,
+      "last_checked": "2026-09-28"
+    }
+  ]
+}

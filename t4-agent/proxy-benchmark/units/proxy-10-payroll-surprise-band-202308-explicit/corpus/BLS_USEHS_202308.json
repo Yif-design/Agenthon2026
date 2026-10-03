@@ -1,0 +1,8 @@
+{
+  "doc_date": "2023-08-31",
+  "doc_id": "ALFRED_USEHS_VINTAGE_20230831",
+  "entity_id": "BLS_USEHS_202308",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "text": "Series: Education and health services (USEHS).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 86.333333 thousand persons.\nClassification half-band: 6.101002 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 24827.000 thousand persons.\n2023-01-01: 24938.000 thousand persons.\n2023-02-01: 25002.000 thousand persons.\n2023-03-01: 25072.000 thousand persons.\n2023-04-01: 25149.000 thousand persons.\n2023-05-01: 25237.000 thousand persons.\n2023-06-01: 25308.000 thousand persons.\n2023-07-01: 25408.000 thousand persons.",
+  "title": "Cutoff-vintage payroll history for Education and health services"
+}

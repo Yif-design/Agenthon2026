@@ -1,0 +1,37 @@
+{
+  "cutoff_date": "2023-09-29",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_fx_proxy.py",
+  "generator_version": "1.0.0",
+  "license": "Federal Reserve Board H.10 exchange-rate data; U.S. government source",
+  "question_id": "proxy-19-fx-volatility-rank",
+  "resolution_date": "2023-10-30",
+  "source_raw_sha256": {
+    "DEXBZUS": "76b3fed8d07d4da4419a374061f6a12be9d039ad10e42bca047062a4b5755168",
+    "DEXCAUS": "74c4560fc022e17aa1342325439c0327eef7c33f1b2cfaed9d6fdb67362ce86a",
+    "DEXCHUS": "a22117b6967f968136e7e1b86aa2a40891b51184d62fdcaba458ec90ca356e12",
+    "DEXINUS": "3f0ab54ce9f4ae001869b10087687235490dac901a4f8f900dc1657bbde0cb43",
+    "DEXJPUS": "ed1c318af7d36bf3ac7b255d4766527f801b24f08fe3b94ffac786bcbf23b6df",
+    "DEXKOUS": "7b0d09913bf4543ba332c31a2744be746c0abb9edfc0c286b8b9785551ff17f0",
+    "DEXMXUS": "114f0254aeacca2cda2af0be859449e41cff4f4879ad5e17f67657835a8f3ceb",
+    "DEXSFUS": "b1e1589f249a2592a6973044b47560574614eb3166fedd192587f0dc72c0491a",
+    "DEXUSEU": "6ae4866f0106af5a36f98ee69ad8e845559b3f2cf2648876dd41910cd09ddc77",
+    "DEXUSUK": "c8d1a080629d41f6336b568758fae850734e23e0a0783a134c36be3d227d5c48"
+  },
+  "source_snapshot": "proxy-benchmark/sources/proxy-19-fx-2023.json",
+  "source_snapshot_sha256": "5175c90917ef826f4ee1eb11bc56cf98a45b8bf3be06f489c22ed4c3743ee163",
+  "source_urls": [
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXJPUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSUK&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCAUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXKOUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXMXUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXBZUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXINUS&cosd=2023-01-01&coed=2023-11-30",
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXSFUS&cosd=2023-01-01&coed=2023-11-30"
+  ],
+  "split": "time_forward_test",
+  "variant": "transformed"
+}

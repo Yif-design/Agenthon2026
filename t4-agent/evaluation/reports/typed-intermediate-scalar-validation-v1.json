@@ -1,0 +1,134 @@
+{
+  "baseline_git_commit": "2877b0545c0da9eac43b79004b156aed992f702c",
+  "change": "Treat boolean and non-finite signal levels as neutral, require a non-boolean integer item_id, and reject NaN or Infinity in numeric model parameters.",
+  "decision": "accept",
+  "experiment": "typed_intermediate_scalar_validation_v1",
+  "fault_injection": {
+    "baseline": {
+      "boolean_item_ids_assigned_indexes": [
+        0,
+        1
+      ],
+      "boolean_true_signal_level": 2,
+      "nonfinite_numeric_signal": "could raise during rounding",
+      "string_infinity_accepted": true,
+      "string_nan_accepted": true
+    },
+    "candidate": {
+      "boolean_item_ids_assigned_indexes": [],
+      "boolean_true_signal_level": 0,
+      "nonfinite_numeric_signal_is_neutral": true,
+      "string_infinity_rejected": true,
+      "string_nan_rejected": true
+    },
+    "checks_passed": 5,
+    "checks_total": 5
+  },
+  "hypothesis": "Rejecting JSON booleans where integer signal levels or item IDs are required, and rejecting non-finite model numbers, prevents false strong-positive signals, cross-entity assignment and non-finite calculator inputs without changing valid model or deterministic behavior.",
+  "layer": "L2 cross-family typed intermediate schema",
+  "official_snapshot": {
+    "checked_at": "2026-09-28",
+    "material_rule_change": false,
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "qfbench2_common": "2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "predictive_quality_claim": "none; typed-schema and fault-recovery reliability improvement only",
+  "public_no_model_ab": {
+    "byte_identical_count": 11,
+    "rows": 78,
+    "unit_count": 11,
+    "units": [
+      {
+        "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "byte_identical": true,
+        "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "unit_id": "t4-EXAMPLE-eps-beat"
+      },
+      {
+        "baseline_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "byte_identical": true,
+        "candidate_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "unit_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "byte_identical": true,
+        "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "unit_id": "t4-cotpos-202411-us10"
+      },
+      {
+        "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "byte_identical": true,
+        "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "unit_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "byte_identical": true,
+        "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "unit_id": "t4-credit-event-2023"
+      },
+      {
+        "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "byte_identical": true,
+        "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "unit_id": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "byte_identical": true,
+        "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "unit_id": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "byte_identical": true,
+        "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "unit_id": "t4-fomc-curve-20220728"
+      },
+      {
+        "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "byte_identical": true,
+        "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "unit_id": "t4-fomc-curve-20240918"
+      },
+      {
+        "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "byte_identical": true,
+        "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "unit_id": "t4-macrorev-20240930-us6"
+      },
+      {
+        "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "byte_identical": true,
+        "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "unit_id": "t4-postearn-20240201-megacap"
+      }
+    ]
+  },
+  "reason": "All malformed scalar probes now fail closed, valid typed inputs remain compatible, every public answer is byte-identical, and all schema, smoke and unit-test gates pass with no model cost.",
+  "schema_version": 1,
+  "valid_input_compatibility": {
+    "entity_id_fallback_preserved": true,
+    "finite_numeric_string_preserved": true,
+    "integer_signal_clamping_preserved": true,
+    "named_signal_levels_preserved": true,
+    "reordered_batch_mapping_preserved": true
+  },
+  "validation": {
+    "analysis_schema_valid": "11/11",
+    "model_requests_added": 0,
+    "prompt_tokens_added": 0,
+    "qfbench2_smoke_admissible": "11/11",
+    "smoke_profile": "build_smoke_verifier, non-rankable",
+    "tests": "75 passed"
+  }
+}

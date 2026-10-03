@@ -1,0 +1,277 @@
+{
+  "task_id": "proxy-06-share-dilution-direction-20230331-transformed",
+  "schema_version": "3",
+  "target_type": "classification",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "point_forecast": 2765000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1382500.0,
+        "hi": 4147500.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_WMT_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 183,
+          "claim": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 2765000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "point_forecast": 467800.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 233900.0,
+        "hi": 701700.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_TGT_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 188,
+          "claim": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 467800000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 1391000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 695500.0,
+        "hi": 2086500.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_PEP_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 184,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 1391000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 2537000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1268500.0,
+        "hi": 3805500.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_NVDA_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 183,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 2537000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "point_forecast": 747600.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 373800.0,
+        "hi": 1121400.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_MCD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 192,
+          "claim": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 747600000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "point_forecast": 4357000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 2178500.0,
+        "hi": 6535500.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_KO_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 182,
+          "claim": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 4357000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "point_forecast": 4107000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 2053500.0,
+        "hi": 6160500.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_INTC_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 182,
+          "claim": "SEC XBRL facts for INTEL CORP (INTC); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 4107000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "point_forecast": 909226.136,
+      "interval": {
+        "level": 0.9,
+        "lo": 454613.068,
+        "hi": 1363839.2040000001
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_IBM_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 206,
+          "claim": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 909226136; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 1034000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 517000.0,
+        "hi": 1551000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_HD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 190,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 1034000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_GME_2023Q1",
+      "point_forecast": 75900.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 37950.0,
+        "hi": 113850.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_GME_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 183,
+          "claim": "SEC XBRL facts for GameStop Corp. (GME); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 75900000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_GM_2023Q1",
+      "point_forecast": 1470000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 735000.0,
+        "hi": 2205000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_GM_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 192,
+          "claim": "SEC XBRL facts for GENERAL MOTORS COMPANY (GM); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 1470000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "point_forecast": 4008000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 2004000.0,
+        "hi": 6012000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_F_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 182,
+          "claim": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 4008000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "point_forecast": 509000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 254500.0,
+        "hi": 763500.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_AMZN_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 185,
+          "claim": "SEC XBRL facts for AMAZON COM INC (AMZN); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 509000000; flat band plus or minus 1 percent."
+        }
+      ],
+      "label": "flat"
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_WMT_2023Q1",
+      "SEC_TGT_2023Q1",
+      "SEC_PEP_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_MCD_2023Q1",
+      "SEC_KO_2023Q1",
+      "SEC_INTC_2023Q1",
+      "SEC_IBM_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_GME_2023Q1",
+      "SEC_GM_2023Q1",
+      "SEC_F_2023Q1",
+      "SEC_AMZN_2023Q1"
+    ],
+    "methods": {
+      "SEC_WMT_2023Q1": "generic_baseline",
+      "SEC_TGT_2023Q1": "generic_baseline",
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_MCD_2023Q1": "generic_baseline",
+      "SEC_KO_2023Q1": "generic_baseline",
+      "SEC_INTC_2023Q1": "generic_baseline",
+      "SEC_IBM_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_GME_2023Q1": "generic_baseline",
+      "SEC_GM_2023Q1": "generic_baseline",
+      "SEC_F_2023Q1": "generic_baseline",
+      "SEC_AMZN_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "baseline_git_commit": "f9489224e6fa44850dce15659de4a90406d01312",
+  "caveat": "Character limits are deterministic context proxies; no authoritative House token ceiling is published.",
+  "decision": "proceed_to_fault_injection",
+  "decision_rule": "Proceed to fault-injection implementation only if at least two of the 16k, 24k, and 32k character proxies contain one or more batch-oversized but individually recoverable entities.",
+  "experiment": "context_batch_split_size_screen_v1",
+  "hypothesis": "A batch-local context-limit failure can often be recovered by retrying its rows individually within the existing request and deadline caps.",
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "qualifying_thresholds": 3,
+  "schema_version": 1,
+  "tasks": [
+    {
+      "batch_calls": 1,
+      "groups": [
+        {
+          "batch_chars": 4410,
+          "single_chars": [
+            4410
+          ],
+          "width": 1
+        }
+      ],
+      "single_calls": 1,
+      "task_id": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "batch_calls": 3,
+      "groups": [
+        {
+          "batch_chars": 40201,
+          "single_chars": [
+            15062,
+            15804,
+            15780
+          ],
+          "width": 3
+        },
+        {
+          "batch_chars": 41167,
+          "single_chars": [
+            16211,
+            15787,
+            15612
+          ],
+          "width": 3
+        },
+        {
+          "batch_chars": 28689,
+          "single_chars": [
+            15776,
+            16036
+          ],
+          "width": 2
+        }
+      ],
+      "single_calls": 8,
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "batch_calls": 2,
+      "groups": [
+        {
+          "batch_chars": 39703,
+          "single_chars": [
+            14440,
+            14418,
+            14433
+          ],
+          "width": 3
+        },
+        {
+          "batch_chars": 39592,
+          "single_chars": [
+            14280,
+            14461,
+            14440
+          ],
+          "width": 3
+        }
+      ],
+      "single_calls": 6,
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "batch_calls": 1,
+      "groups": [
+        {
+          "batch_chars": 5543,
+          "single_chars": [
+            5543
+          ],
+          "width": 1
+        }
+      ],
+      "single_calls": 1,
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "batch_calls": 1,
+      "groups": [
+        {
+          "batch_chars": 12912,
+          "single_chars": [
+            12912
+          ],
+          "width": 1
+        }
+      ],
+      "single_calls": 1,
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "batch_calls": 1,
+      "groups": [
+        {
+          "batch_chars": 39379,
+          "single_chars": [
+            14474,
+            14625,
+            14110
+          ],
+          "width": 3
+        }
+      ],
+      "single_calls": 3,
+      "task_id": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "thresholds": {
+    "16000": {
+      "oversized_batches": 6,
+      "recoverable_entities": 15
+    },
+    "24000": {
+      "oversized_batches": 6,
+      "recoverable_entities": 17
+    },
+    "32000": {
+      "oversized_batches": 5,
+      "recoverable_entities": 15
+    }
+  }
+}

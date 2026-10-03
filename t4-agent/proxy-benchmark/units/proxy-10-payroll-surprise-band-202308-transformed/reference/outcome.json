@@ -1,0 +1,49 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "BLS_USGOVT_202308",
+      "true_label": "negative_surprise"
+    },
+    {
+      "entity_id": "BLS_USLAH_202308",
+      "true_label": "positive_surprise"
+    },
+    {
+      "entity_id": "BLS_USEHS_202308",
+      "true_label": "positive_surprise"
+    },
+    {
+      "entity_id": "BLS_USPBS_202308",
+      "true_label": "inline"
+    },
+    {
+      "entity_id": "BLS_USFIRE_202308",
+      "true_label": "negative_surprise"
+    },
+    {
+      "entity_id": "BLS_USINFO_202308",
+      "true_label": "negative_surprise"
+    },
+    {
+      "entity_id": "BLS_USWTRADE_202308",
+      "true_label": "inline"
+    },
+    {
+      "entity_id": "BLS_USTPU_202308",
+      "true_label": "negative_surprise"
+    },
+    {
+      "entity_id": "BLS_MANEMP_202308",
+      "true_label": "positive_surprise"
+    },
+    {
+      "entity_id": "BLS_USCONS_202308",
+      "true_label": "inline"
+    },
+    {
+      "entity_id": "BLS_PAYEMS_202308",
+      "true_label": "negative_surprise"
+    }
+  ],
+  "task_id": "proxy-10-payroll-surprise-band-202308-transformed"
+}

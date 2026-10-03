@@ -1,0 +1,112 @@
+{
+  "baseline_git_commit": "cde29508690543825dd09e255776d51dc3898d46",
+  "decision": "accept",
+  "decision_reason": "Every complete renamed structure remains recoverable, every unusable-value control stays generic, and all unit, public-byte, validation and inherited identical-byte smoke gates pass without a model call.",
+  "decision_rule": "Require 9/9 complete structures to recover, 9/9 null/blank/non-finite structures to remain generic, byte-identical public outputs, 11/11 schema and smoke, and no extra model calls.",
+  "experiment": "structural_router_value_guard_v1",
+  "hypothesis": "Requiring usable roster-wide values for a structural signature prevents incomplete hidden tasks from entering specialists without losing complete renamed tasks.",
+  "layer": "L2 cross-family task routing",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "positive_cases": [
+    {
+      "candidate": "eps_consensus",
+      "expected": "eps_consensus"
+    },
+    {
+      "candidate": "eps_yoy",
+      "expected": "eps_yoy"
+    },
+    {
+      "candidate": "reaction",
+      "expected": "reaction"
+    },
+    {
+      "candidate": "macro_revision",
+      "expected": "macro_revision"
+    },
+    {
+      "candidate": "bank_eps",
+      "expected": "bank_eps"
+    },
+    {
+      "candidate": "rates",
+      "expected": "rates"
+    },
+    {
+      "candidate": "cpi",
+      "expected": "cpi"
+    },
+    {
+      "candidate": "auction",
+      "expected": "auction"
+    },
+    {
+      "candidate": "positioning",
+      "expected": "positioning"
+    }
+  ],
+  "results": {
+    "complete_recovered": 9,
+    "complete_total": 9,
+    "unusable_kept_generic": 9,
+    "unusable_total": 9
+  },
+  "schema_version": 1,
+  "unusable_cases": [
+    {
+      "candidate": "generic",
+      "case_id": "eps_consensus_null"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "eps_yoy_nan"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "reaction_blank"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "macro_revision_null"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "bank_eps_blank"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "rates_infinite"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "cpi_null"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "auction_blank"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "positioning_null_prefix"
+    }
+  ],
+  "validation": {
+    "local_validation_error_units": 0,
+    "model_requests_added": 0,
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "candidate bytes identical to cde2950 baseline verified 11/11 earlier in the same run",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "101 passed"
+  }
+}

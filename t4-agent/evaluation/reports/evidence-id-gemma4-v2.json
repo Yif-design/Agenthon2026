@@ -1,0 +1,129 @@
+{
+  "arms": {
+    "evidence_ids": {
+      "cases": {
+        "synthetic-unknown-ranking": {
+          "context_facts": 3,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 3,
+          "validation_errors": []
+        },
+        "t4-EXAMPLE-eps-beat": {
+          "context_facts": 1,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 1,
+          "validation_errors": []
+        },
+        "t4-credit-event-2023": {
+          "context_facts": 8,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 8,
+          "validation_errors": []
+        },
+        "t4-fomc-curve-20240918": {
+          "context_facts": 6,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 6,
+          "validation_errors": []
+        }
+      },
+      "latency_seconds": [
+        16.67476948699914,
+        33.45609322702512,
+        32.4227216130821,
+        1.8048142769839615,
+        17.25119585194625,
+        2.459386397036724
+      ],
+      "prompt_chars": 126044,
+      "usage": {
+        "calls": 6,
+        "circuit_open": false,
+        "completion_tokens": 4088,
+        "disabled_reason": null,
+        "errors": [
+          "model returned content without one JSON object",
+          "model returned content without one JSON object",
+          "HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,",
+          "model returned content without one JSON object",
+          "HTTP 500: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n"
+        ],
+        "prompt_tokens": 28600,
+        "total_cost": 0.0
+      }
+    },
+    "quotes": {
+      "cases": {
+        "synthetic-unknown-ranking": {
+          "context_facts": 3,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 3,
+          "validation_errors": []
+        },
+        "t4-EXAMPLE-eps-beat": {
+          "context_facts": 1,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 1,
+          "validation_errors": []
+        },
+        "t4-credit-event-2023": {
+          "context_facts": 8,
+          "model_rows": 0,
+          "non_context_facts": 0,
+          "rejected_facts": {},
+          "rows": 8,
+          "validation_errors": []
+        },
+        "t4-fomc-curve-20240918": {
+          "context_facts": 6,
+          "model_rows": 6,
+          "non_context_facts": 6,
+          "rejected_facts": {},
+          "rows": 6,
+          "validation_errors": []
+        }
+      },
+      "latency_seconds": [
+        16.820618674973957,
+        31.637030335958116,
+        1.644847205025144,
+        1.7174369499552995,
+        8.482502936967649,
+        31.376175715005957
+      ],
+      "prompt_chars": 131897,
+      "usage": {
+        "calls": 6,
+        "circuit_open": false,
+        "completion_tokens": 3666,
+        "disabled_reason": null,
+        "errors": [
+          "model returned content without one JSON object",
+          "model returned content without one JSON object",
+          "HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,",
+          "HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error,",
+          "model returned content without one JSON object"
+        ],
+        "prompt_tokens": 18608,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "model": "gemma-4-26b-a4b-it",
+  "provider": "gemini",
+  "schema_version": 1,
+  "seed": 1234,
+  "temperature": 0
+}

@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_TGT_2023Q1_explicit",
+  "entities": [
+    "SEC_TGT_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior Q1 revenue USD 25170000000; operating cash flow USD -1394000000; capital expenditure USD 952000000."
+}

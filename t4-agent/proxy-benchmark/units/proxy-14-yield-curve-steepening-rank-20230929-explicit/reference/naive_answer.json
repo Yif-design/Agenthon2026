@@ -1,0 +1,136 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS2_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS2_20230929",
+      "interval": {
+        "hi": 10.920470075352375,
+        "level": 0.9,
+        "lo": -10.920470075352375
+      },
+      "point_forecast": 0.0,
+      "rank": 3
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS3_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS3_20230929",
+      "interval": {
+        "hi": 13.631203990191842,
+        "level": 0.9,
+        "lo": -13.631203990191842
+      },
+      "point_forecast": 0.0,
+      "rank": 5
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS5_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS5_20230929",
+      "interval": {
+        "hi": 15.47865914376594,
+        "level": 0.9,
+        "lo": -15.47865914376594
+      },
+      "point_forecast": 0.0,
+      "rank": 6
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS7_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS7_20230929",
+      "interval": {
+        "hi": 15.741973263292701,
+        "level": 0.9,
+        "lo": -15.741973263292701
+      },
+      "point_forecast": 0.0,
+      "rank": 7
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS10_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS10_20230929",
+      "interval": {
+        "hi": 15.864530668549051,
+        "level": 0.9,
+        "lo": -15.864530668549051
+      },
+      "point_forecast": 0.0,
+      "rank": 1
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS20_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS20_20230929",
+      "interval": {
+        "hi": 16.297443562309606,
+        "level": 0.9,
+        "lo": -16.297443562309606
+      },
+      "point_forecast": 0.0,
+      "rank": 2
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board H.15 via FRED source.",
+          "doc_id": "PROXY_proxy-14-yield-curve-steepening-rank_UST_DGS30_20230929_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_DGS30_20230929",
+      "interval": {
+        "hi": 16.632790572306927,
+        "level": 0.9,
+        "lo": -16.632790572306927
+      },
+      "point_forecast": 0.0,
+      "rank": 4
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "ranking",
+  "task_id": "proxy-14-yield-curve-steepening-rank-20230929-explicit"
+}

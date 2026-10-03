@@ -1,0 +1,221 @@
+{
+  "basic_finding_count": 0,
+  "claim_nli_contradiction_check": "not repeated; claims and claim citations are byte-identical",
+  "claim_token_cap_check": "unchecked because official tokenizers are not installed locally",
+  "claims": 286,
+  "date": "2026-10-01",
+  "decision": "accept_rail",
+  "details": [
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 3,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 1,
+      "reasons_judged": 1,
+      "schema_errors": [],
+      "task_id": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 21,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 40,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 46,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 32,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 32,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 24,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 18,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 24,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 34,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "basic_findings": [],
+      "claim_warnings": [
+        {
+          "claim_index": -1,
+          "code": "claim_tokens_unchecked",
+          "entity_id": "unit",
+          "message": "needs tokenizer: no judge tokenizer is installed here, so the 400-judge-token claim cap was not checked"
+        }
+      ],
+      "claims": 12,
+      "deterministic_claim_findings": [],
+      "reason_findings": [],
+      "reasons": 3,
+      "reasons_judged": 3,
+      "schema_errors": [],
+      "task_id": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "deterministic_claim_finding_count": 0,
+  "experiment": "reason_evidence_relevance_official_522_rail_v1",
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "official_scorer_version": "5.2.2",
+  "official_shared_commit": "84221f1b553475b1283cb653145051e916377dd0",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "reason_finding_count": 0,
+  "reasons": 31,
+  "reasons_judged": 31,
+  "schema_valid_units": 11,
+  "schema_version": 1,
+  "units": 11
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "unit_id": "t4-EXAMPLE-eps-beat",
+  "answer_sha256": "cb6112cf956ccc11b6f2a27577018f371bb57adcb2d3ea99c7d937d6aeb16b7b",
+  "model_ids": [
+    "cross-encoder/nli-deberta-v3-large",
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+  ],
+  "model_revisions": {
+    "cross-encoder/nli-deberta-v3-large": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+  },
+  "member_runtimes": {
+    "cross-encoder/nli-deberta-v3-large": {
+      "python": "3.11.7",
+      "torch": "2.2.2",
+      "transformers": "4.46.3",
+      "qfbench2-common": "2.4.4"
+    },
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": {
+      "python": "3.11.7",
+      "torch": "2.2.2",
+      "transformers": "4.46.3",
+      "qfbench2-common": "2.4.4"
+    }
+  },
+  "aggregation": "Arithmetic mean of member two-way entailment scores before tau threshold.",
+  "aggregation_scope": "Exact for these reports because run_nli_member requires one citation per entity.",
+  "tau_citation": 0.5,
+  "faithfulness_threshold": 0.8,
+  "faithfulness": 1.0,
+  "gate_pass": true,
+  "predictions": [
+    {
+      "entity_id": "AAPL",
+      "hypothesis": "The eps outcome of Apple Inc. (AAPL) is inline. The 90% prediction interval for the eps outcome of Apple Inc. (AAPL) is 1.40625 to 1.59375.",
+      "member_scores": [
+        0.5756444334983826,
+        0.8958088755607605
+      ],
+      "ensemble_score": 0.7357266545295715,
+      "supported": true
+    }
+  ]
+}

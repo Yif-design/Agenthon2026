@@ -1,0 +1,17 @@
+{
+  "unit": "proxy-17-natural-gas-storage-change-20260924-explicit",
+  "target_type": "regression",
+  "mae": 12.5,
+  "naive_mae": 8.1,
+  "raw_predictive_quality": 0.39320388349514557,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": null,
+  "predictive_quality": 0.39320388349514557,
+  "interval_coverage": 0.3333333333333333,
+  "interval_score": 86.66666666666667,
+  "naive_interval_score": 35.9901050843909,
+  "raw_interval_quality": 0.29342126464436796,
+  "interval_quality": 0.29342126464436796,
+  "composite_before_claim_penalty": 0.36326909783991224,
+  "claim_penalty_evaluated": false
+}

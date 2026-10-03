@@ -1,0 +1,119 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/FX_DEXUSEU_20230929.json",
+      "entity_id": "FX_DEXUSEU_20230929",
+      "fred_series_id": "DEXUSEU",
+      "last_exchange_rate": 1.0584,
+      "name": "Euro",
+      "quote_convention": "USD per EUR",
+      "trailing_20d_annualized_volatility_pct": 5.674404410448506,
+      "trailing_60d_annualized_volatility_pct": 6.6259131651916405
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXJPUS_20230929.json",
+      "entity_id": "FX_DEXJPUS_20230929",
+      "fred_series_id": "DEXJPUS",
+      "last_exchange_rate": 149.43,
+      "name": "Japanese yen",
+      "quote_convention": "JPY per USD",
+      "trailing_20d_annualized_volatility_pct": 6.104437379663349,
+      "trailing_60d_annualized_volatility_pct": 8.372226820391845
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXUSUK_20230929.json",
+      "entity_id": "FX_DEXUSUK_20230929",
+      "fred_series_id": "DEXUSUK",
+      "last_exchange_rate": 1.2214,
+      "name": "British pound",
+      "quote_convention": "USD per GBP",
+      "trailing_20d_annualized_volatility_pct": 5.608492535891263,
+      "trailing_60d_annualized_volatility_pct": 6.668074826687584
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXCAUS_20230929.json",
+      "entity_id": "FX_DEXCAUS_20230929",
+      "fred_series_id": "DEXCAUS",
+      "last_exchange_rate": 1.3535,
+      "name": "Canadian dollar",
+      "quote_convention": "CAD per USD",
+      "trailing_20d_annualized_volatility_pct": 4.174454046633829,
+      "trailing_60d_annualized_volatility_pct": 4.964331526215588
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXCHUS_20230929.json",
+      "entity_id": "FX_DEXCHUS_20230929",
+      "fred_series_id": "DEXCHUS",
+      "last_exchange_rate": 7.296,
+      "name": "Chinese yuan",
+      "quote_convention": "CNY per USD",
+      "trailing_20d_annualized_volatility_pct": 4.026379645495513,
+      "trailing_60d_annualized_volatility_pct": 4.660884807101985
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXKOUS_20230929.json",
+      "entity_id": "FX_DEXKOUS_20230929",
+      "fred_series_id": "DEXKOUS",
+      "last_exchange_rate": 1347.86,
+      "name": "South Korean won",
+      "quote_convention": "KRW per USD",
+      "trailing_20d_annualized_volatility_pct": 6.546806412051652,
+      "trailing_60d_annualized_volatility_pct": 7.893527758994585
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXMXUS_20230929.json",
+      "entity_id": "FX_DEXMXUS_20230929",
+      "fred_series_id": "DEXMXUS",
+      "last_exchange_rate": 17.4064,
+      "name": "Mexican peso",
+      "quote_convention": "MXN per USD",
+      "trailing_20d_annualized_volatility_pct": 12.947752550911972,
+      "trailing_60d_annualized_volatility_pct": 11.55422357006823
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXBZUS_20230929.json",
+      "entity_id": "FX_DEXBZUS_20230929",
+      "fred_series_id": "DEXBZUS",
+      "last_exchange_rate": 5.0021,
+      "name": "Brazilian real",
+      "quote_convention": "BRL per USD",
+      "trailing_20d_annualized_volatility_pct": 10.445132863388112,
+      "trailing_60d_annualized_volatility_pct": 11.031353877219342
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXINUS_20230929.json",
+      "entity_id": "FX_DEXINUS_20230929",
+      "fred_series_id": "DEXINUS",
+      "last_exchange_rate": 83.08,
+      "name": "Indian rupee",
+      "quote_convention": "INR per USD",
+      "trailing_20d_annualized_volatility_pct": 2.7583889944693096,
+      "trailing_60d_annualized_volatility_pct": 2.8791471926212306
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXSFUS_20230929.json",
+      "entity_id": "FX_DEXSFUS_20230929",
+      "fred_series_id": "DEXSFUS",
+      "last_exchange_rate": 18.8828,
+      "name": "South African rand",
+      "quote_convention": "ZAR per USD",
+      "trailing_20d_annualized_volatility_pct": 13.617185215018171,
+      "trailing_60d_annualized_volatility_pct": 16.26738084165521
+    }
+  ],
+  "family": "fx_realized_volatility",
+  "interval_level": 0.9,
+  "prompt": "Rank currencies by annualized realized volatility over the next 20 common eligible daily returns. Rank 1 is highest volatility. Quote inversion does not change log-return volatility. Return an annualized-percent point forecast and 90% interval for each row.",
+  "resolution_date": "2023-10-30",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "direction": "descending",
+    "horizon": "next 20 common eligible daily returns",
+    "name": "forward_20d_annualized_volatility_pct_rank",
+    "type": "ranking",
+    "unit": "annualized_percent"
+  },
+  "task_id": "proxy-19-fx-volatility-rank-20230929-explicit"
+}

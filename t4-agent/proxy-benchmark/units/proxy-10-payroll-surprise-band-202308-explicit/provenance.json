@@ -1,0 +1,43 @@
+{
+  "availability": {
+    "cutoff_vintage": "2023-08-31",
+    "first_print_vintage": "2023-09-01"
+  },
+  "cutoff_date": "2023-08-31",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_payroll_proxy.py",
+  "generator_version": "1.0.0",
+  "license": "BLS data are U.S. government works; ALFRED redistribution metadata recorded",
+  "question_id": "proxy-10-payroll-surprise-band",
+  "resolution_date": "2023-09-01",
+  "source_snapshot": "proxy-benchmark/sources/proxy-10-payroll-2023.json",
+  "source_snapshot_sha256": "f889d3f964693e8b838b2a6313c725cfef7a78a0dc143dbdea7c21977976b70a",
+  "source_urls": [
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USCONS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USCONS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=MANEMP&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=MANEMP&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USTPU&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USTPU&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USWTRADE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USWTRADE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USINFO&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USINFO&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USFIRE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USFIRE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USPBS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USPBS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USEHS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USEHS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USLAH&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USLAH&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USGOVT&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USGOVT&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://www.bls.gov/news.release/archives/empsit_09012023.htm"
+  ],
+  "split": "time_forward_test",
+  "target_month": "2023-08-01",
+  "variant": "explicit"
+}

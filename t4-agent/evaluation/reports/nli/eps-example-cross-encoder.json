@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "unit_id": "t4-EXAMPLE-eps-beat",
+  "answer_sha256": "cb6112cf956ccc11b6f2a27577018f371bb57adcb2d3ea99c7d937d6aeb16b7b",
+  "model_id": "cross-encoder/nli-deberta-v3-large",
+  "model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.11.7",
+    "torch": "2.2.2",
+    "transformers": "4.46.3",
+    "qfbench2-common": "2.4.4"
+  },
+  "elapsed_seconds": 1233.4227520179702,
+  "tau_citation": 0.5,
+  "faithfulness_threshold": 0.8,
+  "single_member_faithfulness": 1.0,
+  "single_member_gate_pass": true,
+  "predictions": [
+    {
+      "entity_id": "AAPL",
+      "hypothesis": "The eps outcome of Apple Inc. (AAPL) is inline. The 90% prediction interval for the eps outcome of Apple Inc. (AAPL) is 1.40625 to 1.59375.",
+      "score": 0.5756444334983826,
+      "supported": true
+    }
+  ]
+}

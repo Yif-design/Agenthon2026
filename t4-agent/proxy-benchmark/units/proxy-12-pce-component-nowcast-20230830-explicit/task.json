@@ -1,0 +1,89 @@
+{
+  "cutoff_date": "2023-08-30",
+  "entities": [
+    {
+      "corpus_ref": "corpus/PCE_PCEPI_202307.json",
+      "entity_id": "PCE_PCEPI_202307",
+      "latest_index": 127.178,
+      "name": "Headline PCE price index",
+      "recent_3m_mean_pct": 0.2087570471342041,
+      "series_id": "PCEPI",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_PCEPILFE_202307.json",
+      "entity_id": "PCE_PCEPILFE_202307",
+      "latest_index": 128.311,
+      "name": "Core PCE price index",
+      "recent_3m_mean_pct": 0.2753545722231632,
+      "series_id": "PCEPILFE",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_DGDSRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+      "latest_index": 108.465,
+      "name": "PCE goods price index",
+      "recent_3m_mean_pct": 0.03493131065667917,
+      "series_id": "DGDSRG3M086SBEA",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_DDURRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DDURRG3M086SBEA_202307",
+      "latest_index": 96.742,
+      "name": "PCE durable-goods price index",
+      "recent_3m_mean_pct": 0.04445468512758547,
+      "series_id": "DDURRG3M086SBEA",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_DNDGRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+      "latest_index": 115.032,
+      "name": "PCE nondurable-goods price index",
+      "recent_3m_mean_pct": 0.02999613026425744,
+      "series_id": "DNDGRG3M086SBEA",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_DSERRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DSERRG3M086SBEA_202307",
+      "latest_index": 136.989,
+      "name": "PCE services price index",
+      "recent_3m_mean_pct": 0.2954450139663667,
+      "series_id": "DSERRG3M086SBEA",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_DNRGRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+      "latest_index": 108.83,
+      "name": "PCE energy goods and services price index",
+      "recent_3m_mean_pct": -0.8366902844686183,
+      "series_id": "DNRGRG3M086SBEA",
+      "unit": "monthly_percent"
+    },
+    {
+      "corpus_ref": "corpus/PCE_DFXARG3M086SBEA_202307.json",
+      "entity_id": "PCE_DFXARG3M086SBEA_202307",
+      "latest_index": 128.702,
+      "name": "PCE food price index",
+      "recent_3m_mean_pct": -0.0012323447533768572,
+      "series_id": "DFXARG3M086SBEA",
+      "unit": "monthly_percent"
+    }
+  ],
+  "family": "pce_component_nowcast",
+  "interval_level": 0.9,
+  "prompt": "Forecast July 2023 first-print month-over-month price-index change in percent.",
+  "resolution_date": "2023-08-31",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "pce_component_mom_first_print_pct",
+    "type": "regression",
+    "unit": "percent"
+  },
+  "task_id": "proxy-12-pce-component-nowcast-20230830-explicit"
+}

@@ -1,0 +1,66 @@
+{
+  "arms": {
+    "batch_3": {
+      "latency_seconds": [
+        5.894939896999858,
+        3.4703529820544645
+      ],
+      "model_rows": 4,
+      "prompt_chars": 5131,
+      "rejected_facts": 0,
+      "usage": {
+        "calls": 2,
+        "circuit_open": false,
+        "completion_tokens": 498,
+        "disabled_reason": null,
+        "errors": [],
+        "prompt_tokens": 1450,
+        "total_cost": 0.0
+      },
+      "valid_identity_rows": 4,
+      "width": 3
+    },
+    "batch_4": {
+      "latency_seconds": [
+        9.27548959502019
+      ],
+      "model_rows": 4,
+      "prompt_chars": 3329,
+      "rejected_facts": 0,
+      "usage": {
+        "calls": 1,
+        "circuit_open": false,
+        "completion_tokens": 527,
+        "disabled_reason": null,
+        "errors": [],
+        "prompt_tokens": 997,
+        "total_cost": 0.0
+      },
+      "valid_identity_rows": 4,
+      "width": 4
+    }
+  },
+  "decision": "pass",
+  "decision_rule": "Both arms must return all four model rows without API or JSON errors; batched rows require exact identities and the existing final singleton uses its row-local prompt.",
+  "experiment": "adaptive_batch_remote_ab_v1",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "prior_unavailable_attempt": {
+    "calls": 3,
+    "completion_tokens": 0,
+    "cost_usd": 0.0,
+    "errors": [
+      "batch-three requests: HTTP 503 high demand (2)",
+      "batch-four request: read timeout (1)"
+    ],
+    "model": "gemini-2.5-flash-lite",
+    "prompt_tokens": 0,
+    "provider": "Google Gemini Developer API",
+    "result": "unavailable"
+  },
+  "provider": "OpenRouter",
+  "replay_note": "Statistics corrected from saved raw responses; no additional API call. The fourth batch-three row is a legal singleton response without batch identity fields.",
+  "schema_version": 1,
+  "seed": 1234,
+  "synthetic_public_safe_data": true,
+  "temperature": 0
+}

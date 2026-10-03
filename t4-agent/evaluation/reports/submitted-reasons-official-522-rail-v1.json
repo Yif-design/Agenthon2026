@@ -1,0 +1,99 @@
+{
+  "analysis_answer_byte_identical_units": 11,
+  "date": "2026-10-01",
+  "decision": "proceed_to_quality_proxy",
+  "details": [
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 1,
+      "schema_valid": true,
+      "task_id": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "analysis_answer_byte_identical": true,
+      "rail_findings": [],
+      "reasons": 3,
+      "schema_valid": true,
+      "task_id": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "experiment": "submitted_reasons_official_522_rail_v1",
+  "local_llm_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "official_toolkit_version": "2.5.1",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "production_change": "none",
+  "rail_finding_count": 0,
+  "reasons": 31,
+  "schema_valid_units": 11,
+  "schema_version": 1,
+  "units": 11
+}

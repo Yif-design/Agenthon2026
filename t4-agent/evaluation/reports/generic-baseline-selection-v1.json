@@ -1,0 +1,60 @@
+{
+  "baseline_git_commit": "bb81ce7a1c7c3423ec6987d1da960bd583e2f075",
+  "decision_rule": "Accept only if candidate passes 5/5, preserves the single-field fallback, and public known-family predictions do not change.",
+  "experiment": "generic_target_aware_baseline_v1",
+  "not_measured": "Predictive accuracy; these checks test invariants and target-field alignment only.",
+  "results": {
+    "baseline": {
+      "checks": {
+        "change_target_does_not_reuse_level": false,
+        "irrelevant_numeric_noise_invariant": false,
+        "ranking_is_row_order_invariant": false,
+        "single_numeric_fallback_preserved": true,
+        "target_related_level_selected": false
+      },
+      "checks_passed": 1,
+      "checks_total": 5,
+      "values": {
+        "change_without_delta_feature": 4.5,
+        "ranking_order_ab": {
+          "A": 2.0,
+          "B": 1.0
+        },
+        "ranking_order_ba": {
+          "A": 1.0,
+          "B": 2.0
+        },
+        "regression_base": 200.0,
+        "regression_with_noise": 1112.0,
+        "single_numeric": 12.0
+      }
+    },
+    "candidate": {
+      "checks": {
+        "change_target_does_not_reuse_level": true,
+        "irrelevant_numeric_noise_invariant": true,
+        "ranking_is_row_order_invariant": true,
+        "single_numeric_fallback_preserved": true,
+        "target_related_level_selected": true
+      },
+      "checks_passed": 5,
+      "checks_total": 5,
+      "values": {
+        "change_without_delta_feature": 0.0,
+        "ranking_order_ab": {
+          "A": -3.0,
+          "B": 4.0
+        },
+        "ranking_order_ba": {
+          "A": -3.0,
+          "B": 4.0
+        },
+        "regression_base": 8.0,
+        "regression_with_noise": 8.0,
+        "single_numeric": 12.0
+      }
+    }
+  },
+  "schema_version": 1,
+  "scope": "Synthetic robustness checks for unknown regression and ranking targets."
+}

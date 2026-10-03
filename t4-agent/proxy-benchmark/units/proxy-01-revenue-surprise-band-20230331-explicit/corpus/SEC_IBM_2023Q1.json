@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_IBM_2023Q1_explicit",
+  "entities": [
+    "SEC_IBM_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior comparable revenue: USD 14197000000, filed 2022-04-26, accession 0001558370-22-005983.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+}

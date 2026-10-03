@@ -1,0 +1,134 @@
+{
+  "baseline_git_commit": "41cdb19b71bb2604cd92eca42da3022acec08147",
+  "change": "Recognize bounded context/token-limit markers in HTTP 400 bodies, stop retrying that same batch, and leave the shared circuit open for later batches; retain global fail-closed behavior for unknown 400s.",
+  "decision": "accept",
+  "experiment": "context_length_local_recovery_v1",
+  "fault_injection": {
+    "authorization_failure_opens_immediately": true,
+    "baseline": {
+      "circuit_open": true,
+      "first_context_400_result": null,
+      "later_short_batch_succeeded": false,
+      "network_calls": 1
+    },
+    "candidate": {
+      "circuit_open_after_first": false,
+      "consecutive_failures_after_success": 0,
+      "first_context_400_result": null,
+      "later_short_batch_succeeded": true,
+      "network_calls_after_later_batch": 2
+    },
+    "persistent_context_errors_open_after": 4,
+    "same_oversized_batch_retried": false,
+    "unknown_http_400_opens_immediately": true
+  },
+  "hypothesis": "Treating an explicitly identified context-length HTTP 400 as a batch-local failure lets a later shorter batch recover, while the existing consecutive-failure circuit still bounds persistent errors.",
+  "layer": "L1/L2 House API fault recovery and context handling",
+  "official_snapshot": {
+    "checked_at": "2026-09-28",
+    "material_rule_change": false,
+    "qfbench2_common": "2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "predictive_quality_claim": "none; model completion and fault-recovery reliability improvement only",
+  "prompt_size_audit": {
+    "authoritative_house_input_ceiling_published": false,
+    "default_top_k": 8,
+    "fixed_character_cap_adopted": false,
+    "maximum_chars": 41167,
+    "median_chars": 39485.5,
+    "minimum_chars": 4410,
+    "model_prompts": 12,
+    "official_strong_rag_default_top_k": 10,
+    "public_units": 11,
+    "reason_no_fixed_cap": "No observed public overflow and no authoritative serving limit; truncation could remove task rules or evidence."
+  },
+  "public_no_model_ab": {
+    "byte_identical_count": 11,
+    "rows": 78,
+    "unit_count": 11,
+    "units": [
+      {
+        "baseline_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "byte_identical": true,
+        "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+        "unit_id": "t4-EXAMPLE-eps-beat"
+      },
+      {
+        "baseline_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "byte_identical": true,
+        "candidate_sha256": "bdb37e4d6644bb933723271aff739b573d6d2e888deef3db78acea754b2a68c1",
+        "unit_id": "t4-auction-btc-202411-us7"
+      },
+      {
+        "baseline_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "byte_identical": true,
+        "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+        "unit_id": "t4-cotpos-202411-us10"
+      },
+      {
+        "baseline_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "byte_identical": true,
+        "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+        "unit_id": "t4-cpicomp-202410-us11"
+      },
+      {
+        "baseline_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "byte_identical": true,
+        "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+        "unit_id": "t4-credit-event-2023"
+      },
+      {
+        "baseline_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "byte_identical": true,
+        "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+        "unit_id": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "baseline_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "byte_identical": true,
+        "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+        "unit_id": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "baseline_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "byte_identical": true,
+        "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+        "unit_id": "t4-fomc-curve-20220728"
+      },
+      {
+        "baseline_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "byte_identical": true,
+        "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+        "unit_id": "t4-fomc-curve-20240918"
+      },
+      {
+        "baseline_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "byte_identical": true,
+        "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+        "unit_id": "t4-macrorev-20240930-us6"
+      },
+      {
+        "baseline_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "byte_identical": true,
+        "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+        "unit_id": "t4-postearn-20240201-megacap"
+      }
+    ]
+  },
+  "reason": "The candidate recovers a later valid batch after one explicit context error, preserves fail-closed handling for other client/auth errors, remains bounded under persistent failures, and passes every public gate.",
+  "request_bounds": {
+    "default_max_calls": 18,
+    "normal_path_requests_added": 0,
+    "official_hard_cap": 25,
+    "recovery_path_max_additional_opportunity": "later batches only; all calls remain under existing caps"
+  },
+  "schema_version": 1,
+  "validation": {
+    "analysis_schema_valid": "11/11",
+    "qfbench2_smoke_admissible": "11/11",
+    "smoke_profile": "build_smoke_verifier, non-rankable",
+    "tests": "80 passed"
+  }
+}

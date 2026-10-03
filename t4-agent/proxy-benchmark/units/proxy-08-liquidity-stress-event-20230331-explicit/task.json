@@ -1,0 +1,153 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "cik": "0001018724",
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "name": "AMAZON COM INC",
+      "prior_cash_to_current_liabilities": 0.26086676032915673,
+      "prior_current_ratio": 0.95962955529432,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "AMZN"
+    },
+    {
+      "cik": "0001690820",
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "name": "CARVANA CO.",
+      "prior_cash_to_current_liabilities": 0.06602512697139802,
+      "prior_current_ratio": 1.355252606255012,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "CVNA"
+    },
+    {
+      "cik": "0000037996",
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "name": "Ford Motor Co",
+      "prior_cash_to_current_liabilities": 0.23256817779351868,
+      "prior_current_ratio": 1.1747609350097397,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "F"
+    },
+    {
+      "cik": "0001467858",
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "name": "GENERAL MOTORS COMPANY",
+      "prior_cash_to_current_liabilities": 0.205505625039281,
+      "prior_current_ratio": 1.113619508516121,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "GM"
+    },
+    {
+      "cik": "0000354950",
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "name": "The Home Depot, Inc.",
+      "prior_cash_to_current_liabilities": 0.09359265475367756,
+      "prior_current_ratio": 1.1145226577154703,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "HD"
+    },
+    {
+      "cik": "0000051143",
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "prior_cash_to_current_liabilities": 0.2916960300681231,
+      "prior_current_ratio": 0.9199553676297862,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "IBM"
+    },
+    {
+      "cik": "0000021344",
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "name": "COCA COLA CO",
+      "prior_cash_to_current_liabilities": 0.40884654282216426,
+      "prior_current_ratio": 1.1793261297705862,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "KO"
+    },
+    {
+      "cik": "0000063908",
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "name": "McDONALD’S CORPORATION",
+      "prior_cash_to_current_liabilities": 0.5515751192556558,
+      "prior_current_ratio": 1.0996079913096868,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "MCD"
+    },
+    {
+      "cik": "0001045810",
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "name": "NVIDIA CORP",
+      "prior_cash_to_current_liabilities": 0.6988493347716649,
+      "prior_current_ratio": 5.317331895001798,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "NVDA"
+    },
+    {
+      "cik": "0000077476",
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "name": "PepsiCo, Inc.",
+      "prior_cash_to_current_liabilities": 0.2540659851301115,
+      "prior_current_ratio": 0.8651641883519207,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "PEP"
+    },
+    {
+      "cik": "0000027419",
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "name": "Target Corporation",
+      "prior_cash_to_current_liabilities": 0.05365759505886895,
+      "prior_current_ratio": 0.8662902914495271,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "TGT"
+    },
+    {
+      "cik": "0000104169",
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "name": "WALMART INC.",
+      "prior_cash_to_current_liabilities": 0.12241790117062053,
+      "prior_current_ratio": 0.8621154045374495,
+      "screen_cash_ratio_max": 0.1,
+      "screen_current_ratio_max": 1.0,
+      "ticker": "WMT"
+    }
+  ],
+  "family": "liquidity_stress_screen",
+  "interval_level": 0.9,
+  "prompt": "Classify the next Q1 balance sheet as stress_screen only when current ratio is below 1 and cash/current liabilities is below 0.1.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "stress_screen",
+      "no_stress_screen"
+    ],
+    "name": "liquidity_stress_screen",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-08-liquidity-stress-event-20230331-explicit"
+}

@@ -1,0 +1,92 @@
+{
+  "task_id": "proxy-15-auction-indirect-bidder-share-20230802-transformed",
+  "schema_version": "3",
+  "target_type": "regression",
+  "entity_predictions": [
+    {
+      "entity_id": "TREASURY_30YEAR_20230810",
+      "point_forecast": 360.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 720.0
+      },
+      "claims": [
+        {
+          "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+          "span_start": 0,
+          "span_end": 492,
+          "claim": "Treasury auction history for 30-Year securities.\nauction_date | offering_amount_usd_bn | new_or_reopening | total_accepted_usd_bn | indirect_bidder_acceptance_share_pct\n2022-08-11 | 21.000 | new | 34.282159 | 43.259093\n2022-09-13 | 18.000 | reopening | 18.000010 | 72.075636\n2022-10-13 | 18.000 | reopening | 18.000001 | 69.091211\n2022-11-10 | 21.000 | new | 28.364253 | 51.684982\n2022-12-13 | 18.000 | reopening | 18.000021 | 61.490345\n2023-01-12 | 18.000 | reopening | 18.000041 | 74.571720"
+        },
+        {
+          "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+          "span_start": 0,
+          "span_end": 902,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "TREASURY_10YEAR_20230809",
+      "point_forecast": 120.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 240.0
+      },
+      "claims": [
+        {
+          "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+          "span_start": 0,
+          "span_end": 492,
+          "claim": "Treasury auction history for 10-Year securities.\nauction_date | offering_amount_usd_bn | new_or_reopening | total_accepted_usd_bn | indirect_bidder_acceptance_share_pct\n2022-08-10 | 35.000 | new | 57.136938 | 45.610687\n2022-09-12 | 32.000 | reopening | 32.000010 | 62.262745\n2022-10-12 | 32.000 | reopening | 32.000030 | 56.761929\n2022-11-09 | 35.000 | new | 47.273701 | 42.425031\n2022-12-12 | 32.000 | reopening | 32.000004 | 59.358023\n2023-01-11 | 32.000 | reopening | 32.000034 | 66.959776"
+        },
+        {
+          "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+          "span_start": 0,
+          "span_end": 902,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "TREASURY_3YEAR_20230808",
+      "point_forecast": 36.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 72.0
+      },
+      "claims": [
+        {
+          "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+          "span_start": 0,
+          "span_end": 467,
+          "claim": "Treasury auction history for 3-Year securities.\nauction_date | offering_amount_usd_bn | new_or_reopening | total_accepted_usd_bn | indirect_bidder_acceptance_share_pct\n2022-08-09 | 42.000 | new | 68.564318 | 38.366246\n2022-09-12 | 41.000 | new | 41.000013 | 54.270697\n2022-10-11 | 40.000 | new | 40.000010 | 52.732162\n2022-11-08 | 40.000 | new | 54.027076 | 45.359913\n2022-12-12 | 40.000 | new | 40.000048 | 61.006927\n2023-01-10 | 40.000 | new | 40.000009 | 69.187084"
+        },
+        {
+          "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+          "span_start": 0,
+          "span_end": 853,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "TREASURY_30YEAR_20230810",
+      "TREASURY_10YEAR_20230809",
+      "TREASURY_3YEAR_20230808"
+    ],
+    "methods": {
+      "TREASURY_30YEAR_20230810": "generic_baseline",
+      "TREASURY_10YEAR_20230809": "generic_baseline",
+      "TREASURY_3YEAR_20230808": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

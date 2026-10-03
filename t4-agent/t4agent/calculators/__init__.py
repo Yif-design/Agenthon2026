@@ -1,0 +1,86 @@
+from __future__ import annotations
+
+import os
+from typing import Any
+
+from ..family_specs import FamilySpec
+from ..retrieve import IndexedCorpus
+from ..tables import extract_generic_table_baseline
+from ..taskio import Task
+from .auction import solve as solve_auction
+from .bank_eps import extract_parameters as extract_bank_eps_parameters
+from .bank_eps import solve as solve_bank_eps
+from .common import ModelOutput
+from .cpi import solve as solve_cpi
+from .credit import solve as solve_credit
+from .eps_consensus import solve as solve_eps_consensus
+from .eps_yoy import solve as solve_eps_yoy
+from .generic import solve as solve_generic
+from .macro_revision import solve as solve_macro_revision
+from .positioning import solve as solve_positioning
+from .rates import solve as solve_rates
+from .reaction import solve as solve_reaction
+
+
+SOLVERS = {
+    "eps_consensus": solve_eps_consensus,
+    "eps_yoy": solve_eps_yoy,
+    "bank_eps": solve_bank_eps,
+    "credit": solve_credit,
+    "reaction": solve_reaction,
+    "rates": solve_rates,
+    "cpi": solve_cpi,
+    "macro_revision": solve_macro_revision,
+    "auction": solve_auction,
+    "positioning": solve_positioning,
+    "generic": solve_generic,
+}
+
+
+def extract_parameters(
+    task: Task, entity: dict[str, Any], spec: FamilySpec, corpus: IndexedCorpus
+) -> tuple[dict[str, float], list[dict[str, Any]]]:
+    """Run family-owned deterministic extractors before asking the model."""
+    if spec.key == "bank_eps":
+        return extract_bank_eps_parameters(entity, corpus)
+    if (
+        spec.key == "generic"
+        and task.target_type in {"regression", "ranking"}
+        and os.environ.get("T4_ENABLE_DATED_TABLE_BASELINE", "1") == "1"
+    ):
+        baseline = extract_generic_table_baseline(task, entity, corpus)
+        if baseline is not None:
+            if baseline.statistic == "last":
+                claim = (
+                    f"The {baseline.column} observation on {baseline.observation_date} was "
+                    f"{baseline.last:g} {baseline.unit}."
+                )
+            else:
+                claim = (
+                    f"The last two {baseline.column} observations were {baseline.previous:g} and "
+                    f"{baseline.last:g} {baseline.unit}; their change was {baseline.value:g} {baseline.unit}."
+                )
+            return {"dated_table_baseline": baseline.value}, [
+                {
+                    "name": "dated_table_baseline",
+                    "value": baseline.value,
+                    "doc_id": baseline.doc_id,
+                    "quote": baseline.quote,
+                    "claim": claim,
+                }
+            ]
+    return {}, []
+
+
+def solve(
+    task: Task,
+    entity: dict[str, Any],
+    spec: FamilySpec,
+    signals: dict[str, int],
+    parameters: dict[str, float | None],
+    corpus: IndexedCorpus,
+    row_index: int,
+    row_count: int,
+) -> ModelOutput:
+    solver = SOLVERS.get(spec.key, solve_generic)
+    return solver(task, entity, signals, parameters, corpus, row_index, row_count)

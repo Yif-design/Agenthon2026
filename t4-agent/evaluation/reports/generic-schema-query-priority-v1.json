@@ -1,0 +1,89 @@
+{
+  "baseline_git_commit": "64fe8e05d35f233d695bebe0e53f31cb02e55a99",
+  "cases": [
+    {
+      "candidate_top1": "MATCH",
+      "case_id": "camel_field",
+      "exact_schema_tokens_preserved": true,
+      "legacy_top1": "DISTRACTOR"
+    },
+    {
+      "candidate_top1": "MATCH",
+      "case_id": "snake_field",
+      "exact_schema_tokens_preserved": true,
+      "legacy_top1": "DISTRACTOR"
+    },
+    {
+      "candidate_top1": "MATCH",
+      "case_id": "hyphen_field",
+      "exact_schema_tokens_preserved": true,
+      "legacy_top1": "DISTRACTOR"
+    },
+    {
+      "candidate_top1": "MATCH",
+      "case_id": "camel_target",
+      "exact_schema_tokens_preserved": true,
+      "legacy_top1": "DISTRACTOR"
+    }
+  ],
+  "decision": "accept",
+  "decision_reason": "Semantic schema queries improve all four top-one retrieval cases, opaque placeholder and known queries remain byte-identical, query growth stays bounded, and all unit, public-byte, validation and inherited identical-byte smoke gates pass without a model call.",
+  "decision_rule": "Require candidate 4/4 top-1 versus legacy below 4/4, exact schema tokens in 4/4, byte-identical opaque and known-family queries, <=4x 64-field growth, byte-identical public outputs, 11/11 schema/smoke and no model calls.",
+  "experiment": "generic_schema_query_priority_v1",
+  "hypothesis": "When semantic schema components exist, suppressing only the broad generic fallback rubric lets those bounded components retrieve natural-language evidence while opaque and known schemas preserve legacy behavior.",
+  "known_query": {
+    "candidate": "A futureMetric known_family results outlook growth risk change forecast target evidence",
+    "identical": true,
+    "legacy": "A futureMetric known_family results outlook growth risk change forecast target evidence"
+  },
+  "layer": "L2 unknown-family retrieval",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "official_snapshot": {
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ],
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_tag": "v2.4.4",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "opaque_query": {
+    "candidate": "A x1 7 opaqueTarget unseen_family results outlook growth risk change forecast target evidence",
+    "identical": true,
+    "legacy": "A x1 7 opaqueTarget unseen_family results outlook growth risk change forecast target evidence"
+  },
+  "results": {
+    "budget_candidate_tokens": 454,
+    "budget_expansion_ratio": 3.2661870503597124,
+    "budget_legacy_tokens": 139,
+    "candidate_correct": 4,
+    "exact_schema_token_cases": 4,
+    "known_query_identical": true,
+    "legacy_correct": 0,
+    "opaque_query_identical": true,
+    "total": 4
+  },
+  "schema_version": 1,
+  "validation": {
+    "local_validation_error_units": 0,
+    "model_requests_added": 0,
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "candidate bytes identical to 64fe8e0 baseline, whose bytes trace to the same 11/11 smoke-verified public outputs",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "104 passed"
+  }
+}

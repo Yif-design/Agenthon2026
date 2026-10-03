@@ -1,0 +1,15 @@
+{
+  "unit": "proxy-18-cot-positioning-rank-20230926-transformed",
+  "raw_spearman": 0.38181818181818183,
+  "raw_predictive_quality": 0.6909090909090909,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": 0.5,
+  "predictive_quality": 0.6909090909090909,
+  "interval_coverage": 0.7,
+  "interval_score": 16.26522024450506,
+  "naive_interval_score": 9.596005473825892,
+  "raw_interval_quality": 0.3710576435294037,
+  "interval_quality": 0.3710576435294037,
+  "composite_before_claim_penalty": 0.5949536566951847,
+  "claim_penalty_evaluated": false
+}

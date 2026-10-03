@@ -1,0 +1,37 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "y": 1.2279355333844972
+    },
+    {
+      "entity_id": "SEC_GM_2023Q1",
+      "y": 6.633739016536594
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "y": 2.1049677238282345
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "y": 63.27784891165173
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "y": 2.5136612021857925
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "y": 8.533690528671707
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "y": 6.338361898744175
+    },
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "y": 2.933034886493073
+    }
+  ],
+  "task_id": "proxy-04-capex-intensity-20230331-explicit"
+}

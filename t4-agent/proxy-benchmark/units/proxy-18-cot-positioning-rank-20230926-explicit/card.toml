@@ -1,0 +1,33 @@
+schema_version = "2.0"
+
+[task]
+id = "proxy-18-cot-positioning-rank-20230926-explicit"
+track = "analysis"
+title = "Next-report COT positioning-change ranking (explicit)"
+split = "time_forward_test"
+family = "cftc_positioning_proxy"
+target_type = "ranking"
+cutoff_date = "2023-09-29"
+resolution_date = "2023-10-06"
+
+[provenance]
+license = "Public domain (U.S. Commodity Futures Trading Commission data)"
+data_source = "https://publicreporting.cftc.gov/resource/6dca-aqww.json"
+data_cutoff = "2023-09-29"
+redistributable = true
+manifest = "manifest.json"
+
+[scoring]
+verifier = "t4.faithful_analysis"
+metric = "analysis_composite"
+admissibility_gates = ["g0_integrity", "g1_schema", "g2_cutoff_resource", "g3_domain_semantics"]
+
+[scoring.params]
+faithfulness_threshold = 0.80
+interval_level = 0.90
+target_type = "ranking"
+composite_weights = [0.7, 0.3]
+tau_citation = 0.5
+
+[agent]
+timeout_sec = 600.0

@@ -1,0 +1,35 @@
+schema_version = "2.0"
+
+[task]
+id = "proxy-10-payroll-surprise-band-202308-explicit"
+track = "analysis"
+title = "Payroll first-print surprise (explicit)"
+split = "time_forward_test"
+family = "payroll_surprise_band"
+target_type = "classification"
+cutoff_date = "2023-08-31"
+resolution_date = "2023-09-01"
+
+[provenance]
+license = "BLS data are U.S. government works; ALFRED redistribution metadata recorded"
+data_source = "https://alfred.stlouisfed.org/graph/alfredgraph.csv"
+data_cutoff = "2023-08-31"
+redistributable = true
+manifest = "manifest.json"
+
+[scoring]
+verifier = "t4.faithful_analysis"
+metric = "analysis_composite"
+admissibility_gates = ["g0_integrity", "g1_schema", "g2_cutoff_resource", "g3_domain_semantics"]
+
+[scoring.params]
+faithfulness_threshold = 0.80
+interval_level = 0.90
+interval_leg = false
+target_type = "classification"
+labels = ["positive_surprise", "inline", "negative_surprise"]
+composite_weights = [0.7, 0.3]
+tau_citation = 0.5
+
+[agent]
+timeout_sec = 600.0

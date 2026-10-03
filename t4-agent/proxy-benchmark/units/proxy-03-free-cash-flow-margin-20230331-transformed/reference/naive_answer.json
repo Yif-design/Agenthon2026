@@ -1,0 +1,146 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_WMT_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_WMT_2023Q1",
+      "interval": {
+        "hi": -1.3003606865875912,
+        "level": 0.9,
+        "lo": -9.102524806113138
+      },
+      "point_forecast": -5.201442746350365
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_TGT_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_TGT_2023Q1",
+      "interval": {
+        "hi": -2.33015494636472,
+        "level": 0.9,
+        "lo": -16.31108462455304
+      },
+      "point_forecast": -9.320619785458879
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_MCD_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_MCD_2023Q1",
+      "interval": {
+        "hi": 53.50139438011861,
+        "level": 0.9,
+        "lo": 7.643056340016944
+      },
+      "point_forecast": 30.572225360067776
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_KO_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_KO_2023Q1",
+      "interval": {
+        "hi": 6.772471642360118,
+        "level": 0.9,
+        "lo": 0.9674959489085886
+      },
+      "point_forecast": 3.8699837956343535
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_INTC_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_INTC_2023Q1",
+      "interval": {
+        "hi": 12.271835667193374,
+        "level": 0.9,
+        "lo": 1.7531193810276253
+      },
+      "point_forecast": 7.0124775241104995
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_IBM_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_IBM_2023Q1",
+      "interval": {
+        "hi": 36.57286750721984,
+        "level": 0.9,
+        "lo": 5.224695358174262
+      },
+      "point_forecast": 20.89878143269705
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_GM_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_GM_2023Q1",
+      "interval": {
+        "hi": 2.3618388983670484,
+        "level": 0.9,
+        "lo": 0.3374055569095784
+      },
+      "point_forecast": 1.3496222276383134
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_CVNA_2023Q1_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_CVNA_2023Q1",
+      "interval": {
+        "hi": -5.812124678295682,
+        "level": 0.9,
+        "lo": -40.68487274806977
+      },
+      "point_forecast": -23.248498713182727
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "regression",
+  "task_id": "proxy-03-free-cash-flow-margin-20230331-transformed"
+}

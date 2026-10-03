@@ -1,0 +1,50 @@
+{
+  "cutoff_date": "2023-09-29",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_macro_proxies.py",
+  "generator_version": "1.0.0",
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "question_id": "proxy-14-yield-curve-steepening-rank",
+  "raw_sources": [
+    {
+      "series_id": "DGS2",
+      "sha256": "b0f5b9a0ed71853a282cb5c5ab1fbfe8fa336d62db276c6e1745dbaa75f4497e",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS3",
+      "sha256": "1fa01cef5e1011224a47d571c0ee4b4a3c99a1a93c3b6b90af3d44d8165ea9ae",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS5",
+      "sha256": "1f263978a9ec46e49a4a2ba945389b32b237c3c2795b9f65e63a93e6eeb4ffa1",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS5&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS7",
+      "sha256": "193547f6c04d710286fd6f8f0706b636fa2abe3dbeeef5607b8ac0e810a30ac0",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS7&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS10",
+      "sha256": "d90ebcb5039a4a15ece0d01594b993cf6d00ae23b2ad200e05627693ae3dbb57",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS20",
+      "sha256": "d306321549b378714f179ad3fd729b8e70556c5908a42b6097379bbb519ee42c",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS20&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS30",
+      "sha256": "3751435eecf0484c1ef92294e88f35f7f5f7b2213d05db9b2bfd506f354fe106",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS30&cosd=2022-01-01&coed=2023-11-30"
+    }
+  ],
+  "resolution_date": "2023-10-30",
+  "source_snapshot": "proxy-benchmark/sources/proxy-14-yields-2023.json",
+  "source_snapshot_sha256": "2a26fbf5f5e378e62e852ea353b39da3e4a2a84f625a60d4b803503faeda42fd",
+  "split": "time_forward_test",
+  "variant": "explicit"
+}

@@ -1,0 +1,241 @@
+{
+  "schema_version": 2,
+  "model_ids": [
+    "cross-encoder/nli-deberta-v3-large",
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+  ],
+  "model_revisions": {
+    "cross-encoder/nli-deberta-v3-large": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+  },
+  "member_runtimes": {
+    "cross-encoder/nli-deberta-v3-large": {
+      "python": "3.11.7",
+      "torch": "2.2.2",
+      "transformers": "4.46.3",
+      "qfbench2-common": "2.4.4"
+    },
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": {
+      "python": "3.11.7",
+      "torch": "2.2.2",
+      "transformers": "4.46.3",
+      "qfbench2-common": "2.4.4"
+    }
+  },
+  "aggregation": "Arithmetic mean of member two-way entailment scores before tau threshold.",
+  "aggregation_scope": "Exact for these reports because run_nli_member requires one citation per entity.",
+  "case_count": 3,
+  "all_gates_pass": false,
+  "cases": [
+    {
+      "unit_id": "t4-EXAMPLE-eps-beat",
+      "answer_sha256": "cb6112cf956ccc11b6f2a27577018f371bb57adcb2d3ea99c7d937d6aeb16b7b",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 1.0,
+      "gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "AAPL",
+          "hypothesis": "The eps outcome of Apple Inc. (AAPL) is inline. The 90% prediction interval for the eps outcome of Apple Inc. (AAPL) is 1.40625 to 1.59375.",
+          "member_scores": [
+            0.5756444334983826,
+            0.8958088755607605
+          ],
+          "ensemble_score": 0.7357266545295715,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "unit_id": "t4-auction-btc-202411-us7",
+      "answer_sha256": "1a3410ca153c01af4da3396bb6a4ef9cfe2dec2eb495b149fbe8d82b142c25a1",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 0.7142857142857143,
+      "gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "AUC_10Y_20241105",
+          "hypothesis": "The bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.53. The 90% prediction interval for the bid to cover ratio of 10-Year Note auction, 2024-11-05 (AUC_10Y_20241105) is 2.23703 to 2.82297.",
+          "member_scores": [
+            0.5734341740608215,
+            0.2233407199382782
+          ],
+          "ensemble_score": 0.39838744699954987,
+          "supported": false
+        },
+        {
+          "entity_id": "AUC_20Y_20241120",
+          "hypothesis": "The bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.595. The 90% prediction interval for the bid to cover ratio of 20-Year Bond auction, week of 2024-11-18 (AUC_20Y_20241120) is 2.3767 to 2.8133.",
+          "member_scores": [
+            0.6028838753700256,
+            0.5919139385223389
+          ],
+          "ensemble_score": 0.5973989069461823,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_2Y_20241125",
+          "hypothesis": "The bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.62333. The 90% prediction interval for the bid to cover ratio of 2-Year Note auction, week of 2024-11-25 (AUC_2Y_20241125) is 2.27582 to 2.97084.",
+          "member_scores": [
+            0.5726610422134399,
+            0.7020430564880371
+          ],
+          "ensemble_score": 0.6373520493507385,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_30Y_20241106",
+          "hypothesis": "The bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.39833. The 90% prediction interval for the bid to cover ratio of 30-Year Bond auction, 2024-11-06 (AUC_30Y_20241106) is 2.20285 to 2.59381.",
+          "member_scores": [
+            0.5353280901908875,
+            0.6016021370887756
+          ],
+          "ensemble_score": 0.5684651136398315,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_3Y_20241104",
+          "hypothesis": "The bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.565. The 90% prediction interval for the bid to cover ratio of 3-Year Note auction, 2024-11-04 (AUC_3Y_20241104) is 2.32358 to 2.80642.",
+          "member_scores": [
+            0.48455002903938293,
+            0.827415406703949
+          ],
+          "ensemble_score": 0.655982717871666,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_5Y_20241126",
+          "hypothesis": "The bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.37167. The 90% prediction interval for the bid to cover ratio of 5-Year Note auction, week of 2024-11-25 (AUC_5Y_20241126) is 2.22167 to 2.52167.",
+          "member_scores": [
+            0.4992637634277344,
+            0.8359987735748291
+          ],
+          "ensemble_score": 0.6676312685012817,
+          "supported": true
+        },
+        {
+          "entity_id": "AUC_7Y_20241127",
+          "hypothesis": "The bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.58667. The 90% prediction interval for the bid to cover ratio of 7-Year Note auction, week of 2024-11-25 (AUC_7Y_20241127) is 2.33597 to 2.83736.",
+          "member_scores": [
+            0.4486554265022278,
+            0.30860164761543274
+          ],
+          "ensemble_score": 0.37862853705883026,
+          "supported": false
+        }
+      ]
+    },
+    {
+      "unit_id": "t4-cotpos-202411-us10",
+      "answer_sha256": "a1852815604732605b5469f80226ac0d9416ddf81a786a6ead6f523404d3ec09",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 1.0,
+      "gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "CORN_CBT",
+          "hypothesis": "By net positioning change pct oi rank, Corn futures (CORN_CBT) is ranked 6 among the entities in this task, with a score of -0.218. The 90% prediction interval for the net positioning change pct oi rank of Corn futures (CORN_CBT) is -11.518 to 11.082.",
+          "member_scores": [
+            0.7999177575111389,
+            0.8839452266693115
+          ],
+          "ensemble_score": 0.8419314920902252,
+          "supported": true
+        },
+        {
+          "entity_id": "ES_SP500",
+          "hypothesis": "By net positioning change pct oi rank, E-mini S&P 500 futures (ES_SP500) is ranked 5 among the entities in this task, with a score of -0.21. The 90% prediction interval for the net positioning change pct oi rank of E-mini S&P 500 futures (ES_SP500) is -11.51 to 11.09.",
+          "member_scores": [
+            0.8200283646583557,
+            0.775769829750061
+          ],
+          "ensemble_score": 0.7978990972042084,
+          "supported": true
+        },
+        {
+          "entity_id": "EURO_FX",
+          "hypothesis": "By net positioning change pct oi rank, Euro FX futures (EURO_FX) is ranked 4 among the entities in this task, with a score of 0.876. The 90% prediction interval for the net positioning change pct oi rank of Euro FX futures (EURO_FX) is -10.424 to 12.176.",
+          "member_scores": [
+            0.7814676761627197,
+            0.6673591136932373
+          ],
+          "ensemble_score": 0.7244133949279785,
+          "supported": true
+        },
+        {
+          "entity_id": "GOLD_CMX",
+          "hypothesis": "By net positioning change pct oi rank, Gold futures (GOLD_CMX) is ranked 10 among the entities in this task, with a score of -10.326. The 90% prediction interval for the net positioning change pct oi rank of Gold futures (GOLD_CMX) is -21.626 to 0.974.",
+          "member_scores": [
+            0.7407657504081726,
+            0.7805725336074829
+          ],
+          "ensemble_score": 0.7606691420078278,
+          "supported": true
+        },
+        {
+          "entity_id": "JPY_CME",
+          "hypothesis": "By net positioning change pct oi rank, Japanese yen futures (JPY_CME) is ranked 7 among the entities in this task, with a score of -1.232. The 90% prediction interval for the net positioning change pct oi rank of Japanese yen futures (JPY_CME) is -12.532 to 10.068.",
+          "member_scores": [
+            0.7554856538772583,
+            0.7883524298667908
+          ],
+          "ensemble_score": 0.7719190418720245,
+          "supported": true
+        },
+        {
+          "entity_id": "NATGAS_NYMEX",
+          "hypothesis": "By net positioning change pct oi rank, Henry Hub natural gas futures (NATGAS_NYMEX) is ranked 3 among the entities in this task, with a score of 2.02. The 90% prediction interval for the net positioning change pct oi rank of Henry Hub natural gas futures (NATGAS_NYMEX) is -9.28 to 13.32.",
+          "member_scores": [
+            0.7849889993667603,
+            0.8188349604606628
+          ],
+          "ensemble_score": 0.8019119799137115,
+          "supported": true
+        },
+        {
+          "entity_id": "SILVER_CMX",
+          "hypothesis": "By net positioning change pct oi rank, Silver futures (SILVER_CMX) is ranked 9 among the entities in this task, with a score of -8.438. The 90% prediction interval for the net positioning change pct oi rank of Silver futures (SILVER_CMX) is -19.738 to 2.862.",
+          "member_scores": [
+            0.7019631266593933,
+            0.8216320276260376
+          ],
+          "ensemble_score": 0.7617975771427155,
+          "supported": true
+        },
+        {
+          "entity_id": "UST_10Y",
+          "hypothesis": "By net positioning change pct oi rank, U.S. Treasury 10-Year Note futures (UST_10Y) is ranked 2 among the entities in this task, with a score of 3.64. The 90% prediction interval for the net positioning change pct oi rank of U.S. Treasury 10-Year Note futures (UST_10Y) is -7.66 to 14.94.",
+          "member_scores": [
+            0.7623023986816406,
+            0.7092642784118652
+          ],
+          "ensemble_score": 0.7357833385467529,
+          "supported": true
+        },
+        {
+          "entity_id": "UST_2Y",
+          "hypothesis": "By net positioning change pct oi rank, U.S. Treasury 2-Year Note futures (UST_2Y) is ranked 1 among the entities in this task, with a score of 6.076. The 90% prediction interval for the net positioning change pct oi rank of U.S. Treasury 2-Year Note futures (UST_2Y) is -5.224 to 17.376.",
+          "member_scores": [
+            0.764247715473175,
+            0.8084349632263184
+          ],
+          "ensemble_score": 0.7863413393497467,
+          "supported": true
+        },
+        {
+          "entity_id": "WTI_NYMEX",
+          "hypothesis": "By net positioning change pct oi rank, WTI crude oil futures (physical delivery) (WTI_NYMEX) is ranked 8 among the entities in this task, with a score of -2.108. The 90% prediction interval for the net positioning change pct oi rank of WTI crude oil futures (physical delivery) (WTI_NYMEX) is -13.408 to 9.192.",
+          "member_scores": [
+            0.7486640214920044,
+            0.7248107194900513
+          ],
+          "ensemble_score": 0.7367373704910278,
+          "supported": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "unit": "proxy-03-free-cash-flow-margin-20230331-explicit",
+  "target_type": "regression",
+  "mae": 16.1385933402467,
+  "naive_mae": 16.1385933402467,
+  "raw_predictive_quality": 0.5,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": null,
+  "predictive_quality": 0.5,
+  "interval_coverage": 0.625,
+  "interval_score": 224.7967242726967,
+  "naive_interval_score": 235.94201941252672,
+  "raw_interval_quality": 0.5120950270544694,
+  "interval_quality": 0.5,
+  "composite_before_claim_penalty": 0.5,
+  "claim_penalty_evaluated": false
+}

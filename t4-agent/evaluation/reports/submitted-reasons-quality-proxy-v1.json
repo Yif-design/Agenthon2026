@@ -1,0 +1,134 @@
+{
+  "calls": 1,
+  "completion_tokens": 1215,
+  "decision": "proceed_to_production_candidate",
+  "experiment": "submitted_reasons_quality_proxy_v1",
+  "gates": {
+    "all_rows_parse": true,
+    "all_tasks_returned_once": true,
+    "mean_four_component_score_at_least_0_6": true,
+    "minimum_consistency_at_least_0_8": true,
+    "minimum_grounding_at_least_0_5": true,
+    "minimum_link_at_least_0_5": true,
+    "zero_contradictions": true
+  },
+  "items": [
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise provides concrete financial data (net sales, EPS) and the mechanism correctly links this to the consensus estimate, supporting the 'inline' prediction. The answer implication directly matches the prediction.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-EXAMPLE-eps-beat"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise cites specific auction data (bid-to-cover ratios) and the mechanism correctly uses this historical data to forecast future auctions. The answer implication aligns with the forecast.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-auction-btc-202411-us7"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise provides historical COT data, and the mechanism correctly uses this as a crowding signal to predict future positioning changes. The answer implication matches the forecast and rank.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-cotpos-202411-us10"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise presents historical CPI component data, and the mechanism correctly uses this history to anchor the forecast for the next month's change. The answer implication aligns with the forecast.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-cpicomp-202410-us11"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise cites financial statement information, and the mechanism correctly uses this as evidence for low risk, supporting the 'no_event' prediction. The answer implication matches the prediction.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-credit-event-2023"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise provides prior year EPS data, and the mechanism correctly uses this as a persistence estimate for the current year's growth. The answer implication aligns with the forecast.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-eps-growth-2024Q3-banks"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise cites financial statement information, and the mechanism correctly uses the prior comparable EPS level to anchor the forecast and validate the directional signal. The answer implication matches the prediction.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-eps-yoy-2023Q2-mixed"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise cites FOMC policy changes and rates data, and the mechanism correctly links policy direction to curve response. The answer implication aligns with the forecast.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise cites FOMC policy changes and rates data, and the mechanism correctly links policy direction to curve response. The answer implication aligns with the forecast.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-fomc-curve-20240918"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise provides historical revision data for macro series, and the mechanism correctly uses the median revision history to estimate future revisions. The answer implication aligns with the predicted direction.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-macrorev-20240930-us6"
+    },
+    {
+      "answer_consistency": 1.0,
+      "contradiction": false,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "note": "The premise cites SEC filings, and the mechanism correctly states that without strong forward-looking evidence, the reaction remains flat with a historical volatility band. The answer implication matches the prediction.",
+      "target_reason_coverage": 1.0,
+      "task_id": "t4-postearn-20240201-megacap"
+    }
+  ],
+  "latency_seconds": 4.808330817846581,
+  "limitations": "One non-official weak-model proxy cannot observe hidden target reasons or certify the official Final reasoning score.",
+  "local_llm_run": false,
+  "means": {
+    "answer_consistency": 1.0,
+    "evidence_grounding": 1.0,
+    "inferential_link": 1.0,
+    "target_reason_coverage": 1.0
+  },
+  "model": "gemini-2.5-flash-lite",
+  "production_change": "none",
+  "prompt_tokens": 22147,
+  "provider": "Google Gemini Developer API",
+  "schema_version": 1,
+  "seed": 20261001,
+  "temperature": 0,
+  "thinking_budget": 0,
+  "thought_tokens": 0
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "experiment": "bank_eps_interval_public_ab_v1",
+  "candidate_flag": "T4_ENABLE_BANK_EPS_INTERVAL=1",
+  "rollback_flag": "T4_ENABLE_BANK_EPS_INTERVAL=0",
+  "model_calls": 0,
+  "units": 11,
+  "rows": 78,
+  "changed_interval_rows": 8,
+  "non_interval_fields_identical_units": 11,
+  "validation_error_units": 0,
+  "details": [
+    {
+      "task_id": "t4-EXAMPLE-eps-beat",
+      "rows": 1,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-auction-btc-202411-us7",
+      "rows": 7,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-cotpos-202411-us10",
+      "rows": 10,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-cpicomp-202410-us11",
+      "rows": 11,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-credit-event-2023",
+      "rows": 8,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-eps-growth-2024Q3-banks",
+      "rows": 8,
+      "changed_intervals": 8,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-eps-yoy-2023Q2-mixed",
+      "rows": 6,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-fomc-curve-20220728",
+      "rows": 6,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-fomc-curve-20240918",
+      "rows": 6,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-macrorev-20240930-us6",
+      "rows": 12,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    },
+    {
+      "task_id": "t4-postearn-20240201-megacap",
+      "rows": 3,
+      "changed_intervals": 0,
+      "non_interval_fields_identical": true,
+      "legacy_validation_errors": 0,
+      "candidate_validation_errors": 0
+    }
+  ]
+}

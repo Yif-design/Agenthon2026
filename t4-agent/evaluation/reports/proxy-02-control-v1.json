@@ -1,0 +1,60 @@
+{
+  "experiment": "proxy-02-control-v1",
+  "hypothesis": "The frozen, cutoff-safe question pair is runnable and scoreable in both economically equivalent schema variants without model access or hidden-outcome leakage.",
+  "python": "3.13.15",
+  "model_api_calls": 0,
+  "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
+  "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "toolkit_tag": "v2.6.0",
+  "results": [
+    {
+      "unit": "proxy-02-gross-margin-delta-20230331-explicit",
+      "target_type": "regression",
+      "mae": 345.2304841113846,
+      "naive_mae": 345.2304841113846,
+      "raw_predictive_quality": 0.5,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.5,
+      "interval_coverage": 0.0,
+      "interval_score": 6868.609682227694,
+      "naive_interval_score": 1390.5738098059828,
+      "raw_interval_quality": 0.16836698338852124,
+      "interval_quality": 0.16836698338852124,
+      "composite_before_claim_penalty": 0.4005100950165563,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 7
+    },
+    {
+      "unit": "proxy-02-gross-margin-delta-20230331-transformed",
+      "target_type": "regression",
+      "mae": 345.2304841113846,
+      "naive_mae": 345.2304841113846,
+      "raw_predictive_quality": 0.5,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.5,
+      "interval_coverage": 0.0,
+      "interval_score": 6868.609682227694,
+      "naive_interval_score": 1390.5738098059828,
+      "raw_interval_quality": 0.16836698338852124,
+      "interval_quality": 0.16836698338852124,
+      "composite_before_claim_penalty": 0.4005100950165563,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 7
+    }
+  ],
+  "decision": "accept_benchmark_infrastructure",
+  "finding": "Both variants ran with zero model calls. Explicit composite was 0.4005 and transformed composite was 0.4005; the pair is retained as coverage and schema-stress infrastructure, without selecting a production forecasting change.",
+  "limitations": [
+    "One historical time-forward event per question family.",
+    "The control measures current deterministic routing and arithmetic, not model-assisted forecasting skill.",
+    "The local score excludes the official claim contradiction penalty and reasoning bonus."
+  ]
+}

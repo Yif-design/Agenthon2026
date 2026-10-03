@@ -1,0 +1,142 @@
+{
+  "baseline_git_commit": "4276ededb7ab5dfc8e8425ba22c96ccc8a2f4550",
+  "dataset_sha256": {
+    "cot": "a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e",
+    "cpi": "2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40",
+    "cpi_confirmation": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb"
+  },
+  "date": "2026-09-30",
+  "decision": "reject_before_prompt_change",
+  "decision_rule": "Advance to a remote model A/B only if peer-centered CPI accuracy and macro-F1 strictly improve on both test and confirmation, COT Spearman is noninferior in every split, and at least 95% of rows are computable.",
+  "experiment": "cross_section_stats_screen_v1",
+  "gates": {
+    "computed_rate_at_least_0_95": true,
+    "cot_spearman_noninferior": true,
+    "cpi_test_and_confirmation_accuracy_and_macro_f1_strictly_improve": false
+  },
+  "hypothesis": "Peer median, MAD, robust z-score and percentile expose useful full-roster context for unknown classification and ranking beyond the row-local raw scalar.",
+  "interpretation_guard": "Statistics are diagnostic input facts. This screen uses simple mappings only to test whether they contain incremental outcome signal; it does not authorize production to map a percentile or z-score directly to a forecast direction.",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "periods": {
+    "confirmation": {
+      "cot": {
+        "computed_rate": 1.0,
+        "groups": 44,
+        "mad_zero_groups": 0,
+        "percentile_mean_spearman": -0.11212121212121212,
+        "rank_order_changed_by_percentile": false,
+        "rank_order_changed_by_robust_z": false,
+        "raw_mean_spearman": -0.11212121212121212,
+        "robust_z_mean_spearman": -0.11212121212121212,
+        "rows": 440
+      },
+      "cpi": {
+        "computed_rate": 1.0,
+        "computed_rows": 245,
+        "eligible_rows": 245,
+        "groups": 23,
+        "mad_zero_groups": 0,
+        "peer_centered_sign": {
+          "accuracy": 0.5061224489795918,
+          "macro_f1": 0.48807611942875895,
+          "rows": 245
+        },
+        "raw_sign": {
+          "accuracy": 0.6979591836734694,
+          "macro_f1": 0.6087275552486187,
+          "rows": 245
+        }
+      }
+    },
+    "development": {
+      "cot": {
+        "computed_rate": 1.0,
+        "groups": 51,
+        "mad_zero_groups": 0,
+        "percentile_mean_spearman": -0.12560903149138444,
+        "rank_order_changed_by_percentile": false,
+        "rank_order_changed_by_robust_z": false,
+        "raw_mean_spearman": -0.12560903149138444,
+        "robust_z_mean_spearman": -0.12560903149138444,
+        "rows": 510
+      },
+      "cpi": {
+        "computed_rate": 1.0,
+        "computed_rows": 132,
+        "eligible_rows": 132,
+        "groups": 12,
+        "mad_zero_groups": 0,
+        "peer_centered_sign": {
+          "accuracy": 0.5227272727272727,
+          "macro_f1": 0.486634977467745,
+          "rows": 132
+        },
+        "raw_sign": {
+          "accuracy": 0.8181818181818182,
+          "macro_f1": 0.7039252336448598,
+          "rows": 132
+        }
+      }
+    },
+    "test": {
+      "cot": {
+        "computed_rate": 1.0,
+        "groups": 52,
+        "mad_zero_groups": 0,
+        "percentile_mean_spearman": 0.018414918414918414,
+        "rank_order_changed_by_percentile": false,
+        "rank_order_changed_by_robust_z": false,
+        "raw_mean_spearman": 0.018414918414918414,
+        "robust_z_mean_spearman": 0.018414918414918414,
+        "rows": 520
+      },
+      "cpi": {
+        "computed_rate": 1.0,
+        "computed_rows": 132,
+        "eligible_rows": 132,
+        "groups": 12,
+        "mad_zero_groups": 0,
+        "peer_centered_sign": {
+          "accuracy": 0.5075757575757576,
+          "macro_f1": 0.48607367475292007,
+          "rows": 132
+        },
+        "raw_sign": {
+          "accuracy": 0.7575757575757576,
+          "macro_f1": 0.6699999999999999,
+          "rows": 132
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "scope": "L3 cross-sectional statistics preflight",
+  "time_splits": {
+    "confirmation": {
+      "cot": [
+        "2023"
+      ],
+      "cpi": [
+        "2024",
+        "2025"
+      ]
+    },
+    "development": {
+      "cot": [
+        "2021"
+      ],
+      "cpi": [
+        "2021"
+      ]
+    },
+    "test": {
+      "cot": [
+        "2022"
+      ],
+      "cpi": [
+        "2022"
+      ]
+    }
+  }
+}

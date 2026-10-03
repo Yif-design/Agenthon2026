@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_AMZN_2023Q1_transformed",
+  "entities": [
+    "SEC_AMZN_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for AMAZON COM INC (AMZN); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases scaled currency units 2666000000; revenue scaled currency units 116444000000."
+}

@@ -1,0 +1,167 @@
+{
+  "task_id": "proxy-17-natural-gas-storage-change-20260924-transformed",
+  "schema_version": "3",
+  "target_type": "regression",
+  "entity_predictions": [
+    {
+      "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+          "span_start": 0,
+          "span_end": 486,
+          "claim": "EIA weekly working gas in underground storage for South Central.\nweek_ending | working_gas_bcf | weekly_change_bcf\n2025-09-26 | 1186 | -4\n2025-10-03 | 1201 | 15\n2025-10-10 | 1222 | 21\n2025-10-17 | 1255 | 33\n2025-10-24 | 1282 | 27\n2025-10-31 | 1296 | 14\n2025-11-07 | 1318 | 22\n2025-11-14 | 1316 | -2\n2025-11-21 | 1329 | 13\n2025-11-28 | 1345 | 16\n2025-12-05 | 1290 | -55\n2025-12-12 | 1242 | -48\n2025-12-19 | 1190 | -52\n2025-12-26 | 1203 | 13\n2026-01-02 | 1178 | -25\n2026-01-09 | 1177 | -1"
+        },
+        {
+          "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+          "span_start": 0,
+          "span_end": 1395,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_GAS_PACIFIC_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+          "span_start": 0,
+          "span_end": 495,
+          "claim": "EIA weekly working gas in underground storage for Pacific.\nweek_ending | working_gas_bcf | weekly_change_bcf\n2025-09-26 | 302 | 2\n2025-10-03 | 304 | 2\n2025-10-10 | 307 | 3\n2025-10-17 | 311 | 4\n2025-10-24 | 316 | 5\n2025-10-31 | 318 | 2\n2025-11-07 | 321 | 3\n2025-11-14 | 322 | 1\n2025-11-21 | 319 | -3\n2025-11-28 | 315 | -4\n2025-12-05 | 306 | -9\n2025-12-12 | 304 | -2\n2025-12-19 | 303 | -1\n2025-12-26 | 307 | 4\n2026-01-02 | 304 | -3\n2026-01-09 | 302 | -2\n2026-01-16 | 300 | -2\n2026-01-23 | 291 | -9"
+        },
+        {
+          "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+          "span_start": 0,
+          "span_end": 1314,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+          "span_start": 0,
+          "span_end": 498,
+          "claim": "EIA weekly working gas in underground storage for Mountain.\nweek_ending | working_gas_bcf | weekly_change_bcf\n2025-09-26 | 259 | 3\n2025-10-03 | 264 | 5\n2025-10-10 | 269 | 5\n2025-10-17 | 272 | 3\n2025-10-24 | 276 | 4\n2025-10-31 | 277 | 1\n2025-11-07 | 280 | 3\n2025-11-14 | 281 | 1\n2025-11-21 | 282 | 1\n2025-11-28 | 277 | -5\n2025-12-05 | 266 | -11\n2025-12-12 | 261 | -5\n2025-12-19 | 255 | -6\n2025-12-26 | 254 | -1\n2026-01-02 | 246 | -8\n2026-01-09 | 241 | -5\n2026-01-16 | 232 | -9\n2026-01-23 | 219 | -13"
+        },
+        {
+          "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+          "span_start": 0,
+          "span_end": 1313,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_GAS_MIDWEST_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+          "span_start": 0,
+          "span_end": 477,
+          "claim": "EIA weekly working gas in underground storage for Midwest.\nweek_ending | working_gas_bcf | weekly_change_bcf\n2025-09-26 | 972 | 27\n2025-10-03 | 1001 | 29\n2025-10-10 | 1031 | 30\n2025-10-17 | 1060 | 29\n2025-10-24 | 1085 | 25\n2025-10-31 | 1105 | 20\n2025-11-07 | 1117 | 12\n2025-11-14 | 1112 | -5\n2025-11-21 | 1103 | -9\n2025-11-28 | 1088 | -15\n2025-12-05 | 1030 | -58\n2025-12-12 | 966 | -64\n2025-12-19 | 903 | -63\n2025-12-26 | 864 | -39\n2026-01-02 | 820 | -44\n2026-01-09 | 790 | -30"
+        },
+        {
+          "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+          "span_start": 0,
+          "span_end": 1372,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_GAS_EAST_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+          "span_start": 0,
+          "span_end": 486,
+          "claim": "EIA weekly working gas in underground storage for East.\nweek_ending | working_gas_bcf | weekly_change_bcf\n2025-09-26 | 832 | 25\n2025-10-03 | 860 | 28\n2025-10-10 | 883 | 23\n2025-10-17 | 899 | 16\n2025-10-24 | 913 | 14\n2025-10-31 | 909 | -4\n2025-11-07 | 914 | 5\n2025-11-14 | 905 | -9\n2025-11-21 | 892 | -13\n2025-11-28 | 888 | -4\n2025-12-05 | 843 | -45\n2025-12-12 | 797 | -46\n2025-12-19 | 751 | -46\n2025-12-26 | 736 | -15\n2026-01-02 | 697 | -39\n2026-01-09 | 664 | -33\n2026-01-16 | 632 | -32"
+        },
+        {
+          "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+          "span_start": 0,
+          "span_end": 1356,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_GAS_LOWER48_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+          "span_start": 0,
+          "span_end": 496,
+          "claim": "EIA weekly working gas in underground storage for Total Lower 48.\nweek_ending | working_gas_bcf | weekly_change_bcf\n2025-09-26 | 3551 | 52\n2025-10-03 | 3631 | 80\n2025-10-10 | 3712 | 81\n2025-10-17 | 3798 | 86\n2025-10-24 | 3872 | 74\n2025-10-31 | 3905 | 33\n2025-11-07 | 3950 | 45\n2025-11-14 | 3936 | -14\n2025-11-21 | 3924 | -12\n2025-11-28 | 3913 | -11\n2025-12-05 | 3735 | -178\n2025-12-12 | 3569 | -166\n2025-12-19 | 3401 | -168\n2025-12-26 | 3364 | -37\n2026-01-02 | 3244 | -120\n2026-01-09 | 3174 | -70"
+        },
+        {
+          "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+          "span_start": 0,
+          "span_end": 1439,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "EIA_GAS_SOUTH_CENTRAL_20260925",
+      "EIA_GAS_PACIFIC_20260925",
+      "EIA_GAS_MOUNTAIN_20260925",
+      "EIA_GAS_MIDWEST_20260925",
+      "EIA_GAS_EAST_20260925",
+      "EIA_GAS_LOWER48_20260925"
+    ],
+    "methods": {
+      "EIA_GAS_SOUTH_CENTRAL_20260925": "generic_baseline",
+      "EIA_GAS_PACIFIC_20260925": "generic_baseline",
+      "EIA_GAS_MOUNTAIN_20260925": "generic_baseline",
+      "EIA_GAS_MIDWEST_20260925": "generic_baseline",
+      "EIA_GAS_EAST_20260925": "generic_baseline",
+      "EIA_GAS_LOWER48_20260925": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

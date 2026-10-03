@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-06-share-dilution-direction_SEC_WMT_2023Q1_explicit",
+  "entities": [
+    "SEC_WMT_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior comparable diluted weighted-average shares 2765000000; flat band plus or minus 1 percent."
+}

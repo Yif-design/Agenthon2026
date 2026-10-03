@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_KO_2023Q1_explicit",
+  "entities": [
+    "SEC_KO_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior current assets USD 22156000000; current liabilities USD 18787000000; cash USD 7681000000."
+}

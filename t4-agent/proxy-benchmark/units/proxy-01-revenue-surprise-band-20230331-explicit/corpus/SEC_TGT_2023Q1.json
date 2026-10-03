@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_TGT_2023Q1_explicit",
+  "entities": [
+    "SEC_TGT_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior comparable revenue: USD 25170000000, filed 2022-05-27, accession 0000027419-22-000015.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+}

@@ -1,0 +1,128 @@
+{
+  "answer_configuration": "nemotron-free-nothink-signal",
+  "artifact": "evaluation/reports/fomc-interval-calibration-v1.json",
+  "artifact_holdout_not_read_assertion": [
+    "t4-fomc-curve-20220728",
+    "t4-fomc-curve-20240918"
+  ],
+  "artifact_sha256": "06bf01b45a28e4f77fc27218b7e8a9a7065d60af50ac6d31a9128c8898ddb20f",
+  "decision": "reject",
+  "mean_base_calibration_loss": 0.9,
+  "mean_candidate_calibration_loss": 0.9,
+  "tasks": [
+    {
+      "base_calibration_loss": 0.9,
+      "base_coverage": 0.0,
+      "candidate_calibration_loss": 0.9,
+      "candidate_coverage": 0.0,
+      "rows": [
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 41.000000000000014,
+          "candidate_hit": false,
+          "entity_id": "UST10Y",
+          "point_forecast": 9.0,
+          "truth": 89.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 35.999999999999986,
+          "candidate_hit": false,
+          "entity_id": "UST2Y",
+          "point_forecast": 15.0,
+          "truth": 111.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 37.000000000000014,
+          "candidate_hit": false,
+          "entity_id": "UST30Y",
+          "point_forecast": 6.0,
+          "truth": 57.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 39.00000000000006,
+          "candidate_hit": false,
+          "entity_id": "UST3Y",
+          "point_forecast": 12.0,
+          "truth": 113.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 42.99999999999999,
+          "candidate_hit": false,
+          "entity_id": "UST5Y",
+          "point_forecast": 12.0,
+          "truth": 106.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 43.000000000000014,
+          "candidate_hit": false,
+          "entity_id": "UST7Y",
+          "point_forecast": 9.0,
+          "truth": 100.0
+        }
+      ],
+      "task_id": "t4-fomc-curve-20220728"
+    },
+    {
+      "base_calibration_loss": 0.9,
+      "base_coverage": 0.0,
+      "candidate_calibration_loss": 0.9,
+      "candidate_coverage": 0.0,
+      "rows": [
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 41.000000000000014,
+          "candidate_hit": false,
+          "entity_id": "UST10Y",
+          "point_forecast": -9.0,
+          "truth": 69.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 35.999999999999986,
+          "candidate_hit": false,
+          "entity_id": "UST2Y",
+          "point_forecast": -15.0,
+          "truth": 68.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 37.000000000000014,
+          "candidate_hit": false,
+          "entity_id": "UST30Y",
+          "point_forecast": -6.0,
+          "truth": 54.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 39.00000000000006,
+          "candidate_hit": false,
+          "entity_id": "UST3Y",
+          "point_forecast": -12.0,
+          "truth": 73.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 42.99999999999999,
+          "candidate_hit": false,
+          "entity_id": "UST5Y",
+          "point_forecast": -12.0,
+          "truth": 78.0
+        },
+        {
+          "base_hit": false,
+          "candidate_half_width_bps": 43.000000000000014,
+          "candidate_hit": false,
+          "entity_id": "UST7Y",
+          "point_forecast": -9.0,
+          "truth": 77.0
+        }
+      ],
+      "task_id": "t4-fomc-curve-20240918"
+    }
+  ]
+}

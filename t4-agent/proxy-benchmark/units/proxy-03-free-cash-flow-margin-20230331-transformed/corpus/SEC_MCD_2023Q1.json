@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_MCD_2023Q1_transformed",
+  "entities": [
+    "SEC_MCD_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 5665600000; operating cash flow scaled currency units 2133300000; capital expenditure scaled currency units 401200000."
+}
