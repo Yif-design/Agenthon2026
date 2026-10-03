@@ -1,0 +1,137 @@
+{
+  "task_id": "proxy-09-segment-growth-rank-20230428-transformed",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "MSFT_MorePersonalComputing",
+      "point_forecast": 13260000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 26520000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_MorePersonalComputing_transformed",
+          "span_start": 0,
+          "span_end": 208,
+          "claim": "SEC inline XBRL dimension member msft:MorePersonalComputingMember. Prior period turnover 14584000 thousand scaled units; current period turnover 13260000 thousand scaled units. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "MSFT_IntelligentCloud",
+      "point_forecast": 22081000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 44162000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_IntelligentCloud_transformed",
+          "span_start": 0,
+          "span_end": 203,
+          "claim": "SEC inline XBRL dimension member msft:IntelligentCloudMember. Prior period turnover 18987000 thousand scaled units; current period turnover 22081000 thousand scaled units. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+      "point_forecast": 17516000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 35032000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_ProductivityAndBusinessProcesses_transformed",
+          "span_start": 0,
+          "span_end": 219,
+          "claim": "SEC inline XBRL dimension member msft:ProductivityAndBusinessProcessesMember. Prior period turnover 15789000 thousand scaled units; current period turnover 17516000 thousand scaled units. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "AMZN_AmazonWebServicesSegment",
+      "point_forecast": 21354000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 42708000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_AmazonWebServicesSegment_transformed",
+          "span_start": 0,
+          "span_end": 211,
+          "claim": "SEC inline XBRL dimension member amzn:AmazonWebServicesSegmentMember. Prior period turnover 18441000 thousand scaled units; current period turnover 21354000 thousand scaled units. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "AMZN_InternationalSegment",
+      "point_forecast": 29123000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 58246000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_InternationalSegment_transformed",
+          "span_start": 0,
+          "span_end": 207,
+          "claim": "SEC inline XBRL dimension member amzn:InternationalSegmentMember. Prior period turnover 28759000 thousand scaled units; current period turnover 29123000 thousand scaled units. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "AMZN_NorthAmericaSegment",
+      "point_forecast": 76881000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 153762000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_NorthAmericaSegment_transformed",
+          "span_start": 0,
+          "span_end": 206,
+          "claim": "SEC inline XBRL dimension member amzn:NorthAmericaSegmentMember. Prior period turnover 69244000 thousand scaled units; current period turnover 76881000 thousand scaled units. Filed no later than 2023-04-28."
+        }
+      ],
+      "rank": 1
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "MSFT_MorePersonalComputing",
+      "MSFT_IntelligentCloud",
+      "MSFT_ProductivityAndBusinessProcesses",
+      "AMZN_AmazonWebServicesSegment",
+      "AMZN_InternationalSegment",
+      "AMZN_NorthAmericaSegment"
+    ],
+    "methods": {
+      "MSFT_MorePersonalComputing": "generic_baseline",
+      "MSFT_IntelligentCloud": "generic_baseline",
+      "MSFT_ProductivityAndBusinessProcesses": "generic_baseline",
+      "AMZN_AmazonWebServicesSegment": "generic_baseline",
+      "AMZN_InternationalSegment": "generic_baseline",
+      "AMZN_NorthAmericaSegment": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

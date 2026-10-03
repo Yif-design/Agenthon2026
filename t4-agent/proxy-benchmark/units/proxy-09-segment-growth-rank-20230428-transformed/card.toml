@@ -1,0 +1,33 @@
+schema_version = "2.0"
+
+[task]
+id = "proxy-09-segment-growth-rank-20230428-transformed"
+track = "analysis"
+title = "proxy-09-segment-growth-rank (transformed)"
+split = "time_forward_test"
+family = "component_turnover_change"
+target_type = "ranking"
+cutoff_date = "2023-04-28"
+resolution_date = "2023-08-04"
+
+[provenance]
+license = "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained"
+data_source = "SEC EDGAR inline XBRL filings"
+data_cutoff = "2023-04-28"
+redistributable = true
+manifest = "manifest.json"
+
+[scoring]
+verifier = "t4.faithful_analysis"
+metric = "analysis_composite"
+admissibility_gates = ["g0_integrity", "g1_schema", "g2_cutoff_resource", "g3_domain_semantics"]
+
+[scoring.params]
+faithfulness_threshold = 0.80
+interval_level = 0.90
+target_type = "ranking"
+composite_weights = [0.7, 0.3]
+tau_citation = 0.5
+
+[agent]
+timeout_sec = 600.0

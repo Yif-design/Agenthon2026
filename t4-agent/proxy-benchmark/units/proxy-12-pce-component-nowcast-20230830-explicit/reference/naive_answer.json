@@ -1,0 +1,146 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPI_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_PCEPI_202307",
+      "interval": {
+        "hi": 0.4816317359368517,
+        "level": 0.9,
+        "lo": -0.06411764166844355
+      },
+      "point_forecast": 0.2087570471342041
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPILFE_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_PCEPILFE_202307",
+      "interval": {
+        "hi": 0.49644127851801845,
+        "level": 0.9,
+        "lo": 0.05426786592830793
+      },
+      "point_forecast": 0.2753545722231632
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DGDSRG3M086SBEA_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+      "interval": {
+        "hi": 0.5672125237080855,
+        "level": 0.9,
+        "lo": -0.49734990239472715
+      },
+      "point_forecast": 0.03493131065667917
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DDURRG3M086SBEA_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_DDURRG3M086SBEA_202307",
+      "interval": {
+        "hi": 0.5853036215209215,
+        "level": 0.9,
+        "lo": -0.4963942512657506
+      },
+      "point_forecast": 0.04445468512758547
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DNDGRG3M086SBEA_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+      "interval": {
+        "hi": 0.8912205900875244,
+        "level": 0.9,
+        "lo": -0.8312283295590096
+      },
+      "point_forecast": 0.02999613026425744
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DSERRG3M086SBEA_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_DSERRG3M086SBEA_202307",
+      "interval": {
+        "hi": 0.5475827379804891,
+        "level": 0.9,
+        "lo": 0.04330728995224431
+      },
+      "point_forecast": 0.2954450139663667
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DNRGRG3M086SBEA_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+      "interval": {
+        "hi": 3.4254195566675403,
+        "level": 0.9,
+        "lo": -5.098800125604777
+      },
+      "point_forecast": -0.8366902844686183
+    },
+    {
+      "claims": [
+        {
+          "claim": "BEA via ALFRED source.",
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DFXARG3M086SBEA_202307_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "PCE_DFXARG3M086SBEA_202307",
+      "interval": {
+        "hi": 0.6521351728558566,
+        "level": 0.9,
+        "lo": -0.6545998623626104
+      },
+      "point_forecast": -0.0012323447533768572
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "regression",
+  "task_id": "proxy-12-pce-component-nowcast-20230830-explicit"
+}

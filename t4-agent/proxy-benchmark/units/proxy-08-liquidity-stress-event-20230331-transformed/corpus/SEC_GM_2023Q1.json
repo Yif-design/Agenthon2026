@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_GM_2023Q1_transformed",
+  "entities": [
+    "SEC_GM_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for GENERAL MOTORS COMPANY (GM); facts include original accession and filed date.\nPrior current assets scaled currency units 88594000000; current liabilities scaled currency units 79555000000; cash scaled currency units 16349000000."
+}

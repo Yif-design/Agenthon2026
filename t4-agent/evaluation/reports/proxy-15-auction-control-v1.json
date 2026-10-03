@@ -4,8 +4,8 @@
   "python": "3.13.15",
   "model_api_calls": 0,
   "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
-  "official_track_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
-  "toolkit_tag": "v2.5.1",
+  "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "toolkit_tag": "v2.6.0",
   "results": [
     {
       "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",

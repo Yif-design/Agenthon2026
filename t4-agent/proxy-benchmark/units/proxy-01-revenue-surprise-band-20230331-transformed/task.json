@@ -1,0 +1,139 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "benchmark_turnover_millions": 140288.0,
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "issuer_key": "CIK-0000104169",
+      "name": "WALMART INC.",
+      "period_key": "2023-04-30",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 25170.0,
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "issuer_key": "CIK-0000027419",
+      "name": "Target Corporation",
+      "period_key": "2023-04-29",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 16200.0,
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "issuer_key": "CIK-0000077476",
+      "name": "PepsiCo, Inc.",
+      "period_key": "2023-03-25",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 8288.0,
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "issuer_key": "CIK-0001045810",
+      "name": "NVIDIA CORP",
+      "period_key": "2023-04-30",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 5665.6,
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "issuer_key": "CIK-0000063908",
+      "name": "McDONALD’S CORPORATION",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 10491.0,
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "issuer_key": "CIK-0000021344",
+      "name": "COCA COLA CO",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 18353.0,
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "issuer_key": "CIK-0000050863",
+      "name": "INTEL CORP",
+      "period_key": "2023-04-01",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 14197.0,
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "issuer_key": "CIK-0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 38908.0,
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "issuer_key": "CIK-0000354950",
+      "name": "The Home Depot, Inc.",
+      "period_key": "2023-04-30",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 32824.0,
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "issuer_key": "CIK-0001467858",
+      "name": "GENERAL MOTORS COMPANY",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 34476.0,
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "issuer_key": "CIK-0000037996",
+      "name": "Ford Motor Co",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 3497.0,
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "issuer_key": "CIK-0001690820",
+      "name": "CARVANA CO.",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    },
+    {
+      "benchmark_turnover_millions": 116444.0,
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "issuer_key": "CIK-0001018724",
+      "name": "AMAZON COM INC",
+      "period_key": "2023-03-31",
+      "tolerance_fraction": 0.02
+    }
+  ],
+  "family": "relative_turnover_band",
+  "interval_level": 0.9,
+  "prompt": "Classify Q1 revenue relative to the frozen prior-year reference and plus/minus 2 percent band.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "above_band",
+      "within_band",
+      "below_band"
+    ],
+    "name": "turnover_deviation_class",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-01-revenue-surprise-band-20230331-transformed"
+}

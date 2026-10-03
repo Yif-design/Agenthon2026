@@ -1,0 +1,17 @@
+{
+  "unit": "proxy-02-gross-margin-delta-20230331-transformed",
+  "target_type": "regression",
+  "mae": 345.2304841113846,
+  "naive_mae": 345.2304841113846,
+  "raw_predictive_quality": 0.5,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": null,
+  "predictive_quality": 0.5,
+  "interval_coverage": 0.0,
+  "interval_score": 6868.609682227694,
+  "naive_interval_score": 1390.5738098059828,
+  "raw_interval_quality": 0.16836698338852124,
+  "interval_quality": 0.16836698338852124,
+  "composite_before_claim_penalty": 0.4005100950165563,
+  "claim_penalty_evaluated": false
+}

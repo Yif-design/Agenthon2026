@@ -1,0 +1,80 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/UST_DGS30_20230929.json",
+      "curve_node": "T-360",
+      "entity_id": "UST_DGS30_20230929",
+      "name": "30-year",
+      "recent_move_fraction": 0.005300000000000003,
+      "tenor_months": 360,
+      "terminal_rate_fraction": 0.0473
+    },
+    {
+      "corpus_ref": "corpus/UST_DGS20_20230929.json",
+      "curve_node": "T-240",
+      "entity_id": "UST_DGS20_20230929",
+      "name": "20-year",
+      "recent_move_fraction": 0.005300000000000003,
+      "tenor_months": 240,
+      "terminal_rate_fraction": 0.0492
+    },
+    {
+      "corpus_ref": "corpus/UST_DGS10_20230929.json",
+      "curve_node": "T-120",
+      "entity_id": "UST_DGS10_20230929",
+      "name": "10-year",
+      "recent_move_fraction": 0.005,
+      "tenor_months": 120,
+      "terminal_rate_fraction": 0.045899999999999996
+    },
+    {
+      "corpus_ref": "corpus/UST_DGS7_20230929.json",
+      "curve_node": "T-84",
+      "entity_id": "UST_DGS7_20230929",
+      "name": "7-year",
+      "recent_move_fraction": 0.004199999999999999,
+      "tenor_months": 84,
+      "terminal_rate_fraction": 0.0461
+    },
+    {
+      "corpus_ref": "corpus/UST_DGS5_20230929.json",
+      "curve_node": "T-60",
+      "entity_id": "UST_DGS5_20230929",
+      "name": "5-year",
+      "recent_move_fraction": 0.0036999999999999924,
+      "tenor_months": 60,
+      "terminal_rate_fraction": 0.046
+    },
+    {
+      "corpus_ref": "corpus/UST_DGS3_20230929.json",
+      "curve_node": "T-36",
+      "entity_id": "UST_DGS3_20230929",
+      "name": "3-year",
+      "recent_move_fraction": 0.0025999999999999977,
+      "tenor_months": 36,
+      "terminal_rate_fraction": 0.048
+    },
+    {
+      "corpus_ref": "corpus/UST_DGS2_20230929.json",
+      "curve_node": "T-24",
+      "entity_id": "UST_DGS2_20230929",
+      "name": "2-year",
+      "recent_move_fraction": 0.001800000000000006,
+      "tenor_months": 24,
+      "terminal_rate_fraction": 0.050300000000000004
+    }
+  ],
+  "family": "relative_rate_node_shift",
+  "interval_level": 0.9,
+  "prompt": "Rank Treasury maturities by yield change through the twentieth common post-cutoff observation; rank 1 is the largest increase.",
+  "resolution_date": "2023-10-30",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "curve_node_move_order",
+    "type": "ranking",
+    "unit": "basis_points"
+  },
+  "task_id": "proxy-14-yield-curve-steepening-rank-20230929-transformed"
+}

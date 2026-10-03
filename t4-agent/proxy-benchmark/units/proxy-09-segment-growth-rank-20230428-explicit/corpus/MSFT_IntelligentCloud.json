@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-04-28",
+  "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_IntelligentCloud_explicit",
+  "entities": [
+    "MSFT_IntelligentCloud"
+  ],
+  "license": "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained",
+  "source": "SEC EDGAR inline XBRL filings",
+  "text": "SEC inline XBRL segment facts for MSFT Intelligent Cloud. Q1 2022 revenue USD 18987 million; Q1 2023 revenue USD 22081 million. Filed no later than 2023-04-28."
+}

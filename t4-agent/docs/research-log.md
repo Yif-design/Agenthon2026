@@ -1,3 +1,22 @@
+## 2026-10-03: complete 20-question proxy catalog — accepted as evaluation infrastructure
+
+Hypothesis: twenty real-source, cutoff-safe question families with paired explicit/transformed
+schemas can run end-to-end without model access or hidden-outcome leakage.
+
+Result: all 20 questions materialize into 40 valid units spanning six classification, eight
+regression and six ranking targets. Each pair preserves entity outcomes while changing field names,
+units or roster order. All 40 declared naive answers score at the neutral 0.5 anchor; all 20 current
+zero-model controls completed and produced separate reports. SEC company facts cover proxy-01–08,
+dimensioned filing facts cover proxy-09, and official macro/market sources cover proxy-10–20.
+
+During validation, a ranking edge case was fixed: a perfect declared naive previously mapped to
+0.85 composite rather than the required neutral 0.5. Production forecasting logic was unchanged.
+The catalog is accepted for architecture and regression testing; one historical event per family
+remains insufficient evidence for a forecasting change.
+
+Reports: `evaluation/reports/proxy-01-control-v1.json` through proxy-20's family-specific report.
+Model API calls: 0. Local LLM/NLI runs: 0.
+
 # Research log
 
 ## 2026-10-03: forward FX volatility proxy-19 benchmark — accepted, robustness hypothesis rejected

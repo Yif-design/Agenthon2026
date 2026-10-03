@@ -1,0 +1,57 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "true_label": "above_band"
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "true_label": "within_band"
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "true_label": "above_band"
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "true_label": "below_band"
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "true_label": "above_band"
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "true_label": "above_band"
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "true_label": "below_band"
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "true_label": "within_band"
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "true_label": "below_band"
+    },
+    {
+      "entity_id": "SEC_GM_2023Q1",
+      "true_label": "above_band"
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "true_label": "above_band"
+    },
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "true_label": "below_band"
+    },
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "true_label": "above_band"
+    }
+  ],
+  "task_id": "proxy-01-revenue-surprise-band-20230331-transformed"
+}

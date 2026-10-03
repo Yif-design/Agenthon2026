@@ -76,8 +76,12 @@ def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, An
 
 
 def anchored_quality(raw: float, anchor: float) -> float:
-    if raw >= anchor:
-        return 1.0 if anchor >= 1.0 - 1e-12 else 0.5 + 0.5 * (raw - anchor) / (1.0 - anchor)
+    # The declared naive must always define the neutral 0.5 point, including
+    # the edge case where its rank ordering happens to be perfect.
+    if abs(raw - anchor) <= 1e-12:
+        return 0.5
+    if raw > anchor:
+        return 0.5 if anchor >= 1.0 - 1e-12 else 0.5 + 0.5 * (raw - anchor) / (1.0 - anchor)
     return 0.5 * raw / anchor if anchor > 0 else 0.5
 
 

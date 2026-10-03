@@ -203,6 +203,49 @@ class ProxyBenchmarkTests(unittest.TestCase):
     def test_average_rank_ties_are_neutral(self) -> None:
         self.assertEqual(scorer.spearman([0.0] * 10, list(range(10))), 0.0)
 
+    def test_complete_catalog_and_all_naive_answers_are_neutral(self) -> None:
+        units = sorted(path for path in (PROXY / "units").iterdir() if path.is_dir())
+        self.assertEqual(len(units), 40)
+        self.assertEqual(len({path.name.rsplit("-", 1)[0] for path in units}), 20)
+        for unit in units:
+            result = scorer.score(unit, unit / "reference/naive_answer.json")
+            self.assertAlmostEqual(
+                result["composite_before_claim_penalty"], 0.5, msg=unit.name
+            )
+
+    def test_complete_catalog_passes_integrity_and_hides_outcomes(self) -> None:
+        units = sorted(path for path in (PROXY / "units").iterdir() if path.is_dir())
+        for unit in units:
+            self.assertEqual(validator.validate_unit(unit), [], unit.name)
+            task = json.loads((unit / "task.json").read_text())
+            visible = "\n".join(
+                path.read_text()
+                for path in [unit / "task.json", *(unit / "corpus").glob("*.json")]
+            )
+            outcome = json.loads((unit / "reference/outcome.json").read_text())
+            self.assertNotIn('"truth"', visible, unit.name)
+            for row in outcome["outcomes"]:
+                self.assertIn(row["entity_id"], {entity["entity_id"] for entity in task["entities"]})
+        for explicit in (PROXY / "units").glob("*-explicit"):
+            transformed = explicit.with_name(explicit.name.removesuffix("explicit") + "transformed")
+            self.assertEqual(validator.compare_variants(explicit, transformed), [], explicit.name)
+
+    def test_segment_snapshot_uses_only_pre_cutoff_signal_and_documented_resolution(self) -> None:
+        source = json.loads((PROXY / "sources/proxy-09-segments-2023.json").read_text())
+        self.assertEqual(len(source["segments"]), 6)
+        self.assertEqual(source["cutoff"], "2023-04-28")
+        self.assertEqual(source["resolution"], "2023-08-04")
+        self.assertEqual(len(source["raw_sources"]), 4)
+        for row in source["segments"]:
+            expected_signal = 100 * (
+                row["q1_2023_revenue_millions"] / row["q1_2022_revenue_millions"] - 1
+            )
+            expected_outcome = 100 * (
+                row["q2_2023_revenue_millions"] / row["q2_2022_revenue_millions"] - 1
+            )
+            self.assertAlmostEqual(row["signal_growth_pct"], expected_signal)
+            self.assertAlmostEqual(row["outcome_growth_pct"], expected_outcome)
+
     def test_schema_variants_reverse_roster_without_changing_truth(self) -> None:
         left = json.loads((self.explicit / "task.json").read_text())
         right = json.loads((self.transformed / "task.json").read_text())

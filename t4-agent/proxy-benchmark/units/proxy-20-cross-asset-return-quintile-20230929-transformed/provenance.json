@@ -1,0 +1,115 @@
+{
+  "cutoff_date": "2023-09-29",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_macro_proxies.py",
+  "generator_version": "1.0.0",
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "question_id": "proxy-20-cross-asset-return-quintile",
+  "raw_sources": [
+    {
+      "series_id": "DEXUSEU",
+      "sha256": "fb47808e9cc103f33d80e3dc02341b115a2f08b752121f9fdb6993a841a48b47",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXJPUS",
+      "sha256": "d042b83a524e52baa6ac7f7bce8ead7dd300a9aec96411c2325f29ce13e00aa9",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXJPUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXUSUK",
+      "sha256": "605ff41063531345ccaab2a74006d551e6d0144b0542e9f04b21303b20ce94a0",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSUK&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXCAUS",
+      "sha256": "80d9687d99bd7aa60d631d31637741e113fa8ed73f7e54eedd830ad616d1a165",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCAUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXCHUS",
+      "sha256": "cf224c898c52a9a17564ea9eb4babba576cd9525855021dddba22a79edc8912d",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXKOUS",
+      "sha256": "56dc522e36ab3488dc8114d4afdea7da790efcb9cc20ed9a610ae46fa87de346",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXKOUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXMXUS",
+      "sha256": "8c8d8e7e02467db19896f37177720dbc5082ec54fbfb5e4960f32cde9a896347",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXMXUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXBZUS",
+      "sha256": "ea89f6047e2091fc8064eacabc978f29124232ea12c9a2e94c853cbb96594758",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXBZUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXINUS",
+      "sha256": "8f4fdf2feba32021e666491567e16e752f9d805cc4ba8d7822a4541f53fca328",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXINUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DEXSFUS",
+      "sha256": "45dba5bb396a2f66ef877bfbfc8746c6c15c9528ed88167aa6d36b63e79e0bb9",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXSFUS&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS2",
+      "sha256": "b0f5b9a0ed71853a282cb5c5ab1fbfe8fa336d62db276c6e1745dbaa75f4497e",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS3",
+      "sha256": "1fa01cef5e1011224a47d571c0ee4b4a3c99a1a93c3b6b90af3d44d8165ea9ae",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS5",
+      "sha256": "1f263978a9ec46e49a4a2ba945389b32b237c3c2795b9f65e63a93e6eeb4ffa1",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS5&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS7",
+      "sha256": "193547f6c04d710286fd6f8f0706b636fa2abe3dbeeef5607b8ac0e810a30ac0",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS7&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS10",
+      "sha256": "d90ebcb5039a4a15ece0d01594b993cf6d00ae23b2ad200e05627693ae3dbb57",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS20",
+      "sha256": "d306321549b378714f179ad3fd729b8e70556c5908a42b6097379bbb519ee42c",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS20&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DGS30",
+      "sha256": "3751435eecf0484c1ef92294e88f35f7f5f7b2213d05db9b2bfd506f354fe106",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS30&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DCOILWTICO",
+      "sha256": "5892d1afc2583cbb0e1ceb2b9d6323a0a27a05d1380d28202e184cda0116162e",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DCOILBRENTEU",
+      "sha256": "26ce165e453f553e967634d369f9369c96451331d672928875d537fc7cc5465e",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2022-01-01&coed=2023-11-30"
+    },
+    {
+      "series_id": "DHHNGSP",
+      "sha256": "f75f47fafb8d1a014164ed823109b95415a8cceff2bf6b0341df887122dc9304",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP&cosd=2022-01-01&coed=2023-11-30"
+    }
+  ],
+  "resolution_date": "2023-10-30",
+  "source_snapshot": "proxy-benchmark/sources/proxy-20-cross-asset-2023.json",
+  "source_snapshot_sha256": "2082e3b6201549a914ed69ee747c85ca047c64b45075de1ec1a082cd5de623f4",
+  "split": "confirmation",
+  "variant": "transformed"
+}

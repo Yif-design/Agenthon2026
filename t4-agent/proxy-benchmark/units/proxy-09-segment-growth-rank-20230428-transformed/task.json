@@ -1,0 +1,71 @@
+{
+  "cutoff_date": "2023-04-28",
+  "entities": [
+    {
+      "base_period_turnover_thousands": 14584000.0,
+      "corpus_ref": "corpus/MSFT_MorePersonalComputing.json",
+      "current_period_turnover_thousands": 13260000.0,
+      "entity_id": "MSFT_MorePersonalComputing",
+      "issuer_segment_key": "MSFT_MorePersonalComputing",
+      "name": "MSFT — More Personal Computing",
+      "observed_change_fraction": -0.09078442128359843
+    },
+    {
+      "base_period_turnover_thousands": 18987000.0,
+      "corpus_ref": "corpus/MSFT_IntelligentCloud.json",
+      "current_period_turnover_thousands": 22081000.0,
+      "entity_id": "MSFT_IntelligentCloud",
+      "issuer_segment_key": "MSFT_IntelligentCloud",
+      "name": "MSFT — Intelligent Cloud",
+      "observed_change_fraction": 0.16295359983146374
+    },
+    {
+      "base_period_turnover_thousands": 15789000.0,
+      "corpus_ref": "corpus/MSFT_ProductivityAndBusinessProcesses.json",
+      "current_period_turnover_thousands": 17516000.0,
+      "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+      "issuer_segment_key": "MSFT_ProductivityAndBusinessProcesses",
+      "name": "MSFT — Productivity and Business Processes",
+      "observed_change_fraction": 0.10937994806510855
+    },
+    {
+      "base_period_turnover_thousands": 18441000.0,
+      "corpus_ref": "corpus/AMZN_AmazonWebServicesSegment.json",
+      "current_period_turnover_thousands": 21354000.0,
+      "entity_id": "AMZN_AmazonWebServicesSegment",
+      "issuer_segment_key": "AMZN_AmazonWebServicesSegment",
+      "name": "AMZN — Amazon Web Services",
+      "observed_change_fraction": 0.157963234097934
+    },
+    {
+      "base_period_turnover_thousands": 28759000.0,
+      "corpus_ref": "corpus/AMZN_InternationalSegment.json",
+      "current_period_turnover_thousands": 29123000.0,
+      "entity_id": "AMZN_InternationalSegment",
+      "issuer_segment_key": "AMZN_InternationalSegment",
+      "name": "AMZN — International",
+      "observed_change_fraction": 0.01265690740289993
+    },
+    {
+      "base_period_turnover_thousands": 69244000.0,
+      "corpus_ref": "corpus/AMZN_NorthAmericaSegment.json",
+      "current_period_turnover_thousands": 76881000.0,
+      "entity_id": "AMZN_NorthAmericaSegment",
+      "issuer_segment_key": "AMZN_NorthAmericaSegment",
+      "name": "AMZN — North America",
+      "observed_change_fraction": 0.11029114435907793
+    }
+  ],
+  "family": "component_turnover_change",
+  "interval_level": 0.9,
+  "prompt": "Rank the six reportable segments by next-quarter year-over-year revenue growth; rank 1 is highest.",
+  "resolution_date": "2023-08-04",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "forward_component_turnover_order",
+    "type": "ranking",
+    "unit": "growth_percent"
+  },
+  "task_id": "proxy-09-segment-growth-rank-20230428-transformed"
+}

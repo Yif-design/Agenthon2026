@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-08-30",
+  "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DFXARG3M086SBEA_202307_transformed",
+  "entities": [
+    "PCE_DFXARG3M086SBEA_202307"
+  ],
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "source": "BEA via ALFRED",
+  "text": "PCE food price scaled_index (DFXARG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | scaled_index\n2022-01-01 | 115.857000\n2022-02-01 | 117.517000\n2022-03-01 | 119.119000\n2022-04-01 | 120.371000\n2022-05-01 | 121.849000\n2022-06-01 | 123.053000\n2022-07-01 | 124.623000\n2022-08-01 | 125.588000\n2022-09-01 | 126.366000\n2022-10-01 | 127.043000\n2022-11-01 | 127.662000\n2022-12-01 | 128.175000\n2023-01-01 | 128.682000\n2023-02-01 | 128.956000\n2023-03-01 | 128.707000\n2023-04-01 | 128.675000\n2023-05-01 | 128.863000\n2023-06-01 | 128.702000"
+}

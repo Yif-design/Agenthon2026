@@ -1,0 +1,118 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "U.S. Department of Labor via ALFRED source.",
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURNSA_20231005_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CLAIMS_IURNSA_20231005",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": -1.0
+      },
+      "label": "flat",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "U.S. Department of Labor via ALFRED source.",
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURSA_20231005_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CLAIMS_IURSA_20231005",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": -1.0
+      },
+      "label": "flat",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "U.S. Department of Labor via ALFRED source.",
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_CCNSA_20231005_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CLAIMS_CCNSA_20231005",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": -1.0
+      },
+      "label": "flat",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "U.S. Department of Labor via ALFRED source.",
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_CCSA_20231005_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CLAIMS_CCSA_20231005",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": -1.0
+      },
+      "label": "flat",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "U.S. Department of Labor via ALFRED source.",
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_ICNSA_20231005_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CLAIMS_ICNSA_20231005",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": -1.0
+      },
+      "label": "flat",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "U.S. Department of Labor via ALFRED source.",
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_ICSA_20231005_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CLAIMS_ICSA_20231005",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": -1.0
+      },
+      "label": "flat",
+      "point_forecast": 0.0
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "classification",
+  "task_id": "proxy-11-initial-claims-direction-20230929-transformed"
+}

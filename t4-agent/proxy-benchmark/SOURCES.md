@@ -66,3 +66,25 @@ under the official training policy. At evaluation time the agent may read only t
 and frozen corpus. Any fitted artifact intended for the submission image needs a separate provenance
 record and an availability gate proving its fitting, selection and calibration labels were public
 before the cutoff of every task where the artifact is enabled.
+
+### Completed-catalog snapshots (proxy-01 through proxy-14 and proxy-20)
+
+`sources/proxy-sec-2023q1.json` is a compact SEC company-facts snapshot used by proxy-01 through
+proxy-08. It retains ticker, CIK, fact tag, unit, period, filing date and accession for the 21 raw
+company-facts responses; raw response URLs and SHA-256 hashes remain in the snapshot. The target is
+the first Q1 2023 filing after the 2023-03-31 cutoff. Snapshot SHA-256:
+`0ee082c73dc760125b0c52a2c4ebaa2cb6d38f62ad161305edc35401a1bd2932`.
+
+`sources/proxy-09-segments-2023.json` freezes dimensioned inline-XBRL facts for six Amazon and
+Microsoft reportable segments. Amazon Q2 facts are direct; Microsoft April-June facts are derived
+from FY less the already-public nine-month facts. Four accessioned SEC filing URLs and raw hashes
+are retained. Snapshot SHA-256: `6fe90c37342b5ee8e279457c3a166021a94f6c82693109f5b9676d36c0fd30d9`.
+
+The macro builder freezes ALFRED/FRED vintages into five redistributable snapshots: proxy-11 weekly
+claims (`5733c69279795e2ce6e236191b0c797269513d702b04137a5c78314b8034a0f8`), proxy-12 PCE
+components (`57afdc96ceb604655e332e9a0a60bf8173e2bd11b67f3dae38e653e3b867c933`), proxy-13 GDP
+revisions (`485b29feb38c5bf94418aca82565a81d8f9f3f797e4f8198b3a193f35bbaa3d6`), proxy-14 Treasury
+yields (`2a26fbf5f5e378e62e852ea353b39da3e4a2a84f625a60d4b803503faeda42fd`), and proxy-20
+cross-asset series (`2082e3b6201549a914ed69ee747c85ca047c64b45075de1ec1a082cd5de623f4`). Each snapshot
+separates cutoff-vintage observations from post-cutoff resolution observations and records upstream
+series identifiers and URLs.

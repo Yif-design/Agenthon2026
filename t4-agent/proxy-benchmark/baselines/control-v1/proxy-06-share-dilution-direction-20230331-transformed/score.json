@@ -1,0 +1,16 @@
+{
+  "unit": "proxy-06-share-dilution-direction-20230331-transformed",
+  "raw_accuracy": 0.3076923076923077,
+  "naive_accuracy": 0.3076923076923077,
+  "raw_predictive_quality": 0.3076923076923077,
+  "naive_predictive_quality": 0.3076923076923077,
+  "predictive_anchor": 0.3076923076923077,
+  "predictive_quality": 0.5,
+  "interval_coverage": null,
+  "interval_score": null,
+  "naive_interval_score": null,
+  "raw_interval_quality": null,
+  "interval_quality": null,
+  "composite_before_claim_penalty": 0.5,
+  "claim_penalty_evaluated": false
+}

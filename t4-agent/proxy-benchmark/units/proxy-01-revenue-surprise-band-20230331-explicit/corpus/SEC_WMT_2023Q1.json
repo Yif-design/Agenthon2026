@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_WMT_2023Q1_explicit",
+  "entities": [
+    "SEC_WMT_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior comparable revenue: USD 140288000000, filed 2022-06-03, accession 0000104169-22-000029.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+}

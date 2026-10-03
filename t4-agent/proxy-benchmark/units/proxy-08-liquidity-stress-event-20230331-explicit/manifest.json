@@ -1,0 +1,91 @@
+{
+  "files": [
+    {
+      "bytes": 948,
+      "path": "card.toml",
+      "sha256": "0d895ca48f1cb653f1fb16c46eb3170be6f2fb7420ef62997aa54cd127709307"
+    },
+    {
+      "bytes": 484,
+      "path": "corpus/SEC_AMZN_2023Q1.json",
+      "sha256": "8bba84b07200b54ad305a845e9c168ad46acac2c8438012d2dad97f340a0e61a"
+    },
+    {
+      "bytes": 475,
+      "path": "corpus/SEC_CVNA_2023Q1.json",
+      "sha256": "a8af98588e8246466dc58ddf209f39a359ed996163c65deb7fc8f12d34412d22"
+    },
+    {
+      "bytes": 473,
+      "path": "corpus/SEC_F_2023Q1.json",
+      "sha256": "4d9c35c2441baf42cfa016233898a6c6580f7e6182a91fe0340aa776572f5982"
+    },
+    {
+      "bytes": 484,
+      "path": "corpus/SEC_GM_2023Q1.json",
+      "sha256": "dfd0a75b8476f5b05188dcbd013e35bf4761daef07c708e0b32206d6b4bb8482"
+    },
+    {
+      "bytes": 481,
+      "path": "corpus/SEC_HD_2023Q1.json",
+      "sha256": "c9629483384c3e698c86730b97d0d5b7d995c98e8e12b4c66b32270468f856d1"
+    },
+    {
+      "bytes": 500,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "7a65ffa1a522e609d91d0282a4e085c2da16236b21140113271cff290ac1be18"
+    },
+    {
+      "bytes": 473,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "c520c4471877d60bef91afbe93064045645725c931aa4602546c4c864e07f8b1"
+    },
+    {
+      "bytes": 486,
+      "path": "corpus/SEC_MCD_2023Q1.json",
+      "sha256": "8f2915fc97d07ba4963f2d58bd4a5c167be757ac6d99d5e96c1bdeb339202df4"
+    },
+    {
+      "bytes": 477,
+      "path": "corpus/SEC_NVDA_2023Q1.json",
+      "sha256": "ede23a662025d0a3287c968dcc2e74ed55a255aa522798acf8fad08f9cd0cbb7"
+    },
+    {
+      "bytes": 477,
+      "path": "corpus/SEC_PEP_2023Q1.json",
+      "sha256": "fd573a528053bd782ca57a0e0db0e7e9385757ee09fff5396061769d89eae7d1"
+    },
+    {
+      "bytes": 482,
+      "path": "corpus/SEC_TGT_2023Q1.json",
+      "sha256": "45f275f5c01fa12ce92b5a2f967ab6781954060f3f8c0001ba35d6dfa3018eb1"
+    },
+    {
+      "bytes": 477,
+      "path": "corpus/SEC_WMT_2023Q1.json",
+      "sha256": "6578e50c55d9231c4afa5086ae8e91f9f66d7e47ac4d30db2af8cd5e67d37aba"
+    },
+    {
+      "bytes": 4718,
+      "path": "provenance.json",
+      "sha256": "2e1a98f1f1d36702deb9aec64aa74eace4cfb61202eec2c63ff4d08bfc908a86"
+    },
+    {
+      "bytes": 5675,
+      "path": "reference/naive_answer.json",
+      "sha256": "ebcef18fd52600a281fd8115567561cd2c3738b03fe56df001968ed5a70d282e"
+    },
+    {
+      "bytes": 1152,
+      "path": "reference/outcome.json",
+      "sha256": "cc66b736d74c26c5d479b60c10f275599a93186ff4a52afb883bf1febef52f39"
+    },
+    {
+      "bytes": 5049,
+      "path": "task.json",
+      "sha256": "99d062b8a83dcb47e3f86df68564d966e8a3bfff9ab74359de4c5456920bf926"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-08-liquidity-stress-event-20230331-explicit"
+}

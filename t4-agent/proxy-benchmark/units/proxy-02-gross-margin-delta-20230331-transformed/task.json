@@ -1,0 +1,80 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "base_gross_fraction": 0.5411728395061729,
+      "base_sales_millions": 16200.0,
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "issuer_key": "CIK-0000077476",
+      "name": "PepsiCo, Inc.",
+      "target_unit": "basis_points"
+    },
+    {
+      "base_gross_fraction": 0.655284749034749,
+      "base_sales_millions": 8288.0,
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "issuer_key": "CIK-0001045810",
+      "name": "NVIDIA CORP",
+      "target_unit": "basis_points"
+    },
+    {
+      "base_gross_fraction": 0.6100467067009818,
+      "base_sales_millions": 10491.0,
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "issuer_key": "CIK-0000021344",
+      "name": "COCA COLA CO",
+      "target_unit": "basis_points"
+    },
+    {
+      "base_gross_fraction": 0.5036778728273307,
+      "base_sales_millions": 18353.0,
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "issuer_key": "CIK-0000050863",
+      "name": "INTEL CORP",
+      "target_unit": "basis_points"
+    },
+    {
+      "base_gross_fraction": 0.5166584489680919,
+      "base_sales_millions": 14197.0,
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "issuer_key": "CIK-0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "target_unit": "basis_points"
+    },
+    {
+      "base_gross_fraction": 0.33784825742777835,
+      "base_sales_millions": 38908.0,
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "issuer_key": "CIK-0000354950",
+      "name": "The Home Depot, Inc.",
+      "target_unit": "basis_points"
+    },
+    {
+      "base_gross_fraction": 0.0852158993422934,
+      "base_sales_millions": 3497.0,
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "issuer_key": "CIK-0001690820",
+      "name": "CARVANA CO.",
+      "target_unit": "basis_points"
+    }
+  ],
+  "family": "gross_spread_change",
+  "interval_level": 0.9,
+  "prompt": "Forecast Q1 year-over-year gross-margin change in basis points.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "next_gross_spread_delta_bp",
+    "type": "regression",
+    "unit": "basis_points"
+  },
+  "task_id": "proxy-02-gross-margin-delta-20230331-transformed"
+}

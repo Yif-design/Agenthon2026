@@ -1,0 +1,226 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_AMZN_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_AMZN_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_CVNA_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_CVNA_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_F_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_F_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_GM_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_GM_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_HD_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_HD_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_IBM_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_IBM_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_KO_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_KO_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_MCD_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_MCD_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_NVDA_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_NVDA_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_PEP_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_PEP_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_TGT_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_TGT_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_WMT_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_WMT_2023Q1",
+      "interval": {
+        "hi": 0.30000000000000004,
+        "level": 0.9,
+        "lo": -0.1
+      },
+      "label": "no_stress_screen",
+      "point_forecast": 0.1
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "classification",
+  "task_id": "proxy-08-liquidity-stress-event-20230331-explicit"
+}

@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-04-28",
+  "doc_id": "PROXY_proxy-09-segment-growth-rank_MSFT_MorePersonalComputing_explicit",
+  "entities": [
+    "MSFT_MorePersonalComputing"
+  ],
+  "license": "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained",
+  "source": "SEC EDGAR inline XBRL filings",
+  "text": "SEC inline XBRL segment facts for MSFT More Personal Computing. Q1 2022 revenue USD 14584 million; Q1 2023 revenue USD 13260 million. Filed no later than 2023-04-28."
+}

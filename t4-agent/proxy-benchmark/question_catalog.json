@@ -1,6 +1,6 @@
 {
-  "catalog_version": "0.1.0",
-  "status": "partial_materialization",
+  "catalog_version": "1.0.0",
+  "status": "fully_materialized",
   "question_count": 20,
   "schema_variants_per_question": 2,
   "target_type_counts": {
@@ -65,18 +65,16 @@
         "point_semantics": "reported revenue minus the pre-cutoff reference estimate, as percent of the estimate",
         "interval_semantics": "90% interval on revenue surprise percent"
       },
-      "question": "Predict whether each company's next reported quarterly revenue will finish above, within, or below a stated band around a pre-cutoff reference estimate.",
+      "question": "Classify each issuer's next reported Q1 revenue against a frozen prior-year comparable reference and a plus/minus 2 percent band.",
       "entity_roster": "8-20 US issuers reporting in the same calendar window",
-      "cutoff_rule": "after the last eligible pre-quarter filing and before the earnings release",
-      "resolution_rule": "first filed quarterly revenue compared with the frozen reference estimate",
+      "cutoff_rule": "calendar quarter-end, before the target Q1 filing",
+      "resolution_rule": "first-filed Q1 revenue compared with the prior-year Q1 value frozen as the reference",
       "visible_inputs": [
-        "reference revenue estimate",
         "prior-year comparable revenue",
-        "recent segment mix",
-        "guidance facts"
+        "reference construction rule"
       ],
-      "corpus_design": "entity-scoped 10-Q, 10-K and pre-cutoff 8-K excerpts with long-document distractors",
-      "naive_answer": "zero surprise / within_band",
+      "corpus_design": "SEC XBRL company facts with accession and filing dates",
+      "naive_answer": "within_band",
       "source_ids": [
         "sec-edgar"
       ],
@@ -217,17 +215,14 @@
         "point_semantics": "forecast percent change in regular dividend per share",
         "interval_semantics": "90% interval on dividend change percent"
       },
-      "question": "Predict the issuer's next announced regular dividend action.",
+      "question": "Classify each issuer's reported Q1 regular per-share distribution relative to prior-year Q1.",
       "entity_roster": "10-25 established dividend payers",
-      "cutoff_rule": "before the next dividend declaration",
-      "resolution_rule": "first public dividend declaration after cutoff",
+      "cutoff_rule": "calendar quarter-end, before the target Q1 filing",
+      "resolution_rule": "first-filed Q1 declared or cash-paid common dividend per share",
       "visible_inputs": [
-        "dividend history",
-        "payout ratio inputs",
-        "liquidity",
-        "board and capital-return commentary"
+        "prior-year comparable per-share dividend"
       ],
-      "corpus_design": "10-Q/10-K plus pre-cutoff dividend 8-K releases",
+      "corpus_design": "SEC XBRL company facts with declared-dividend tag preferred and cash-paid tag as documented fallback",
       "naive_answer": "unchanged dividend",
       "source_ids": [
         "sec-edgar"
@@ -296,18 +291,16 @@
         "point_semantics": "next-quarter repurchase dollars divided by cutoff market-cap proxy",
         "interval_semantics": "90% interval on repurchase intensity percent"
       },
-      "question": "Rank issuers by next-quarter executed share-repurchase intensity.",
+      "question": "Rank issuers by next reported Q1 executed common-stock repurchases divided by Q1 revenue.",
       "entity_roster": "8-15 issuers with active or recently active programs",
       "cutoff_rule": "before the target-quarter filing",
-      "resolution_rule": "first-filed repurchase dollars for the target quarter divided by frozen denominator",
+      "resolution_rule": "first-filed Q1 repurchase cash outflow divided by first-filed Q1 revenue",
       "visible_inputs": [
-        "remaining authorization",
-        "recent execution",
-        "cash generation",
-        "capital-allocation commentary"
+        "prior-year Q1 executed repurchases",
+        "prior-year Q1 revenue"
       ],
       "corpus_design": "entity-scoped filings plus one frozen denominator table",
-      "naive_answer": "rank by most recent observed intensity",
+      "naive_answer": "rank by prior-year Q1 repurchases divided by revenue",
       "source_ids": [
         "sec-edgar"
       ],
@@ -324,7 +317,7 @@
     },
     {
       "id": "proxy-08-liquidity-stress-event",
-      "title": "Twelve-month liquidity stress event",
+      "title": "Next-quarter liquidity stress screen",
       "relationship_to_public_families": "novel",
       "domain": "credit_and_liquidity",
       "target": {
@@ -337,20 +330,18 @@
         "point_semantics": "forecast probability of a defined liquidity stress event",
         "interval_semantics": "90% interval on probability in [0,1]"
       },
-      "question": "Predict whether each issuer will disclose a going-concern warning, covenant breach, payment default, distressed exchange, or emergency liquidity facility within twelve months.",
+      "question": "Classify the next reported Q1 balance sheet as stress_screen only when current ratio is below 1 and cash/current liabilities is below 0.1.",
       "entity_roster": "10-30 issuers spanning leverage and maturity profiles",
       "cutoff_rule": "quarter-end filing cutoff",
-      "resolution_rule": "first qualifying SEC disclosure within twelve months",
+      "resolution_rule": "mechanical screen on first-filed Q1 current assets, current liabilities and cash",
       "visible_inputs": [
-        "cash",
-        "near-term maturities",
-        "interest expense",
-        "covenants",
-        "going-concern language",
-        "cash-flow trend"
+        "prior-year current assets",
+        "prior-year current liabilities",
+        "prior-year cash",
+        "fixed screen thresholds"
       ],
-      "corpus_design": "long multi-filing corpus with boilerplate risk-factor distractors",
-      "naive_answer": "base-rate probability and no_stress_event label",
+      "corpus_design": "SEC XBRL company facts; this is a ratio screen and does not claim a realized default or covenant event",
+      "naive_answer": "no_stress_screen",
       "source_ids": [
         "sec-edgar"
       ],
@@ -377,16 +368,15 @@
         "interval_semantics": "90% interval on growth percent"
       },
       "question": "Within each issuer, rank reported business segments by next-quarter year-over-year revenue growth.",
-      "entity_roster": "6-15 segments represented as rows",
-      "cutoff_rule": "before the issuer's target-quarter filing",
-      "resolution_rule": "first-filed segment revenue table",
+      "entity_roster": "six reportable segments across Amazon and Microsoft",
+      "cutoff_rule": "after both Q1 filings and before either Q2/FY filing",
+      "resolution_rule": "Amazon direct Q2 segment growth; Microsoft April-June growth derived as fiscal year minus pre-cutoff nine-month facts",
       "visible_inputs": [
-        "segment history",
-        "segment-specific demand commentary",
-        "backlog or volume facts"
+        "Q1 segment revenue for 2022 and 2023",
+        "inline-XBRL segment identity"
       ],
-      "corpus_design": "shared issuer documents where evidence must be attached to the correct segment row",
-      "naive_answer": "rank by prior-quarter year-over-year growth",
+      "corpus_design": "dimensioned SEC inline XBRL facts with separate issuer and segment entities",
+      "naive_answer": "rank by Q1 year-over-year segment growth",
       "source_ids": [
         "sec-edgar"
       ],
@@ -829,6 +819,105 @@
   ],
   "materialized_questions": [
     {
+      "id": "proxy-01-revenue-surprise-band",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-01-control-v1.json"
+    },
+    {
+      "id": "proxy-02-gross-margin-delta",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-02-control-v1.json"
+    },
+    {
+      "id": "proxy-03-free-cash-flow-margin",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-03-control-v1.json"
+    },
+    {
+      "id": "proxy-04-capex-intensity",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-04-control-v1.json"
+    },
+    {
+      "id": "proxy-05-dividend-action",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-05-control-v1.json"
+    },
+    {
+      "id": "proxy-06-share-dilution-direction",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-06-control-v1.json"
+    },
+    {
+      "id": "proxy-07-buyback-intensity-rank",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-07-control-v1.json"
+    },
+    {
+      "id": "proxy-08-liquidity-stress-event",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-08-control-v1.json"
+    },
+    {
+      "id": "proxy-09-segment-growth-rank",
+      "origin": "2023-04-28",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-09-control-v1.json"
+    },
+    {
       "id": "proxy-10-payroll-surprise-band",
       "origin": "2023-08-31",
       "split": "time_forward_test",
@@ -838,6 +927,50 @@
       ],
       "unit_count": 2,
       "control_report": "evaluation/reports/proxy-10-payroll-control-v1.json"
+    },
+    {
+      "id": "proxy-11-initial-claims-direction",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-11-control-v1.json"
+    },
+    {
+      "id": "proxy-12-pce-component-nowcast",
+      "origin": "2023-08-30",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-12-control-v1.json"
+    },
+    {
+      "id": "proxy-13-gdp-revision-magnitude",
+      "origin": "2023-08-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-13-control-v1.json"
+    },
+    {
+      "id": "proxy-14-yield-curve-steepening-rank",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-14-control-v1.json"
     },
     {
       "id": "proxy-15-auction-indirect-bidder-share",
@@ -874,7 +1007,7 @@
     },
     {
       "id": "proxy-18-cot-positioning-rank",
-      "origin": "2023-09-26",
+      "origin": "2023-09-29",
       "split": "time_forward_test",
       "variants": [
         "explicit",
@@ -893,22 +1026,47 @@
       ],
       "unit_count": 2,
       "control_report": "evaluation/reports/proxy-19-fx-control-v1.json"
+    },
+    {
+      "id": "proxy-20-cross-asset-return-quintile",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-20-control-v1.json"
     }
   ],
   "materialization": {
     "updated_at": "2026-10-03",
     "question_ids": [
+      "proxy-01-revenue-surprise-band",
+      "proxy-02-gross-margin-delta",
+      "proxy-03-free-cash-flow-margin",
+      "proxy-04-capex-intensity",
+      "proxy-05-dividend-action",
+      "proxy-06-share-dilution-direction",
+      "proxy-07-buyback-intensity-rank",
+      "proxy-08-liquidity-stress-event",
+      "proxy-09-segment-growth-rank",
       "proxy-10-payroll-surprise-band",
+      "proxy-11-initial-claims-direction",
+      "proxy-12-pce-component-nowcast",
+      "proxy-13-gdp-revision-magnitude",
+      "proxy-14-yield-curve-steepening-rank",
       "proxy-15-auction-indirect-bidder-share",
       "proxy-16-crude-inventory-change",
       "proxy-17-natural-gas-storage-change",
       "proxy-18-cot-positioning-rank",
-      "proxy-19-fx-volatility-rank"
+      "proxy-19-fx-volatility-rank",
+      "proxy-20-cross-asset-return-quintile"
     ],
-    "question_count": 6,
-    "runnable_schema_cases": 12,
+    "question_count": 20,
+    "runnable_schema_cases": 40,
     "splits": {
-      "time_forward_test": 10,
+      "time_forward_test": 38,
       "confirmation": 2
     }
   }

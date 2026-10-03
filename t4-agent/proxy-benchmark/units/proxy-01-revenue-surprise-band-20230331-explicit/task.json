@@ -1,0 +1,152 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "band_pct": 2.0,
+      "cik": "0001018724",
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "name": "AMAZON COM INC",
+      "prior_period_end": "2022-03-31",
+      "reference_revenue_usd": 116444000000.0,
+      "ticker": "AMZN"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0001690820",
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "name": "CARVANA CO.",
+      "prior_period_end": "2022-03-31",
+      "reference_revenue_usd": 3497000000.0,
+      "ticker": "CVNA"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000037996",
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "name": "Ford Motor Co",
+      "prior_period_end": "2022-03-31",
+      "reference_revenue_usd": 34476000000.0,
+      "ticker": "F"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0001467858",
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "name": "GENERAL MOTORS COMPANY",
+      "prior_period_end": "2022-03-31",
+      "reference_revenue_usd": 32824000000.0,
+      "ticker": "GM"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000354950",
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "name": "The Home Depot, Inc.",
+      "prior_period_end": "2022-05-01",
+      "reference_revenue_usd": 38908000000.0,
+      "ticker": "HD"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000051143",
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "prior_period_end": "2022-03-31",
+      "reference_revenue_usd": 14197000000.0,
+      "ticker": "IBM"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000050863",
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "name": "INTEL CORP",
+      "prior_period_end": "2022-04-02",
+      "reference_revenue_usd": 18353000000.0,
+      "ticker": "INTC"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000021344",
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "name": "COCA COLA CO",
+      "prior_period_end": "2022-04-01",
+      "reference_revenue_usd": 10491000000.0,
+      "ticker": "KO"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000063908",
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "name": "McDONALD’S CORPORATION",
+      "prior_period_end": "2022-03-31",
+      "reference_revenue_usd": 5665600000.0,
+      "ticker": "MCD"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0001045810",
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "name": "NVIDIA CORP",
+      "prior_period_end": "2022-05-01",
+      "reference_revenue_usd": 8288000000.0,
+      "ticker": "NVDA"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000077476",
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "name": "PepsiCo, Inc.",
+      "prior_period_end": "2022-03-19",
+      "reference_revenue_usd": 16200000000.0,
+      "ticker": "PEP"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000027419",
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "name": "Target Corporation",
+      "prior_period_end": "2022-04-30",
+      "reference_revenue_usd": 25170000000.0,
+      "ticker": "TGT"
+    },
+    {
+      "band_pct": 2.0,
+      "cik": "0000104169",
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "name": "WALMART INC.",
+      "prior_period_end": "2022-04-30",
+      "reference_revenue_usd": 140288000000.0,
+      "ticker": "WMT"
+    }
+  ],
+  "family": "revenue_surprise",
+  "interval_level": 0.9,
+  "prompt": "Classify Q1 revenue relative to the frozen prior-year reference and plus/minus 2 percent band.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "above_band",
+      "within_band",
+      "below_band"
+    ],
+    "name": "revenue_surprise_band",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-01-revenue-surprise-band-20230331-explicit"
+}

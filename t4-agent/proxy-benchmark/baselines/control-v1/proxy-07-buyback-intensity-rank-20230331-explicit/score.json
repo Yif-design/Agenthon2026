@@ -1,0 +1,15 @@
+{
+  "unit": "proxy-07-buyback-intensity-rank-20230331-explicit",
+  "raw_spearman": 0.12185435916898846,
+  "raw_predictive_quality": 0.5609271795844942,
+  "naive_predictive_quality": 0.7785242495291165,
+  "predictive_anchor": 0.7785242495291165,
+  "predictive_quality": 0.3602502940170239,
+  "interval_coverage": 1.0,
+  "interval_score": 2623222222.6666665,
+  "naive_interval_score": 15.094703005982215,
+  "raw_interval_quality": 5.754260080862945e-09,
+  "interval_quality": 5.754260080862945e-09,
+  "composite_before_claim_penalty": 0.2521752075381947,
+  "claim_penalty_evaluated": false
+}

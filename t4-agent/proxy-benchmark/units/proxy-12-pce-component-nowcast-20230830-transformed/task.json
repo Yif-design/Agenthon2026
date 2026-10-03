@@ -1,0 +1,89 @@
+{
+  "cutoff_date": "2023-08-30",
+  "entities": [
+    {
+      "component_key": "PI-48",
+      "corpus_ref": "corpus/PCE_DFXARG3M086SBEA_202307.json",
+      "entity_id": "PCE_DFXARG3M086SBEA_202307",
+      "name": "PCE food price index",
+      "recent_drift_fraction": -1.2323447533768572e-05,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 128702.0
+    },
+    {
+      "component_key": "PI-47",
+      "corpus_ref": "corpus/PCE_DNRGRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+      "name": "PCE energy goods and services price index",
+      "recent_drift_fraction": -0.008366902844686183,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 108830.0
+    },
+    {
+      "component_key": "PI-46",
+      "corpus_ref": "corpus/PCE_DSERRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DSERRG3M086SBEA_202307",
+      "name": "PCE services price index",
+      "recent_drift_fraction": 0.002954450139663667,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 136989.0
+    },
+    {
+      "component_key": "PI-45",
+      "corpus_ref": "corpus/PCE_DNDGRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+      "name": "PCE nondurable-goods price index",
+      "recent_drift_fraction": 0.0002999613026425744,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 115032.0
+    },
+    {
+      "component_key": "PI-44",
+      "corpus_ref": "corpus/PCE_DDURRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DDURRG3M086SBEA_202307",
+      "name": "PCE durable-goods price index",
+      "recent_drift_fraction": 0.0004445468512758547,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 96742.0
+    },
+    {
+      "component_key": "PI-43",
+      "corpus_ref": "corpus/PCE_DGDSRG3M086SBEA_202307.json",
+      "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+      "name": "PCE goods price index",
+      "recent_drift_fraction": 0.0003493131065667917,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 108465.0
+    },
+    {
+      "component_key": "PI-42",
+      "corpus_ref": "corpus/PCE_PCEPILFE_202307.json",
+      "entity_id": "PCE_PCEPILFE_202307",
+      "name": "Core PCE price index",
+      "recent_drift_fraction": 0.0027535457222316317,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 128311.0
+    },
+    {
+      "component_key": "PI-41",
+      "corpus_ref": "corpus/PCE_PCEPI_202307.json",
+      "entity_id": "PCE_PCEPI_202307",
+      "name": "Headline PCE price index",
+      "recent_drift_fraction": 0.002087570471342041,
+      "scale": "index_x1000",
+      "terminal_index_scaled": 127178.0
+    }
+  ],
+  "family": "component_price_drift",
+  "interval_level": 0.9,
+  "prompt": "Forecast July 2023 first-print month-over-month price-index change in percent.",
+  "resolution_date": "2023-08-31",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "next_price_component_drift_pct",
+    "type": "regression",
+    "unit": "percent"
+  },
+  "task_id": "proxy-12-pce-component-nowcast-20230830-transformed"
+}

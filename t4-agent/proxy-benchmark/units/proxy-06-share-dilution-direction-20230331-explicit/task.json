@@ -1,0 +1,139 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "cik": "0001018724",
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "AMAZON COM INC",
+      "prior_diluted_weighted_average_shares": 509000000,
+      "ticker": "AMZN"
+    },
+    {
+      "cik": "0000037996",
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "Ford Motor Co",
+      "prior_diluted_weighted_average_shares": 4008000000,
+      "ticker": "F"
+    },
+    {
+      "cik": "0001467858",
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "GENERAL MOTORS COMPANY",
+      "prior_diluted_weighted_average_shares": 1470000000,
+      "ticker": "GM"
+    },
+    {
+      "cik": "0001326380",
+      "corpus_ref": "corpus/SEC_GME_2023Q1.json",
+      "entity_id": "SEC_GME_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "GameStop Corp.",
+      "prior_diluted_weighted_average_shares": 75900000,
+      "ticker": "GME"
+    },
+    {
+      "cik": "0000354950",
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "The Home Depot, Inc.",
+      "prior_diluted_weighted_average_shares": 1034000000,
+      "ticker": "HD"
+    },
+    {
+      "cik": "0000051143",
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "prior_diluted_weighted_average_shares": 909226136,
+      "ticker": "IBM"
+    },
+    {
+      "cik": "0000050863",
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "INTEL CORP",
+      "prior_diluted_weighted_average_shares": 4107000000,
+      "ticker": "INTC"
+    },
+    {
+      "cik": "0000021344",
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "COCA COLA CO",
+      "prior_diluted_weighted_average_shares": 4357000000,
+      "ticker": "KO"
+    },
+    {
+      "cik": "0000063908",
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "McDONALD’S CORPORATION",
+      "prior_diluted_weighted_average_shares": 747600000,
+      "ticker": "MCD"
+    },
+    {
+      "cik": "0001045810",
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "NVIDIA CORP",
+      "prior_diluted_weighted_average_shares": 2537000000,
+      "ticker": "NVDA"
+    },
+    {
+      "cik": "0000077476",
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "PepsiCo, Inc.",
+      "prior_diluted_weighted_average_shares": 1391000000,
+      "ticker": "PEP"
+    },
+    {
+      "cik": "0000027419",
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "Target Corporation",
+      "prior_diluted_weighted_average_shares": 467800000,
+      "ticker": "TGT"
+    },
+    {
+      "cik": "0000104169",
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "flat_band_pct": 1.0,
+      "name": "WALMART INC.",
+      "prior_diluted_weighted_average_shares": 2765000000,
+      "ticker": "WMT"
+    }
+  ],
+  "family": "diluted_share_direction",
+  "interval_level": 0.9,
+  "prompt": "Classify Q1 diluted weighted-average share change year over year using a plus/minus 1 percent flat band.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "increase",
+      "flat",
+      "decrease"
+    ],
+    "name": "diluted_share_change",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-06-share-dilution-direction-20230331-explicit"
+}

@@ -1,0 +1,154 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_F_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_F_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_HD_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_HD_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_IBM_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_IBM_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_MCD_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_MCD_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_NVDA_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_NVDA_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_PEP_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_PEP_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_TGT_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_TGT_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    },
+    {
+      "claims": [
+        {
+          "claim": "SEC EDGAR company facts source.",
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_WMT_2023Q1_explicit",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SEC_WMT_2023Q1",
+      "interval": {
+        "hi": 0.5,
+        "level": 0.9,
+        "lo": -0.5
+      },
+      "label": "unchanged",
+      "point_forecast": 0.0
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "classification",
+  "task_id": "proxy-05-dividend-action-20230331-explicit"
+}

@@ -1,0 +1,76 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/CLAIMS_ICSA_20231005.json",
+      "display_unit": "thousands_or_pp",
+      "entity_id": "CLAIMS_ICSA_20231005",
+      "latest_change": 2000.0,
+      "latest_level": 204000.0,
+      "name": "Initial claims, seasonally adjusted",
+      "series_id": "ICSA"
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_ICNSA_20231005.json",
+      "display_unit": "thousands_or_pp",
+      "entity_id": "CLAIMS_ICNSA_20231005",
+      "latest_change": -1996.0,
+      "latest_level": 174590.0,
+      "name": "Initial claims, not seasonally adjusted",
+      "series_id": "ICNSA"
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_CCSA_20231005.json",
+      "display_unit": "thousands_or_pp",
+      "entity_id": "CLAIMS_CCSA_20231005",
+      "latest_change": 12000.0,
+      "latest_level": 1670000.0,
+      "name": "Continuing claims, seasonally adjusted",
+      "series_id": "CCSA"
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_CCNSA_20231005.json",
+      "display_unit": "thousands_or_pp",
+      "entity_id": "CLAIMS_CCNSA_20231005",
+      "latest_change": -53098.0,
+      "latest_level": 1592819.0,
+      "name": "Continuing claims, not seasonally adjusted",
+      "series_id": "CCNSA"
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_IURSA_20231005.json",
+      "display_unit": "thousands_or_pp",
+      "entity_id": "CLAIMS_IURSA_20231005",
+      "latest_change": 0.0,
+      "latest_level": 0.0011,
+      "name": "Insured unemployment rate, seasonally adjusted",
+      "series_id": "IURSA"
+    },
+    {
+      "corpus_ref": "corpus/CLAIMS_IURNSA_20231005.json",
+      "display_unit": "thousands_or_pp",
+      "entity_id": "CLAIMS_IURNSA_20231005",
+      "latest_change": 0.0,
+      "latest_level": 0.0011,
+      "name": "Insured unemployment rate, not seasonally adjusted",
+      "series_id": "IURNSA"
+    }
+  ],
+  "family": "weekly_claims_direction",
+  "interval_level": 0.9,
+  "prompt": "Classify the next first-published weekly change as increase, flat, or decrease.",
+  "resolution_date": "2023-10-05",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "increase",
+      "flat",
+      "decrease"
+    ],
+    "name": "initial_claims_wow_direction",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-11-initial-claims-direction-20230929-explicit"
+}

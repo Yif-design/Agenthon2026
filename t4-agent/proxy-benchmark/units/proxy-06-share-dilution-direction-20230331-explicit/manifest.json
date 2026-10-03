@@ -1,0 +1,96 @@
+{
+  "files": [
+    {
+      "bytes": 947,
+      "path": "card.toml",
+      "sha256": "8e6de62e5a6a0dc364f1cb78cf21816e4fdf071566124657902b58f6dbb68b50"
+    },
+    {
+      "bytes": 482,
+      "path": "corpus/SEC_AMZN_2023Q1.json",
+      "sha256": "8f4b92b085003e935f30557494acfa6b101c756aa42b610c0715a083cbbe92ad"
+    },
+    {
+      "bytes": 473,
+      "path": "corpus/SEC_F_2023Q1.json",
+      "sha256": "52434496def7a34f9f409b084d182f5b9adc647e8c01878663da0124f27e8830"
+    },
+    {
+      "bytes": 478,
+      "path": "corpus/SEC_GME_2023Q1.json",
+      "sha256": "e11186fac1eb28de13cc6f9b00d43fb33650908f87e1fb09abd742197e2af141"
+    },
+    {
+      "bytes": 485,
+      "path": "corpus/SEC_GM_2023Q1.json",
+      "sha256": "07be0dbb207273cef2a0a1e6e8d1a73ab67381d0ec4b7890199362c00a97c90f"
+    },
+    {
+      "bytes": 483,
+      "path": "corpus/SEC_HD_2023Q1.json",
+      "sha256": "94e1df29aa3817546c0316620aed2874f64bc9aede4cc52cfa01a8a312d6d5db"
+    },
+    {
+      "bytes": 501,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "a322ed874d0a5998fba93db98f09ccbb42651d2e80271d15887ef9c1f9e182fb"
+    },
+    {
+      "bytes": 479,
+      "path": "corpus/SEC_INTC_2023Q1.json",
+      "sha256": "a15ff7e9c6d0e319300f1660e55f4d1c4ebb1cddfdb2c456bf4b6ab908fbd1ea"
+    },
+    {
+      "bytes": 475,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "96ecb44934a78f6eb9823253481c9fffc6854e566f5dbedad933c2a5c1b1ae43"
+    },
+    {
+      "bytes": 489,
+      "path": "corpus/SEC_MCD_2023Q1.json",
+      "sha256": "67e03171a970f57153de49fd04c25e210b77d8b9ec046e04f1ee0e5aeac40b98"
+    },
+    {
+      "bytes": 480,
+      "path": "corpus/SEC_NVDA_2023Q1.json",
+      "sha256": "6433431415e2f057b456d688c4adbd8c5826866aabd291f74c1af4574f329431"
+    },
+    {
+      "bytes": 479,
+      "path": "corpus/SEC_PEP_2023Q1.json",
+      "sha256": "d289b6083e40b52b4a187c28635f5cfe22a2cfcdfb07018b1461c15a0f9ce061"
+    },
+    {
+      "bytes": 483,
+      "path": "corpus/SEC_TGT_2023Q1.json",
+      "sha256": "b3cf2c2dcce0bddb904f456e5f4b934c1239dad3bfdde830c4167da34c960d63"
+    },
+    {
+      "bytes": 478,
+      "path": "corpus/SEC_WMT_2023Q1.json",
+      "sha256": "c620246edf19e93d778e7c7027b79f668a20a383157e98d622539d96c743bd57"
+    },
+    {
+      "bytes": 4720,
+      "path": "provenance.json",
+      "sha256": "7b44e06f6a14d48bb522e64cecdf5160a571d36020ddd1b4c23d720ab03d4395"
+    },
+    {
+      "bytes": 5794,
+      "path": "reference/naive_answer.json",
+      "sha256": "0adcc0300d47253315ddc20f9541c4845bc672d7a1e0f92c960084fc2e81b287"
+    },
+    {
+      "bytes": 1126,
+      "path": "reference/outcome.json",
+      "sha256": "96e0e6dcdd92ae272fef3a9d1c74c5d0facc4af173f4e1574fd078460f7fc491"
+    },
+    {
+      "bytes": 4084,
+      "path": "task.json",
+      "sha256": "86832c84526e924253586491c13a2defadac5d1295e7c25a95faa255d0ffa54c"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-06-share-dilution-direction-20230331-explicit"
+}

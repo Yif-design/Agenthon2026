@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "bytes": 937,
+      "path": "card.toml",
+      "sha256": "9e36bf248a2f64a29697e7c9cee3dd132d1f81b8a1078586ce12ab86d164800a"
+    },
+    {
+      "bytes": 432,
+      "path": "corpus/SEC_F_2023Q1.json",
+      "sha256": "b38faa9147c72397fb2eb712066c5c02c58178790578a89413d9718f076edb63"
+    },
+    {
+      "bytes": 442,
+      "path": "corpus/SEC_HD_2023Q1.json",
+      "sha256": "1aad754d7ed9c6f0678827e342377a314cbf89e893e9fa31ecc9cf1065cfdc9c"
+    },
+    {
+      "bytes": 461,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "b464db5ab6fafcb4ec9a60d2e7219cc74f5cb63874c297e099e2603908ff2aaf"
+    },
+    {
+      "bytes": 449,
+      "path": "corpus/SEC_MCD_2023Q1.json",
+      "sha256": "1194192a656528efacc49cabe19812e98f2caff03a52b0265bd57a1ab274e1fc"
+    },
+    {
+      "bytes": 439,
+      "path": "corpus/SEC_NVDA_2023Q1.json",
+      "sha256": "4b44799b8ba1a7a8326eb7a3f70c22fab8612af4eb8be5abce21596eeb04cb5b"
+    },
+    {
+      "bytes": 438,
+      "path": "corpus/SEC_PEP_2023Q1.json",
+      "sha256": "332ebf0a5953df2054113b070f12cbbcf04a7f84f4fcd2d4119b08df26210a3c"
+    },
+    {
+      "bytes": 443,
+      "path": "corpus/SEC_TGT_2023Q1.json",
+      "sha256": "3afc0c0d21a48249ac6ff755d9f9a3083e1986b04a7e947817c07baf1b175a95"
+    },
+    {
+      "bytes": 437,
+      "path": "corpus/SEC_WMT_2023Q1.json",
+      "sha256": "70ba909a24402c8fc9aef001d70550c4c36469d2070a7bfe0d76a8954a5775f5"
+    },
+    {
+      "bytes": 4711,
+      "path": "provenance.json",
+      "sha256": "41efe68ee5fdd7c119b9f5aedabd41cea727b09a7d2f666f0e9a4afbb9c50a52"
+    },
+    {
+      "bytes": 3608,
+      "path": "reference/naive_answer.json",
+      "sha256": "21d8be5b5a7578c4d4cce37ba2357e1728cb582f86d434f64a8a6307d1165bfc"
+    },
+    {
+      "bytes": 729,
+      "path": "reference/outcome.json",
+      "sha256": "d7dfa2787e4811065659e41c7e4c428e7be6a849a09d9b8a3e2a5a09f32a6388"
+    },
+    {
+      "bytes": 2665,
+      "path": "task.json",
+      "sha256": "c2968e6ff01ee18a1ff0caf85a3ca8922008b2e7266a9c630b35df3ef8456022"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-05-dividend-action-20230331-explicit"
+}

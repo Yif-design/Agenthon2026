@@ -1,8 +1,8 @@
 # Known limitations
 
-- The local proxy benchmark now has three economic events and only one confirmation event. Proxy-16
-  adds a second regression family, but its U.S. total and five PADD rows are mechanically related;
-  it cannot by itself select a universal historical prior or establish leave-one-family-out gains.
+- The local proxy benchmark has twenty historical economic events and forty schema cases, but only
+  one event per family and one confirmation event. It broadens family exposure and schema testing;
+  it cannot estimate repeated time-series performance or replace an untouched future holdout.
 
 - No authoritative House serving input/context ceiling is published. Public production-shaped
   prompts currently range from 4,410 to 41,167 characters. The agent does not impose an arbitrary
@@ -33,10 +33,6 @@
 - The C5 descriptor template has been pack-tested only with a synthetic team number and non-secret
   key. The official packer accepted its shape, but this optimization loop does not use the real team
   key or perform a competition upload; account linkage and platform intake remain team-operated.
-- The proxy catalog has twenty question designs, but only proxy-15 Treasury auction share and
-  proxy-18 COT positioning are runnable, with one 2023 event and two schema variants each. They
-  cover regression and ranking and expose transformed-schema failures, but do not yet provide
-  classification, development, confirmation or leave-one-family-out evidence.
 - The recorded 72.0% practice-set coverage is a legacy diagnostic. Current interval selection must
   minimize mean interval score relative to the unit's naive interval; coverage alone is insufficient.
 - The EPS YoY interval is deliberately broad: mean full width was 8.44 USD/share on the inspected

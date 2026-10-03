@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_IBM_2023Q1_transformed",
+  "entities": [
+    "SEC_IBM_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior current assets scaled currency units 31330000000; current liabilities scaled currency units 34056000000; cash scaled currency units 9934000000."
+}

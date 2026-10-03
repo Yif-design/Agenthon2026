@@ -1,0 +1,66 @@
+{
+  "files": [
+    {
+      "bytes": 859,
+      "path": "card.toml",
+      "sha256": "b55edc96e8100a487a332059b79b5985e55c19d29c17fa4076ec63331604257a"
+    },
+    {
+      "bytes": 473,
+      "path": "corpus/SEC_CVNA_2023Q1.json",
+      "sha256": "01609cad56a90bb5111f96ae9919eb872c85d7c95fa26e1629eb1f1658f20396"
+    },
+    {
+      "bytes": 480,
+      "path": "corpus/SEC_HD_2023Q1.json",
+      "sha256": "de0cee82be4f0baa0cda897dddce5e63d9c828263537bda47a670cdf2d409610"
+    },
+    {
+      "bytes": 498,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "ed02a1541944cc5714cffdc266d3c7bd302ad963f6a8e427c5d9f4c6963c96e8"
+    },
+    {
+      "bytes": 475,
+      "path": "corpus/SEC_INTC_2023Q1.json",
+      "sha256": "d84dc287741a1828f0a34da748218556e5f1412c7eb1b7c07affcf9e43a3d3a9"
+    },
+    {
+      "bytes": 471,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "02690654982534b0f63e5ae3a00b712ba54eadcf69f442a9772790b8e2fcdffd"
+    },
+    {
+      "bytes": 475,
+      "path": "corpus/SEC_NVDA_2023Q1.json",
+      "sha256": "62b6236ce306d25b4f8246b84df60a285b7d6ce538b415713f9646f7eb08f2f5"
+    },
+    {
+      "bytes": 475,
+      "path": "corpus/SEC_PEP_2023Q1.json",
+      "sha256": "5001387f655fd2216a4fb99f1a5584197906eba70c45ac9d9a57e17393a548d6"
+    },
+    {
+      "bytes": 4714,
+      "path": "provenance.json",
+      "sha256": "f2f8845c62215741fc49ee2e0e040a3f20cf353ac1e8f47962d21874954eb5d0"
+    },
+    {
+      "bytes": 3185,
+      "path": "reference/naive_answer.json",
+      "sha256": "894aa666559907c3a187889ae7cdfe1701f82b27ed795d969edcc5c0ac5f6a27"
+    },
+    {
+      "bytes": 644,
+      "path": "reference/outcome.json",
+      "sha256": "aaa3553316916b6aa74f9cc7293207dd6de1c85cca4aad3f06613d32d673cfd5"
+    },
+    {
+      "bytes": 2685,
+      "path": "task.json",
+      "sha256": "412b3fdfe1521b17a6c7fe28bb9518d71505565cd5dc8f52be90ea617fef917c"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-02-gross-margin-delta-20230331-explicit"
+}

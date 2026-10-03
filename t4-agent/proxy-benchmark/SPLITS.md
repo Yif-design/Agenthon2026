@@ -11,11 +11,11 @@ Exact years depend on source coverage. A recommended starting layout is developm
 time-forward test in 2021-2023, and confirmation in 2024-2025, leaving a purge gap where release
 latency or revisions make it necessary.
 
-The first materialized events, proxy-15 at the 2023-08-02 cutoff and proxy-18 at the 2023-09-29
-cutoff, are assigned to `time_forward_test`. Proxy-16 uses the 2026-09-23 EIA release cutoff and is
-the first `confirmation` event. Each event's explicit and transformed variants remain in the same
-split. They are useful for plumbing and schema-invariance checks, but one confirmation event does
-not satisfy the benchmark's development, repeated-confirmation or leave-one-family-out requirements.
+All twenty questions are materialized. Nineteen economic events (38 schema cases) are assigned to
+`time_forward_test`; proxy-16's two schema variants use the 2026-09-23 cutoff and remain the single
+`confirmation` event. Both variants of every event share a split. This breadth supports
+cross-family and schema diagnostics, but a single event per family still cannot estimate repeated
+time-series performance or satisfy a future untouched confirmation requirement.
 
 ## Leave-one-family-out
 

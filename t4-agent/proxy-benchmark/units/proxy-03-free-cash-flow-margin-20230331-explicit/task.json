@@ -1,0 +1,105 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "cik": "0001690820",
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "name": "CARVANA CO.",
+      "prior_capex_usd": 220000000,
+      "prior_metric_pct": -23.248498713182727,
+      "prior_operating_cash_flow_usd": -593000000,
+      "prior_revenue_usd": 3497000000,
+      "ticker": "CVNA"
+    },
+    {
+      "cik": "0001467858",
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "name": "GENERAL MOTORS COMPANY",
+      "prior_capex_usd": 1661000000,
+      "prior_metric_pct": 1.3496222276383134,
+      "prior_operating_cash_flow_usd": 2104000000,
+      "prior_revenue_usd": 32824000000,
+      "ticker": "GM"
+    },
+    {
+      "cik": "0000051143",
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "prior_capex_usd": 281000000,
+      "prior_metric_pct": 20.89878143269705,
+      "prior_operating_cash_flow_usd": 3248000000,
+      "prior_revenue_usd": 14197000000,
+      "ticker": "IBM"
+    },
+    {
+      "cik": "0000050863",
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "name": "INTEL CORP",
+      "prior_capex_usd": 4604000000,
+      "prior_metric_pct": 7.0124775241104995,
+      "prior_operating_cash_flow_usd": 5891000000,
+      "prior_revenue_usd": 18353000000,
+      "ticker": "INTC"
+    },
+    {
+      "cik": "0000021344",
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "name": "COCA COLA CO",
+      "prior_capex_usd": 217000000,
+      "prior_metric_pct": 3.8699837956343535,
+      "prior_operating_cash_flow_usd": 623000000,
+      "prior_revenue_usd": 10491000000,
+      "ticker": "KO"
+    },
+    {
+      "cik": "0000063908",
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "name": "McDONALD’S CORPORATION",
+      "prior_capex_usd": 401200000,
+      "prior_metric_pct": 30.572225360067776,
+      "prior_operating_cash_flow_usd": 2133300000,
+      "prior_revenue_usd": 5665600000,
+      "ticker": "MCD"
+    },
+    {
+      "cik": "0000027419",
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "name": "Target Corporation",
+      "prior_capex_usd": 952000000,
+      "prior_metric_pct": -9.320619785458879,
+      "prior_operating_cash_flow_usd": -1394000000,
+      "prior_revenue_usd": 25170000000,
+      "ticker": "TGT"
+    },
+    {
+      "cik": "0000104169",
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "name": "WALMART INC.",
+      "prior_capex_usd": 3539000000,
+      "prior_metric_pct": -5.201442746350365,
+      "prior_operating_cash_flow_usd": -3758000000,
+      "prior_revenue_usd": 140288000000,
+      "ticker": "WMT"
+    }
+  ],
+  "family": "free_cash_flow_margin",
+  "interval_level": 0.9,
+  "prompt": "Forecast Q1 operating cash flow less capex divided by revenue, in percent.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "free_cash_flow_margin_pct",
+    "type": "regression",
+    "unit": "percent"
+  },
+  "task_id": "proxy-03-free-cash-flow-margin-20230331-explicit"
+}

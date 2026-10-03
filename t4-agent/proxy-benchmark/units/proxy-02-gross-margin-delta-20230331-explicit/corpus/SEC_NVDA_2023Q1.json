@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_NVDA_2023Q1_explicit",
+  "entities": [
+    "SEC_NVDA_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior Q1 revenue USD 8288000000 and gross profit USD 5431000000; gross margin 65.528475 percent."
+}

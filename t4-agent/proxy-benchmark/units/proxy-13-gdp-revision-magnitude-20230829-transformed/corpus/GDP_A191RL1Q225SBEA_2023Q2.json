@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-08-29",
+  "doc_id": "PROXY_proxy-13-gdp-revision-magnitude_GDP_A191RL1Q225SBEA_2023Q2_transformed",
+  "entities": [
+    "GDP_A191RL1Q225SBEA_2023Q2"
+  ],
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "source": "BEA via ALFRED",
+  "text": "Real GDP (A191RL1Q225SBEA); annualized growth rates in the 2023-08-29 vintage.\nquarter | annualized_fraction\n2021-07-01 | 2.700000\n2021-10-01 | 7.000000\n2022-01-01 | -1.600000\n2022-04-01 | -0.600000\n2022-07-01 | 3.200000\n2022-10-01 | 2.600000\n2023-01-01 | 2.000000\n2023-04-01 | 2.400000"
+}

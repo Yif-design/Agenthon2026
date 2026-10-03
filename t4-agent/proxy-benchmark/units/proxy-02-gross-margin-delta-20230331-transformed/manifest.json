@@ -1,0 +1,66 @@
+{
+  "files": [
+    {
+      "bytes": 866,
+      "path": "card.toml",
+      "sha256": "e34d62ec5c94cb230493263ab696f5c268bedee81ba2388eb4cc7b30eb4626ef"
+    },
+    {
+      "bytes": 512,
+      "path": "corpus/SEC_CVNA_2023Q1.json",
+      "sha256": "d55c6b4a317e5c3a6a48544368b85309b444399f4eacce3e78ec99f9d316bc87"
+    },
+    {
+      "bytes": 519,
+      "path": "corpus/SEC_HD_2023Q1.json",
+      "sha256": "73b71ad6274889c7cce80b1b1ca7041cfdf0b79e7ed202f8b461778d72c07c34"
+    },
+    {
+      "bytes": 537,
+      "path": "corpus/SEC_IBM_2023Q1.json",
+      "sha256": "445f1eee0cbfac81198b5b51b6b04df0ac5aedd4b4471f8e031ec5414f156587"
+    },
+    {
+      "bytes": 514,
+      "path": "corpus/SEC_INTC_2023Q1.json",
+      "sha256": "1c7e6cf2a52cfe641dddf0090d797eb5dddb1fea01e39b6d7b6bbc1777ee2de2"
+    },
+    {
+      "bytes": 510,
+      "path": "corpus/SEC_KO_2023Q1.json",
+      "sha256": "405819405ae2fc212ff519f04b5051d5146d8a0c77e8595673c0da27f817c1f1"
+    },
+    {
+      "bytes": 514,
+      "path": "corpus/SEC_NVDA_2023Q1.json",
+      "sha256": "97080128b4b24aa08ebcb331273c097ba0dd7b111ac868088e0a9b9b149c91e7"
+    },
+    {
+      "bytes": 514,
+      "path": "corpus/SEC_PEP_2023Q1.json",
+      "sha256": "585d215c21a6be8f7a63ce2a3922c72e8ef85042434935ed7b35312d0199ac33"
+    },
+    {
+      "bytes": 4717,
+      "path": "provenance.json",
+      "sha256": "ad41d28e7210a0470d27deefc8d834cd60b8cd5e124df123d9f1fb23d029dcb4"
+    },
+    {
+      "bytes": 3209,
+      "path": "reference/naive_answer.json",
+      "sha256": "d8dd221e04fee92709842e596d9301a05d5e989833160c3624d2d76fcb5e8913"
+    },
+    {
+      "bytes": 647,
+      "path": "reference/outcome.json",
+      "sha256": "d4b251ed8aa5e749bee6f15ca998909b1fda8553b4dcc9e4778558319aaa6e55"
+    },
+    {
+      "bytes": 2533,
+      "path": "task.json",
+      "sha256": "8881165bfdc2edb53e661cd5851eb70c6136b4e766efa9372acc9c1fe66475f2"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-02-gross-margin-delta-20230331-transformed"
+}

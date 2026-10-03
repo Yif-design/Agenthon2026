@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_MCD_2023Q1_transformed",
+  "entities": [
+    "SEC_MCD_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior current assets scaled currency units 4656400000; current liabilities scaled currency units 4234600000; cash scaled currency units 2335700000."
+}

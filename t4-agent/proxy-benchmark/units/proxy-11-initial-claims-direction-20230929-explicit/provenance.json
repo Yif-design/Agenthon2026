@@ -1,0 +1,75 @@
+{
+  "cutoff_date": "2023-09-29",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_macro_proxies.py",
+  "generator_version": "1.0.0",
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "question_id": "proxy-11-initial-claims-direction",
+  "raw_sources": [
+    {
+      "series_id": "ICSA",
+      "sha256": "ef2215b20b5ba9c18763c0f7b2ef53bb64c3763a2dbfff585bc321b2013eddc7",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=ICSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-09-29"
+    },
+    {
+      "series_id": "ICSA",
+      "sha256": "5ecfa4c25a78bdcb71b1eeb8e58445bae134dbff24e3b50d1c975664a6a5dc12",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=ICSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-10-05"
+    },
+    {
+      "series_id": "ICNSA",
+      "sha256": "c96fba642c0ca6bafa26519ef4912b21f56e795273e39ad6a132e8aa82d32bdd",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=ICNSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-09-29"
+    },
+    {
+      "series_id": "ICNSA",
+      "sha256": "f4f4411e380981a057c6d171e1d77872ef3ab18c382543360645d2cdf7aca97b",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=ICNSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-10-05"
+    },
+    {
+      "series_id": "CCSA",
+      "sha256": "672679eea3d47266ffbdc4e6bd61b7ea06931e4b080d43c9cf52a18de0822fad",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CCSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-09-29"
+    },
+    {
+      "series_id": "CCSA",
+      "sha256": "f83e2feaebb7010598a1620ea1d7aadbe0bdae0fd2b059973faac419f4fee382",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CCSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-10-05"
+    },
+    {
+      "series_id": "CCNSA",
+      "sha256": "ec847c252a4179fbc65503ddc73f988e82cc416d9f351d4ccdab5da43e76d6e9",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CCNSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-09-29"
+    },
+    {
+      "series_id": "CCNSA",
+      "sha256": "9114fe2888b6935e8d1008061f65830b343c0a2a7153c6df7379309d3193e006",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CCNSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-10-05"
+    },
+    {
+      "series_id": "IURSA",
+      "sha256": "c416890490439b46502ae197d5877628d834a9c7cedb1f1216b0f609234ec78d",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=IURSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-09-29"
+    },
+    {
+      "series_id": "IURSA",
+      "sha256": "6008a05cc949730064e5f9979e932d2dd20d973e5b4f0a81379c4952d3370384",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=IURSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-10-05"
+    },
+    {
+      "series_id": "IURNSA",
+      "sha256": "f348264d4839e58831e393adbe620ba15b17fd684a7461e936abfcd428712ab3",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=IURNSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-09-29"
+    },
+    {
+      "series_id": "IURNSA",
+      "sha256": "9193c093b75bd4e54bbc739e161b2e7d37d89c9d3ab1bc14b5458d0fa5f13b23",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=IURNSA&cosd=2022-01-01&coed=2023-10-07&vintage_date=2023-10-05"
+    }
+  ],
+  "resolution_date": "2023-10-05",
+  "source_snapshot": "proxy-benchmark/sources/proxy-11-claims-2023.json",
+  "source_snapshot_sha256": "5733c69279795e2ce6e236191b0c797269513d702b04137a5c78314b8034a0f8",
+  "split": "time_forward_test",
+  "variant": "explicit"
+}

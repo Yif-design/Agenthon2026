@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_MCD_2023Q1_explicit",
+  "entities": [
+    "SEC_MCD_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior Q1 revenue USD 5665600000; operating cash flow USD 2133300000; capital expenditure USD 401200000."
+}

@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "bytes": 876,
+      "path": "card.toml",
+      "sha256": "ffffbb51fe8262dabfada3bc68935e0110c446243f788ccc972b88abbf6f2a18"
+    },
+    {
+      "bytes": 541,
+      "path": "corpus/AMZN_AmazonWebServicesSegment.json",
+      "sha256": "f752f06fe97919fc3cc69dc117e6fdc96ee3d4a2ce91e1fbcc5d7b50ad895ec3"
+    },
+    {
+      "bytes": 529,
+      "path": "corpus/AMZN_InternationalSegment.json",
+      "sha256": "3950282e8bd1d2009a06bd65afa71a4425f6dbe08fce87a21753bfa9cb2a5b99"
+    },
+    {
+      "bytes": 526,
+      "path": "corpus/AMZN_NorthAmericaSegment.json",
+      "sha256": "6847738f5ac216d7b99524f6306c928f9bfe037e29819cfdef8c419c526d0df8"
+    },
+    {
+      "bytes": 517,
+      "path": "corpus/MSFT_IntelligentCloud.json",
+      "sha256": "1ffa12eb757d61742c94714baeef8dbe4e27fd5bdcf405072093cc830991bf06"
+    },
+    {
+      "bytes": 532,
+      "path": "corpus/MSFT_MorePersonalComputing.json",
+      "sha256": "423f2e505ada63352faf09da09f42c362c92eeb6c645f5824e2cb59f660e1437"
+    },
+    {
+      "bytes": 565,
+      "path": "corpus/MSFT_ProductivityAndBusinessProcesses.json",
+      "sha256": "c2852b730a5bd9f428378b7fb6ceae55905fabbc40a1465d6e8c2d6909f0b949"
+    },
+    {
+      "bytes": 1756,
+      "path": "provenance.json",
+      "sha256": "027e0bb53cc44ef6a256d98d2774d765db4d4e665d3b38b097b3a3a9ae335713"
+    },
+    {
+      "bytes": 3189,
+      "path": "reference/naive_answer.json",
+      "sha256": "124a9dd330513d233c425f3aba9e5c9861dfac1bb2193413d127bf0f615a1210"
+    },
+    {
+      "bytes": 646,
+      "path": "reference/outcome.json",
+      "sha256": "540de9ec9298a4e94cff345b1f77c9b6ab7c6ddcb285ec78e68e36b586158fc7"
+    },
+    {
+      "bytes": 2871,
+      "path": "task.json",
+      "sha256": "fd1b81c8dcc1d9dfee44f226382472be7bd4691016404c1a269987be06353af4"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-09-segment-growth-rank-20230428-transformed"
+}

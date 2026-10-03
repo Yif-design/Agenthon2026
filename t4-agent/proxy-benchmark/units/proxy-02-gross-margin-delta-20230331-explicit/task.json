@@ -1,0 +1,87 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "cik": "0001690820",
+      "corpus_ref": "corpus/SEC_CVNA_2023Q1.json",
+      "entity_id": "SEC_CVNA_2023Q1",
+      "name": "CARVANA CO.",
+      "prior_gross_margin_pct": 8.52158993422934,
+      "prior_gross_profit_usd": 298000000,
+      "prior_revenue_usd": 3497000000,
+      "ticker": "CVNA"
+    },
+    {
+      "cik": "0000354950",
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "name": "The Home Depot, Inc.",
+      "prior_gross_margin_pct": 33.784825742777834,
+      "prior_gross_profit_usd": 13145000000,
+      "prior_revenue_usd": 38908000000,
+      "ticker": "HD"
+    },
+    {
+      "cik": "0000051143",
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "prior_gross_margin_pct": 51.66584489680918,
+      "prior_gross_profit_usd": 7335000000,
+      "prior_revenue_usd": 14197000000,
+      "ticker": "IBM"
+    },
+    {
+      "cik": "0000050863",
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "name": "INTEL CORP",
+      "prior_gross_margin_pct": 50.36778728273307,
+      "prior_gross_profit_usd": 9244000000,
+      "prior_revenue_usd": 18353000000,
+      "ticker": "INTC"
+    },
+    {
+      "cik": "0000021344",
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "name": "COCA COLA CO",
+      "prior_gross_margin_pct": 61.00467067009818,
+      "prior_gross_profit_usd": 6400000000,
+      "prior_revenue_usd": 10491000000,
+      "ticker": "KO"
+    },
+    {
+      "cik": "0001045810",
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "name": "NVIDIA CORP",
+      "prior_gross_margin_pct": 65.5284749034749,
+      "prior_gross_profit_usd": 5431000000,
+      "prior_revenue_usd": 8288000000,
+      "ticker": "NVDA"
+    },
+    {
+      "cik": "0000077476",
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "name": "PepsiCo, Inc.",
+      "prior_gross_margin_pct": 54.117283950617285,
+      "prior_gross_profit_usd": 8767000000,
+      "prior_revenue_usd": 16200000000,
+      "ticker": "PEP"
+    }
+  ],
+  "family": "gross_margin_delta",
+  "interval_level": 0.9,
+  "prompt": "Forecast Q1 year-over-year gross-margin change in basis points.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "gross_margin_change_bps",
+    "type": "regression",
+    "unit": "basis_points"
+  },
+  "task_id": "proxy-02-gross-margin-delta-20230331-explicit"
+}

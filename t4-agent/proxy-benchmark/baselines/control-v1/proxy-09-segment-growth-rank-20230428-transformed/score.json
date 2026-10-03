@@ -1,0 +1,15 @@
+{
+  "unit": "proxy-09-segment-growth-rank-20230428-transformed",
+  "raw_spearman": 0.37142857142857144,
+  "raw_predictive_quality": 0.6857142857142857,
+  "naive_predictive_quality": 1.0,
+  "predictive_anchor": 1.0,
+  "predictive_quality": 0.34285714285714286,
+  "interval_coverage": 0.8333333333333334,
+  "interval_score": 60071679.4827467,
+  "naive_interval_score": 28.98112870620781,
+  "raw_interval_quality": 4.824422252554352e-07,
+  "interval_quality": 4.824422252554352e-07,
+  "composite_before_claim_penalty": 0.24000014473266756,
+  "claim_penalty_evaluated": false
+}

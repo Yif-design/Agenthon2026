@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "bytes": 969,
+      "path": "card.toml",
+      "sha256": "daeca541513a387af625340c35b6c197a0ac8a635e700fe80aa2443d58a1e1a0"
+    },
+    {
+      "bytes": 1179,
+      "path": "corpus/CLAIMS_CCNSA_20231005.json",
+      "sha256": "9620d8c1294bd4af411201e0e8707246588bc0ecfff24e5eb93bb9e14361b64b"
+    },
+    {
+      "bytes": 1172,
+      "path": "corpus/CLAIMS_CCSA_20231005.json",
+      "sha256": "436cfb104c9f3799056405ec6281d89af396736a22ddf5a4ea3159a843e248cc"
+    },
+    {
+      "bytes": 1150,
+      "path": "corpus/CLAIMS_ICNSA_20231005.json",
+      "sha256": "c8c8eb1ecc926f2f16bb148da4c82f6e0b8461b6cd5aa63eab2cf91dccf18308"
+    },
+    {
+      "bytes": 1143,
+      "path": "corpus/CLAIMS_ICSA_20231005.json",
+      "sha256": "e74d5e2a8f7ef78a4187c32a6decbfa39db598bd87930a13707f1cd7e6b1c922"
+    },
+    {
+      "bytes": 1034,
+      "path": "corpus/CLAIMS_IURNSA_20231005.json",
+      "sha256": "0bf86b9581aeac2533211852933d717deaa035d310bfa7f799381570a7cc96cf"
+    },
+    {
+      "bytes": 1027,
+      "path": "corpus/CLAIMS_IURSA_20231005.json",
+      "sha256": "821a0c269b5f1ba6d41dfbbde9d54558d8540898529c7f79cd210d13dd0e2fd9"
+    },
+    {
+      "bytes": 3671,
+      "path": "provenance.json",
+      "sha256": "590ffaf2a697140791be554246ac2ab9e1dece069c2a0e6119e3f74cce30c15c"
+    },
+    {
+      "bytes": 2970,
+      "path": "reference/naive_answer.json",
+      "sha256": "f0e10cb9c81f864841e0962c52ab9395ae146f56bbabdc324478f9d9ac1988ab"
+    },
+    {
+      "bytes": 613,
+      "path": "reference/outcome.json",
+      "sha256": "83602eef4823f184807165ddff6c76dc351cd525d5cbda52966222bd06d5186a"
+    },
+    {
+      "bytes": 2375,
+      "path": "task.json",
+      "sha256": "af762b507aa29e1791e14dc8ac210e8b0937ad02fbcc9e92dd60da3e6fc65b09"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-11-initial-claims-direction-20230929-transformed"
+}

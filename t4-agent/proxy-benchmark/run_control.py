@@ -176,6 +176,43 @@ EXPERIMENTS = {
 }
 
 
+# Materialized catalog questions share the same infrastructure acceptance test.  Keep
+# the small per-question map here so every pair can be regenerated and scored with
+# one command while preserving separate reports.
+_CATALOG_CONTROLS = {
+    "proxy-01": "proxy-01-revenue-surprise-band-20230331-",
+    "proxy-02": "proxy-02-gross-margin-delta-20230331-",
+    "proxy-03": "proxy-03-free-cash-flow-margin-20230331-",
+    "proxy-04": "proxy-04-capex-intensity-20230331-",
+    "proxy-05": "proxy-05-dividend-action-20230331-",
+    "proxy-06": "proxy-06-share-dilution-direction-20230331-",
+    "proxy-07": "proxy-07-buyback-intensity-rank-20230331-",
+    "proxy-08": "proxy-08-liquidity-stress-event-20230331-",
+    "proxy-09": "proxy-09-segment-growth-rank-20230428-",
+    "proxy-11": "proxy-11-initial-claims-direction-20230929-",
+    "proxy-12": "proxy-12-pce-component-nowcast-20230830-",
+    "proxy-13": "proxy-13-gdp-revision-magnitude-20230829-",
+    "proxy-14": "proxy-14-yield-curve-steepening-rank-20230929-",
+    "proxy-20": "proxy-20-cross-asset-return-quintile-20230929-",
+}
+for _key, _prefix in _CATALOG_CONTROLS.items():
+    EXPERIMENTS[_key] = {
+        "unit_prefix": _prefix,
+        "report": f"{_key}-control-v1.json",
+        "experiment": f"{_key}-control-v1",
+        "hypothesis": (
+            "The frozen, cutoff-safe question pair is runnable and scoreable in both economically "
+            "equivalent schema variants without model access or hidden-outcome leakage."
+        ),
+        "decision": "accept_benchmark_infrastructure",
+        "limitations": [
+            "One historical time-forward event per question family.",
+            "The control measures current deterministic routing and arithmetic, not model-assisted forecasting skill.",
+            "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+        ],
+    }
+
+
 def run(command: list[str], cwd: Path) -> None:
     subprocess.run(command, cwd=cwd, check=True)
 
@@ -218,6 +255,18 @@ def main() -> None:
         for path in trace.iterdir():
             path.unlink()
         trace.rmdir()
+    if "finding" in experiment:
+        finding = experiment["finding"]
+    else:
+        values = {
+            row["unit"].rsplit("-", 1)[-1]: row["composite_before_claim_penalty"]
+            for row in results
+        }
+        finding = (
+            f"Both variants ran with zero model calls. Explicit composite was {values.get('explicit', float('nan')):.4f} "
+            f"and transformed composite was {values.get('transformed', float('nan')):.4f}; the pair is retained as "
+            "coverage and schema-stress infrastructure, without selecting a production forecasting change."
+        )
     report = {
         "experiment": experiment["experiment"],
         "hypothesis": experiment["hypothesis"],
@@ -228,7 +277,7 @@ def main() -> None:
         "toolkit_tag": "v2.6.0",
         "results": results,
         "decision": experiment["decision"],
-        "finding": experiment["finding"],
+        "finding": finding,
         "limitations": experiment["limitations"],
     }
     if "benchmark_validation" in experiment:

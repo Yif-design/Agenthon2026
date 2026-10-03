@@ -1,0 +1,370 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DHHNGSP_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DHHNGSP_20230929",
+      "interval": {
+        "hi": 22.269625785479715,
+        "level": 0.9,
+        "lo": -12.894625785479715
+      },
+      "point_forecast": 4.6875,
+      "rank": 9
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DCOILBRENTEU_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DCOILBRENTEU_20230929",
+      "interval": {
+        "hi": 16.99644975428367,
+        "level": 0.9,
+        "lo": 2.6392473473316302
+      },
+      "point_forecast": 9.81784855080765,
+      "rank": 5
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DCOILWTICO_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DCOILWTICO_20230929",
+      "interval": {
+        "hi": 16.958307759022944,
+        "level": 0.9,
+        "lo": 0.32475627448993016
+      },
+      "point_forecast": 8.641532016756436,
+      "rank": 7
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS30_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS30_20230929",
+      "interval": {
+        "hi": 19.204820305698405,
+        "level": 0.9,
+        "lo": 6.033274932396832
+      },
+      "point_forecast": 12.619047619047619,
+      "rank": 1
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS20_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS20_20230929",
+      "interval": {
+        "hi": 18.25113213619482,
+        "level": 0.9,
+        "lo": 5.894653740798347
+      },
+      "point_forecast": 12.072892938496583,
+      "rank": 3
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS10_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS10_20230929",
+      "interval": {
+        "hi": 18.737112203219482,
+        "level": 0.9,
+        "lo": 5.712765547391769
+      },
+      "point_forecast": 12.224938875305625,
+      "rank": 2
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS7_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS7_20230929",
+      "interval": {
+        "hi": 16.505287363732087,
+        "level": 0.9,
+        "lo": 3.5424453331653023
+      },
+      "point_forecast": 10.023866348448696,
+      "rank": 4
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS5_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS5_20230929",
+      "interval": {
+        "hi": 15.218873364217163,
+        "level": 0.9,
+        "lo": 2.2752164702981625
+      },
+      "point_forecast": 8.747044917257663,
+      "rank": 6
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS3_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS3_20230929",
+      "interval": {
+        "hi": 11.201277843591134,
+        "level": 0.9,
+        "lo": 0.2524666498009367
+      },
+      "point_forecast": 5.726872246696035,
+      "rank": 8
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DGS2_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DGS2_20230929",
+      "interval": {
+        "hi": 7.982736562712538,
+        "level": 0.9,
+        "lo": -0.5600561503413859
+      },
+      "point_forecast": 3.711340206185576,
+      "rank": 10
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXSFUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXSFUS_20230929",
+      "interval": {
+        "hi": 5.738330227749936,
+        "level": 0.9,
+        "lo": -5.984811522146975
+      },
+      "point_forecast": -0.12324064719851924,
+      "rank": 18
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXINUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXINUS_20230929",
+      "interval": {
+        "hi": 1.1455103734038348,
+        "level": 0.9,
+        "lo": -0.4206976166993276
+      },
+      "point_forecast": 0.36240637835225353,
+      "rank": 16
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXBZUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXBZUS_20230929",
+      "interval": {
+        "hi": 4.739715368743103,
+        "level": 0.9,
+        "lo": -1.9135050046201423
+      },
+      "point_forecast": 1.4131051820614804,
+      "rank": 14
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXMXUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXMXUS_20230929",
+      "interval": {
+        "hi": 6.254801905713991,
+        "level": 0.9,
+        "lo": -0.030052187095420013
+      },
+      "point_forecast": 3.112374859309286,
+      "rank": 11
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXKOUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXKOUS_20230929",
+      "interval": {
+        "hi": 5.795099105200998,
+        "level": 0.9,
+        "lo": -1.9491488469643121
+      },
+      "point_forecast": 1.9229751291183428,
+      "rank": 13
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXCHUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXCHUS_20230929",
+      "interval": {
+        "hi": 2.1080837365510994,
+        "level": 0.9,
+        "lo": -1.0665031793881528
+      },
+      "point_forecast": 0.5207902785814733,
+      "rank": 15
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXCAUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXCAUS_20230929",
+      "interval": {
+        "hi": 2.146783852340328,
+        "level": 0.9,
+        "lo": -2.2058724113181327
+      },
+      "point_forecast": -0.02954427948890226,
+      "rank": 17
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXUSUK_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXUSUK_20230929",
+      "interval": {
+        "hi": -0.05648370176866635,
+        "level": 0.9,
+        "lo": -7.095959654985091
+      },
+      "point_forecast": -3.5762216783768785,
+      "rank": 20
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXJPUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXJPUS_20230929",
+      "interval": {
+        "hi": 6.033083829296565,
+        "level": 0.9,
+        "lo": -0.8848136480774595
+      },
+      "point_forecast": 2.574135090609553,
+      "rank": 12
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve Board and EIA via FRED source.",
+          "doc_id": "PROXY_proxy-20-cross-asset-return-quintile_XASSET_DEXUSEU_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "XASSET_DEXUSEU_20230929",
+      "interval": {
+        "hi": 0.945654086880924,
+        "level": 0.9,
+        "lo": -5.650885196761916
+      },
+      "point_forecast": -2.352615554940496,
+      "rank": 19
+    }
+  ],
+  "notes": {
+    "baseline_id": "declared-cutoff-rule"
+  },
+  "schema_version": "3",
+  "target_type": "ranking",
+  "task_id": "proxy-20-cross-asset-return-quintile-20230929-transformed"
+}

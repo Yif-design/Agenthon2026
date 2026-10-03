@@ -1,0 +1,94 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "cik": "0000037996",
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "name": "Ford Motor Co",
+      "prior_dividend_per_share": 0.1,
+      "prior_period_end": "2022-03-31",
+      "ticker": "F"
+    },
+    {
+      "cik": "0000354950",
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "name": "The Home Depot, Inc.",
+      "prior_dividend_per_share": 1.9,
+      "prior_period_end": "2022-05-01",
+      "ticker": "HD"
+    },
+    {
+      "cik": "0000051143",
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "prior_dividend_per_share": 1.64,
+      "prior_period_end": "2022-03-31",
+      "ticker": "IBM"
+    },
+    {
+      "cik": "0000063908",
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "name": "McDONALD’S CORPORATION",
+      "prior_dividend_per_share": 1.38,
+      "prior_period_end": "2022-03-31",
+      "ticker": "MCD"
+    },
+    {
+      "cik": "0001045810",
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "name": "NVIDIA CORP",
+      "prior_dividend_per_share": 0.04,
+      "prior_period_end": "2022-05-01",
+      "ticker": "NVDA"
+    },
+    {
+      "cik": "0000077476",
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "name": "PepsiCo, Inc.",
+      "prior_dividend_per_share": 1.075,
+      "prior_period_end": "2022-03-19",
+      "ticker": "PEP"
+    },
+    {
+      "cik": "0000027419",
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "name": "Target Corporation",
+      "prior_dividend_per_share": 0.9,
+      "prior_period_end": "2022-04-30",
+      "ticker": "TGT"
+    },
+    {
+      "cik": "0000104169",
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "name": "WALMART INC.",
+      "prior_dividend_per_share": 2.24,
+      "prior_period_end": "2022-04-30",
+      "ticker": "WMT"
+    }
+  ],
+  "family": "dividend_action",
+  "interval_level": 0.9,
+  "prompt": "Classify the next Q1 regular per-share distribution action relative to prior-year Q1.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "increase",
+      "unchanged",
+      "decrease_or_suspend"
+    ],
+    "name": "dividend_action",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-05-dividend-action-20230331-explicit"
+}

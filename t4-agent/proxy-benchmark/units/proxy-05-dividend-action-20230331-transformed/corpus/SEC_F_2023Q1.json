@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-05-dividend-action_SEC_F_2023Q1_transformed",
+  "entities": [
+    "SEC_F_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior Q1 regular dividend per share 0.100000; filed 2022-04-28."
+}

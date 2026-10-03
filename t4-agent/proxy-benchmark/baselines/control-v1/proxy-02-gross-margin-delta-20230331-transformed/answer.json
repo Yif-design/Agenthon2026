@@ -1,0 +1,150 @@
+{
+  "task_id": "proxy-02-gross-margin-delta-20230331-transformed",
+  "schema_version": "3",
+  "target_type": "regression",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_PEP_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 222,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 16200000000 and gross profit scaled currency units 8767000000; gross margin 54.117284 percent."
+        }
+      ]
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_NVDA_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 220,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 8288000000 and gross profit scaled currency units 5431000000; gross margin 65.528475 percent."
+        }
+      ]
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_KO_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 220,
+          "claim": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 10491000000 and gross profit scaled currency units 6400000000; gross margin 61.004671 percent."
+        }
+      ]
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_INTC_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 220,
+          "claim": "SEC XBRL facts for INTEL CORP (INTC); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 18353000000 and gross profit scaled currency units 9244000000; gross margin 50.367787 percent."
+        }
+      ]
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_IBM_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 245,
+          "claim": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 14197000000 and gross profit scaled currency units 7335000000; gross margin 51.665845 percent."
+        }
+      ]
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_HD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 229,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 38908000000 and gross profit scaled currency units 13145000000; gross margin 33.784826 percent."
+        }
+      ]
+    },
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_CVNA_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 218,
+          "claim": "SEC XBRL facts for CARVANA CO. (CVNA); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 3497000000 and gross profit scaled currency units 298000000; gross margin 8.521590 percent."
+        }
+      ]
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_PEP_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_KO_2023Q1",
+      "SEC_INTC_2023Q1",
+      "SEC_IBM_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_CVNA_2023Q1"
+    ],
+    "methods": {
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_KO_2023Q1": "generic_baseline",
+      "SEC_INTC_2023Q1": "generic_baseline",
+      "SEC_IBM_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_CVNA_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

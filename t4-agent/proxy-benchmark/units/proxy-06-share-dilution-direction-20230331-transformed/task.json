@@ -1,0 +1,126 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "baseline_share_count_thousands": 2765000.0,
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "issuer_key": "CIK-0000104169",
+      "name": "WALMART INC.",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 467800.0,
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "issuer_key": "CIK-0000027419",
+      "name": "Target Corporation",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 1391000.0,
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "issuer_key": "CIK-0000077476",
+      "name": "PepsiCo, Inc.",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 2537000.0,
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "issuer_key": "CIK-0001045810",
+      "name": "NVIDIA CORP",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 747600.0,
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "issuer_key": "CIK-0000063908",
+      "name": "McDONALD’S CORPORATION",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 4357000.0,
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "issuer_key": "CIK-0000021344",
+      "name": "COCA COLA CO",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 4107000.0,
+      "corpus_ref": "corpus/SEC_INTC_2023Q1.json",
+      "entity_id": "SEC_INTC_2023Q1",
+      "issuer_key": "CIK-0000050863",
+      "name": "INTEL CORP",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 909226.136,
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "issuer_key": "CIK-0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 1034000.0,
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "issuer_key": "CIK-0000354950",
+      "name": "The Home Depot, Inc.",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 75900.0,
+      "corpus_ref": "corpus/SEC_GME_2023Q1.json",
+      "entity_id": "SEC_GME_2023Q1",
+      "issuer_key": "CIK-0001326380",
+      "name": "GameStop Corp.",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 1470000.0,
+      "corpus_ref": "corpus/SEC_GM_2023Q1.json",
+      "entity_id": "SEC_GM_2023Q1",
+      "issuer_key": "CIK-0001467858",
+      "name": "GENERAL MOTORS COMPANY",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 4008000.0,
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "issuer_key": "CIK-0000037996",
+      "name": "Ford Motor Co",
+      "neutral_tolerance_fraction": 0.01
+    },
+    {
+      "baseline_share_count_thousands": 509000.0,
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "issuer_key": "CIK-0001018724",
+      "name": "AMAZON COM INC",
+      "neutral_tolerance_fraction": 0.01
+    }
+  ],
+  "family": "average_share_direction",
+  "interval_level": 0.9,
+  "prompt": "Classify Q1 diluted weighted-average share change year over year using a plus/minus 1 percent flat band.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "increase",
+      "flat",
+      "decrease"
+    ],
+    "name": "next_average_share_direction",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-06-share-dilution-direction-20230331-transformed"
+}
