@@ -1,0 +1,45 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "FX_DEXUSEU_20230929",
+      "y": 7.389961302502001
+    },
+    {
+      "entity_id": "FX_DEXJPUS_20230929",
+      "y": 4.3149580511609695
+    },
+    {
+      "entity_id": "FX_DEXUSUK_20230929",
+      "y": 7.226890604373631
+    },
+    {
+      "entity_id": "FX_DEXCAUS_20230929",
+      "y": 5.859966532234093
+    },
+    {
+      "entity_id": "FX_DEXCHUS_20230929",
+      "y": 0.7350476604987356
+    },
+    {
+      "entity_id": "FX_DEXKOUS_20230929",
+      "y": 7.992927180141718
+    },
+    {
+      "entity_id": "FX_DEXMXUS_20230929",
+      "y": 15.29224557879505
+    },
+    {
+      "entity_id": "FX_DEXBZUS_20230929",
+      "y": 13.654862743439471
+    },
+    {
+      "entity_id": "FX_DEXINUS_20230929",
+      "y": 1.247611693857136
+    },
+    {
+      "entity_id": "FX_DEXSFUS_20230929",
+      "y": 14.052248968300912
+    }
+  ],
+  "task_id": "proxy-19-fx-volatility-rank-20230929-explicit"
+}

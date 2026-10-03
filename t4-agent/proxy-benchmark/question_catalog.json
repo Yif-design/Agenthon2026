@@ -829,6 +829,17 @@
   ],
   "materialized_questions": [
     {
+      "id": "proxy-10-payroll-surprise-band",
+      "origin": "2023-08-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-10-payroll-control-v1.json"
+    },
+    {
       "id": "proxy-15-auction-indirect-bidder-share",
       "origin": "2023-08-02",
       "split": "time_forward_test",
@@ -840,6 +851,28 @@
       "control_report": "evaluation/reports/proxy-15-auction-control-v1.json"
     },
     {
+      "id": "proxy-16-crude-inventory-change",
+      "origin": "2026-09-23",
+      "split": "confirmation",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-16-energy-control-v1.json"
+    },
+    {
+      "id": "proxy-17-natural-gas-storage-change",
+      "origin": "2026-09-24",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-17-gas-control-v1.json"
+    },
+    {
       "id": "proxy-18-cot-positioning-rank",
       "origin": "2023-09-26",
       "split": "time_forward_test",
@@ -849,19 +882,33 @@
       ],
       "unit_count": 2,
       "control_report": "evaluation/reports/proxy-18-cot-control-v1.json"
+    },
+    {
+      "id": "proxy-19-fx-volatility-rank",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-19-fx-control-v1.json"
     }
   ],
   "materialization": {
     "updated_at": "2026-10-03",
     "question_ids": [
+      "proxy-10-payroll-surprise-band",
       "proxy-15-auction-indirect-bidder-share",
       "proxy-16-crude-inventory-change",
-      "proxy-18-cot-positioning-rank"
+      "proxy-17-natural-gas-storage-change",
+      "proxy-18-cot-positioning-rank",
+      "proxy-19-fx-volatility-rank"
     ],
-    "question_count": 3,
-    "runnable_schema_cases": 6,
+    "question_count": 6,
+    "runnable_schema_cases": 12,
     "splits": {
-      "time_forward_test": 4,
+      "time_forward_test": 10,
       "confirmation": 2
     }
   }

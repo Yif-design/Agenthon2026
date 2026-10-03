@@ -1,0 +1,277 @@
+{
+  "task_id": "proxy-19-fx-volatility-rank-20230929-transformed",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "FX_DEXSFUS_20230929",
+      "point_forecast": 0.1626738084165521,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.8373261915834478,
+        "hi": 2.162673808416552
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXSFUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 487,
+          "claim": "Federal Reserve H.10 exchange-rate history for South African rand (DEXSFUS).\nPublished quote convention: ZAR per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.0519920764\n2023-06-07 | 0.0523826236\n2023-06-08 | 0.0530518051\n2023-06-09 | 0.0534247966\n2023-06-12 | 0.0538549363\n2023-06-13 | 0.0538987673\n2023-06-14 | 0.0546021415\n2023-06-15 | 0.0548026283\n2023-06-16 | 0.0549350942\n2023-06-20 | 0.0544149576\n2023-06-21 | 0.0543865469\n2023-06-22 | 0.0540318572\n2023-06-23 | 0.0533262232"
+        },
+        {
+          "doc_id": "FRED_DEXSFUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2255,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "FX_DEXINUS_20230929",
+      "point_forecast": 0.028791471926212307,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9712085280737877,
+        "hi": 2.0287914719262123
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXINUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 481,
+          "claim": "Federal Reserve H.10 exchange-rate history for Indian rupee (DEXINUS).\nPublished quote convention: INR per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.0121050720\n2023-06-07 | 0.0121212121\n2023-06-08 | 0.0121109362\n2023-06-09 | 0.0121270919\n2023-06-12 | 0.0121315055\n2023-06-13 | 0.0121388687\n2023-06-14 | 0.0121802680\n2023-06-15 | 0.0121684108\n2023-06-16 | 0.0122115032\n2023-06-20 | 0.0121787846\n2023-06-21 | 0.0121891760\n2023-06-22 | 0.0122055413\n2023-06-23 | 0.0121936349"
+        },
+        {
+          "doc_id": "FRED_DEXINUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2249,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 10
+    },
+    {
+      "entity_id": "FX_DEXBZUS_20230929",
+      "point_forecast": 0.11031353877219342,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.8896864612278066,
+        "hi": 2.1103135387721936
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXBZUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 483,
+          "claim": "Federal Reserve H.10 exchange-rate history for Brazilian real (DEXBZUS).\nPublished quote convention: BRL per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.2036328093\n2023-06-07 | 0.2037406789\n2023-06-08 | 0.2031075454\n2023-06-09 | 0.2047250543\n2023-06-12 | 0.2050314723\n2023-06-13 | 0.2059011263\n2023-06-14 | 0.2065091690\n2023-06-15 | 0.2078526740\n2023-06-16 | 0.2070007659\n2023-06-20 | 0.2085114369\n2023-06-21 | 0.2099076406\n2023-06-22 | 0.2093626999\n2023-06-23 | 0.2094942808"
+        },
+        {
+          "doc_id": "FRED_DEXBZUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2251,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "FX_DEXMXUS_20230929",
+      "point_forecast": 0.1155422357006823,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.8844577642993177,
+        "hi": 2.115542235700682
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXMXUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 481,
+          "claim": "Federal Reserve H.10 exchange-rate history for Mexican peso (DEXMXUS).\nPublished quote convention: MXN per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.0574303370\n2023-06-07 | 0.0576664687\n2023-06-08 | 0.0574399035\n2023-06-09 | 0.0578328861\n2023-06-12 | 0.0577767506\n2023-06-13 | 0.0580922505\n2023-06-14 | 0.0584453536\n2023-06-15 | 0.0582116225\n2023-06-16 | 0.0585600094\n2023-06-20 | 0.0581706494\n2023-06-21 | 0.0582747187\n2023-06-22 | 0.0583185593\n2023-06-23 | 0.0582333176"
+        },
+        {
+          "doc_id": "FRED_DEXMXUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2249,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "entity_id": "FX_DEXKOUS_20230929",
+      "point_forecast": 0.07893527758994585,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.921064722410054,
+        "hi": 2.0789352775899457
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXKOUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 485,
+          "claim": "Federal Reserve H.10 exchange-rate history for South Korean won (DEXKOUS).\nPublished quote convention: KRW per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.0007704576\n2023-06-07 | 0.0007670947\n2023-06-08 | 0.0007667183\n2023-06-09 | 0.0007743174\n2023-06-12 | 0.0007760300\n2023-06-13 | 0.0007864850\n2023-06-14 | 0.0007822033\n2023-06-15 | 0.0007812561\n2023-06-16 | 0.0007857435\n2023-06-20 | 0.0007811218\n2023-06-21 | 0.0007741256\n2023-06-22 | 0.0007723499\n2023-06-23 | 0.0007667594"
+        },
+        {
+          "doc_id": "FRED_DEXKOUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2253,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "FX_DEXCHUS_20230929",
+      "point_forecast": 0.046608848071019844,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9533911519289802,
+        "hi": 2.04660884807102
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXCHUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 481,
+          "claim": "Federal Reserve H.10 exchange-rate history for Chinese yuan (DEXCHUS).\nPublished quote convention: CNY per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.1404691670\n2023-06-07 | 0.1402780311\n2023-06-08 | 0.1406291749\n2023-06-09 | 0.1403055856\n2023-06-12 | 0.1399834819\n2023-06-13 | 0.1396940700\n2023-06-14 | 0.1398992725\n2023-06-15 | 0.1402524544\n2023-06-16 | 0.1403508772\n2023-06-20 | 0.1392544318\n2023-06-21 | 0.1393165132\n2023-06-22 | 0.1393203951\n2023-06-23 | 0.1393203951"
+        },
+        {
+          "doc_id": "FRED_DEXCHUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2249,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "entity_id": "FX_DEXCAUS_20230929",
+      "point_forecast": 0.04964331526215588,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9503566847378442,
+        "hi": 2.049643315262156
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXCAUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 484,
+          "claim": "Federal Reserve H.10 exchange-rate history for Canadian dollar (DEXCAUS).\nPublished quote convention: CAD per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.7461016190\n2023-06-07 | 0.7483349547\n2023-06-08 | 0.7473841555\n2023-06-09 | 0.7495128167\n2023-06-12 | 0.7475517680\n2023-06-13 | 0.7519927809\n2023-06-14 | 0.7528419785\n2023-06-15 | 0.7554581854\n2023-06-16 | 0.7579202668\n2023-06-20 | 0.7549448890\n2023-06-21 | 0.7587829122\n2023-06-22 | 0.7596475235\n2023-06-23 | 0.7578053956"
+        },
+        {
+          "doc_id": "FRED_DEXCAUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2252,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "entity_id": "FX_DEXUSUK_20230929",
+      "point_forecast": 0.06668074826687584,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9333192517331241,
+        "hi": 2.066680748266876
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXUSUK_20230929_transformed",
+          "span_start": 0,
+          "span_end": 482,
+          "claim": "Federal Reserve H.10 exchange-rate history for British pound (DEXUSUK).\nPublished quote convention: USD per GBP.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.8052826542\n2023-06-07 | 0.8031483415\n2023-06-08 | 0.7970032677\n2023-06-09 | 0.7949757532\n2023-06-12 | 0.8007046201\n2023-06-13 | 0.7929585283\n2023-06-14 | 0.7876496534\n2023-06-15 | 0.7835762420\n2023-06-16 | 0.7803355443\n2023-06-20 | 0.7854225573\n2023-06-21 | 0.7851142341\n2023-06-22 | 0.7843137255\n2023-06-23 | 0.7873395796"
+        },
+        {
+          "doc_id": "FRED_DEXUSUK_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2250,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "FX_DEXJPUS_20230929",
+      "point_forecast": 0.08372226820391844,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9162777317960815,
+        "hi": 2.0837222682039185
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXJPUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 481,
+          "claim": "Federal Reserve H.10 exchange-rate history for Japanese yen (DEXJPUS).\nPublished quote convention: JPY per USD.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.0071597337\n2023-06-07 | 0.0071438777\n2023-06-08 | 0.0072030541\n2023-06-09 | 0.0071761751\n2023-06-12 | 0.0071571715\n2023-06-13 | 0.0071428571\n2023-06-14 | 0.0071772052\n2023-06-15 | 0.0071179443\n2023-06-16 | 0.0070511917\n2023-06-20 | 0.0070691362\n2023-06-21 | 0.0070377929\n2023-06-22 | 0.0069983904\n2023-06-23 | 0.0069550702"
+        },
+        {
+          "doc_id": "FRED_DEXJPUS_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2249,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "FX_DEXUSEU_20230929",
+      "point_forecast": 0.06625913165191641,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9337408683480837,
+        "hi": 2.0662591316519165
+      },
+      "claims": [
+        {
+          "doc_id": "FRED_DEXUSEU_20230929_transformed",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "Federal Reserve H.10 exchange-rate history for Euro (DEXUSEU).\nPublished quote convention: USD per EUR.\ndate | reciprocal_exchange_rate\n2023-06-06 | 0.9350163628\n2023-06-07 | 0.9344047842\n2023-06-08 | 0.9276437848\n2023-06-09 | 0.9303190995\n2023-06-12 | 0.9304922304\n2023-06-13 | 0.9266123054\n2023-06-14 | 0.9208951100\n2023-06-15 | 0.9146620324\n2023-06-16 | 0.9153318078\n2023-06-20 | 0.9174311927\n2023-06-21 | 0.9131586157\n2023-06-22 | 0.9129918744\n2023-06-23 | 0.9185266832\n2023-06-26 | 0.9165902841"
+        },
+        {
+          "doc_id": "FRED_DEXUSEU_20230929_transformed",
+          "span_start": 0,
+          "span_end": 2241,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "rank": 7
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "FX_DEXSFUS_20230929",
+      "FX_DEXINUS_20230929",
+      "FX_DEXBZUS_20230929",
+      "FX_DEXMXUS_20230929",
+      "FX_DEXKOUS_20230929",
+      "FX_DEXCHUS_20230929",
+      "FX_DEXCAUS_20230929",
+      "FX_DEXUSUK_20230929",
+      "FX_DEXJPUS_20230929",
+      "FX_DEXUSEU_20230929"
+    ],
+    "methods": {
+      "FX_DEXSFUS_20230929": "generic_baseline",
+      "FX_DEXINUS_20230929": "generic_baseline",
+      "FX_DEXBZUS_20230929": "generic_baseline",
+      "FX_DEXMXUS_20230929": "generic_baseline",
+      "FX_DEXKOUS_20230929": "generic_baseline",
+      "FX_DEXCHUS_20230929": "generic_baseline",
+      "FX_DEXCAUS_20230929": "generic_baseline",
+      "FX_DEXUSUK_20230929": "generic_baseline",
+      "FX_DEXJPUS_20230929": "generic_baseline",
+      "FX_DEXUSEU_20230929": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

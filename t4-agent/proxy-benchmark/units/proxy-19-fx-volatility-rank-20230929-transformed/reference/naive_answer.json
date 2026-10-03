@@ -1,0 +1,190 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXSFUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXSFUS_20230929",
+      "interval": {
+        "hi": 18.40639394360327,
+        "level": 0.9,
+        "lo": 8.827976486433073
+      },
+      "point_forecast": 13.617185215018171,
+      "rank": 1
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXINUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXINUS_20230929",
+      "interval": {
+        "hi": 3.2583889944693096,
+        "level": 0.9,
+        "lo": 2.2583889944693096
+      },
+      "point_forecast": 2.7583889944693096,
+      "rank": 10
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXBZUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXBZUS_20230929",
+      "interval": {
+        "hi": 11.869590049310954,
+        "level": 0.9,
+        "lo": 9.02067567746527
+      },
+      "point_forecast": 10.445132863388112,
+      "rank": 3
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXMXUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXMXUS_20230929",
+      "interval": {
+        "hi": 16.710133907786457,
+        "level": 0.9,
+        "lo": 9.185371194037488
+      },
+      "point_forecast": 12.947752550911972,
+      "rank": 2
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXKOUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXKOUS_20230929",
+      "interval": {
+        "hi": 9.60265647900653,
+        "level": 0.9,
+        "lo": 3.490956345096773
+      },
+      "point_forecast": 6.546806412051652,
+      "rank": 4
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXCHUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXCHUS_20230929",
+      "interval": {
+        "hi": 5.8588959041453,
+        "level": 0.9,
+        "lo": 2.1938633868457265
+      },
+      "point_forecast": 4.026379645495513,
+      "rank": 9
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXCAUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXCAUS_20230929",
+      "interval": {
+        "hi": 5.909243469612262,
+        "level": 0.9,
+        "lo": 2.4396646236553963
+      },
+      "point_forecast": 4.174454046633829,
+      "rank": 8
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXUSUK_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXUSUK_20230929",
+      "interval": {
+        "hi": 8.21505910529454,
+        "level": 0.9,
+        "lo": 3.0019259664879865
+      },
+      "point_forecast": 5.608492535891263,
+      "rank": 7
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXJPUS_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXJPUS_20230929",
+      "interval": {
+        "hi": 10.224237344321756,
+        "level": 0.9,
+        "lo": 1.9846374150049417
+      },
+      "point_forecast": 6.104437379663349,
+      "rank": 5
+    },
+    {
+      "claims": [
+        {
+          "claim": "Federal Reserve source.",
+          "doc_id": "FRED_DEXUSEU_20230929_transformed",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "FX_DEXUSEU_20230929",
+      "interval": {
+        "hi": 7.343426096544985,
+        "level": 0.9,
+        "lo": 4.005382724352027
+      },
+      "point_forecast": 5.674404410448506,
+      "rank": 6
+    }
+  ],
+  "notes": {
+    "baseline_id": "trailing-20-common-day-realized-volatility"
+  },
+  "schema_version": "3",
+  "target_type": "ranking",
+  "task_id": "proxy-19-fx-volatility-rank-20230929-transformed"
+}

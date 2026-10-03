@@ -34,6 +34,8 @@ class ProxyBenchmarkTests(unittest.TestCase):
         self.energy_transformed = PROXY / "units/proxy-16-crude-inventory-change-20260923-transformed"
         self.gas_explicit = PROXY / "units/proxy-17-natural-gas-storage-change-20260924-explicit"
         self.gas_transformed = PROXY / "units/proxy-17-natural-gas-storage-change-20260924-transformed"
+        self.fx_explicit = PROXY / "units/proxy-19-fx-volatility-rank-20230929-explicit"
+        self.fx_transformed = PROXY / "units/proxy-19-fx-volatility-rank-20230929-transformed"
 
     def test_materialized_units_pass_integrity_and_variant_checks(self) -> None:
         errors = validator.validate_unit(self.explicit)
@@ -64,6 +66,29 @@ class ProxyBenchmarkTests(unittest.TestCase):
         errors += validator.validate_unit(self.payroll_transformed)
         errors += validator.compare_variants(self.payroll_explicit, self.payroll_transformed)
         self.assertEqual(errors, [])
+
+    def test_fx_units_pass_integrity_and_variant_checks(self) -> None:
+        errors = validator.validate_unit(self.fx_explicit)
+        errors += validator.validate_unit(self.fx_transformed)
+        errors += validator.compare_variants(self.fx_explicit, self.fx_transformed)
+        self.assertEqual(errors, [])
+
+    def test_fx_snapshot_separates_visible_history_and_forward_outcome(self) -> None:
+        source = json.loads((PROXY / "sources/proxy-19-fx-2023.json").read_text())
+        self.assertEqual(len(source["rows"]), 10)
+        self.assertEqual(source["cutoff_date"], "2023-09-29")
+        self.assertEqual(source["resolution_date"], "2023-10-30")
+        for unit in (self.fx_explicit, self.fx_transformed):
+            visible = "\n".join(path.read_text() for path in (unit / "corpus").glob("*.json"))
+            self.assertNotIn("2023-10-02", visible)
+            self.assertNotIn("2023-10-30", visible)
+
+    def test_fx_naive_is_ranking_anchor(self) -> None:
+        result = scorer.score(self.fx_explicit, self.fx_explicit / "reference/naive_answer.json")
+        self.assertAlmostEqual(result["raw_spearman"], 0.9030303030303031)
+        self.assertAlmostEqual(result["predictive_quality"], 0.5)
+        self.assertAlmostEqual(result["interval_quality"], 0.5)
+        self.assertAlmostEqual(result["composite_before_claim_penalty"], 0.5)
 
     def test_payroll_snapshot_has_vintage_separation_and_three_labels(self) -> None:
         source = json.loads((PROXY / "sources/proxy-10-payroll-2023.json").read_text())

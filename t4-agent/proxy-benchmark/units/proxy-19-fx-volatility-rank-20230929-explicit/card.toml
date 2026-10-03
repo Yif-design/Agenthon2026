@@ -1,0 +1,33 @@
+schema_version = "2.0"
+
+[task]
+id = "proxy-19-fx-volatility-rank-20230929-explicit"
+track = "analysis"
+title = "Forward FX realized-volatility ranking (explicit)"
+split = "time_forward_test"
+family = "fx_realized_volatility"
+target_type = "ranking"
+cutoff_date = "2023-09-29"
+resolution_date = "2023-10-30"
+
+[provenance]
+license = "Federal Reserve Board H.10 exchange-rate data; U.S. government source"
+data_source = "https://fred.stlouisfed.org/graph/fredgraph.csv"
+data_cutoff = "2023-09-29"
+redistributable = true
+manifest = "manifest.json"
+
+[scoring]
+verifier = "t4.faithful_analysis"
+metric = "analysis_composite"
+admissibility_gates = ["g0_integrity", "g1_schema", "g2_cutoff_resource", "g3_domain_semantics"]
+
+[scoring.params]
+faithfulness_threshold = 0.80
+interval_level = 0.90
+target_type = "ranking"
+composite_weights = [0.7, 0.3]
+tau_citation = 0.5
+
+[agent]
+timeout_sec = 600.0

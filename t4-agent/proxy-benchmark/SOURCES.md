@@ -53,6 +53,12 @@ same-ISO-week seasonal observations per region; the target week is retained only
 outcome. The release reports no target/prior revision or reclassification flags. Its SHA-256 is
 `61e33e904b3e92b3938365ad8cdc7b94d0ec0bf8e4696abc9f0530a3e63b06b2`.
 
+`sources/proxy-19-fx-2023.json` freezes ten Federal Reserve Board H.10 bilateral USD exchange-rate
+series downloaded through FRED. It retains cutoff-safe history through 2023-09-29 and the next 20
+common observations through 2023-10-30 solely to construct hidden realized-volatility outcomes.
+Every source CSV has an individual content hash. The 184,730-byte snapshot SHA-256 is
+`5175c90917ef826f4ee1eb11bc56cf98a45b8bf3be06f489c22ed4c3743ee163`.
+
 ## Data boundary
 
 External public data may be used to construct historical proxy tasks and offline artifacts only

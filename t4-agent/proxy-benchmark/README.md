@@ -7,10 +7,11 @@ units.
 
 ## Status
 
-`question_catalog.json` contains twenty question specifications. Five questions are materialized:
+`question_catalog.json` contains twenty question specifications. Six questions are materialized:
 proxy-10 payroll surprise classification, proxy-15 Treasury auction share, proxy-16 EIA crude-
-inventory change, proxy-17 EIA natural-gas storage change, and proxy-18 COT positioning rank. Each
-has two runnable schema variants; the other fifteen remain design records. A
+inventory change, proxy-17 EIA natural-gas storage change, proxy-18 COT positioning rank, and
+proxy-19 forward FX volatility rank. Each has two runnable schema variants; the other fourteen
+remain design records. A
 question becomes runnable only after its generator has produced a cutoff-safe
 `task.json`, `card.toml`, `manifest.json`, frozen `corpus/`, hidden `reference/outcome.json`, and
 `reference/naive_answer.json` with complete provenance.
@@ -32,12 +33,14 @@ python3.13 proxy-benchmark/build_payroll_proxy.py
 python3.13 proxy-benchmark/build_auction_proxy.py
 python3.13 proxy-benchmark/build_energy_proxy.py
 python3.13 proxy-benchmark/build_gas_proxy.py
+python3.13 proxy-benchmark/build_fx_proxy.py
 python3.13 proxy-benchmark/validate_proxy.py
 python3.13 proxy-benchmark/run_control.py --experiment proxy-18
 python3.13 proxy-benchmark/run_control.py --experiment proxy-15
 python3.13 proxy-benchmark/run_control.py --experiment proxy-16
 python3.13 proxy-benchmark/run_control.py --experiment proxy-17
 python3.13 proxy-benchmark/run_control.py --experiment proxy-10
+python3.13 proxy-benchmark/run_control.py --experiment proxy-19
 python3.13 -m unittest tests.test_proxy_benchmark -v
 ```
 

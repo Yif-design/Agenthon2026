@@ -13,6 +13,36 @@ from score_proxy import score
 
 
 EXPERIMENTS = {
+    "proxy-19": {
+        "unit_prefix": "proxy-19-fx-volatility-rank-20230929-",
+        "report": "proxy-19-fx-control-v1.json",
+        "experiment": "proxy-19-fx-control-v1",
+        "hypothesis": (
+            "The FX volatility ranking remains schema-stable after field renaming, reciprocal quotes, "
+            "fraction scaling, and roster reversal, with transformed composite no more than 0.10 below explicit."
+        ),
+        "decision": "reject_schema_robustness_hypothesis_accept_benchmark",
+        "finding": (
+            "The explicit composite was 0.4964 and transformed was 0.3691, a 0.1273 decline. "
+            "Ranking remained informative, but transformed interval scale was materially wrong. "
+            "Keep the benchmark and leave production unchanged."
+        ),
+        "limitations": [
+            "One historical 20-common-day horizon with ten related bilateral USD series.",
+            "The trailing-20-day naive already has Spearman 0.9030, leaving little prediction-leg headroom.",
+            "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+        ],
+        "benchmark_validation": {
+            "series": 10,
+            "visible_common_days": 81,
+            "forward_common_returns": 20,
+            "schema_variants": 2,
+            "generated_files_checked": 35,
+            "second_build_byte_identical": True,
+            "local_validator_errors": 0,
+            "official_schema_answers_checked": 2,
+        },
+    },
     "proxy-10": {
         "unit_prefix": "proxy-10-payroll-surprise-band-202308-",
         "report": "proxy-10-payroll-control-v1.json",

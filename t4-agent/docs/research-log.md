@@ -1,5 +1,27 @@
 # Research log
 
+## 2026-10-03: forward FX volatility proxy-19 benchmark — accepted, robustness hypothesis rejected
+
+Proxy-19 adds a market-price ranking task for ten Federal Reserve H.10 bilateral USD exchange-rate
+series. The cutoff is 2023-09-29. Each entity exposes 81 common eligible observations; the hidden
+outcome is annualized log-return volatility over the next 20 common observations through
+2023-10-30. The declared naive ranks currencies by trailing-20-day realized volatility and uses a
+cutoff-only rolling-volatility error band.
+
+The transformed unit reverses the roster, replaces published quotes with reciprocals, renames
+fields and stores volatility features as fractions. Reciprocal quotes preserve log-return
+volatility, so both units have identical economic outcomes. Every downloaded source CSV has a
+recorded SHA-256 and no post-cutoff observation appears in a task or corpus document.
+
+The current agent completed all twenty rows without model access. Explicit composite before claim
+penalty was 0.4964; transformed was 0.3691, a 0.1273 decline that fails the preregistered 0.10
+schema-stability gate. The transformed ranking remained informative (raw Spearman 0.8424), but its
+interval score deteriorated because the generic fallback used the wrong scale. The benchmark is
+accepted and production remains unchanged; the failed hypothesis identifies cross-schema interval
+normalization as a general weakness.
+
+Report: `evaluation/reports/proxy-19-fx-control-v1.json`.
+
 ## 2026-10-03: payroll first-print proxy-10 classification benchmark — accepted
 
 Proxy-10 adds the first runnable pure-label classification question to the expanded benchmark. It

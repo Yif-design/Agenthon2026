@@ -25,9 +25,9 @@ The machine-readable definitions are in `question_catalog.json`. This table is t
 | 19 | Ranking | Novel | Forward FX realized volatility | FRED, Fed | Quote convention and nonstationarity |
 | 20 | Ranking | Novel | Cross-asset forward-return quintile | FRED, Fed, EIA, CFTC | Relative forecast and regime shifts |
 
-Materialization status: questions 10, 15, 17 and 18 have cutoff-safe time-forward events and
-question 16 has a cutoff-safe 2026 confirmation event. All five have explicit and transformed
-schemas, complete references and recorded production-control baselines. The other fifteen remain
+Materialization status: questions 10, 15, 17, 18 and 19 have cutoff-safe time-forward events and
+question 16 has a cutoff-safe 2026 confirmation event. All six have explicit and transformed
+schemas, complete references and recorded production-control baselines. The other fourteen remain
 specifications.
 
 ## Build waves
