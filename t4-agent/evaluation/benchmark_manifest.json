@@ -353,7 +353,7 @@
     },
     "toolkit_260_submission_compatibility_v1": {
       "path": "evaluation/reports/toolkit-260-submission-compatibility-v1.json",
-      "sha256": "b24501d28f244a71bca14a3759e31c54f900175f854f7fb0ad28fe52de48d796",
+      "sha256": "9600fbd48b09a455d45e2fa2b63251a5c44a1d12a1bdbba968eb85ec18b42e36",
       "scope": "L1 official contract and submission packaging compatibility",
       "official_toolkit_version": "2.6.0",
       "official_scorer_version": "5.2.2",

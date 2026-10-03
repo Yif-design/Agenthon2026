@@ -90,10 +90,12 @@
     "team_key_in_zip": false,
     "real_team_key_used": false,
     "ci_pack_smoke_added": true,
-    "ci_python": "3.13"
+    "ci_python": "3.13.15",
+    "ci_pack_smoke_status": "passed",
+    "ci_run": 37094824716
   },
   "current_image": {
-    "reference": "ghcr.io/yif-design/agenthon2026-t4@sha256:f936ed8640d59a1728295b4e27ce8053786ed136823c3a846effc4363607ac18",
+    "reference": "ghcr.io/yif-design/agenthon2026-t4@sha256:deac243e887c194e43819ef272b4b6d671fa8fa5684ca93b161c3f684eea670d",
     "anonymous_manifest_http_status": 200,
     "anonymous_config_http_status": 200,
     "media_type": "application/vnd.oci.image.manifest.v1+json",
@@ -103,7 +105,8 @@
     "compressed_layer_bytes": 46358507,
     "compressed_layer_mib": 44.211,
     "layer_count": 8,
-    "container_cli_smoke": "passed in GitHub Actions run 37092982061"
+    "container_cli_smoke": "passed in GitHub Actions run 37094824716",
+    "config_digest": "sha256:4d08ac9af43920e1a9d5fac0f0b1d9e7c6ba45878f788ca71b8614bb13292df6"
   },
   "runtime_clarifications": {
     "development_board": "-0.27 + 1.27 * analysis_score",
@@ -121,5 +124,8 @@
   "decision": "accept_local_submission_template_fix",
   "production_prediction_change": "none",
   "conclusion": "Official scoring and answer contracts are unchanged, but the local descriptor template was invalid under both 2.5.1 and 2.6.0. The minimal C5 image-object fix passes the official packer.",
-  "official_pack_smoke": "passed with synthetic non-secret key; exactly two ZIP members"
+  "official_pack_smoke": "passed with synthetic non-secret key; exactly two ZIP members",
+  "adopted_commit": "133ede423d1ad475d613d6dcced0dfb0589d77ff",
+  "ci_run": 37094824716,
+  "ci_conclusion": "success"
 }

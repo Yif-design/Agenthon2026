@@ -2230,3 +2230,12 @@ Anonymous GHCR manifest and config requests both returned HTTP 200; the resolved
 the manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`.
 The development submission template now points to that digest. No formal competition submission
 was performed.
+
+Release record for the toolkit 2.6 compatibility repair: commit
+`133ede423d1ad475d613d6dcced0dfb0589d77ff` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37094824716` passed 154 tests on Python 3.13.15, installed the pinned v2.6.0 toolkit, packed and
+inspected the synthetic submission ZIP, built and pushed Linux/amd64, and passed `analyze --help`.
+The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:deac243e887c194e43819ef272b4b6d671fa8fa5684ca93b161c3f684eea670d`.
+Anonymous manifest and config requests returned HTTP 200; the OCI image is Linux/amd64, about 44.2
+MiB compressed, and carries `qfbench2.interface_version=2.0`. No formal submission was performed.
