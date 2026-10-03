@@ -25,6 +25,13 @@ useful payroll-surprise classification skill. Production logic remains unchanged
 
 Report: `evaluation/reports/proxy-10-payroll-control-v1.json`.
 
+Release record: commit `848ca08803024a4eb5dfb434e723fb757b449c24` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `37104010339` passed 161 tests, passed the pinned
+toolkit 2.6 submission-packer smoke, built Linux/amd64, and passed the container command smoke. The
+immutable image is `ghcr.io/yif-design/agenthon2026-t4@sha256:b13c14014481052050ede1e8a6d18d7a49fb3c254a553ad419d690ba437f1681`.
+Anonymous manifest and config requests returned HTTP 200; the OCI digest matched, and the config
+carries `qfbench2.interface_version=2.0`. No formal competition submission was performed.
+
 ## 2026-10-03: natural-gas storage proxy-17 benchmark — accepted
 
 Proxy-17 forecasts the next weekly storage change for the Lower 48 and five EIA regions. Its
