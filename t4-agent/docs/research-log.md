@@ -2173,3 +2173,13 @@ shared main `84221f1b553475b1283cb653145051e916377dd0` and toolkit `v2.5.1`. The
 the current authority. Python 3.11.7 passed 149 tests. No local or remote LLM and no NLI ran.
 
 Report: `evaluation/reports/proxy-18-cot-control-v1.json`.
+
+Release record for the accepted benchmark infrastructure: commit
+`33ec1e7daa5774bbe8d4d0ba65cee8447b6cc97a` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37091935219` passed the Python 3.13 test suite, built and pushed Linux/amd64, and passed the
+container `analyze --help` smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:f0d58b7b69906449034a09273ad545d6df3d42286ac4dffbde7ca6815948408f`.
+Anonymous GHCR manifest and config requests both returned HTTP 200; the resolved digest matched,
+the manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`.
+The development submission template now points to that digest. No formal competition submission
+was performed.
