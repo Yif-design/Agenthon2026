@@ -26,6 +26,11 @@
 - Up to three retrieved context citations are added per entity. They increase answer size and
   scoring work, and NLI passage does not prove that a forecast is substantively correct.
 - Existing 11-unit outcomes are retired public practice cases and have influenced development.
+- The new proxy catalog has twenty question designs, but only proxy-18 COT positioning is currently
+  runnable, with one 2023 event and two schema variants. It validates the benchmark plumbing and
+  reveals different specialist/generic routes, but it does not yet provide development,
+  confirmation, leave-one-family-out, classification or regression evidence for architecture
+  selection.
 - The recorded 72.0% practice-set coverage is a legacy diagnostic. Current interval selection must
   minimize mean interval score relative to the unit's naive interval; coverage alone is insufficient.
 - The EPS YoY interval is deliberately broad: mean full width was 8.44 USD/share on the inspected

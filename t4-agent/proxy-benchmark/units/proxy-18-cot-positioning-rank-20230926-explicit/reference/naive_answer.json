@@ -1,0 +1,190 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_CORN_CBT_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "CORN_CBT",
+      "interval": {
+        "hi": 5.534129871179491,
+        "level": 0.9,
+        "lo": -5.534129871179491
+      },
+      "point_forecast": 0.0,
+      "rank": 1
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_ES_SP500_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "ES_SP500",
+      "interval": {
+        "hi": 2.8214552371896504,
+        "level": 0.9,
+        "lo": -2.8214552371896504
+      },
+      "point_forecast": 0.0,
+      "rank": 2
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_EURO_FX_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EURO_FX",
+      "interval": {
+        "hi": 2.808108682886097,
+        "level": 0.9,
+        "lo": -2.808108682886097
+      },
+      "point_forecast": 0.0,
+      "rank": 3
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_GOLD_CMX_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "GOLD_CMX",
+      "interval": {
+        "hi": 4.974958970674038,
+        "level": 0.9,
+        "lo": -4.974958970674038
+      },
+      "point_forecast": 0.0,
+      "rank": 4
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_JPY_CME_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "JPY_CME",
+      "interval": {
+        "hi": 6.775371371658045,
+        "level": 0.9,
+        "lo": -6.775371371658045
+      },
+      "point_forecast": 0.0,
+      "rank": 5
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_NATGAS_NYMEX_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "NATGAS_NYMEX",
+      "interval": {
+        "hi": 1.180608596567902,
+        "level": 0.9,
+        "lo": -1.180608596567902
+      },
+      "point_forecast": 0.0,
+      "rank": 6
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_SILVER_CMX_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "SILVER_CMX",
+      "interval": {
+        "hi": 8.63382109921854,
+        "level": 0.9,
+        "lo": -8.63382109921854
+      },
+      "point_forecast": 0.0,
+      "rank": 7
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_UST_10Y_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_10Y",
+      "interval": {
+        "hi": 2.149580682686003,
+        "level": 0.9,
+        "lo": -2.149580682686003
+      },
+      "point_forecast": 0.0,
+      "rank": 8
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_UST_2Y_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "UST_2Y",
+      "interval": {
+        "hi": 3.3266769571422135,
+        "level": 0.9,
+        "lo": -3.3266769571422135
+      },
+      "point_forecast": 0.0,
+      "rank": 9
+    },
+    {
+      "claims": [
+        {
+          "claim": "CFTC source.",
+          "doc_id": "CFTC_WTI_NYMEX_20230929",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "WTI_NYMEX",
+      "interval": {
+        "hi": 1.7903801596122424,
+        "level": 0.9,
+        "lo": -1.7903801596122424
+      },
+      "point_forecast": 0.0,
+      "rank": 10
+    }
+  ],
+  "notes": {
+    "baseline_id": "zero-change-precutoff-90pct-absolute-move"
+  },
+  "schema_version": "3",
+  "target_type": "ranking",
+  "task_id": "proxy-18-cot-positioning-rank-20230926-explicit"
+}

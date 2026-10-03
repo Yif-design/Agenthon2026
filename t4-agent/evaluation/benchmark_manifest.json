@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-01",
+  "updated_at": "2026-10-03",
   "baseline_commit": "62d5b8a5e0aaee22a41d69bf0ab94fb542affea8",
   "official_toolkit_version": "2.5.1",
   "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
@@ -236,6 +236,20 @@
         "cpi",
         "auction"
       ],
+      "production_change": "none"
+    },
+    "proxy_18_cot_control_v1": {
+      "path": "evaluation/reports/proxy-18-cot-control-v1.json",
+      "sha256": "5deaf9be2442b4d257f3c5776669c310156f0cd03fed98d1200b534f4e9e69b3",
+      "source_snapshot": "proxy-benchmark/sources/proxy-18-cot-2023.json",
+      "source_snapshot_sha256": "9428ac2f750afa7f8b7395691e1fb29f57d366dd23abd84e43a88d3fdf8c94db",
+      "target_type": "ranking",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "role": "first_runnable_proxy_schema_invariance_control",
+      "decision": "infrastructure_accept_hypothesis_reject",
       "production_change": "none"
     }
   },

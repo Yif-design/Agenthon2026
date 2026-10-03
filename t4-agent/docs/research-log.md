@@ -2144,3 +2144,32 @@ Anonymous GHCR manifest and config requests both returned HTTP 200; the digest m
 manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
 development submission template now points to that digest. No formal competition submission was
 performed.
+
+## 2026-10-03: first runnable proxy benchmark slice — infrastructure accepted, degradation hypothesis rejected
+
+The twenty-question catalog previously contained no runnable units. Proxy-18 now has an explicit
+and a transformed schema for one 2023 CFTC next-report positioning event, with a tracked public
+source snapshot, cutoff-safe corpus, hidden local outcome, declared naive answer, provenance,
+manifest hashes and deterministic validators. Rebuilding twice produced identical hashes. The
+current model-free production control ran on both ten-entity ranking units without a model API.
+
+Under the scorer 5.2.2 predictive and interval formulas before claim penalty, the explicit route
+used `net_position_mean_reversion`, obtained Spearman 0.3333 and composite 0.5561. The transformed
+route used `generic_baseline`, obtained Spearman 0.3818 and composite 0.5950. All ten transformed
+rows recorded model-unavailable fallback because the generic route normally requests a signal, but
+still produced complete answers. The transformed numeric feature is fraction-scaled while the
+target is percentage points; ranking is scale-invariant, whereas its interval score is not.
+
+The preregistered hypothesis that schema transformation would cause a material score decline is
+rejected for this event. The different route and unit handling show a real schema dependency, but
+the score increased rather than decreased. No production logic changed. This single event proves
+the generator, leakage checks, schema-pair invariants and control runner; it is too small to claim
+schema robustness or select an architecture. The next benchmark round should materialize another
+Wave 1 target type before revisiting production.
+
+The official remote repositories remain at Track 4 `ede7381d8c1ba9d8c84068f9d142f5e093a33892`,
+shared main `84221f1b553475b1283cb653145051e916377dd0` and toolkit `v2.5.1`. The ignored local
+`starter-repos/track4-analysis-public` snapshot still contains scorer 3.1.0 and must not be used as
+the current authority. Python 3.11.7 passed 149 tests. No local or remote LLM and no NLI ran.
+
+Report: `evaluation/reports/proxy-18-cot-control-v1.json`.

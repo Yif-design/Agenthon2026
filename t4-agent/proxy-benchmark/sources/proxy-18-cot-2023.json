@@ -1,0 +1,2253 @@
+{
+  "license": "Public domain (U.S. Commodity Futures Trading Commission data)",
+  "report_availability": {
+    "2023-09-26": "2023-09-29",
+    "2023-10-03": "2023-10-06"
+  },
+  "retrieved_at": "2026-09-26",
+  "rows": [
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "317171",
+      "noncomm_positions_short_all": "245643",
+      "open_interest_all": "1345886",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "293519",
+      "noncomm_positions_short_all": "419716",
+      "open_interest_all": "1279180",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "133376",
+      "noncomm_positions_short_all": "658853",
+      "open_interest_all": "2356318",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "430598",
+      "noncomm_positions_short_all": "902176",
+      "open_interest_all": "4127917",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "289653",
+      "noncomm_positions_short_all": "108584",
+      "open_interest_all": "1785807",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "42254",
+      "noncomm_positions_short_all": "28893",
+      "open_interest_all": "117395",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "245135",
+      "noncomm_positions_short_all": "63505",
+      "open_interest_all": "478611",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "9717",
+      "noncomm_positions_short_all": "63692",
+      "open_interest_all": "169473",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "222918",
+      "noncomm_positions_short_all": "77893",
+      "open_interest_all": "732506",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "199472",
+      "noncomm_positions_short_all": "424128",
+      "open_interest_all": "2142232",
+      "report_date_as_yyyy_mm_dd": "2023-03-28T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "310288",
+      "noncomm_positions_short_all": "224598",
+      "open_interest_all": "1334671",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "315952",
+      "noncomm_positions_short_all": "446437",
+      "open_interest_all": "1365656",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "131369",
+      "noncomm_positions_short_all": "633424",
+      "open_interest_all": "2351682",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "366793",
+      "noncomm_positions_short_all": "987824",
+      "open_interest_all": "4263195",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "307515",
+      "noncomm_positions_short_all": "81388",
+      "open_interest_all": "1858446",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "50327",
+      "noncomm_positions_short_all": "29044",
+      "open_interest_all": "131210",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "266164",
+      "noncomm_positions_short_all": "70948",
+      "open_interest_all": "476592",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "11523",
+      "noncomm_positions_short_all": "68559",
+      "open_interest_all": "178828",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "225416",
+      "noncomm_positions_short_all": "82023",
+      "open_interest_all": "747095",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "163766",
+      "noncomm_positions_short_all": "485225",
+      "open_interest_all": "2219512",
+      "report_date_as_yyyy_mm_dd": "2023-04-04T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "336195",
+      "noncomm_positions_short_all": "232886",
+      "open_interest_all": "1338484",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "288362",
+      "noncomm_positions_short_all": "429257",
+      "open_interest_all": "1355672",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "221139",
+      "noncomm_positions_short_all": "717980",
+      "open_interest_all": "2531969",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "418080",
+      "noncomm_positions_short_all": "1057117",
+      "open_interest_all": "4275293",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "309997",
+      "noncomm_positions_short_all": "74365",
+      "open_interest_all": "1875140",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "55583",
+      "noncomm_positions_short_all": "31865",
+      "open_interest_all": "142699",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "260165",
+      "noncomm_positions_short_all": "67420",
+      "open_interest_all": "476567",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "11933",
+      "noncomm_positions_short_all": "69140",
+      "open_interest_all": "176822",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "244180",
+      "noncomm_positions_short_all": "80842",
+      "open_interest_all": "759439",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "207007",
+      "noncomm_positions_short_all": "514619",
+      "open_interest_all": "2248469",
+      "report_date_as_yyyy_mm_dd": "2023-04-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "340625",
+      "noncomm_positions_short_all": "234989",
+      "open_interest_all": "1319551",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "269012",
+      "noncomm_positions_short_all": "408998",
+      "open_interest_all": "1330947",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "227652",
+      "noncomm_positions_short_all": "802566",
+      "open_interest_all": "2642314",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "473072",
+      "noncomm_positions_short_all": "1153153",
+      "open_interest_all": "4393559",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "322133",
+      "noncomm_positions_short_all": "77558",
+      "open_interest_all": "1913192",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "62968",
+      "noncomm_positions_short_all": "36373",
+      "open_interest_all": "158371",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "260061",
+      "noncomm_positions_short_all": "70168",
+      "open_interest_all": "482254",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "15661",
+      "noncomm_positions_short_all": "72530",
+      "open_interest_all": "177507",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "242369",
+      "noncomm_positions_short_all": "78008",
+      "open_interest_all": "766374",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "204558",
+      "noncomm_positions_short_all": "548815",
+      "open_interest_all": "2278321",
+      "report_date_as_yyyy_mm_dd": "2023-04-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "297251",
+      "noncomm_positions_short_all": "272603",
+      "open_interest_all": "1242943",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "259864",
+      "noncomm_positions_short_all": "396014",
+      "open_interest_all": "1274536",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "265711",
+      "noncomm_positions_short_all": "812018",
+      "open_interest_all": "2719441",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "389728",
+      "noncomm_positions_short_all": "1129989",
+      "open_interest_all": "4362222",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "323831",
+      "noncomm_positions_short_all": "87393",
+      "open_interest_all": "1826195",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "66145",
+      "noncomm_positions_short_all": "35542",
+      "open_interest_all": "149692",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "253186",
+      "noncomm_positions_short_all": "67922",
+      "open_interest_all": "473209",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "13680",
+      "noncomm_positions_short_all": "82424",
+      "open_interest_all": "184041",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "243516",
+      "noncomm_positions_short_all": "74116",
+      "open_interest_all": "772882",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "207333",
+      "noncomm_positions_short_all": "570600",
+      "open_interest_all": "2265794",
+      "report_date_as_yyyy_mm_dd": "2023-04-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "269161",
+      "noncomm_positions_short_all": "329794",
+      "open_interest_all": "1223954",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "273919",
+      "noncomm_positions_short_all": "415208",
+      "open_interest_all": "1330247",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "236863",
+      "noncomm_positions_short_all": "870339",
+      "open_interest_all": "2757977",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "422417",
+      "noncomm_positions_short_all": "1171564",
+      "open_interest_all": "4396673",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "323737",
+      "noncomm_positions_short_all": "108892",
+      "open_interest_all": "1908299",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "68219",
+      "noncomm_positions_short_all": "36267",
+      "open_interest_all": "142538",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "262413",
+      "noncomm_positions_short_all": "66846",
+      "open_interest_all": "493804",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "28088",
+      "noncomm_positions_short_all": "96412",
+      "open_interest_all": "202996",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "246832",
+      "noncomm_positions_short_all": "73343",
+      "open_interest_all": "779458",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "208633",
+      "noncomm_positions_short_all": "564044",
+      "open_interest_all": "2276183",
+      "report_date_as_yyyy_mm_dd": "2023-05-02T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "273098",
+      "noncomm_positions_short_all": "332191",
+      "open_interest_all": "1269874",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "275063",
+      "noncomm_positions_short_all": "413891",
+      "open_interest_all": "1357306",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "266070",
+      "noncomm_positions_short_all": "1015955",
+      "open_interest_all": "3007292",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "453077",
+      "noncomm_positions_short_all": "1184775",
+      "open_interest_all": "4510018",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "338155",
+      "noncomm_positions_short_all": "121527",
+      "open_interest_all": "1885886",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "69166",
+      "noncomm_positions_short_all": "36806",
+      "open_interest_all": "145445",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "266472",
+      "noncomm_positions_short_all": "70658",
+      "open_interest_all": "518951",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "22229",
+      "noncomm_positions_short_all": "83244",
+      "open_interest_all": "192574",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "260335",
+      "noncomm_positions_short_all": "80913",
+      "open_interest_all": "794721",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "204181",
+      "noncomm_positions_short_all": "580204",
+      "open_interest_all": "2296259",
+      "report_date_as_yyyy_mm_dd": "2023-05-09T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "282281",
+      "noncomm_positions_short_all": "330740",
+      "open_interest_all": "1299501",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "268443",
+      "noncomm_positions_short_all": "392418",
+      "open_interest_all": "1365954",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "290539",
+      "noncomm_positions_short_all": "1144114",
+      "open_interest_all": "3164301",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "527490",
+      "noncomm_positions_short_all": "1219932",
+      "open_interest_all": "4718099",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "327971",
+      "noncomm_positions_short_all": "136502",
+      "open_interest_all": "1856570",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "60440",
+      "noncomm_positions_short_all": "36625",
+      "open_interest_all": "140139",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "255250",
+      "noncomm_positions_short_all": "75436",
+      "open_interest_all": "521832",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "29494",
+      "noncomm_positions_short_all": "94285",
+      "open_interest_all": "200515",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "258736",
+      "noncomm_positions_short_all": "71647",
+      "open_interest_all": "789930",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "201278",
+      "noncomm_positions_short_all": "589999",
+      "open_interest_all": "2306298",
+      "report_date_as_yyyy_mm_dd": "2023-05-16T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "282880",
+      "noncomm_positions_short_all": "345147",
+      "open_interest_all": "1299841",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "266908",
+      "noncomm_positions_short_all": "379186",
+      "open_interest_all": "1338868",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "270465",
+      "noncomm_positions_short_all": "1160667",
+      "open_interest_all": "3266610",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "480032",
+      "noncomm_positions_short_all": "1251670",
+      "open_interest_all": "4902288",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "317600",
+      "noncomm_positions_short_all": "124481",
+      "open_interest_all": "1847901",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "56686",
+      "noncomm_positions_short_all": "34728",
+      "open_interest_all": "135740",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "236149",
+      "noncomm_positions_short_all": "75417",
+      "open_interest_all": "479080",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "36760",
+      "noncomm_positions_short_all": "117420",
+      "open_interest_all": "226400",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "250070",
+      "noncomm_positions_short_all": "76334",
+      "open_interest_all": "781123",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "195793",
+      "noncomm_positions_short_all": "600085",
+      "open_interest_all": "2385936",
+      "report_date_as_yyyy_mm_dd": "2023-05-23T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "274956",
+      "noncomm_positions_short_all": "295363",
+      "open_interest_all": "1319205",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "274660",
+      "noncomm_positions_short_all": "380830",
+      "open_interest_all": "1359496",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "242645",
+      "noncomm_positions_short_all": "1212508",
+      "open_interest_all": "3162876",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "412506",
+      "noncomm_positions_short_all": "1262927",
+      "open_interest_all": "4728273",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "322085",
+      "noncomm_positions_short_all": "159494",
+      "open_interest_all": "1920740",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "54837",
+      "noncomm_positions_short_all": "33713",
+      "open_interest_all": "133619",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "237306",
+      "noncomm_positions_short_all": "67990",
+      "open_interest_all": "449515",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "40736",
+      "noncomm_positions_short_all": "136929",
+      "open_interest_all": "243237",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "241817",
+      "noncomm_positions_short_all": "76092",
+      "open_interest_all": "775142",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "187203",
+      "noncomm_positions_short_all": "621373",
+      "open_interest_all": "2494943",
+      "report_date_as_yyyy_mm_dd": "2023-05-30T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "268763",
+      "noncomm_positions_short_all": "283534",
+      "open_interest_all": "1322137",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "277294",
+      "noncomm_positions_short_all": "404146",
+      "open_interest_all": "1389864",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "370970",
+      "noncomm_positions_short_all": "1330871",
+      "open_interest_all": "3351277",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "410777",
+      "noncomm_positions_short_all": "1164478",
+      "open_interest_all": "4578932",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "339318",
+      "noncomm_positions_short_all": "166876",
+      "open_interest_all": "1951628",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "53149",
+      "noncomm_positions_short_all": "31674",
+      "open_interest_all": "137871",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "237467",
+      "noncomm_positions_short_all": "61826",
+      "open_interest_all": "436301",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "34151",
+      "noncomm_positions_short_all": "138968",
+      "open_interest_all": "245332",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "236060",
+      "noncomm_positions_short_all": "77639",
+      "open_interest_all": "781967",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "258074",
+      "noncomm_positions_short_all": "602605",
+      "open_interest_all": "2500232",
+      "report_date_as_yyyy_mm_dd": "2023-06-06T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "279814",
+      "noncomm_positions_short_all": "234722",
+      "open_interest_all": "1295247",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "273337",
+      "noncomm_positions_short_all": "396318",
+      "open_interest_all": "1342162",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "316092",
+      "noncomm_positions_short_all": "1362537",
+      "open_interest_all": "3373300",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "437402",
+      "noncomm_positions_short_all": "1129255",
+      "open_interest_all": "4619668",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "353560",
+      "noncomm_positions_short_all": "198486",
+      "open_interest_all": "1886782",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "55054",
+      "noncomm_positions_short_all": "31318",
+      "open_interest_all": "153853",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "227317",
+      "noncomm_positions_short_all": "67108",
+      "open_interest_all": "432898",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "37088",
+      "noncomm_positions_short_all": "141064",
+      "open_interest_all": "252566",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "226138",
+      "noncomm_positions_short_all": "74316",
+      "open_interest_all": "818294",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "258281",
+      "noncomm_positions_short_all": "589694",
+      "open_interest_all": "2907468",
+      "report_date_as_yyyy_mm_dd": "2023-06-13T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "342125",
+      "noncomm_positions_short_all": "223352",
+      "open_interest_all": "1290348",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "257519",
+      "noncomm_positions_short_all": "366834",
+      "open_interest_all": "1303558",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "406848",
+      "noncomm_positions_short_all": "1434124",
+      "open_interest_all": "3503880",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "425965",
+      "noncomm_positions_short_all": "1175962",
+      "open_interest_all": "4641767",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "341074",
+      "noncomm_positions_short_all": "174597",
+      "open_interest_all": "1846816",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "52547",
+      "noncomm_positions_short_all": "32489",
+      "open_interest_all": "152633",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "229308",
+      "noncomm_positions_short_all": "66333",
+      "open_interest_all": "438037",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "32244",
+      "noncomm_positions_short_all": "139900",
+      "open_interest_all": "238556",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "229399",
+      "noncomm_positions_short_all": "84750",
+      "open_interest_all": "732979",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "210230",
+      "noncomm_positions_short_all": "449561",
+      "open_interest_all": "2223815",
+      "report_date_as_yyyy_mm_dd": "2023-06-20T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "296186",
+      "noncomm_positions_short_all": "182748",
+      "open_interest_all": "1246075",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "250557",
+      "noncomm_positions_short_all": "343357",
+      "open_interest_all": "1232011",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "425906",
+      "noncomm_positions_short_all": "1440310",
+      "open_interest_all": "3637264",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "412993",
+      "noncomm_positions_short_all": "1213992",
+      "open_interest_all": "4663919",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "338078",
+      "noncomm_positions_short_all": "199690",
+      "open_interest_all": "1865745",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "45983",
+      "noncomm_positions_short_all": "26931",
+      "open_interest_all": "123491",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "220881",
+      "noncomm_positions_short_all": "68971",
+      "open_interest_all": "431861",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "38018",
+      "noncomm_positions_short_all": "150888",
+      "open_interest_all": "251524",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "223977",
+      "noncomm_positions_short_all": "78949",
+      "open_interest_all": "732123",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "222357",
+      "noncomm_positions_short_all": "430607",
+      "open_interest_all": "2187114",
+      "report_date_as_yyyy_mm_dd": "2023-06-27T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "270772",
+      "noncomm_positions_short_all": "224369",
+      "open_interest_all": "1246983",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "254883",
+      "noncomm_positions_short_all": "353658",
+      "open_interest_all": "1241419",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "405459",
+      "noncomm_positions_short_all": "1463885",
+      "open_interest_all": "3667737",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "434456",
+      "noncomm_positions_short_all": "1215134",
+      "open_interest_all": "4737762",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "316998",
+      "noncomm_positions_short_all": "175569",
+      "open_interest_all": "1816043",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "46433",
+      "noncomm_positions_short_all": "28443",
+      "open_interest_all": "114421",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "235081",
+      "noncomm_positions_short_all": "71984",
+      "open_interest_all": "448063",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "41713",
+      "noncomm_positions_short_all": "159633",
+      "open_interest_all": "265066",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "221272",
+      "noncomm_positions_short_all": "78435",
+      "open_interest_all": "725927",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "223358",
+      "noncomm_positions_short_all": "430597",
+      "open_interest_all": "2211004",
+      "report_date_as_yyyy_mm_dd": "2023-07-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "268196",
+      "noncomm_positions_short_all": "260385",
+      "open_interest_all": "1241940",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "251784",
+      "noncomm_positions_short_all": "338539",
+      "open_interest_all": "1236802",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "390469",
+      "noncomm_positions_short_all": "1462169",
+      "open_interest_all": "3678629",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "518205",
+      "noncomm_positions_short_all": "1153342",
+      "open_interest_all": "4800091",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "339297",
+      "noncomm_positions_short_all": "165864",
+      "open_interest_all": "1796348",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "51305",
+      "noncomm_positions_short_all": "31013",
+      "open_interest_all": "120282",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "240546",
+      "noncomm_positions_short_all": "74792",
+      "open_interest_all": "483170",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "29838",
+      "noncomm_positions_short_all": "147020",
+      "open_interest_all": "252349",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "224351",
+      "noncomm_positions_short_all": "84189",
+      "open_interest_all": "736056",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "224554",
+      "noncomm_positions_short_all": "433533",
+      "open_interest_all": "2209607",
+      "report_date_as_yyyy_mm_dd": "2023-07-11T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "270722",
+      "noncomm_positions_short_all": "250852",
+      "open_interest_all": "1285176",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "252375",
+      "noncomm_positions_short_all": "348137",
+      "open_interest_all": "1234296",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "337331",
+      "noncomm_positions_short_all": "1456711",
+      "open_interest_all": "3654986",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "438567",
+      "noncomm_positions_short_all": "1068128",
+      "open_interest_all": "4746657",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "359341",
+      "noncomm_positions_short_all": "153242",
+      "open_interest_all": "1768189",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "76420",
+      "noncomm_positions_short_all": "32558",
+      "open_interest_all": "146863",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "263740",
+      "noncomm_positions_short_all": "70392",
+      "open_interest_all": "482104",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "29776",
+      "noncomm_positions_short_all": "120015",
+      "open_interest_all": "230932",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "264514",
+      "noncomm_positions_short_all": "85682",
+      "open_interest_all": "783132",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "235723",
+      "noncomm_positions_short_all": "499408",
+      "open_interest_all": "2280677",
+      "report_date_as_yyyy_mm_dd": "2023-07-18T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "291631",
+      "noncomm_positions_short_all": "221155",
+      "open_interest_all": "1280207",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "245779",
+      "noncomm_positions_short_all": "342900",
+      "open_interest_all": "1185638",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "329386",
+      "noncomm_positions_short_all": "1475432",
+      "open_interest_all": "3631663",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "443907",
+      "noncomm_positions_short_all": "1067678",
+      "open_interest_all": "4733680",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "350507",
+      "noncomm_positions_short_all": "125311",
+      "open_interest_all": "1743598",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "72786",
+      "noncomm_positions_short_all": "35861",
+      "open_interest_all": "146898",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "248229",
+      "noncomm_positions_short_all": "74590",
+      "open_interest_all": "476176",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "30358",
+      "noncomm_positions_short_all": "108110",
+      "open_interest_all": "223760",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "250647",
+      "noncomm_positions_short_all": "73417",
+      "open_interest_all": "772408",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "238333",
+      "noncomm_positions_short_all": "470948",
+      "open_interest_all": "2243361",
+      "report_date_as_yyyy_mm_dd": "2023-07-25T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "307432",
+      "noncomm_positions_short_all": "227358",
+      "open_interest_all": "1317852",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "262236",
+      "noncomm_positions_short_all": "369257",
+      "open_interest_all": "1206160",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "338479",
+      "noncomm_positions_short_all": "1434142",
+      "open_interest_all": "3634325",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "469492",
+      "noncomm_positions_short_all": "1114678",
+      "open_interest_all": "4830156",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "363726",
+      "noncomm_positions_short_all": "121867",
+      "open_interest_all": "1752072",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "68463",
+      "noncomm_positions_short_all": "37632",
+      "open_interest_all": "144138",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "238985",
+      "noncomm_positions_short_all": "74061",
+      "open_interest_all": "439383",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "26849",
+      "noncomm_positions_short_all": "106065",
+      "open_interest_all": "229015",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "240074",
+      "noncomm_positions_short_all": "68012",
+      "open_interest_all": "755156",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "236062",
+      "noncomm_positions_short_all": "436110",
+      "open_interest_all": "2241749",
+      "report_date_as_yyyy_mm_dd": "2023-08-01T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "290414",
+      "noncomm_positions_short_all": "264687",
+      "open_interest_all": "1284433",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "242388",
+      "noncomm_positions_short_all": "350231",
+      "open_interest_all": "1183146",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "370316",
+      "noncomm_positions_short_all": "1479442",
+      "open_interest_all": "3746749",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "524694",
+      "noncomm_positions_short_all": "1216420",
+      "open_interest_all": "4872433",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "378987",
+      "noncomm_positions_short_all": "123059",
+      "open_interest_all": "1703711",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "53781",
+      "noncomm_positions_short_all": "40457",
+      "open_interest_all": "137631",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "228846",
+      "noncomm_positions_short_all": "85861",
+      "open_interest_all": "427759",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "23135",
+      "noncomm_positions_short_all": "106315",
+      "open_interest_all": "229849",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "228048",
+      "noncomm_positions_short_all": "78237",
+      "open_interest_all": "760968",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "240913",
+      "noncomm_positions_short_all": "400483",
+      "open_interest_all": "2221709",
+      "report_date_as_yyyy_mm_dd": "2023-08-08T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "277537",
+      "noncomm_positions_short_all": "304503",
+      "open_interest_all": "1287019",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "227133",
+      "noncomm_positions_short_all": "322316",
+      "open_interest_all": "1168181",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "380265",
+      "noncomm_positions_short_all": "1497657",
+      "open_interest_all": "3820729",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "495210",
+      "noncomm_positions_short_all": "1242138",
+      "open_interest_all": "4857422",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "371168",
+      "noncomm_positions_short_all": "129060",
+      "open_interest_all": "1702766",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "50692",
+      "noncomm_positions_short_all": "42831",
+      "open_interest_all": "138215",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "233078",
+      "noncomm_positions_short_all": "111942",
+      "open_interest_all": "433611",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "34789",
+      "noncomm_positions_short_all": "115750",
+      "open_interest_all": "247954",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "232466",
+      "noncomm_positions_short_all": "72603",
+      "open_interest_all": "760233",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "258924",
+      "noncomm_positions_short_all": "377332",
+      "open_interest_all": "2220084",
+      "report_date_as_yyyy_mm_dd": "2023-08-15T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "278071",
+      "noncomm_positions_short_all": "329621",
+      "open_interest_all": "1301339",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "233309",
+      "noncomm_positions_short_all": "340646",
+      "open_interest_all": "1160461",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "348276",
+      "noncomm_positions_short_all": "1619101",
+      "open_interest_all": "3986492",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "525061",
+      "noncomm_positions_short_all": "1219936",
+      "open_interest_all": "4911177",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "362484",
+      "noncomm_positions_short_all": "128113",
+      "open_interest_all": "1623347",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "52967",
+      "noncomm_positions_short_all": "40090",
+      "open_interest_all": "136680",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "226340",
+      "noncomm_positions_short_all": "124394",
+      "open_interest_all": "430239",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "28680",
+      "noncomm_positions_short_all": "124003",
+      "open_interest_all": "246923",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "239391",
+      "noncomm_positions_short_all": "80631",
+      "open_interest_all": "750486",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "235513",
+      "noncomm_positions_short_all": "369004",
+      "open_interest_all": "2232226",
+      "report_date_as_yyyy_mm_dd": "2023-08-22T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "271797",
+      "noncomm_positions_short_all": "307610",
+      "open_interest_all": "1214917",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "238496",
+      "noncomm_positions_short_all": "354835",
+      "open_interest_all": "1163840",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "373217",
+      "noncomm_positions_short_all": "1543073",
+      "open_interest_all": "3758173",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "425423",
+      "noncomm_positions_short_all": "1230976",
+      "open_interest_all": "4825244",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "359199",
+      "noncomm_positions_short_all": "118294",
+      "open_interest_all": "1658521",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "61744",
+      "noncomm_positions_short_all": "34611",
+      "open_interest_all": "134993",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "236054",
+      "noncomm_positions_short_all": "112782",
+      "open_interest_all": "442806",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "24790",
+      "noncomm_positions_short_all": "123263",
+      "open_interest_all": "245452",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "230542",
+      "noncomm_positions_short_all": "83863",
+      "open_interest_all": "748127",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "262853",
+      "noncomm_positions_short_all": "404959",
+      "open_interest_all": "2267572",
+      "report_date_as_yyyy_mm_dd": "2023-08-29T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "278322",
+      "noncomm_positions_short_all": "323954",
+      "open_interest_all": "1229700",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "246653",
+      "noncomm_positions_short_all": "364932",
+      "open_interest_all": "1169725",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "341198",
+      "noncomm_positions_short_all": "1559088",
+      "open_interest_all": "3661941",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "454880",
+      "noncomm_positions_short_all": "1246415",
+      "open_interest_all": "4718782",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "400472",
+      "noncomm_positions_short_all": "101150",
+      "open_interest_all": "1703130",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "57558",
+      "noncomm_positions_short_all": "30754",
+      "open_interest_all": "128279",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "235802",
+      "noncomm_positions_short_all": "97796",
+      "open_interest_all": "438672",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "37014",
+      "noncomm_positions_short_all": "134150",
+      "open_interest_all": "268344",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "235732",
+      "noncomm_positions_short_all": "99501",
+      "open_interest_all": "754263",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "245378",
+      "noncomm_positions_short_all": "389589",
+      "open_interest_all": "2259160",
+      "report_date_as_yyyy_mm_dd": "2023-09-05T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "264473",
+      "noncomm_positions_short_all": "352461",
+      "open_interest_all": "1268176",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "242831",
+      "noncomm_positions_short_all": "354875",
+      "open_interest_all": "1171747",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "320048",
+      "noncomm_positions_short_all": "1559657",
+      "open_interest_all": "3653520",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "467114",
+      "noncomm_positions_short_all": "1211416",
+      "open_interest_all": "4681032",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "428798",
+      "noncomm_positions_short_all": "101927",
+      "open_interest_all": "1791696",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "52963",
+      "noncomm_positions_short_all": "34930",
+      "open_interest_all": "125292",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "235704",
+      "noncomm_positions_short_all": "111840",
+      "open_interest_all": "441221",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "38247",
+      "noncomm_positions_short_all": "136960",
+      "open_interest_all": "270854",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "212376",
+      "noncomm_positions_short_all": "99296",
+      "open_interest_all": "743759",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "279471",
+      "noncomm_positions_short_all": "395804",
+      "open_interest_all": "2520164",
+      "report_date_as_yyyy_mm_dd": "2023-09-12T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "270874",
+      "noncomm_positions_short_all": "372107",
+      "open_interest_all": "1292194",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "226422",
+      "noncomm_positions_short_all": "320341",
+      "open_interest_all": "1152362",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "334138",
+      "noncomm_positions_short_all": "1575601",
+      "open_interest_all": "3732382",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "489853",
+      "noncomm_positions_short_all": "1192169",
+      "open_interest_all": "4697157",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "442288",
+      "noncomm_positions_short_all": "113862",
+      "open_interest_all": "1692990",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "50699",
+      "noncomm_positions_short_all": "35468",
+      "open_interest_all": "125749",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "237716",
+      "noncomm_positions_short_all": "102553",
+      "open_interest_all": "438078",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "45737",
+      "noncomm_positions_short_all": "147356",
+      "open_interest_all": "265860",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "207424",
+      "noncomm_positions_short_all": "105443",
+      "open_interest_all": "695343",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "202433",
+      "noncomm_positions_short_all": "341424",
+      "open_interest_all": "2097946",
+      "report_date_as_yyyy_mm_dd": "2023-09-19T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "275064",
+      "noncomm_positions_short_all": "393604",
+      "open_interest_all": "1339607",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "227534",
+      "noncomm_positions_short_all": "321693",
+      "open_interest_all": "1142377",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "429541",
+      "noncomm_positions_short_all": "1639841",
+      "open_interest_all": "3903502",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "509578",
+      "noncomm_positions_short_all": "1241576",
+      "open_interest_all": "4767698",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "469051",
+      "noncomm_positions_short_all": "118996",
+      "open_interest_all": "1750559",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "51539",
+      "noncomm_positions_short_all": "31434",
+      "open_interest_all": "126206",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "235560",
+      "noncomm_positions_short_all": "119745",
+      "open_interest_all": "435620",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "46169",
+      "noncomm_positions_short_all": "155681",
+      "open_interest_all": "285974",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "211516",
+      "noncomm_positions_short_all": "113117",
+      "open_interest_all": "699271",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "266095",
+      "noncomm_positions_short_all": "355376",
+      "open_interest_all": "2137648",
+      "report_date_as_yyyy_mm_dd": "2023-09-26T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "002602",
+      "market_and_exchange_names": "CORN - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "281318",
+      "noncomm_positions_short_all": "388862",
+      "open_interest_all": "1367904",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "023651",
+      "market_and_exchange_names": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "224195",
+      "noncomm_positions_short_all": "303395",
+      "open_interest_all": "1174386",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "042601",
+      "market_and_exchange_names": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "426432",
+      "noncomm_positions_short_all": "1704733",
+      "open_interest_all": "3959247",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "043602",
+      "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "noncomm_positions_long_all": "492060",
+      "noncomm_positions_short_all": "1225941",
+      "open_interest_all": "4782725",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "067651",
+      "market_and_exchange_names": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "461207",
+      "noncomm_positions_short_all": "111647",
+      "open_interest_all": "1787495",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "084691",
+      "market_and_exchange_names": "SILVER - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "51405",
+      "noncomm_positions_short_all": "36061",
+      "open_interest_all": "125847",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "088691",
+      "market_and_exchange_names": "GOLD - COMMODITY EXCHANGE INC.",
+      "noncomm_positions_long_all": "228406",
+      "noncomm_positions_short_all": "137180",
+      "open_interest_all": "431226",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "097741",
+      "market_and_exchange_names": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "47544",
+      "noncomm_positions_short_all": "161532",
+      "open_interest_all": "282682",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "099741",
+      "market_and_exchange_names": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "211783",
+      "noncomm_positions_short_all": "132840",
+      "open_interest_all": "702433",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    },
+    {
+      "cftc_contract_market_code": "13874A",
+      "market_and_exchange_names": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "noncomm_positions_long_all": "239442",
+      "noncomm_positions_short_all": "312677",
+      "open_interest_all": "2138034",
+      "report_date_as_yyyy_mm_dd": "2023-10-03T00:00:00.000"
+    }
+  ],
+  "snapshot_version": "1.0.0",
+  "source_raw_sha256": "dfa3770a1415d5a9f5d6c47e2f3f1c6cac1b3602a435500a0bb7a3b1aa5e62d3",
+  "source_url": "https://publicreporting.cftc.gov/resource/6dca-aqww.json"
+}

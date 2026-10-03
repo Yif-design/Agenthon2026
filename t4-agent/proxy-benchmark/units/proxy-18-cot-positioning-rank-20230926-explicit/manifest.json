@@ -1,0 +1,81 @@
+{
+  "files": [
+    {
+      "bytes": 897,
+      "path": "card.toml",
+      "sha256": "39c18e32abd9610f1b6c10d4fc6baef0b32e92d6409e4ab98a3fd8d1f659586c"
+    },
+    {
+      "bytes": 2152,
+      "path": "corpus/CORN_CBT.json",
+      "sha256": "8a2beccc90c00bf599580a69b10451f1f205759aa2dec7e21a5349225eaac868"
+    },
+    {
+      "bytes": 2226,
+      "path": "corpus/ES_SP500.json",
+      "sha256": "7fbda0d288be40a89fd33564071bf47c145708b11d63b3c43810270acffb2cf4"
+    },
+    {
+      "bytes": 2122,
+      "path": "corpus/EURO_FX.json",
+      "sha256": "2ddc9266d67c64837b58deabaa8afb3e322457461b9230b233661680987637cc"
+    },
+    {
+      "bytes": 2127,
+      "path": "corpus/GOLD_CMX.json",
+      "sha256": "638cfbb7fdca66a9c4e61af9edf2fc06052c010375176262147ca186435d6e08"
+    },
+    {
+      "bytes": 2152,
+      "path": "corpus/JPY_CME.json",
+      "sha256": "3295acb762d13a10fe1afe3cd49e63ea416b4c4a3a0fc030d7d308222b03201b"
+    },
+    {
+      "bytes": 2229,
+      "path": "corpus/NATGAS_NYMEX.json",
+      "sha256": "70a394d58f2c9fda5a74db13f6745f103855345336d2c4827390bbe17f78de29"
+    },
+    {
+      "bytes": 2071,
+      "path": "corpus/SILVER_CMX.json",
+      "sha256": "921657ecf93c7aad8e2085188aa0bb8527d1096c1cfeeff173a7f7a6596b4a29"
+    },
+    {
+      "bytes": 2273,
+      "path": "corpus/UST_10Y.json",
+      "sha256": "ddcbcd6cbe22f3c2af487ad4b4488e9840f0326e4adea8e65e6881acb47a1971"
+    },
+    {
+      "bytes": 2281,
+      "path": "corpus/UST_2Y.json",
+      "sha256": "417d88fb0dce7a535d86a27a3ac2ad4c881525ccfc2786aa94368b643d4f5a4c"
+    },
+    {
+      "bytes": 2176,
+      "path": "corpus/WTI_NYMEX.json",
+      "sha256": "7dc28fa0d65986c71ed61dfb55f6f51a2a113f8b6c51b804bff17d6156aa9e3d"
+    },
+    {
+      "bytes": 816,
+      "path": "provenance.json",
+      "sha256": "1915d195eb15704ee13a3378efdf751a079fba72e98f4b59735ee956fe9190ef"
+    },
+    {
+      "bytes": 4090,
+      "path": "reference/naive_answer.json",
+      "sha256": "a1f75d41f742aa2eedbb35f4c7a69fed95e9acc1d750d9fe9310e142554014f4"
+    },
+    {
+      "bytes": 837,
+      "path": "reference/outcome.json",
+      "sha256": "5e0bf7dc0b9c6d9689ef378b51cfcf7ddef5f69ed043e6353ebc07f3bde20a08"
+    },
+    {
+      "bytes": 5302,
+      "path": "task.json",
+      "sha256": "c7f61c451a65cf28a9401aecf439a99c057ec1536e3141d9f2f5ec3f6187afd1"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-18-cot-positioning-rank-20230926-explicit"
+}

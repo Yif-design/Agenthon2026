@@ -1,0 +1,139 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/WTI_NYMEX.json",
+      "entity_id": "WTI_NYMEX",
+      "extreme_position_flag": true,
+      "group_code": "energy",
+      "historical_variation_bp": 123.532094,
+      "irrelevant_row_number": 101,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "WTI crude oil futures",
+      "position_share_bp": 1999.675532,
+      "recent_four_report_shift_fraction": 0.0658116478
+    },
+    {
+      "corpus_ref": "corpus/UST_2Y.json",
+      "entity_id": "UST_2Y",
+      "extreme_position_flag": false,
+      "group_code": "rates",
+      "historical_variation_bp": 174.099378,
+      "irrelevant_row_number": 102,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "U.S. Treasury 2-Year Note futures",
+      "position_share_bp": -3100.549199,
+      "recent_four_report_shift_fraction": -0.0107616121
+    },
+    {
+      "corpus_ref": "corpus/UST_10Y.json",
+      "entity_id": "UST_10Y",
+      "extreme_position_flag": false,
+      "group_code": "rates",
+      "historical_variation_bp": 139.301727,
+      "irrelevant_row_number": 103,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "U.S. Treasury 10-Year Note futures",
+      "position_share_bp": -1535.327951,
+      "recent_four_report_shift_fraction": 0.0152437887
+    },
+    {
+      "corpus_ref": "corpus/SILVER_CMX.json",
+      "entity_id": "SILVER_CMX",
+      "extreme_position_flag": false,
+      "group_code": "metals",
+      "historical_variation_bp": 582.637956,
+      "irrelevant_row_number": 104,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "Silver futures",
+      "position_share_bp": 1593.030442,
+      "recent_four_report_shift_fraction": -0.0520619588
+    },
+    {
+      "corpus_ref": "corpus/NATGAS_NYMEX.json",
+      "entity_id": "NATGAS_NYMEX",
+      "extreme_position_flag": false,
+      "group_code": "energy",
+      "historical_variation_bp": 78.162665,
+      "irrelevant_row_number": 105,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "Henry Hub natural gas futures",
+      "position_share_bp": -824.237533,
+      "recent_four_report_shift_fraction": 0.0190576024
+    },
+    {
+      "corpus_ref": "corpus/JPY_CME.json",
+      "entity_id": "JPY_CME",
+      "extreme_position_flag": false,
+      "group_code": "fx",
+      "historical_variation_bp": 374.655096,
+      "irrelevant_row_number": 106,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "Japanese yen futures",
+      "position_share_bp": -3829.43904,
+      "recent_four_report_shift_fraction": -0.0449741701
+    },
+    {
+      "corpus_ref": "corpus/GOLD_CMX.json",
+      "entity_id": "GOLD_CMX",
+      "extreme_position_flag": false,
+      "group_code": "metals",
+      "historical_variation_bp": 313.953115,
+      "irrelevant_row_number": 107,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "Gold futures",
+      "position_share_bp": 2658.624489,
+      "recent_four_report_shift_fraction": -0.0168403319
+    },
+    {
+      "corpus_ref": "corpus/EURO_FX.json",
+      "entity_id": "EURO_FX",
+      "extreme_position_flag": false,
+      "group_code": "fx",
+      "historical_variation_bp": 163.546923,
+      "irrelevant_row_number": 108,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "Euro FX futures",
+      "position_share_bp": 1407.165462,
+      "recent_four_report_shift_fraction": -0.0645344975
+    },
+    {
+      "corpus_ref": "corpus/ES_SP500.json",
+      "entity_id": "ES_SP500",
+      "extreme_position_flag": false,
+      "group_code": "equity",
+      "historical_variation_bp": 172.173242,
+      "irrelevant_row_number": 109,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "E-mini S&P 500 futures",
+      "position_share_bp": -417.65997,
+      "recent_four_report_shift_fraction": 0.0232958424
+    },
+    {
+      "corpus_ref": "corpus/CORN_CBT.json",
+      "entity_id": "CORN_CBT",
+      "extreme_position_flag": true,
+      "group_code": "agriculture",
+      "historical_variation_bp": 312.383757,
+      "irrelevant_row_number": 110,
+      "measurement_scale": "basis_points_of_open_interest",
+      "name": "Corn futures",
+      "position_share_bp": -884.886388,
+      "recent_four_report_shift_fraction": -0.0680927174
+    }
+  ],
+  "family": "relative_flow_ordering",
+  "interval_level": 0.9,
+  "prompt": "Rank the ten futures markets by the next CFTC report's change in noncommercial net position, measured as a percent of the cutoff report's open interest. Rank 1 is the largest increase. Use only the frozen CFTC corpus and task fields; return a point forecast in percentage points and a 90% interval for every market.",
+  "resolution_date": "2023-10-06",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "direction": "descending",
+    "horizon": "next CFTC report",
+    "name": "future_speculator_shift_order",
+    "type": "ranking",
+    "unit": "percent_of_start_open_interest"
+  },
+  "task_id": "proxy-18-cot-positioning-rank-20230926-transformed"
+}

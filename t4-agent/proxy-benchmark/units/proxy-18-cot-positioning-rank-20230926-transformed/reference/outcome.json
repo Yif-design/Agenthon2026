@@ -1,0 +1,45 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "WTI_NYMEX",
+      "y": -0.028276681905608437
+    },
+    {
+      "entity_id": "UST_2Y",
+      "y": -1.7420511120527158
+    },
+    {
+      "entity_id": "UST_10Y",
+      "y": -0.039494951232229895
+    },
+    {
+      "entity_id": "SILVER_CMX",
+      "y": -3.7724038476776065
+    },
+    {
+      "entity_id": "NATGAS_NYMEX",
+      "y": 1.3094626379907859
+    },
+    {
+      "entity_id": "JPY_CME",
+      "y": -1.5651772538762265
+    },
+    {
+      "entity_id": "GOLD_CMX",
+      "y": -5.644598503282678
+    },
+    {
+      "entity_id": "EURO_FX",
+      "y": -2.782326165392244
+    },
+    {
+      "entity_id": "ES_SP500",
+      "y": 0.750638084474151
+    },
+    {
+      "entity_id": "CORN_CBT",
+      "y": 0.8208377531619349
+    }
+  ],
+  "task_id": "proxy-18-cot-positioning-rank-20230926-transformed"
+}

@@ -1,0 +1,19 @@
+{
+  "availability": {
+    "cutoff_report_public": "2023-09-29",
+    "outcome_report_public": "2023-10-06"
+  },
+  "cutoff_date": "2023-09-29",
+  "download_date": "2026-09-26",
+  "generator": "proxy-benchmark/build_cot_proxy.py",
+  "generator_version": "1.0.0",
+  "license": "Public domain (U.S. Commodity Futures Trading Commission data)",
+  "question_id": "proxy-18-cot-positioning-rank",
+  "resolution_date": "2023-10-06",
+  "source_raw_sha256": "dfa3770a1415d5a9f5d6c47e2f3f1c6cac1b3602a435500a0bb7a3b1aa5e62d3",
+  "source_snapshot": "proxy-benchmark/sources/proxy-18-cot-2023.json",
+  "source_snapshot_sha256": "9428ac2f750afa7f8b7395691e1fb29f57d366dd23abd84e43a88d3fdf8c94db",
+  "source_url": "https://publicreporting.cftc.gov/resource/6dca-aqww.json",
+  "split": "time_forward_test",
+  "variant": "explicit"
+}

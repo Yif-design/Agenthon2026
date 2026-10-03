@@ -129,6 +129,26 @@ confirmation read.
 The raw CFTC response is a git-ignored reproducibility cache. The tracked derived panel contains the
 source contract codes and no post-origin feature values other than the explicitly labeled target.
 
+### COT proxy-18 next-report unit
+
+- Tracked source snapshot: `proxy-benchmark/sources/proxy-18-cot-2023.json`
+- Snapshot SHA-256: `9428ac2f750afa7f8b7395691e1fb29f57d366dd23abd84e43a88d3fdf8c94db`
+- Parent raw-response SHA-256: `dfa3770a1415d5a9f5d6c47e2f3f1c6cac1b3602a435500a0bb7a3b1aa5e62d3`
+- Forecast origin: positions as of 2023-09-26, treated as public at the 2023-09-29 cutoff
+- Resolution: next report's positions as of 2023-10-03, treated as public on 2023-10-06
+- Target: next-report change in noncommercial net contracts divided by cutoff open interest,
+  multiplied by 100, ranked descending across ten markets
+- Visible history: 26 weekly reports through the origin; the resolution row is used only under
+  `reference/`
+- Variants: the explicit and transformed units share entity IDs, economic target, outcomes, naive
+  answers and corpus; the transformed task reverses rows, renames fields, changes input scales and
+  adds an irrelevant scalar
+- License: public-domain CFTC data
+
+The snapshot intentionally contains the resolution row so the unit can be regenerated without the
+git-ignored raw cache. The builder constructs all visible documents from rows dated no later than
+the origin and the validator refuses any post-cutoff corpus document or outcome-like task field.
+
 ## CPI component real-time vintage panel
 
 - Local file: `evaluation/datasets/cpi/components_2015_2023.json`
