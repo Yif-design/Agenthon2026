@@ -48,6 +48,36 @@ EXPERIMENTS = {
             "The explicit route labels its structural share estimate as bid-to-cover even though the supplied ratio is indirect acceptance share.",
         ],
     },
+    "proxy-16": {
+        "unit_prefix": "proxy-16-crude-inventory-change-20260923-",
+        "report": "proxy-16-energy-control-v1.json",
+        "experiment": "proxy-16-energy-control-v1",
+        "hypothesis": (
+            "The frozen EIA confirmation event is sufficient to run and score the current control in both "
+            "economically equivalent schema variants without model access or outcome leakage."
+        ),
+        "decision": "accept_benchmark_infrastructure",
+        "finding": (
+            "Both variants ran without model access, but both trailed the declared seasonal naive: explicit "
+            "composite was 0.3562 and transformed was 0.4015. The event expands regression coverage without "
+            "selecting or changing production forecasting logic."
+        ),
+        "limitations": [
+            "One confirmation event with six mechanically related regions.",
+            "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+            "The 57 dated table-4 CSVs establish first-release values, but one event cannot select a general prior.",
+        ],
+        "benchmark_validation": {
+            "first_release_archives": 57,
+            "series": 6,
+            "visible_releases_per_series": 52,
+            "generated_files_checked": 25,
+            "second_build_byte_identical": True,
+            "local_validator_errors": 0,
+            "official_260_analysis_schema_errors": 0,
+            "official_schema_answers_checked": 2,
+        },
+    },
 }
 
 
@@ -99,13 +129,15 @@ def main() -> None:
         "python": sys.version.split()[0],
         "model_api_calls": 0,
         "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
-        "official_track_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
-        "toolkit_tag": "v2.5.1",
+        "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+        "toolkit_tag": "v2.6.0",
         "results": results,
         "decision": experiment["decision"],
         "finding": experiment["finding"],
         "limitations": experiment["limitations"],
     }
+    if "benchmark_validation" in experiment:
+        report["benchmark_validation"] = experiment["benchmark_validation"]
     report_path = repo / "evaluation/reports" / experiment["report"]
     report_path.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

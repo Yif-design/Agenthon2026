@@ -1,0 +1,70 @@
+{
+  "experiment": "proxy-16-energy-control-v1",
+  "hypothesis": "The frozen EIA confirmation event is sufficient to run and score the current control in both economically equivalent schema variants without model access or outcome leakage.",
+  "python": "3.13.15",
+  "model_api_calls": 0,
+  "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
+  "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "toolkit_tag": "v2.6.0",
+  "results": [
+    {
+      "unit": "proxy-16-crude-inventory-change-20260923-explicit",
+      "target_type": "regression",
+      "mae": 1.67525,
+      "naive_mae": 1.0378666666666667,
+      "raw_predictive_quality": 0.38253668904765126,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.38253668904765126,
+      "interval_coverage": 0.6666666666666666,
+      "interval_score": 14.341166666666668,
+      "naive_interval_score": 5.993955850052324,
+      "raw_interval_quality": 0.29475877733828526,
+      "interval_quality": 0.29475877733828526,
+      "composite_before_claim_penalty": 0.3562033155348414,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 6
+    },
+    {
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed",
+      "target_type": "regression",
+      "mae": 1.4856666666666667,
+      "naive_mae": 1.0378666666666667,
+      "raw_predictive_quality": 0.41127519615354136,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.41127519615354136,
+      "interval_coverage": 0.6666666666666666,
+      "interval_score": 9.836666666666668,
+      "naive_interval_score": 5.993955850052324,
+      "raw_interval_quality": 0.3786304577550254,
+      "interval_quality": 0.3786304577550254,
+      "composite_before_claim_penalty": 0.40148177463398654,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 6
+    }
+  ],
+  "decision": "accept_benchmark_infrastructure",
+  "finding": "Both variants ran without model access, but both trailed the declared seasonal naive: explicit composite was 0.3562 and transformed was 0.4015. The event expands regression coverage without selecting or changing production forecasting logic.",
+  "limitations": [
+    "One confirmation event with six mechanically related regions.",
+    "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+    "The 57 dated table-4 CSVs establish first-release values, but one event cannot select a general prior."
+  ],
+  "benchmark_validation": {
+    "first_release_archives": 57,
+    "series": 6,
+    "visible_releases_per_series": 52,
+    "generated_files_checked": 25,
+    "second_build_byte_identical": true,
+    "local_validator_errors": 0,
+    "official_260_analysis_schema_errors": 0,
+    "official_schema_answers_checked": 2
+  }
+}

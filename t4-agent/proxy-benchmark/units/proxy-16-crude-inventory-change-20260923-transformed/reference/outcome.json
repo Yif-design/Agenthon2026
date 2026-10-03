@@ -1,0 +1,29 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "EIA_CRUDE_PADD5_20260925",
+      "y": -2.334
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD4_20260925",
+      "y": -0.823
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD3_20260925",
+      "y": 3.417
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD2_20260925",
+      "y": 1.04
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD1_20260925",
+      "y": -0.378
+    },
+    {
+      "entity_id": "EIA_CRUDE_US_20260925",
+      "y": 0.922
+    }
+  ],
+  "task_id": "proxy-16-crude-inventory-change-20260923-transformed"
+}

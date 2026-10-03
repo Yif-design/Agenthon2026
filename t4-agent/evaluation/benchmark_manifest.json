@@ -273,6 +273,21 @@
       "role": "target_semantic_alias_candidate",
       "decision": "reject_and_rollback",
       "production_change": "none"
+    },
+    "proxy_16_energy_control_v1": {
+      "path": "evaluation/reports/proxy-16-energy-control-v1.json",
+      "sha256": "0ecc2da42f426adc2a5a66bb3782a60d887833f82d53d4ea550d9d21cc79a092",
+      "source_snapshot": "proxy-benchmark/sources/proxy-16-eia-crude-2026.json",
+      "source_snapshot_sha256": "16a1c0e4cd11f6a2177ca715fb9655fbc69297536e71578f80b3b20d466041ad",
+      "target_type": "regression",
+      "split": "confirmation",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "role": "third_runnable_proxy_and_second_regression_family_control",
+      "decision": "accept_benchmark_infrastructure",
+      "production_change": "none"
     }
   },
   "family_outcome_benchmarks": {

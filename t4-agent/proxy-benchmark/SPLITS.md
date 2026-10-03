@@ -12,9 +12,10 @@ time-forward test in 2021-2023, and confirmation in 2024-2025, leaving a purge g
 latency or revisions make it necessary.
 
 The first materialized events, proxy-15 at the 2023-08-02 cutoff and proxy-18 at the 2023-09-29
-cutoff, are assigned to `time_forward_test`. Each event's explicit and transformed variants remain
-in the same split. They are useful for plumbing and schema-invariance checks, but do not by
-themselves satisfy the benchmark's development, confirmation or leave-one-family-out requirements.
+cutoff, are assigned to `time_forward_test`. Proxy-16 uses the 2026-09-23 EIA release cutoff and is
+the first `confirmation` event. Each event's explicit and transformed variants remain in the same
+split. They are useful for plumbing and schema-invariance checks, but one confirmation event does
+not satisfy the benchmark's development, repeated-confirmation or leave-one-family-out requirements.
 
 ## Leave-one-family-out
 

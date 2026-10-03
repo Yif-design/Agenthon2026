@@ -853,5 +853,19 @@
       "unit_count": 2,
       "control_report": "evaluation/reports/proxy-18-cot-control-v1.json"
     }
-  ]
+  ],
+  "materialization": {
+    "updated_at": "2026-10-03",
+    "question_ids": [
+      "proxy-15-auction-indirect-bidder-share",
+      "proxy-16-crude-inventory-change",
+      "proxy-18-cot-positioning-rank"
+    ],
+    "question_count": 3,
+    "runnable_schema_cases": 6,
+    "splits": {
+      "time_forward_test": 4,
+      "confirmation": 2
+    }
+  }
 }

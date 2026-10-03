@@ -166,6 +166,28 @@ prior auctions and the announcement fields; accepted amounts from the target auc
 `reference/`. The first control shows the explicit route at the naive anchor and the transformed
 route selecting tenor months as the forecast quantity, so the schema-robustness hypothesis failed.
 
+### EIA crude-inventory proxy-16 confirmation unit
+
+- Tracked source snapshot: `proxy-benchmark/sources/proxy-16-eia-crude-2026.json`
+- Snapshot SHA-256: `16a1c0e4cd11f6a2177ca715fb9655fbc69297536e71578f80b3b20d466041ad`
+- Primary source: 57 dated EIA Weekly Petroleum Status Report `table4.csv` archives
+- Forecast origin: the 2026-09-23 release for the week ending 2026-09-18
+- Resolution: the 2026-09-30 release for the week ending 2026-09-25
+- Target: first-release weekly commercial crude-stock change excluding SPR, in million barrels
+- Roster: U.S. total and PADD 1-5
+- Visible history: 52 consecutive first-release weekly stock levels and EIA-computed changes
+- Naive answer: mean of the five first-release changes for ISO week 39 in 2021-2025; interval uses
+  1.65 population standard deviations with a 0.10 million-barrel floor
+- Variants: explicit million-barrel change fields and transformed thousand-barrel aliases with a
+  reversed roster and product-code distractor
+- License: public-domain U.S. Energy Information Administration data
+
+The builder stores each archive's URL, release date, byte count and SHA-256. It uses EIA's published
+`Difference`, which is calculated from unrounded values, instead of subtracting displayed stock
+levels. The target release is retained only in the frozen snapshot and `reference/`; visible files
+stop at the 2026-09-23 cutoff. This matters because subtracting three-decimal display levels differs
+from EIA's authoritative weekly change by up to 0.001 million barrels on this event.
+
 ## CPI component real-time vintage panel
 
 - Local file: `evaluation/datasets/cpi/components_2015_2023.json`

@@ -1,5 +1,9 @@
 # Known limitations
 
+- The local proxy benchmark now has three economic events and only one confirmation event. Proxy-16
+  adds a second regression family, but its U.S. total and five PADD rows are mechanically related;
+  it cannot by itself select a universal historical prior or establish leave-one-family-out gains.
+
 - No authoritative House serving input/context ceiling is published. Public production-shaped
   prompts currently range from 4,410 to 41,167 characters. The agent does not impose an arbitrary
   fixed character cap; an explicit context-length HTTP 400 splits a multi-row batch into single-row

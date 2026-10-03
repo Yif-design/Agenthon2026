@@ -33,6 +33,13 @@ construct hidden local outcomes. Its SHA-256 is
 `0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d`; the parent raw response
 SHA-256 is `7f1d7e213234636d1d4b5be4ea4bf287a1b4ac6e09d64e30b0ad164dc08c2b9b`.
 
+`sources/proxy-16-eia-crude-2026.json` is a redistributable snapshot derived from 57 dated EIA
+Weekly Petroleum Status Report `table4.csv` archives. It covers 52 consecutive first-release weeks
+through the 2026-09-23 cutoff, four additional same-ISO-week seasonal observations from 2021-2024,
+and the 2026-09-30 resolution release. Each archived URL, release date, byte count and SHA-256 is
+stored in the snapshot. The six series are U.S. commercial crude excluding SPR and PADD 1-5; the
+snapshot SHA-256 is `16a1c0e4cd11f6a2177ca715fb9655fbc69297536e71578f80b3b20d466041ad`.
+
 ## Data boundary
 
 External public data may be used to construct historical proxy tasks and offline artifacts only

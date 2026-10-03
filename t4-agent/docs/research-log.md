@@ -1,5 +1,43 @@
 # Research log
 
+## 2026-10-03: EIA crude-inventory proxy-16 confirmation benchmark — accepted
+
+The benchmark previously had only one regression family, so the rejected Proxy-15 semantic matcher
+could not distinguish a general target/prior weakness from a Treasury-specific result. Proxy-16 now
+forecasts the next first-release weekly commercial crude-stock change for the U.S. total and PADD
+1-5 at the 2026-09-23 cutoff. It provides explicit and transformed schemas, hidden outcomes, a
+five-year same-ISO-week seasonal naive, and one corpus document per entity.
+
+The source was tightened during the round. Current EIA history pages were initially sufficient to
+reconstruct the event, but they are not proof of the value visible at every earlier cutoff. The
+accepted snapshot instead uses 57 dated official `table4.csv` archives: 52 consecutive visible
+weeks, four extra 2021-2024 seasonal weeks, and the target release. EIA's published `Difference`
+field preserves the unrounded weekly change and avoids 0.001 million-barrel errors from subtracting
+displayed levels. Every archive URL, release date, size and SHA-256 is retained.
+
+All 25 generated snapshot/unit files were byte-identical after a second build. The benchmark
+validator accepted six units and three variant pairs with zero errors; both Proxy-16 answers passed
+the official toolkit 2.6 analysis schema. The declared naive answer scores exactly 0.5 on predictive
+and interval quality. Python 3.11.7 passed 156 tests. No local or remote model ran.
+
+The production control completed all twelve schema rows with zero model calls, but trailed the
+seasonal naive: explicit composite before claim penalty was 0.3562 (MAE 1.6753) and transformed was
+0.4015 (MAE 1.4857), versus naive MAE 1.0379. Both used generic fallback, and their different
+outputs expose schema dependence. The benchmark infrastructure is accepted; production forecasting
+logic is unchanged. Proxy-16 supplies the second regression domain needed for a separately
+preregistered comparison of persistence, recent mean, trend and seasonal priors.
+
+Official Track 4 main remains `1c744e1d6725340643a533f436517d72b53ca0e1`, shared main remains
+`bd01548e34d21fd660d88fd06157078fb25ece4e`, toolkit `v2.6.0` resolves to
+`683e70c9c44eca947699a72bea79147a5d4d8c7a`, and scorer 5.2.2 is unchanged. The public
+`wangzgui/agenthon-t4-baseline-2026` repository advanced to `a32950d`; its own active-baseline file
+still names S1.6 with reported Development score 0.4793, while S1.9 remains an unpromoted candidate
+after a failed submission and a reproduced malformed-House-field crash. Its conservative typed
+review admission and batch exception isolation support our existing fail-closed direction, but do
+not justify copying a candidate without held-out evidence.
+
+Report: `evaluation/reports/proxy-16-energy-control-v1.json`.
+
 ## 2026-10-03: target-semantic dated-table alias — rejected and rolled back
 
 Proxy-15 showed that an unknown regression target renamed from indirect-bidder share to
