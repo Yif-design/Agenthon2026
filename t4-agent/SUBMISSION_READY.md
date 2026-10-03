@@ -8,7 +8,7 @@ does not match the Team Number and Team Key.
 Current participant image:
 
 ```text
-ghcr.io/yif-design/agenthon2026-t4@sha256:deac243e887c194e43819ef272b4b6d671fa8fa5684ca93b161c3f684eea670d
+ghcr.io/yif-design/agenthon2026-t4@sha256:66d8e3cc53dfd6ab8e9fdb6c7aeef9d677b9f70b5cd8e34245796445fbacdc57
 ```
 
 Verified properties:
@@ -16,7 +16,7 @@ Verified properties:
 - anonymously readable from GHCR;
 - Linux/amd64;
 - image label `qfbench2.interface_version=2.0`;
-- `analyze` command smoke-tested by GitHub Actions run `37094824716`;
+- `analyze` command smoke-tested by GitHub Actions run `37120097633`;
 - anonymous registry manifest request returned HTTP 200 for the same immutable digest;
 - final no-model audit passed all 11 public units and all 78 entities with zero local validation
   errors in 19.1 seconds; the combined answer size was 99,885 bytes;

@@ -17,6 +17,13 @@ remains insufficient evidence for a forecasting change.
 Reports: `evaluation/reports/proxy-01-control-v1.json` through proxy-20's family-specific report.
 Model API calls: 0. Local LLM/NLI runs: 0.
 
+Release record: commit `a27b8591ab078a68329ee9a8ece721302a4a052c` was pushed to
+`codex/t4-agent-skeleton`. GitHub Actions run `37120097633` passed tests, the pinned toolkit pack
+smoke, Linux/amd64 image build/push, and `analyze --help`. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:66d8e3cc53dfd6ab8e9fdb6c7aeef9d677b9f70b5cd8e34245796445fbacdc57`.
+Anonymous manifest and config requests returned HTTP 200; the interface label is 2.0. No formal
+competition submission was performed.
+
 # Research log
 
 ## 2026-10-03: forward FX volatility proxy-19 benchmark — accepted, robustness hypothesis rejected

@@ -256,5 +256,19 @@
     "One historical event per family.",
     "Only one confirmation event.",
     "Local score excludes official contradiction and reasoning components."
-  ]
+  ],
+  "adopted_commit": "a27b8591ab078a68329ee9a8ece721302a4a052c",
+  "release": {
+    "ci_run": 37120097633,
+    "ci_conclusion": "success",
+    "ci_python": "3.13.15",
+    "ci_tests_and_pack_smoke": "passed",
+    "image": "ghcr.io/yif-design/agenthon2026-t4@sha256:66d8e3cc53dfd6ab8e9fdb6c7aeef9d677b9f70b5cd8e34245796445fbacdc57",
+    "image_platform": "linux/amd64",
+    "image_interface_label": "2.0",
+    "anonymous_manifest_http_status": 200,
+    "anonymous_config_http_status": 200,
+    "container_cli_smoke": "passed_in_ci",
+    "formal_submission_performed": false
+  }
 }
