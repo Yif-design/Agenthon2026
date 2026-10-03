@@ -251,6 +251,20 @@
       "role": "first_runnable_proxy_schema_invariance_control",
       "decision": "infrastructure_accept_hypothesis_reject",
       "production_change": "none"
+    },
+    "proxy_15_auction_control_v1": {
+      "path": "evaluation/reports/proxy-15-auction-control-v1.json",
+      "sha256": "087fe4d27d7c3aa5fda51d3f40ec99ffd7c2dafac4d6648a01fcf5be3eed5d0e",
+      "source_snapshot": "proxy-benchmark/sources/proxy-15-auctions-2023.json",
+      "source_snapshot_sha256": "0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d",
+      "target_type": "regression",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "role": "second_runnable_proxy_schema_invariance_control",
+      "decision": "infrastructure_accept_hypothesis_reject",
+      "production_change": "none"
     }
   },
   "family_outcome_benchmarks": {

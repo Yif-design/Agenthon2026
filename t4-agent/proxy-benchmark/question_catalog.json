@@ -614,7 +614,7 @@
         "interval_semantics": "90% interval on bidder share percent"
       },
       "question": "Forecast indirect-bidder acceptance share for announced Treasury coupon auctions.",
-      "entity_roster": "5-10 announced securities across terms",
+      "entity_roster": "3Y, 10Y and 30Y securities in one Treasury announcement batch",
       "cutoff_rule": "after announcement and before auction result",
       "resolution_rule": "Treasury auction result table",
       "visible_inputs": [
@@ -831,6 +831,17 @@
     }
   ],
   "materialized_questions": [
+    {
+      "id": "proxy-15-auction-indirect-bidder-share",
+      "origin": "2023-08-02",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-15-auction-control-v1.json"
+    },
     {
       "id": "proxy-18-cot-positioning-rank",
       "origin": "2023-09-26",

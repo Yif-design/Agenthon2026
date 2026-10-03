@@ -1,0 +1,61 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "Treasury source.",
+          "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "TREASURY_30YEAR_20230810",
+      "interval": {
+        "hi": 78.47988683335535,
+        "level": 0.9,
+        "lo": 48.563197833902315
+      },
+      "point_forecast": 63.52154233362884
+    },
+    {
+      "claims": [
+        {
+          "claim": "Treasury source.",
+          "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "TREASURY_10YEAR_20230809",
+      "interval": {
+        "hi": 67.8081073037834,
+        "level": 0.9,
+        "lo": 52.56210754698928
+      },
+      "point_forecast": 60.18510742538634
+    },
+    {
+      "claims": [
+        {
+          "claim": "Treasury source.",
+          "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "TREASURY_3YEAR_20230808",
+      "interval": {
+        "hi": 71.62509233861344,
+        "level": 0.9,
+        "lo": 44.815939202646305
+      },
+      "point_forecast": 58.22051577062987
+    }
+  ],
+  "notes": {
+    "baseline_id": "recent-six-same-term-mean"
+  },
+  "schema_version": "3",
+  "target_type": "regression",
+  "task_id": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+}

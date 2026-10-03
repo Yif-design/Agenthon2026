@@ -1,5 +1,21 @@
 # Research log
 
+## 2026-10-03: Treasury auction proxy-15 schema invariance — rejected
+
+The second runnable proxy question forecasts indirect-bidder acceptance share for the 3-, 10-, and
+30-year Treasury auctions announced on 2023-08-02. Both explicit and transformed units share the
+same cutoff-safe twelve-auction histories, hidden outcomes, recent-six naive answers and reversed
+but equivalent rosters. The source snapshot and all unit manifests rebuild deterministically.
+
+The predeclared hypothesis required the transformed composite to finish no more than 0.05 below the
+explicit unit. The explicit specialist route scored 0.5000 before claim penalty, effectively equal
+to the naive recent-six mean. The transformed generic route scored 0.0655 because it selected
+`security_bucket_months` as the forecast quantity, producing 36, 120 and 360 percentage-point
+forecasts. The 0.4345 decline rejects the hypothesis and identifies a target-aware numeric-field
+selection weakness. The benchmark infrastructure and failed result are retained; production logic
+is unchanged. No model API or local model ran. Report:
+`evaluation/reports/proxy-15-auction-control-v1.json`.
+
 ## 2026-09-29: generic fraction-to-percent scaling — rejected
 
 The generic selector recognizes percent, basis-point and USD identifiers but does not normalize

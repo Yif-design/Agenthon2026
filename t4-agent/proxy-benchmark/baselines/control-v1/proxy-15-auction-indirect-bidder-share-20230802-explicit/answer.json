@@ -1,0 +1,144 @@
+{
+  "task_id": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+  "schema_version": "3",
+  "target_type": "regression",
+  "entity_predictions": [
+    {
+      "entity_id": "TREASURY_3YEAR_20230808",
+      "point_forecast": 58.22051583333334,
+      "interval": {
+        "level": 0.9,
+        "lo": 44.81593914013494,
+        "hi": 71.62509252653174
+      },
+      "claims": [
+        {
+          "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+          "span_start": 768,
+          "span_end": 853,
+          "claim": "The frozen TreasuryDirect summary reports the verified recent-six bid-to-cover average used by the forecast."
+        },
+        {
+          "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+          "span_start": 0,
+          "span_end": 853,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "TREASURY_10YEAR_20230809",
+      "point_forecast": 60.18510733333333,
+      "interval": {
+        "level": 0.9,
+        "lo": 52.5621074184668,
+        "hi": 67.80810724819986
+      },
+      "claims": [
+        {
+          "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+          "span_start": 817,
+          "span_end": 902,
+          "claim": "The frozen TreasuryDirect summary reports the verified recent-six bid-to-cover average used by the forecast."
+        },
+        {
+          "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+          "span_start": 0,
+          "span_end": 902,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "TREASURY_30YEAR_20230810",
+      "point_forecast": 63.52154216666667,
+      "interval": {
+        "level": 0.9,
+        "lo": 48.563197353205666,
+        "hi": 78.47988698012767
+      },
+      "claims": [
+        {
+          "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+          "span_start": 817,
+          "span_end": 902,
+          "claim": "The frozen TreasuryDirect summary reports the verified recent-six bid-to-cover average used by the forecast."
+        },
+        {
+          "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+          "span_start": 0,
+          "span_end": 902,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [],
+    "methods": {
+      "TREASURY_3YEAR_20230808": "same_tenor_recent_history",
+      "TREASURY_10YEAR_20230809": "same_tenor_recent_history",
+      "TREASURY_30YEAR_20230810": "same_tenor_recent_history"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  },
+  "submitted_reasons": [
+    {
+      "reason_id": "r1",
+      "premise": "The average over the six most recent auctions is 58.220516 percent of total accepted.",
+      "mechanism": "Recent same-tenor bid-to-cover observations are averaged to estimate the next auction result, while their dispersion sets forecast uncertainty.",
+      "answer_implication": "For TREASURY_3YEAR_20230808, this supports the submitted point forecast 58.2205.",
+      "scope": {
+        "entities": [
+          "TREASURY_3YEAR_20230808"
+        ]
+      },
+      "citations": [
+        {
+          "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+          "span_start": 768,
+          "span_end": 853
+        }
+      ]
+    },
+    {
+      "reason_id": "r2",
+      "premise": "The average over the six most recent auctions is 60.185107 percent of total accepted.",
+      "mechanism": "Recent same-tenor bid-to-cover observations are averaged to estimate the next auction result, while their dispersion sets forecast uncertainty.",
+      "answer_implication": "For TREASURY_10YEAR_20230809, this supports the submitted point forecast 60.1851.",
+      "scope": {
+        "entities": [
+          "TREASURY_10YEAR_20230809"
+        ]
+      },
+      "citations": [
+        {
+          "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+          "span_start": 817,
+          "span_end": 902
+        }
+      ]
+    },
+    {
+      "reason_id": "r3",
+      "premise": "The average over the six most recent auctions is 63.521542 percent of total accepted.",
+      "mechanism": "Recent same-tenor bid-to-cover observations are averaged to estimate the next auction result, while their dispersion sets forecast uncertainty.",
+      "answer_implication": "For TREASURY_30YEAR_20230810, this supports the submitted point forecast 63.5215.",
+      "scope": {
+        "entities": [
+          "TREASURY_30YEAR_20230810"
+        ]
+      },
+      "citations": [
+        {
+          "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+          "span_start": 817,
+          "span_end": 902
+        }
+      ]
+    }
+  ]
+}

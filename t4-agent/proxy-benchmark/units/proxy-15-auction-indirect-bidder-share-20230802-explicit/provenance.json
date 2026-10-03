@@ -1,0 +1,19 @@
+{
+  "availability": {
+    "announcement_public": "2023-08-02",
+    "last_result_public": "2023-08-10"
+  },
+  "cutoff_date": "2023-08-02",
+  "download_date": "2026-09-27",
+  "generator": "proxy-benchmark/build_auction_proxy.py",
+  "generator_version": "1.0.0",
+  "license": "Public domain (U.S. Treasury auction data)",
+  "question_id": "proxy-15-auction-indirect-bidder-share",
+  "resolution_date": "2023-08-10",
+  "source_raw_sha256": "7f1d7e213234636d1d4b5be4ea4bf287a1b4ac6e09d64e30b0ad164dc08c2b9b",
+  "source_snapshot": "proxy-benchmark/sources/proxy-15-auctions-2023.json",
+  "source_snapshot_sha256": "0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d",
+  "source_url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
+  "split": "time_forward_test",
+  "variant": "explicit"
+}

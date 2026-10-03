@@ -11,10 +11,10 @@ Exact years depend on source coverage. A recommended starting layout is developm
 time-forward test in 2021-2023, and confirmation in 2024-2025, leaving a purge gap where release
 latency or revisions make it necessary.
 
-The first materialized event, proxy-18 at the 2023-09-29 cutoff, is assigned to
-`time_forward_test`. Its explicit and transformed variants remain in that same split. It is useful
-for plumbing and schema-invariance checks, but it does not by itself satisfy the benchmark's
-development, confirmation or leave-one-family-out coverage requirements.
+The first materialized events, proxy-15 at the 2023-08-02 cutoff and proxy-18 at the 2023-09-29
+cutoff, are assigned to `time_forward_test`. Each event's explicit and transformed variants remain
+in the same split. They are useful for plumbing and schema-invariance checks, but do not by
+themselves satisfy the benchmark's development, confirmation or leave-one-family-out requirements.
 
 ## Leave-one-family-out
 

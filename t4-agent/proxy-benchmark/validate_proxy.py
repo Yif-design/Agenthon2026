@@ -67,10 +67,20 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--units", type=Path, default=Path("proxy-benchmark/units"))
     args = parser.parse_args()
-    explicit = args.units / "proxy-18-cot-positioning-rank-20230926-explicit"
-    transformed = args.units / "proxy-18-cot-positioning-rank-20230926-transformed"
-    errors = validate_unit(explicit) + validate_unit(transformed) + compare_variants(explicit, transformed)
-    print(json.dumps({"units": 2, "errors": errors, "passed": not errors}, indent=2))
+    units = sorted(path for path in args.units.iterdir() if path.is_dir())
+    errors: list[str] = []
+    pairs: dict[tuple[str, str], dict[str, Path]] = {}
+    for unit in units:
+        errors.extend(f"{unit.name}: {error}" for error in validate_unit(unit))
+        provenance = json.loads((unit / "provenance.json").read_text())
+        key = (str(provenance["question_id"]), str(provenance["cutoff_date"]))
+        pairs.setdefault(key, {})[str(provenance["variant"])] = unit
+    for key, variants in pairs.items():
+        if set(variants) != {"explicit", "transformed"}:
+            errors.append(f"{key}: missing explicit/transformed pair")
+            continue
+        errors.extend(f"{key}: {error}" for error in compare_variants(variants["explicit"], variants["transformed"]))
+    print(json.dumps({"units": len(units), "pairs": len(pairs), "errors": errors, "passed": not errors}, indent=2))
     raise SystemExit(bool(errors))
 
 

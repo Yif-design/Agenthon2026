@@ -149,6 +149,23 @@ The snapshot intentionally contains the resolution row so the unit can be regene
 git-ignored raw cache. The builder constructs all visible documents from rows dated no later than
 the origin and the validator refuses any post-cutoff corpus document or outcome-like task field.
 
+### Treasury auction proxy-15 indirect-bidder-share unit
+
+- Tracked source snapshot: `proxy-benchmark/sources/proxy-15-auctions-2023.json`
+- Snapshot SHA-256: `0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d`
+- Parent raw-response SHA-256: `7f1d7e213234636d1d4b5be4ea4bf287a1b4ac6e09d64e30b0ad164dc08c2b9b`
+- Forecast origin: the 2023-08-02 Treasury announcement for the 3-, 10-, and 30-year auctions
+- Resolution: auction results published from 2023-08-08 through 2023-08-10
+- Target: indirect bidder accepted amount divided by total accepted amount, times 100
+- Visible history: twelve prior same-term auctions, with the recent-six mean as the naive answer
+- Variants: explicit auction terminology and transformed neutral names, scales and reversed roster
+- License: public-domain U.S. Treasury data
+
+The tracked snapshot contains resolved rows only for offline regeneration. Visible corpus files use
+prior auctions and the announcement fields; accepted amounts from the target auctions remain under
+`reference/`. The first control shows the explicit route at the naive anchor and the transformed
+route selecting tenor months as the forecast quantity, so the schema-robustness hypothesis failed.
+
 ## CPI component real-time vintage panel
 
 - Local file: `evaluation/datasets/cpi/components_2015_2023.json`

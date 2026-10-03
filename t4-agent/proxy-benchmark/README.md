@@ -7,15 +7,15 @@ units.
 
 ## Status
 
-`question_catalog.json` contains twenty question specifications. One question, proxy-18 COT
-positioning rank, is now materialized as two runnable schema variants; the other nineteen remain
-design records. A question becomes runnable only after its generator has produced a cutoff-safe
+`question_catalog.json` contains twenty question specifications. Two questions, proxy-15 Treasury
+auction share and proxy-18 COT positioning rank, are materialized with two runnable schema variants
+each; the other eighteen remain design records. A question becomes runnable only after its generator has produced a cutoff-safe
 `task.json`, `card.toml`, `manifest.json`, frozen `corpus/`, hidden `reference/outcome.json`, and
 `reference/naive_answer.json` with complete provenance.
 
-The first control run is in `baselines/control-v1/` and
-`../evaluation/reports/proxy-18-cot-control-v1.json`. It deliberately makes no production-change
-claim: one event can verify the benchmark plumbing, but cannot establish hidden-family
+The control runs are in `baselines/control-v1/` and `../evaluation/reports/`. Neither makes a
+production-change claim. Proxy-15 exposes target-field selection failure under a transformed schema;
+two events can verify benchmark plumbing and reveal weaknesses, but cannot establish hidden-family
 generalization.
 
 ## Reproduce the materialized slice
@@ -25,8 +25,10 @@ required.
 
 ```bash
 python3.13 proxy-benchmark/build_cot_proxy.py
+python3.13 proxy-benchmark/build_auction_proxy.py
 python3.13 proxy-benchmark/validate_proxy.py
-python3.13 proxy-benchmark/run_control.py
+python3.13 proxy-benchmark/run_control.py --experiment proxy-18
+python3.13 proxy-benchmark/run_control.py --experiment proxy-15
 python3.13 -m unittest tests.test_proxy_benchmark -v
 ```
 

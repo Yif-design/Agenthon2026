@@ -26,11 +26,19 @@ class ProxyBenchmarkTests(unittest.TestCase):
     def setUp(self) -> None:
         self.explicit = PROXY / "units/proxy-18-cot-positioning-rank-20230926-explicit"
         self.transformed = PROXY / "units/proxy-18-cot-positioning-rank-20230926-transformed"
+        self.auction_explicit = PROXY / "units/proxy-15-auction-indirect-bidder-share-20230802-explicit"
+        self.auction_transformed = PROXY / "units/proxy-15-auction-indirect-bidder-share-20230802-transformed"
 
     def test_materialized_units_pass_integrity_and_variant_checks(self) -> None:
         errors = validator.validate_unit(self.explicit)
         errors += validator.validate_unit(self.transformed)
         errors += validator.compare_variants(self.explicit, self.transformed)
+        self.assertEqual(errors, [])
+
+    def test_auction_units_pass_integrity_and_variant_checks(self) -> None:
+        errors = validator.validate_unit(self.auction_explicit)
+        errors += validator.validate_unit(self.auction_transformed)
+        errors += validator.compare_variants(self.auction_explicit, self.auction_transformed)
         self.assertEqual(errors, [])
 
     def test_source_snapshot_has_only_cutoff_history_plus_resolution_rows(self) -> None:
@@ -45,6 +53,24 @@ class ProxyBenchmarkTests(unittest.TestCase):
         self.assertAlmostEqual(result["predictive_quality"], 0.5)
         self.assertAlmostEqual(result["interval_quality"], 0.5)
         self.assertAlmostEqual(result["composite_before_claim_penalty"], 0.5)
+
+    def test_regression_naive_answer_scores_exactly_half_on_both_legs(self) -> None:
+        result = scorer.score(
+            self.auction_explicit,
+            self.auction_explicit / "reference/naive_answer.json",
+        )
+        self.assertAlmostEqual(result["predictive_quality"], 0.5)
+        self.assertAlmostEqual(result["interval_quality"], 0.5)
+        self.assertAlmostEqual(result["composite_before_claim_penalty"], 0.5)
+
+    def test_auction_snapshot_separates_cutoff_history_from_outcomes(self) -> None:
+        source = json.loads((PROXY / "sources/proxy-15-auctions-2023.json").read_text())
+        targets = [row for row in source["rows"] if row["announcemt_date"] == "2023-08-02"]
+        self.assertEqual({row["original_security_term"] for row in targets}, {"3-Year", "10-Year", "30-Year"})
+        for unit in (self.auction_explicit, self.auction_transformed):
+            corpus = "\n".join(path.read_text() for path in (unit / "corpus").glob("*.json"))
+            for row in targets:
+                self.assertNotIn(row["indirect_bidder_accepted"], corpus)
 
     def test_average_rank_ties_are_neutral(self) -> None:
         self.assertEqual(scorer.spearman([0.0] * 10, list(range(10))), 0.0)

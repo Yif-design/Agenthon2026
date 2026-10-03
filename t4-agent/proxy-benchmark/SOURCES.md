@@ -26,6 +26,13 @@ construct the hidden local outcome. The generator never copies that resolution r
 `9428ac2f750afa7f8b7395691e1fb29f57d366dd23abd84e43a88d3fdf8c94db`; the parent raw response
 SHA-256 is `dfa3770a1415d5a9f5d6c47e2f3f1c6cac1b3602a435500a0bb7a3b1aa5e62d3`.
 
+`sources/proxy-15-auctions-2023.json` is a redistributable U.S. Treasury Fiscal Data snapshot for
+3-, 10-, and 30-year nominal coupon auctions. It contains same-term history through the
+2023-08-02 announcement cutoff and the three subsequently published auction results kept solely to
+construct hidden local outcomes. Its SHA-256 is
+`0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d`; the parent raw response
+SHA-256 is `7f1d7e213234636d1d4b5be4ea4bf287a1b4ac6e09d64e30b0ad164dc08c2b9b`.
+
 ## Data boundary
 
 External public data may be used to construct historical proxy tasks and offline artifacts only

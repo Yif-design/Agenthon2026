@@ -48,7 +48,7 @@ def interval_score(rows: list[dict[str, Any]], truth: list[float], level: float)
     return statistics.fmean(costs)
 
 
-def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, Any]], list[float]]:
+def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, Any]], list[float], str]:
     task = json.loads((unit / "task.json").read_text())
     answer = json.loads(answer_path.read_text())
     outcome = json.loads((unit / "reference/outcome.json").read_text())
@@ -64,7 +64,7 @@ def aligned(unit: Path, answer_path: Path) -> tuple[list[str], list[dict[str, An
         lo, hi, level = (float(row["interval"][key]) for key in ("lo", "hi", "level"))
         if not all(math.isfinite(value) for value in (point, lo, hi, level)) or lo > point or point > hi or level != 0.9:
             raise ValueError("invalid point or interval")
-    return ids, rows, truth
+    return ids, rows, truth, str(task["target"]["type"])
 
 
 def anchored_quality(raw: float, anchor: float) -> float:
@@ -74,14 +74,32 @@ def anchored_quality(raw: float, anchor: float) -> float:
 
 
 def score(unit: Path, answer_path: Path) -> dict[str, Any]:
-    _, rows, truth = aligned(unit, answer_path)
-    _, naive, _ = aligned(unit, unit / "reference/naive_answer.json")
+    _, rows, truth, target_type = aligned(unit, answer_path)
+    _, naive, _, naive_type = aligned(unit, unit / "reference/naive_answer.json")
+    if naive_type != target_type:
+        raise ValueError("naive target type differs from task")
     points = [float(row["point_forecast"]) for row in rows]
     naive_points = [float(row["point_forecast"]) for row in naive]
-    raw = (spearman(points, truth) + 1.0) / 2.0
-    naive_raw = (spearman(naive_points, truth) + 1.0) / 2.0
-    anchor = max(0.5, naive_raw)
-    predictive = anchored_quality(raw, anchor)
+    metric_parts: dict[str, Any]
+    if target_type == "ranking":
+        rho = spearman(points, truth)
+        naive_rho = spearman(naive_points, truth)
+        raw = (rho + 1.0) / 2.0
+        naive_raw = (naive_rho + 1.0) / 2.0
+        anchor = max(0.5, naive_raw)
+        predictive = anchored_quality(raw, anchor)
+        # Preserve the historical proxy report's exact floating-point serialization.
+        metric_parts = {"raw_spearman": 2.0 * raw - 1.0}
+    elif target_type == "regression":
+        own_mae = statistics.fmean(abs(point - y) for point, y in zip(points, truth, strict=True))
+        naive_mae = statistics.fmean(abs(point - y) for point, y in zip(naive_points, truth, strict=True))
+        predictive = naive_mae / (naive_mae + own_mae) if naive_mae + own_mae > 0 else 0.5
+        raw = predictive
+        naive_raw = 0.5
+        anchor = None
+        metric_parts = {"target_type": target_type, "mae": own_mae, "naive_mae": naive_mae}
+    else:
+        raise ValueError(f"unsupported proxy target type: {target_type}")
     own_is = interval_score(rows, truth, 0.9)
     naive_is = interval_score(naive, truth, 0.9)
     raw_iq = naive_is / (naive_is + own_is)
@@ -91,7 +109,7 @@ def score(unit: Path, answer_path: Path) -> dict[str, Any]:
         for row, y in zip(rows, truth, strict=True)
     )
     return {
-        "unit": unit.name, "raw_spearman": 2.0 * raw - 1.0,
+        "unit": unit.name, **metric_parts,
         "raw_predictive_quality": raw, "naive_predictive_quality": naive_raw,
         "predictive_anchor": anchor, "predictive_quality": predictive,
         "interval_coverage": coverage, "interval_score": own_is,
