@@ -21,3 +21,20 @@ Scorer changes invalidate proxy metrics when their ordering can change. A candid
 the retired coverage-gap score must be re-audited before it is treated as current. Historical
 reports remain immutable evidence of what was tested; a new report records the rescore and any
 production rollback.
+
+# Rolling-origin numerical evaluation
+
+Historical numerical candidates must be evaluated in public-availability order. At an origin
+`t`, a row is eligible as training evidence only when its `resolution_date < t`; observation dates
+or target periods alone are insufficient. Rows from the same release/event origin are predicted
+together before any of their outcomes can enter history.
+
+Use whole-origin chronological development, time-forward test and confirmation partitions. Any
+window, candidate, coefficient or interval rule selected from history must be recomputed from the
+eligible prefix. Explicit and transformed schemas for one economic event share the same split and
+selection decision. Report per-origin errors, family-macro metrics and leave-one-family-out results
+so a large roster cannot dominate the conclusion.
+
+The reusable implementation is `evaluation/rolling_origin.py`; the frozen-panel runner is
+`evaluation/experiments/rolling_origin_reference_screen.py`. The runner is evaluation-only and
+does not change production predictions.

@@ -61,6 +61,22 @@ The report macro-averages economic events and includes cohort, target-type, and 
 slices. Its composite excludes the private citation-faithfulness gate and is therefore a local
 development diagnostic, not a leaderboard score.
 
+## Run the historical rolling-origin screen
+
+The 51-unit suite measures final-event behavior. A separate evaluation-only screen uses the
+project's frozen auction, COT, CPI, EPS, FOMC, macro-revision and post-earnings panels to test
+numeric rules at thousands of earlier origins:
+
+```bash
+python3 evaluation/experiments/rolling_origin_reference_screen.py
+```
+
+For every origin, an outcome enters training only when its recorded resolution date is strictly
+earlier than that origin. Whole event groups stay together, and each family is split chronologically
+into development, time-forward test and confirmation periods. The report compares simple rules,
+the current production prior and a Wang-inspired rolling selector. It is evaluation infrastructure:
+passing its leakage checks does not authorize a production change.
+
 Network refreshes are explicit: `build_macro_proxies.py --fetch`,
 `build_payroll_proxy.py --fetch`, `build_sec_proxies.py --raw-dir <companyfacts-dir>`, and
 `build_segment_proxy.py --raw-dir <filing-dir>`. Existing dedicated builders retain their documented

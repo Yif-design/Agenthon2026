@@ -2476,3 +2476,37 @@ The immutable image is
 `ghcr.io/yif-design/agenthon2026-t4@sha256:deac243e887c194e43819ef272b4b6d671fa8fa5684ca93b161c3f684eea670d`.
 Anonymous manifest and config requests returned HTTP 200; the OCI image is Linux/amd64, about 44.2
 MiB compressed, and carries `qfbench2.interface_version=2.0`. No formal submission was performed.
+
+## 2026-10-04: Wang-inspired rolling-origin screen — infrastructure accepted, selector rejected
+
+The first scored-reference-driven round independently reimplemented the numerical validation
+principles recorded in Wang's public Track 4 repository. Its `ACTIVE_BASELINE.json` binds the
+reported 0.4793 result to S1.6/source commit `af764681`; it records S1.7 at 0.4787 as rejected.
+The later S1.8/S1.9 files remain research candidates and are not treated as evidence for the active
+score. The local reference snapshot stays outside this public repository.
+
+The new evaluation-only runner normalized 15,961 frozen observations across seven independent
+regression families: Treasury auctions, COT positioning, CPI components, quarterly diluted EPS,
+FOMC yield changes, macro revisions and post-earnings abnormal returns. It evaluated 3,014 whole
+event origins. An outcome entered history only when `resolution_date < origin_date`; same-origin
+entities were predicted together. Each family used chronological 60/20/20 development,
+time-forward and confirmation partitions. Tests prove that changing a future outcome cannot alter
+earlier forecasts and that reversing input order is invariant.
+
+The Wang-inspired selector compared zero, persistence, recent mean, momentum, anti-momentum, mean
+reversion, seasonal, ridge and the current production prior. It required a five-percent validation
+MAE gain over the level/change naive before switching. Time-forward family-macro predictive quality
+rose from 0.503003 for production to 0.512333, but confirmation fell from 0.499707 to 0.498339.
+Only COT and CPI improved on both forward splits; auctions, macro revisions and EPS did not. The
+pre-registered predictive hypothesis therefore failed and no selector entered production. The
+scorer-like composite was 0.500870 versus 0.510615 in time-forward and 0.496569 versus 0.497718 in
+confirmation, but this interval-driven confirmation increase cannot override the failed predictive
+gate after results are known.
+
+The infrastructure itself is accepted: all seven families contain all three time partitions,
+there are zero cutoff violations, the twenty explicit/transformed benchmark pairs share event,
+split and total weight, results are deterministic, and no model API or local model ran. The report
+also records per-origin error, scorer-like interval quality, coverage and leave-one-family-out
+diagnostics. Its raw mean interval scores are not compared across scales without normalization.
+
+Report: `evaluation/reports/rolling-origin-reference-screen-v1.json`.

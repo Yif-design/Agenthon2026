@@ -1,6 +1,6 @@
 # Agenthon Track 4 current rules
 
-Last verified: 2026-10-03.
+Last verified: 2026-10-04.
 
 Pinned official sources checked for this development round:
 
@@ -8,6 +8,12 @@ Pinned official sources checked for this development round:
 - Latest shared toolkit tag: `v2.6.0` (`bd01548e34d21fd660d88fd06157078fb25ece4e`)
 - Track 4 public main: `1c744e1d6725340643a533f436517d72b53ca0e1`
 - Track 4 scorer: `5.2.2`
+
+The 2026-10-04 refresh found no change to these pinned Track 4 commits, scorer semantics, request
+budget or runtime contract. The public leaderboard is operational evidence rather than a scoring
+specification; it currently displays Cornfield Chase at 0.2326 and zhuozhuowang at 0.4793, but
+those values do not identify an image digest or prove that a repository's current HEAD produced
+the displayed score.
 
 Toolkit 2.6.0 is an organizer-side contract/runtime update. The official release says existing
 2.5.1 submissions remain valid. A direct blob comparison confirms that the Track 4 scorer,
