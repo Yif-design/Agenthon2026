@@ -2519,3 +2519,38 @@ built and pushed Linux/amd64, and passed `analyze --help`. The immutable image i
 Anonymous manifest and config requests returned HTTP 200; the OCI manifest resolved to that exact
 digest, and its config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development
 submission template now points to this image. No formal competition submission was performed.
+
+## 2026-10-04: scored-reference checked direct forecast screen — rejected on worst-unit guardrail
+
+This evaluation-only screen tested the largest architectural difference between the current
+agent and two public scored Track 4 references. Wang S1.6 combines a quantity contract, checked
+facts, direct model forecasts and conservative admission; Optivex supplies a complete target
+specification and target-aware evidence before direct forecasting. The candidate independently
+gave Gemini 2.5 Flash-Lite each entity's full target contract, current deterministic forecast and
+cutoff-safe BM25 evidence. A row was admitted only with finite ordered point/interval values and an
+exact evidence quote; otherwise it fell back to the production answer. No production path changed.
+
+The pre-registered screen covered four independent regression events as explicit/transformed
+pairs: capex intensity, Treasury indirect-bidder share, crude inventory change and natural-gas
+storage change. Eight calls forecast 46 rows. All calls succeeded with 50,297 prompt tokens and
+6,439 completion tokens; thinking was disabled and no local model ran. All 46 rows were admitted,
+all eight answers passed local schema/citation validation, and saved candidate answers were
+embedded in the report so the scores can be reproduced without another model call.
+
+Four of five gates passed. Mean composite improved by 0.154694, transformed mean composite by
+0.255391, and mean explicit/transformed gap fell from 0.279067 to 0.055036. The worst-unit
+guardrail failed: transformed crude inventory composite fell by 0.136091, exceeding the allowed
+0.10 loss. Its predictive quality fell by 0.119469, MAE rose from 1.485667 to 2.518833, and interval
+coverage fell from 0.666667 to 0.333333. The model approximately doubled the corresponding explicit
+crude forecasts under the transformed schema, while it repaired three other transformed controls.
+This is evidence that direct forecasting can recover target semantics that the fixed calculator
+misses, but exact-quote admission alone does not prevent a materially bad, schema-sensitive row.
+
+The hypothesis is rejected under the original gate. The candidate is not expanded and no direct
+forecast enters production. The next scored-reference mechanism to test should be Wang-style
+conservative review/admission: decide whether a model proposal is sufficiently supported and
+meaningfully safer than the deterministic prior, without using paired variants or known outcomes
+at runtime. That must be a new pre-registered experiment; the failed guardrail is not relaxed.
+
+Report: `evaluation/reports/direct-forecast-reference-screen-v1.json` (SHA-256
+`1f6aa39d00d5b185577f3f2e7ad6505061792983ea6bd662f8998b6b0e00d2bd`).
