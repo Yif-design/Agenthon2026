@@ -40,6 +40,27 @@ done
 python3.11 -m pytest -q
 ```
 
+## Run the unified evaluation suite
+
+`evaluation/benchmark_suite.json` inventories the eleven published compatibility units and all
+forty proxy schema cases. The proxy cases are grouped into twenty economic events, so an explicit
+and transformed pair shares one unit of weight instead of counting twice. Public outcomes remain
+local and git-ignored.
+
+Run and score the current model-free agent on all 51 runnable units with:
+
+```bash
+python3 evaluation/run_benchmark_suite.py --name current
+```
+
+The command writes answers under the ignored `evaluation/runs/benchmark-suite-current/` tree and
+a compact report to `evaluation/reports/benchmark-suite-current.json`. Add `--reuse` to rescore
+existing answers without rerunning the agent, or select `--scope public` / `--scope proxy`.
+
+The report macro-averages economic events and includes cohort, target-type, and paired-schema
+slices. Its composite excludes the private citation-faithfulness gate and is therefore a local
+development diagnostic, not a leaderboard score.
+
 Network refreshes are explicit: `build_macro_proxies.py --fetch`,
 `build_payroll_proxy.py --fetch`, `build_sec_proxies.py --raw-dir <companyfacts-dir>`, and
 `build_segment_proxy.py --raw-dir <filing-dir>`. Existing dedicated builders retain their documented
