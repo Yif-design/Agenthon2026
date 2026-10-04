@@ -2704,3 +2704,34 @@ Anonymous manifest and config requests returned HTTP 200; the resolved digest ma
 manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
 compressed layers total 46,358,531 bytes. The development submission template and readiness note
 now point to that digest. No formal competition submission was performed.
+
+## 2026-10-04: Locked direct points with event-pooled residual intervals — rejected
+
+This no-model development screen isolated interval ownership from the rejected direct-forecast
+experiment. It reused the eight saved explicit/transformed answers without another API call and
+kept every point, claim, entity and other output field byte-equivalent. For compatible complete
+pre-cutoff corpus tables, level and ratio targets used one-period persistence residuals while
+change targets used zero-baseline residuals. When an event had at least eight residual observations
+and three origins, the candidate half-width was the pooled absolute-residual q90 plus the distance
+between the locked House point and the current statistical prior. Insufficient-history capex rows
+retained the locked direct interval.
+
+All eight answers remained valid, non-interval fields were identical, and each event's independently
+extracted explicit/transformed history and residual hashes matched. The candidate passed its mean
+gain over production and transformed gain gates, but failed three decisive gates. Mean composite
+fell by 0.032868 versus the locked direct answers instead of improving by 0.02; only 4/8 units were
+noninferior instead of 6/8; and the worst production delta improved from -0.136091 to -0.107675 but
+remained below the -0.10 floor.
+
+The failure is concentrated in scale pooling. Crude used a pooled q90 of 5.3265 million barrels and
+improved both schemas, including +0.028416 on transformed. Auction used 23.074 percentage points
+and lost 0.062697/0.056641 versus its direct intervals. Gas pooled the Lower-48 aggregate with much
+smaller regions, producing a 71.5 Bcf half-width before the House correction guard; its explicit
+and transformed composites fell by 0.120903 and 0.060609 versus direct. This is evidence against
+event-pooled residual scale, not against interval ownership generally. Wang S1.6 actually matches
+residuals to each entity series, so that mechanism is the next separately pre-registered candidate;
+the pooled q90 and thresholds are not changed after seeing results.
+
+The candidate is rejected and production is unchanged. Report:
+`evaluation/reports/direct-point-residual-interval-screen-v1.json` (SHA-256
+`11f6e24dcb38e8cab7c954448da5964a36370a9a9da7f363297a88f23aaab18b`).
