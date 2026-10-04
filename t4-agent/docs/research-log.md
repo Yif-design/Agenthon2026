@@ -2694,3 +2694,13 @@ before any additional API call.
 
 Report: `evaluation/reports/canonical-numeric-context-ab-v1.json` (SHA-256
 `0f5cde537bc17a41082d49e5eae10ca5161bcc000f45bb674d1dae7177c151e4`).
+
+Release record for the rejected canonical-context experiment: commit
+`1dfe6f2197e448f04362d57d9c8daacd89557a95` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37203502857` passed 191 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:af4f07f5c39b5584bfb45d8a24ae0a0c5295a56f5f31a7b9abbbeb5bc9c7775d`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,531 bytes. The development submission template and readiness note
+now point to that digest. No formal competition submission was performed.
