@@ -2745,3 +2745,34 @@ Anonymous manifest and config requests returned HTTP 200; the resolved digest ma
 manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
 compressed layers total 46,358,515 bytes. The development submission template and readiness note
 now point to that digest. No formal competition submission was performed.
+
+## 2026-10-04: Locked direct points with entity-matched residual intervals — rejected
+
+This follow-up replaced event pooling with Wang S1.6's actual entity-matched residual design. Each
+row used only its own compatible pre-cutoff target-history series. Level and ratio histories used
+persistence residuals, change histories used zero-baseline residuals, and each interval half-width
+was that entity's absolute-residual q90 plus the locked House-versus-current-prior distance. The
+same eight saved direct answers were reused with zero model calls; all point, claim and roster data
+remained unchanged.
+
+Entity matching fixed the preceding safety failure. Explicit/transformed histories and per-entity
+policy hashes matched, all eight answers were valid, transformed mean composite remained +0.238365
+over production, and worst-unit delta improved from -0.107675 to -0.097554, passing the -0.10 rail.
+Crude improved by 0.019711/0.038536 versus direct and transformed crude interval coverage rose from
+0.333 to 0.667.
+
+The complete candidate still failed two pre-registered gates. Mean composite fell by 0.027393
+versus the locked direct intervals instead of rising by 0.02, and only 4/8 units were noninferior
+instead of 6/8. Auction lost 0.059317/0.053261. Gas lost 0.111431/0.053382 because full-year
+entity-specific q90 values remained large: 166 Bcf for Lower-48, 58 for Midwest, 48 for South
+Central and 46 for East. Removing cross-entity contamination therefore did not remove calendar
+regime mismatch.
+
+The candidate is rejected and production is unchanged. The result supports residual intervals as a
+possible safety fallback for crude, but not universal replacement of a useful direct interval.
+Another development-only q90 tweak would overfit these four inspected events. A future interval
+candidate needs calendar-regime evidence on independent rolling origins or a preregistered bounded
+admission rule before it is applied to the locked direct outputs.
+
+Report: `evaluation/reports/direct-point-entity-residual-interval-screen-v1.json` (SHA-256
+`cbc85304f95d6c8e44128091dd100e261b424cb80c6b42a63a5b643dea5e4bc7`).

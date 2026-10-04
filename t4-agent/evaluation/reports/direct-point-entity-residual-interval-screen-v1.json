@@ -1,0 +1,897 @@
+{
+  "candidate_mean_composite": 0.4289553292538643,
+  "candidate_minus_direct_mean": -0.02739306204249048,
+  "candidate_minus_production_mean": 0.12730123629179468,
+  "candidate_noninferior_units": 4,
+  "candidate_transformed_minus_production_mean": 0.2383645204823779,
+  "candidate_worst_production_delta": -0.09755425243278687,
+  "decision": "reject_no_production_change",
+  "direct_mean_composite": 0.4563483912963548,
+  "experiment": "direct_point_entity_residual_interval_screen_v1",
+  "gates": {
+    "all_8_candidate_answers_valid": true,
+    "candidate_mean_beats_direct_by_0_02": false,
+    "candidate_mean_beats_production_by_0_10": true,
+    "candidate_noninferior_to_direct_on_6_of_8": false,
+    "candidate_transformed_mean_beats_production_by_0_15": true,
+    "candidate_worst_production_delta_at_least_minus_0_10": true,
+    "point_claims_roster_identical": true,
+    "schema_pair_entity_history_and_residual_hash_equal": true
+  },
+  "hypothesis": "Entity-matched pre-cutoff residual intervals preserve useful direct points while avoiding cross-entity scale contamination.",
+  "limitations": [
+    "This is a development screen over previously inspected direct outputs.",
+    "Residuals belong to target-kind statistical baselines, not historical House forecasts.",
+    "Capex lacks complete target-history tables and retains locked direct intervals."
+  ],
+  "locked_report": "evaluation/reports/direct-forecast-reference-screen-v1.json",
+  "model_api_calls": 0,
+  "pair_invariance": {
+    "proxy-04-capex-intensity-20230331": {
+      "entity_policy_equal": true,
+      "history_equal": true,
+      "variants": {
+        "explicit": {
+          "entity_policy_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9"
+        },
+        "transformed": {
+          "entity_policy_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9"
+        }
+      }
+    },
+    "proxy-15-auction-indirect-bidder-share-20230802": {
+      "entity_policy_equal": true,
+      "history_equal": true,
+      "variants": {
+        "explicit": {
+          "entity_policy_sha256": "ccf3ad3314ab590a55586e121a3835785c4bea4612842935f800a8070def6db4",
+          "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd"
+        },
+        "transformed": {
+          "entity_policy_sha256": "ccf3ad3314ab590a55586e121a3835785c4bea4612842935f800a8070def6db4",
+          "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd"
+        }
+      }
+    },
+    "proxy-16-crude-inventory-change-20260923": {
+      "entity_policy_equal": true,
+      "history_equal": true,
+      "variants": {
+        "explicit": {
+          "entity_policy_sha256": "4f93459d74b43f92214799e1d301a8162366e3634d492d2e36c6a6da3e4556ba",
+          "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2"
+        },
+        "transformed": {
+          "entity_policy_sha256": "4f93459d74b43f92214799e1d301a8162366e3634d492d2e36c6a6da3e4556ba",
+          "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2"
+        }
+      }
+    },
+    "proxy-17-natural-gas-storage-change-20260924": {
+      "entity_policy_equal": true,
+      "history_equal": true,
+      "variants": {
+        "explicit": {
+          "entity_policy_sha256": "5218ffa5778f4e81c7a8f80668756166326280ce978a6034ddf59dfd4de7db8d",
+          "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402"
+        },
+        "transformed": {
+          "entity_policy_sha256": "5218ffa5778f4e81c7a8f80668756166326280ce978a6034ddf59dfd4de7db8d",
+          "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402"
+        }
+      }
+    }
+  },
+  "policy": {
+    "absolute_residual_quantile": 0.9,
+    "change_baseline": "zero",
+    "half_width": "entity absolute_residual_q90 + abs(locked_house_point - current_entity_prior)",
+    "insufficient_history": "preserve locked direct interval",
+    "level_or_metric_baseline": "one-period persistence",
+    "minimum_origins": 3,
+    "minimum_residual_observations": 8,
+    "residual_scope": "one entity series only"
+  },
+  "production_mean_composite": 0.30165409296206963,
+  "reference": {
+    "active_version": "s1.6",
+    "mechanism": "entity-matched residuals_for_entity interval ownership",
+    "repository": "https://github.com/wangzgui/agenthon-t4-baseline-2026"
+  },
+  "results": [
+    {
+      "answer_sha256": "78c6d245a7a6c88f0268a91eaf5e6056cec8aef6c58427e04ee5b06f228f45b3",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5,
+        "interval_score": 46.23594007358186,
+        "mae": 6.227290553759307,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.5623381898170172,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-explicit"
+      },
+      "candidate_minus_direct": 0.0,
+      "candidate_minus_production": 0.0,
+      "changed_interval_rows": 0,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5,
+        "interval_score": 46.23594007358186,
+        "mae": 6.227290553759307,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.5623381898170172,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-explicit"
+      },
+      "event": "proxy-04-capex-intensity-20230331",
+      "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {},
+        "entity_policy_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5,
+        "interval_score": 46.23852864863293,
+        "mae": 6.227290553759307,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.5623244111673391,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-explicit"
+      },
+      "rows": 8,
+      "unit": "proxy-04-capex-intensity-20230331-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "2362387708db3ace649790a4e3d01c31f36ccd633319d0a344590cbfd79ff4ff",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000047964505401,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5000047964505402,
+        "interval_score": 46.21212227912933,
+        "mae": 6.227171079340851,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000047964505402,
+        "raw_interval_quality": 0.562465000548204,
+        "raw_predictive_quality": 0.5000047964505402,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "candidate_minus_direct": 0.0,
+      "candidate_minus_production": 0.49117195204663167,
+      "changed_interval_rows": 0,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000047964505401,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5000047964505402,
+        "interval_score": 46.21212227912933,
+        "mae": 6.227171079340851,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000047964505402,
+        "raw_interval_quality": 0.562465000548204,
+        "raw_predictive_quality": 0.5000047964505402,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "event": "proxy-04-capex-intensity-20230331",
+      "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {},
+        "entity_policy_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.008832844403908427,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.01961792364380289,
+        "interval_score": 2968.8,
+        "mae": 1472.704595037313,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.0042106675868108,
+        "raw_interval_quality": 0.01961792364380289,
+        "raw_predictive_quality": 0.0042106675868108,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "rows": 8,
+      "unit": "proxy-04-capex-intensity-20230331-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    },
+    {
+      "answer_sha256": "dab784a5fbf525a75c012b19bb872f91ed5522dd7be7220673f8c44f8ad70cc4",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4406826982198012,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.30227564933652096,
+        "interval_score": 58.55153133333334,
+        "mae": 9.036958757174212,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000000048840643,
+        "raw_interval_quality": 0.30227564933652096,
+        "raw_predictive_quality": 0.5000000048840643,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+      },
+      "candidate_minus_direct": -0.05931730666426305,
+      "candidate_minus_production": -0.05931730359046594,
+      "changed_interval_rows": 3,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000000048840643,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.5000000048840643,
+        "interval_score": 25.366321359574865,
+        "mae": 9.036958757174212,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000000048840643,
+        "raw_interval_quality": 0.5000000290148477,
+        "raw_predictive_quality": 0.5000000048840643,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+      },
+      "event": "proxy-15-auction-indirect-bidder-share-20230802",
+      "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {
+          "TREASURY_10YEAR_20230809": {
+            "absolute_residual_q90": 16.652058000000004,
+            "current_prior": 67.659649,
+            "eligible": true,
+            "residual_observations": 11,
+            "residual_origins": 11,
+            "residual_sha256": "8e9c4f9a7e51e182be3292b3fb9d96817c16a73365d96d7999dc1619a1a1ee17"
+          },
+          "TREASURY_30YEAR_20230810": {
+            "absolute_residual_q90": 27.721534999999996,
+            "current_prior": 68.953463,
+            "eligible": true,
+            "residual_observations": 11,
+            "residual_origins": 11,
+            "residual_sha256": "5289e7f3a0843a4334de8840d0b375faf9bce62eb7b81a87f6d4494ae701c4da"
+          },
+          "TREASURY_3YEAR_20230808": {
+            "absolute_residual_q90": 19.975966,
+            "current_prior": 68.791791,
+            "eligible": true,
+            "residual_observations": 11,
+            "residual_origins": 11,
+            "residual_sha256": "b16746e226a06e5a81946874ba97b470bd00418dbf757eabda143fb5b7a61ff5"
+          }
+        },
+        "entity_policy_sha256": "ccf3ad3314ab590a55586e121a3835785c4bea4612842935f800a8070def6db4"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000000018102672,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.5000000018102672,
+        "interval_score": 25.366323763704177,
+        "mae": 9.036958868285323,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000000018102672,
+        "raw_interval_quality": 0.5000000053207421,
+        "raw_predictive_quality": 0.5000000018102672,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+      },
+      "rows": 3,
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "1303ce31a3b0e57967723d6a500ffb38b858615b2b86ae220e5d90e788ff5dc8",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.44066644172929825,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.302282457349429,
+        "interval_score": 58.54964133333334,
+        "mae": 9.037903757174211,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.49997386360638507,
+        "raw_interval_quality": 0.302282457349429,
+        "raw_predictive_quality": 0.49997386360638507,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "candidate_minus_direct": -0.05326128876387792,
+      "candidate_minus_production": 0.3751655933696735,
+      "changed_interval_rows": 3,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4939277304931762,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.47982008656235564,
+        "interval_score": 27.5,
+        "mae": 9.037903757174211,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.49997386360638507,
+        "raw_interval_quality": 0.47982008656235564,
+        "raw_predictive_quality": 0.49997386360638507,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "event": "proxy-15-auction-indirect-bidder-share-20230802",
+      "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {
+          "TREASURY_10YEAR_20230809": {
+            "absolute_residual_q90": 16.652058000000004,
+            "current_prior": 67.659649,
+            "eligible": true,
+            "residual_observations": 11,
+            "residual_origins": 11,
+            "residual_sha256": "8e9c4f9a7e51e182be3292b3fb9d96817c16a73365d96d7999dc1619a1a1ee17"
+          },
+          "TREASURY_30YEAR_20230810": {
+            "absolute_residual_q90": 27.721534999999996,
+            "current_prior": 68.953463,
+            "eligible": true,
+            "residual_observations": 11,
+            "residual_origins": 11,
+            "residual_sha256": "5289e7f3a0843a4334de8840d0b375faf9bce62eb7b81a87f6d4494ae701c4da"
+          },
+          "TREASURY_3YEAR_20230808": {
+            "absolute_residual_q90": 19.975966,
+            "current_prior": 68.791791,
+            "eligible": true,
+            "residual_observations": 11,
+            "residual_origins": 11,
+            "residual_sha256": "b16746e226a06e5a81946874ba97b470bd00418dbf757eabda143fb5b7a61ff5"
+          }
+        },
+        "entity_policy_sha256": "ccf3ad3314ab590a55586e121a3835785c4bea4612842935f800a8070def6db4"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.06550084835962477,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.06867524902656466,
+        "interval_score": 344.0,
+        "mae": 131.85645943432556,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.06414039093093625,
+        "raw_interval_quality": 0.06867524902656466,
+        "raw_predictive_quality": 0.06414039093093625,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "rows": 3,
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    },
+    {
+      "answer_sha256": "d80d0882b4bb6a8e409f9f62ccc5ae28d8da75a27b2b321840eb3156a7a4d884",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.37591481270306115,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.3604637678990177,
+        "interval_score": 10.634500000000001,
+        "mae": 1.67525,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.38253668904765126,
+        "raw_interval_quality": 0.3604637678990177,
+        "raw_predictive_quality": 0.38253668904765126,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+      },
+      "candidate_minus_direct": 0.019711497168219738,
+      "candidate_minus_production": 0.019711497168219738,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3562033155348414,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.29475877733828526,
+        "interval_score": 14.341166666666668,
+        "mae": 1.67525,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.38253668904765126,
+        "raw_interval_quality": 0.29475877733828526,
+        "raw_predictive_quality": 0.38253668904765126,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+      },
+      "event": "proxy-16-crude-inventory-change-20260923",
+      "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {
+          "EIA_CRUDE_PADD1_20260925": {
+            "absolute_residual_q90": 0.853,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "c2a55a5f939851f0699aae7b74503e5ff87ae22f22f9ed4db499d45016e38194"
+          },
+          "EIA_CRUDE_PADD2_20260925": {
+            "absolute_residual_q90": 2.498,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "f488b90a995f8edb97d21f6763234901f5b2c62c37fa9a60b66861e4adbe671e"
+          },
+          "EIA_CRUDE_PADD3_20260925": {
+            "absolute_residual_q90": 6.906,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "f79b33a8b20bcb548f09a9999e8b58d894f874739868ba871d394046baf4c004"
+          },
+          "EIA_CRUDE_PADD4_20260925": {
+            "absolute_residual_q90": 0.539,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "9b813e94249980dff0dca52303fe1b933229afb0daaf6c719852cc48673edb60"
+          },
+          "EIA_CRUDE_PADD5_20260925": {
+            "absolute_residual_q90": 1.921,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "62fc33a3cd98a4c703114d2540356d761068464a924bea965d83d753d3111b31"
+          },
+          "EIA_CRUDE_US_20260925": {
+            "absolute_residual_q90": 7.974,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "12baa10676e696e815036a70f5e61debedd3ccb99b1db79c5e0f6814febbd4e7"
+          }
+        },
+        "entity_policy_sha256": "4f93459d74b43f92214799e1d301a8162366e3634d492d2e36c6a6da3e4556ba"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3562033155348414,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.29475877733828526,
+        "interval_score": 14.341166666666668,
+        "mae": 1.67525,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.38253668904765126,
+        "raw_interval_quality": 0.29475877733828526,
+        "raw_predictive_quality": 0.38253668904765126,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+      },
+      "rows": 6,
+      "unit": "proxy-16-crude-inventory-change-20260923-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "90f380c44f1f9e21818ecb45f6fbefc472366d9ce636105d71ded4ef0cc8faf8",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3039275222011997,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.3322108991915168,
+        "interval_score": 12.048666666666668,
+        "mae": 2.5188333333333333,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.2918060749196352,
+        "raw_interval_quality": 0.3322108991915168,
+        "raw_predictive_quality": 0.2918060749196352,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "candidate_minus_direct": 0.038536401683177124,
+      "candidate_minus_production": -0.09755425243278687,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.26539112051802255,
+        "interval_coverage": 0.3333333333333333,
+        "interval_quality": 0.20375622691425965,
+        "interval_score": 23.423333333333336,
+        "mae": 2.5188333333333333,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.2918060749196352,
+        "raw_interval_quality": 0.20375622691425965,
+        "raw_predictive_quality": 0.2918060749196352,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "event": "proxy-16-crude-inventory-change-20260923",
+      "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {
+          "EIA_CRUDE_PADD1_20260925": {
+            "absolute_residual_q90": 0.853,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "c2a55a5f939851f0699aae7b74503e5ff87ae22f22f9ed4db499d45016e38194"
+          },
+          "EIA_CRUDE_PADD2_20260925": {
+            "absolute_residual_q90": 2.498,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "f488b90a995f8edb97d21f6763234901f5b2c62c37fa9a60b66861e4adbe671e"
+          },
+          "EIA_CRUDE_PADD3_20260925": {
+            "absolute_residual_q90": 6.906,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "f79b33a8b20bcb548f09a9999e8b58d894f874739868ba871d394046baf4c004"
+          },
+          "EIA_CRUDE_PADD4_20260925": {
+            "absolute_residual_q90": 0.539,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "9b813e94249980dff0dca52303fe1b933229afb0daaf6c719852cc48673edb60"
+          },
+          "EIA_CRUDE_PADD5_20260925": {
+            "absolute_residual_q90": 1.921,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "62fc33a3cd98a4c703114d2540356d761068464a924bea965d83d753d3111b31"
+          },
+          "EIA_CRUDE_US_20260925": {
+            "absolute_residual_q90": 7.974,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "12baa10676e696e815036a70f5e61debedd3ccb99b1db79c5e0f6814febbd4e7"
+          }
+        },
+        "entity_policy_sha256": "4f93459d74b43f92214799e1d301a8162366e3634d492d2e36c6a6da3e4556ba"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.40148177463398654,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.3786304577550254,
+        "interval_score": 9.836666666666668,
+        "mae": 1.4856666666666667,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.41127519615354136,
+        "raw_interval_quality": 0.3786304577550254,
+        "raw_predictive_quality": 0.41127519615354136,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "rows": 6,
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    },
+    {
+      "answer_sha256": "98af262b46671f9666288e5cb81495b50b19427777e2d2dc198c741b8db1d60e",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4678267126670045,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.2029630454131411,
+        "interval_score": 141.33333333333334,
+        "mae": 5.833333333333333,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5813397129186603,
+        "raw_interval_quality": 0.2029630454131411,
+        "raw_predictive_quality": 0.5813397129186603,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-explicit"
+      },
+      "candidate_minus_direct": -0.11143135158562034,
+      "candidate_minus_production": 0.10455761482709225,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5792580642526248,
+        "interval_coverage": 0.8333333333333334,
+        "interval_quality": 0.5744008840318754,
+        "interval_score": 26.666666666666668,
+        "mae": 5.833333333333333,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5813397129186603,
+        "raw_interval_quality": 0.5744008840318754,
+        "raw_predictive_quality": 0.5813397129186603,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-explicit"
+      },
+      "event": "proxy-17-natural-gas-storage-change-20260924",
+      "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {
+          "EIA_GAS_EAST_20260925": {
+            "absolute_residual_q90": 46.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "fb8a8c277847de5fabc27b8ff4ebbbc3953374adefc823bc481948bac33c15c3"
+          },
+          "EIA_GAS_LOWER48_20260925": {
+            "absolute_residual_q90": 166.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "0fb50e091b6386e09a1c0e8dd49def791e15417d1d53d192a2a2d641da7e4cc8"
+          },
+          "EIA_GAS_MIDWEST_20260925": {
+            "absolute_residual_q90": 58.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "48805abf2f7d3c351a006260cde4f01c6ade6504aeb54d6346d512121038020a"
+          },
+          "EIA_GAS_MOUNTAIN_20260925": {
+            "absolute_residual_q90": 6.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "c6a53dcb2b546f996be7fc4b6e1f14b53b57ad134bc9eb57bab01417c6d38104"
+          },
+          "EIA_GAS_PACIFIC_20260925": {
+            "absolute_residual_q90": 7.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "5c2603467e72b162e93281d96398e58aac5753cf75944219a56917df88f57e99"
+          },
+          "EIA_GAS_SOUTH_CENTRAL_20260925": {
+            "absolute_residual_q90": 48.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "7aa4b812d369c281bf856ce57cde403dbfd9683e6a87fa0bd4adadec2be17bc8"
+          }
+        },
+        "entity_policy_sha256": "5218ffa5778f4e81c7a8f80668756166326280ce978a6034ddf59dfd4de7db8d"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.36326909783991224,
+        "interval_coverage": 0.3333333333333333,
+        "interval_quality": 0.29342126464436796,
+        "interval_score": 86.66666666666667,
+        "mae": 12.5,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.39320388349514557,
+        "raw_interval_quality": 0.29342126464436796,
+        "raw_predictive_quality": 0.39320388349514557,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-explicit"
+      },
+      "rows": 6,
+      "unit": "proxy-17-natural-gas-storage-change-20260924-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "54937cfc6f23cb55349daae550ce5591cbbdac6beed79c6e1a26825c60cc3296",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.40261965006000966,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.1753988335333657,
+        "interval_score": 169.20000000000002,
+        "mae": 8.1,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.1753988335333657,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "candidate_minus_direct": -0.05338244817755955,
+      "candidate_minus_production": 0.18467478894599337,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4560020982375692,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.3533403274585641,
+        "interval_score": 65.86666666666666,
+        "mae": 8.1,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.3533403274585641,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "event": "proxy-17-natural-gas-storage-change-20260924",
+      "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402",
+      "outside_intervals_identical": true,
+      "policy": {
+        "entities": {
+          "EIA_GAS_EAST_20260925": {
+            "absolute_residual_q90": 46.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "fb8a8c277847de5fabc27b8ff4ebbbc3953374adefc823bc481948bac33c15c3"
+          },
+          "EIA_GAS_LOWER48_20260925": {
+            "absolute_residual_q90": 166.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "0fb50e091b6386e09a1c0e8dd49def791e15417d1d53d192a2a2d641da7e4cc8"
+          },
+          "EIA_GAS_MIDWEST_20260925": {
+            "absolute_residual_q90": 58.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "48805abf2f7d3c351a006260cde4f01c6ade6504aeb54d6346d512121038020a"
+          },
+          "EIA_GAS_MOUNTAIN_20260925": {
+            "absolute_residual_q90": 6.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "c6a53dcb2b546f996be7fc4b6e1f14b53b57ad134bc9eb57bab01417c6d38104"
+          },
+          "EIA_GAS_PACIFIC_20260925": {
+            "absolute_residual_q90": 7.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "5c2603467e72b162e93281d96398e58aac5753cf75944219a56917df88f57e99"
+          },
+          "EIA_GAS_SOUTH_CENTRAL_20260925": {
+            "absolute_residual_q90": 48.0,
+            "current_prior": 0.0,
+            "eligible": true,
+            "residual_observations": 51,
+            "residual_origins": 51,
+            "residual_sha256": "7aa4b812d369c281bf856ce57cde403dbfd9683e6a87fa0bd4adadec2be17bc8"
+          }
+        },
+        "entity_policy_sha256": "5218ffa5778f4e81c7a8f80668756166326280ce978a6034ddf59dfd4de7db8d"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.2179448611140163,
+        "interval_coverage": 0.0,
+        "interval_quality": 0.08435376505729088,
+        "interval_score": 390.66666666666674,
+        "mae": 21.333333333333332,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.27519818799547,
+        "raw_interval_quality": 0.08435376505729088,
+        "raw_predictive_quality": 0.27519818799547,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "rows": 6,
+      "unit": "proxy-17-natural-gas-storage-change-20260924-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "evaluation_only_locked_direct_outputs_no_model_calls_no_production_change"
+}
