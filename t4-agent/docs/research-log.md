@@ -1,3 +1,21 @@
+## 2026-10-04: full target-contract scalar selection — rejected
+
+The completed 40-unit catalog exposed large transformed-schema losses in capex intensity, buyback
+intensity, segment growth and Treasury auction share. One cross-family candidate combined target
+name, unit, definition, horizon and bounded prompt text, then rejected explicit absolute-scale fields
+for ratio-like targets. It did not infer scale from magnitude and deliberately retained the prior
+decision not to multiply fraction values by 100.
+
+The candidate improved proxy-04 by 0.3044 composite, both proxy-07 schemas by 0.2434 and 0.1702,
+proxy-09 transformed by 0.1537, and proxy-15 transformed by 0.0463. It still failed every aggregate
+adoption gate except minimum improvement count: transformed mean rose only 0.0260 versus the required
+0.05, explicit mean fell 0.0009, and FX-volatility explicit/transformed fell 0.2825/0.1553. Broad
+prompt semantics caused new scalar conflicts, so production remains unchanged.
+
+No model API, local LLM or local NLI ran. Script:
+`evaluation/experiments/target_contract_scalar_screen.py`. Report:
+`evaluation/reports/target-contract-scalar-screen-v1.json`.
+
 ## 2026-10-03: complete 20-question proxy catalog — accepted as evaluation infrastructure
 
 Hypothesis: twenty real-source, cutoff-safe question families with paired explicit/transformed

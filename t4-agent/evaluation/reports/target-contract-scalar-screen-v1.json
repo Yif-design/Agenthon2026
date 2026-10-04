@@ -1,0 +1,2531 @@
+{
+  "schema_version": 1,
+  "experiment": "target_contract_scalar_screen_v1",
+  "baseline_git_commit": "cc01e90ba3403c2e0c1847fe29e245dd60e9660c",
+  "hypothesis": "Full target-contract semantics plus explicit absolute-scale rejection improves generic scalar selection across transformed schemas without family-specific rules or magnitude inference.",
+  "scope": "L2/L3 generic unknown-family scalar selection on the complete 40-unit proxy catalog",
+  "candidate": "Use target name, unit, definition, horizon and bounded prompt; for ratio-like targets reject explicit absolute-scale fields; never rescale values.",
+  "by_variant": {
+    "explicit": {
+      "units": 20,
+      "baseline_mean": 0.4775300096573484,
+      "candidate_mean": 0.47666957686734496,
+      "mean_delta": -0.0008604327900034348,
+      "minimum_delta": -0.2825113685915422,
+      "improved": 2,
+      "worsened": 1
+    },
+    "transformed": {
+      "units": 20,
+      "baseline_mean": 0.39977408935089553,
+      "candidate_mean": 0.42572888253669794,
+      "mean_delta": 0.025954793185802367,
+      "minimum_delta": -0.15525990253502625,
+      "improved": 5,
+      "worsened": 2
+    }
+  },
+  "gates": {
+    "transformed_mean_improves_at_least_0_05": false,
+    "explicit_mean_noninferior": false,
+    "no_unit_worse_by_more_than_0_02": false,
+    "at_least_four_units_improve": true,
+    "all_points_finite": true
+  },
+  "rows": [
+    {
+      "unit": "proxy-01-revenue-surprise-band-20230331-explicit",
+      "question": "proxy-01-revenue-surprise-band",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.7272727272727273,
+      "candidate_composite": 0.7272727272727273,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "band_pct",
+          "reason": "contract_token_match",
+          "point": 2.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-01-revenue-surprise-band-20230331-transformed",
+      "question": "proxy-01-revenue-surprise-band",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.7272727272727273,
+      "candidate_composite": 0.7272727272727273,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        },
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "tolerance_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.02
+        }
+      ]
+    },
+    {
+      "unit": "proxy-02-gross-margin-delta-20230331-explicit",
+      "question": "proxy-02-gross-margin-delta",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.4005100950165563,
+      "candidate_composite": 0.4005100950165563,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-02-gross-margin-delta-20230331-transformed",
+      "question": "proxy-02-gross-margin-delta",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.4005100950165563,
+      "candidate_composite": 0.4005100950165563,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-03-free-cash-flow-margin-20230331-explicit",
+      "question": "proxy-03-free-cash-flow-margin",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": -23.248498713182727
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 1.3496222276383134
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 20.89878143269705
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 7.0124775241104995
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 3.8699837956343535
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 30.572225360067776
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": -9.320619785458879
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": -5.201442746350365
+        }
+      ]
+    },
+    {
+      "unit": "proxy-03-free-cash-flow-margin-20230331-transformed",
+      "question": "proxy-03-free-cash-flow-margin",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.45741305943423116,
+      "candidate_composite": 0.45741305943423116,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": -0.05201442746350365
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": -0.0932061978545888
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.3057222536006778
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.03869983795634353
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.070124775241105
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.2089878143269705
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.013496222276383134
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": -0.23248498713182728
+        }
+      ]
+    },
+    {
+      "unit": "proxy-04-capex-intensity-20230331-explicit",
+      "question": "proxy-04-capex-intensity",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 6.291106662853875
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 5.060321715817694
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 1.979291399591463
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 25.085817032637717
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 2.068439614908016
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 7.081332956791867
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 3.78228049264998
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "prior_metric_pct",
+          "reason": "contract_single_numeric_fallback",
+          "point": 2.522667655109489
+        }
+      ]
+    },
+    {
+      "unit": "proxy-04-capex-intensity-20230331-transformed",
+      "question": "proxy-04-capex-intensity",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.008832844403908427,
+      "candidate_composite": 0.3131973164267876,
+      "delta": 0.3043644720228792,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.025226676551094892
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.0378228049264998
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.07081332956791866
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.020684396149080162
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.2508581703263772
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.01979291399591463
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.05060321715817694
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "baseline_ratio_fraction",
+          "reason": "contract_token_match",
+          "point": 0.06291106662853875
+        }
+      ]
+    },
+    {
+      "unit": "proxy-05-dividend-action-20230331-explicit",
+      "question": "proxy-05-dividend-action",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 0.1
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 1.9
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 1.64
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 1.38
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 0.04
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 1.075
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 0.9
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "prior_dividend_per_share",
+          "reason": "contract_token_match",
+          "point": 2.24
+        }
+      ]
+    },
+    {
+      "unit": "proxy-05-dividend-action-20230331-transformed",
+      "question": "proxy-05-dividend-action",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 2240000.0
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 900000.0
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 1075000.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 40000.0
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 1380000.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 1640000.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 1900000.0
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "base_distribution_microunits",
+          "reason": "contract_token_match",
+          "point": 100000.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-06-share-dilution-direction-20230331-explicit",
+      "question": "proxy-06-share-dilution-direction",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 509000000.0
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 4008000000.0
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 1470000000.0
+        },
+        {
+          "entity_id": "SEC_GME_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 75900000.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 1034000000.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 909226136.0
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 4107000000.0
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 4357000000.0
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 747600000.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 2537000000.0
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 1391000000.0
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 467800000.0
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "prior_diluted_weighted_average_shares",
+          "reason": "contract_token_match",
+          "point": 2765000000.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-06-share-dilution-direction-20230331-transformed",
+      "question": "proxy-06-share-dilution-direction",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 2765000.0
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 467800.0
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 1391000.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 2537000.0
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 747600.0
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 4357000.0
+        },
+        {
+          "entity_id": "SEC_INTC_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 4107000.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 909226.136
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 1034000.0
+        },
+        {
+          "entity_id": "SEC_GME_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 75900.0
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 1470000.0
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 4008000.0
+        },
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "baseline_share_count_thousands",
+          "reason": "contract_token_match",
+          "point": 509000.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-07-buyback-intensity-rank-20230331-explicit",
+      "question": "proxy-07-buyback-intensity-rank",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.2521752075381947,
+      "candidate_composite": 0.49552967185568025,
+      "delta": 0.24335446431748553,
+      "selection_details": [
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 2.2895125553914326
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 5.931942017065899
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 5.204460966542751
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 26.59029935046597
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 24.083011583011583
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 1.191358024691358
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 0.7191100516487883
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "prior_intensity_pct",
+          "reason": "contract_token_match",
+          "point": 1.7164689781021898
+        }
+      ]
+    },
+    {
+      "unit": "proxy-07-buyback-intensity-rank-20230331-transformed",
+      "question": "proxy-07-buyback-intensity-rank",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.2538913181340993,
+      "candidate_composite": 0.424116339447532,
+      "delta": 0.1702250213134327,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.017164689781021897
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.007191100516487883
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.01191358024691358
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.24083011583011582
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.2659029935046597
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.05204460966542751
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.05931942017065899
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "baseline_fraction",
+          "reason": "contract_single_numeric_fallback",
+          "point": 0.022895125553914326
+        }
+      ]
+    },
+    {
+      "unit": "proxy-08-liquidity-stress-event-20230331-explicit",
+      "question": "proxy-08-liquidity-stress-event",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.045454545454545456,
+      "candidate_composite": 0.045454545454545456,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.26086676032915673
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.06602512697139802
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.23256817779351868
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.205505625039281
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.09359265475367756
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.2916960300681231
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.40884654282216426
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.5515751192556558
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.6988493347716649
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.2540659851301115
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.05365759505886895
+        },
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": "prior_cash_to_current_liabilities",
+          "reason": "contract_token_match",
+          "point": 0.12241790117062053
+        }
+      ]
+    },
+    {
+      "unit": "proxy-08-liquidity-stress-event-20230331-transformed",
+      "question": "proxy-08-liquidity-stress-event",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.045454545454545456,
+      "candidate_composite": 0.045454545454545456,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "SEC_WMT_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_TGT_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_PEP_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_NVDA_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_MCD_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_KO_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_IBM_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_HD_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_GM_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_F_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_CVNA_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "SEC_AMZN_2023Q1",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-09-segment-growth-rank-20230428-explicit",
+      "question": "proxy-09-segment-growth-rank",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.48625289065416755,
+      "candidate_composite": 0.48625289065416755,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "AMZN_NorthAmericaSegment",
+          "field": "latest_q1_yoy_growth_pct",
+          "reason": "contract_damped_change_match",
+          "point": 5.514557217953897
+        },
+        {
+          "entity_id": "AMZN_InternationalSegment",
+          "field": "latest_q1_yoy_growth_pct",
+          "reason": "contract_damped_change_match",
+          "point": 0.6328453701449965
+        },
+        {
+          "entity_id": "AMZN_AmazonWebServicesSegment",
+          "field": "latest_q1_yoy_growth_pct",
+          "reason": "contract_damped_change_match",
+          "point": 7.8981617048967
+        },
+        {
+          "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+          "field": "latest_q1_yoy_growth_pct",
+          "reason": "contract_damped_change_match",
+          "point": 5.468997403255427
+        },
+        {
+          "entity_id": "MSFT_IntelligentCloud",
+          "field": "latest_q1_yoy_growth_pct",
+          "reason": "contract_damped_change_match",
+          "point": 8.147679991573186
+        },
+        {
+          "entity_id": "MSFT_MorePersonalComputing",
+          "field": "latest_q1_yoy_growth_pct",
+          "reason": "contract_damped_change_match",
+          "point": -4.539221064179921
+        }
+      ]
+    },
+    {
+      "unit": "proxy-09-segment-growth-rank-20230428-transformed",
+      "question": "proxy-09-segment-growth-rank",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.24000014473266756,
+      "candidate_composite": 0.3936715949000972,
+      "delta": 0.1536714501674296,
+      "selection_details": [
+        {
+          "entity_id": "MSFT_MorePersonalComputing",
+          "field": "observed_change_fraction",
+          "reason": "contract_single_change_fallback",
+          "point": -0.04539221064179921
+        },
+        {
+          "entity_id": "MSFT_IntelligentCloud",
+          "field": "observed_change_fraction",
+          "reason": "contract_single_change_fallback",
+          "point": 0.08147679991573187
+        },
+        {
+          "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+          "field": "observed_change_fraction",
+          "reason": "contract_single_change_fallback",
+          "point": 0.054689974032554274
+        },
+        {
+          "entity_id": "AMZN_AmazonWebServicesSegment",
+          "field": "observed_change_fraction",
+          "reason": "contract_single_change_fallback",
+          "point": 0.078981617048967
+        },
+        {
+          "entity_id": "AMZN_InternationalSegment",
+          "field": "observed_change_fraction",
+          "reason": "contract_single_change_fallback",
+          "point": 0.006328453701449965
+        },
+        {
+          "entity_id": "AMZN_NorthAmericaSegment",
+          "field": "observed_change_fraction",
+          "reason": "contract_single_change_fallback",
+          "point": 0.055145572179538964
+        }
+      ]
+    },
+    {
+      "unit": "proxy-10-payroll-surprise-band-202308-explicit",
+      "question": "proxy-10-payroll-surprise-band",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "BLS_PAYEMS_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 33.66377875402582
+        },
+        {
+          "entity_id": "BLS_USCONS_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 11.742609969205692
+        },
+        {
+          "entity_id": "BLS_MANEMP_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 6.95221787153807
+        },
+        {
+          "entity_id": "BLS_USTPU_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 27.813366091383713
+        },
+        {
+          "entity_id": "BLS_USWTRADE_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 8.091095929065451
+        },
+        {
+          "entity_id": "BLS_USINFO_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 5.4594464513864
+        },
+        {
+          "entity_id": "BLS_USFIRE_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 10.828203913853857
+        },
+        {
+          "entity_id": "BLS_USPBS_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 19.75685535031659
+        },
+        {
+          "entity_id": "BLS_USEHS_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 12.202003478482084
+        },
+        {
+          "entity_id": "BLS_USLAH_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 16.529435024289917
+        },
+        {
+          "entity_id": "BLS_USGOVT_202308",
+          "field": "six_month_change_volatility_thousands",
+          "reason": "contract_token_match",
+          "point": 16.925490309654908
+        }
+      ]
+    },
+    {
+      "unit": "proxy-10-payroll-surprise-band-202308-transformed",
+      "question": "proxy-10-payroll-surprise-band",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "BLS_USGOVT_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 32666.666666666664
+        },
+        {
+          "entity_id": "BLS_USLAH_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 21333.333333333332
+        },
+        {
+          "entity_id": "BLS_USEHS_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 86333.33333333333
+        },
+        {
+          "entity_id": "BLS_USPBS_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 20000.0
+        },
+        {
+          "entity_id": "BLS_USFIRE_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 13666.666666666666
+        },
+        {
+          "entity_id": "BLS_USINFO_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": -7000.0
+        },
+        {
+          "entity_id": "BLS_USWTRADE_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 5800.000000000182
+        },
+        {
+          "entity_id": "BLS_USTPU_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 11666.666666666666
+        },
+        {
+          "entity_id": "BLS_MANEMP_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 0.0
+        },
+        {
+          "entity_id": "BLS_USCONS_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 23333.333333333332
+        },
+        {
+          "entity_id": "BLS_PAYEMS_202308",
+          "field": "benchmark_flow_persons",
+          "reason": "contract_token_match",
+          "point": 217666.66666666666
+        }
+      ]
+    },
+    {
+      "unit": "proxy-11-initial-claims-direction-20230929-explicit",
+      "question": "proxy-11-initial-claims-direction",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "CLAIMS_ICSA_20231005",
+          "field": "latest_change",
+          "reason": "contract_token_match",
+          "point": 2000.0
+        },
+        {
+          "entity_id": "CLAIMS_ICNSA_20231005",
+          "field": "latest_change",
+          "reason": "contract_token_match",
+          "point": -1996.0
+        },
+        {
+          "entity_id": "CLAIMS_CCSA_20231005",
+          "field": "latest_change",
+          "reason": "contract_token_match",
+          "point": 12000.0
+        },
+        {
+          "entity_id": "CLAIMS_CCNSA_20231005",
+          "field": "latest_change",
+          "reason": "contract_token_match",
+          "point": -53098.0
+        },
+        {
+          "entity_id": "CLAIMS_IURSA_20231005",
+          "field": "latest_change",
+          "reason": "contract_token_match",
+          "point": 0.0
+        },
+        {
+          "entity_id": "CLAIMS_IURNSA_20231005",
+          "field": "latest_change",
+          "reason": "contract_token_match",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-11-initial-claims-direction-20230929-transformed",
+      "question": "proxy-11-initial-claims-direction",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5,
+      "candidate_composite": 0.5,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "CLAIMS_IURNSA_20231005",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "CLAIMS_IURSA_20231005",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "CLAIMS_CCNSA_20231005",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "CLAIMS_CCSA_20231005",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "CLAIMS_ICNSA_20231005",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "CLAIMS_ICSA_20231005",
+          "field": null,
+          "reason": "contract_no_unambiguous_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-12-pce-component-nowcast-20230830-explicit",
+      "question": "proxy-12-pce-component-nowcast",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.45910740736743255,
+      "candidate_composite": 0.4810556558414205,
+      "delta": 0.021948248473987964,
+      "selection_details": [
+        {
+          "entity_id": "PCE_PCEPI_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_PCEPILFE_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DDURRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DSERRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DFXARG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-12-pce-component-nowcast-20230830-transformed",
+      "question": "proxy-12-pce-component-nowcast",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.4809192163080535,
+      "candidate_composite": 0.4810556558414205,
+      "delta": 0.00013643953336700543,
+      "selection_details": [
+        {
+          "entity_id": "PCE_DFXARG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DSERRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DDURRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_PCEPILFE_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "PCE_PCEPI_202307",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-13-gdp-revision-magnitude-20230829-explicit",
+      "question": "proxy-13-gdp-revision-magnitude",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.48561643835616436,
+      "candidate_composite": 0.48561643835616436,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "GDP_A191RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A006RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A007RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A008RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A011RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A822RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-13-gdp-revision-magnitude-20230829-transformed",
+      "question": "proxy-13-gdp-revision-magnitude",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.48561643835616436,
+      "candidate_composite": 0.48561643835616436,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "GDP_A822RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A011RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A008RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A007RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A006RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "GDP_A191RL1Q225SBEA_2023Q2",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-14-yield-curve-steepening-rank-20230929-explicit",
+      "question": "proxy-14-yield-curve-steepening-rank",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.9383966799426828,
+      "candidate_composite": 0.9383966799426828,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "UST_DGS2_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 9.00000000000003
+        },
+        {
+          "entity_id": "UST_DGS3_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 12.99999999999999
+        },
+        {
+          "entity_id": "UST_DGS5_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 18.49999999999996
+        },
+        {
+          "entity_id": "UST_DGS7_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 20.999999999999996
+        },
+        {
+          "entity_id": "UST_DGS10_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 25.0
+        },
+        {
+          "entity_id": "UST_DGS20_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 26.500000000000014
+        },
+        {
+          "entity_id": "UST_DGS30_20230929",
+          "field": "recent_20d_change_bp",
+          "reason": "contract_damped_change_match",
+          "point": 26.500000000000014
+        }
+      ]
+    },
+    {
+      "unit": "proxy-14-yield-curve-steepening-rank-20230929-transformed",
+      "question": "proxy-14-yield-curve-steepening-rank",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.7907038409193407,
+      "candidate_composite": 0.7907038409193407,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "UST_DGS30_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0026500000000000013
+        },
+        {
+          "entity_id": "UST_DGS20_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0026500000000000013
+        },
+        {
+          "entity_id": "UST_DGS10_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0025
+        },
+        {
+          "entity_id": "UST_DGS7_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0020999999999999994
+        },
+        {
+          "entity_id": "UST_DGS5_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0018499999999999962
+        },
+        {
+          "entity_id": "UST_DGS3_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0012999999999999989
+        },
+        {
+          "entity_id": "UST_DGS2_20230929",
+          "field": "recent_move_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.000900000000000003
+        }
+      ]
+    },
+    {
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+      "question": "proxy-15-auction-indirect-bidder-share",
+      "variant": "explicit",
+      "eligible_generic_baseline": false,
+      "baseline_composite": 0.5000000018102672,
+      "candidate_composite": 0.5000000018102672,
+      "delta": 0.0,
+      "selection_details": []
+    },
+    {
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed",
+      "question": "proxy-15-auction-indirect-bidder-share",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.06550084835962477,
+      "candidate_composite": 0.1117642596554885,
+      "delta": 0.04626341129586373,
+      "selection_details": [
+        {
+          "entity_id": "TREASURY_30YEAR_20230810",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "TREASURY_10YEAR_20230809",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "TREASURY_3YEAR_20230808",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-16-crude-inventory-change-20260923-explicit",
+      "question": "proxy-16-crude-inventory-change",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.3562033155348414,
+      "candidate_composite": 0.3562033155348414,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "EIA_CRUDE_US_20260925",
+          "field": "last_week_change_mmbbl",
+          "reason": "contract_damped_change_match",
+          "point": 1.4845
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD1_20260925",
+          "field": "last_week_change_mmbbl",
+          "reason": "contract_damped_change_match",
+          "point": 0.088
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD2_20260925",
+          "field": "last_week_change_mmbbl",
+          "reason": "contract_damped_change_match",
+          "point": 2.2035
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD3_20260925",
+          "field": "last_week_change_mmbbl",
+          "reason": "contract_damped_change_match",
+          "point": -1.0465
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD4_20260925",
+          "field": "last_week_change_mmbbl",
+          "reason": "contract_damped_change_match",
+          "point": -0.0455
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD5_20260925",
+          "field": "last_week_change_mmbbl",
+          "reason": "contract_damped_change_match",
+          "point": 0.2845
+        }
+      ]
+    },
+    {
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed",
+      "question": "proxy-16-crude-inventory-change",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.40148177463398654,
+      "candidate_composite": 0.40148177463398654,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "EIA_CRUDE_PADD5_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD4_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD3_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD2_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_CRUDE_PADD1_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_CRUDE_US_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-17-natural-gas-storage-change-20260924-explicit",
+      "question": "proxy-17-natural-gas-storage-change",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.36326909783991224,
+      "candidate_composite": 0.36326909783991224,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "EIA_GAS_LOWER48_20260925",
+          "field": "last_week_change_bcf",
+          "reason": "contract_damped_change_match",
+          "point": 26.5
+        },
+        {
+          "entity_id": "EIA_GAS_EAST_20260925",
+          "field": "last_week_change_bcf",
+          "reason": "contract_damped_change_match",
+          "point": 10.0
+        },
+        {
+          "entity_id": "EIA_GAS_MIDWEST_20260925",
+          "field": "last_week_change_bcf",
+          "reason": "contract_damped_change_match",
+          "point": 12.5
+        },
+        {
+          "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+          "field": "last_week_change_bcf",
+          "reason": "contract_damped_change_match",
+          "point": 1.5
+        },
+        {
+          "entity_id": "EIA_GAS_PACIFIC_20260925",
+          "field": "last_week_change_bcf",
+          "reason": "contract_damped_change_match",
+          "point": 1.5
+        },
+        {
+          "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+          "field": "last_week_change_bcf",
+          "reason": "contract_damped_change_match",
+          "point": 1.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-17-natural-gas-storage-change-20260924-transformed",
+      "question": "proxy-17-natural-gas-storage-change",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.2179448611140163,
+      "candidate_composite": 0.2179448611140163,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_GAS_PACIFIC_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_GAS_MIDWEST_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_GAS_EAST_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "EIA_GAS_LOWER48_20260925",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-18-cot-positioning-rank-20230926-explicit",
+      "question": "proxy-18-cot-positioning-rank",
+      "variant": "explicit",
+      "eligible_generic_baseline": false,
+      "baseline_composite": 0.5560815366103347,
+      "candidate_composite": 0.5560815366103347,
+      "delta": 0.0,
+      "selection_details": []
+    },
+    {
+      "unit": "proxy-18-cot-positioning-rank-20230926-transformed",
+      "question": "proxy-18-cot-positioning-rank",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.5949536566951847,
+      "candidate_composite": 0.5949536566951847,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "WTI_NYMEX",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0329058239
+        },
+        {
+          "entity_id": "UST_2Y",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.00538080605
+        },
+        {
+          "entity_id": "UST_10Y",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.00762189435
+        },
+        {
+          "entity_id": "SILVER_CMX",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.0260309794
+        },
+        {
+          "entity_id": "NATGAS_NYMEX",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0095288012
+        },
+        {
+          "entity_id": "JPY_CME",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.02248708505
+        },
+        {
+          "entity_id": "GOLD_CMX",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.00842016595
+        },
+        {
+          "entity_id": "EURO_FX",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.03226724875
+        },
+        {
+          "entity_id": "ES_SP500",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0116479212
+        },
+        {
+          "entity_id": "CORN_CBT",
+          "field": "recent_four_report_shift_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.0340463587
+        }
+      ]
+    },
+    {
+      "unit": "proxy-19-fx-volatility-rank-20230929-explicit",
+      "question": "proxy-19-fx-volatility-rank",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.49637335194885956,
+      "candidate_composite": 0.21386198335731738,
+      "delta": -0.2825113685915422,
+      "selection_details": [
+        {
+          "entity_id": "FX_DEXUSEU_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXJPUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXUSUK_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXCAUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXCHUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXKOUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXMXUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXBZUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXINUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXSFUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-19-fx-volatility-rank-20230929-transformed",
+      "question": "proxy-19-fx-volatility-rank",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.3691218858923436,
+      "candidate_composite": 0.21386198335731738,
+      "delta": -0.15525990253502625,
+      "selection_details": [
+        {
+          "entity_id": "FX_DEXSFUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXINUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXBZUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXMXUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXKOUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXCHUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXCAUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXUSUK_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXJPUS_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        },
+        {
+          "entity_id": "FX_DEXUSEU_20230929",
+          "field": null,
+          "reason": "contract_change_without_baseline",
+          "point": 0.0
+        }
+      ]
+    },
+    {
+      "unit": "proxy-20-cross-asset-return-quintile-20230929-explicit",
+      "question": "proxy-20-cross-asset-return-quintile",
+      "variant": "explicit",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.4838868978002818,
+      "candidate_composite": 0.4838868978002818,
+      "delta": 0.0,
+      "selection_details": [
+        {
+          "entity_id": "XASSET_DEXUSEU_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": -1.176307777470248
+        },
+        {
+          "entity_id": "XASSET_DEXJPUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 1.2870675453047764
+        },
+        {
+          "entity_id": "XASSET_DEXUSUK_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": -1.7881108391884393
+        },
+        {
+          "entity_id": "XASSET_DEXCAUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": -0.01477213974445113
+        },
+        {
+          "entity_id": "XASSET_DEXCHUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 0.26039513929073665
+        },
+        {
+          "entity_id": "XASSET_DEXKOUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 0.9614875645591714
+        },
+        {
+          "entity_id": "XASSET_DEXMXUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 1.556187429654643
+        },
+        {
+          "entity_id": "XASSET_DEXBZUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 0.7065525910307402
+        },
+        {
+          "entity_id": "XASSET_DEXINUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 0.18120318917612677
+        },
+        {
+          "entity_id": "XASSET_DEXSFUS_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": -0.06162032359925962
+        },
+        {
+          "entity_id": "XASSET_DGS2_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 1.855670103092788
+        },
+        {
+          "entity_id": "XASSET_DGS3_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 2.8634361233480177
+        },
+        {
+          "entity_id": "XASSET_DGS5_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 4.373522458628831
+        },
+        {
+          "entity_id": "XASSET_DGS7_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 5.011933174224348
+        },
+        {
+          "entity_id": "XASSET_DGS10_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 6.112469437652813
+        },
+        {
+          "entity_id": "XASSET_DGS20_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 6.0364464692482915
+        },
+        {
+          "entity_id": "XASSET_DGS30_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 6.309523809523809
+        },
+        {
+          "entity_id": "XASSET_DCOILWTICO_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 4.320766008378218
+        },
+        {
+          "entity_id": "XASSET_DCOILBRENTEU_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 4.908924275403825
+        },
+        {
+          "entity_id": "XASSET_DHHNGSP_20230929",
+          "field": "trailing_20d_return_pct",
+          "reason": "contract_damped_change_match",
+          "point": 2.34375
+        }
+      ]
+    },
+    {
+      "unit": "proxy-20-cross-asset-return-quintile-20230929-transformed",
+      "question": "proxy-20-cross-asset-return-quintile",
+      "variant": "transformed",
+      "eligible_generic_baseline": true,
+      "baseline_composite": 0.4558645302904604,
+      "candidate_composite": 0.4555595022085618,
+      "delta": -0.0003050280818986395,
+      "selection_details": [
+        {
+          "entity_id": "XASSET_DHHNGSP_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0234375
+        },
+        {
+          "entity_id": "XASSET_DCOILBRENTEU_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.04908924275403825
+        },
+        {
+          "entity_id": "XASSET_DCOILWTICO_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.04320766008378218
+        },
+        {
+          "entity_id": "XASSET_DGS30_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0630952380952381
+        },
+        {
+          "entity_id": "XASSET_DGS20_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.06036446469248292
+        },
+        {
+          "entity_id": "XASSET_DGS10_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.06112469437652813
+        },
+        {
+          "entity_id": "XASSET_DGS7_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.05011933174224348
+        },
+        {
+          "entity_id": "XASSET_DGS5_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.04373522458628831
+        },
+        {
+          "entity_id": "XASSET_DGS3_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.028634361233480177
+        },
+        {
+          "entity_id": "XASSET_DGS2_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.01855670103092788
+        },
+        {
+          "entity_id": "XASSET_DEXSFUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.0006162032359925962
+        },
+        {
+          "entity_id": "XASSET_DEXINUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0018120318917612677
+        },
+        {
+          "entity_id": "XASSET_DEXBZUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.007065525910307402
+        },
+        {
+          "entity_id": "XASSET_DEXMXUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.01556187429654643
+        },
+        {
+          "entity_id": "XASSET_DEXKOUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.009614875645591714
+        },
+        {
+          "entity_id": "XASSET_DEXCHUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.0026039513929073665
+        },
+        {
+          "entity_id": "XASSET_DEXCAUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.0001477213974445113
+        },
+        {
+          "entity_id": "XASSET_DEXUSUK_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.017881108391884393
+        },
+        {
+          "entity_id": "XASSET_DEXJPUS_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": 0.012870675453047764
+        },
+        {
+          "entity_id": "XASSET_DEXUSEU_20230929",
+          "field": "lagged_window_return_fraction",
+          "reason": "contract_damped_change_match",
+          "point": -0.01176307777470248
+        }
+      ]
+    }
+  ],
+  "decision_rule": "Advance only when every gate passes; production and public-output gates are separate.",
+  "decision": "reject",
+  "model_api_calls": 0,
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "limitations": [
+    "One historical event per proxy family.",
+    "Fraction values remain unscaled by design.",
+    "This screen does not test citations or model-assisted signals."
+  ]
+}
