@@ -2648,3 +2648,13 @@ independent confirmation after any development pass.
 
 Report: `evaluation/reports/quantity-unit-canonicalization-audit-v1.json` (SHA-256
 `e992c31277ab644ae09681cecca90dcea5ad7c87063235e76fa54006954d757f`).
+
+Release record for the quantity/unit canonicalization evaluation infrastructure: commit
+`64ae35fc5189746588b02030a7042a31763f2025` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37202585482` passed 187 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:618defdbc46d93d60cd67ec88d3c7f4ab4fb176c2bf74f1e19da06ce984ae459`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,487 bytes. The development submission template now points to that
+digest. No formal competition submission was performed.
