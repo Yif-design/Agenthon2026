@@ -2564,3 +2564,37 @@ Anonymous manifest and config requests returned HTTP 200; the resolved digest ma
 manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
 compressed layers total 46,358,502 bytes. The development submission template now points to that
 digest. No formal competition submission was performed.
+
+## 2026-10-04: Wang-style conservative draft review screen — rejected
+
+The next evaluation-only round isolated Wang S1.6's second-pass review mechanism. It reused the 46
+locked direct candidates embedded in the preceding report; the first forecast calls were not
+repeated. For each of the same eight development units, Gemini 2.5 Flash-Lite independently saw the
+full target contract, production baseline, direct draft and entity-scoped cutoff-safe evidence.
+It could select baseline or draft, or return a revised forecast. Every action required an exact
+evidence quote. The request omitted task IDs, reference answers, scores, paired variants, known
+outcomes and the identity of the preceding failure.
+
+Eight review calls used 49,540 prompt and 5,438 completion tokens. One capex-transformed call
+received an HTTP 503 and fell back to baseline under the pre-registered one-call-per-unit rule; it
+was not retried after seeing scores. All final answers remained locally valid. The candidate passed
+the schema-gap gate but failed all three predictive gates: mean composite delta was 0.093298 versus
+the required 0.10, transformed mean delta was 0.132598 versus 0.15, and worst-unit delta remained
+-0.136091 versus the -0.10 guardrail.
+
+The decisive failure did not depend on the transient 503. For all six crude-transformed rows the
+reviewer chose `revised`, but returned exactly the same erroneous values as the direct draft. It
+therefore relabelled rather than corrected the scale-sensitive proposal. The corresponding explicit
+and transformed units share identical corpus documents; only entity field names and units differ.
+For example, transformed fields express a one-period crude flow in thousand barrels while the
+target and corpus table use million barrels. This points to quantity/unit canonicalization before
+forecasting, not another unconstrained prompt review.
+
+The hypothesis is rejected and no production change is made. A future candidate should follow the
+lower-level Wang S1.6 semantics/facts approach: deterministically declare target kind and unit,
+convert compatible entity quantities once, and keep corpus observations as checked values with
+their original units and periods. It must be tested across several families and must not encode a
+crude-specific multiplier or use paired variants at runtime.
+
+Report: `evaluation/reports/conservative-review-reference-screen-v1.json` (SHA-256
+`aaec7033f9e625d28c6ebe376418805d02b7fac67695bb34eab41eb04128816d`).
