@@ -2608,3 +2608,43 @@ Anonymous manifest and config requests returned HTTP 200; the resolved digest ma
 manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
 compressed layers total 46,358,501 bytes. The development submission template now points to that
 digest. No formal competition submission was performed.
+
+## 2026-10-04: Wang-inspired quantity/unit canonicalization audit — representation gate passed
+
+The two preceding model screens showed that a valid exact quote and a second model review do not
+reliably prevent scale errors. The transformed crude rows expose `one_period_flow_kb`, while the
+target and corpus use million barrels; the failed draft and review both treated compatible inputs
+inconsistently. This round therefore isolated the lower-level S1.6 semantics and checked-numerics
+mechanism without selecting or scoring any forecast.
+
+The evaluation-only canonicalizer sees one task at a time. It derives a canonical target unit from
+structured target metadata, recognizes only explicit source units in field names or table headers,
+applies a fixed auditable conversion once, and assigns a generic semantic role such as
+`recent_change`, `recent_level`, `seasonal_reference` or `baseline_metric`. Unknown units, label
+targets and incompatible quantities abstain. It never infers units from magnitude, never selects a
+point forecast, and cannot access the paired schema at runtime. The offline audit alone compares
+the two independently produced representations.
+
+All 20 proxy event pairs and every roster row ran. Every numeric entity field was accounted for
+exactly once as emitted or abstained; row and field permutations were invariant; all conversion
+round trips and one-time conversion checks passed; and every emitted entity or corpus quantity has
+source field, original value/unit, canonical value/unit, semantic role and conversion factor.
+Eighty latest dated table facts additionally carry exact document spans, and every span reproduced
+its recorded numeric value from the original corpus.
+
+Eleven independent events produced schema-invariant entity quantities: gross-margin delta, FCF
+margin, capex intensity, buyback intensity, segment growth, yield-curve movement, crude inventory,
+gas storage, COT positioning, FX volatility and cross-asset return. In the three pre-registered
+families, all capex 8/8, crude 6/6 and gas 6/6 entities matched without conflicts. Crude and gas now
+match `recent_change`, `recent_level` and `seasonal_reference`, rather than passing only on secondary
+roles. Across all 20 pairs, no conflict was forced into a match; extra incomparable quantities in
+PCE, GDP, yield, COT and FX remain explicitly ambiguous, and classification/no-unit scalars abstain.
+
+The representation hypothesis passes and the auditor is accepted as evaluation infrastructure.
+This is not evidence of predictive improvement and does not change production. The next experiment
+may expose these canonical facts to the same small model while holding evidence, prompt structure,
+model, call count and admission fixed, but it must pre-register predictive gates and use an
+independent confirmation after any development pass.
+
+Report: `evaluation/reports/quantity-unit-canonicalization-audit-v1.json` (SHA-256
+`e992c31277ab644ae09681cecca90dcea5ad7c87063235e76fa54006954d757f`).
