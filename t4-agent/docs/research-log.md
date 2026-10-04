@@ -2554,3 +2554,13 @@ at runtime. That must be a new pre-registered experiment; the failed guardrail i
 
 Report: `evaluation/reports/direct-forecast-reference-screen-v1.json` (SHA-256
 `1f6aa39d00d5b185577f3f2e7ad6505061792983ea6bd662f8998b6b0e00d2bd`).
+
+Release record for the checked-direct-forecast evaluation infrastructure: commit
+`bb1441163b9b85f077cfa5bde78f04813cce7987` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37173849113` passed 176 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:01551c940ba830366f3196a05aeeb43987562ce47beef12cef81a7f4bbe13e2b`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,502 bytes. The development submission template now points to that
+digest. No formal competition submission was performed.
