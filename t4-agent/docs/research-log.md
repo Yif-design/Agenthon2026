@@ -2598,3 +2598,13 @@ crude-specific multiplier or use paired variants at runtime.
 
 Report: `evaluation/reports/conservative-review-reference-screen-v1.json` (SHA-256
 `aaec7033f9e625d28c6ebe376418805d02b7fac67695bb34eab41eb04128816d`).
+
+Release record for the conservative-review evaluation infrastructure: commit
+`80caa425b7dd59456d32d20d1963816c7e48831d` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37174379468` passed 181 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:9a6d89da3bffab8305d7b704cce250588d0624c560b1a7a9af98459aca626fef`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,501 bytes. The development submission template now points to that
+digest. No formal competition submission was performed.
