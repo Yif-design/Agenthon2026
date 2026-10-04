@@ -2776,3 +2776,13 @@ admission rule before it is applied to the locked direct outputs.
 
 Report: `evaluation/reports/direct-point-entity-residual-interval-screen-v1.json` (SHA-256
 `cbc85304f95d6c8e44128091dd100e261b424cb80c6b42a63a5b643dea5e4bc7`).
+
+Release record for the rejected entity-residual experiment: commit
+`5a7a94c253ebbb82fce9d6d26824f81c7f657cb6` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37205807206` passed 200 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:c2390c68c52f4aa295650b804a8397f593af0b69d27e8ae52814f068ccf61339`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,509 bytes. The development submission template and readiness note
+now point to that digest. No formal competition submission was performed.
