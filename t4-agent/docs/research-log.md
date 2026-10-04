@@ -2510,3 +2510,12 @@ also records per-origin error, scorer-like interval quality, coverage and leave-
 diagnostics. Its raw mean interval scores are not compared across scales without normalization.
 
 Report: `evaluation/reports/rolling-origin-reference-screen-v1.json`.
+
+Release record for the rolling-origin evaluation infrastructure: commit
+`014926987282198370726c0c563edfcc33d49b7b` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37172251752` passed 173 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed `analyze --help`. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:3b7852d802348d976b6efddf064dd54baf3ce5f1ca3e9bbf9c82b04d75593f1f`.
+Anonymous manifest and config requests returned HTTP 200; the OCI manifest resolved to that exact
+digest, and its config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The development
+submission template now points to this image. No formal competition submission was performed.
