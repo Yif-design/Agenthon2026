@@ -43,10 +43,11 @@ ABSOLUTE_SCALE = {
 }
 
 
-def target_contract(task: dict[str, Any]) -> str:
+def target_contract(task: dict[str, Any], *, include_prompt: bool) -> str:
     target = task["target"]
     parts = [str(target.get(key, "")) for key in ("name", "unit", "definition", "horizon")]
-    parts.append(str(task.get("prompt", ""))[:1200])
+    if include_prompt:
+        parts.append(str(task.get("prompt", ""))[:1200])
     return " ".join(parts)
 
 
@@ -104,13 +105,15 @@ def generic_units(catalog: dict[str, Any]) -> set[str]:
     return units
 
 
-def candidate_answer(unit: Path, baseline_path: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def candidate_answer(
+    unit: Path, baseline_path: Path, *, include_prompt: bool
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     task = json.loads((unit / "task.json").read_text())
     answer = json.loads(baseline_path.read_text())
     entities = {row["entity_id"]: row for row in task["entities"]}
     details = []
     points = {}
-    contract = target_contract(task)
+    contract = target_contract(task, include_prompt=include_prompt)
     for prediction in answer["entity_predictions"]:
         entity_id = prediction["entity_id"]
         point, field, reason = select_contract_point(
@@ -136,6 +139,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--run-dir", type=Path, default=PROJECT / "evaluation/runs/target-contract-scalar-screen-v1")
+    parser.add_argument("--contract-mode", choices=("full", "structured"), default="full")
     args = parser.parse_args()
     catalog = json.loads((PROJECT / "proxy-benchmark/question_catalog.json").read_text())
     eligible = generic_units(catalog)
@@ -145,7 +149,9 @@ def main() -> None:
         baseline_score = json.loads((baseline_dir / "score.json").read_text())
         variant = unit.name.rsplit("-", 1)[-1]
         if unit.name in eligible:
-            answer, details = candidate_answer(unit, baseline_dir / "answer.json")
+            answer, details = candidate_answer(
+                unit, baseline_dir / "answer.json", include_prompt=args.contract_mode == "full"
+            )
             output = args.run_dir / unit.name / "answer.json"
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(json.dumps(answer, indent=2) + "\n")
@@ -181,11 +187,24 @@ def main() -> None:
         "all_points_finite": all(math.isfinite(detail["point"]) for row in rows for detail in row["selection_details"]),
     }
     report = {
-        "schema_version": 1, "experiment": "target_contract_scalar_screen_v1",
+        "schema_version": 1,
+        "experiment": (
+            "target_contract_scalar_screen_v1"
+            if args.contract_mode == "full"
+            else "structured_target_scalar_screen_v1"
+        ),
         "baseline_git_commit": "cc01e90ba3403c2e0c1847fe29e245dd60e9660c",
-        "hypothesis": "Full target-contract semantics plus explicit absolute-scale rejection improves generic scalar selection across transformed schemas without family-specific rules or magnitude inference.",
+        "hypothesis": (
+            "Full target-contract semantics plus explicit absolute-scale rejection improves generic scalar selection across transformed schemas without family-specific rules or magnitude inference."
+            if args.contract_mode == "full"
+            else "Structured target metadata without free-text prompt terms improves generic scalar selection while avoiding prompt-induced semantic conflicts."
+        ),
         "scope": "L2/L3 generic unknown-family scalar selection on the complete 40-unit proxy catalog",
-        "candidate": "Use target name, unit, definition, horizon and bounded prompt; for ratio-like targets reject explicit absolute-scale fields; never rescale values.",
+        "candidate": (
+            "Use target name, unit, definition, horizon and bounded prompt; for ratio-like targets reject explicit absolute-scale fields; never rescale values."
+            if args.contract_mode == "full"
+            else "Use only target name, unit, definition and horizon; reject explicit absolute-scale fields for ratio-like targets; never rescale values."
+        ),
         "by_variant": by_variant, "gates": gates, "rows": rows,
         "decision_rule": "Advance only when every gate passes; production and public-output gates are separate.",
         "decision": "pass_to_production_gates" if all(gates.values()) else "reject",

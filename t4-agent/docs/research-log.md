@@ -1,3 +1,12 @@
+## 2026-10-04: structured target scalar selection — rejected
+
+A narrower follow-up removed free-text prompt terms from the failed full-contract selector and used
+only target name, unit, definition and horizon. It preserved the ratio/growth improvements, removed
+the FX-volatility regressions, improved explicit mean by 0.0122 and had no material per-unit loss.
+Transformed mean improved 0.0337, below the preregistered 0.05 requirement. The threshold was not
+lowered after observing the result, so production remains unchanged. No model API, local LLM or
+local NLI ran. Report: `evaluation/reports/structured-target-scalar-screen-v1.json`.
+
 ## 2026-10-04: full target-contract scalar selection — rejected
 
 The completed 40-unit catalog exposed large transformed-schema losses in capex intensity, buyback
