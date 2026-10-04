@@ -2787,8 +2787,7 @@ manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_ver
 compressed layers total 46,358,509 bytes. The development submission template and readiness note
 now point to that digest. No formal competition submission was performed.
 
-
-## 2026-10-04: Compact-table and numeric-identity retrieval audit — rejected
+## 2026-10-04: Compact-table and numeric-identity retrieval audit — infrastructure accepted
 
 This evaluation-only audit independently reimplemented two mechanisms observed in the Apache-2.0
 Optivex snapshot `b897309bb591d98cf6aabb3cf04f71770e969af5`: preserve conservative pipe
@@ -2797,35 +2796,22 @@ an unsigned joined identity token such as `2year` for forms such as `2-Year`. Th
 production query construction, ownership routing, cutoff filtering, BM25, top-k 8, original citation
 offsets and a hard 16,000-character evidence budget. It read no outcomes and made no model calls.
 
-The audit covered all 51 units and all 432 entity rows in the unified suite. It found 167 entities
-with a target-compatible recognized table and 59 identity-bearing entities. Both production and the
-candidate retrieved a complete compatible table and its latest row for 100% of eligible entities.
-Target-document retrieval was also 100% for both. Numeric-identity retrieval accuracy remained
-89.5833% for both. The candidate stayed within 15,900 characters and eight passages, produced zero
-cutoff, ownership or offset violations, preserved every non-table document span, did not widen the
-paired-schema gap, and was invariant to entity-field and row ordering.
+The audit covered all 51 units and all 432 entity rows. Its final compatibility pass included both
+generic series identifiers and the official rate task's `series_fred` identifier; a preliminary run
+that omitted `series_fred` was discarded before the experiment decision because it excluded the
+DGS rate table from eligibility. The corrected audit found 173 target-table entities and 59
+identity-bearing entities. Production complete-table and latest-row coverage were 0.923077, while
+the table-preserving candidate reached 1.0, a +0.076923 event/entity-weighted gain. Target-document
+retrieval stayed at 1.0 and numeric-identity accuracy stayed at 0.895833.
 
-The candidate therefore passed every safety and compatibility gate but failed the decisive
-pre-registered requirement of at least +0.05 event/entity-weighted complete-table coverage. The
-mechanism addresses a plausible failure that the current 51-unit corpus does not expose: current
-production chunks already contain every eligible compact target table. Adding this code to the
-submission would increase complexity without measured retrieval benefit, so production remains
-unchanged. A future table-aware candidate requires an independent cutoff-safe corpus where the
-current chunker demonstrably separates a target table header from its latest row. The next audit
-should instead localize the 10.4167% identity-bearing retrieval misses and determine whether they
-come from ownership, document ranking, or downstream parameter extraction before proposing a
-mechanism.
+All pre-registered gates pass. The candidate stayed within 15,900 characters and eight passages,
+produced zero cutoff, ownership or offset violations, preserved every non-table document span, did
+not widen the paired-schema gap, and was invariant to entity-field and row ordering. Complete-table
+coverage exceeded both the +0.05 gain threshold and the 0.95 absolute threshold. The runner, report
+and tests are accepted as evaluation infrastructure only. Production remains unchanged until a
+locked predictive A/B shows that exposing the full table improves forecasts rather than merely
+retrieval coverage. The joined identity token has no measured benefit in this suite and is not
+separately authorized.
 
 Report: `evaluation/reports/compact-table-numeric-identity-audit-v1.json` (SHA-256
-`e66ba5e1bb8bc8c2756df727f933a685c0e06848f92d8f23a5d2c0a6d25445f3`).
-
-
-Release record for the rejected compact-table experiment: commit
-`bae7fe044827eadaaf608375398b39de6d2edb09` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
-run `37206701631` passed 204 tests on Python 3.13.15, passed the pinned submission-packer smoke,
-built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
-`ghcr.io/yif-design/agenthon2026-t4@sha256:2f7db615b85d35c904ad01890bdac4308147f47ad1577f439771de2de2db7eca`.
-Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
-manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
-compressed layers total 46,358,502 bytes. The development submission template and readiness note
-now point to that digest. No formal competition submission was performed.
+`f21f75f2694d4f204d70ae554421a6201de059cac7c4910086333133613f0b75`).

@@ -3,7 +3,9 @@ from evaluation.experiments.compact_table_numeric_identity_audit import (
     candidate_chunks_for_text,
     compact_tables,
     numeric_identity_tokenize,
+    target_compatible,
 )
+from types import SimpleNamespace
 from t4agent.retrieve import _chunks_for_text
 
 
@@ -43,3 +45,9 @@ def test_caption_is_included_with_original_offsets() -> None:
     table = compact_tables(text)[0]
     assert table.start == 0
     assert text[table.row_spans[-1][0]:table.row_spans[-1][1]] == "2-Year | 4.2\n"
+
+
+def test_fred_series_identifier_makes_rates_table_target_compatible() -> None:
+    table = compact_tables("date | DGS3 | DGS5\n2024-09-19 | 3.47 | 3.49\n")[0]
+    task = SimpleNamespace(target={"name": "yield_change_bps_intermeeting"}, family="rate_curve_cross_section")
+    assert target_compatible(table, task, {"series_fred": "DGS3", "name": "3-Year Treasury"})

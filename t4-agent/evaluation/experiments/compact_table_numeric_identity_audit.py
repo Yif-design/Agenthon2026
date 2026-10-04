@@ -234,7 +234,7 @@ def target_compatible(table: CompactTable, task: Any, entity: dict[str, Any]) ->
     target_text = " ".join(
         str(value) for value in (
             task.target.get("name", ""), task.target.get("unit", ""), task.family,
-            entity.get("series_id", ""), entity.get("series_name", ""), entity.get("tenor", ""),
+            entity.get("series_id", ""), entity.get("series_fred", ""), entity.get("series_name", ""), entity.get("tenor", ""),
             entity.get("name", ""), entity.get("units", ""), entity.get("unit", ""),
         )
     )
