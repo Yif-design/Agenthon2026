@@ -1,0 +1,1834 @@
+{
+  "baseline_git_commit": "788e018f347ebf330b39c48cd29da3075e23945c",
+  "candidate_mean_composite": 0.4117386477080689,
+  "candidate_minus_control_mean": -0.014933403996295724,
+  "candidate_minus_production_mean": 0.2382985655801849,
+  "candidate_noninferior_units": 3,
+  "candidate_worst_production_delta": -0.136090654115964,
+  "control_mean_composite": 0.4266720517043646,
+  "decision": "reject_no_production_change",
+  "experiment": "canonical_numeric_context_ab_v1",
+  "gates": {
+    "all_8_answers_locally_valid": true,
+    "all_8_api_calls_succeeded": true,
+    "candidate_mean_beats_control_by_0_05": false,
+    "candidate_mean_beats_production_by_0_15": true,
+    "candidate_noninferior_to_control_on_3_of_4": true,
+    "candidate_worst_production_delta_at_least_minus_0_10": false
+  },
+  "hypothesis": "Replacing raw numeric fields with once-converted canonical quantities and explicit abstentions improves small-model forecasts on transformed schemas while preventing severe scale regressions.",
+  "limitations": [
+    "These four transformed development units were used to design the representation mechanism.",
+    "Gemini Flash-Lite is an architecture proxy, not the official House model.",
+    "The local composite excludes the official contradiction penalty and Final reasoning bonus."
+  ],
+  "max_output_tokens_per_call": 4000,
+  "model": "gemini-2.5-flash-lite",
+  "production_mean_composite": 0.173440082127884,
+  "provider": "Google Gemini Developer API",
+  "reference": {
+    "active_version": "s1.6",
+    "mechanisms": [
+      "canonical quantity contract",
+      "checked numerical facts"
+    ],
+    "repository": "https://github.com/wangzgui/agenthon-t4-baseline-2026"
+  },
+  "request_pair_audit_passed": true,
+  "request_pair_audits": [
+    {
+      "accepted_canonical_report_exact": true,
+      "candidate_abstentions": 24,
+      "candidate_chars": 9794,
+      "candidate_numeric_facts": 8,
+      "candidate_request_sha256": "09fe5427c6d09218e550ae79a62cbca7108e26f851fae5de889303a62e881a59",
+      "candidate_rows": 8,
+      "control_chars": 14176,
+      "control_numeric_facts": 32,
+      "control_request_sha256": "4d8d8fc74aeb43946b6841a3196713f20e1d40859e87f5e264e1aaf287ac00b3",
+      "control_rows": 8,
+      "equal_outside_numeric_context": true,
+      "evidence_equal": true,
+      "forbidden_identifier_leaks": [],
+      "forbidden_request_paths": [],
+      "unit": "proxy-04-capex-intensity-20230331-transformed"
+    },
+    {
+      "accepted_canonical_report_exact": true,
+      "candidate_abstentions": 9,
+      "candidate_chars": 6901,
+      "candidate_numeric_facts": 3,
+      "candidate_request_sha256": "4e3a58ba4258f542a9a4e958c113849eec9089c6d349559eb21e450ffb84d6f9",
+      "candidate_rows": 3,
+      "control_chars": 7329,
+      "control_numeric_facts": 9,
+      "control_request_sha256": "ea1f37283d328d26795a2a39f241b5a5e615a3ecd7c8a6f57dbb3cca8897924a",
+      "control_rows": 3,
+      "equal_outside_numeric_context": true,
+      "evidence_equal": true,
+      "forbidden_identifier_leaks": [],
+      "forbidden_request_paths": [],
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+    },
+    {
+      "accepted_canonical_report_exact": true,
+      "candidate_abstentions": 0,
+      "candidate_chars": 24221,
+      "candidate_numeric_facts": 30,
+      "candidate_request_sha256": "4e3fad45afaecc25bc272f3fd0c022732699b41686b9d21b56bc5ca48630f363",
+      "candidate_rows": 6,
+      "control_chars": 19707,
+      "control_numeric_facts": 18,
+      "control_request_sha256": "e807ed896f3ac54afd1c9794a870906f91e8f9d632121552ae736a5e803b01fa",
+      "control_rows": 6,
+      "equal_outside_numeric_context": true,
+      "evidence_equal": true,
+      "forbidden_identifier_leaks": [],
+      "forbidden_request_paths": [],
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+    },
+    {
+      "accepted_canonical_report_exact": true,
+      "candidate_abstentions": 0,
+      "candidate_chars": 21629,
+      "candidate_numeric_facts": 30,
+      "candidate_request_sha256": "054d1d9cf17aed3bb29b4f5f007940b958791b5fbf15c9e6fb0f6ba79c2f1780",
+      "candidate_rows": 6,
+      "control_chars": 17294,
+      "control_numeric_facts": 18,
+      "control_request_sha256": "fbd86a99529074bf82dea0d38e46a2826cf8bcff3202cf0ee7f9c5b05619ddcf",
+      "control_rows": 6,
+      "equal_outside_numeric_context": true,
+      "evidence_equal": true,
+      "forbidden_identifier_leaks": [],
+      "forbidden_request_paths": [],
+      "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+    }
+  ],
+  "results": [
+    {
+      "baseline": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.008832844403908427,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.01961792364380289,
+        "interval_score": 2968.8,
+        "mae": 1472.704595037313,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.0042106675868108,
+        "raw_interval_quality": 0.01961792364380289,
+        "raw_predictive_quality": 0.0042106675868108,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "candidate": {
+        "admission": {
+          "admitted": 8
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 140288000000; operating cash flow scaled currency units -3758000000; capital expenditure scaled currency units 3539000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_WMT_2023Q1_transformed",
+                  "span_end": 249,
+                  "span_start": 88
+                }
+              ],
+              "entity_id": "SEC_WMT_2023Q1",
+              "interval": {
+                "hi": 5.04,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 2.52
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 25170000000; operating cash flow scaled currency units -1394000000; capital expenditure scaled currency units 952000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_TGT_2023Q1_transformed",
+                  "span_end": 253,
+                  "span_start": 94
+                }
+              ],
+              "entity_id": "SEC_TGT_2023Q1",
+              "interval": {
+                "hi": 7.56,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 3.78
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 5665600000; operating cash flow scaled currency units 2133300000; capital expenditure scaled currency units 401200000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_MCD_2023Q1_transformed",
+                  "span_end": 255,
+                  "span_start": 98
+                }
+              ],
+              "entity_id": "SEC_MCD_2023Q1",
+              "interval": {
+                "hi": 14.16,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 7.08
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 10491000000; operating cash flow scaled currency units 623000000; capital expenditure scaled currency units 217000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_KO_2023Q1_transformed",
+                  "span_end": 244,
+                  "span_start": 87
+                }
+              ],
+              "entity_id": "SEC_KO_2023Q1",
+              "interval": {
+                "hi": 4.14,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 2.07
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 18353000000; operating cash flow scaled currency units 5891000000; capital expenditure scaled currency units 4604000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_INTC_2023Q1_transformed",
+                  "span_end": 246,
+                  "span_start": 87
+                }
+              ],
+              "entity_id": "SEC_INTC_2023Q1",
+              "interval": {
+                "hi": 50.18,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 25.09
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 14197000000; operating cash flow scaled currency units 3248000000; capital expenditure scaled currency units 281000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_IBM_2023Q1_transformed",
+                  "span_end": 270,
+                  "span_start": 112
+                }
+              ],
+              "entity_id": "SEC_IBM_2023Q1",
+              "interval": {
+                "hi": 3.96,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 1.98
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 32824000000; operating cash flow scaled currency units 2104000000; capital expenditure scaled currency units 1661000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_GM_2023Q1_transformed",
+                  "span_end": 256,
+                  "span_start": 97
+                }
+              ],
+              "entity_id": "SEC_GM_2023Q1",
+              "interval": {
+                "hi": 10.12,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 5.06
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 3497000000; operating cash flow scaled currency units -593000000; capital expenditure scaled currency units 220000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_CVNA_2023Q1_transformed",
+                  "span_end": 245,
+                  "span_start": 88
+                }
+              ],
+              "entity_id": "SEC_CVNA_2023Q1",
+              "interval": {
+                "hi": 12.58,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 6.29
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-04-capex-intensity-20230331-transformed"
+        },
+        "answer_sha256": "2362387708db3ace649790a4e3d01c31f36ccd633319d0a344590cbfd79ff4ff",
+        "arm": "candidate",
+        "call_order": 2,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "SEC_WMT_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 140288000000; operating cash flow scaled currency units -3758000000; capital expenditure scaled currency units 3539000000.",
+              "interval": {
+                "hi": 5.04,
+                "lo": 0.0
+              },
+              "point_forecast": 2.52
+            },
+            {
+              "entity_id": "SEC_TGT_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 25170000000; operating cash flow scaled currency units -1394000000; capital expenditure scaled currency units 952000000.",
+              "interval": {
+                "hi": 7.56,
+                "lo": 0.0
+              },
+              "point_forecast": 3.78
+            },
+            {
+              "entity_id": "SEC_MCD_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 5665600000; operating cash flow scaled currency units 2133300000; capital expenditure scaled currency units 401200000.",
+              "interval": {
+                "hi": 14.16,
+                "lo": 0.0
+              },
+              "point_forecast": 7.08
+            },
+            {
+              "entity_id": "SEC_KO_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 10491000000; operating cash flow scaled currency units 623000000; capital expenditure scaled currency units 217000000.",
+              "interval": {
+                "hi": 4.14,
+                "lo": 0.0
+              },
+              "point_forecast": 2.07
+            },
+            {
+              "entity_id": "SEC_INTC_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 18353000000; operating cash flow scaled currency units 5891000000; capital expenditure scaled currency units 4604000000.",
+              "interval": {
+                "hi": 50.18,
+                "lo": 0.0
+              },
+              "point_forecast": 25.09
+            },
+            {
+              "entity_id": "SEC_IBM_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 14197000000; operating cash flow scaled currency units 3248000000; capital expenditure scaled currency units 281000000.",
+              "interval": {
+                "hi": 3.96,
+                "lo": 0.0
+              },
+              "point_forecast": 1.98
+            },
+            {
+              "entity_id": "SEC_GM_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 32824000000; operating cash flow scaled currency units 2104000000; capital expenditure scaled currency units 1661000000.",
+              "interval": {
+                "hi": 10.12,
+                "lo": 0.0
+              },
+              "point_forecast": 5.06
+            },
+            {
+              "entity_id": "SEC_CVNA_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 3497000000; operating cash flow scaled currency units -593000000; capital expenditure scaled currency units 220000000.",
+              "interval": {
+                "hi": 12.58,
+                "lo": 0.0
+              },
+              "point_forecast": 6.29
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.5000047964505401,
+          "interval_coverage": 0.875,
+          "interval_quality": 0.5000047964505402,
+          "interval_score": 46.21212227912933,
+          "mae": 6.227171079340851,
+          "naive_interval_score": 59.40713637910427,
+          "naive_mae": 6.227290553759307,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.5000047964505402,
+          "raw_interval_quality": 0.562465000548204,
+          "raw_predictive_quality": 0.5000047964505402,
+          "target_type": "regression",
+          "unit": "proxy-04-capex-intensity-20230331-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 1142,
+          "new_errors": [],
+          "prompt_tokens": 3439
+        },
+        "validation_errors": []
+      },
+      "candidate_minus_control": 0.0,
+      "candidate_minus_production": 0.49117195204663167,
+      "control": {
+        "admission": {
+          "admitted": 8
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 140288000000; operating cash flow scaled currency units -3758000000; capital expenditure scaled currency units 3539000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_WMT_2023Q1_transformed",
+                  "span_end": 249,
+                  "span_start": 88
+                }
+              ],
+              "entity_id": "SEC_WMT_2023Q1",
+              "interval": {
+                "hi": 5.05,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 2.52
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 25170000000; operating cash flow scaled currency units -1394000000; capital expenditure scaled currency units 952000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_TGT_2023Q1_transformed",
+                  "span_end": 253,
+                  "span_start": 94
+                }
+              ],
+              "entity_id": "SEC_TGT_2023Q1",
+              "interval": {
+                "hi": 7.56,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 3.78
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 5665600000; operating cash flow scaled currency units 2133300000; capital expenditure scaled currency units 401200000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_MCD_2023Q1_transformed",
+                  "span_end": 255,
+                  "span_start": 98
+                }
+              ],
+              "entity_id": "SEC_MCD_2023Q1",
+              "interval": {
+                "hi": 14.16,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 7.08
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 10491000000; operating cash flow scaled currency units 623000000; capital expenditure scaled currency units 217000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_KO_2023Q1_transformed",
+                  "span_end": 244,
+                  "span_start": 87
+                }
+              ],
+              "entity_id": "SEC_KO_2023Q1",
+              "interval": {
+                "hi": 4.14,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 2.07
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 18353000000; operating cash flow scaled currency units 5891000000; capital expenditure scaled currency units 4604000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_INTC_2023Q1_transformed",
+                  "span_end": 246,
+                  "span_start": 87
+                }
+              ],
+              "entity_id": "SEC_INTC_2023Q1",
+              "interval": {
+                "hi": 50.18,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 25.09
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 14197000000; operating cash flow scaled currency units 3248000000; capital expenditure scaled currency units 281000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_IBM_2023Q1_transformed",
+                  "span_end": 270,
+                  "span_start": 112
+                }
+              ],
+              "entity_id": "SEC_IBM_2023Q1",
+              "interval": {
+                "hi": 3.96,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 1.98
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 32824000000; operating cash flow scaled currency units 2104000000; capital expenditure scaled currency units 1661000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_GM_2023Q1_transformed",
+                  "span_end": 256,
+                  "span_start": 97
+                }
+              ],
+              "entity_id": "SEC_GM_2023Q1",
+              "interval": {
+                "hi": 10.12,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 5.06
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Prior Q1 revenue scaled currency units 3497000000; operating cash flow scaled currency units -593000000; capital expenditure scaled currency units 220000000.",
+                  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_CVNA_2023Q1_transformed",
+                  "span_end": 245,
+                  "span_start": 88
+                }
+              ],
+              "entity_id": "SEC_CVNA_2023Q1",
+              "interval": {
+                "hi": 12.58,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 6.29
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-04-capex-intensity-20230331-transformed"
+        },
+        "answer_sha256": "5be5a93fa19041a47468938b9db65f60ea5128200c395c4b04a1e64b3d315e7f",
+        "arm": "control",
+        "call_order": 1,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "SEC_WMT_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 140288000000; operating cash flow scaled currency units -3758000000; capital expenditure scaled currency units 3539000000.",
+              "interval": {
+                "hi": 5.05,
+                "lo": 0.0
+              },
+              "point_forecast": 2.52
+            },
+            {
+              "entity_id": "SEC_TGT_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 25170000000; operating cash flow scaled currency units -1394000000; capital expenditure scaled currency units 952000000.",
+              "interval": {
+                "hi": 7.56,
+                "lo": 0.0
+              },
+              "point_forecast": 3.78
+            },
+            {
+              "entity_id": "SEC_MCD_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 5665600000; operating cash flow scaled currency units 2133300000; capital expenditure scaled currency units 401200000.",
+              "interval": {
+                "hi": 14.16,
+                "lo": 0.0
+              },
+              "point_forecast": 7.08
+            },
+            {
+              "entity_id": "SEC_KO_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 10491000000; operating cash flow scaled currency units 623000000; capital expenditure scaled currency units 217000000.",
+              "interval": {
+                "hi": 4.14,
+                "lo": 0.0
+              },
+              "point_forecast": 2.07
+            },
+            {
+              "entity_id": "SEC_INTC_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 18353000000; operating cash flow scaled currency units 5891000000; capital expenditure scaled currency units 4604000000.",
+              "interval": {
+                "hi": 50.18,
+                "lo": 0.0
+              },
+              "point_forecast": 25.09
+            },
+            {
+              "entity_id": "SEC_IBM_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 14197000000; operating cash flow scaled currency units 3248000000; capital expenditure scaled currency units 281000000.",
+              "interval": {
+                "hi": 3.96,
+                "lo": 0.0
+              },
+              "point_forecast": 1.98
+            },
+            {
+              "entity_id": "SEC_GM_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 32824000000; operating cash flow scaled currency units 2104000000; capital expenditure scaled currency units 1661000000.",
+              "interval": {
+                "hi": 10.12,
+                "lo": 0.0
+              },
+              "point_forecast": 5.06
+            },
+            {
+              "entity_id": "SEC_CVNA_2023Q1",
+              "evidence_id": "E0",
+              "evidence_quote": "Prior Q1 revenue scaled currency units 3497000000; operating cash flow scaled currency units -593000000; capital expenditure scaled currency units 220000000.",
+              "interval": {
+                "hi": 12.58,
+                "lo": 0.0
+              },
+              "point_forecast": 6.29
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.5000047964505401,
+          "interval_coverage": 0.875,
+          "interval_quality": 0.5000047964505402,
+          "interval_score": 46.21337227912933,
+          "mae": 6.227171079340851,
+          "naive_interval_score": 59.40713637910427,
+          "naive_mae": 6.227290553759307,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.5000047964505402,
+          "raw_interval_quality": 0.5624583438746128,
+          "raw_predictive_quality": 0.5000047964505402,
+          "target_type": "regression",
+          "unit": "proxy-04-capex-intensity-20230331-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 1142,
+          "new_errors": [],
+          "prompt_tokens": 4829
+        },
+        "validation_errors": []
+      },
+      "rows": 8,
+      "unit": "proxy-04-capex-intensity-20230331-transformed"
+    },
+    {
+      "baseline": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.06550084835962477,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.06867524902656466,
+        "interval_score": 344.0,
+        "mae": 131.85645943432556,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.06414039093093625,
+        "raw_interval_quality": 0.06867524902656466,
+        "raw_predictive_quality": 0.06414039093093625,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "candidate": {
+        "admission": {
+          "admitted": 3
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "The average over the six most recent auctions is 63.521542 percent of total accepted.",
+                  "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+                  "span_end": 902,
+                  "span_start": 817
+                }
+              ],
+              "entity_id": "TREASURY_30YEAR_20230810",
+              "interval": {
+                "hi": 100.0,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 63.52
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The average over the six most recent auctions is 60.185107 percent of total accepted.",
+                  "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+                  "span_end": 902,
+                  "span_start": 817
+                }
+              ],
+              "entity_id": "TREASURY_10YEAR_20230809",
+              "interval": {
+                "hi": 100.0,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 60.19
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The average over the six most recent auctions is 58.220516 percent of total accepted.",
+                  "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+                  "span_end": 853,
+                  "span_start": 768
+                }
+              ],
+              "entity_id": "TREASURY_3YEAR_20230808",
+              "interval": {
+                "hi": 100.0,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 58.22
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+        },
+        "answer_sha256": "271c6308cb3f19ae45f0d725dee5cfd69019f4a0c208041ae1206585666ae0da",
+        "arm": "candidate",
+        "call_order": 3,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "TREASURY_30YEAR_20230810",
+              "evidence_id": "E0",
+              "evidence_quote": "The average over the six most recent auctions is 63.521542 percent of total accepted.",
+              "interval": {
+                "hi": 100.0,
+                "lo": 0.0
+              },
+              "point_forecast": 63.52
+            },
+            {
+              "entity_id": "TREASURY_10YEAR_20230809",
+              "evidence_id": "E0",
+              "evidence_quote": "The average over the six most recent auctions is 60.185107 percent of total accepted.",
+              "interval": {
+                "hi": 100.0,
+                "lo": 0.0
+              },
+              "point_forecast": 60.19
+            },
+            {
+              "entity_id": "TREASURY_3YEAR_20230808",
+              "evidence_id": "E0",
+              "evidence_quote": "The average over the six most recent auctions is 58.220516 percent of total accepted.",
+              "interval": {
+                "hi": 100.0,
+                "lo": 0.0
+              },
+              "point_forecast": 58.22
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.41068299199816993,
+          "interval_coverage": 1.0,
+          "interval_quality": 0.20233762491233478,
+          "interval_score": 100.0,
+          "mae": 9.037903757174211,
+          "naive_interval_score": 25.366324303574846,
+          "naive_mae": 9.03695893372256,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.49997386360638507,
+          "raw_interval_quality": 0.20233762491233478,
+          "raw_predictive_quality": 0.49997386360638507,
+          "target_type": "regression",
+          "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 365,
+          "new_errors": [],
+          "prompt_tokens": 3351
+        },
+        "validation_errors": []
+      },
+      "candidate_minus_control": -0.08112537303359502,
+      "candidate_minus_production": 0.34518214363854516,
+      "control": {
+        "admission": {
+          "admitted": 3
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "The average over the six most recent auctions is 63.521542 percent of total accepted.",
+                  "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+                  "span_end": 902,
+                  "span_start": 817
+                }
+              ],
+              "entity_id": "TREASURY_30YEAR_20230810",
+              "interval": {
+                "hi": 72.08,
+                "level": 0.9,
+                "lo": 43.26
+              },
+              "point_forecast": 63.52
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The average over the six most recent auctions is 60.185107 percent of total accepted.",
+                  "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+                  "span_end": 902,
+                  "span_start": 817
+                }
+              ],
+              "entity_id": "TREASURY_10YEAR_20230809",
+              "interval": {
+                "hi": 67.66,
+                "level": 0.9,
+                "lo": 42.43
+              },
+              "point_forecast": 60.19
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The average over the six most recent auctions is 58.220516 percent of total accepted.",
+                  "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+                  "span_end": 853,
+                  "span_start": 768
+                }
+              ],
+              "entity_id": "TREASURY_3YEAR_20230808",
+              "interval": {
+                "hi": 69.19,
+                "level": 0.9,
+                "lo": 38.37
+              },
+              "point_forecast": 58.22
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+        },
+        "answer_sha256": "0bfcb5b5aaee82b7ce8b025564da5c57c5d1b75d9ec8787801a10caa4e2c0f50",
+        "arm": "control",
+        "call_order": 4,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "TREASURY_30YEAR_20230810",
+              "evidence_id": "E0",
+              "evidence_quote": "The average over the six most recent auctions is 63.521542 percent of total accepted.",
+              "interval": {
+                "hi": 72.08,
+                "lo": 43.26
+              },
+              "point_forecast": 63.52
+            },
+            {
+              "entity_id": "TREASURY_10YEAR_20230809",
+              "evidence_id": "E0",
+              "evidence_quote": "The average over the six most recent auctions is 60.185107 percent of total accepted.",
+              "interval": {
+                "hi": 67.66,
+                "lo": 42.43
+              },
+              "point_forecast": 60.19
+            },
+            {
+              "entity_id": "TREASURY_3YEAR_20230808",
+              "evidence_id": "E0",
+              "evidence_quote": "The average over the six most recent auctions is 58.220516 percent of total accepted.",
+              "interval": {
+                "hi": 69.19,
+                "lo": 38.37
+              },
+              "point_forecast": 58.22
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.49180836503176495,
+          "interval_coverage": 1.0,
+          "interval_quality": 0.47275553502431805,
+          "interval_score": 28.290000000000003,
+          "mae": 9.037903757174211,
+          "naive_interval_score": 25.366324303574846,
+          "naive_mae": 9.03695893372256,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.49997386360638507,
+          "raw_interval_quality": 0.47275553502431805,
+          "raw_predictive_quality": 0.49997386360638507,
+          "target_type": "regression",
+          "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 371,
+          "new_errors": [],
+          "prompt_tokens": 3416
+        },
+        "validation_errors": []
+      },
+      "rows": 3,
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+    },
+    {
+      "baseline": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.40148177463398654,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.3786304577550254,
+        "interval_score": 9.836666666666668,
+        "mae": 1.4856666666666667,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.41127519615354136,
+        "raw_interval_quality": 0.3786304577550254,
+        "raw_predictive_quality": 0.41127519615354136,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "candidate": {
+        "admission": {
+          "admitted": 6
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "2026-09-18 | 46.558 | 0.569",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+                  "span_end": 1623,
+                  "span_start": 1596
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD5_20260925",
+              "interval": {
+                "hi": 2.569,
+                "level": 0.9,
+                "lo": -1.431
+              },
+              "point_forecast": 0.569
+            },
+            {
+              "claims": [
+                {
+                  "claim": "2026-09-18 | 23.319 | -0.091",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+                  "span_end": 1624,
+                  "span_start": 1596
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD4_20260925",
+              "interval": {
+                "hi": 1.909,
+                "level": 0.9,
+                "lo": -2.091
+              },
+              "point_forecast": -0.091
+            },
+            {
+              "claims": [
+                {
+                  "claim": "2026-09-18 | 244.080 | -2.093",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+                  "span_end": 1683,
+                  "span_start": 1654
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD3_20260925",
+              "interval": {
+                "hi": -0.093,
+                "level": 0.9,
+                "lo": -4.093
+              },
+              "point_forecast": -2.093
+            },
+            {
+              "claims": [
+                {
+                  "claim": "2026-09-18 | 104.070 | 4.407",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+                  "span_end": 1663,
+                  "span_start": 1635
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD2_20260925",
+              "interval": {
+                "hi": 6.407,
+                "level": 0.9,
+                "lo": 2.407
+              },
+              "point_forecast": 4.407
+            },
+            {
+              "claims": [
+                {
+                  "claim": "2026-09-18 | 8.372 | 0.176",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+                  "span_end": 1573,
+                  "span_start": 1547
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD1_20260925",
+              "interval": {
+                "hi": 2.176,
+                "level": 0.9,
+                "lo": -1.824
+              },
+              "point_forecast": 0.176
+            },
+            {
+              "claims": [
+                {
+                  "claim": "2026-09-18 | 426.398 | 2.969",
+                  "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+                  "span_end": 1672,
+                  "span_start": 1644
+                }
+              ],
+              "entity_id": "EIA_CRUDE_US_20260925",
+              "interval": {
+                "hi": 4.969,
+                "level": 0.9,
+                "lo": 0.969
+              },
+              "point_forecast": 2.969
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-16-crude-inventory-change-20260923-transformed"
+        },
+        "answer_sha256": "34d0b18c655288990401c3f0ea7651650fda68bd2d50ece7831ce7563e54a991",
+        "arm": "candidate",
+        "call_order": 6,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "EIA_CRUDE_PADD5_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "2026-09-18 | 46.558 | 0.569",
+              "interval": {
+                "hi": 2.569,
+                "lo": -1.431
+              },
+              "point_forecast": 0.569
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD4_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "2026-09-18 | 23.319 | -0.091",
+              "interval": {
+                "hi": 1.909,
+                "lo": -2.091
+              },
+              "point_forecast": -0.091
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD3_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "2026-09-18 | 244.080 | -2.093",
+              "interval": {
+                "hi": -0.093,
+                "lo": -4.093
+              },
+              "point_forecast": -2.093
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD2_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "2026-09-18 | 104.070 | 4.407",
+              "interval": {
+                "hi": 6.407,
+                "lo": 2.407
+              },
+              "point_forecast": 4.407
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD1_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "2026-09-18 | 8.372 | 0.176",
+              "interval": {
+                "hi": 2.176,
+                "lo": -1.824
+              },
+              "point_forecast": 0.176
+            },
+            {
+              "entity_id": "EIA_CRUDE_US_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "2026-09-18 | 426.398 | 2.969",
+              "interval": {
+                "hi": 4.969,
+                "lo": 0.969
+              },
+              "point_forecast": 2.969
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.26539112051802255,
+          "interval_coverage": 0.3333333333333333,
+          "interval_quality": 0.20375622691425965,
+          "interval_score": 23.423333333333336,
+          "mae": 2.5188333333333333,
+          "naive_interval_score": 5.993955850052324,
+          "naive_mae": 1.0378666666666667,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.2918060749196352,
+          "raw_interval_quality": 0.20375622691425965,
+          "raw_predictive_quality": 0.2918060749196352,
+          "target_type": "regression",
+          "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 756,
+          "new_errors": [],
+          "prompt_tokens": 13897
+        },
+        "validation_errors": []
+      },
+      "candidate_minus_control": 0.0,
+      "candidate_minus_production": -0.136090654115964,
+      "control": {
+        "admission": {
+          "admitted": 6
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 1.380, -1.769, 0.002, -0.921, 0.330 million barrels.",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+                  "span_end": 1720,
+                  "span_start": 1624
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD5_20260925",
+              "interval": {
+                "hi": 2.569,
+                "level": 0.9,
+                "lo": -1.431
+              },
+              "point_forecast": 0.569
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were -0.438, -0.551, 0.040, 0.628, 0.082 million barrels.",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+                  "span_end": 1721,
+                  "span_start": 1625
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD4_20260925",
+              "interval": {
+                "hi": 1.909,
+                "level": 0.9,
+                "lo": -2.091
+              },
+              "point_forecast": -0.091
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 0.073, -0.934, -1.644, 2.466, 4.031 million barrels.",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+                  "span_end": 1780,
+                  "span_start": 1684
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD3_20260925",
+              "interval": {
+                "hi": -0.093,
+                "level": 0.9,
+                "lo": -4.093
+              },
+              "point_forecast": -2.093
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 2.317, 1.999, -1.017, 1.082, -1.656 million barrels.",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+                  "span_end": 1760,
+                  "span_start": 1664
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD2_20260925",
+              "interval": {
+                "hi": 6.407,
+                "level": 0.9,
+                "lo": 2.407
+              },
+              "point_forecast": 4.407
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were -0.986, -0.101, 0.395, 0.635, -0.995 million barrels.",
+                  "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+                  "span_end": 1671,
+                  "span_start": 1574
+                }
+              ],
+              "entity_id": "EIA_CRUDE_PADD1_20260925",
+              "interval": {
+                "hi": 2.176,
+                "level": 0.9,
+                "lo": -1.824
+              },
+              "point_forecast": 0.176
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 2.346, -1.356, -2.224, 3.890, 1.792 million barrels.",
+                  "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+                  "span_end": 1769,
+                  "span_start": 1673
+                }
+              ],
+              "entity_id": "EIA_CRUDE_US_20260925",
+              "interval": {
+                "hi": 4.969,
+                "level": 0.9,
+                "lo": 0.969
+              },
+              "point_forecast": 2.969
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-16-crude-inventory-change-20260923-transformed"
+        },
+        "answer_sha256": "5b6c71b773cb08e9cd243bf22fa5a5d7e0f30dcf75628971bb890eaf7f657aa4",
+        "arm": "control",
+        "call_order": 5,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "EIA_CRUDE_PADD5_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 1.380, -1.769, 0.002, -0.921, 0.330 million barrels.",
+              "interval": {
+                "hi": 2.569,
+                "lo": -1.431
+              },
+              "point_forecast": 0.569
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD4_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were -0.438, -0.551, 0.040, 0.628, 0.082 million barrels.",
+              "interval": {
+                "hi": 1.909,
+                "lo": -2.091
+              },
+              "point_forecast": -0.091
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD3_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 0.073, -0.934, -1.644, 2.466, 4.031 million barrels.",
+              "interval": {
+                "hi": -0.093,
+                "lo": -4.093
+              },
+              "point_forecast": -2.093
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD2_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 2.317, 1.999, -1.017, 1.082, -1.656 million barrels.",
+              "interval": {
+                "hi": 6.407,
+                "lo": 2.407
+              },
+              "point_forecast": 4.407
+            },
+            {
+              "entity_id": "EIA_CRUDE_PADD1_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were -0.986, -0.101, 0.395, 0.635, -0.995 million barrels.",
+              "interval": {
+                "hi": 2.176,
+                "lo": -1.824
+              },
+              "point_forecast": 0.176
+            },
+            {
+              "entity_id": "EIA_CRUDE_US_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 2.346, -1.356, -2.224, 3.890, 1.792 million barrels.",
+              "interval": {
+                "hi": 4.969,
+                "lo": 0.969
+              },
+              "point_forecast": 2.969
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.26539112051802255,
+          "interval_coverage": 0.3333333333333333,
+          "interval_quality": 0.20375622691425965,
+          "interval_score": 23.423333333333336,
+          "mae": 2.5188333333333333,
+          "naive_interval_score": 5.993955850052324,
+          "naive_mae": 1.0378666666666667,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.2918060749196352,
+          "raw_interval_quality": 0.20375622691425965,
+          "raw_predictive_quality": 0.2918060749196352,
+          "target_type": "regression",
+          "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 886,
+          "new_errors": [],
+          "prompt_tokens": 12189
+        },
+        "validation_errors": []
+      },
+      "rows": 6,
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+    },
+    {
+      "baseline": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.2179448611140163,
+        "interval_coverage": 0.0,
+        "interval_quality": 0.08435376505729088,
+        "interval_score": 390.66666666666674,
+        "mae": 21.333333333333332,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.27519818799547,
+        "raw_interval_quality": 0.08435376505729088,
+        "raw_predictive_quality": 0.27519818799547,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "candidate": {
+        "admission": {
+          "admitted": 6
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 41, 45, 19, 0, -4 Bcf.\nTheir mean was 20.200 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+                  "span_end": 1395,
+                  "span_start": 1302
+                }
+              ],
+              "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+              "interval": {
+                "hi": 40.2,
+                "level": 0.9,
+                "lo": 0.2
+              },
+              "point_forecast": 20.2
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 5, 4, 7, 5, 2 Bcf.\nTheir mean was 4.600 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+                  "span_end": 1314,
+                  "span_start": 1226
+                }
+              ],
+              "entity_id": "EIA_GAS_PACIFIC_20260925",
+              "interval": {
+                "hi": 24.6,
+                "level": 0.9,
+                "lo": -15.4
+              },
+              "point_forecast": 4.6
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 5, 8, 5, 4, 3 Bcf.\nTheir mean was 5.000 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+                  "span_end": 1313,
+                  "span_start": 1225
+                }
+              ],
+              "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+              "interval": {
+                "hi": 25.0,
+                "level": 0.9,
+                "lo": -15.0
+              },
+              "point_forecast": 5.0
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 37, 37, 29, 19, 27 Bcf.\nTheir mean was 29.800 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+                  "span_end": 1372,
+                  "span_start": 1278
+                }
+              ],
+              "entity_id": "EIA_GAS_MIDWEST_20260925",
+              "interval": {
+                "hi": 49.8,
+                "level": 0.9,
+                "lo": 9.8
+              },
+              "point_forecast": 29.8
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 31, 35, 26, 28, 25 Bcf.\nTheir mean was 29.000 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+                  "span_end": 1356,
+                  "span_start": 1262
+                }
+              ],
+              "entity_id": "EIA_GAS_EAST_20260925",
+              "interval": {
+                "hi": 49.0,
+                "level": 0.9,
+                "lo": 9.0
+              },
+              "point_forecast": 29.0
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 118, 129, 86, 55, 52 Bcf.\nTheir mean was 88.000 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+                  "span_end": 1439,
+                  "span_start": 1343
+                }
+              ],
+              "entity_id": "EIA_GAS_LOWER48_20260925",
+              "interval": {
+                "hi": 108.0,
+                "level": 0.9,
+                "lo": 68.0
+              },
+              "point_forecast": 88.0
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-17-natural-gas-storage-change-20260924-transformed"
+        },
+        "answer_sha256": "fc269c77d80c505c026c52c76eee11b2b9af5e8d75494c0b67aba8feb4dbb5b6",
+        "arm": "candidate",
+        "call_order": 7,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 41, 45, 19, 0, -4 Bcf.\nTheir mean was 20.200 Bcf.",
+              "interval": {
+                "hi": 40.2,
+                "lo": 0.2
+              },
+              "point_forecast": 20.2
+            },
+            {
+              "entity_id": "EIA_GAS_PACIFIC_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 5, 4, 7, 5, 2 Bcf.\nTheir mean was 4.600 Bcf.",
+              "interval": {
+                "hi": 24.6,
+                "lo": -15.4
+              },
+              "point_forecast": 4.6
+            },
+            {
+              "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 5, 8, 5, 4, 3 Bcf.\nTheir mean was 5.000 Bcf.",
+              "interval": {
+                "hi": 25.0,
+                "lo": -15.0
+              },
+              "point_forecast": 5.0
+            },
+            {
+              "entity_id": "EIA_GAS_MIDWEST_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 37, 37, 29, 19, 27 Bcf.\nTheir mean was 29.800 Bcf.",
+              "interval": {
+                "hi": 49.8,
+                "lo": 9.8
+              },
+              "point_forecast": 29.8
+            },
+            {
+              "entity_id": "EIA_GAS_EAST_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 31, 35, 26, 28, 25 Bcf.\nTheir mean was 29.000 Bcf.",
+              "interval": {
+                "hi": 49.0,
+                "lo": 9.0
+              },
+              "point_forecast": 29.0
+            },
+            {
+              "entity_id": "EIA_GAS_LOWER48_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 118, 129, 86, 55, 52 Bcf.\nTheir mean was 88.000 Bcf.",
+              "interval": {
+                "hi": 108.0,
+                "lo": 68.0
+              },
+              "point_forecast": 88.0
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.4708756818655431,
+          "interval_coverage": 0.8333333333333334,
+          "interval_quality": 0.4029189395518105,
+          "interval_score": 53.333333333333336,
+          "mae": 8.1,
+          "naive_interval_score": 35.9901050843909,
+          "naive_mae": 8.1,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.5,
+          "raw_interval_quality": 0.4029189395518105,
+          "raw_predictive_quality": 0.5,
+          "target_type": "regression",
+          "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 833,
+          "new_errors": [],
+          "prompt_tokens": 11667
+        },
+        "validation_errors": []
+      },
+      "candidate_minus_control": 0.02139175704841212,
+      "candidate_minus_production": 0.25293082075152684,
+      "control": {
+        "admission": {
+          "admitted": 6
+        },
+        "answer": {
+          "entity_predictions": [
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 41, 45, 19, 0, -4 Bcf.\nTheir mean was 20.200 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+                  "span_end": 1395,
+                  "span_start": 1302
+                }
+              ],
+              "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+              "interval": {
+                "hi": 40.0,
+                "level": 0.9,
+                "lo": 0.0
+              },
+              "point_forecast": 20.0
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 5, 4, 7, 5, 2 Bcf.\nTheir mean was 4.600 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+                  "span_end": 1314,
+                  "span_start": 1226
+                }
+              ],
+              "entity_id": "EIA_GAS_PACIFIC_20260925",
+              "interval": {
+                "hi": 16.6,
+                "level": 0.9,
+                "lo": -7.4
+              },
+              "point_forecast": 4.6
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 5, 8, 5, 4, 3 Bcf.\nTheir mean was 5.000 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+                  "span_end": 1313,
+                  "span_start": 1225
+                }
+              ],
+              "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+              "interval": {
+                "hi": 15.0,
+                "level": 0.9,
+                "lo": -5.0
+              },
+              "point_forecast": 5.0
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 37, 37, 29, 19, 27 Bcf.\nTheir mean was 29.800 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+                  "span_end": 1372,
+                  "span_start": 1278
+                }
+              ],
+              "entity_id": "EIA_GAS_MIDWEST_20260925",
+              "interval": {
+                "hi": 59.8,
+                "level": 0.9,
+                "lo": -0.2
+              },
+              "point_forecast": 29.8
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 31, 35, 26, 28, 25 Bcf.\nTheir mean was 29.000 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+                  "span_end": 1356,
+                  "span_start": 1262
+                }
+              ],
+              "entity_id": "EIA_GAS_EAST_20260925",
+              "interval": {
+                "hi": 59.0,
+                "level": 0.9,
+                "lo": -1.0
+              },
+              "point_forecast": 29.0
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The five prior changes for ISO week 39 were 118, 129, 86, 55, 52 Bcf.\nTheir mean was 88.000 Bcf.",
+                  "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+                  "span_end": 1439,
+                  "span_start": 1343
+                }
+              ],
+              "entity_id": "EIA_GAS_LOWER48_20260925",
+              "interval": {
+                "hi": 206.0,
+                "level": 0.9,
+                "lo": -30.0
+              },
+              "point_forecast": 88.0
+            }
+          ],
+          "notes": {
+            "experiment": "direct_forecast_reference_screen_v1",
+            "fallback_rows": 0
+          },
+          "schema_version": "3",
+          "target_type": "regression",
+          "task_id": "proxy-17-natural-gas-storage-change-20260924-transformed"
+        },
+        "answer_sha256": "a876b7ec55bef8dfeac0dd39db2093378ea9fcc03a60cc500691dd978b8eb86e",
+        "arm": "control",
+        "call_order": 8,
+        "model_output": {
+          "predictions": [
+            {
+              "entity_id": "EIA_GAS_SOUTH_CENTRAL_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 41, 45, 19, 0, -4 Bcf.\nTheir mean was 20.200 Bcf.",
+              "interval": {
+                "hi": 40.0,
+                "lo": 0.0
+              },
+              "point_forecast": 20.0
+            },
+            {
+              "entity_id": "EIA_GAS_PACIFIC_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 5, 4, 7, 5, 2 Bcf.\nTheir mean was 4.600 Bcf.",
+              "interval": {
+                "hi": 16.6,
+                "lo": -7.4
+              },
+              "point_forecast": 4.6
+            },
+            {
+              "entity_id": "EIA_GAS_MOUNTAIN_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 5, 8, 5, 4, 3 Bcf.\nTheir mean was 5.000 Bcf.",
+              "interval": {
+                "hi": 15.0,
+                "lo": -5.0
+              },
+              "point_forecast": 5.0
+            },
+            {
+              "entity_id": "EIA_GAS_MIDWEST_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 37, 37, 29, 19, 27 Bcf.\nTheir mean was 29.800 Bcf.",
+              "interval": {
+                "hi": 59.8,
+                "lo": -0.2
+              },
+              "point_forecast": 29.8
+            },
+            {
+              "entity_id": "EIA_GAS_EAST_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 31, 35, 26, 28, 25 Bcf.\nTheir mean was 29.000 Bcf.",
+              "interval": {
+                "hi": 59.0,
+                "lo": -1.0
+              },
+              "point_forecast": 29.0
+            },
+            {
+              "entity_id": "EIA_GAS_LOWER48_20260925",
+              "evidence_id": "E0",
+              "evidence_quote": "The five prior changes for ISO week 39 were 118, 129, 86, 55, 52 Bcf.\nTheir mean was 88.000 Bcf.",
+              "interval": {
+                "hi": 206.0,
+                "lo": -30.0
+              },
+              "point_forecast": 88.0
+            }
+          ]
+        },
+        "score": {
+          "claim_penalty_evaluated": false,
+          "composite_before_claim_penalty": 0.449483924817131,
+          "interval_coverage": 1.0,
+          "interval_quality": 0.3292075844419832,
+          "interval_score": 73.33333333333333,
+          "mae": 8.066666666666666,
+          "naive_interval_score": 35.9901050843909,
+          "naive_mae": 8.1,
+          "naive_predictive_quality": 0.5,
+          "predictive_anchor": null,
+          "predictive_quality": 0.5010309278350515,
+          "raw_interval_quality": 0.3292075844419832,
+          "raw_predictive_quality": 0.5010309278350515,
+          "target_type": "regression",
+          "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+        },
+        "usage": {
+          "calls": 1,
+          "completion_tokens": 837,
+          "new_errors": [],
+          "prompt_tokens": 10088
+        },
+        "validation_errors": []
+      },
+      "rows": 6,
+      "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "evaluation_only_transformed_development_screen_no_production_change",
+  "seed": 1234,
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "calls": 8,
+    "circuit_open": false,
+    "completion_tokens": 6332,
+    "disabled_reason": null,
+    "errors": [],
+    "prompt_tokens": 62876,
+    "total_cost": 0.0
+  }
+}

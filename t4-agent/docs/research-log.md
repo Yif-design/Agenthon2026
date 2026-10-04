@@ -2658,3 +2658,39 @@ Anonymous manifest and config requests returned HTTP 200; the resolved digest ma
 manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
 compressed layers total 46,358,487 bytes. The development submission template now points to that
 digest. No formal competition submission was performed.
+
+## 2026-10-04: Canonical numeric-context remote A/B — rejected
+
+This evaluation-only round tested whether the accepted canonical representation improved the
+same small model's predictions. Four transformed development units covered capex intensity,
+Treasury-auction indirect-bidder share, crude-inventory change and natural-gas storage change. Each
+unit received one raw-context control call and one canonical-context candidate call. Call order
+alternated by unit. Both arms used Gemini 2.5 Flash-Lite with temperature zero, seed 1234, thinking
+disabled and a 4,000-output-token cap. They shared the system prompt, target contract, deterministic
+prior, entity roster, evidence, JSON contract, admission and fallback. Only numeric context and the
+candidate's explicit abstention names/reasons differed.
+
+Before any API call, all four request pairs passed a deep equality audit outside those fields. Their
+evidence was byte-equivalent, no task ID, reference answer, score, paired-variant identifier or
+known outcome entered either request, and every canonical unit exactly matched the accepted
+quantity/unit audit. The eight calls then completed without error, used 62,876 prompt and 6,332
+completion tokens, and produced eight locally valid answers.
+
+The candidate failed two pre-registered predictive gates. Its mean composite was 0.411739 versus
+0.426672 for the same-run raw control, a change of -0.014933 instead of the required +0.05. Its
+mean gain over production was +0.238299 and it was noninferior on 3/4 units, but the worst
+production delta remained -0.136091 instead of at least -0.10. Canonical context changed only one
+of 23 point forecasts and left all six erroneous crude points unchanged. On the auction unit it
+left all three points unchanged but expanded each interval to the generic percentage support
+`[0,100]`, lowering composite by 0.081125 relative to control. Gas improved by 0.021392; capex and
+crude were unchanged relative to control.
+
+The hypothesis is rejected and no production path changes. Stable representation alone did not
+make this small model use quantities as intended, and another prompt-only canonicalization variant
+is not justified by these results. The next Wang S1.6 mechanism to isolate should be conservative
+fusion of a locked House proposal with a validated statistical prior, with interval ownership moved
+to out-of-origin residual calibration. The existing direct outputs can support an offline screen
+before any additional API call.
+
+Report: `evaluation/reports/canonical-numeric-context-ab-v1.json` (SHA-256
+`0f5cde537bc17a41082d49e5eae10ca5161bcc000f45bb674d1dae7177c151e4`).
