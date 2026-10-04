@@ -2735,3 +2735,13 @@ the pooled q90 and thresholds are not changed after seeing results.
 The candidate is rejected and production is unchanged. Report:
 `evaluation/reports/direct-point-residual-interval-screen-v1.json` (SHA-256
 `11f6e24dcb38e8cab7c954448da5964a36370a9a9da7f363297a88f23aaab18b`).
+
+Release record for the rejected pooled-residual experiment: commit
+`c70ce1cab996d5c4469b2e18cb750e5de303b076` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37205423868` passed 196 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:e4c3032113a8c8c39aa8684e801d5d67b029d19716973db541b0db3dab997608`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,515 bytes. The development submission template and readiness note
+now point to that digest. No formal competition submission was performed.

@@ -8,7 +8,7 @@ does not match the Team Number and Team Key.
 Current participant image:
 
 ```text
-ghcr.io/yif-design/agenthon2026-t4@sha256:af4f07f5c39b5584bfb45d8a24ae0a0c5295a56f5f31a7b9abbbeb5bc9c7775d
+ghcr.io/yif-design/agenthon2026-t4@sha256:e4c3032113a8c8c39aa8684e801d5d67b029d19716973db541b0db3dab997608
 ```
 
 Verified properties:
