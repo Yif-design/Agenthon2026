@@ -1,0 +1,167 @@
+{
+  "task_id": "proxy-16-crude-inventory-change-20260923-transformed",
+  "schema_version": "3",
+  "target_type": "regression",
+  "entity_predictions": [
+    {
+      "entity_id": "EIA_CRUDE_PADD5_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+          "span_start": 0,
+          "span_end": 483,
+          "claim": "EIA weekly commercial crude oil stocks excluding SPR for West Coast (PADD 5).\nweek_ending | commercial_crude_stock_mmbbl | weekly_change_mmbbl\n2025-09-26 | 46.792 | 0.330\n2025-10-03 | 45.981 | -0.811\n2025-10-10 | 45.988 | 0.007\n2025-10-17 | 45.773 | -0.215\n2025-10-24 | 46.482 | 0.709\n2025-10-31 | 47.434 | 0.952\n2025-11-07 | 47.527 | 0.093\n2025-11-14 | 47.745 | 0.217\n2025-11-21 | 47.062 | -0.683\n2025-11-28 | 46.531 | -0.531\n2025-12-05 | 47.850 | 1.319\n2025-12-12 | 47.615 | -0.235"
+        },
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+          "span_start": 0,
+          "span_end": 1759,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD4_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+          "span_start": 0,
+          "span_end": 484,
+          "claim": "EIA weekly commercial crude oil stocks excluding SPR for Rocky Mountain (PADD 4).\nweek_ending | commercial_crude_stock_mmbbl | weekly_change_mmbbl\n2025-09-26 | 22.819 | 0.082\n2025-10-03 | 22.441 | -0.378\n2025-10-10 | 23.102 | 0.661\n2025-10-17 | 23.513 | 0.411\n2025-10-24 | 23.361 | -0.152\n2025-10-31 | 23.627 | 0.266\n2025-11-07 | 24.510 | 0.884\n2025-11-14 | 24.602 | 0.091\n2025-11-21 | 24.617 | 0.015\n2025-11-28 | 25.004 | 0.386\n2025-12-05 | 25.084 | 0.080\n2025-12-12 | 25.195 | 0.111"
+        },
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+          "span_start": 0,
+          "span_end": 1760,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD3_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+          "span_start": 0,
+          "span_end": 496,
+          "claim": "EIA weekly commercial crude oil stocks excluding SPR for Gulf Coast (PADD 3).\nweek_ending | commercial_crude_stock_mmbbl | weekly_change_mmbbl\n2025-09-26 | 238.342 | 4.031\n2025-10-03 | 244.467 | 6.124\n2025-10-10 | 244.582 | 0.116\n2025-10-17 | 244.299 | -0.283\n2025-10-24 | 234.313 | -9.986\n2025-10-31 | 237.478 | 3.164\n2025-11-07 | 243.315 | 5.837\n2025-11-14 | 241.257 | -2.057\n2025-11-21 | 247.021 | 5.764\n2025-11-28 | 246.544 | -0.477\n2025-12-05 | 242.806 | -3.738\n2025-12-12 | 241.716 | -1.090"
+        },
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+          "span_start": 0,
+          "span_end": 1818,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD2_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+          "span_start": 0,
+          "span_end": 493,
+          "claim": "EIA weekly commercial crude oil stocks excluding SPR for Midwest (PADD 2).\nweek_ending | commercial_crude_stock_mmbbl | weekly_change_mmbbl\n2025-09-26 | 101.583 | -1.656\n2025-10-03 | 100.714 | -0.869\n2025-10-10 | 102.024 | 1.309\n2025-10-17 | 101.606 | -0.417\n2025-10-24 | 103.747 | 2.141\n2025-10-31 | 104.511 | 0.764\n2025-11-07 | 103.925 | -0.586\n2025-11-14 | 102.115 | -1.810\n2025-11-21 | 100.905 | -1.210\n2025-11-28 | 100.960 | 0.056\n2025-12-05 | 102.046 | 1.085\n2025-12-12 | 102.092 | 0.046"
+        },
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+          "span_start": 0,
+          "span_end": 1798,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_CRUDE_PADD1_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+          "span_start": 0,
+          "span_end": 472,
+          "claim": "EIA weekly commercial crude oil stocks excluding SPR for East Coast (PADD 1).\nweek_ending | commercial_crude_stock_mmbbl | weekly_change_mmbbl\n2025-09-26 | 7.010 | -0.995\n2025-10-03 | 6.658 | -0.352\n2025-10-10 | 8.089 | 1.431\n2025-10-17 | 7.633 | -0.457\n2025-10-24 | 8.063 | 0.430\n2025-10-31 | 8.119 | 0.056\n2025-11-07 | 8.303 | 0.185\n2025-11-14 | 8.436 | 0.133\n2025-11-21 | 7.325 | -1.112\n2025-11-28 | 8.464 | 1.139\n2025-12-05 | 7.906 | -0.558\n2025-12-12 | 7.799 | -0.106"
+        },
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+          "span_start": 0,
+          "span_end": 1710,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "EIA_CRUDE_US_20260925",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+          "span_start": 0,
+          "span_end": 489,
+          "claim": "EIA weekly commercial crude oil stocks excluding SPR for United States.\nweek_ending | commercial_crude_stock_mmbbl | weekly_change_mmbbl\n2025-09-26 | 416.546 | 1.792\n2025-10-03 | 420.261 | 3.715\n2025-10-10 | 423.785 | 3.524\n2025-10-17 | 422.824 | -0.961\n2025-10-24 | 415.966 | -6.858\n2025-10-31 | 421.168 | 5.202\n2025-11-07 | 427.581 | 6.413\n2025-11-14 | 424.155 | -3.426\n2025-11-21 | 426.929 | 2.775\n2025-11-28 | 427.503 | 0.574\n2025-12-05 | 425.691 | -1.813\n2025-12-12 | 424.417 | -1.274"
+        },
+        {
+          "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+          "span_start": 0,
+          "span_end": 1807,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "EIA_CRUDE_PADD5_20260925",
+      "EIA_CRUDE_PADD4_20260925",
+      "EIA_CRUDE_PADD3_20260925",
+      "EIA_CRUDE_PADD2_20260925",
+      "EIA_CRUDE_PADD1_20260925",
+      "EIA_CRUDE_US_20260925"
+    ],
+    "methods": {
+      "EIA_CRUDE_PADD5_20260925": "generic_baseline",
+      "EIA_CRUDE_PADD4_20260925": "generic_baseline",
+      "EIA_CRUDE_PADD3_20260925": "generic_baseline",
+      "EIA_CRUDE_PADD2_20260925": "generic_baseline",
+      "EIA_CRUDE_PADD1_20260925": "generic_baseline",
+      "EIA_CRUDE_US_20260925": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "experiment": "adaptive_batch_public_ab_v1",
+  "baseline_commit": "8f3ef1790f67d20890a615fa2c38f4c0d997d3ce",
+  "candidate_flag": "T4_ENABLE_ADAPTIVE_BATCH=1",
+  "model_calls": 0,
+  "units": 11,
+  "rows": 78,
+  "byte_identical": 11,
+  "validation_error_units": 0,
+  "details": [
+    {
+      "task_id": "t4-EXAMPLE-eps-beat",
+      "byte_identical": true,
+      "candidate_sha256": "01e5ff4f481264006676c4425dc0b273dd1883492b6740f3513e19316f4a969d",
+      "rows": 1,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-auction-btc-202411-us7",
+      "byte_identical": true,
+      "candidate_sha256": "afd8d01a034513970c3c480f6d9b7dd44ce9cd0a36c1b8e235a68506a8f8d3a5",
+      "rows": 7,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-cotpos-202411-us10",
+      "byte_identical": true,
+      "candidate_sha256": "272c223760f97407b771821d286ec01bc9fe86c11c22b97ab8b5a1a2d6ab175a",
+      "rows": 10,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-cpicomp-202410-us11",
+      "byte_identical": true,
+      "candidate_sha256": "f08032c4851af871c9047eabb4fc49f2d6ddb4b6c5478cfd43e62b4423bde9c7",
+      "rows": 11,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-credit-event-2023",
+      "byte_identical": true,
+      "candidate_sha256": "a9dc79526d95e2e9751e561d94aa09d579109a03bf691b3e96cff8f678ab563e",
+      "rows": 8,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-eps-growth-2024Q3-banks",
+      "byte_identical": true,
+      "candidate_sha256": "221d10aefa6bf5a8f984248889a5289d68493844ca9ef39f8f1b587e80fcb190",
+      "rows": 8,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-eps-yoy-2023Q2-mixed",
+      "byte_identical": true,
+      "candidate_sha256": "31651775879478a55fa04fc7203bbb4bbe5c9e79eeef97a43edce61038d14c67",
+      "rows": 6,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-fomc-curve-20220728",
+      "byte_identical": true,
+      "candidate_sha256": "bc1e7162b78dd78f81c20f8b5b823af51fea14ca9974cae89eec6841fc0633da",
+      "rows": 6,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-fomc-curve-20240918",
+      "byte_identical": true,
+      "candidate_sha256": "626d37e19f3557d055fb9eaa269203b7f99f4487b54b1c3e41be0a73b65fa087",
+      "rows": 6,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-macrorev-20240930-us6",
+      "byte_identical": true,
+      "candidate_sha256": "29bc0089e94705a52b37f402a94da73a36f23e1d8e93c69220ea2e3820c9f5a9",
+      "rows": 12,
+      "validation_errors": 0
+    },
+    {
+      "task_id": "t4-postearn-20240201-megacap",
+      "byte_identical": true,
+      "candidate_sha256": "be5f6bf24f2401f5bfd63046365505763d76f1fdc7991900cfa41773d073b74c",
+      "rows": 3,
+      "validation_errors": 0
+    }
+  ]
+}

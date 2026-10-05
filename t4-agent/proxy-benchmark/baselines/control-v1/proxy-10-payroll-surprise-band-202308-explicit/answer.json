@@ -1,0 +1,303 @@
+{
+  "task_id": "proxy-10-payroll-surprise-band-202308-explicit",
+  "schema_version": "3",
+  "target_type": "classification",
+  "entity_predictions": [
+    {
+      "entity_id": "BLS_PAYEMS_202308",
+      "point_forecast": 16.83188937701291,
+      "interval": {
+        "level": 0.9,
+        "lo": 8.415944688506455,
+        "hi": 25.247834065519363
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_PAYEMS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 466,
+          "claim": "Series: Total nonfarm payrolls (PAYEMS).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 217.666667 thousand persons.\nClassification half-band: 16.831889 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 154535.000 thousand persons.\n2023-01-01: 155007.000 thousand persons.\n2023-02-01: 155255.000 thousand persons.\n2023-03-01: 155472.000 thousand persons.\n2023-04-01: 155689.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_PAYEMS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 589,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USCONS_202308",
+      "point_forecast": 5.871304984602846,
+      "interval": {
+        "level": 0.9,
+        "lo": 2.935652492301423,
+        "hi": 8.80695747690427
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USCONS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 483,
+          "claim": "Series: Construction (USCONS).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 23.333333 thousand persons.\nClassification half-band: 5.871305 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 7859.000 thousand persons.\n2023-01-01: 7885.000 thousand persons.\n2023-02-01: 7899.000 thousand persons.\n2023-03-01: 7890.000 thousand persons.\n2023-04-01: 7901.000 thousand persons.\n2023-05-01: 7926.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USCONS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 561,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_MANEMP_202308",
+      "point_forecast": 5.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 2.5,
+        "hi": 7.5
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_MANEMP_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 489,
+          "claim": "Series: Manufacturing (MANEMP).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 0.000000 thousand persons.\nClassification half-band: 5.000000 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 12974.000 thousand persons.\n2023-01-01: 12985.000 thousand persons.\n2023-02-01: 12988.000 thousand persons.\n2023-03-01: 12976.000 thousand persons.\n2023-04-01: 12985.000 thousand persons.\n2023-05-01: 12981.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_MANEMP_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 569,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USTPU_202308",
+      "point_forecast": 13.906683045691857,
+      "interval": {
+        "level": 0.9,
+        "lo": 6.953341522845928,
+        "hi": 20.860024568537785
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USTPU_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 473,
+          "claim": "Series: Trade, transportation, and utilities (USTPU).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 11.666667 thousand persons.\nClassification half-band: 13.906683 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 28767.000 thousand persons.\n2023-01-01: 28828.000 thousand persons.\n2023-02-01: 28864.000 thousand persons.\n2023-03-01: 28867.000 thousand persons.\n2023-04-01: 28850.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USTPU_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 593,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USWTRADE_202308",
+      "point_forecast": 5.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 2.5,
+        "hi": 7.5
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USWTRADE_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 487,
+          "claim": "Series: Wholesale trade (USWTRADE).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 5.800000 thousand persons.\nClassification half-band: 5.000000 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 6028.800 thousand persons.\n2023-01-01: 6037.700 thousand persons.\n2023-02-01: 6044.400 thousand persons.\n2023-03-01: 6047.900 thousand persons.\n2023-04-01: 6046.400 thousand persons.\n2023-05-01: 6054.100 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USWTRADE_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 565,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USINFO_202308",
+      "point_forecast": 5.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 2.5,
+        "hi": 7.5
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USINFO_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 482,
+          "claim": "Series: Information (USINFO).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: -7.000000 thousand persons.\nClassification half-band: 5.000000 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 3120.000 thousand persons.\n2023-01-01: 3097.000 thousand persons.\n2023-02-01: 3089.000 thousand persons.\n2023-03-01: 3092.000 thousand persons.\n2023-04-01: 3095.000 thousand persons.\n2023-05-01: 3091.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USINFO_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 560,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USFIRE_202308",
+      "point_forecast": 5.414101956926928,
+      "interval": {
+        "level": 0.9,
+        "lo": 2.707050978463464,
+        "hi": 8.121152935390393
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USFIRE_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 491,
+          "claim": "Series: Financial activities (USFIRE).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 13.666667 thousand persons.\nClassification half-band: 5.414102 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 9101.000 thousand persons.\n2023-01-01: 9100.000 thousand persons.\n2023-02-01: 9100.000 thousand persons.\n2023-03-01: 9095.000 thousand persons.\n2023-04-01: 9122.000 thousand persons.\n2023-05-01: 9135.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USFIRE_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 569,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USPBS_202308",
+      "point_forecast": 9.878427675158296,
+      "interval": {
+        "level": 0.9,
+        "lo": 4.939213837579148,
+        "hi": 14.817641512737444
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USPBS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 470,
+          "claim": "Series: Professional and business services (USPBS).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 20.000000 thousand persons.\nClassification half-band: 9.878428 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 22814.000 thousand persons.\n2023-01-01: 22858.000 thousand persons.\n2023-02-01: 22879.000 thousand persons.\n2023-03-01: 22924.000 thousand persons.\n2023-04-01: 22972.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USPBS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 590,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USEHS_202308",
+      "point_forecast": 6.101001739241042,
+      "interval": {
+        "level": 0.9,
+        "lo": 3.050500869620521,
+        "hi": 9.151502608861563
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USEHS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 465,
+          "claim": "Series: Education and health services (USEHS).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 86.333333 thousand persons.\nClassification half-band: 6.101002 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 24827.000 thousand persons.\n2023-01-01: 24938.000 thousand persons.\n2023-02-01: 25002.000 thousand persons.\n2023-03-01: 25072.000 thousand persons.\n2023-04-01: 25149.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USEHS_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 585,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USLAH_202308",
+      "point_forecast": 8.264717512144959,
+      "interval": {
+        "level": 0.9,
+        "lo": 4.132358756072479,
+        "hi": 12.397076268217438
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USLAH_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "Series: Leisure and hospitality (USLAH).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 21.333333 thousand persons.\nClassification half-band: 8.264718 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 16316.000 thousand persons.\n2023-01-01: 16415.000 thousand persons.\n2023-02-01: 16472.000 thousand persons.\n2023-03-01: 16518.000 thousand persons.\n2023-04-01: 16529.000 thousand persons.\n2023-05-01: 16557.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USLAH_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 579,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    },
+    {
+      "entity_id": "BLS_USGOVT_202308",
+      "point_forecast": 8.462745154827454,
+      "interval": {
+        "level": 0.9,
+        "lo": 4.231372577413727,
+        "hi": 12.694117732241182
+      },
+      "claims": [
+        {
+          "doc_id": "ALFRED_USGOVT_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 487,
+          "claim": "Series: Government (USGOVT).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 32.666667 thousand persons.\nClassification half-band: 8.462745 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 22331.000 thousand persons.\n2023-01-01: 22450.000 thousand persons.\n2023-02-01: 22505.000 thousand persons.\n2023-03-01: 22565.000 thousand persons.\n2023-04-01: 22603.000 thousand persons.\n2023-05-01: 22629.000 thousand persons."
+        },
+        {
+          "doc_id": "ALFRED_USGOVT_VINTAGE_20230831",
+          "span_start": 0,
+          "span_end": 567,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "inline"
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "BLS_PAYEMS_202308",
+      "BLS_USCONS_202308",
+      "BLS_MANEMP_202308",
+      "BLS_USTPU_202308",
+      "BLS_USWTRADE_202308",
+      "BLS_USINFO_202308",
+      "BLS_USFIRE_202308",
+      "BLS_USPBS_202308",
+      "BLS_USEHS_202308",
+      "BLS_USLAH_202308",
+      "BLS_USGOVT_202308"
+    ],
+    "methods": {
+      "BLS_PAYEMS_202308": "generic_baseline",
+      "BLS_USCONS_202308": "generic_baseline",
+      "BLS_MANEMP_202308": "generic_baseline",
+      "BLS_USTPU_202308": "generic_baseline",
+      "BLS_USWTRADE_202308": "generic_baseline",
+      "BLS_USINFO_202308": "generic_baseline",
+      "BLS_USFIRE_202308": "generic_baseline",
+      "BLS_USPBS_202308": "generic_baseline",
+      "BLS_USEHS_202308": "generic_baseline",
+      "BLS_USLAH_202308": "generic_baseline",
+      "BLS_USGOVT_202308": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

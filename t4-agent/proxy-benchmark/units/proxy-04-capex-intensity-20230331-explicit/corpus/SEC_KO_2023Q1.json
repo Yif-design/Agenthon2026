@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-04-capex-intensity_SEC_KO_2023Q1_explicit",
+  "entities": [
+    "SEC_KO_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior Q1 revenue USD 10491000000; operating cash flow USD 623000000; capital expenditure USD 217000000."
+}

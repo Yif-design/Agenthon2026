@@ -1,0 +1,129 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/FX_DEXSFUS_20230929.json",
+      "entity_id": "FX_DEXSFUS_20230929",
+      "long_window_sigma_fraction": 0.1626738084165521,
+      "market_key": "XR-71",
+      "name": "South African rand",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.052958247717499525,
+      "short_window_sigma_fraction": 0.1361718521501817,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXINUS_20230929.json",
+      "entity_id": "FX_DEXINUS_20230929",
+      "long_window_sigma_fraction": 0.028791471926212307,
+      "market_key": "XR-72",
+      "name": "Indian rupee",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.01203659123736158,
+      "short_window_sigma_fraction": 0.027583889944693095,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXBZUS_20230929.json",
+      "entity_id": "FX_DEXBZUS_20230929",
+      "long_window_sigma_fraction": 0.11031353877219342,
+      "market_key": "XR-73",
+      "name": "Brazilian real",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.1999160352651886,
+      "short_window_sigma_fraction": 0.10445132863388112,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXMXUS_20230929.json",
+      "entity_id": "FX_DEXMXUS_20230929",
+      "long_window_sigma_fraction": 0.1155422357006823,
+      "market_key": "XR-74",
+      "name": "Mexican peso",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.057450133284309216,
+      "short_window_sigma_fraction": 0.12947752550911973,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXKOUS_20230929.json",
+      "entity_id": "FX_DEXKOUS_20230929",
+      "long_window_sigma_fraction": 0.07893527758994585,
+      "market_key": "XR-75",
+      "name": "South Korean won",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.000741916816286558,
+      "short_window_sigma_fraction": 0.06546806412051652,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXCHUS_20230929.json",
+      "entity_id": "FX_DEXCHUS_20230929",
+      "long_window_sigma_fraction": 0.046608848071019844,
+      "market_key": "XR-76",
+      "name": "Chinese yuan",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.1370614035087719,
+      "short_window_sigma_fraction": 0.040263796454955134,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXCAUS_20230929.json",
+      "entity_id": "FX_DEXCAUS_20230929",
+      "long_window_sigma_fraction": 0.04964331526215588,
+      "market_key": "XR-77",
+      "name": "Canadian dollar",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.7388252678241596,
+      "short_window_sigma_fraction": 0.04174454046633829,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXUSUK_20230929.json",
+      "entity_id": "FX_DEXUSUK_20230929",
+      "long_window_sigma_fraction": 0.06668074826687584,
+      "market_key": "XR-78",
+      "name": "British pound",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.8187326019322089,
+      "short_window_sigma_fraction": 0.05608492535891263,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXJPUS_20230929.json",
+      "entity_id": "FX_DEXJPUS_20230929",
+      "long_window_sigma_fraction": 0.08372226820391844,
+      "market_key": "XR-79",
+      "name": "Japanese yen",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.006692096633875393,
+      "short_window_sigma_fraction": 0.06104437379663349,
+      "volatility_scale": "annualized_fraction"
+    },
+    {
+      "corpus_ref": "corpus/FX_DEXUSEU_20230929.json",
+      "entity_id": "FX_DEXUSEU_20230929",
+      "long_window_sigma_fraction": 0.06625913165191641,
+      "market_key": "XR-80",
+      "name": "Euro",
+      "quote_transform": "reciprocal_of_published_series",
+      "reciprocal_terminal_quote": 0.9448223733938019,
+      "short_window_sigma_fraction": 0.05674404410448506,
+      "volatility_scale": "annualized_fraction"
+    }
+  ],
+  "family": "relative_market_variation",
+  "interval_level": 0.9,
+  "prompt": "Rank currencies by annualized realized volatility over the next 20 common eligible daily returns. Rank 1 is highest volatility. Quote inversion does not change log-return volatility. Return an annualized-percent point forecast and 90% interval for each row.",
+  "resolution_date": "2023-10-30",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "direction": "descending",
+    "horizon": "next 20 common eligible daily returns",
+    "name": "next_window_sigma_order",
+    "type": "ranking",
+    "unit": "annualized_percent"
+  },
+  "task_id": "proxy-19-fx-volatility-rank-20230929-transformed"
+}

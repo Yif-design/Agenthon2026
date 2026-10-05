@@ -1,0 +1,79 @@
+{
+  "baseline_commit": "2ec2a5b0ad8e7963d7262b36b363bf9d17687eea",
+  "date": "2026-10-01",
+  "decision": "accept",
+  "experiment": "reason_evidence_relevance_final_v1",
+  "hypothesis": "A method-aware exact-window selector can replace irrelevant context-only reason premises without changing computed-input reasons or analysis fields.",
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "model_api_calls": 1,
+  "official_522_rail": {
+    "basic_finding_count": 0,
+    "claims": 286,
+    "decision": "accept_rail",
+    "deterministic_claim_finding_count": 0,
+    "reason_finding_count": 0,
+    "reasons": 31,
+    "reasons_judged": 31,
+    "schema_valid_units": 11,
+    "units": 11
+  },
+  "public_ab": {
+    "changed_premises": 4,
+    "changed_reasons": 4,
+    "non_reason_fields_identical_units": 11,
+    "reason_structure_invariant_units": 11,
+    "reasons": 31,
+    "rows": 78,
+    "units": 11,
+    "validation_error_units": 0
+  },
+  "public_research": [
+    {
+      "finding": "No submitted_reasons implementation found in the inspected main branch.",
+      "license": "MIT",
+      "repository": "dungcao06/optivex-t4-agent"
+    },
+    {
+      "finding": "Uses bounded exact quotes and distinct mechanisms; its own notes say causal and target-reason quality remain unmeasured.",
+      "license": "MIT",
+      "repository": "wangzgui/agenthon-t4-baseline-2026"
+    }
+  ],
+  "reason": "Four context-only premises pass the predeclared exact-span and four-point relevance gate; all computed-input reasons and every analysis field remain unchanged, and the pinned 5.2.2 rail accepts all 31 reasons.",
+  "remote_proxy": {
+    "broad_decision": "mixed_or_does_not_support_candidate",
+    "broad_preferences": {
+      "baseline": 5,
+      "candidate": 5,
+      "tie": 2
+    },
+    "calls": 1,
+    "completion_tokens": 928,
+    "limitation": "The proxy is non-official and does not observe hidden target reasons.",
+    "model": "gemini-2.5-flash-lite",
+    "prompt_tokens": 4081,
+    "provider": "Google Gemini Developer API",
+    "refinement": "The two remotely disfavored BBY and AMZN replacements were reverted. DOW was reranked from an anti-dilution passage to an exact period-matched numeric EPS table and was not re-judged. BBBY, AMD and AAPL retained premises directly preferred by the saved blind review.",
+    "thought_tokens": 0
+  },
+  "report_sha256": {
+    "broad_proxy": "022bfe71dfc9eb96b02153829ff752f271cd15dbd87f3d94c765f08a38514d1e",
+    "official_rail": "aa6213d79ef4d92e0e6e3c416edcb3695b18c0519f56a71d38d7baec474a7036",
+    "public_ab": "b64b09f78ce8baf922c54343c936170d90a79ccd6c66dd8a1802e969ec46ca94",
+    "screen": "36f9dc0a4286e5fc6d9da8efe956753b2628bac585cd06908f34a795a2bad571"
+  },
+  "rollback": "Set T4_ENABLE_REASON_RELEVANCE=0.",
+  "schema_version": 1,
+  "scope": "L1/L2 cross-family Final reason evidence selection",
+  "screen": {
+    "changed_context_rows": 4,
+    "computed_input_controls": 15,
+    "context_only_rows": 16,
+    "controls_unchanged": true,
+    "exact_spans": true,
+    "rows_with_reasons": 31,
+    "strict_relevance_gate": true
+  },
+  "tests": "144 passed on Python 3.11.7"
+}

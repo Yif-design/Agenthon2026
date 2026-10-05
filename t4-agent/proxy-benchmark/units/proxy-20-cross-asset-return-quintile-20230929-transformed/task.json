@@ -1,0 +1,197 @@
+{
+  "cutoff_date": "2023-09-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/XASSET_DHHNGSP_20230929.json",
+      "entity_id": "XASSET_DHHNGSP_20230929",
+      "group_code": "commodity",
+      "instrument_key": "XA-120",
+      "lagged_window_return_fraction": 0.046875,
+      "name": "Henry Hub natural gas spot price",
+      "terminal_level_scaled": 2680.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DCOILBRENTEU_20230929.json",
+      "entity_id": "XASSET_DCOILBRENTEU_20230929",
+      "group_code": "commodity",
+      "instrument_key": "XA-119",
+      "lagged_window_return_fraction": 0.0981784855080765,
+      "name": "Brent crude spot price",
+      "terminal_level_scaled": 95860.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DCOILWTICO_20230929.json",
+      "entity_id": "XASSET_DCOILWTICO_20230929",
+      "group_code": "commodity",
+      "instrument_key": "XA-118",
+      "lagged_window_return_fraction": 0.08641532016756436,
+      "name": "WTI crude spot price",
+      "terminal_level_scaled": 90770.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS30_20230929.json",
+      "entity_id": "XASSET_DGS30_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-117",
+      "lagged_window_return_fraction": 0.1261904761904762,
+      "name": "Treasury 30-year yield",
+      "terminal_level_scaled": 4730.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS20_20230929.json",
+      "entity_id": "XASSET_DGS20_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-116",
+      "lagged_window_return_fraction": 0.12072892938496584,
+      "name": "Treasury 20-year yield",
+      "terminal_level_scaled": 4920.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS10_20230929.json",
+      "entity_id": "XASSET_DGS10_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-115",
+      "lagged_window_return_fraction": 0.12224938875305626,
+      "name": "Treasury 10-year yield",
+      "terminal_level_scaled": 4590.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS7_20230929.json",
+      "entity_id": "XASSET_DGS7_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-114",
+      "lagged_window_return_fraction": 0.10023866348448696,
+      "name": "Treasury 7-year yield",
+      "terminal_level_scaled": 4610.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS5_20230929.json",
+      "entity_id": "XASSET_DGS5_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-113",
+      "lagged_window_return_fraction": 0.08747044917257663,
+      "name": "Treasury 5-year yield",
+      "terminal_level_scaled": 4600.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS3_20230929.json",
+      "entity_id": "XASSET_DGS3_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-112",
+      "lagged_window_return_fraction": 0.05726872246696035,
+      "name": "Treasury 3-year yield",
+      "terminal_level_scaled": 4800.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DGS2_20230929.json",
+      "entity_id": "XASSET_DGS2_20230929",
+      "group_code": "rates",
+      "instrument_key": "XA-111",
+      "lagged_window_return_fraction": 0.03711340206185576,
+      "name": "Treasury 2-year yield",
+      "terminal_level_scaled": 5030.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXSFUS_20230929.json",
+      "entity_id": "XASSET_DEXSFUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-110",
+      "lagged_window_return_fraction": -0.0012324064719851924,
+      "name": "South African rand exchange rate",
+      "terminal_level_scaled": 18882.8
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXINUS_20230929.json",
+      "entity_id": "XASSET_DEXINUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-109",
+      "lagged_window_return_fraction": 0.0036240637835225353,
+      "name": "Indian rupee exchange rate",
+      "terminal_level_scaled": 83080.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXBZUS_20230929.json",
+      "entity_id": "XASSET_DEXBZUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-108",
+      "lagged_window_return_fraction": 0.014131051820614804,
+      "name": "Brazilian real exchange rate",
+      "terminal_level_scaled": 5002.1
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXMXUS_20230929.json",
+      "entity_id": "XASSET_DEXMXUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-107",
+      "lagged_window_return_fraction": 0.03112374859309286,
+      "name": "Mexican peso exchange rate",
+      "terminal_level_scaled": 17406.4
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXKOUS_20230929.json",
+      "entity_id": "XASSET_DEXKOUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-106",
+      "lagged_window_return_fraction": 0.019229751291183428,
+      "name": "South Korean won exchange rate",
+      "terminal_level_scaled": 1347860.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXCHUS_20230929.json",
+      "entity_id": "XASSET_DEXCHUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-105",
+      "lagged_window_return_fraction": 0.005207902785814733,
+      "name": "Chinese yuan exchange rate",
+      "terminal_level_scaled": 7296.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXCAUS_20230929.json",
+      "entity_id": "XASSET_DEXCAUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-104",
+      "lagged_window_return_fraction": -0.0002954427948890226,
+      "name": "Canadian dollar exchange rate",
+      "terminal_level_scaled": 1353.5
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXUSUK_20230929.json",
+      "entity_id": "XASSET_DEXUSUK_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-103",
+      "lagged_window_return_fraction": -0.035762216783768785,
+      "name": "British pound exchange rate",
+      "terminal_level_scaled": 1221.4
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXJPUS_20230929.json",
+      "entity_id": "XASSET_DEXJPUS_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-102",
+      "lagged_window_return_fraction": 0.025741350906095528,
+      "name": "Japanese yen exchange rate",
+      "terminal_level_scaled": 149430.0
+    },
+    {
+      "corpus_ref": "corpus/XASSET_DEXUSEU_20230929.json",
+      "entity_id": "XASSET_DEXUSEU_20230929",
+      "group_code": "fx",
+      "instrument_key": "XA-101",
+      "lagged_window_return_fraction": -0.02352615554940496,
+      "name": "Euro exchange rate",
+      "terminal_level_scaled": 1058.4
+    }
+  ],
+  "family": "relative_instrument_performance",
+  "interval_level": 0.9,
+  "prompt": "Rank the 20 instruments by published-level percentage return through the twentieth common post-cutoff observation; rank 1 is highest.",
+  "resolution_date": "2023-10-30",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "name": "next_window_relative_performance",
+    "type": "ranking",
+    "unit": "percent_return"
+  },
+  "task_id": "proxy-20-cross-asset-return-quintile-20230929-transformed"
+}

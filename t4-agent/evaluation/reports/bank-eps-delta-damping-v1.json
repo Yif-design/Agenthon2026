@@ -1,0 +1,181 @@
+{
+  "acceptance_rule": "Development must select a beta different from 1.0, then confirmation must improve both growth-percentage MAE and direction accuracy.",
+  "bank_tickers": [
+    "BAC",
+    "C",
+    "GS",
+    "JPM",
+    "MS",
+    "PNC",
+    "USB",
+    "WFC"
+  ],
+  "baseline": {
+    "confirmation": {
+      "direction_accuracy": 0.71875,
+      "mae_growth_pct": 19.41108037632547,
+      "rmse_growth_pct": 27.37953776959564,
+      "rows": 32
+    },
+    "dev": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 80.89771870010755,
+      "rmse_growth_pct": 100.05397556155842,
+      "rows": 28
+    },
+    "test": {
+      "direction_accuracy": 0.8620689655172413,
+      "mae_growth_pct": 19.875756067104664,
+      "rmse_growth_pct": 25.860128618706888,
+      "rows": 29
+    },
+    "train": {
+      "direction_accuracy": 0.8115942028985508,
+      "mae_growth_pct": 17.71120916646325,
+      "rmse_growth_pct": 40.51627616929353,
+      "rows": 69
+    }
+  },
+  "baseline_beta": 1.0,
+  "candidate": {
+    "confirmation": {
+      "direction_accuracy": 0.71875,
+      "mae_growth_pct": 19.41108037632547,
+      "rmse_growth_pct": 27.37953776959564,
+      "rows": 32
+    },
+    "dev": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 80.89771870010755,
+      "rmse_growth_pct": 100.05397556155842,
+      "rows": 28
+    },
+    "test": {
+      "direction_accuracy": 0.8620689655172413,
+      "mae_growth_pct": 19.875756067104664,
+      "rmse_growth_pct": 25.860128618706888,
+      "rows": 29
+    },
+    "train": {
+      "direction_accuracy": 0.8115942028985508,
+      "mae_growth_pct": 17.71120916646325,
+      "rmse_growth_pct": 40.51627616929353,
+      "rows": 69
+    }
+  },
+  "cutoff_rule": "For each target quarter, use only the closest 45-180-day earlier quarter filed at least seven days before the target filing and its comparable prior-year quarter.",
+  "decision": "reject",
+  "dev_candidates": {
+    "0.0": {
+      "direction_accuracy": 0.4642857142857143,
+      "mae_growth_pct": 163.2805969399596,
+      "rmse_growth_pct": 524.2909214981721,
+      "rows": 28
+    },
+    "0.1": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 147.50475316279724,
+      "rmse_growth_pct": 468.8610988444054,
+      "rows": 28
+    },
+    "0.25": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 126.36958288920387,
+      "rmse_growth_pct": 386.2081206335392,
+      "rows": 28
+    },
+    "0.5": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 99.15102734953895,
+      "rmse_growth_pct": 251.20429483980698,
+      "rows": 28
+    },
+    "0.75": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 81.20340176529768,
+      "rmse_growth_pct": 129.31212732541962,
+      "rows": 28
+    },
+    "1.0": {
+      "direction_accuracy": 0.75,
+      "mae_growth_pct": 80.89771870010755,
+      "rmse_growth_pct": 100.05397556155842,
+      "rows": 28
+    }
+  },
+  "experiment": "bank_eps_delta_damping_v1",
+  "feature_rows": 158,
+  "hypothesis": "Damping the latest filed quarterly YoY EPS delta improves the next-quarter bank EPS growth forecast over full delta persistence.",
+  "pair_audits": {
+    "BAC": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 1,
+      "recast_or_split_mismatch": 8
+    },
+    "C": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 1,
+      "recast_or_split_mismatch": 2
+    },
+    "GS": {
+      "missing_target_comparator": 2,
+      "near_zero_prior": 0,
+      "recast_or_split_mismatch": 0
+    },
+    "JPM": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 0,
+      "recast_or_split_mismatch": 0
+    },
+    "MS": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 0,
+      "recast_or_split_mismatch": 0
+    },
+    "PNC": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 0,
+      "recast_or_split_mismatch": 0
+    },
+    "USB": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 0,
+      "recast_or_split_mismatch": 0
+    },
+    "WFC": {
+      "missing_target_comparator": 0,
+      "near_zero_prior": 1,
+      "recast_or_split_mismatch": 8
+    }
+  },
+  "pair_rows_before_feature_cutoff": 242,
+  "production_change": "none",
+  "reason": "The development set selected beta=1.0, exactly the production baseline; every damped candidate had worse development growth MAE and no direction improvement.",
+  "schema_version": 1,
+  "selected_beta_on_dev": 1.0,
+  "selected_candidate_distinct_from_baseline": false,
+  "source": "SEC Company Concept API, us-gaap:EarningsPerShareDiluted",
+  "source_documentation": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+  "source_sha256_by_ticker": {
+    "BAC": "2133ba4c4365fb48817dd9557c0244519a99aced91693b3e6372c39f706da786",
+    "C": "23820b28db5ee74137fd4703a7baa9ec4e2d51065391919d7da75d35651add13",
+    "GS": "b8c3d05e883361ebd8543b3dfce7c0f40fda35a90cb1f604416f352a871b64db",
+    "JPM": "39a48e8fed3c70d6a3adf5fd6f4fa529e10d1849dc918cfee2650b0d69cb7fc8",
+    "MS": "ed8de86db84b91eca61826bfd35604582ccd31ef5be4b51eac9dd24f69249358",
+    "PNC": "f92fe3a631659ab0423319adcdd8fb7fb4fe26cce69b93758012a4e370683375",
+    "USB": "562214f55ce0ec284e2d94246314b6a35b853f0d8fe75e520c6bf003e028ede1",
+    "WFC": "1e20e27e2c96f370b20dabf8d8cc6e1af5ec2904899c9b627fbe47866b92eaa6"
+  },
+  "split_counts": {
+    "confirmation": 32,
+    "dev": 28,
+    "test": 29,
+    "train": 69
+  },
+  "split_rule": {
+    "confirmation": "target year 2024-2025",
+    "dev": "target year 2020-2021",
+    "test": "target year 2022-2023",
+    "train": "target year <= 2019"
+  }
+}

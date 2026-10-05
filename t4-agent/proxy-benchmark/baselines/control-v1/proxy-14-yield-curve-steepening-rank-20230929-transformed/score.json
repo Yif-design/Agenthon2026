@@ -1,0 +1,15 @@
+{
+  "unit": "proxy-14-yield-curve-steepening-rank-20230929-transformed",
+  "raw_spearman": 0.9727272727272727,
+  "raw_predictive_quality": 0.9863636363636363,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": 0.5,
+  "predictive_quality": 0.9863636363636363,
+  "interval_coverage": 0.14285714285714285,
+  "interval_score": 378.2484285714286,
+  "naive_interval_score": 189.83231404957877,
+  "raw_interval_quality": 0.3341643182159839,
+  "interval_quality": 0.3341643182159839,
+  "composite_before_claim_penalty": 0.7907038409193407,
+  "claim_penalty_evaluated": false
+}

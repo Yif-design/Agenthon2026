@@ -1,0 +1,208 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_PAYEMS_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_PAYEMS_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USCONS_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USCONS_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_MANEMP_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_MANEMP_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USTPU_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USTPU_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USWTRADE_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USWTRADE_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USINFO_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USINFO_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USFIRE_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USFIRE_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USPBS_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USPBS_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USEHS_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USEHS_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USLAH_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USLAH_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    },
+    {
+      "claims": [
+        {
+          "claim": "ALFRED source.",
+          "doc_id": "ALFRED_USGOVT_VINTAGE_20230831",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "BLS_USGOVT_202308",
+      "interval": {
+        "hi": 1.0,
+        "level": 0.9,
+        "lo": 0.0
+      },
+      "label": "inline",
+      "point_forecast": 0.5
+    }
+  ],
+  "notes": {
+    "baseline_id": "always-inline"
+  },
+  "schema_version": "3",
+  "target_type": "classification",
+  "task_id": "proxy-10-payroll-surprise-band-202308-explicit"
+}

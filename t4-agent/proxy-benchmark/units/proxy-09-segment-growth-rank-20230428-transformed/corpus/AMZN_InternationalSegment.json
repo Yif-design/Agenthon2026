@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-04-28",
+  "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_InternationalSegment_transformed",
+  "entities": [
+    "AMZN_InternationalSegment"
+  ],
+  "license": "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained",
+  "source": "SEC EDGAR inline XBRL filings",
+  "text": "SEC inline XBRL dimension member amzn:InternationalSegmentMember. Prior period turnover 28759000 thousand scaled units; current period turnover 29123000 thousand scaled units. Filed no later than 2023-04-28."
+}

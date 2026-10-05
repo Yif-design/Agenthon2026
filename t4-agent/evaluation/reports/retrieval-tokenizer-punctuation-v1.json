@@ -1,0 +1,3508 @@
+{
+  "baseline_git_commit": "106117fa82883515af57bf088dea09d65739ccbb",
+  "decision": "accept",
+  "decision_reason": "Restores punctuation-insensitive entity matching across unseen labels, preserves all deterministic public forecasts, passes 11/11 smoke, and keeps every affected official two-model NLI unit at or above the 0.80 gate.",
+  "decision_rule": "Require 13/13 synthetic top-1, token preservation tests, unchanged public predictions and smoke; rerun official NLI for every public unit with a changed top-three retrieval set.",
+  "deterministic_public_ab": {
+    "claim_rows_changed": 25,
+    "prediction_rows_changed": 0,
+    "rows": 78,
+    "units": 11
+  },
+  "experiment": "retrieval_tokenizer_punctuation_v1",
+  "hypothesis": "Removing sentence-edge punctuation from lexical tokens restores exact entity and keyword matches without damaging financial numeric tokens.",
+  "official_nli": {
+    "affected_units": 7,
+    "all_gates_pass": true,
+    "citation_inferences_per_member": 198,
+    "cross_elapsed_seconds": 1490.5604982200311,
+    "faithfulness": {
+      "t4-auction-btc-202411-us7": 1.0,
+      "t4-cpicomp-202410-us11": 0.9090909090909091,
+      "t4-credit-event-2023": 0.875,
+      "t4-eps-growth-2024Q3-banks": 0.875,
+      "t4-eps-yoy-2023Q2-mixed": 1.0,
+      "t4-fomc-curve-20240918": 1.0,
+      "t4-postearn-20240201-megacap": 1.0
+    },
+    "gate_threshold": 0.8,
+    "models": [
+      "cross-encoder/nli-deberta-v3-large",
+      "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+    ],
+    "moritz_elapsed_seconds": 2854.9570174959954,
+    "prediction_rows": 49,
+    "reports": {
+      "nli-cross.json": "8f3ac3b0d510016efddf2ce5020b9cc29b006abdcde724e23efe0e7ad566f84e",
+      "nli-ensemble.json": "7d15e1f841b6fe4aa60264d43c00e86379dfacf4b07c44de9b3ae2a98f5035ee",
+      "nli-moritz.json": "127974d605c888c34781c50fe5498e08e07453ebe0f7cdeda27542cb745fa949"
+    },
+    "revisions": {
+      "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "cross-encoder/nli-deberta-v3-large": "bab4bc7178836f731dcfd18c06ca9def0a137712"
+    },
+    "runtime_caveat": "Local Intel CPU and installed packages approximate but do not certify production runtime equivalence."
+  },
+  "official_track4_commit": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+  "public": {
+    "changed_units": [
+      "t4-auction-btc-202411-us7",
+      "t4-cpicomp-202410-us11",
+      "t4-credit-event-2023",
+      "t4-eps-growth-2024Q3-banks",
+      "t4-eps-yoy-2023Q2-mixed",
+      "t4-fomc-curve-20240918",
+      "t4-postearn-20240201-megacap"
+    ],
+    "changes": [
+      {
+        "candidate": [
+          [
+            "TDIRECT_UPCOMING_20241030",
+            0,
+            1352
+          ],
+          [
+            "TDIRECT_AUCTIONS_10Y_20241031",
+            0,
+            1630
+          ]
+        ],
+        "entity_id": "AUC_10Y_20241105",
+        "legacy": [
+          [
+            "TDIRECT_AUCTIONS_10Y_20241031",
+            0,
+            1630
+          ],
+          [
+            "TDIRECT_UPCOMING_20241030",
+            0,
+            1352
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-auction-btc-202411-us7"
+      },
+      {
+        "candidate": [
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ]
+        ],
+        "entity_id": "CPI_ALLITEMS",
+        "legacy": [
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_APPAREL",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ]
+        ],
+        "entity_id": "CPI_CORE",
+        "legacy": [
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_ENERGY",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_FOOD",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_GASOLINE",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ]
+        ],
+        "entity_id": "CPI_MEDICAL",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_NEWVEH",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_SHELTER",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ]
+        ],
+        "entity_id": "CPI_TRANSPSVC",
+        "legacy": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ]
+        ],
+        "entity_id": "CPI_USEDCARS",
+        "legacy": [
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            0,
+            2091
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            1948,
+            4135
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            5814,
+            7931
+          ],
+          [
+            "ALFRED_CPI_COMPONENTS_20241031",
+            1841,
+            3303
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            7681,
+            9837
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            0,
+            2198
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            9587,
+            11752
+          ],
+          [
+            "BLS_CPI_RELEASE_20241010",
+            3885,
+            6064
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-cpicomp-202410-us11"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            16967,
+            18948
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            168519,
+            170651
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            100723,
+            102905
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            20535,
+            22731
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            148278,
+            150478
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            183934,
+            184572
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            133274,
+            135396
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            182060,
+            184184
+          ]
+        ],
+        "entity_id": "BBBY",
+        "legacy": [
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            16967,
+            18948
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            168519,
+            170651
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            20535,
+            22731
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            148278,
+            150478
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            100723,
+            102905
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            133274,
+            135396
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            183934,
+            184572
+          ],
+          [
+            "EDGAR_0000886158_10Q_20230126",
+            182060,
+            184184
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000764478_10K_20230317",
+            137232,
+            139401
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            275524,
+            277703
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            273897,
+            275774
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            114285,
+            116331
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            10555,
+            12607
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            99376,
+            101533
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            104822,
+            106955
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            272100,
+            274147
+          ]
+        ],
+        "entity_id": "BBY",
+        "legacy": [
+          [
+            "EDGAR_0000764478_10K_20230317",
+            137232,
+            139401
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            275524,
+            277703
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            273897,
+            275774
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            114285,
+            116331
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            99376,
+            101533
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            10555,
+            12607
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            272100,
+            274147
+          ],
+          [
+            "EDGAR_0000764478_10K_20230317",
+            104822,
+            106955
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000794367_10K_20230324",
+            289155,
+            291242
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            92690,
+            94838
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            76036,
+            78198
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            40778,
+            42863
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            271707,
+            273791
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            77948,
+            79805
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            7718,
+            9918
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            11574,
+            13713
+          ]
+        ],
+        "entity_id": "M",
+        "legacy": [
+          [
+            "EDGAR_0000794367_10K_20230324",
+            289155,
+            291242
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            76036,
+            78198
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            92690,
+            94838
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            271707,
+            273791
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            40778,
+            42863
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            77948,
+            79805
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            7718,
+            9918
+          ],
+          [
+            "EDGAR_0000794367_10K_20230324",
+            11574,
+            13713
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000878927_10K_20230222",
+            210864,
+            213039
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            214655,
+            216854
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            208987,
+            211114
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            207071,
+            209237
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            212789,
+            214905
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            216604,
+            218708
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            218458,
+            220651
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            205161,
+            207321
+          ]
+        ],
+        "entity_id": "ODFL",
+        "legacy": [
+          [
+            "EDGAR_0000878927_10K_20230222",
+            210864,
+            213039
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            214655,
+            216854
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            208987,
+            211114
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            207071,
+            209237
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            212789,
+            214905
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            216604,
+            218708
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            218458,
+            220651
+          ],
+          [
+            "EDGAR_0000878927_10K_20230222",
+            203211,
+            205411
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            95456,
+            97651
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            31935,
+            34128
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            85870,
+            87668
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            125924,
+            128048
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            226878,
+            228609
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            228359,
+            230508
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            184325,
+            186525
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            129708,
+            131750
+          ]
+        ],
+        "entity_id": "RAD",
+        "legacy": [
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            31935,
+            34128
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            95456,
+            97651
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            125924,
+            128048
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            226878,
+            228609
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            228359,
+            230508
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            129708,
+            131750
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            219983,
+            222183
+          ],
+          [
+            "EDGAR_0000084129_10Q_20230104",
+            225302,
+            227128
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            118438,
+            120583
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            41866,
+            43575
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            184164,
+            186306
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            133300,
+            135488
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            207831,
+            209948
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            105591,
+            107630
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            159346,
+            160562
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            13175,
+            14649
+          ]
+        ],
+        "entity_id": "WBA",
+        "legacy": [
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            118438,
+            120583
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            41866,
+            43575
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            184164,
+            186306
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            207831,
+            209948
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            133300,
+            135488
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            105591,
+            107630
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            159346,
+            160562
+          ],
+          [
+            "EDGAR_0001618921_10Q_20230328",
+            13175,
+            14649
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0001813756_10K_20230329",
+            28087,
+            30237
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            26307,
+            28337
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            29987,
+            32116
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            387325,
+            389369
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            14023,
+            16111
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            24586,
+            26557
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            454304,
+            456434
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            452682,
+            454554
+          ]
+        ],
+        "entity_id": "WE",
+        "legacy": [
+          [
+            "EDGAR_0001813756_10K_20230329",
+            28087,
+            30237
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            26307,
+            28337
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            29987,
+            32116
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            14023,
+            16111
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            24586,
+            26557
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            387325,
+            389369
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            31866,
+            33914
+          ],
+          [
+            "EDGAR_0001813756_10K_20230329",
+            44406,
+            46515
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-credit-event-2023"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            412860,
+            415060
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            414810,
+            416989
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            45264,
+            47291
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            345301,
+            347481
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            13685,
+            15838
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            686002,
+            688192
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            347231,
+            348895
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            47041,
+            49235
+          ]
+        ],
+        "entity_id": "C",
+        "legacy": [
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            412860,
+            415060
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            414810,
+            416989
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            45264,
+            47291
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            345301,
+            347481
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            13685,
+            15838
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            347231,
+            348895
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            686002,
+            688192
+          ],
+          [
+            "EDGAR_0000831001_10Q_20240802",
+            47041,
+            49235
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            368290,
+            370436
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            496258,
+            498247
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            370186,
+            372229
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            5784,
+            7984
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            340587,
+            341914
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            7734,
+            9934
+          ],
+          [
+            "EDGAR_0000886982_8K_20240919",
+            1852,
+            4043
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            606348,
+            608538
+          ]
+        ],
+        "entity_id": "GS",
+        "legacy": [
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            368290,
+            370436
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            5784,
+            7984
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            370186,
+            372229
+          ],
+          [
+            "EDGAR_0000886982_8K_20240919",
+            1852,
+            4043
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            340587,
+            341914
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            0,
+            2169
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            606348,
+            608538
+          ],
+          [
+            "EDGAR_0000886982_10Q_20240802",
+            7734,
+            9934
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            547815,
+            549694
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            300588,
+            302123
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            546211,
+            548065
+          ],
+          [
+            "EDGAR_0000019617_8K_20240820",
+            1915,
+            3621
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            0,
+            2052
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            5450,
+            7650
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            16242,
+            18431
+          ],
+          [
+            "EDGAR_0000019617_8K_20240820",
+            0,
+            2165
+          ]
+        ],
+        "entity_id": "JPM",
+        "legacy": [
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            547815,
+            549694
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            300588,
+            302123
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            546211,
+            548065
+          ],
+          [
+            "EDGAR_0000019617_8K_20240820",
+            1915,
+            3621
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            5450,
+            7650
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            16242,
+            18431
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            0,
+            2052
+          ],
+          [
+            "EDGAR_0000019617_10Q_20240802",
+            298638,
+            300838
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            14409,
+            16514
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            162288,
+            163631
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            21567,
+            23690
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            343442,
+            345337
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            1950,
+            3752
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            23440,
+            25451
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            314427,
+            316501
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            29009,
+            30398
+          ]
+        ],
+        "entity_id": "MS",
+        "legacy": [
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            14409,
+            16514
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            162288,
+            163631
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            343442,
+            345337
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            21567,
+            23690
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            1950,
+            3752
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            23440,
+            25451
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            314427,
+            316501
+          ],
+          [
+            "EDGAR_0000895421_10Q_20240805",
+            29009,
+            30398
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            255563,
+            257508
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            163591,
+            165399
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            19766,
+            21946
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            14160,
+            16360
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            32653,
+            34853
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            16110,
+            18180
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            161641,
+            163841
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            17930,
+            20016
+          ]
+        ],
+        "entity_id": "PNC",
+        "legacy": [
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            255563,
+            257508
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            163591,
+            165399
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            19766,
+            21946
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            14160,
+            16360
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            32653,
+            34853
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            161641,
+            163841
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            17930,
+            20016
+          ],
+          [
+            "EDGAR_0000713676_10Q_20240802",
+            28970,
+            31130
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            10916,
+            12915
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            144495,
+            146103
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            229711,
+            231471
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            145853,
+            147539
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            12665,
+            14757
+          ],
+          [
+            "EDGAR_0000036104_8K_20240912",
+            1919,
+            4115
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            0,
+            2200
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            227856,
+            229961
+          ]
+        ],
+        "entity_id": "USB",
+        "legacy": [
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            144495,
+            146103
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            10916,
+            12915
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            229711,
+            231471
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            145853,
+            147539
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            12665,
+            14757
+          ],
+          [
+            "EDGAR_0000036104_8K_20240912",
+            1919,
+            4115
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            0,
+            2200
+          ],
+          [
+            "EDGAR_0000036104_10Q_20240806",
+            16231,
+            18373
+          ]
+        ],
+        "top1_changed": true,
+        "top3_changed": true,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            466777,
+            468972
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            27762,
+            29893
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            5513,
+            7713
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            224300,
+            226385
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            22144,
+            24324
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            465594,
+            467027
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            24074,
+            26143
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            0,
+            2200
+          ]
+        ],
+        "entity_id": "WFC",
+        "legacy": [
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            466777,
+            468972
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            27762,
+            29893
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            5513,
+            7713
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            22144,
+            24324
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            224300,
+            226385
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            24074,
+            26143
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            465594,
+            467027
+          ],
+          [
+            "EDGAR_0000072971_10Q_20240801",
+            9362,
+            11398
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-growth-2024Q3-banks"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            3451,
+            5148
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            10575,
+            12623
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            44516,
+            46516
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            46266,
+            48465
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            48215,
+            50391
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            8625,
+            10825
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            4898,
+            6925
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            36108,
+            38244
+          ]
+        ],
+        "entity_id": "AMD",
+        "legacy": [
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            3451,
+            5148
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            10575,
+            12623
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            44516,
+            46516
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            46266,
+            48465
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            8625,
+            10825
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            4898,
+            6925
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            36108,
+            38244
+          ],
+          [
+            "EDGAR_0000002488_10Q_20230503",
+            187015,
+            187953
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            45249,
+            47135
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            10472,
+            12047
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            27419,
+            29542
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            84759,
+            86843
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            94129,
+            96190
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            77334,
+            79439
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            18749,
+            20943
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            117019,
+            119139
+          ]
+        ],
+        "entity_id": "DOW",
+        "legacy": [
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            45249,
+            47135
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            10472,
+            12047
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            27419,
+            29542
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            84759,
+            86843
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            94129,
+            96190
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            77334,
+            79439
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            117019,
+            119139
+          ],
+          [
+            "EDGAR_0001751788_10Q_20230426",
+            18749,
+            20943
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            61101,
+            63299
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            9122,
+            10512
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            91903,
+            93830
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            10262,
+            11513
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            63049,
+            65227
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            56333,
+            58138
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            15727,
+            17889
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            0,
+            2128
+          ]
+        ],
+        "entity_id": "HON",
+        "legacy": [
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            61101,
+            63299
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            9122,
+            10512
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            91903,
+            93830
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            10262,
+            11513
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            56333,
+            58138
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            63049,
+            65227
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            15727,
+            17889
+          ],
+          [
+            "EDGAR_0000773840_10Q_20230427",
+            0,
+            2128
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-eps-yoy-2023Q2-mixed"
+      },
+      {
+        "candidate": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "entity_id": "UST10Y",
+        "legacy": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-fomc-curve-20240918"
+      },
+      {
+        "candidate": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "entity_id": "UST2Y",
+        "legacy": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-fomc-curve-20240918"
+      },
+      {
+        "candidate": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "entity_id": "UST30Y",
+        "legacy": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-fomc-curve-20240918"
+      },
+      {
+        "candidate": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "entity_id": "UST3Y",
+        "legacy": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-fomc-curve-20240918"
+      },
+      {
+        "candidate": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "entity_id": "UST5Y",
+        "legacy": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-fomc-curve-20240918"
+      },
+      {
+        "candidate": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "entity_id": "UST7Y",
+        "legacy": [
+          [
+            "RATES_SNAPSHOT_20240919",
+            0,
+            2181
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            0,
+            2195
+          ],
+          [
+            "FOMC_SEP_20240918",
+            1945,
+            4095
+          ],
+          [
+            "FOMC_SEP_20240918",
+            5794,
+            7325
+          ],
+          [
+            "FOMC_STATEMENT_20240918",
+            1945,
+            2516
+          ],
+          [
+            "FOMC_SEP_20240918",
+            3845,
+            6044
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-fomc-curve-20240918"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0000320193_10K_20231103",
+            118325,
+            119894
+          ],
+          [
+            "EDGAR_0000320193_8K_20231102",
+            0,
+            2191
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            94459,
+            95763
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            0,
+            2169
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            105034,
+            107016
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            135014,
+            136910
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            106766,
+            108915
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            97381,
+            99498
+          ]
+        ],
+        "entity_id": "AAPL",
+        "legacy": [
+          [
+            "EDGAR_0000320193_10K_20231103",
+            118325,
+            119894
+          ],
+          [
+            "EDGAR_0000320193_8K_20231102",
+            0,
+            2191
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            0,
+            2169
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            105034,
+            107016
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            135014,
+            136910
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            97381,
+            99498
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            106766,
+            108915
+          ],
+          [
+            "EDGAR_0000320193_10K_20231103",
+            57425,
+            59546
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-postearn-20240201-megacap"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            108394,
+            110218
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            38479,
+            40594
+          ],
+          [
+            "EDGAR_0001018724_8K_20231101",
+            0,
+            2050
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            0,
+            2075
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            172804,
+            174782
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            8588,
+            9910
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            6881,
+            8838
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            9660,
+            11841
+          ]
+        ],
+        "entity_id": "AMZN",
+        "legacy": [
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            108394,
+            110218
+          ],
+          [
+            "EDGAR_0001018724_8K_20231101",
+            0,
+            2050
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            0,
+            2075
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            38479,
+            40594
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            65062,
+            66922
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            9660,
+            11841
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            6881,
+            8838
+          ],
+          [
+            "EDGAR_0001018724_10Q_20231027",
+            8588,
+            9910
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": true,
+        "unit": "t4-postearn-20240201-megacap"
+      },
+      {
+        "candidate": [
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            21892,
+            24079
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            19984,
+            22142
+          ],
+          [
+            "EDGAR_0001326801_8K_20240118",
+            1903,
+            2828
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            5733,
+            7767
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            0,
+            2150
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            29024,
+            31117
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            23829,
+            26029
+          ],
+          [
+            "EDGAR_0001326801_8K_20240118",
+            0,
+            2153
+          ]
+        ],
+        "entity_id": "META",
+        "legacy": [
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            21892,
+            24079
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            19984,
+            22142
+          ],
+          [
+            "EDGAR_0001326801_8K_20240118",
+            1903,
+            2828
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            5733,
+            7767
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            0,
+            2150
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            29024,
+            31117
+          ],
+          [
+            "EDGAR_0001326801_8K_20240118",
+            0,
+            2153
+          ],
+          [
+            "EDGAR_0001326801_10Q_20231026",
+            23829,
+            26029
+          ]
+        ],
+        "top1_changed": false,
+        "top3_changed": false,
+        "unit": "t4-postearn-20240201-megacap"
+      }
+    ],
+    "rows": 78,
+    "rows_changed_top1": 8,
+    "rows_changed_top3": 25,
+    "rows_changed_top8": 38
+  },
+  "public_model_run": {
+    "answers_written": 11,
+    "calls": 12,
+    "completion_tokens": 7115,
+    "cost_usd": 0.0,
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "parser_errors": 3,
+    "prompt_tokens": 91295,
+    "provider": "OpenRouter",
+    "seed": 1234,
+    "temperature": 0.0
+  },
+  "public_smoke": {
+    "admissible_units": 11,
+    "roster_rows": 78,
+    "total_units": 11
+  },
+  "schema_version": 1,
+  "synthetic": {
+    "candidate_top1_correct": 13,
+    "legacy_top1_correct": 1,
+    "rows": [
+      {
+        "candidate": "DOC_TIER_HIGH",
+        "candidate_correct": true,
+        "entity_id": "tier_high",
+        "expected": "DOC_TIER_HIGH",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": true
+      },
+      {
+        "candidate": "DOC_TIER_MEDIUM",
+        "candidate_correct": true,
+        "entity_id": "tier_medium",
+        "expected": "DOC_TIER_MEDIUM",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_TIER_LOW",
+        "candidate_correct": true,
+        "entity_id": "tier_low",
+        "expected": "DOC_TIER_LOW",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_ACTION_UP",
+        "candidate_correct": true,
+        "entity_id": "action_up",
+        "expected": "DOC_ACTION_UP",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_ACTION_FLAT",
+        "candidate_correct": true,
+        "entity_id": "action_flat",
+        "expected": "DOC_ACTION_FLAT",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_ACTION_DOWN",
+        "candidate_correct": true,
+        "entity_id": "action_down",
+        "expected": "DOC_ACTION_DOWN",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_CAPACITY_EXPAND",
+        "candidate_correct": true,
+        "entity_id": "capacity_expand",
+        "expected": "DOC_CAPACITY_EXPAND",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_CAPACITY_HOLD",
+        "candidate_correct": true,
+        "entity_id": "capacity_hold",
+        "expected": "DOC_CAPACITY_HOLD",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_CAPACITY_CONTRACT",
+        "candidate_correct": true,
+        "entity_id": "capacity_contract",
+        "expected": "DOC_CAPACITY_CONTRACT",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_RISK_YES",
+        "candidate_correct": true,
+        "entity_id": "risk_yes",
+        "expected": "DOC_RISK_YES",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_RISK_NO",
+        "candidate_correct": true,
+        "entity_id": "risk_no",
+        "expected": "DOC_RISK_NO",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_QUALITY_PASS",
+        "candidate_correct": true,
+        "entity_id": "quality_pass",
+        "expected": "DOC_QUALITY_PASS",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      },
+      {
+        "candidate": "DOC_QUALITY_FAIL",
+        "candidate_correct": true,
+        "entity_id": "quality_fail",
+        "expected": "DOC_QUALITY_FAIL",
+        "legacy": "DOC_TIER_HIGH",
+        "legacy_correct": false
+      }
+    ]
+  },
+  "token_examples": {
+    "candidate": [
+      "action_flat",
+      "$5.28",
+      "10%",
+      "2024-10-31",
+      "year-over-year"
+    ],
+    "legacy": [
+      "action_flat.",
+      "$5.28",
+      "10%",
+      "2024-10-31",
+      "year-over-year."
+    ]
+  }
+}

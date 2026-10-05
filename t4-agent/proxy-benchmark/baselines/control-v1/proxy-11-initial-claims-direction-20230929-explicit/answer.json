@@ -1,0 +1,173 @@
+{
+  "task_id": "proxy-11-initial-claims-direction-20230929-explicit",
+  "schema_version": "3",
+  "target_type": "classification",
+  "entity_predictions": [
+    {
+      "entity_id": "CLAIMS_ICSA_20231005",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_ICSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 488,
+          "claim": "Initial claims, seasonally adjusted (ICSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-04-01 | 228000.000000\n2023-04-08 | 240000.000000\n2023-04-15 | 246000.000000\n2023-04-22 | 229000.000000\n2023-04-29 | 242000.000000\n2023-05-06 | 231000.000000\n2023-05-13 | 225000.000000\n2023-05-20 | 230000.000000\n2023-05-27 | 233000.000000\n2023-06-03 | 262000.000000\n2023-06-10 | 264000.000000\n2023-06-17 | 265000.000000\n2023-06-24 | 236000.000000\n2023-07-01 | 249000.000000\n2023-07-08 | 237000.000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_ICSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 785,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_ICNSA_20231005",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_ICNSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 493,
+          "claim": "Initial claims, not seasonally adjusted (ICNSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-04-01 | 207120.000000\n2023-04-08 | 235237.000000\n2023-04-15 | 229319.000000\n2023-04-22 | 225137.000000\n2023-04-29 | 220115.000000\n2023-05-06 | 204962.000000\n2023-05-13 | 200738.000000\n2023-05-20 | 202645.000000\n2023-05-27 | 208772.000000\n2023-06-03 | 220449.000000\n2023-06-10 | 251384.000000\n2023-06-17 | 250891.000000\n2023-06-24 | 229718.000000\n2023-07-01 | 251686.000000\n2023-07-08 | 258252.000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_ICNSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 790,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_CCSA_20231005",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_CCSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 478,
+          "claim": "Continuing claims, seasonally adjusted (CCSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-03-25 | 1823000.000000\n2023-04-01 | 1804000.000000\n2023-04-08 | 1861000.000000\n2023-04-15 | 1843000.000000\n2023-04-22 | 1801000.000000\n2023-04-29 | 1807000.000000\n2023-05-06 | 1799000.000000\n2023-05-13 | 1789000.000000\n2023-05-20 | 1794000.000000\n2023-05-27 | 1755000.000000\n2023-06-03 | 1772000.000000\n2023-06-10 | 1761000.000000\n2023-06-17 | 1733000.000000\n2023-06-24 | 1718000.000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_CCSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 814,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_CCNSA_20231005",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_CCNSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 483,
+          "claim": "Continuing claims, not seasonally adjusted (CCNSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-03-25 | 1844456.000000\n2023-04-01 | 1795471.000000\n2023-04-08 | 1788631.000000\n2023-04-15 | 1752764.000000\n2023-04-22 | 1689410.000000\n2023-04-29 | 1660410.000000\n2023-05-06 | 1612137.000000\n2023-05-13 | 1612163.000000\n2023-05-20 | 1609655.000000\n2023-05-27 | 1595088.000000\n2023-06-03 | 1649707.000000\n2023-06-10 | 1672995.000000\n2023-06-17 | 1674551.000000\n2023-06-24 | 1737349.000000"
+        },
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_CCNSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 819,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_IURSA_20231005",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 491,
+          "claim": "Insured unemployment rate, seasonally adjusted (IURSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-03-25 | 1.300000\n2023-04-01 | 1.200000\n2023-04-08 | 1.300000\n2023-04-15 | 1.300000\n2023-04-22 | 1.200000\n2023-04-29 | 1.200000\n2023-05-06 | 1.200000\n2023-05-13 | 1.200000\n2023-05-20 | 1.200000\n2023-05-27 | 1.200000\n2023-06-03 | 1.200000\n2023-06-10 | 1.200000\n2023-06-17 | 1.200000\n2023-06-24 | 1.200000\n2023-07-01 | 1.200000\n2023-07-08 | 1.200000\n2023-07-15 | 1.100000\n2023-07-22 | 1.100000"
+        },
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 667,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_IURNSA_20231005",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURNSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 496,
+          "claim": "Insured unemployment rate, not seasonally adjusted (IURNSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-03-25 | 1.300000\n2023-04-01 | 1.200000\n2023-04-08 | 1.200000\n2023-04-15 | 1.200000\n2023-04-22 | 1.200000\n2023-04-29 | 1.100000\n2023-05-06 | 1.100000\n2023-05-13 | 1.100000\n2023-05-20 | 1.100000\n2023-05-27 | 1.100000\n2023-06-03 | 1.100000\n2023-06-10 | 1.100000\n2023-06-17 | 1.100000\n2023-06-24 | 1.200000\n2023-07-01 | 1.200000\n2023-07-08 | 1.300000\n2023-07-15 | 1.200000\n2023-07-22 | 1.200000"
+        },
+        {
+          "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURNSA_20231005_explicit",
+          "span_start": 0,
+          "span_end": 672,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ],
+      "label": "flat"
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "CLAIMS_ICSA_20231005",
+      "CLAIMS_ICNSA_20231005",
+      "CLAIMS_CCSA_20231005",
+      "CLAIMS_CCNSA_20231005",
+      "CLAIMS_IURSA_20231005",
+      "CLAIMS_IURNSA_20231005"
+    ],
+    "methods": {
+      "CLAIMS_ICSA_20231005": "generic_baseline",
+      "CLAIMS_ICNSA_20231005": "generic_baseline",
+      "CLAIMS_CCSA_20231005": "generic_baseline",
+      "CLAIMS_CCNSA_20231005": "generic_baseline",
+      "CLAIMS_IURSA_20231005": "generic_baseline",
+      "CLAIMS_IURNSA_20231005": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

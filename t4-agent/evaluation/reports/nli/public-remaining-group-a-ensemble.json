@@ -1,0 +1,765 @@
+{
+  "schema_version": 2,
+  "model_ids": [
+    "cross-encoder/nli-deberta-v3-large",
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+  ],
+  "model_revisions": {
+    "cross-encoder/nli-deberta-v3-large": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+  },
+  "member_runtimes": {
+    "cross-encoder/nli-deberta-v3-large": {
+      "python": "3.11.7",
+      "torch": "2.2.2",
+      "transformers": "4.46.3",
+      "qfbench2-common": "2.4.4"
+    },
+    "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": {
+      "python": "3.11.7",
+      "torch": "2.2.2",
+      "transformers": "4.46.3",
+      "qfbench2-common": "2.4.4"
+    }
+  },
+  "aggregation": "Arithmetic mean of member two-way entailment scores before tau threshold.",
+  "aggregation_scope": "Exact when member rows retain citation_scores; legacy rows are exact only for the one-citation-per-entity reports produced before citation-level capture.",
+  "case_count": 4,
+  "all_gates_pass": false,
+  "cases": [
+    {
+      "case_id": "t4-cpicomp-202410-us11",
+      "unit_id": "t4-cpicomp-202410-us11",
+      "answer_sha256": "caec4733477e138a1bbe17bcedfe30d9f669a28d0ffd3fa526e5f37f7ec05634",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 0.9090909090909091,
+      "gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "CPI_ALLITEMS",
+          "hypothesis": "The cpi component mom first print of All items (headline CPI) (CPI_ALLITEMS) is 0.18. The 90% prediction interval for the cpi component mom first print of All items (headline CPI) (CPI_ALLITEMS) is -0.57 to 0.93.",
+          "member_scores": [
+            0.43863338232040405,
+            0.7604772448539734
+          ],
+          "ensemble_score": 0.5995553135871887,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.43863338232040405,
+                0.7604772448539734
+              ],
+              "ensemble_score": 0.5995553135871887
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_APPAREL",
+          "hypothesis": "The cpi component mom first print of Apparel (CPI_APPAREL) is 0.876. The 90% prediction interval for the cpi component mom first print of Apparel (CPI_APPAREL) is -0.182188 to 1.93419.",
+          "member_scores": [
+            0.5006208419799805,
+            0.901325523853302
+          ],
+          "ensemble_score": 0.7009731829166412,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.5006208419799805,
+                0.901325523853302
+              ],
+              "ensemble_score": 0.7009731829166412
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_CORE",
+          "hypothesis": "The cpi component mom first print of All items less food and energy (core CPI) (CPI_CORE) is 0.301. The 90% prediction interval for the cpi component mom first print of All items less food and energy (core CPI) (CPI_CORE) is -0.449 to 1.051.",
+          "member_scores": [
+            0.4583968222141266,
+            0.8043470978736877
+          ],
+          "ensemble_score": 0.6313719600439072,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.4583968222141266,
+                0.8043470978736877
+              ],
+              "ensemble_score": 0.6313719600439072
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_ENERGY",
+          "hypothesis": "The cpi component mom first print of Energy (CPI_ENERGY) is -0.96. The 90% prediction interval for the cpi component mom first print of Energy (CPI_ENERGY) is -1.71 to -0.21.",
+          "member_scores": [
+            0.20771457254886627,
+            0.7079781293869019
+          ],
+          "ensemble_score": 0.45784635096788406,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.20771457254886627,
+                0.7079781293869019
+              ],
+              "ensemble_score": 0.45784635096788406
+            },
+            {
+              "premise_sha256": "719711265cb240bb8da786d50b1e74341ae2b8e9cf598866e73c4cf896456214",
+              "premise_chars": 43,
+              "member_scores": [
+                0.06041325256228447,
+                0.25589704513549805
+              ],
+              "ensemble_score": 0.15815514884889126
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_FOOD",
+          "hypothesis": "The cpi component mom first print of Food (CPI_FOOD) is 0.364. The 90% prediction interval for the cpi component mom first print of Food (CPI_FOOD) is -0.386 to 1.114.",
+          "member_scores": [
+            0.4741246700286865,
+            0.8337407112121582
+          ],
+          "ensemble_score": 0.6539326906204224,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.4741246700286865,
+                0.8337407112121582
+              ],
+              "ensemble_score": 0.6539326906204224
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_GASOLINE",
+          "hypothesis": "The cpi component mom first print of Gasoline (all types) (CPI_GASOLINE) is -2.4. The 90% prediction interval for the cpi component mom first print of Gasoline (all types) (CPI_GASOLINE) is -7.15727 to 2.35727.",
+          "member_scores": [
+            0.39338192343711853,
+            0.6833107471466064
+          ],
+          "ensemble_score": 0.5383463352918625,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.39338192343711853,
+                0.6833107471466064
+              ],
+              "ensemble_score": 0.5383463352918625
+            },
+            {
+              "premise_sha256": "719711265cb240bb8da786d50b1e74341ae2b8e9cf598866e73c4cf896456214",
+              "premise_chars": 43,
+              "member_scores": [
+                0.20810265839099884,
+                0.616744339466095
+              ],
+              "ensemble_score": 0.4124234989285469
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_MEDICAL",
+          "hypothesis": "The cpi component mom first print of Medical care (CPI_MEDICAL) is 0.251. The 90% prediction interval for the cpi component mom first print of Medical care (CPI_MEDICAL) is -0.499 to 1.001.",
+          "member_scores": [
+            0.45405277609825134,
+            0.6838942766189575
+          ],
+          "ensemble_score": 0.5689735263586044,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.45405277609825134,
+                0.6838942766189575
+              ],
+              "ensemble_score": 0.5689735263586044
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_NEWVEH",
+          "hypothesis": "The cpi component mom first print of New vehicles (CPI_NEWVEH) is 0.12. The 90% prediction interval for the cpi component mom first print of New vehicles (CPI_NEWVEH) is -0.63 to 0.87.",
+          "member_scores": [
+            0.4497144818305969,
+            0.7811163067817688
+          ],
+          "ensemble_score": 0.6154153943061829,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.4497144818305969,
+                0.7811163067817688
+              ],
+              "ensemble_score": 0.6154153943061829
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_SHELTER",
+          "hypothesis": "The cpi component mom first print of Shelter (CPI_SHELTER) is 0.268. The 90% prediction interval for the cpi component mom first print of Shelter (CPI_SHELTER) is -0.482 to 1.018.",
+          "member_scores": [
+            0.46116912364959717,
+            0.8881445527076721
+          ],
+          "ensemble_score": 0.6746568381786346,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.46116912364959717,
+                0.8881445527076721
+              ],
+              "ensemble_score": 0.6746568381786346
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_TRANSPSVC",
+          "hypothesis": "The cpi component mom first print of Transportation services (CPI_TRANSPSVC) is 1.212. The 90% prediction interval for the cpi component mom first print of Transportation services (CPI_TRANSPSVC) is 0.00801216 to 2.41599.",
+          "member_scores": [
+            0.49966001510620117,
+            0.7985899448394775
+          ],
+          "ensemble_score": 0.6491249799728394,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.49966001510620117,
+                0.7985899448394775
+              ],
+              "ensemble_score": 0.6491249799728394
+            }
+          ]
+        },
+        {
+          "entity_id": "CPI_USEDCARS",
+          "hypothesis": "The cpi component mom first print of Used cars and trucks (CPI_USEDCARS) is -0.071. The 90% prediction interval for the cpi component mom first print of Used cars and trucks (CPI_USEDCARS) is -2.15281 to 2.01081.",
+          "member_scores": [
+            0.3583701550960541,
+            0.6895192265510559
+          ],
+          "ensemble_score": 0.523944690823555,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "75721c3c6c93f5b8172b0c0e6641f24c1025cc00c0b78f8e74875ae8670250f2",
+              "premise_chars": 863,
+              "member_scores": [
+                0.3583701550960541,
+                0.6895192265510559
+              ],
+              "ensemble_score": 0.523944690823555
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-macrorev-20240930-us6",
+      "unit_id": "t4-macrorev-20240930-us6",
+      "answer_sha256": "75f22853d9492f7071211959304fee0cc5aca168eb996a4fcae8facb974ee946",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 0.6666666666666666,
+      "gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "DGORDER_2024-07_20241025",
+          "hypothesis": "The next estimate revision direction of DGORDER_2024-07_20241025 is down. The 90% prediction interval for the next estimate revision direction of DGORDER_2024-07_20241025 is 288824 to 290056.",
+          "member_scores": [
+            0.40939268469810486,
+            0.6188412308692932
+          ],
+          "ensemble_score": 0.514116957783699,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "fee7bd8c90f520f3f80de027fabd996f41155b0065deb18be6432b9016018de9",
+              "premise_chars": 998,
+              "member_scores": [
+                0.40939268469810486,
+                0.6188412308692932
+              ],
+              "ensemble_score": 0.514116957783699
+            }
+          ]
+        },
+        {
+          "entity_id": "DGORDER_2024-08_20241025",
+          "hypothesis": "The next estimate revision direction of DGORDER_2024-08_20241025 is down. The 90% prediction interval for the next estimate revision direction of DGORDER_2024-08_20241025 is 288957 to 290189.",
+          "member_scores": [
+            0.37504786252975464,
+            0.6265695691108704
+          ],
+          "ensemble_score": 0.5008087158203125,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "fee7bd8c90f520f3f80de027fabd996f41155b0065deb18be6432b9016018de9",
+              "premise_chars": 998,
+              "member_scores": [
+                0.37504786252975464,
+                0.6265695691108704
+              ],
+              "ensemble_score": 0.5008087158203125
+            }
+          ]
+        },
+        {
+          "entity_id": "HOUST_2024-07_20241018",
+          "hypothesis": "The next estimate revision direction of HOUST_2024-07_20241018 is up. The 90% prediction interval for the next estimate revision direction of HOUST_2024-07_20241018 is 1202.74 to 1273.26.",
+          "member_scores": [
+            0.1761617511510849,
+            0.5132719874382019
+          ],
+          "ensemble_score": 0.3447168692946434,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "69918e6342376d0ef7a0a5523de4e31b7f61bd2e015a838d9fdd195a1a505e5b",
+              "premise_chars": 451,
+              "member_scores": [
+                0.1761617511510849,
+                0.5132719874382019
+              ],
+              "ensemble_score": 0.3447168692946434
+            }
+          ]
+        },
+        {
+          "entity_id": "INDPRO_2024-07_20241017",
+          "hypothesis": "The next estimate revision direction of INDPRO_2024-07_20241017 is down. The 90% prediction interval for the next estimate revision direction of INDPRO_2024-07_20241017 is 101.951 to 102.587.",
+          "member_scores": [
+            0.5161916613578796,
+            0.5872597098350525
+          ],
+          "ensemble_score": 0.5517256855964661,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "8b00132ae84242a3929203e65a8341729066706685f994e8acdebfcbcda2b73e",
+              "premise_chars": 2032,
+              "member_scores": [
+                0.5161916613578796,
+                0.5872597098350525
+              ],
+              "ensemble_score": 0.5517256855964661
+            }
+          ]
+        },
+        {
+          "entity_id": "INDPRO_2024-08_20241017",
+          "hypothesis": "The next estimate revision direction of INDPRO_2024-08_20241017 is down. The 90% prediction interval for the next estimate revision direction of INDPRO_2024-08_20241017 is 102.784 to 103.42.",
+          "member_scores": [
+            0.4120881259441376,
+            0.5686991214752197
+          ],
+          "ensemble_score": 0.49039362370967865,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "8b00132ae84242a3929203e65a8341729066706685f994e8acdebfcbcda2b73e",
+              "premise_chars": 2032,
+              "member_scores": [
+                0.4120881259441376,
+                0.5686991214752197
+              ],
+              "ensemble_score": 0.49039362370967865
+            }
+          ]
+        },
+        {
+          "entity_id": "PAYEMS_2024-07_20241004",
+          "hypothesis": "The next estimate revision direction of PAYEMS_2024-07_20241004 is down. The 90% prediction interval for the next estimate revision direction of PAYEMS_2024-07_20241004 is 158261 to 158895.",
+          "member_scores": [
+            0.5307428240776062,
+            0.648408830165863
+          ],
+          "ensemble_score": 0.5895758271217346,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "4fce07171860e59649290b001715ea889c8bcc9fb24b763ae350de8f70ebd40f",
+              "premise_chars": 582,
+              "member_scores": [
+                0.5307428240776062,
+                0.648408830165863
+              ],
+              "ensemble_score": 0.5895758271217346
+            }
+          ]
+        },
+        {
+          "entity_id": "PAYEMS_2024-08_20241004",
+          "hypothesis": "The next estimate revision direction of PAYEMS_2024-08_20241004 is down. The 90% prediction interval for the next estimate revision direction of PAYEMS_2024-08_20241004 is 158402 to 159038.",
+          "member_scores": [
+            0.36504361033439636,
+            0.6135904788970947
+          ],
+          "ensemble_score": 0.48931704461574554,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "4fce07171860e59649290b001715ea889c8bcc9fb24b763ae350de8f70ebd40f",
+              "premise_chars": 582,
+              "member_scores": [
+                0.36504361033439636,
+                0.6135904788970947
+              ],
+              "ensemble_score": 0.48931704461574554
+            }
+          ]
+        },
+        {
+          "entity_id": "PAYEMS_2024-08_20241101",
+          "hypothesis": "The next estimate revision direction of PAYEMS_2024-08_20241101 is down. The 90% prediction interval for the next estimate revision direction of PAYEMS_2024-08_20241101 is 158402 to 159038.",
+          "member_scores": [
+            0.3770841360092163,
+            0.6119216084480286
+          ],
+          "ensemble_score": 0.49450287222862244,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "4fce07171860e59649290b001715ea889c8bcc9fb24b763ae350de8f70ebd40f",
+              "premise_chars": 582,
+              "member_scores": [
+                0.3770841360092163,
+                0.6119216084480286
+              ],
+              "ensemble_score": 0.49450287222862244
+            }
+          ]
+        },
+        {
+          "entity_id": "PI_2024-07_20241031",
+          "hypothesis": "The next estimate revision direction of PI_2024-07_20241031 is up. The 90% prediction interval for the next estimate revision direction of PI_2024-07_20241031 is 23431.9 to 27545.8.",
+          "member_scores": [
+            0.5556114912033081,
+            0.6097149848937988
+          ],
+          "ensemble_score": 0.5826632380485535,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "6f557f9e1743c90e95e5d6ea69090cd6fdfb4c4f0fec4f941ae244119e03885a",
+              "premise_chars": 1172,
+              "member_scores": [
+                0.5556114912033081,
+                0.6097149848937988
+              ],
+              "ensemble_score": 0.5826632380485535
+            }
+          ]
+        },
+        {
+          "entity_id": "PI_2024-08_20241127",
+          "hypothesis": "The next estimate revision direction of PI_2024-08_20241127 is up. The 90% prediction interval for the next estimate revision direction of PI_2024-08_20241127 is 23482.4 to 27596.3.",
+          "member_scores": [
+            0.5350444316864014,
+            0.6099774837493896
+          ],
+          "ensemble_score": 0.5725109577178955,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "6f557f9e1743c90e95e5d6ea69090cd6fdfb4c4f0fec4f941ae244119e03885a",
+              "premise_chars": 1172,
+              "member_scores": [
+                0.5350444316864014,
+                0.6099774837493896
+              ],
+              "ensemble_score": 0.5725109577178955
+            }
+          ]
+        },
+        {
+          "entity_id": "RSAFS_2024-07_20241017",
+          "hypothesis": "The next estimate revision direction of RSAFS_2024-07_20241017 is up. The 90% prediction interval for the next estimate revision direction of RSAFS_2024-07_20241017 is 708932 to 711935.",
+          "member_scores": [
+            0.5579833984375,
+            0.5942114591598511
+          ],
+          "ensemble_score": 0.5760974287986755,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "db4a19dbafa415fea7efa475242a54e49a1bce436e1e291a0867d6062a7b3915",
+              "premise_chars": 576,
+              "member_scores": [
+                0.5579833984375,
+                0.5942114591598511
+              ],
+              "ensemble_score": 0.5760974287986755
+            }
+          ]
+        },
+        {
+          "entity_id": "RSAFS_2024-08_20241115",
+          "hypothesis": "The next estimate revision direction of RSAFS_2024-08_20241115 is up. The 90% prediction interval for the next estimate revision direction of RSAFS_2024-08_20241115 is 709296 to 712299.",
+          "member_scores": [
+            0.5117402672767639,
+            0.5763332843780518
+          ],
+          "ensemble_score": 0.5440367758274078,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "db4a19dbafa415fea7efa475242a54e49a1bce436e1e291a0867d6062a7b3915",
+              "premise_chars": 576,
+              "member_scores": [
+                0.5117402672767639,
+                0.5763332843780518
+              ],
+              "ensemble_score": 0.5440367758274078
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-postearn-20240201-megacap",
+      "unit_id": "t4-postearn-20240201-megacap",
+      "answer_sha256": "6baf846bea4c4a06a61e60e8ac98b845a613acbc9aeb50867cc182c0325a1647",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 0.6666666666666666,
+      "gate_pass": false,
+      "predictions": [
+        {
+          "entity_id": "AAPL",
+          "hypothesis": "The earnings reaction of Apple Inc. (AAPL) is flat. The 90% prediction interval for the earnings reaction of Apple Inc. (AAPL) is -8.3 to 8.3.",
+          "member_scores": [
+            0.45840004086494446,
+            0.5603034496307373
+          ],
+          "ensemble_score": 0.5093517452478409,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "0c973120b55288ebea199afceaf2345773e4ad429834f1fb3e992a9aaead6e65",
+              "premise_chars": 250,
+              "member_scores": [
+                0.45840004086494446,
+                0.5603034496307373
+              ],
+              "ensemble_score": 0.5093517452478409
+            }
+          ]
+        },
+        {
+          "entity_id": "AMZN",
+          "hypothesis": "The earnings reaction of Amazon.com, Inc. (AMZN) is flat. The 90% prediction interval for the earnings reaction of Amazon.com, Inc. (AMZN) is -8.3 to 8.3.",
+          "member_scores": [
+            0.22741274535655975,
+            0.595114529132843
+          ],
+          "ensemble_score": 0.4112636372447014,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "85a7d028801233cdea7ec1a9e6a709d223d87c81859e24d81a2e6c21c21acd87",
+              "premise_chars": 387,
+              "member_scores": [
+                0.22741274535655975,
+                0.595114529132843
+              ],
+              "ensemble_score": 0.4112636372447014
+            }
+          ]
+        },
+        {
+          "entity_id": "META",
+          "hypothesis": "The earnings reaction of Meta Platforms, Inc. (META) is flat. The 90% prediction interval for the earnings reaction of Meta Platforms, Inc. (META) is -8.3 to 8.3.",
+          "member_scores": [
+            0.3904370367527008,
+            0.8082801103591919
+          ],
+          "ensemble_score": 0.5993585735559464,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "9dce887c686e11583ded4547c602dc26e660fc90aed7038e317a5c67b7eb7ae6",
+              "premise_chars": 250,
+              "member_scores": [
+                0.3904370367527008,
+                0.8082801103591919
+              ],
+              "ensemble_score": 0.5993585735559464
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-fomc-curve-20240918",
+      "unit_id": "t4-fomc-curve-20240918",
+      "answer_sha256": "77f8dcf4d6d84f3ac1a955cfc2a57d136f913600014bcc575a29940f7494694d",
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "faithfulness": 0.8333333333333334,
+      "gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "UST10Y",
+          "hypothesis": "The yield change bps intermeeting of 10-Year U.S. Treasury constant-maturity yield (UST10Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 10-Year U.S. Treasury constant-maturity yield (UST10Y) is -50 to 50.",
+          "member_scores": [
+            0.3545430302619934,
+            0.6888620257377625
+          ],
+          "ensemble_score": 0.5217025279998779,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "f9cc339d85a1771ff487ce63bdb06bfae33f460142f9a5bba600573c88bca9d6",
+              "premise_chars": 457,
+              "member_scores": [
+                0.3545430302619934,
+                0.6888620257377625
+              ],
+              "ensemble_score": 0.5217025279998779
+            }
+          ]
+        },
+        {
+          "entity_id": "UST2Y",
+          "hypothesis": "The yield change bps intermeeting of 2-Year U.S. Treasury constant-maturity yield (UST2Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 2-Year U.S. Treasury constant-maturity yield (UST2Y) is -50 to 50.",
+          "member_scores": [
+            0.29633939266204834,
+            0.728144645690918
+          ],
+          "ensemble_score": 0.5122420191764832,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "f9cc339d85a1771ff487ce63bdb06bfae33f460142f9a5bba600573c88bca9d6",
+              "premise_chars": 457,
+              "member_scores": [
+                0.29633939266204834,
+                0.728144645690918
+              ],
+              "ensemble_score": 0.5122420191764832
+            }
+          ]
+        },
+        {
+          "entity_id": "UST30Y",
+          "hypothesis": "The yield change bps intermeeting of 30-Year U.S. Treasury constant-maturity yield (UST30Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 30-Year U.S. Treasury constant-maturity yield (UST30Y) is -50 to 50.",
+          "member_scores": [
+            0.29478079080581665,
+            0.691993236541748
+          ],
+          "ensemble_score": 0.49338701367378235,
+          "supported": false,
+          "citations": [
+            {
+              "premise_sha256": "f9cc339d85a1771ff487ce63bdb06bfae33f460142f9a5bba600573c88bca9d6",
+              "premise_chars": 457,
+              "member_scores": [
+                0.29478079080581665,
+                0.691993236541748
+              ],
+              "ensemble_score": 0.49338701367378235
+            }
+          ]
+        },
+        {
+          "entity_id": "UST3Y",
+          "hypothesis": "The yield change bps intermeeting of 3-Year U.S. Treasury constant-maturity yield (UST3Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 3-Year U.S. Treasury constant-maturity yield (UST3Y) is -50 to 50.",
+          "member_scores": [
+            0.31579217314720154,
+            0.7248529195785522
+          ],
+          "ensemble_score": 0.5203225463628769,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "f9cc339d85a1771ff487ce63bdb06bfae33f460142f9a5bba600573c88bca9d6",
+              "premise_chars": 457,
+              "member_scores": [
+                0.31579217314720154,
+                0.7248529195785522
+              ],
+              "ensemble_score": 0.5203225463628769
+            }
+          ]
+        },
+        {
+          "entity_id": "UST5Y",
+          "hypothesis": "The yield change bps intermeeting of 5-Year U.S. Treasury constant-maturity yield (UST5Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 5-Year U.S. Treasury constant-maturity yield (UST5Y) is -50 to 50.",
+          "member_scores": [
+            0.30784907937049866,
+            0.708890974521637
+          ],
+          "ensemble_score": 0.5083700269460678,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "f9cc339d85a1771ff487ce63bdb06bfae33f460142f9a5bba600573c88bca9d6",
+              "premise_chars": 457,
+              "member_scores": [
+                0.30784907937049866,
+                0.708890974521637
+              ],
+              "ensemble_score": 0.5083700269460678
+            }
+          ]
+        },
+        {
+          "entity_id": "UST7Y",
+          "hypothesis": "The yield change bps intermeeting of 7-Year U.S. Treasury constant-maturity yield (UST7Y) is 0. The 90% prediction interval for the yield change bps intermeeting of 7-Year U.S. Treasury constant-maturity yield (UST7Y) is -50 to 50.",
+          "member_scores": [
+            0.33182889223098755,
+            0.7190276980400085
+          ],
+          "ensemble_score": 0.525428295135498,
+          "supported": true,
+          "citations": [
+            {
+              "premise_sha256": "f9cc339d85a1771ff487ce63bdb06bfae33f460142f9a5bba600573c88bca9d6",
+              "premise_chars": 457,
+              "member_scores": [
+                0.33182889223098755,
+                0.7190276980400085
+              ],
+              "ensemble_score": 0.525428295135498
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

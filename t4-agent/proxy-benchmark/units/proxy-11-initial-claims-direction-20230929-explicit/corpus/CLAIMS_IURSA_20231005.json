@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-09-29",
+  "doc_id": "PROXY_proxy-11-initial-claims-direction_CLAIMS_IURSA_20231005_explicit",
+  "entities": [
+    "CLAIMS_IURSA_20231005"
+  ],
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "source": "U.S. Department of Labor via ALFRED",
+  "text": "Insured unemployment rate, seasonally adjusted (IURSA); ALFRED vintage 2023-09-29.\nweek | value\n2023-03-25 | 1.300000\n2023-04-01 | 1.200000\n2023-04-08 | 1.300000\n2023-04-15 | 1.300000\n2023-04-22 | 1.200000\n2023-04-29 | 1.200000\n2023-05-06 | 1.200000\n2023-05-13 | 1.200000\n2023-05-20 | 1.200000\n2023-05-27 | 1.200000\n2023-06-03 | 1.200000\n2023-06-10 | 1.200000\n2023-06-17 | 1.200000\n2023-06-24 | 1.200000\n2023-07-01 | 1.200000\n2023-07-08 | 1.200000\n2023-07-15 | 1.100000\n2023-07-22 | 1.100000\n2023-07-29 | 1.100000\n2023-08-05 | 1.200000\n2023-08-12 | 1.100000\n2023-08-19 | 1.200000\n2023-08-26 | 1.100000\n2023-09-02 | 1.100000\n2023-09-09 | 1.100000\n2023-09-16 | 1.100000"
+}

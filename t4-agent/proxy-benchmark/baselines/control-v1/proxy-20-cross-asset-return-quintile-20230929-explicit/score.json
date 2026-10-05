@@ -1,0 +1,15 @@
+{
+  "unit": "proxy-20-cross-asset-return-quintile-20230929-explicit",
+  "raw_spearman": 0.4932330827067668,
+  "raw_predictive_quality": 0.7466165413533834,
+  "naive_predictive_quality": 0.7466165413533834,
+  "predictive_anchor": 0.7466165413533834,
+  "predictive_quality": 0.5,
+  "interval_coverage": 0.8,
+  "interval_score": 34.089678423397274,
+  "naive_interval_score": 27.476226924173396,
+  "raw_interval_quality": 0.4462896593342728,
+  "interval_quality": 0.4462896593342728,
+  "composite_before_claim_penalty": 0.4838868978002818,
+  "claim_penalty_evaluated": false
+}

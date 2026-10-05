@@ -1,0 +1,17 @@
+{
+  "unit": "proxy-16-crude-inventory-change-20260923-transformed",
+  "target_type": "regression",
+  "mae": 1.4856666666666667,
+  "naive_mae": 1.0378666666666667,
+  "raw_predictive_quality": 0.41127519615354136,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": null,
+  "predictive_quality": 0.41127519615354136,
+  "interval_coverage": 0.6666666666666666,
+  "interval_score": 9.836666666666668,
+  "naive_interval_score": 5.993955850052324,
+  "raw_interval_quality": 0.3786304577550254,
+  "interval_quality": 0.3786304577550254,
+  "composite_before_claim_penalty": 0.40148177463398654,
+  "claim_penalty_evaluated": false
+}

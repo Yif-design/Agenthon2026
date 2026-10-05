@@ -1,0 +1,266 @@
+{
+  "baseline_git_commit": "ae1e6312e0e6bdec49e2e697794a16e630589998",
+  "decision": "accept",
+  "decision_reason": "The candidate uniquely recovers every complete renamed known structure, leaves every negative control generic, preserves all public bytes, and passes the full unit, local-validation and official-smoke gates without a model call.",
+  "decision_rule": "Require 9/9 renamed complete structures to recover, every partial/wrong-type/ambiguous/collision case to remain generic, public outputs to be byte-identical, 11/11 schema and smoke, and no extra model calls.",
+  "experiment": "structural_router_fallback_v1",
+  "hypothesis": "A unique roster-wide entity-field signature can recover a known specialist after name routing fails without reintroducing substring collisions or partial-shape guesses.",
+  "layer": "L2 cross-family task routing",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "negative_cases": [
+    {
+      "candidate": "generic",
+      "case_id": "partial_eps_consensus",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_eps_consensus",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_eps_yoy",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_eps_yoy",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_reaction",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_reaction",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_macro_revision",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_macro_revision",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_bank_eps",
+      "generic": true,
+      "target_type": "regression"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_bank_eps",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_rates",
+      "generic": true,
+      "target_type": "regression"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_rates",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_cpi",
+      "generic": true,
+      "target_type": "regression"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_cpi",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_auction",
+      "generic": true,
+      "target_type": "regression"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_auction",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "partial_positioning",
+      "generic": true,
+      "target_type": "ranking"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "wrong_type_positioning",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "ambiguous_regression",
+      "generic": true,
+      "target_type": "regression"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "inconsistent_roster",
+      "generic": true,
+      "target_type": "regression"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_inventory_forecast",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_housing",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_equity_research",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_agriculture",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_marketing",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_sports",
+      "generic": true,
+      "target_type": "classification"
+    },
+    {
+      "candidate": "generic",
+      "case_id": "collision_supply_chain",
+      "generic": true,
+      "target_type": "classification"
+    }
+  ],
+  "positive_cases": [
+    {
+      "candidate": "eps_consensus",
+      "correct": true,
+      "expected": "eps_consensus",
+      "legacy": "generic",
+      "target_type": "classification"
+    },
+    {
+      "candidate": "eps_yoy",
+      "correct": true,
+      "expected": "eps_yoy",
+      "legacy": "generic",
+      "target_type": "classification"
+    },
+    {
+      "candidate": "reaction",
+      "correct": true,
+      "expected": "reaction",
+      "legacy": "generic",
+      "target_type": "classification"
+    },
+    {
+      "candidate": "macro_revision",
+      "correct": true,
+      "expected": "macro_revision",
+      "legacy": "generic",
+      "target_type": "classification"
+    },
+    {
+      "candidate": "bank_eps",
+      "correct": true,
+      "expected": "bank_eps",
+      "legacy": "generic",
+      "target_type": "regression"
+    },
+    {
+      "candidate": "rates",
+      "correct": true,
+      "expected": "rates",
+      "legacy": "generic",
+      "target_type": "regression"
+    },
+    {
+      "candidate": "cpi",
+      "correct": true,
+      "expected": "cpi",
+      "legacy": "generic",
+      "target_type": "regression"
+    },
+    {
+      "candidate": "auction",
+      "correct": true,
+      "expected": "auction",
+      "legacy": "generic",
+      "target_type": "regression"
+    },
+    {
+      "candidate": "positioning",
+      "correct": true,
+      "expected": "positioning",
+      "legacy": "generic",
+      "target_type": "ranking"
+    }
+  ],
+  "results": {
+    "candidate_negative_generic": 27,
+    "candidate_positive_recovered": 9,
+    "legacy_positive_recovered": 0,
+    "negative_total": 27,
+    "positive_total": 9
+  },
+  "schema_version": 1,
+  "validation": {
+    "local_validation_error_units": 0,
+    "model_requests_added": 0,
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_factory": "build_smoke_verifier",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "100 passed"
+  }
+}

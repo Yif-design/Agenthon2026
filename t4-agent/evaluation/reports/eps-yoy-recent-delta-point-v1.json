@@ -1,0 +1,96 @@
+{
+  "experiment": "eps_yoy_recent_delta_point_v1",
+  "hypothesis": "A damped latest-filed quarterly YoY EPS delta improves the next same-quarter EPS point.",
+  "dataset": "evaluation/datasets/eps_yoy/quarterly_diluted_eps_2015_2025.json",
+  "dataset_sha256": "d192f63d6008677a4cf69f2d4af0b5eae27125a256629e02849e0b9f223fa307",
+  "feature_rows": 1509,
+  "split_row_counts": {
+    "train": 633,
+    "dev": 288,
+    "test": 289,
+    "confirmation": 299
+  },
+  "candidate_betas": {
+    "0.25": {
+      "rows": 288,
+      "mae": 1.8657725694444443,
+      "rmse": 6.518443100597654,
+      "direction_accuracy": 0.6736111111111112
+    },
+    "0.5": {
+      "rows": 288,
+      "mae": 1.9562326388888889,
+      "rmse": 6.635657288939055,
+      "direction_accuracy": 0.6736111111111112
+    },
+    "0.75": {
+      "rows": 288,
+      "mae": 2.151640625,
+      "rmse": 6.917510987937003,
+      "direction_accuracy": 0.6736111111111112
+    },
+    "1.0": {
+      "rows": 288,
+      "mae": 2.4200347222222223,
+      "rmse": 7.345075376853982,
+      "direction_accuracy": 0.6736111111111112
+    }
+  },
+  "selected_beta_on_dev": 0.25,
+  "baseline": {
+    "train": {
+      "rows": 633,
+      "mae": 0.7149336492890995,
+      "rmse": 1.7495120588089272,
+      "direction_accuracy": 0.41390205371248023
+    },
+    "dev": {
+      "rows": 288,
+      "mae": 1.9092916666666666,
+      "rmse": 6.710178118496144,
+      "direction_accuracy": 0.3888888888888889
+    },
+    "test": {
+      "rows": 289,
+      "mae": 1.7148079584775087,
+      "rmse": 8.637437753695359,
+      "direction_accuracy": 0.41522491349480967
+    },
+    "confirmation": {
+      "rows": 299,
+      "mae": 1.251903010033445,
+      "rmse": 5.907081959047379,
+      "direction_accuracy": 0.38461538461538464
+    }
+  },
+  "candidate": {
+    "train": {
+      "rows": 633,
+      "mae": 0.6840955766192733,
+      "rmse": 1.7057192296630586,
+      "direction_accuracy": 0.6303317535545023
+    },
+    "dev": {
+      "rows": 288,
+      "mae": 1.8657725694444443,
+      "rmse": 6.518443100597654,
+      "direction_accuracy": 0.6736111111111112
+    },
+    "test": {
+      "rows": 289,
+      "mae": 1.556401384083045,
+      "rmse": 7.541769334087414,
+      "direction_accuracy": 0.6608996539792388
+    },
+    "confirmation": {
+      "rows": 299,
+      "mae": 1.307341137123746,
+      "rmse": 6.441563280757243,
+      "direction_accuracy": 0.6120401337792643
+    }
+  },
+  "acceptance_rule": "Confirmation must improve both MAE and direction accuracy.",
+  "decision": "reject",
+  "reason": "confirmation direction improved but MAE and RMSE worsened",
+  "limitation": "The exact task cutoff is unavailable in SEC history; target filing minus seven days is a proxy."
+}

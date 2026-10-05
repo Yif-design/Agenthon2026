@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-26",
+  "experiment": "credit_probability_support_v1",
+  "candidate": "Use the Bernoulli probability support [0, 1] as the interval when no population calibration history is available",
+  "basis": "The target point forecast is an event probability and therefore has fixed mathematical support [0, 1]",
+  "answer_configuration": "nemotron-free-nothink-signal",
+  "diagnostic_dataset": {
+    "units": 11,
+    "entities": 78,
+    "independence_warning": "Retired public practice cases; diagnostic only"
+  },
+  "baseline": {
+    "mean_predictive_quality": 0.3803501059371603,
+    "mean_interval_coverage": 0.5605962219598584,
+    "mean_composite_before_faithfulness_gate": 0.15806030438033325,
+    "credit_coverage": 0.5,
+    "credit_composite_before_faithfulness_gate": 0.4049999999999999
+  },
+  "candidate_result": {
+    "mean_predictive_quality": 0.3803501059371603,
+    "mean_interval_coverage": 0.6060507674144038,
+    "mean_composite_before_faithfulness_gate": 0.16624212256215143,
+    "credit_coverage": 1.0,
+    "credit_composite_before_faithfulness_gate": 0.49499999999999994
+  },
+  "verification": {
+    "pytest": "30 passed",
+    "cli_rows": 8,
+    "cli_unique_intervals": [[0.9, 0.0, 1.0]],
+    "official_faithfulness_gate": "not run"
+  },
+  "decision": "accept"
+}

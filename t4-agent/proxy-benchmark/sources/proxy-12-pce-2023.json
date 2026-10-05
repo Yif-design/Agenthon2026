@@ -1,0 +1,1388 @@
+{
+  "cutoff": "2023-08-30",
+  "generator": "proxy-benchmark/build_macro_proxies.py",
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "raw_sources": [
+    {
+      "series_id": "PCEPI",
+      "sha256": "198a28364fafb4a0a65e701e2603ad842f38b25dca56dbaf1f1fb319f6aebc5a",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPI&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "PCEPI",
+      "sha256": "4bbfb670a12acde26f4627f7a7e90313329f6ca002393af26eca25c562790a4d",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPI&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "PCEPILFE",
+      "sha256": "1012d8c4120051b09d880355db8ae654a4e0874408a0253df191b7454adede29",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPILFE&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "PCEPILFE",
+      "sha256": "64fce6be9921845e259bae698f254c9436cfe4f2cd55d2244fa66b51317b35a2",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPILFE&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "DGDSRG3M086SBEA",
+      "sha256": "62eb686f0712d45380f89c49b09e4707cc8b62192175e8f603d9dbd67133c75e",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DGDSRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "DGDSRG3M086SBEA",
+      "sha256": "760225fc4e058972c68f960ab99b6861edd646c41be12478e648a3743d151c29",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DGDSRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "DDURRG3M086SBEA",
+      "sha256": "b02d697e5ecdfefd6a6fa7085b2944ed4a3436c3415cb7b06956fea3b7e9e5a4",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DDURRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "DDURRG3M086SBEA",
+      "sha256": "9e1b10a49c6c31a419e7ef8bfc52b4b061dc363dd70ea9bd4c6f0f66eb843369",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DDURRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "DNDGRG3M086SBEA",
+      "sha256": "1a66aaabf27ea3a99e04609f03aee09bcd6ec97bd7c0c3e18e0c8c5a9093a6d7",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNDGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "DNDGRG3M086SBEA",
+      "sha256": "ece52f3140c5cb9a37409477d5b7edb129948ce4516e39d634e66c9159a8485f",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNDGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "DSERRG3M086SBEA",
+      "sha256": "049d44b312f8c0353e6af04a67f22a46f7825fae0c1965523a74ccc705d5ac4d",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DSERRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "DSERRG3M086SBEA",
+      "sha256": "5eb77eb5519f9831c0a7f763b87fe1d84260b200db1412cc5140c57936f48fd4",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DSERRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "DNRGRG3M086SBEA",
+      "sha256": "37c87b9c20beb3b64daeb0aed02be3680896f506232cbe8c186f7ab821f64b33",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNRGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "DNRGRG3M086SBEA",
+      "sha256": "9a2286ce38785acd4580d46d157336b7d388d270c67fd8d4f7675ef6bcdabc82",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNRGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "series_id": "DFXARG3M086SBEA",
+      "sha256": "68b36a0dee8ecf5a587ec646dd198bc36c17e4fde13cb6aa60ba8c336179ea45",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DFXARG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "DFXARG3M086SBEA",
+      "sha256": "e2e6a9cbd662adf970ece817853b53f57a9b7337e7a41050350221cc0dde875a",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DFXARG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    }
+  ],
+  "resolution": "2023-08-31",
+  "retrieved_at": "2026-10-03",
+  "snapshot_version": "1.0.0",
+  "sources": [
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 119.469
+        },
+        {
+          "date": "2022-02-01",
+          "value": 120.178
+        },
+        {
+          "date": "2022-03-01",
+          "value": 121.321
+        },
+        {
+          "date": "2022-04-01",
+          "value": 121.563
+        },
+        {
+          "date": "2022-05-01",
+          "value": 122.3
+        },
+        {
+          "date": "2022-06-01",
+          "value": 123.512
+        },
+        {
+          "date": "2022-07-01",
+          "value": 123.397
+        },
+        {
+          "date": "2022-08-01",
+          "value": 123.728
+        },
+        {
+          "date": "2022-09-01",
+          "value": 124.154
+        },
+        {
+          "date": "2022-10-01",
+          "value": 124.676
+        },
+        {
+          "date": "2022-11-01",
+          "value": 124.889
+        },
+        {
+          "date": "2022-12-01",
+          "value": 125.141
+        },
+        {
+          "date": "2023-01-01",
+          "value": 125.874
+        },
+        {
+          "date": "2023-02-01",
+          "value": 126.24
+        },
+        {
+          "date": "2023-03-01",
+          "value": 126.385
+        },
+        {
+          "date": "2023-04-01",
+          "value": 126.814
+        },
+        {
+          "date": "2023-05-01",
+          "value": 126.973
+        },
+        {
+          "date": "2023-06-01",
+          "value": 127.178
+        }
+      ],
+      "series_id": "PCEPI",
+      "sha256": "198a28364fafb4a0a65e701e2603ad842f38b25dca56dbaf1f1fb319f6aebc5a",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPI&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 119.469
+        },
+        {
+          "date": "2022-02-01",
+          "value": 120.178
+        },
+        {
+          "date": "2022-03-01",
+          "value": 121.321
+        },
+        {
+          "date": "2022-04-01",
+          "value": 121.563
+        },
+        {
+          "date": "2022-05-01",
+          "value": 122.3
+        },
+        {
+          "date": "2022-06-01",
+          "value": 123.512
+        },
+        {
+          "date": "2022-07-01",
+          "value": 123.397
+        },
+        {
+          "date": "2022-08-01",
+          "value": 123.728
+        },
+        {
+          "date": "2022-09-01",
+          "value": 124.154
+        },
+        {
+          "date": "2022-10-01",
+          "value": 124.676
+        },
+        {
+          "date": "2022-11-01",
+          "value": 124.889
+        },
+        {
+          "date": "2022-12-01",
+          "value": 125.141
+        },
+        {
+          "date": "2023-01-01",
+          "value": 125.874
+        },
+        {
+          "date": "2023-02-01",
+          "value": 126.24
+        },
+        {
+          "date": "2023-03-01",
+          "value": 126.385
+        },
+        {
+          "date": "2023-04-01",
+          "value": 126.772
+        },
+        {
+          "date": "2023-05-01",
+          "value": 126.914
+        },
+        {
+          "date": "2023-06-01",
+          "value": 127.174
+        },
+        {
+          "date": "2023-07-01",
+          "value": 127.445
+        }
+      ],
+      "series_id": "PCEPI",
+      "sha256": "4bbfb670a12acde26f4627f7a7e90313329f6ca002393af26eca25c562790a4d",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPI&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 120.761
+        },
+        {
+          "date": "2022-02-01",
+          "value": 121.205
+        },
+        {
+          "date": "2022-03-01",
+          "value": 121.651
+        },
+        {
+          "date": "2022-04-01",
+          "value": 122.03
+        },
+        {
+          "date": "2022-05-01",
+          "value": 122.488
+        },
+        {
+          "date": "2022-06-01",
+          "value": 123.258
+        },
+        {
+          "date": "2022-07-01",
+          "value": 123.352
+        },
+        {
+          "date": "2022-08-01",
+          "value": 124.031
+        },
+        {
+          "date": "2022-09-01",
+          "value": 124.607
+        },
+        {
+          "date": "2022-10-01",
+          "value": 124.998
+        },
+        {
+          "date": "2022-11-01",
+          "value": 125.277
+        },
+        {
+          "date": "2022-12-01",
+          "value": 125.746
+        },
+        {
+          "date": "2023-01-01",
+          "value": 126.422
+        },
+        {
+          "date": "2023-02-01",
+          "value": 126.847
+        },
+        {
+          "date": "2023-03-01",
+          "value": 127.257
+        },
+        {
+          "date": "2023-04-01",
+          "value": 127.704
+        },
+        {
+          "date": "2023-05-01",
+          "value": 128.099
+        },
+        {
+          "date": "2023-06-01",
+          "value": 128.311
+        }
+      ],
+      "series_id": "PCEPILFE",
+      "sha256": "1012d8c4120051b09d880355db8ae654a4e0874408a0253df191b7454adede29",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPILFE&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 120.761
+        },
+        {
+          "date": "2022-02-01",
+          "value": 121.205
+        },
+        {
+          "date": "2022-03-01",
+          "value": 121.651
+        },
+        {
+          "date": "2022-04-01",
+          "value": 122.03
+        },
+        {
+          "date": "2022-05-01",
+          "value": 122.488
+        },
+        {
+          "date": "2022-06-01",
+          "value": 123.258
+        },
+        {
+          "date": "2022-07-01",
+          "value": 123.352
+        },
+        {
+          "date": "2022-08-01",
+          "value": 124.031
+        },
+        {
+          "date": "2022-09-01",
+          "value": 124.607
+        },
+        {
+          "date": "2022-10-01",
+          "value": 124.998
+        },
+        {
+          "date": "2022-11-01",
+          "value": 125.277
+        },
+        {
+          "date": "2022-12-01",
+          "value": 125.746
+        },
+        {
+          "date": "2023-01-01",
+          "value": 126.422
+        },
+        {
+          "date": "2023-02-01",
+          "value": 126.847
+        },
+        {
+          "date": "2023-03-01",
+          "value": 127.257
+        },
+        {
+          "date": "2023-04-01",
+          "value": 127.655
+        },
+        {
+          "date": "2023-05-01",
+          "value": 128.029
+        },
+        {
+          "date": "2023-06-01",
+          "value": 128.302
+        },
+        {
+          "date": "2023-07-01",
+          "value": 128.579
+        }
+      ],
+      "series_id": "PCEPILFE",
+      "sha256": "64fce6be9921845e259bae698f254c9436cfe4f2cd55d2244fa66b51317b35a2",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PCEPILFE&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 103.54
+        },
+        {
+          "date": "2022-02-01",
+          "value": 104.79
+        },
+        {
+          "date": "2022-03-01",
+          "value": 106.631
+        },
+        {
+          "date": "2022-04-01",
+          "value": 106.443
+        },
+        {
+          "date": "2022-05-01",
+          "value": 107.414
+        },
+        {
+          "date": "2022-06-01",
+          "value": 109.154
+        },
+        {
+          "date": "2022-07-01",
+          "value": 108.682
+        },
+        {
+          "date": "2022-08-01",
+          "value": 108.316
+        },
+        {
+          "date": "2022-09-01",
+          "value": 108.207
+        },
+        {
+          "date": "2022-10-01",
+          "value": 108.621
+        },
+        {
+          "date": "2022-11-01",
+          "value": 108.361
+        },
+        {
+          "date": "2022-12-01",
+          "value": 107.814
+        },
+        {
+          "date": "2023-01-01",
+          "value": 108.433
+        },
+        {
+          "date": "2023-02-01",
+          "value": 108.593
+        },
+        {
+          "date": "2023-03-01",
+          "value": 108.352
+        },
+        {
+          "date": "2023-04-01",
+          "value": 108.678
+        },
+        {
+          "date": "2023-05-01",
+          "value": 108.536
+        },
+        {
+          "date": "2023-06-01",
+          "value": 108.465
+        }
+      ],
+      "series_id": "DGDSRG3M086SBEA",
+      "sha256": "62eb686f0712d45380f89c49b09e4707cc8b62192175e8f603d9dbd67133c75e",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DGDSRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 103.54
+        },
+        {
+          "date": "2022-02-01",
+          "value": 104.79
+        },
+        {
+          "date": "2022-03-01",
+          "value": 106.631
+        },
+        {
+          "date": "2022-04-01",
+          "value": 106.443
+        },
+        {
+          "date": "2022-05-01",
+          "value": 107.414
+        },
+        {
+          "date": "2022-06-01",
+          "value": 109.154
+        },
+        {
+          "date": "2022-07-01",
+          "value": 108.682
+        },
+        {
+          "date": "2022-08-01",
+          "value": 108.316
+        },
+        {
+          "date": "2022-09-01",
+          "value": 108.207
+        },
+        {
+          "date": "2022-10-01",
+          "value": 108.621
+        },
+        {
+          "date": "2022-11-01",
+          "value": 108.361
+        },
+        {
+          "date": "2022-12-01",
+          "value": 107.814
+        },
+        {
+          "date": "2023-01-01",
+          "value": 108.433
+        },
+        {
+          "date": "2023-02-01",
+          "value": 108.593
+        },
+        {
+          "date": "2023-03-01",
+          "value": 108.352
+        },
+        {
+          "date": "2023-04-01",
+          "value": 108.677
+        },
+        {
+          "date": "2023-05-01",
+          "value": 108.536
+        },
+        {
+          "date": "2023-06-01",
+          "value": 108.465
+        },
+        {
+          "date": "2023-07-01",
+          "value": 108.192
+        }
+      ],
+      "series_id": "DGDSRG3M086SBEA",
+      "sha256": "760225fc4e058972c68f960ab99b6861edd646c41be12478e648a3743d151c29",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DGDSRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 95.872
+        },
+        {
+          "date": "2022-02-01",
+          "value": 96.036
+        },
+        {
+          "date": "2022-03-01",
+          "value": 95.871
+        },
+        {
+          "date": "2022-04-01",
+          "value": 96.035
+        },
+        {
+          "date": "2022-05-01",
+          "value": 96.398
+        },
+        {
+          "date": "2022-06-01",
+          "value": 97.09
+        },
+        {
+          "date": "2022-07-01",
+          "value": 96.88
+        },
+        {
+          "date": "2022-08-01",
+          "value": 97.347
+        },
+        {
+          "date": "2022-09-01",
+          "value": 97.782
+        },
+        {
+          "date": "2022-10-01",
+          "value": 97.399
+        },
+        {
+          "date": "2022-11-01",
+          "value": 96.848
+        },
+        {
+          "date": "2022-12-01",
+          "value": 96.632
+        },
+        {
+          "date": "2023-01-01",
+          "value": 96.875
+        },
+        {
+          "date": "2023-02-01",
+          "value": 96.696
+        },
+        {
+          "date": "2023-03-01",
+          "value": 96.614
+        },
+        {
+          "date": "2023-04-01",
+          "value": 96.809
+        },
+        {
+          "date": "2023-05-01",
+          "value": 97.041
+        },
+        {
+          "date": "2023-06-01",
+          "value": 96.742
+        }
+      ],
+      "series_id": "DDURRG3M086SBEA",
+      "sha256": "b02d697e5ecdfefd6a6fa7085b2944ed4a3436c3415cb7b06956fea3b7e9e5a4",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DDURRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 95.872
+        },
+        {
+          "date": "2022-02-01",
+          "value": 96.036
+        },
+        {
+          "date": "2022-03-01",
+          "value": 95.871
+        },
+        {
+          "date": "2022-04-01",
+          "value": 96.035
+        },
+        {
+          "date": "2022-05-01",
+          "value": 96.398
+        },
+        {
+          "date": "2022-06-01",
+          "value": 97.09
+        },
+        {
+          "date": "2022-07-01",
+          "value": 96.88
+        },
+        {
+          "date": "2022-08-01",
+          "value": 97.347
+        },
+        {
+          "date": "2022-09-01",
+          "value": 97.782
+        },
+        {
+          "date": "2022-10-01",
+          "value": 97.399
+        },
+        {
+          "date": "2022-11-01",
+          "value": 96.848
+        },
+        {
+          "date": "2022-12-01",
+          "value": 96.632
+        },
+        {
+          "date": "2023-01-01",
+          "value": 96.875
+        },
+        {
+          "date": "2023-02-01",
+          "value": 96.696
+        },
+        {
+          "date": "2023-03-01",
+          "value": 96.614
+        },
+        {
+          "date": "2023-04-01",
+          "value": 96.804
+        },
+        {
+          "date": "2023-05-01",
+          "value": 97.03
+        },
+        {
+          "date": "2023-06-01",
+          "value": 96.729
+        },
+        {
+          "date": "2023-07-01",
+          "value": 96.099
+        }
+      ],
+      "series_id": "DDURRG3M086SBEA",
+      "sha256": "9e1b10a49c6c31a419e7ef8bfc52b4b061dc363dd70ea9bd4c6f0f66eb843369",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DDURRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 107.404
+        },
+        {
+          "date": "2022-02-01",
+          "value": 109.376
+        },
+        {
+          "date": "2022-03-01",
+          "value": 112.557
+        },
+        {
+          "date": "2022-04-01",
+          "value": 112.134
+        },
+        {
+          "date": "2022-05-01",
+          "value": 113.511
+        },
+        {
+          "date": "2022-06-01",
+          "value": 115.94
+        },
+        {
+          "date": "2022-07-01",
+          "value": 115.297
+        },
+        {
+          "date": "2022-08-01",
+          "value": 114.367
+        },
+        {
+          "date": "2022-09-01",
+          "value": 113.89
+        },
+        {
+          "date": "2022-10-01",
+          "value": 114.841
+        },
+        {
+          "date": "2022-11-01",
+          "value": 114.78
+        },
+        {
+          "date": "2022-12-01",
+          "value": 114.017
+        },
+        {
+          "date": "2023-01-01",
+          "value": 114.885
+        },
+        {
+          "date": "2023-02-01",
+          "value": 115.279
+        },
+        {
+          "date": "2023-03-01",
+          "value": 114.93
+        },
+        {
+          "date": "2023-04-01",
+          "value": 115.342
+        },
+        {
+          "date": "2023-05-01",
+          "value": 114.941
+        },
+        {
+          "date": "2023-06-01",
+          "value": 115.032
+        }
+      ],
+      "series_id": "DNDGRG3M086SBEA",
+      "sha256": "1a66aaabf27ea3a99e04609f03aee09bcd6ec97bd7c0c3e18e0c8c5a9093a6d7",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNDGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 107.404
+        },
+        {
+          "date": "2022-02-01",
+          "value": 109.376
+        },
+        {
+          "date": "2022-03-01",
+          "value": 112.557
+        },
+        {
+          "date": "2022-04-01",
+          "value": 112.134
+        },
+        {
+          "date": "2022-05-01",
+          "value": 113.511
+        },
+        {
+          "date": "2022-06-01",
+          "value": 115.94
+        },
+        {
+          "date": "2022-07-01",
+          "value": 115.297
+        },
+        {
+          "date": "2022-08-01",
+          "value": 114.367
+        },
+        {
+          "date": "2022-09-01",
+          "value": 113.89
+        },
+        {
+          "date": "2022-10-01",
+          "value": 114.841
+        },
+        {
+          "date": "2022-11-01",
+          "value": 114.78
+        },
+        {
+          "date": "2022-12-01",
+          "value": 114.017
+        },
+        {
+          "date": "2023-01-01",
+          "value": 114.885
+        },
+        {
+          "date": "2023-02-01",
+          "value": 115.279
+        },
+        {
+          "date": "2023-03-01",
+          "value": 114.93
+        },
+        {
+          "date": "2023-04-01",
+          "value": 115.344
+        },
+        {
+          "date": "2023-05-01",
+          "value": 114.949
+        },
+        {
+          "date": "2023-06-01",
+          "value": 115.041
+        },
+        {
+          "date": "2023-07-01",
+          "value": 115.024
+        }
+      ],
+      "series_id": "DNDGRG3M086SBEA",
+      "sha256": "ece52f3140c5cb9a37409477d5b7edb129948ce4516e39d634e66c9159a8485f",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNDGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 127.672
+        },
+        {
+          "date": "2022-02-01",
+          "value": 128.015
+        },
+        {
+          "date": "2022-03-01",
+          "value": 128.69
+        },
+        {
+          "date": "2022-04-01",
+          "value": 129.204
+        },
+        {
+          "date": "2022-05-01",
+          "value": 129.78
+        },
+        {
+          "date": "2022-06-01",
+          "value": 130.639
+        },
+        {
+          "date": "2022-07-01",
+          "value": 130.753
+        },
+        {
+          "date": "2022-08-01",
+          "value": 131.519
+        },
+        {
+          "date": "2022-09-01",
+          "value": 132.275
+        },
+        {
+          "date": "2022-10-01",
+          "value": 132.856
+        },
+        {
+          "date": "2022-11-01",
+          "value": 133.364
+        },
+        {
+          "date": "2022-12-01",
+          "value": 134.109
+        },
+        {
+          "date": "2023-01-01",
+          "value": 134.903
+        },
+        {
+          "date": "2023-02-01",
+          "value": 135.397
+        },
+        {
+          "date": "2023-03-01",
+          "value": 135.782
+        },
+        {
+          "date": "2023-04-01",
+          "value": 136.269
+        },
+        {
+          "date": "2023-05-01",
+          "value": 136.613
+        },
+        {
+          "date": "2023-06-01",
+          "value": 136.989
+        }
+      ],
+      "series_id": "DSERRG3M086SBEA",
+      "sha256": "049d44b312f8c0353e6af04a67f22a46f7825fae0c1965523a74ccc705d5ac4d",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DSERRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 127.672
+        },
+        {
+          "date": "2022-02-01",
+          "value": 128.015
+        },
+        {
+          "date": "2022-03-01",
+          "value": 128.69
+        },
+        {
+          "date": "2022-04-01",
+          "value": 129.204
+        },
+        {
+          "date": "2022-05-01",
+          "value": 129.78
+        },
+        {
+          "date": "2022-06-01",
+          "value": 130.639
+        },
+        {
+          "date": "2022-07-01",
+          "value": 130.753
+        },
+        {
+          "date": "2022-08-01",
+          "value": 131.519
+        },
+        {
+          "date": "2022-09-01",
+          "value": 132.275
+        },
+        {
+          "date": "2022-10-01",
+          "value": 132.856
+        },
+        {
+          "date": "2022-11-01",
+          "value": 133.364
+        },
+        {
+          "date": "2022-12-01",
+          "value": 134.109
+        },
+        {
+          "date": "2023-01-01",
+          "value": 134.903
+        },
+        {
+          "date": "2023-02-01",
+          "value": 135.397
+        },
+        {
+          "date": "2023-03-01",
+          "value": 135.782
+        },
+        {
+          "date": "2023-04-01",
+          "value": 136.202
+        },
+        {
+          "date": "2023-05-01",
+          "value": 136.519
+        },
+        {
+          "date": "2023-06-01",
+          "value": 136.982
+        },
+        {
+          "date": "2023-07-01",
+          "value": 137.592
+        }
+      ],
+      "series_id": "DSERRG3M086SBEA",
+      "sha256": "5eb77eb5519f9831c0a7f763b87fe1d84260b200db1412cc5140c57936f48fd4",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DSERRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 106.527
+        },
+        {
+          "date": "2022-02-01",
+          "value": 110.572
+        },
+        {
+          "date": "2022-03-01",
+          "value": 123.81
+        },
+        {
+          "date": "2022-04-01",
+          "value": 119.991
+        },
+        {
+          "date": "2022-05-01",
+          "value": 124.726
+        },
+        {
+          "date": "2022-06-01",
+          "value": 134.256
+        },
+        {
+          "date": "2022-07-01",
+          "value": 127.651
+        },
+        {
+          "date": "2022-08-01",
+          "value": 120.475
+        },
+        {
+          "date": "2022-09-01",
+          "value": 117.581
+        },
+        {
+          "date": "2022-10-01",
+          "value": 120.314
+        },
+        {
+          "date": "2022-11-01",
+          "value": 118.647
+        },
+        {
+          "date": "2022-12-01",
+          "value": 114.42
+        },
+        {
+          "date": "2023-01-01",
+          "value": 116.611
+        },
+        {
+          "date": "2023-02-01",
+          "value": 115.979
+        },
+        {
+          "date": "2023-03-01",
+          "value": 111.685
+        },
+        {
+          "date": "2023-04-01",
+          "value": 112.493
+        },
+        {
+          "date": "2023-05-01",
+          "value": 108.189
+        },
+        {
+          "date": "2023-06-01",
+          "value": 108.83
+        }
+      ],
+      "series_id": "DNRGRG3M086SBEA",
+      "sha256": "37c87b9c20beb3b64daeb0aed02be3680896f506232cbe8c186f7ab821f64b33",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNRGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 106.527
+        },
+        {
+          "date": "2022-02-01",
+          "value": 110.572
+        },
+        {
+          "date": "2022-03-01",
+          "value": 123.81
+        },
+        {
+          "date": "2022-04-01",
+          "value": 119.991
+        },
+        {
+          "date": "2022-05-01",
+          "value": 124.726
+        },
+        {
+          "date": "2022-06-01",
+          "value": 134.256
+        },
+        {
+          "date": "2022-07-01",
+          "value": 127.651
+        },
+        {
+          "date": "2022-08-01",
+          "value": 120.475
+        },
+        {
+          "date": "2022-09-01",
+          "value": 117.581
+        },
+        {
+          "date": "2022-10-01",
+          "value": 120.314
+        },
+        {
+          "date": "2022-11-01",
+          "value": 118.647
+        },
+        {
+          "date": "2022-12-01",
+          "value": 114.42
+        },
+        {
+          "date": "2023-01-01",
+          "value": 116.611
+        },
+        {
+          "date": "2023-02-01",
+          "value": 115.979
+        },
+        {
+          "date": "2023-03-01",
+          "value": 111.685
+        },
+        {
+          "date": "2023-04-01",
+          "value": 112.52
+        },
+        {
+          "date": "2023-05-01",
+          "value": 108.211
+        },
+        {
+          "date": "2023-06-01",
+          "value": 108.869
+        },
+        {
+          "date": "2023-07-01",
+          "value": 108.994
+        }
+      ],
+      "series_id": "DNRGRG3M086SBEA",
+      "sha256": "9a2286ce38785acd4580d46d157336b7d388d270c67fd8d4f7675ef6bcdabc82",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DNRGRG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 115.857
+        },
+        {
+          "date": "2022-02-01",
+          "value": 117.517
+        },
+        {
+          "date": "2022-03-01",
+          "value": 119.119
+        },
+        {
+          "date": "2022-04-01",
+          "value": 120.371
+        },
+        {
+          "date": "2022-05-01",
+          "value": 121.849
+        },
+        {
+          "date": "2022-06-01",
+          "value": 123.053
+        },
+        {
+          "date": "2022-07-01",
+          "value": 124.623
+        },
+        {
+          "date": "2022-08-01",
+          "value": 125.588
+        },
+        {
+          "date": "2022-09-01",
+          "value": 126.366
+        },
+        {
+          "date": "2022-10-01",
+          "value": 127.043
+        },
+        {
+          "date": "2022-11-01",
+          "value": 127.662
+        },
+        {
+          "date": "2022-12-01",
+          "value": 128.175
+        },
+        {
+          "date": "2023-01-01",
+          "value": 128.682
+        },
+        {
+          "date": "2023-02-01",
+          "value": 128.956
+        },
+        {
+          "date": "2023-03-01",
+          "value": 128.707
+        },
+        {
+          "date": "2023-04-01",
+          "value": 128.675
+        },
+        {
+          "date": "2023-05-01",
+          "value": 128.863
+        },
+        {
+          "date": "2023-06-01",
+          "value": 128.702
+        }
+      ],
+      "series_id": "DFXARG3M086SBEA",
+      "sha256": "68b36a0dee8ecf5a587ec646dd198bc36c17e4fde13cb6aa60ba8c336179ea45",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DFXARG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-30"
+    },
+    {
+      "rows": [
+        {
+          "date": "2022-01-01",
+          "value": 115.857
+        },
+        {
+          "date": "2022-02-01",
+          "value": 117.517
+        },
+        {
+          "date": "2022-03-01",
+          "value": 119.119
+        },
+        {
+          "date": "2022-04-01",
+          "value": 120.371
+        },
+        {
+          "date": "2022-05-01",
+          "value": 121.849
+        },
+        {
+          "date": "2022-06-01",
+          "value": 123.053
+        },
+        {
+          "date": "2022-07-01",
+          "value": 124.623
+        },
+        {
+          "date": "2022-08-01",
+          "value": 125.588
+        },
+        {
+          "date": "2022-09-01",
+          "value": 126.366
+        },
+        {
+          "date": "2022-10-01",
+          "value": 127.043
+        },
+        {
+          "date": "2022-11-01",
+          "value": 127.662
+        },
+        {
+          "date": "2022-12-01",
+          "value": 128.175
+        },
+        {
+          "date": "2023-01-01",
+          "value": 128.682
+        },
+        {
+          "date": "2023-02-01",
+          "value": 128.956
+        },
+        {
+          "date": "2023-03-01",
+          "value": 128.707
+        },
+        {
+          "date": "2023-04-01",
+          "value": 128.675
+        },
+        {
+          "date": "2023-05-01",
+          "value": 128.863
+        },
+        {
+          "date": "2023-06-01",
+          "value": 128.703
+        },
+        {
+          "date": "2023-07-01",
+          "value": 129.006
+        }
+      ],
+      "series_id": "DFXARG3M086SBEA",
+      "sha256": "e2e6a9cbd662adf970ece817853b53f57a9b7337e7a41050350221cc0dde875a",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=DFXARG3M086SBEA&cosd=2022-01-01&coed=2023-07-01&vintage_date=2023-08-31"
+    }
+  ]
+}

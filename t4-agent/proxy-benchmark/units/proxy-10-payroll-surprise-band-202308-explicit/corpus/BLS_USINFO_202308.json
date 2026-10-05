@@ -1,0 +1,8 @@
+{
+  "doc_date": "2023-08-31",
+  "doc_id": "ALFRED_USINFO_VINTAGE_20230831",
+  "entity_id": "BLS_USINFO_202308",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "text": "Series: Information (USINFO).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: -7.000000 thousand persons.\nClassification half-band: 5.000000 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 3120.000 thousand persons.\n2023-01-01: 3097.000 thousand persons.\n2023-02-01: 3089.000 thousand persons.\n2023-03-01: 3092.000 thousand persons.\n2023-04-01: 3095.000 thousand persons.\n2023-05-01: 3091.000 thousand persons.\n2023-06-01: 3086.000 thousand persons.\n2023-07-01: 3074.000 thousand persons.",
+  "title": "Cutoff-vintage payroll history for Information"
+}

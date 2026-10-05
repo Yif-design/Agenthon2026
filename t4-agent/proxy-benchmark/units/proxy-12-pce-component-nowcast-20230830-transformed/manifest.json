@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "bytes": 869,
+      "path": "card.toml",
+      "sha256": "265222eb39f553b39c127ec1930c2423d2946895891a71db962c484a4c147e7a"
+    },
+    {
+      "bytes": 856,
+      "path": "corpus/PCE_DDURRG3M086SBEA_202307.json",
+      "sha256": "3494400c44d739ac6c29e4eff4fd56c8d51499495c97d94929a1b8e002e732a4"
+    },
+    {
+      "bytes": 865,
+      "path": "corpus/PCE_DFXARG3M086SBEA_202307.json",
+      "sha256": "9a3a27d62672648650baad016439ea1a177fcaefdc2fe2be2553e05bb39664bb"
+    },
+    {
+      "bytes": 866,
+      "path": "corpus/PCE_DGDSRG3M086SBEA_202307.json",
+      "sha256": "f42affb966beb585145e4e9512ea1c655d0863ed50a34d840db88877e6daf2cc"
+    },
+    {
+      "bytes": 877,
+      "path": "corpus/PCE_DNDGRG3M086SBEA_202307.json",
+      "sha256": "73c05856504c8d92a96b3803e8a9f85d78f16a9779783f01d70686795bae8902"
+    },
+    {
+      "bytes": 886,
+      "path": "corpus/PCE_DNRGRG3M086SBEA_202307.json",
+      "sha256": "cdf2b25c390d0017c48404265fa812b5727bd2544a731eefd079139d37df4f6a"
+    },
+    {
+      "bytes": 869,
+      "path": "corpus/PCE_DSERRG3M086SBEA_202307.json",
+      "sha256": "406d01467ce9960040ac81af9f1e3004ac97c84a37382f621d2e88565f95debf"
+    },
+    {
+      "bytes": 844,
+      "path": "corpus/PCE_PCEPILFE_202307.json",
+      "sha256": "a71d62e42b2a29cf9edbe03183acb0b5de05da1522e2742be64291fbfef9b5dc"
+    },
+    {
+      "bytes": 839,
+      "path": "corpus/PCE_PCEPI_202307.json",
+      "sha256": "e365b90dfffe1050f27597b2d4454733c44ab25657101756ce0aac81f2bec465"
+    },
+    {
+      "bytes": 4949,
+      "path": "provenance.json",
+      "sha256": "5f7d284d73ef33835053e0c5f5498cebebd2e82283c4c0d5cce53d4b4e4f5de4"
+    },
+    {
+      "bytes": 3921,
+      "path": "reference/naive_answer.json",
+      "sha256": "f764ba5f4318237e90f0a67dec5dce3241bfde0abc71730818c2ac34f0951106"
+    },
+    {
+      "bytes": 817,
+      "path": "reference/outcome.json",
+      "sha256": "46c2312485addf3d70f969ad5640f02b04687b0ded0d630a6cdb0e1ff9c3d97e"
+    },
+    {
+      "bytes": 3046,
+      "path": "task.json",
+      "sha256": "52d2dac37d6569976d2935113f84bef48cbed3757c40a49112761af23dc0a205"
+    }
+  ],
+  "manifest_version": "1.0",
+  "unit_id": "proxy-12-pce-component-nowcast-20230830-transformed"
+}

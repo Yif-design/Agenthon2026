@@ -1,0 +1,107 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "cik": "0001018724",
+      "corpus_ref": "corpus/SEC_AMZN_2023Q1.json",
+      "entity_id": "SEC_AMZN_2023Q1",
+      "name": "AMAZON COM INC",
+      "prior_buyback_usd": 2666000000,
+      "prior_intensity_pct": 2.2895125553914326,
+      "prior_revenue_usd": 116444000000,
+      "ticker": "AMZN"
+    },
+    {
+      "cik": "0000037996",
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "name": "Ford Motor Co",
+      "prior_buyback_usd": 0,
+      "prior_intensity_pct": 0.0,
+      "prior_revenue_usd": 34476000000,
+      "ticker": "F"
+    },
+    {
+      "cik": "0000354950",
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "name": "The Home Depot, Inc.",
+      "prior_buyback_usd": 2308000000,
+      "prior_intensity_pct": 5.931942017065899,
+      "prior_revenue_usd": 38908000000,
+      "ticker": "HD"
+    },
+    {
+      "cik": "0000021344",
+      "corpus_ref": "corpus/SEC_KO_2023Q1.json",
+      "entity_id": "SEC_KO_2023Q1",
+      "name": "COCA COLA CO",
+      "prior_buyback_usd": 546000000,
+      "prior_intensity_pct": 5.204460966542751,
+      "prior_revenue_usd": 10491000000,
+      "ticker": "KO"
+    },
+    {
+      "cik": "0000063908",
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "name": "McDONALD’S CORPORATION",
+      "prior_buyback_usd": 1506500000,
+      "prior_intensity_pct": 26.59029935046597,
+      "prior_revenue_usd": 5665600000,
+      "ticker": "MCD"
+    },
+    {
+      "cik": "0001045810",
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "name": "NVIDIA CORP",
+      "prior_buyback_usd": 1996000000,
+      "prior_intensity_pct": 24.083011583011583,
+      "prior_revenue_usd": 8288000000,
+      "ticker": "NVDA"
+    },
+    {
+      "cik": "0000077476",
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "name": "PepsiCo, Inc.",
+      "prior_buyback_usd": 193000000,
+      "prior_intensity_pct": 1.191358024691358,
+      "prior_revenue_usd": 16200000000,
+      "ticker": "PEP"
+    },
+    {
+      "cik": "0000027419",
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "name": "Target Corporation",
+      "prior_buyback_usd": 181000000,
+      "prior_intensity_pct": 0.7191100516487883,
+      "prior_revenue_usd": 25170000000,
+      "ticker": "TGT"
+    },
+    {
+      "cik": "0000104169",
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "name": "WALMART INC.",
+      "prior_buyback_usd": 2408000000,
+      "prior_intensity_pct": 1.7164689781021898,
+      "prior_revenue_usd": 140288000000,
+      "ticker": "WMT"
+    }
+  ],
+  "family": "buyback_intensity",
+  "interval_level": 0.9,
+  "prompt": "Rank issuers by Q1 executed common-stock repurchases divided by Q1 revenue; rank 1 is highest.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "next_quarter_buyback_intensity_rank",
+    "type": "ranking",
+    "unit": "percent_of_revenue"
+  },
+  "task_id": "proxy-07-buyback-intensity-rank-20230331-explicit"
+}

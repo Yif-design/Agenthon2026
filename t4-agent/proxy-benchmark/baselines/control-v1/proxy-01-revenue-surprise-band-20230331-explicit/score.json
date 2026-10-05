@@ -1,0 +1,16 @@
+{
+  "unit": "proxy-01-revenue-surprise-band-20230331-explicit",
+  "raw_accuracy": 0.5384615384615384,
+  "naive_accuracy": 0.15384615384615385,
+  "raw_predictive_quality": 0.5384615384615384,
+  "naive_predictive_quality": 0.15384615384615385,
+  "predictive_anchor": 0.15384615384615385,
+  "predictive_quality": 0.7272727272727273,
+  "interval_coverage": null,
+  "interval_score": null,
+  "naive_interval_score": null,
+  "raw_interval_quality": null,
+  "interval_quality": null,
+  "composite_before_claim_penalty": 0.7272727272727273,
+  "claim_penalty_evaluated": false
+}

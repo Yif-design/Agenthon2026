@@ -1,0 +1,86 @@
+{
+  "cutoff_date": "2023-03-31",
+  "entities": [
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 2240000.0,
+      "corpus_ref": "corpus/SEC_WMT_2023Q1.json",
+      "entity_id": "SEC_WMT_2023Q1",
+      "issuer_key": "CIK-0000104169",
+      "name": "WALMART INC."
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 900000.0,
+      "corpus_ref": "corpus/SEC_TGT_2023Q1.json",
+      "entity_id": "SEC_TGT_2023Q1",
+      "issuer_key": "CIK-0000027419",
+      "name": "Target Corporation"
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 1075000.0,
+      "corpus_ref": "corpus/SEC_PEP_2023Q1.json",
+      "entity_id": "SEC_PEP_2023Q1",
+      "issuer_key": "CIK-0000077476",
+      "name": "PepsiCo, Inc."
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 40000.0,
+      "corpus_ref": "corpus/SEC_NVDA_2023Q1.json",
+      "entity_id": "SEC_NVDA_2023Q1",
+      "issuer_key": "CIK-0001045810",
+      "name": "NVIDIA CORP"
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 1380000.0,
+      "corpus_ref": "corpus/SEC_MCD_2023Q1.json",
+      "entity_id": "SEC_MCD_2023Q1",
+      "issuer_key": "CIK-0000063908",
+      "name": "McDONALD’S CORPORATION"
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 1640000.0,
+      "corpus_ref": "corpus/SEC_IBM_2023Q1.json",
+      "entity_id": "SEC_IBM_2023Q1",
+      "issuer_key": "CIK-0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP"
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 1900000.0,
+      "corpus_ref": "corpus/SEC_HD_2023Q1.json",
+      "entity_id": "SEC_HD_2023Q1",
+      "issuer_key": "CIK-0000354950",
+      "name": "The Home Depot, Inc."
+    },
+    {
+      "action_code_hint": "regular_distribution",
+      "base_distribution_microunits": 100000.0,
+      "corpus_ref": "corpus/SEC_F_2023Q1.json",
+      "entity_id": "SEC_F_2023Q1",
+      "issuer_key": "CIK-0000037996",
+      "name": "Ford Motor Co"
+    }
+  ],
+  "family": "distribution_action",
+  "interval_level": 0.9,
+  "prompt": "Classify the next Q1 regular per-share distribution action relative to prior-year Q1.",
+  "resolution_date": "2023-06-07",
+  "schema_variant": "transformed",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "increase",
+      "unchanged",
+      "decrease_or_suspend"
+    ],
+    "name": "next_distribution_action",
+    "type": "classification",
+    "unit": "label"
+  },
+  "task_id": "proxy-05-dividend-action-20230331-transformed"
+}

@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-03-free-cash-flow-margin_SEC_INTC_2023Q1_explicit",
+  "entities": [
+    "SEC_INTC_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for INTEL CORP (INTC); facts include original accession and filed date.\nPrior Q1 revenue USD 18353000000; operating cash flow USD 5891000000; capital expenditure USD 4604000000."
+}

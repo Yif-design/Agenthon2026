@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment": "target_semantic_table_alias_proxy15_v1",
+  "date": "2026-10-03",
+  "baseline_git_commit": "a7ce30f053ef4616fd9a0e3752689908d428f6b1",
+  "scope": "L2 target quantity contract for unknown-family dated tables",
+  "hypothesis": "A deterministic target-name, definition, and unit contract can reject incompatible entity numbers and recover a renamed dated-table target without auction-specific fields.",
+  "candidate": {
+    "change": "Keep exact table-column matching first; otherwise require a unique, unit-compatible semantic alias with at least three normalized token overlaps and one distinctive overlap.",
+    "feature_flag": "T4_ENABLE_TARGET_SEMANTIC_TABLE_MATCH=1",
+    "model_api_calls": 0,
+    "local_llm_run": false
+  },
+  "decision_rule": "Accept only if transformed Proxy-15 composite is at least 0.45 and no more than 0.05 below explicit, with no Proxy-18, public-output, or test regression. Stop at the first failed gate.",
+  "baseline": {
+    "explicit_composite": 0.5000000018102672,
+    "transformed_composite": 0.06550084835962477,
+    "transformed_mae": 131.85645943432556,
+    "transformed_methods": [
+      "generic_baseline"
+    ]
+  },
+  "candidate_result": {
+    "explicit_composite": 0.5000000018102672,
+    "transformed_composite": 0.29113073302664855,
+    "transformed_mae": 16.86287142384088,
+    "transformed_methods": [
+      "generic_dated_table_baseline"
+    ],
+    "focused_tests": "52 passed on Python 3.11.7"
+  },
+  "delta": {
+    "transformed_composite": 0.22562988466702377,
+    "transformed_mae": -114.99358801048467,
+    "gap_to_explicit": 0.2088692687836186
+  },
+  "decision": "reject_and_rollback",
+  "reason": "The semantic contract selected the correct percentage column and removed the tenor-month failure, but latest-observation persistence scored 0.2911, below the 0.45 floor and 0.2089 below explicit. The forecast statistic, not only target identification, remains unresolved.",
+  "production_change": "none; candidate code and tests rolled back",
+  "tests_not_run_after_gate_failure": [
+    "Proxy-18 regression",
+    "11-unit public byte A/B",
+    "full suite"
+  ],
+  "follow_up": "In a separate preregistered round, compare general cutoff-safe table statistics such as recent-window mean versus last observation across more than one proxy family before combining them with semantic target matching."
+}

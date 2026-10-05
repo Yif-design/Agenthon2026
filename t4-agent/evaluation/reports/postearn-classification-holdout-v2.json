@@ -1,0 +1,43 @@
+{
+  "experiment_id": "postearn_classification_holdout_v2",
+  "date": "2026-09-28",
+  "baseline_git_commit": "0f92f1041b047554d429ea5bb43a96f45567d4ab",
+  "hypothesis": "For a classification unit, the locked ticker_recent4 label prior improves the scored accuracy while a fixed interval preserves calibration; point MAE is diagnostic rather than an acceptance gate.",
+  "official_scoring": {
+    "classification_metric": "label accuracy",
+    "interval_metric": "absolute coverage gap from interval_level",
+    "source": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/README.md#scoring-formula"
+  },
+  "locked_candidate_source": "evaluation/reports/postearn-ticker-prior-v1.json",
+  "locked_candidate": {
+    "method": "ticker_recent4",
+    "strength": 0
+  },
+  "fit_data": "2018-2023 only",
+  "confirmation_dataset": "evaluation/datasets/postearn/panel88_confirmation_2026_ytd.json",
+  "confirmation_range": [
+    "2026-01-01",
+    "2026-09-24"
+  ],
+  "baseline": {
+    "rows": 261,
+    "accuracy": 0.16475095785440613,
+    "mae_pct": 5.6794779118924765,
+    "coverage_fixed_interval": 0.7777777777777778
+  },
+  "candidate": {
+    "rows": 261,
+    "accuracy": 0.37547892720306514,
+    "mae_pct": 5.689100755821093,
+    "coverage_fixed_interval": 0.7777777777777778
+  },
+  "accuracy_delta": 0.210727969348659,
+  "mae_delta_diagnostic_only": 0.00962284392861612,
+  "coverage_equal": true,
+  "outcome_quality_gate": "pass",
+  "faithfulness_gate": "not_run_remote_official_models_unavailable",
+  "decision": "defer_pending_official_nli",
+  "production_change": "none",
+  "model_api_calls": 0,
+  "local_llm_run": false
+}

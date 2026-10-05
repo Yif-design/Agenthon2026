@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_KO_2023Q1_explicit",
+  "entities": [
+    "SEC_KO_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior comparable revenue: USD 10491000000, filed 2022-04-28, accession 0000021344-22-000016.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+}

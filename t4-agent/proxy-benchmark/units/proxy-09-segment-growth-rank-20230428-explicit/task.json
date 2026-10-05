@@ -1,0 +1,77 @@
+{
+  "cutoff_date": "2023-04-28",
+  "entities": [
+    {
+      "corpus_ref": "corpus/AMZN_NorthAmericaSegment.json",
+      "entity_id": "AMZN_NorthAmericaSegment",
+      "latest_q1_revenue_millions": 76881.0,
+      "latest_q1_yoy_growth_pct": 11.029114435907793,
+      "name": "AMZN — North America",
+      "prior_q1_revenue_millions": 69244.0,
+      "segment": "North America",
+      "ticker": "AMZN"
+    },
+    {
+      "corpus_ref": "corpus/AMZN_InternationalSegment.json",
+      "entity_id": "AMZN_InternationalSegment",
+      "latest_q1_revenue_millions": 29123.0,
+      "latest_q1_yoy_growth_pct": 1.265690740289993,
+      "name": "AMZN — International",
+      "prior_q1_revenue_millions": 28759.0,
+      "segment": "International",
+      "ticker": "AMZN"
+    },
+    {
+      "corpus_ref": "corpus/AMZN_AmazonWebServicesSegment.json",
+      "entity_id": "AMZN_AmazonWebServicesSegment",
+      "latest_q1_revenue_millions": 21354.0,
+      "latest_q1_yoy_growth_pct": 15.7963234097934,
+      "name": "AMZN — Amazon Web Services",
+      "prior_q1_revenue_millions": 18441.0,
+      "segment": "Amazon Web Services",
+      "ticker": "AMZN"
+    },
+    {
+      "corpus_ref": "corpus/MSFT_ProductivityAndBusinessProcesses.json",
+      "entity_id": "MSFT_ProductivityAndBusinessProcesses",
+      "latest_q1_revenue_millions": 17516.0,
+      "latest_q1_yoy_growth_pct": 10.937994806510854,
+      "name": "MSFT — Productivity and Business Processes",
+      "prior_q1_revenue_millions": 15789.0,
+      "segment": "Productivity and Business Processes",
+      "ticker": "MSFT"
+    },
+    {
+      "corpus_ref": "corpus/MSFT_IntelligentCloud.json",
+      "entity_id": "MSFT_IntelligentCloud",
+      "latest_q1_revenue_millions": 22081.0,
+      "latest_q1_yoy_growth_pct": 16.295359983146373,
+      "name": "MSFT — Intelligent Cloud",
+      "prior_q1_revenue_millions": 18987.0,
+      "segment": "Intelligent Cloud",
+      "ticker": "MSFT"
+    },
+    {
+      "corpus_ref": "corpus/MSFT_MorePersonalComputing.json",
+      "entity_id": "MSFT_MorePersonalComputing",
+      "latest_q1_revenue_millions": 13260.0,
+      "latest_q1_yoy_growth_pct": -9.078442128359843,
+      "name": "MSFT — More Personal Computing",
+      "prior_q1_revenue_millions": 14584.0,
+      "segment": "More Personal Computing",
+      "ticker": "MSFT"
+    }
+  ],
+  "family": "segment_growth",
+  "interval_level": 0.9,
+  "prompt": "Rank the six reportable segments by next-quarter year-over-year revenue growth; rank 1 is highest.",
+  "resolution_date": "2023-08-04",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "next_quarter_segment_growth_rank",
+    "type": "ranking",
+    "unit": "growth_percent"
+  },
+  "task_id": "proxy-09-segment-growth-rank-20230428-explicit"
+}

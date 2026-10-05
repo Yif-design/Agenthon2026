@@ -1,0 +1,217 @@
+{
+  "task_id": "proxy-12-pce-component-nowcast-20230830-explicit",
+  "schema_version": "3",
+  "target_type": "regression",
+  "entity_predictions": [
+    {
+      "entity_id": "PCE_PCEPI_202307",
+      "point_forecast": 0.2087570471342041,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.7912429528657958,
+        "hi": 2.208757047134204
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPI_202307_explicit",
+          "span_start": 0,
+          "span_end": 489,
+          "claim": "Headline PCE price index (PCEPI); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 119.469000\n2022-02-01 | 120.178000\n2022-03-01 | 121.321000\n2022-04-01 | 121.563000\n2022-05-01 | 122.300000\n2022-06-01 | 123.512000\n2022-07-01 | 123.397000\n2022-08-01 | 123.728000\n2022-09-01 | 124.154000\n2022-10-01 | 124.676000\n2022-11-01 | 124.889000\n2022-12-01 | 125.141000\n2023-01-01 | 125.874000\n2023-02-01 | 126.240000\n2023-03-01 | 126.385000\n2023-04-01 | 126.814000\n2023-05-01 | 126.973000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPI_202307_explicit",
+          "span_start": 0,
+          "span_end": 513,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_PCEPILFE_202307",
+      "point_forecast": 0.2753545722231632,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.7246454277768368,
+        "hi": 2.275354572223163
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPILFE_202307_explicit",
+          "span_start": 0,
+          "span_end": 488,
+          "claim": "Core PCE price index (PCEPILFE); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 120.761000\n2022-02-01 | 121.205000\n2022-03-01 | 121.651000\n2022-04-01 | 122.030000\n2022-05-01 | 122.488000\n2022-06-01 | 123.258000\n2022-07-01 | 123.352000\n2022-08-01 | 124.031000\n2022-09-01 | 124.607000\n2022-10-01 | 124.998000\n2022-11-01 | 125.277000\n2022-12-01 | 125.746000\n2023-01-01 | 126.422000\n2023-02-01 | 126.847000\n2023-03-01 | 127.257000\n2023-04-01 | 127.704000\n2023-05-01 | 128.099000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPILFE_202307_explicit",
+          "span_start": 0,
+          "span_end": 512,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+      "point_forecast": 0.03493131065667917,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.965068689343321,
+        "hi": 2.0349313106566793
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DGDSRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 496,
+          "claim": "PCE goods price index (DGDSRG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 103.540000\n2022-02-01 | 104.790000\n2022-03-01 | 106.631000\n2022-04-01 | 106.443000\n2022-05-01 | 107.414000\n2022-06-01 | 109.154000\n2022-07-01 | 108.682000\n2022-08-01 | 108.316000\n2022-09-01 | 108.207000\n2022-10-01 | 108.621000\n2022-11-01 | 108.361000\n2022-12-01 | 107.814000\n2023-01-01 | 108.433000\n2023-02-01 | 108.593000\n2023-03-01 | 108.352000\n2023-04-01 | 108.678000\n2023-05-01 | 108.536000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DGDSRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 520,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_DDURRG3M086SBEA_202307",
+      "point_forecast": 0.04445468512758547,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9555453148724145,
+        "hi": 2.0444546851275853
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DDURRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 487,
+          "claim": "PCE durable-goods price index (DDURRG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 95.872000\n2022-02-01 | 96.036000\n2022-03-01 | 95.871000\n2022-04-01 | 96.035000\n2022-05-01 | 96.398000\n2022-06-01 | 97.090000\n2022-07-01 | 96.880000\n2022-08-01 | 97.347000\n2022-09-01 | 97.782000\n2022-10-01 | 97.399000\n2022-11-01 | 96.848000\n2022-12-01 | 96.632000\n2023-01-01 | 96.875000\n2023-02-01 | 96.696000\n2023-03-01 | 96.614000\n2023-04-01 | 96.809000\n2023-05-01 | 97.041000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DDURRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 510,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+      "point_forecast": 0.02999613026425744,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.9700038697357425,
+        "hi": 2.0299961302642573
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DNDGRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 483,
+          "claim": "PCE nondurable-goods price index (DNDGRG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 107.404000\n2022-02-01 | 109.376000\n2022-03-01 | 112.557000\n2022-04-01 | 112.134000\n2022-05-01 | 113.511000\n2022-06-01 | 115.940000\n2022-07-01 | 115.297000\n2022-08-01 | 114.367000\n2022-09-01 | 113.890000\n2022-10-01 | 114.841000\n2022-11-01 | 114.780000\n2022-12-01 | 114.017000\n2023-01-01 | 114.885000\n2023-02-01 | 115.279000\n2023-03-01 | 114.930000\n2023-04-01 | 115.342000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DNDGRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 531,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_DSERRG3M086SBEA_202307",
+      "point_forecast": 0.2954450139663667,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.7045549860336333,
+        "hi": 2.2954450139663667
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DSERRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 499,
+          "claim": "PCE services price index (DSERRG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 127.672000\n2022-02-01 | 128.015000\n2022-03-01 | 128.690000\n2022-04-01 | 129.204000\n2022-05-01 | 129.780000\n2022-06-01 | 130.639000\n2022-07-01 | 130.753000\n2022-08-01 | 131.519000\n2022-09-01 | 132.275000\n2022-10-01 | 132.856000\n2022-11-01 | 133.364000\n2022-12-01 | 134.109000\n2023-01-01 | 134.903000\n2023-02-01 | 135.397000\n2023-03-01 | 135.782000\n2023-04-01 | 136.269000\n2023-05-01 | 136.613000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DSERRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 523,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+      "point_forecast": -0.8366902844686183,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.8366902844686184,
+        "hi": 1.1633097155313816
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DNRGRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 492,
+          "claim": "PCE energy goods and services price index (DNRGRG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 106.527000\n2022-02-01 | 110.572000\n2022-03-01 | 123.810000\n2022-04-01 | 119.991000\n2022-05-01 | 124.726000\n2022-06-01 | 134.256000\n2022-07-01 | 127.651000\n2022-08-01 | 120.475000\n2022-09-01 | 117.581000\n2022-10-01 | 120.314000\n2022-11-01 | 118.647000\n2022-12-01 | 114.420000\n2023-01-01 | 116.611000\n2023-02-01 | 115.979000\n2023-03-01 | 111.685000\n2023-04-01 | 112.493000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DNRGRG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 540,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    },
+    {
+      "entity_id": "PCE_DFXARG3M086SBEA_202307",
+      "point_forecast": -0.0012323447533768572,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.001232344753377,
+        "hi": 1.9987676552466231
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DFXARG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 495,
+          "claim": "PCE food price index (DFXARG3M086SBEA); cutoff ALFRED vintage 2023-08-30.\nmonth | index\n2022-01-01 | 115.857000\n2022-02-01 | 117.517000\n2022-03-01 | 119.119000\n2022-04-01 | 120.371000\n2022-05-01 | 121.849000\n2022-06-01 | 123.053000\n2022-07-01 | 124.623000\n2022-08-01 | 125.588000\n2022-09-01 | 126.366000\n2022-10-01 | 127.043000\n2022-11-01 | 127.662000\n2022-12-01 | 128.175000\n2023-01-01 | 128.682000\n2023-02-01 | 128.956000\n2023-03-01 | 128.707000\n2023-04-01 | 128.675000\n2023-05-01 | 128.863000"
+        },
+        {
+          "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_DFXARG3M086SBEA_202307_explicit",
+          "span_start": 0,
+          "span_end": 519,
+          "claim": "Cutoff-safe retrieved context relevant to this entity and target."
+        }
+      ]
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "PCE_PCEPI_202307",
+      "PCE_PCEPILFE_202307",
+      "PCE_DGDSRG3M086SBEA_202307",
+      "PCE_DDURRG3M086SBEA_202307",
+      "PCE_DNDGRG3M086SBEA_202307",
+      "PCE_DSERRG3M086SBEA_202307",
+      "PCE_DNRGRG3M086SBEA_202307",
+      "PCE_DFXARG3M086SBEA_202307"
+    ],
+    "methods": {
+      "PCE_PCEPI_202307": "generic_baseline",
+      "PCE_PCEPILFE_202307": "generic_baseline",
+      "PCE_DGDSRG3M086SBEA_202307": "generic_baseline",
+      "PCE_DDURRG3M086SBEA_202307": "generic_baseline",
+      "PCE_DNDGRG3M086SBEA_202307": "generic_baseline",
+      "PCE_DSERRG3M086SBEA_202307": "generic_baseline",
+      "PCE_DNRGRG3M086SBEA_202307": "generic_baseline",
+      "PCE_DFXARG3M086SBEA_202307": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

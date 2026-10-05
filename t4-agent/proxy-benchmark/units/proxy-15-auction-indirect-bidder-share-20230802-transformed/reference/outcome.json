@@ -1,0 +1,17 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "TREASURY_30YEAR_20230810",
+      "y": 49.26770421668659
+    },
+    {
+      "entity_id": "TREASURY_10YEAR_20230809",
+      "y": 52.35575099606377
+    },
+    {
+      "entity_id": "TREASURY_3YEAR_20230808",
+      "y": 53.19283351572701
+    }
+  ],
+  "task_id": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+}

@@ -1,0 +1,175 @@
+{
+  "ambiguous_fallback_unchanged": true,
+  "baseline_git_commit": "8b39f3a2bd5a36899614878de72fb91553ed06a9",
+  "decision": "advance_to_production_gates",
+  "decision_rule": "Advance only if macro-F1 improves in test and confirmation, no split or domain accuracy/F1 worsens, every permutation passes, and the ambiguous fallback is unchanged.",
+  "excluded_unresolved_model_rows": 6,
+  "experiment": "generic_above_below_role_screen_v1",
+  "hypothesis": "Adding above and below as bounded positive and negative role synonyms makes opaque label schemas equivalent to semantic schemas without changing model signals.",
+  "limitations": "Uses only saved rows whose remote response completed; it screens deterministic label mapping, not signal extraction quality.",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "permutation_checks_passed": 3,
+  "permutation_checks_total": 3,
+  "results": {
+    "confirmation": {
+      "baseline": {
+        "accuracy": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "prediction_counts": {
+          "class_a": 18
+        },
+        "rows": 18
+      },
+      "by_domain": {
+        "cot": {
+          "baseline": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          },
+          "candidate": {
+            "accuracy": 0.6666666666666666,
+            "macro_f1": 0.625,
+            "prediction_counts": {
+              "class_a": 5,
+              "class_b": 1
+            },
+            "rows": 6
+          }
+        },
+        "cpi": {
+          "baseline": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          },
+          "candidate": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          }
+        },
+        "macro_revision": {
+          "baseline": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          },
+          "candidate": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_b": 6
+            },
+            "rows": 6
+          }
+        }
+      },
+      "candidate": {
+        "accuracy": 0.5555555555555556,
+        "macro_f1": 0.55,
+        "prediction_counts": {
+          "class_a": 11,
+          "class_b": 7
+        },
+        "rows": 18
+      },
+      "passed": true
+    },
+    "test": {
+      "baseline": {
+        "accuracy": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "prediction_counts": {
+          "class_a": 18
+        },
+        "rows": 18
+      },
+      "by_domain": {
+        "cot": {
+          "baseline": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          },
+          "candidate": {
+            "accuracy": 0.5,
+            "macro_f1": 0.4857142857142857,
+            "prediction_counts": {
+              "class_a": 4,
+              "class_b": 2
+            },
+            "rows": 6
+          }
+        },
+        "cpi": {
+          "baseline": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          },
+          "candidate": {
+            "accuracy": 0.8333333333333334,
+            "macro_f1": 0.8285714285714285,
+            "prediction_counts": {
+              "class_a": 4,
+              "class_b": 2
+            },
+            "rows": 6
+          }
+        },
+        "macro_revision": {
+          "baseline": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          },
+          "candidate": {
+            "accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "prediction_counts": {
+              "class_a": 6
+            },
+            "rows": 6
+          }
+        }
+      },
+      "candidate": {
+        "accuracy": 0.6111111111111112,
+        "macro_f1": 0.5785953177257526,
+        "prediction_counts": {
+          "class_a": 14,
+          "class_b": 4
+        },
+        "rows": 18
+      },
+      "passed": true
+    }
+  },
+  "schema_version": 1,
+  "source_benchmark": "evaluation/reports/generic-classification-benchmark-v1.json",
+  "source_benchmark_valid": false,
+  "source_model": "gemini-3.5-flash-lite"
+}

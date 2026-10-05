@@ -1,0 +1,277 @@
+{
+  "task_id": "proxy-01-revenue-surprise-band-20230331-explicit",
+  "schema_version": "3",
+  "target_type": "classification",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_AMZN_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 286,
+          "claim": "SEC XBRL facts for AMAZON COM INC (AMZN); facts include original accession and filed date.\nPrior comparable revenue: USD 116444000000, filed 2022-04-29, accession 0001018724-22-000013.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_CVNA_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 281,
+          "claim": "SEC XBRL facts for CARVANA CO. (CVNA); facts include original accession and filed date.\nPrior comparable revenue: USD 3497000000, filed 2022-05-10, accession 0001690820-22-000166.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_F_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 281,
+          "claim": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior comparable revenue: USD 34476000000, filed 2022-04-28, accession 0000037996-22-000024.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_GM_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_GM_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 291,
+          "claim": "SEC XBRL facts for GENERAL MOTORS COMPANY (GM); facts include original accession and filed date.\nPrior comparable revenue: USD 32824000000, filed 2022-04-27, accession 0001467858-22-000078.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_HD_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 289,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior comparable revenue: USD 38908000000, filed 2022-05-24, accession 0000354950-22-000158.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_IBM_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 306,
+          "claim": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior comparable revenue: USD 14197000000, filed 2022-04-26, accession 0001558370-22-005983.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_INTC_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_INTC_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 281,
+          "claim": "SEC XBRL facts for INTEL CORP (INTC); facts include original accession and filed date.\nPrior comparable revenue: USD 18353000000, filed 2022-04-29, accession 0000050863-22-000020.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_KO_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 281,
+          "claim": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior comparable revenue: USD 10491000000, filed 2022-04-28, accession 0000021344-22-000016.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_MCD_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 291,
+          "claim": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior comparable revenue: USD 5665600000, filed 2022-05-02, accession 0000063908-22-000016.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_NVDA_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 281,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior comparable revenue: USD 8288000000, filed 2022-05-27, accession 0001045810-22-000079.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_PEP_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 283,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior comparable revenue: USD 16200000000, filed 2022-04-26, accession 0000077476-22-000020.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_TGT_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 288,
+          "claim": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior comparable revenue: USD 25170000000, filed 2022-05-27, accession 0000027419-22-000015.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    },
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "point_forecast": 2.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.0,
+        "hi": 3.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-01-revenue-surprise-band_SEC_WMT_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 283,
+          "claim": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior comparable revenue: USD 140288000000, filed 2022-06-03, accession 0000104169-22-000029.\nFrozen reference equals the prior comparable quarter; classification band is plus or minus 2 percent."
+        }
+      ],
+      "label": "above_band"
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_AMZN_2023Q1",
+      "SEC_CVNA_2023Q1",
+      "SEC_F_2023Q1",
+      "SEC_GM_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_IBM_2023Q1",
+      "SEC_INTC_2023Q1",
+      "SEC_KO_2023Q1",
+      "SEC_MCD_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_PEP_2023Q1",
+      "SEC_TGT_2023Q1",
+      "SEC_WMT_2023Q1"
+    ],
+    "methods": {
+      "SEC_AMZN_2023Q1": "generic_baseline",
+      "SEC_CVNA_2023Q1": "generic_baseline",
+      "SEC_F_2023Q1": "generic_baseline",
+      "SEC_GM_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_IBM_2023Q1": "generic_baseline",
+      "SEC_INTC_2023Q1": "generic_baseline",
+      "SEC_KO_2023Q1": "generic_baseline",
+      "SEC_MCD_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_TGT_2023Q1": "generic_baseline",
+      "SEC_WMT_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "baseline_git_commit": "848f18df6ec57cd9e1c7ed409591eb01441ff38a",
+  "candidate_patch": "evaluation/experiments/candidates/evidence-id-v2.patch",
+  "date": "2026-09-28",
+  "decision": "defer_and_reject_current_candidate",
+  "decision_rule": "Require valid paired results on Gemini Flash-Lite, weak-model Gemma 4 and the same-family Nemotron analogue across classification, regression and ranking; valid facts may not decline, quote rejection must decline, and all schema/citation/public gates must pass.",
+  "experiment": "evidence_id_remote_ab_v2",
+  "flash_lite": {
+    "asymmetric_case": "rates quote arm had transient 503 while evidence-ID arm succeeded; excluded from quality comparison.",
+    "calls_per_arm": 6,
+    "complete_paired_cases": [
+      "t4-EXAMPLE-eps-beat",
+      "t4-credit-event-2023",
+      "synthetic-unknown-ranking"
+    ],
+    "complete_paired_non_context_facts_after": 4,
+    "complete_paired_non_context_facts_before": 4,
+    "complete_paired_quote_rejections_after": 0,
+    "complete_paired_quote_rejections_before": 0,
+    "completion_tokens_after": 2023,
+    "completion_tokens_before": 2741,
+    "completion_tokens_delta_pct": -26.194819408974823,
+    "cost_usd": 0.0,
+    "model": "gemini-2.5-flash-lite",
+    "prompt_chars_after": 126044,
+    "prompt_chars_before": 131897,
+    "prompt_chars_delta_pct": -4.43755354556965,
+    "provider": "Google Gemini Developer API",
+    "thinking_budget": 0
+  },
+  "gemma4": {
+    "calls_per_arm": 6,
+    "configuration_issue": "The run did not set the documented Gemma 4 thinking level to minimal; Gemini 2.5 thinkingBudget is not the Gemma control.",
+    "cost_usd": 0.0,
+    "errors": [
+      "unparseable structured output",
+      "HTTP 429 quota",
+      "HTTP 500 internal"
+    ],
+    "evidence_id_arm_model_rows": 0,
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "Google Gemini Developer API",
+    "quote_arm_model_rows": 6,
+    "valid_paired_model_rows": 0
+  },
+  "hypothesis": "Prompt-local evidence IDs let remote models select grounded evidence more reliably and concisely than copying exact quotes.",
+  "local_llm_run": false,
+  "nemotron": {
+    "calls": 0,
+    "reason": "Not run because the required weak-model gate did not produce a valid pair."
+  },
+  "official_snapshot": {
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_tag": "v2.4.4",
+    "toolkit_tag_object": "1bc80b542359832fd50341992459687456459450",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "track4_open_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ]
+  },
+  "production_change": "none; candidate code and tests restored to the committed baseline.",
+  "reason": "Flash-Lite preserved all valid facts on complete pairs and reduced prompt/completion size, but the weak-model run produced no valid paired model rows and the predeclared three-model, three-target-type gate could not be evaluated.",
+  "schema_version": 1
+}

@@ -1,0 +1,108 @@
+{
+  "dataset": "evaluation/datasets/cot/legacy10_2015_2023.json",
+  "split_group_counts": {
+    "train": 298,
+    "dev": 51,
+    "test": 96
+  },
+  "dev_scores": {
+    "zero": {
+      "groups": 51,
+      "mean_spearman": 0.0,
+      "mae_pct_oi": 4.452537599080201
+    },
+    "trend": {
+      "groups": 51,
+      "mean_spearman": -0.12560903149138444,
+      "mae_pct_oi": 6.562696578440281
+    },
+    "half_trend": {
+      "groups": 51,
+      "mean_spearman": -0.12560903149138444,
+      "mae_pct_oi": 5.213733577556121
+    },
+    "crowding_cap": {
+      "groups": 51,
+      "mean_spearman": -0.11443850267379678,
+      "mae_pct_oi": 6.122296877752029
+    },
+    "mean_reversion": {
+      "groups": 51,
+      "mean_spearman": 0.12204396910279264,
+      "mae_pct_oi": 4.978781077405551
+    }
+  },
+  "point_selected_on_dev": "mean_reversion",
+  "test_scores": {
+    "zero": {
+      "groups": 96,
+      "mean_spearman": 0.0,
+      "mae_pct_oi": 4.99521006462783
+    },
+    "trend": {
+      "groups": 96,
+      "mean_spearman": -0.04141414141414141,
+      "mae_pct_oi": 6.96284294229097
+    },
+    "half_trend": {
+      "groups": 96,
+      "mean_spearman": -0.04141414141414141,
+      "mae_pct_oi": 5.589870536479386
+    },
+    "crowding_cap": {
+      "groups": 96,
+      "mean_spearman": -0.03851010101010101,
+      "mae_pct_oi": 6.53988014382839
+    },
+    "mean_reversion": {
+      "groups": 96,
+      "mean_spearman": 0.03787878787878788,
+      "mae_pct_oi": 5.7595273408764935
+    }
+  },
+  "point_decision": "consider",
+  "interval_candidates": [
+    {
+      "train_quantile": 0.8,
+      "half_width_pct_oi": 9.352093561815217,
+      "dev_coverage": 0.8745098039215686
+    },
+    {
+      "train_quantile": 0.85,
+      "half_width_pct_oi": 11.282055462932734,
+      "dev_coverage": 0.9098039215686274
+    },
+    {
+      "train_quantile": 0.9,
+      "half_width_pct_oi": 14.558413916711483,
+      "dev_coverage": 0.9392156862745098
+    },
+    {
+      "train_quantile": 0.925,
+      "half_width_pct_oi": 16.54741734016651,
+      "dev_coverage": 0.9607843137254902
+    },
+    {
+      "train_quantile": 0.95,
+      "half_width_pct_oi": 19.702203588187107,
+      "dev_coverage": 0.9745098039215686
+    },
+    {
+      "train_quantile": 0.975,
+      "half_width_pct_oi": 25.37886001167536,
+      "dev_coverage": 0.984313725490196
+    }
+  ],
+  "interval_selected_on_dev": {
+    "train_quantile": 0.85,
+    "half_width_pct_oi": 11.282055462932734,
+    "dev_coverage": 0.9098039215686274
+  },
+  "test_interval": {
+    "current_coverage": 0.665625,
+    "candidate_coverage": 0.871875,
+    "current_calibration_loss": 0.234375,
+    "candidate_calibration_loss": 0.028125000000000067
+  },
+  "interval_decision": "consider"
+}

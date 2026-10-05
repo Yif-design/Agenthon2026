@@ -1,0 +1,6284 @@
+{
+  "candidate_mean_composite": 0.4234801352625864,
+  "candidate_minus_direct_mean": -0.03286825603376842,
+  "candidate_minus_production_mean": 0.12182604230051675,
+  "candidate_noninferior_units": 4,
+  "candidate_transformed_minus_production_mean": 0.23318268056508293,
+  "candidate_worst_production_delta": -0.1076751106620833,
+  "decision": "reject_no_production_change",
+  "direct_mean_composite": 0.4563483912963548,
+  "experiment": "direct_point_residual_interval_screen_v1",
+  "gates": {
+    "all_8_candidate_answers_valid": true,
+    "candidate_mean_beats_direct_by_0_02": false,
+    "candidate_mean_beats_production_by_0_10": true,
+    "candidate_noninferior_to_direct_on_6_of_8": false,
+    "candidate_transformed_mean_beats_production_by_0_15": true,
+    "candidate_worst_production_delta_at_least_minus_0_10": false,
+    "point_claims_roster_identical": true,
+    "schema_pair_history_and_residual_hash_equal": true
+  },
+  "hypothesis": "Target-kind pre-cutoff rolling residual intervals with a House-versus-prior guard improve locked direct forecasts and remove severe worst-unit degradation.",
+  "limitations": [
+    "This is a development screen over previously inspected direct outputs.",
+    "Residuals belong to a target-kind statistical baseline, not to historical House forecasts.",
+    "Capex has no complete pre-cutoff target-history table and therefore retains its locked direct interval."
+  ],
+  "locked_report": "evaluation/reports/direct-forecast-reference-screen-v1.json",
+  "model_api_calls": 0,
+  "pair_invariance": {
+    "proxy-04-capex-intensity-20230331": {
+      "history_equal": true,
+      "residual_equal": true,
+      "variants": {
+        "explicit": {
+          "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9",
+          "residual_sha256": "369512d5fa815040b5f929d025c482feff620c1397fa519368d2584970d174ef"
+        },
+        "transformed": {
+          "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9",
+          "residual_sha256": "369512d5fa815040b5f929d025c482feff620c1397fa519368d2584970d174ef"
+        }
+      }
+    },
+    "proxy-15-auction-indirect-bidder-share-20230802": {
+      "history_equal": true,
+      "residual_equal": true,
+      "variants": {
+        "explicit": {
+          "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd",
+          "residual_sha256": "2e9ca340879531b015654a6c3af20d83d85c710b621415e15cc1d0d70867878e"
+        },
+        "transformed": {
+          "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd",
+          "residual_sha256": "2e9ca340879531b015654a6c3af20d83d85c710b621415e15cc1d0d70867878e"
+        }
+      }
+    },
+    "proxy-16-crude-inventory-change-20260923": {
+      "history_equal": true,
+      "residual_equal": true,
+      "variants": {
+        "explicit": {
+          "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2",
+          "residual_sha256": "2fdcdc532f7557e38d2eba13050ae134f3a66fceeb2e4e71e60edf4b440a6fab"
+        },
+        "transformed": {
+          "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2",
+          "residual_sha256": "2fdcdc532f7557e38d2eba13050ae134f3a66fceeb2e4e71e60edf4b440a6fab"
+        }
+      }
+    },
+    "proxy-17-natural-gas-storage-change-20260924": {
+      "history_equal": true,
+      "residual_equal": true,
+      "variants": {
+        "explicit": {
+          "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402",
+          "residual_sha256": "c20c7ca215d38ee86634ca12af35d6675652ca06bf5b60a4b8cf0c87f405ddb9"
+        },
+        "transformed": {
+          "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402",
+          "residual_sha256": "c20c7ca215d38ee86634ca12af35d6675652ca06bf5b60a4b8cf0c87f405ddb9"
+        }
+      }
+    }
+  },
+  "policy": {
+    "absolute_residual_quantile": 0.9,
+    "change_baseline": "zero",
+    "half_width": "absolute_residual_q90 + abs(locked_house_point - current_statistical_prior)",
+    "insufficient_history": "preserve locked direct interval",
+    "level_or_metric_baseline": "one-period persistence",
+    "minimum_origins": 3,
+    "minimum_residual_observations": 8
+  },
+  "production_mean_composite": 0.30165409296206963,
+  "reference": {
+    "active_version": "s1.6",
+    "mechanism": "out-of-origin residual interval ownership with House correction guard",
+    "repository": "https://github.com/wangzgui/agenthon-t4-baseline-2026"
+  },
+  "results": [
+    {
+      "answer_sha256": "78c6d245a7a6c88f0268a91eaf5e6056cec8aef6c58427e04ee5b06f228f45b3",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5,
+        "interval_score": 46.23594007358186,
+        "mae": 6.227290553759307,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.5623381898170172,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-explicit"
+      },
+      "candidate_minus_direct": 0.0,
+      "candidate_minus_production": 0.0,
+      "changed_interval_rows": 0,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5,
+        "interval_score": 46.23594007358186,
+        "mae": 6.227290553759307,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.5623381898170172,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-explicit"
+      },
+      "event": "proxy-04-capex-intensity-20230331",
+      "history": {
+        "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9",
+        "series": {},
+        "target_kind": "ratio_or_metric",
+        "target_unit": "percent"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": null,
+        "current_priors": {},
+        "eligible": false,
+        "residual_observations": 0,
+        "residual_origins": 0,
+        "residual_sha256": "369512d5fa815040b5f929d025c482feff620c1397fa519368d2584970d174ef"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5,
+        "interval_score": 46.23852864863293,
+        "mae": 6.227290553759307,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.5623244111673391,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-explicit"
+      },
+      "rows": 8,
+      "unit": "proxy-04-capex-intensity-20230331-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "2362387708db3ace649790a4e3d01c31f36ccd633319d0a344590cbfd79ff4ff",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000047964505401,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5000047964505402,
+        "interval_score": 46.21212227912933,
+        "mae": 6.227171079340851,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000047964505402,
+        "raw_interval_quality": 0.562465000548204,
+        "raw_predictive_quality": 0.5000047964505402,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "candidate_minus_direct": 0.0,
+      "candidate_minus_production": 0.49117195204663167,
+      "changed_interval_rows": 0,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000047964505401,
+        "interval_coverage": 0.875,
+        "interval_quality": 0.5000047964505402,
+        "interval_score": 46.21212227912933,
+        "mae": 6.227171079340851,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000047964505402,
+        "raw_interval_quality": 0.562465000548204,
+        "raw_predictive_quality": 0.5000047964505402,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "event": "proxy-04-capex-intensity-20230331",
+      "history": {
+        "history_sha256": "4a63583375a8eed76ebe01d9b89fc5e178b534e68c0ba8418bacdf227022e8e9",
+        "series": {},
+        "target_kind": "ratio_or_metric",
+        "target_unit": "percent"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": null,
+        "current_priors": {},
+        "eligible": false,
+        "residual_observations": 0,
+        "residual_origins": 0,
+        "residual_sha256": "369512d5fa815040b5f929d025c482feff620c1397fa519368d2584970d174ef"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.008832844403908427,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.01961792364380289,
+        "interval_score": 2968.8,
+        "mae": 1472.704595037313,
+        "naive_interval_score": 59.40713637910427,
+        "naive_mae": 6.227290553759307,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.0042106675868108,
+        "raw_interval_quality": 0.01961792364380289,
+        "raw_predictive_quality": 0.0042106675868108,
+        "target_type": "regression",
+        "unit": "proxy-04-capex-intensity-20230331-transformed"
+      },
+      "rows": 8,
+      "unit": "proxy-04-capex-intensity-20230331-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    },
+    {
+      "answer_sha256": "5f8f92e679f7d313b711a073a80f7f10549f40ae75e896bb38b287ff35cb15e1",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.437303000089225,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.2910099889012669,
+        "interval_score": 61.80018293333333,
+        "mae": 9.036958757174212,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000000048840643,
+        "raw_interval_quality": 0.2910099889012669,
+        "raw_predictive_quality": 0.5000000048840643,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+      },
+      "candidate_minus_direct": -0.06269700479483925,
+      "candidate_minus_production": -0.06269700172104214,
+      "changed_interval_rows": 3,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000000048840643,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.5000000048840643,
+        "interval_score": 25.366321359574865,
+        "mae": 9.036958757174212,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000000048840643,
+        "raw_interval_quality": 0.5000000290148477,
+        "raw_predictive_quality": 0.5000000048840643,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+      },
+      "event": "proxy-15-auction-indirect-bidder-share-20230802",
+      "history": {
+        "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd",
+        "series": {
+          "TREASURY_10YEAR_20230809": {
+            "canonical_unit": "percent",
+            "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+            "header": "indirect_bidder_acceptance_share_pct",
+            "role": "metric",
+            "values": [
+              [
+                "2022-08-10",
+                45.610687
+              ],
+              [
+                "2022-09-12",
+                62.262745
+              ],
+              [
+                "2022-10-12",
+                56.761929
+              ],
+              [
+                "2022-11-09",
+                42.425031
+              ],
+              [
+                "2022-12-12",
+                59.358023
+              ],
+              [
+                "2023-01-11",
+                66.959776
+              ],
+              [
+                "2023-02-08",
+                56.939753
+              ],
+              [
+                "2023-03-08",
+                62.219142
+              ],
+              [
+                "2023-04-12",
+                59.073826
+              ],
+              [
+                "2023-05-10",
+                52.971152
+              ],
+              [
+                "2023-06-12",
+                62.247122
+              ],
+              [
+                "2023-07-12",
+                67.659649
+              ]
+            ]
+          },
+          "TREASURY_30YEAR_20230810": {
+            "canonical_unit": "percent",
+            "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+            "header": "indirect_bidder_acceptance_share_pct",
+            "role": "metric",
+            "values": [
+              [
+                "2022-08-11",
+                43.259093
+              ],
+              [
+                "2022-09-13",
+                72.075636
+              ],
+              [
+                "2022-10-13",
+                69.091211
+              ],
+              [
+                "2022-11-10",
+                51.684982
+              ],
+              [
+                "2022-12-13",
+                61.490345
+              ],
+              [
+                "2023-01-12",
+                74.57172
+              ],
+              [
+                "2023-02-09",
+                46.850185
+              ],
+              [
+                "2023-03-09",
+                70.698917
+              ],
+              [
+                "2023-04-13",
+                64.889465
+              ],
+              [
+                "2023-05-11",
+                56.847935
+              ],
+              [
+                "2023-06-13",
+                72.889288
+              ],
+              [
+                "2023-07-13",
+                68.953463
+              ]
+            ]
+          },
+          "TREASURY_3YEAR_20230808": {
+            "canonical_unit": "percent",
+            "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+            "header": "indirect_bidder_acceptance_share_pct",
+            "role": "metric",
+            "values": [
+              [
+                "2022-08-09",
+                38.366246
+              ],
+              [
+                "2022-09-12",
+                54.270697
+              ],
+              [
+                "2022-10-11",
+                52.732162
+              ],
+              [
+                "2022-11-08",
+                45.359913
+              ],
+              [
+                "2022-12-12",
+                61.006927
+              ],
+              [
+                "2023-01-10",
+                69.187084
+              ],
+              [
+                "2023-02-07",
+                42.161146
+              ],
+              [
+                "2023-03-07",
+                62.137112
+              ],
+              [
+                "2023-04-11",
+                57.397324
+              ],
+              [
+                "2023-05-09",
+                57.487185
+              ],
+              [
+                "2023-06-12",
+                61.348537
+              ],
+              [
+                "2023-07-11",
+                68.791791
+              ]
+            ]
+          }
+        },
+        "target_kind": "ratio_or_metric",
+        "target_unit": "percent"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": 23.074178799999995,
+        "current_priors": {
+          "TREASURY_10YEAR_20230809": 67.659649,
+          "TREASURY_30YEAR_20230810": 68.953463,
+          "TREASURY_3YEAR_20230808": 68.791791
+        },
+        "eligible": true,
+        "residual_observations": 33,
+        "residual_origins": 30,
+        "residual_sha256": "2e9ca340879531b015654a6c3af20d83d85c710b621415e15cc1d0d70867878e"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5000000018102672,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.5000000018102672,
+        "interval_score": 25.366323763704177,
+        "mae": 9.036958868285323,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5000000018102672,
+        "raw_interval_quality": 0.5000000053207421,
+        "raw_predictive_quality": 0.5000000018102672,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit"
+      },
+      "rows": 3,
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "2f608bc59f8cac641965742341b8e454c16804d2d2879136b7a67d67f39f08b2",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4372865941953461,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.29101629890292185,
+        "interval_score": 61.798292933333336,
+        "mae": 9.037903757174211,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.49997386360638507,
+        "raw_interval_quality": 0.29101629890292185,
+        "raw_predictive_quality": 0.49997386360638507,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "candidate_minus_direct": -0.056641136297830075,
+      "candidate_minus_production": 0.3717857458357213,
+      "changed_interval_rows": 3,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4939277304931762,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.47982008656235564,
+        "interval_score": 27.5,
+        "mae": 9.037903757174211,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.49997386360638507,
+        "raw_interval_quality": 0.47982008656235564,
+        "raw_predictive_quality": 0.49997386360638507,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "event": "proxy-15-auction-indirect-bidder-share-20230802",
+      "history": {
+        "history_sha256": "7225b39b1c31c1147ec0070883018c80dd548962ae36c85ffb1feb6f5f1b21cd",
+        "series": {
+          "TREASURY_10YEAR_20230809": {
+            "canonical_unit": "percent",
+            "doc_id": "TREASURY_INDIRECT_10YEAR_20230802",
+            "header": "indirect_bidder_acceptance_share_pct",
+            "role": "metric",
+            "values": [
+              [
+                "2022-08-10",
+                45.610687
+              ],
+              [
+                "2022-09-12",
+                62.262745
+              ],
+              [
+                "2022-10-12",
+                56.761929
+              ],
+              [
+                "2022-11-09",
+                42.425031
+              ],
+              [
+                "2022-12-12",
+                59.358023
+              ],
+              [
+                "2023-01-11",
+                66.959776
+              ],
+              [
+                "2023-02-08",
+                56.939753
+              ],
+              [
+                "2023-03-08",
+                62.219142
+              ],
+              [
+                "2023-04-12",
+                59.073826
+              ],
+              [
+                "2023-05-10",
+                52.971152
+              ],
+              [
+                "2023-06-12",
+                62.247122
+              ],
+              [
+                "2023-07-12",
+                67.659649
+              ]
+            ]
+          },
+          "TREASURY_30YEAR_20230810": {
+            "canonical_unit": "percent",
+            "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+            "header": "indirect_bidder_acceptance_share_pct",
+            "role": "metric",
+            "values": [
+              [
+                "2022-08-11",
+                43.259093
+              ],
+              [
+                "2022-09-13",
+                72.075636
+              ],
+              [
+                "2022-10-13",
+                69.091211
+              ],
+              [
+                "2022-11-10",
+                51.684982
+              ],
+              [
+                "2022-12-13",
+                61.490345
+              ],
+              [
+                "2023-01-12",
+                74.57172
+              ],
+              [
+                "2023-02-09",
+                46.850185
+              ],
+              [
+                "2023-03-09",
+                70.698917
+              ],
+              [
+                "2023-04-13",
+                64.889465
+              ],
+              [
+                "2023-05-11",
+                56.847935
+              ],
+              [
+                "2023-06-13",
+                72.889288
+              ],
+              [
+                "2023-07-13",
+                68.953463
+              ]
+            ]
+          },
+          "TREASURY_3YEAR_20230808": {
+            "canonical_unit": "percent",
+            "doc_id": "TREASURY_INDIRECT_3YEAR_20230802",
+            "header": "indirect_bidder_acceptance_share_pct",
+            "role": "metric",
+            "values": [
+              [
+                "2022-08-09",
+                38.366246
+              ],
+              [
+                "2022-09-12",
+                54.270697
+              ],
+              [
+                "2022-10-11",
+                52.732162
+              ],
+              [
+                "2022-11-08",
+                45.359913
+              ],
+              [
+                "2022-12-12",
+                61.006927
+              ],
+              [
+                "2023-01-10",
+                69.187084
+              ],
+              [
+                "2023-02-07",
+                42.161146
+              ],
+              [
+                "2023-03-07",
+                62.137112
+              ],
+              [
+                "2023-04-11",
+                57.397324
+              ],
+              [
+                "2023-05-09",
+                57.487185
+              ],
+              [
+                "2023-06-12",
+                61.348537
+              ],
+              [
+                "2023-07-11",
+                68.791791
+              ]
+            ]
+          }
+        },
+        "target_kind": "ratio_or_metric",
+        "target_unit": "percent"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": 23.074178799999995,
+        "current_priors": {
+          "TREASURY_10YEAR_20230809": 67.659649,
+          "TREASURY_30YEAR_20230810": 68.953463,
+          "TREASURY_3YEAR_20230808": 68.791791
+        },
+        "eligible": true,
+        "residual_observations": 33,
+        "residual_origins": 30,
+        "residual_sha256": "2e9ca340879531b015654a6c3af20d83d85c710b621415e15cc1d0d70867878e"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.06550084835962477,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.06867524902656466,
+        "interval_score": 344.0,
+        "mae": 131.85645943432556,
+        "naive_interval_score": 25.366324303574846,
+        "naive_mae": 9.03695893372256,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.06414039093093625,
+        "raw_interval_quality": 0.06867524902656466,
+        "raw_predictive_quality": 0.06414039093093625,
+        "target_type": "regression",
+        "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed"
+      },
+      "rows": 3,
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    },
+    {
+      "answer_sha256": "6caef47cd0ccbf184e483735d006623ebd27e804a2c465baecd2daf79ae68f48",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3656923736689488,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.3263889711186431,
+        "interval_score": 12.370499999999998,
+        "mae": 1.67525,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.38253668904765126,
+        "raw_interval_quality": 0.3263889711186431,
+        "raw_predictive_quality": 0.38253668904765126,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+      },
+      "candidate_minus_direct": 0.009489058134107387,
+      "candidate_minus_production": 0.009489058134107387,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3562033155348414,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.29475877733828526,
+        "interval_score": 14.341166666666668,
+        "mae": 1.67525,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.38253668904765126,
+        "raw_interval_quality": 0.29475877733828526,
+        "raw_predictive_quality": 0.38253668904765126,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+      },
+      "event": "proxy-16-crude-inventory-change-20260923",
+      "history": {
+        "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2",
+        "series": {
+          "EIA_CRUDE_PADD1_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                -0.995
+              ],
+              [
+                "2025-10-03",
+                -0.352
+              ],
+              [
+                "2025-10-10",
+                1.431
+              ],
+              [
+                "2025-10-17",
+                -0.457
+              ],
+              [
+                "2025-10-24",
+                0.43
+              ],
+              [
+                "2025-10-31",
+                0.056
+              ],
+              [
+                "2025-11-07",
+                0.185
+              ],
+              [
+                "2025-11-14",
+                0.133
+              ],
+              [
+                "2025-11-21",
+                -1.112
+              ],
+              [
+                "2025-11-28",
+                1.139
+              ],
+              [
+                "2025-12-05",
+                -0.558
+              ],
+              [
+                "2025-12-12",
+                -0.106
+              ],
+              [
+                "2025-12-19",
+                -0.404
+              ],
+              [
+                "2025-12-26",
+                -0.157
+              ],
+              [
+                "2026-01-02",
+                -0.353
+              ],
+              [
+                "2026-01-09",
+                0.175
+              ],
+              [
+                "2026-01-16",
+                -0.22
+              ],
+              [
+                "2026-01-23",
+                0.434
+              ],
+              [
+                "2026-01-30",
+                -0.108
+              ],
+              [
+                "2026-02-06",
+                0.783
+              ],
+              [
+                "2026-02-13",
+                -0.492
+              ],
+              [
+                "2026-02-20",
+                0.853
+              ],
+              [
+                "2026-02-27",
+                0.771
+              ],
+              [
+                "2026-03-06",
+                -1.042
+              ],
+              [
+                "2026-03-13",
+                0.316
+              ],
+              [
+                "2026-03-20",
+                0.328
+              ],
+              [
+                "2026-03-27",
+                -0.629
+              ],
+              [
+                "2026-04-03",
+                0.211
+              ],
+              [
+                "2026-04-10",
+                -0.553
+              ],
+              [
+                "2026-04-17",
+                0.142
+              ],
+              [
+                "2026-04-24",
+                -0.246
+              ],
+              [
+                "2026-05-01",
+                0.853
+              ],
+              [
+                "2026-05-08",
+                -0.77
+              ],
+              [
+                "2026-05-15",
+                -0.009
+              ],
+              [
+                "2026-05-22",
+                0.917
+              ],
+              [
+                "2026-05-29",
+                -0.462
+              ],
+              [
+                "2026-06-05",
+                -0.321
+              ],
+              [
+                "2026-06-12",
+                0.076
+              ],
+              [
+                "2026-06-19",
+                0.586
+              ],
+              [
+                "2026-06-26",
+                -0.556
+              ],
+              [
+                "2026-07-03",
+                0.343
+              ],
+              [
+                "2026-07-10",
+                -0.241
+              ],
+              [
+                "2026-07-17",
+                -0.233
+              ],
+              [
+                "2026-07-24",
+                -0.651
+              ],
+              [
+                "2026-07-31",
+                0.475
+              ],
+              [
+                "2026-08-07",
+                0.253
+              ],
+              [
+                "2026-08-14",
+                -0.043
+              ],
+              [
+                "2026-08-21",
+                0.597
+              ],
+              [
+                "2026-08-28",
+                0.111
+              ],
+              [
+                "2026-09-04",
+                -0.146
+              ],
+              [
+                "2026-09-11",
+                -0.193
+              ],
+              [
+                "2026-09-18",
+                0.176
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD2_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                -1.656
+              ],
+              [
+                "2025-10-03",
+                -0.869
+              ],
+              [
+                "2025-10-10",
+                1.309
+              ],
+              [
+                "2025-10-17",
+                -0.417
+              ],
+              [
+                "2025-10-24",
+                2.141
+              ],
+              [
+                "2025-10-31",
+                0.764
+              ],
+              [
+                "2025-11-07",
+                -0.586
+              ],
+              [
+                "2025-11-14",
+                -1.81
+              ],
+              [
+                "2025-11-21",
+                -1.21
+              ],
+              [
+                "2025-11-28",
+                0.056
+              ],
+              [
+                "2025-12-05",
+                1.085
+              ],
+              [
+                "2025-12-12",
+                0.046
+              ],
+              [
+                "2025-12-19",
+                2.257
+              ],
+              [
+                "2025-12-26",
+                0.848
+              ],
+              [
+                "2026-01-02",
+                0.001
+              ],
+              [
+                "2026-01-09",
+                1.434
+              ],
+              [
+                "2026-01-16",
+                1.881
+              ],
+              [
+                "2026-01-23",
+                -0.476
+              ],
+              [
+                "2026-01-30",
+                -2.279
+              ],
+              [
+                "2026-02-06",
+                0.712
+              ],
+              [
+                "2026-02-13",
+                0.043
+              ],
+              [
+                "2026-02-20",
+                0.73
+              ],
+              [
+                "2026-02-27",
+                1.04
+              ],
+              [
+                "2026-03-06",
+                0.756
+              ],
+              [
+                "2026-03-13",
+                0.916
+              ],
+              [
+                "2026-03-20",
+                2.498
+              ],
+              [
+                "2026-03-27",
+                1.538
+              ],
+              [
+                "2026-04-03",
+                0.622
+              ],
+              [
+                "2026-04-10",
+                -2.225
+              ],
+              [
+                "2026-04-17",
+                1.448
+              ],
+              [
+                "2026-04-24",
+                0.569
+              ],
+              [
+                "2026-05-01",
+                -2.339
+              ],
+              [
+                "2026-05-08",
+                -0.849
+              ],
+              [
+                "2026-05-15",
+                -2.706
+              ],
+              [
+                "2026-05-22",
+                -4.716
+              ],
+              [
+                "2026-05-29",
+                -0.842
+              ],
+              [
+                "2026-06-05",
+                -0.638
+              ],
+              [
+                "2026-06-12",
+                -4.51
+              ],
+              [
+                "2026-06-19",
+                -0.53
+              ],
+              [
+                "2026-06-26",
+                0.784
+              ],
+              [
+                "2026-07-03",
+                -0.115
+              ],
+              [
+                "2026-07-10",
+                -0.058
+              ],
+              [
+                "2026-07-17",
+                -0.816
+              ],
+              [
+                "2026-07-24",
+                -0.127
+              ],
+              [
+                "2026-07-31",
+                2.631
+              ],
+              [
+                "2026-08-07",
+                2.321
+              ],
+              [
+                "2026-08-14",
+                -1.512
+              ],
+              [
+                "2026-08-21",
+                0.813
+              ],
+              [
+                "2026-08-28",
+                -0.711
+              ],
+              [
+                "2026-09-04",
+                -0.381
+              ],
+              [
+                "2026-09-11",
+                -0.441
+              ],
+              [
+                "2026-09-18",
+                4.407
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD3_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                4.031
+              ],
+              [
+                "2025-10-03",
+                6.124
+              ],
+              [
+                "2025-10-10",
+                0.116
+              ],
+              [
+                "2025-10-17",
+                -0.283
+              ],
+              [
+                "2025-10-24",
+                -9.986
+              ],
+              [
+                "2025-10-31",
+                3.164
+              ],
+              [
+                "2025-11-07",
+                5.837
+              ],
+              [
+                "2025-11-14",
+                -2.057
+              ],
+              [
+                "2025-11-21",
+                5.764
+              ],
+              [
+                "2025-11-28",
+                -0.477
+              ],
+              [
+                "2025-12-05",
+                -3.738
+              ],
+              [
+                "2025-12-12",
+                -1.09
+              ],
+              [
+                "2025-12-19",
+                -0.654
+              ],
+              [
+                "2025-12-26",
+                -2.885
+              ],
+              [
+                "2026-01-02",
+                -2.561
+              ],
+              [
+                "2026-01-09",
+                2.163
+              ],
+              [
+                "2026-01-16",
+                0.265
+              ],
+              [
+                "2026-01-23",
+                -0.153
+              ],
+              [
+                "2026-01-30",
+                -1.329
+              ],
+              [
+                "2026-02-06",
+                5.838
+              ],
+              [
+                "2026-02-13",
+                -8.101
+              ],
+              [
+                "2026-02-20",
+                13.921
+              ],
+              [
+                "2026-02-27",
+                2.226
+              ],
+              [
+                "2026-03-06",
+                6.906
+              ],
+              [
+                "2026-03-13",
+                2.893
+              ],
+              [
+                "2026-03-20",
+                5.662
+              ],
+              [
+                "2026-03-27",
+                2.699
+              ],
+              [
+                "2026-04-03",
+                2.667
+              ],
+              [
+                "2026-04-10",
+                -0.26
+              ],
+              [
+                "2026-04-17",
+                1.122
+              ],
+              [
+                "2026-04-24",
+                -6.049
+              ],
+              [
+                "2026-05-01",
+                -1.986
+              ],
+              [
+                "2026-05-08",
+                -0.941
+              ],
+              [
+                "2026-05-15",
+                -3.995
+              ],
+              [
+                "2026-05-22",
+                -0.008
+              ],
+              [
+                "2026-05-29",
+                -6.657
+              ],
+              [
+                "2026-06-05",
+                -3.856
+              ],
+              [
+                "2026-06-12",
+                -4.83
+              ],
+              [
+                "2026-06-19",
+                -3.979
+              ],
+              [
+                "2026-06-26",
+                -2.337
+              ],
+              [
+                "2026-07-03",
+                -0.286
+              ],
+              [
+                "2026-07-10",
+                -2.089
+              ],
+              [
+                "2026-07-17",
+                4.676
+              ],
+              [
+                "2026-07-24",
+                -6.515
+              ],
+              [
+                "2026-07-31",
+                -2.729
+              ],
+              [
+                "2026-08-07",
+                14.68
+              ],
+              [
+                "2026-08-14",
+                8.41
+              ],
+              [
+                "2026-08-21",
+                -2.22
+              ],
+              [
+                "2026-08-28",
+                -6.363
+              ],
+              [
+                "2026-09-04",
+                2.426
+              ],
+              [
+                "2026-09-11",
+                -1.315
+              ],
+              [
+                "2026-09-18",
+                -2.093
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD4_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                0.082
+              ],
+              [
+                "2025-10-03",
+                -0.378
+              ],
+              [
+                "2025-10-10",
+                0.661
+              ],
+              [
+                "2025-10-17",
+                0.411
+              ],
+              [
+                "2025-10-24",
+                -0.152
+              ],
+              [
+                "2025-10-31",
+                0.266
+              ],
+              [
+                "2025-11-07",
+                0.884
+              ],
+              [
+                "2025-11-14",
+                0.091
+              ],
+              [
+                "2025-11-21",
+                0.015
+              ],
+              [
+                "2025-11-28",
+                0.386
+              ],
+              [
+                "2025-12-05",
+                0.08
+              ],
+              [
+                "2025-12-12",
+                0.111
+              ],
+              [
+                "2025-12-19",
+                -0.455
+              ],
+              [
+                "2025-12-26",
+                0.002
+              ],
+              [
+                "2026-01-02",
+                -0.334
+              ],
+              [
+                "2026-01-09",
+                0.119
+              ],
+              [
+                "2026-01-16",
+                0.229
+              ],
+              [
+                "2026-01-23",
+                -1.044
+              ],
+              [
+                "2026-01-30",
+                0.013
+              ],
+              [
+                "2026-02-06",
+                0.214
+              ],
+              [
+                "2026-02-13",
+                -0.043
+              ],
+              [
+                "2026-02-20",
+                0.123
+              ],
+              [
+                "2026-02-27",
+                0.406
+              ],
+              [
+                "2026-03-06",
+                0.039
+              ],
+              [
+                "2026-03-13",
+                0.693
+              ],
+              [
+                "2026-03-20",
+                0.079
+              ],
+              [
+                "2026-03-27",
+                0.274
+              ],
+              [
+                "2026-04-03",
+                -0.138
+              ],
+              [
+                "2026-04-10",
+                0.445
+              ],
+              [
+                "2026-04-17",
+                0.437
+              ],
+              [
+                "2026-04-24",
+                -0.152
+              ],
+              [
+                "2026-05-01",
+                -0.248
+              ],
+              [
+                "2026-05-08",
+                -0.295
+              ],
+              [
+                "2026-05-15",
+                0.292
+              ],
+              [
+                "2026-05-22",
+                -0.422
+              ],
+              [
+                "2026-05-29",
+                -1.03
+              ],
+              [
+                "2026-06-05",
+                -0.539
+              ],
+              [
+                "2026-06-12",
+                -0.346
+              ],
+              [
+                "2026-06-19",
+                -0.529
+              ],
+              [
+                "2026-06-26",
+                -0.415
+              ],
+              [
+                "2026-07-03",
+                0.077
+              ],
+              [
+                "2026-07-10",
+                -0.16
+              ],
+              [
+                "2026-07-17",
+                -0.241
+              ],
+              [
+                "2026-07-24",
+                -0.057
+              ],
+              [
+                "2026-07-31",
+                0.181
+              ],
+              [
+                "2026-08-07",
+                0.448
+              ],
+              [
+                "2026-08-14",
+                -0.207
+              ],
+              [
+                "2026-08-21",
+                -0.085
+              ],
+              [
+                "2026-08-28",
+                0.189
+              ],
+              [
+                "2026-09-04",
+                0.398
+              ],
+              [
+                "2026-09-11",
+                0.298
+              ],
+              [
+                "2026-09-18",
+                -0.091
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD5_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                0.33
+              ],
+              [
+                "2025-10-03",
+                -0.811
+              ],
+              [
+                "2025-10-10",
+                0.007
+              ],
+              [
+                "2025-10-17",
+                -0.215
+              ],
+              [
+                "2025-10-24",
+                0.709
+              ],
+              [
+                "2025-10-31",
+                0.952
+              ],
+              [
+                "2025-11-07",
+                0.093
+              ],
+              [
+                "2025-11-14",
+                0.217
+              ],
+              [
+                "2025-11-21",
+                -0.683
+              ],
+              [
+                "2025-11-28",
+                -0.531
+              ],
+              [
+                "2025-12-05",
+                1.319
+              ],
+              [
+                "2025-12-12",
+                -0.235
+              ],
+              [
+                "2025-12-19",
+                -0.338
+              ],
+              [
+                "2025-12-26",
+                0.257
+              ],
+              [
+                "2026-01-02",
+                -0.584
+              ],
+              [
+                "2026-01-09",
+                -0.5
+              ],
+              [
+                "2026-01-16",
+                1.448
+              ],
+              [
+                "2026-01-23",
+                -1.056
+              ],
+              [
+                "2026-01-30",
+                0.249
+              ],
+              [
+                "2026-02-06",
+                0.983
+              ],
+              [
+                "2026-02-13",
+                -0.421
+              ],
+              [
+                "2026-02-20",
+                0.362
+              ],
+              [
+                "2026-02-27",
+                -0.967
+              ],
+              [
+                "2026-03-06",
+                -2.835
+              ],
+              [
+                "2026-03-13",
+                1.338
+              ],
+              [
+                "2026-03-20",
+                -1.641
+              ],
+              [
+                "2026-03-27",
+                1.569
+              ],
+              [
+                "2026-04-03",
+                -0.281
+              ],
+              [
+                "2026-04-10",
+                1.679
+              ],
+              [
+                "2026-04-17",
+                -1.224
+              ],
+              [
+                "2026-04-24",
+                -0.354
+              ],
+              [
+                "2026-05-01",
+                1.406
+              ],
+              [
+                "2026-05-08",
+                -1.451
+              ],
+              [
+                "2026-05-15",
+                -1.446
+              ],
+              [
+                "2026-05-22",
+                0.901
+              ],
+              [
+                "2026-05-29",
+                1.018
+              ],
+              [
+                "2026-06-05",
+                -1.873
+              ],
+              [
+                "2026-06-12",
+                1.348
+              ],
+              [
+                "2026-06-19",
+                -1.635
+              ],
+              [
+                "2026-06-26",
+                -1.252
+              ],
+              [
+                "2026-07-03",
+                2.98
+              ],
+              [
+                "2026-07-10",
+                0.854
+              ],
+              [
+                "2026-07-17",
+                -1.376
+              ],
+              [
+                "2026-07-24",
+                0.182
+              ],
+              [
+                "2026-07-31",
+                1.921
+              ],
+              [
+                "2026-08-07",
+                -0.28
+              ],
+              [
+                "2026-08-14",
+                -2.243
+              ],
+              [
+                "2026-08-21",
+                0.991
+              ],
+              [
+                "2026-08-28",
+                2.324
+              ],
+              [
+                "2026-09-04",
+                -2.688
+              ],
+              [
+                "2026-09-11",
+                1.01
+              ],
+              [
+                "2026-09-18",
+                0.569
+              ]
+            ]
+          },
+          "EIA_CRUDE_US_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                1.792
+              ],
+              [
+                "2025-10-03",
+                3.715
+              ],
+              [
+                "2025-10-10",
+                3.524
+              ],
+              [
+                "2025-10-17",
+                -0.961
+              ],
+              [
+                "2025-10-24",
+                -6.858
+              ],
+              [
+                "2025-10-31",
+                5.202
+              ],
+              [
+                "2025-11-07",
+                6.413
+              ],
+              [
+                "2025-11-14",
+                -3.426
+              ],
+              [
+                "2025-11-21",
+                2.775
+              ],
+              [
+                "2025-11-28",
+                0.574
+              ],
+              [
+                "2025-12-05",
+                -1.813
+              ],
+              [
+                "2025-12-12",
+                -1.274
+              ],
+              [
+                "2025-12-19",
+                0.405
+              ],
+              [
+                "2025-12-26",
+                -1.934
+              ],
+              [
+                "2026-01-02",
+                -3.831
+              ],
+              [
+                "2026-01-09",
+                3.391
+              ],
+              [
+                "2026-01-16",
+                3.602
+              ],
+              [
+                "2026-01-23",
+                -2.296
+              ],
+              [
+                "2026-01-30",
+                -3.455
+              ],
+              [
+                "2026-02-06",
+                8.53
+              ],
+              [
+                "2026-02-13",
+                -9.014
+              ],
+              [
+                "2026-02-20",
+                15.989
+              ],
+              [
+                "2026-02-27",
+                3.475
+              ],
+              [
+                "2026-03-06",
+                3.824
+              ],
+              [
+                "2026-03-13",
+                6.156
+              ],
+              [
+                "2026-03-20",
+                6.926
+              ],
+              [
+                "2026-03-27",
+                5.451
+              ],
+              [
+                "2026-04-03",
+                3.081
+              ],
+              [
+                "2026-04-10",
+                -0.913
+              ],
+              [
+                "2026-04-17",
+                1.925
+              ],
+              [
+                "2026-04-24",
+                -6.233
+              ],
+              [
+                "2026-05-01",
+                -2.314
+              ],
+              [
+                "2026-05-08",
+                -4.305
+              ],
+              [
+                "2026-05-15",
+                -7.864
+              ],
+              [
+                "2026-05-22",
+                -3.327
+              ],
+              [
+                "2026-05-29",
+                -7.974
+              ],
+              [
+                "2026-06-05",
+                -7.228
+              ],
+              [
+                "2026-06-12",
+                -8.262
+              ],
+              [
+                "2026-06-19",
+                -6.088
+              ],
+              [
+                "2026-06-26",
+                -3.775
+              ],
+              [
+                "2026-07-03",
+                2.998
+              ],
+              [
+                "2026-07-10",
+                -1.693
+              ],
+              [
+                "2026-07-17",
+                2.011
+              ],
+              [
+                "2026-07-24",
+                -7.167
+              ],
+              [
+                "2026-07-31",
+                2.479
+              ],
+              [
+                "2026-08-07",
+                17.422
+              ],
+              [
+                "2026-08-14",
+                4.405
+              ],
+              [
+                "2026-08-21",
+                0.095
+              ],
+              [
+                "2026-08-28",
+                -4.45
+              ],
+              [
+                "2026-09-04",
+                -0.39
+              ],
+              [
+                "2026-09-11",
+                -0.64
+              ],
+              [
+                "2026-09-18",
+                2.969
+              ]
+            ]
+          }
+        },
+        "target_kind": "change",
+        "target_unit": "million_barrels"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": 5.326499999999999,
+        "current_priors": {
+          "EIA_CRUDE_PADD1_20260925": 0.0,
+          "EIA_CRUDE_PADD2_20260925": 0.0,
+          "EIA_CRUDE_PADD3_20260925": 0.0,
+          "EIA_CRUDE_PADD4_20260925": 0.0,
+          "EIA_CRUDE_PADD5_20260925": 0.0,
+          "EIA_CRUDE_US_20260925": 0.0
+        },
+        "eligible": true,
+        "residual_observations": 306,
+        "residual_origins": 51,
+        "residual_sha256": "2fdcdc532f7557e38d2eba13050ae134f3a66fceeb2e4e71e60edf4b440a6fab"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3562033155348414,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.29475877733828526,
+        "interval_score": 14.341166666666668,
+        "mae": 1.67525,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.38253668904765126,
+        "raw_interval_quality": 0.29475877733828526,
+        "raw_predictive_quality": 0.38253668904765126,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-explicit"
+      },
+      "rows": 6,
+      "unit": "proxy-16-crude-inventory-change-20260923-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "0ca1afd790066a8abdc01752163385ac3a099231f888ce2a832b11dedd7ae0e0",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.29380666397190325,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.298474705093862,
+        "interval_score": 14.088,
+        "mae": 2.5188333333333333,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.2918060749196352,
+        "raw_interval_quality": 0.298474705093862,
+        "raw_predictive_quality": 0.2918060749196352,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "candidate_minus_direct": 0.0284155434538807,
+      "candidate_minus_production": -0.1076751106620833,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.26539112051802255,
+        "interval_coverage": 0.3333333333333333,
+        "interval_quality": 0.20375622691425965,
+        "interval_score": 23.423333333333336,
+        "mae": 2.5188333333333333,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.2918060749196352,
+        "raw_interval_quality": 0.20375622691425965,
+        "raw_predictive_quality": 0.2918060749196352,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "event": "proxy-16-crude-inventory-change-20260923",
+      "history": {
+        "history_sha256": "f25be6280dcae0c06effed45f25d96563c42279041ee332df54ccd53bbeb93b2",
+        "series": {
+          "EIA_CRUDE_PADD1_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                -0.995
+              ],
+              [
+                "2025-10-03",
+                -0.352
+              ],
+              [
+                "2025-10-10",
+                1.431
+              ],
+              [
+                "2025-10-17",
+                -0.457
+              ],
+              [
+                "2025-10-24",
+                0.43
+              ],
+              [
+                "2025-10-31",
+                0.056
+              ],
+              [
+                "2025-11-07",
+                0.185
+              ],
+              [
+                "2025-11-14",
+                0.133
+              ],
+              [
+                "2025-11-21",
+                -1.112
+              ],
+              [
+                "2025-11-28",
+                1.139
+              ],
+              [
+                "2025-12-05",
+                -0.558
+              ],
+              [
+                "2025-12-12",
+                -0.106
+              ],
+              [
+                "2025-12-19",
+                -0.404
+              ],
+              [
+                "2025-12-26",
+                -0.157
+              ],
+              [
+                "2026-01-02",
+                -0.353
+              ],
+              [
+                "2026-01-09",
+                0.175
+              ],
+              [
+                "2026-01-16",
+                -0.22
+              ],
+              [
+                "2026-01-23",
+                0.434
+              ],
+              [
+                "2026-01-30",
+                -0.108
+              ],
+              [
+                "2026-02-06",
+                0.783
+              ],
+              [
+                "2026-02-13",
+                -0.492
+              ],
+              [
+                "2026-02-20",
+                0.853
+              ],
+              [
+                "2026-02-27",
+                0.771
+              ],
+              [
+                "2026-03-06",
+                -1.042
+              ],
+              [
+                "2026-03-13",
+                0.316
+              ],
+              [
+                "2026-03-20",
+                0.328
+              ],
+              [
+                "2026-03-27",
+                -0.629
+              ],
+              [
+                "2026-04-03",
+                0.211
+              ],
+              [
+                "2026-04-10",
+                -0.553
+              ],
+              [
+                "2026-04-17",
+                0.142
+              ],
+              [
+                "2026-04-24",
+                -0.246
+              ],
+              [
+                "2026-05-01",
+                0.853
+              ],
+              [
+                "2026-05-08",
+                -0.77
+              ],
+              [
+                "2026-05-15",
+                -0.009
+              ],
+              [
+                "2026-05-22",
+                0.917
+              ],
+              [
+                "2026-05-29",
+                -0.462
+              ],
+              [
+                "2026-06-05",
+                -0.321
+              ],
+              [
+                "2026-06-12",
+                0.076
+              ],
+              [
+                "2026-06-19",
+                0.586
+              ],
+              [
+                "2026-06-26",
+                -0.556
+              ],
+              [
+                "2026-07-03",
+                0.343
+              ],
+              [
+                "2026-07-10",
+                -0.241
+              ],
+              [
+                "2026-07-17",
+                -0.233
+              ],
+              [
+                "2026-07-24",
+                -0.651
+              ],
+              [
+                "2026-07-31",
+                0.475
+              ],
+              [
+                "2026-08-07",
+                0.253
+              ],
+              [
+                "2026-08-14",
+                -0.043
+              ],
+              [
+                "2026-08-21",
+                0.597
+              ],
+              [
+                "2026-08-28",
+                0.111
+              ],
+              [
+                "2026-09-04",
+                -0.146
+              ],
+              [
+                "2026-09-11",
+                -0.193
+              ],
+              [
+                "2026-09-18",
+                0.176
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD2_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                -1.656
+              ],
+              [
+                "2025-10-03",
+                -0.869
+              ],
+              [
+                "2025-10-10",
+                1.309
+              ],
+              [
+                "2025-10-17",
+                -0.417
+              ],
+              [
+                "2025-10-24",
+                2.141
+              ],
+              [
+                "2025-10-31",
+                0.764
+              ],
+              [
+                "2025-11-07",
+                -0.586
+              ],
+              [
+                "2025-11-14",
+                -1.81
+              ],
+              [
+                "2025-11-21",
+                -1.21
+              ],
+              [
+                "2025-11-28",
+                0.056
+              ],
+              [
+                "2025-12-05",
+                1.085
+              ],
+              [
+                "2025-12-12",
+                0.046
+              ],
+              [
+                "2025-12-19",
+                2.257
+              ],
+              [
+                "2025-12-26",
+                0.848
+              ],
+              [
+                "2026-01-02",
+                0.001
+              ],
+              [
+                "2026-01-09",
+                1.434
+              ],
+              [
+                "2026-01-16",
+                1.881
+              ],
+              [
+                "2026-01-23",
+                -0.476
+              ],
+              [
+                "2026-01-30",
+                -2.279
+              ],
+              [
+                "2026-02-06",
+                0.712
+              ],
+              [
+                "2026-02-13",
+                0.043
+              ],
+              [
+                "2026-02-20",
+                0.73
+              ],
+              [
+                "2026-02-27",
+                1.04
+              ],
+              [
+                "2026-03-06",
+                0.756
+              ],
+              [
+                "2026-03-13",
+                0.916
+              ],
+              [
+                "2026-03-20",
+                2.498
+              ],
+              [
+                "2026-03-27",
+                1.538
+              ],
+              [
+                "2026-04-03",
+                0.622
+              ],
+              [
+                "2026-04-10",
+                -2.225
+              ],
+              [
+                "2026-04-17",
+                1.448
+              ],
+              [
+                "2026-04-24",
+                0.569
+              ],
+              [
+                "2026-05-01",
+                -2.339
+              ],
+              [
+                "2026-05-08",
+                -0.849
+              ],
+              [
+                "2026-05-15",
+                -2.706
+              ],
+              [
+                "2026-05-22",
+                -4.716
+              ],
+              [
+                "2026-05-29",
+                -0.842
+              ],
+              [
+                "2026-06-05",
+                -0.638
+              ],
+              [
+                "2026-06-12",
+                -4.51
+              ],
+              [
+                "2026-06-19",
+                -0.53
+              ],
+              [
+                "2026-06-26",
+                0.784
+              ],
+              [
+                "2026-07-03",
+                -0.115
+              ],
+              [
+                "2026-07-10",
+                -0.058
+              ],
+              [
+                "2026-07-17",
+                -0.816
+              ],
+              [
+                "2026-07-24",
+                -0.127
+              ],
+              [
+                "2026-07-31",
+                2.631
+              ],
+              [
+                "2026-08-07",
+                2.321
+              ],
+              [
+                "2026-08-14",
+                -1.512
+              ],
+              [
+                "2026-08-21",
+                0.813
+              ],
+              [
+                "2026-08-28",
+                -0.711
+              ],
+              [
+                "2026-09-04",
+                -0.381
+              ],
+              [
+                "2026-09-11",
+                -0.441
+              ],
+              [
+                "2026-09-18",
+                4.407
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD3_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                4.031
+              ],
+              [
+                "2025-10-03",
+                6.124
+              ],
+              [
+                "2025-10-10",
+                0.116
+              ],
+              [
+                "2025-10-17",
+                -0.283
+              ],
+              [
+                "2025-10-24",
+                -9.986
+              ],
+              [
+                "2025-10-31",
+                3.164
+              ],
+              [
+                "2025-11-07",
+                5.837
+              ],
+              [
+                "2025-11-14",
+                -2.057
+              ],
+              [
+                "2025-11-21",
+                5.764
+              ],
+              [
+                "2025-11-28",
+                -0.477
+              ],
+              [
+                "2025-12-05",
+                -3.738
+              ],
+              [
+                "2025-12-12",
+                -1.09
+              ],
+              [
+                "2025-12-19",
+                -0.654
+              ],
+              [
+                "2025-12-26",
+                -2.885
+              ],
+              [
+                "2026-01-02",
+                -2.561
+              ],
+              [
+                "2026-01-09",
+                2.163
+              ],
+              [
+                "2026-01-16",
+                0.265
+              ],
+              [
+                "2026-01-23",
+                -0.153
+              ],
+              [
+                "2026-01-30",
+                -1.329
+              ],
+              [
+                "2026-02-06",
+                5.838
+              ],
+              [
+                "2026-02-13",
+                -8.101
+              ],
+              [
+                "2026-02-20",
+                13.921
+              ],
+              [
+                "2026-02-27",
+                2.226
+              ],
+              [
+                "2026-03-06",
+                6.906
+              ],
+              [
+                "2026-03-13",
+                2.893
+              ],
+              [
+                "2026-03-20",
+                5.662
+              ],
+              [
+                "2026-03-27",
+                2.699
+              ],
+              [
+                "2026-04-03",
+                2.667
+              ],
+              [
+                "2026-04-10",
+                -0.26
+              ],
+              [
+                "2026-04-17",
+                1.122
+              ],
+              [
+                "2026-04-24",
+                -6.049
+              ],
+              [
+                "2026-05-01",
+                -1.986
+              ],
+              [
+                "2026-05-08",
+                -0.941
+              ],
+              [
+                "2026-05-15",
+                -3.995
+              ],
+              [
+                "2026-05-22",
+                -0.008
+              ],
+              [
+                "2026-05-29",
+                -6.657
+              ],
+              [
+                "2026-06-05",
+                -3.856
+              ],
+              [
+                "2026-06-12",
+                -4.83
+              ],
+              [
+                "2026-06-19",
+                -3.979
+              ],
+              [
+                "2026-06-26",
+                -2.337
+              ],
+              [
+                "2026-07-03",
+                -0.286
+              ],
+              [
+                "2026-07-10",
+                -2.089
+              ],
+              [
+                "2026-07-17",
+                4.676
+              ],
+              [
+                "2026-07-24",
+                -6.515
+              ],
+              [
+                "2026-07-31",
+                -2.729
+              ],
+              [
+                "2026-08-07",
+                14.68
+              ],
+              [
+                "2026-08-14",
+                8.41
+              ],
+              [
+                "2026-08-21",
+                -2.22
+              ],
+              [
+                "2026-08-28",
+                -6.363
+              ],
+              [
+                "2026-09-04",
+                2.426
+              ],
+              [
+                "2026-09-11",
+                -1.315
+              ],
+              [
+                "2026-09-18",
+                -2.093
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD4_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                0.082
+              ],
+              [
+                "2025-10-03",
+                -0.378
+              ],
+              [
+                "2025-10-10",
+                0.661
+              ],
+              [
+                "2025-10-17",
+                0.411
+              ],
+              [
+                "2025-10-24",
+                -0.152
+              ],
+              [
+                "2025-10-31",
+                0.266
+              ],
+              [
+                "2025-11-07",
+                0.884
+              ],
+              [
+                "2025-11-14",
+                0.091
+              ],
+              [
+                "2025-11-21",
+                0.015
+              ],
+              [
+                "2025-11-28",
+                0.386
+              ],
+              [
+                "2025-12-05",
+                0.08
+              ],
+              [
+                "2025-12-12",
+                0.111
+              ],
+              [
+                "2025-12-19",
+                -0.455
+              ],
+              [
+                "2025-12-26",
+                0.002
+              ],
+              [
+                "2026-01-02",
+                -0.334
+              ],
+              [
+                "2026-01-09",
+                0.119
+              ],
+              [
+                "2026-01-16",
+                0.229
+              ],
+              [
+                "2026-01-23",
+                -1.044
+              ],
+              [
+                "2026-01-30",
+                0.013
+              ],
+              [
+                "2026-02-06",
+                0.214
+              ],
+              [
+                "2026-02-13",
+                -0.043
+              ],
+              [
+                "2026-02-20",
+                0.123
+              ],
+              [
+                "2026-02-27",
+                0.406
+              ],
+              [
+                "2026-03-06",
+                0.039
+              ],
+              [
+                "2026-03-13",
+                0.693
+              ],
+              [
+                "2026-03-20",
+                0.079
+              ],
+              [
+                "2026-03-27",
+                0.274
+              ],
+              [
+                "2026-04-03",
+                -0.138
+              ],
+              [
+                "2026-04-10",
+                0.445
+              ],
+              [
+                "2026-04-17",
+                0.437
+              ],
+              [
+                "2026-04-24",
+                -0.152
+              ],
+              [
+                "2026-05-01",
+                -0.248
+              ],
+              [
+                "2026-05-08",
+                -0.295
+              ],
+              [
+                "2026-05-15",
+                0.292
+              ],
+              [
+                "2026-05-22",
+                -0.422
+              ],
+              [
+                "2026-05-29",
+                -1.03
+              ],
+              [
+                "2026-06-05",
+                -0.539
+              ],
+              [
+                "2026-06-12",
+                -0.346
+              ],
+              [
+                "2026-06-19",
+                -0.529
+              ],
+              [
+                "2026-06-26",
+                -0.415
+              ],
+              [
+                "2026-07-03",
+                0.077
+              ],
+              [
+                "2026-07-10",
+                -0.16
+              ],
+              [
+                "2026-07-17",
+                -0.241
+              ],
+              [
+                "2026-07-24",
+                -0.057
+              ],
+              [
+                "2026-07-31",
+                0.181
+              ],
+              [
+                "2026-08-07",
+                0.448
+              ],
+              [
+                "2026-08-14",
+                -0.207
+              ],
+              [
+                "2026-08-21",
+                -0.085
+              ],
+              [
+                "2026-08-28",
+                0.189
+              ],
+              [
+                "2026-09-04",
+                0.398
+              ],
+              [
+                "2026-09-11",
+                0.298
+              ],
+              [
+                "2026-09-18",
+                -0.091
+              ]
+            ]
+          },
+          "EIA_CRUDE_PADD5_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                0.33
+              ],
+              [
+                "2025-10-03",
+                -0.811
+              ],
+              [
+                "2025-10-10",
+                0.007
+              ],
+              [
+                "2025-10-17",
+                -0.215
+              ],
+              [
+                "2025-10-24",
+                0.709
+              ],
+              [
+                "2025-10-31",
+                0.952
+              ],
+              [
+                "2025-11-07",
+                0.093
+              ],
+              [
+                "2025-11-14",
+                0.217
+              ],
+              [
+                "2025-11-21",
+                -0.683
+              ],
+              [
+                "2025-11-28",
+                -0.531
+              ],
+              [
+                "2025-12-05",
+                1.319
+              ],
+              [
+                "2025-12-12",
+                -0.235
+              ],
+              [
+                "2025-12-19",
+                -0.338
+              ],
+              [
+                "2025-12-26",
+                0.257
+              ],
+              [
+                "2026-01-02",
+                -0.584
+              ],
+              [
+                "2026-01-09",
+                -0.5
+              ],
+              [
+                "2026-01-16",
+                1.448
+              ],
+              [
+                "2026-01-23",
+                -1.056
+              ],
+              [
+                "2026-01-30",
+                0.249
+              ],
+              [
+                "2026-02-06",
+                0.983
+              ],
+              [
+                "2026-02-13",
+                -0.421
+              ],
+              [
+                "2026-02-20",
+                0.362
+              ],
+              [
+                "2026-02-27",
+                -0.967
+              ],
+              [
+                "2026-03-06",
+                -2.835
+              ],
+              [
+                "2026-03-13",
+                1.338
+              ],
+              [
+                "2026-03-20",
+                -1.641
+              ],
+              [
+                "2026-03-27",
+                1.569
+              ],
+              [
+                "2026-04-03",
+                -0.281
+              ],
+              [
+                "2026-04-10",
+                1.679
+              ],
+              [
+                "2026-04-17",
+                -1.224
+              ],
+              [
+                "2026-04-24",
+                -0.354
+              ],
+              [
+                "2026-05-01",
+                1.406
+              ],
+              [
+                "2026-05-08",
+                -1.451
+              ],
+              [
+                "2026-05-15",
+                -1.446
+              ],
+              [
+                "2026-05-22",
+                0.901
+              ],
+              [
+                "2026-05-29",
+                1.018
+              ],
+              [
+                "2026-06-05",
+                -1.873
+              ],
+              [
+                "2026-06-12",
+                1.348
+              ],
+              [
+                "2026-06-19",
+                -1.635
+              ],
+              [
+                "2026-06-26",
+                -1.252
+              ],
+              [
+                "2026-07-03",
+                2.98
+              ],
+              [
+                "2026-07-10",
+                0.854
+              ],
+              [
+                "2026-07-17",
+                -1.376
+              ],
+              [
+                "2026-07-24",
+                0.182
+              ],
+              [
+                "2026-07-31",
+                1.921
+              ],
+              [
+                "2026-08-07",
+                -0.28
+              ],
+              [
+                "2026-08-14",
+                -2.243
+              ],
+              [
+                "2026-08-21",
+                0.991
+              ],
+              [
+                "2026-08-28",
+                2.324
+              ],
+              [
+                "2026-09-04",
+                -2.688
+              ],
+              [
+                "2026-09-11",
+                1.01
+              ],
+              [
+                "2026-09-18",
+                0.569
+              ]
+            ]
+          },
+          "EIA_CRUDE_US_20260925": {
+            "canonical_unit": "million_barrels",
+            "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+            "header": "weekly_change_mmbbl",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                1.792
+              ],
+              [
+                "2025-10-03",
+                3.715
+              ],
+              [
+                "2025-10-10",
+                3.524
+              ],
+              [
+                "2025-10-17",
+                -0.961
+              ],
+              [
+                "2025-10-24",
+                -6.858
+              ],
+              [
+                "2025-10-31",
+                5.202
+              ],
+              [
+                "2025-11-07",
+                6.413
+              ],
+              [
+                "2025-11-14",
+                -3.426
+              ],
+              [
+                "2025-11-21",
+                2.775
+              ],
+              [
+                "2025-11-28",
+                0.574
+              ],
+              [
+                "2025-12-05",
+                -1.813
+              ],
+              [
+                "2025-12-12",
+                -1.274
+              ],
+              [
+                "2025-12-19",
+                0.405
+              ],
+              [
+                "2025-12-26",
+                -1.934
+              ],
+              [
+                "2026-01-02",
+                -3.831
+              ],
+              [
+                "2026-01-09",
+                3.391
+              ],
+              [
+                "2026-01-16",
+                3.602
+              ],
+              [
+                "2026-01-23",
+                -2.296
+              ],
+              [
+                "2026-01-30",
+                -3.455
+              ],
+              [
+                "2026-02-06",
+                8.53
+              ],
+              [
+                "2026-02-13",
+                -9.014
+              ],
+              [
+                "2026-02-20",
+                15.989
+              ],
+              [
+                "2026-02-27",
+                3.475
+              ],
+              [
+                "2026-03-06",
+                3.824
+              ],
+              [
+                "2026-03-13",
+                6.156
+              ],
+              [
+                "2026-03-20",
+                6.926
+              ],
+              [
+                "2026-03-27",
+                5.451
+              ],
+              [
+                "2026-04-03",
+                3.081
+              ],
+              [
+                "2026-04-10",
+                -0.913
+              ],
+              [
+                "2026-04-17",
+                1.925
+              ],
+              [
+                "2026-04-24",
+                -6.233
+              ],
+              [
+                "2026-05-01",
+                -2.314
+              ],
+              [
+                "2026-05-08",
+                -4.305
+              ],
+              [
+                "2026-05-15",
+                -7.864
+              ],
+              [
+                "2026-05-22",
+                -3.327
+              ],
+              [
+                "2026-05-29",
+                -7.974
+              ],
+              [
+                "2026-06-05",
+                -7.228
+              ],
+              [
+                "2026-06-12",
+                -8.262
+              ],
+              [
+                "2026-06-19",
+                -6.088
+              ],
+              [
+                "2026-06-26",
+                -3.775
+              ],
+              [
+                "2026-07-03",
+                2.998
+              ],
+              [
+                "2026-07-10",
+                -1.693
+              ],
+              [
+                "2026-07-17",
+                2.011
+              ],
+              [
+                "2026-07-24",
+                -7.167
+              ],
+              [
+                "2026-07-31",
+                2.479
+              ],
+              [
+                "2026-08-07",
+                17.422
+              ],
+              [
+                "2026-08-14",
+                4.405
+              ],
+              [
+                "2026-08-21",
+                0.095
+              ],
+              [
+                "2026-08-28",
+                -4.45
+              ],
+              [
+                "2026-09-04",
+                -0.39
+              ],
+              [
+                "2026-09-11",
+                -0.64
+              ],
+              [
+                "2026-09-18",
+                2.969
+              ]
+            ]
+          }
+        },
+        "target_kind": "change",
+        "target_unit": "million_barrels"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": 5.326499999999999,
+        "current_priors": {
+          "EIA_CRUDE_PADD1_20260925": 0.0,
+          "EIA_CRUDE_PADD2_20260925": 0.0,
+          "EIA_CRUDE_PADD3_20260925": 0.0,
+          "EIA_CRUDE_PADD4_20260925": 0.0,
+          "EIA_CRUDE_PADD5_20260925": 0.0,
+          "EIA_CRUDE_US_20260925": 0.0
+        },
+        "eligible": true,
+        "residual_observations": 306,
+        "residual_origins": 51,
+        "residual_sha256": "2fdcdc532f7557e38d2eba13050ae134f3a66fceeb2e4e71e60edf4b440a6fab"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.40148177463398654,
+        "interval_coverage": 0.6666666666666666,
+        "interval_quality": 0.3786304577550254,
+        "interval_score": 9.836666666666668,
+        "mae": 1.4856666666666667,
+        "naive_interval_score": 5.993955850052324,
+        "naive_mae": 1.0378666666666667,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.41127519615354136,
+        "raw_interval_quality": 0.3786304577550254,
+        "raw_predictive_quality": 0.41127519615354136,
+        "target_type": "regression",
+        "unit": "proxy-16-crude-inventory-change-20260923-transformed"
+      },
+      "rows": 6,
+      "unit": "proxy-16-crude-inventory-change-20260923-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    },
+    {
+      "answer_sha256": "e5c94426fb677758cc46a3d5a350383ad2438ffe5194ff21ce1bdb4c5e362edd",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4583546575706492,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.17138952842529023,
+        "interval_score": 174.0,
+        "mae": 5.833333333333333,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5813397129186603,
+        "raw_interval_quality": 0.17138952842529023,
+        "raw_predictive_quality": 0.5813397129186603,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-explicit"
+      },
+      "candidate_minus_direct": -0.12090340668197563,
+      "candidate_minus_production": 0.09508555973073696,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.5792580642526248,
+        "interval_coverage": 0.8333333333333334,
+        "interval_quality": 0.5744008840318754,
+        "interval_score": 26.666666666666668,
+        "mae": 5.833333333333333,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5813397129186603,
+        "raw_interval_quality": 0.5744008840318754,
+        "raw_predictive_quality": 0.5813397129186603,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-explicit"
+      },
+      "event": "proxy-17-natural-gas-storage-change-20260924",
+      "history": {
+        "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402",
+        "series": {
+          "EIA_GAS_EAST_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                25.0
+              ],
+              [
+                "2025-10-03",
+                28.0
+              ],
+              [
+                "2025-10-10",
+                23.0
+              ],
+              [
+                "2025-10-17",
+                16.0
+              ],
+              [
+                "2025-10-24",
+                14.0
+              ],
+              [
+                "2025-10-31",
+                -4.0
+              ],
+              [
+                "2025-11-07",
+                5.0
+              ],
+              [
+                "2025-11-14",
+                -9.0
+              ],
+              [
+                "2025-11-21",
+                -13.0
+              ],
+              [
+                "2025-11-28",
+                -4.0
+              ],
+              [
+                "2025-12-05",
+                -45.0
+              ],
+              [
+                "2025-12-12",
+                -46.0
+              ],
+              [
+                "2025-12-19",
+                -46.0
+              ],
+              [
+                "2025-12-26",
+                -15.0
+              ],
+              [
+                "2026-01-02",
+                -39.0
+              ],
+              [
+                "2026-01-09",
+                -33.0
+              ],
+              [
+                "2026-01-16",
+                -32.0
+              ],
+              [
+                "2026-01-23",
+                -55.0
+              ],
+              [
+                "2026-01-30",
+                -75.0
+              ],
+              [
+                "2026-02-06",
+                -65.0
+              ],
+              [
+                "2026-02-13",
+                -49.0
+              ],
+              [
+                "2026-02-20",
+                -24.0
+              ],
+              [
+                "2026-02-27",
+                -42.0
+              ],
+              [
+                "2026-03-06",
+                -28.0
+              ],
+              [
+                "2026-03-13",
+                8.0
+              ],
+              [
+                "2026-03-20",
+                -31.0
+              ],
+              [
+                "2026-03-27",
+                -1.0
+              ],
+              [
+                "2026-04-03",
+                7.0
+              ],
+              [
+                "2026-04-10",
+                6.0
+              ],
+              [
+                "2026-04-17",
+                26.0
+              ],
+              [
+                "2026-04-24",
+                23.0
+              ],
+              [
+                "2026-05-01",
+                29.0
+              ],
+              [
+                "2026-05-08",
+                27.0
+              ],
+              [
+                "2026-05-15",
+                31.0
+              ],
+              [
+                "2026-05-22",
+                28.0
+              ],
+              [
+                "2026-05-29",
+                33.0
+              ],
+              [
+                "2026-06-05",
+                34.0
+              ],
+              [
+                "2026-06-12",
+                18.0
+              ],
+              [
+                "2026-06-19",
+                26.0
+              ],
+              [
+                "2026-06-26",
+                29.0
+              ],
+              [
+                "2026-07-03",
+                13.0
+              ],
+              [
+                "2026-07-10",
+                14.0
+              ],
+              [
+                "2026-07-17",
+                17.0
+              ],
+              [
+                "2026-07-24",
+                23.0
+              ],
+              [
+                "2026-07-31",
+                24.0
+              ],
+              [
+                "2026-08-07",
+                15.0
+              ],
+              [
+                "2026-08-14",
+                15.0
+              ],
+              [
+                "2026-08-21",
+                19.0
+              ],
+              [
+                "2026-08-28",
+                26.0
+              ],
+              [
+                "2026-09-04",
+                20.0
+              ],
+              [
+                "2026-09-11",
+                22.0
+              ],
+              [
+                "2026-09-18",
+                20.0
+              ]
+            ]
+          },
+          "EIA_GAS_LOWER48_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                52.0
+              ],
+              [
+                "2025-10-03",
+                80.0
+              ],
+              [
+                "2025-10-10",
+                81.0
+              ],
+              [
+                "2025-10-17",
+                86.0
+              ],
+              [
+                "2025-10-24",
+                74.0
+              ],
+              [
+                "2025-10-31",
+                33.0
+              ],
+              [
+                "2025-11-07",
+                45.0
+              ],
+              [
+                "2025-11-14",
+                -14.0
+              ],
+              [
+                "2025-11-21",
+                -12.0
+              ],
+              [
+                "2025-11-28",
+                -11.0
+              ],
+              [
+                "2025-12-05",
+                -178.0
+              ],
+              [
+                "2025-12-12",
+                -166.0
+              ],
+              [
+                "2025-12-19",
+                -168.0
+              ],
+              [
+                "2025-12-26",
+                -37.0
+              ],
+              [
+                "2026-01-02",
+                -120.0
+              ],
+              [
+                "2026-01-09",
+                -70.0
+              ],
+              [
+                "2026-01-16",
+                -120.0
+              ],
+              [
+                "2026-01-23",
+                -241.0
+              ],
+              [
+                "2026-01-30",
+                -359.0
+              ],
+              [
+                "2026-02-06",
+                -252.0
+              ],
+              [
+                "2026-02-13",
+                -143.0
+              ],
+              [
+                "2026-02-20",
+                -52.0
+              ],
+              [
+                "2026-02-27",
+                -131.0
+              ],
+              [
+                "2026-03-06",
+                -38.0
+              ],
+              [
+                "2026-03-13",
+                34.0
+              ],
+              [
+                "2026-03-20",
+                -54.0
+              ],
+              [
+                "2026-03-27",
+                33.0
+              ],
+              [
+                "2026-04-03",
+                49.0
+              ],
+              [
+                "2026-04-10",
+                60.0
+              ],
+              [
+                "2026-04-17",
+                103.0
+              ],
+              [
+                "2026-04-24",
+                79.0
+              ],
+              [
+                "2026-05-01",
+                63.0
+              ],
+              [
+                "2026-05-08",
+                85.0
+              ],
+              [
+                "2026-05-15",
+                101.0
+              ],
+              [
+                "2026-05-22",
+                92.0
+              ],
+              [
+                "2026-05-29",
+                95.0
+              ],
+              [
+                "2026-06-05",
+                108.0
+              ],
+              [
+                "2026-06-12",
+                73.0
+              ],
+              [
+                "2026-06-19",
+                76.0
+              ],
+              [
+                "2026-06-26",
+                87.0
+              ],
+              [
+                "2026-07-03",
+                61.0
+              ],
+              [
+                "2026-07-10",
+                41.0
+              ],
+              [
+                "2026-07-17",
+                32.0
+              ],
+              [
+                "2026-07-24",
+                28.0
+              ],
+              [
+                "2026-07-31",
+                33.0
+              ],
+              [
+                "2026-08-07",
+                36.0
+              ],
+              [
+                "2026-08-14",
+                16.0
+              ],
+              [
+                "2026-08-21",
+                15.0
+              ],
+              [
+                "2026-08-28",
+                30.0
+              ],
+              [
+                "2026-09-04",
+                40.0
+              ],
+              [
+                "2026-09-11",
+                44.0
+              ],
+              [
+                "2026-09-18",
+                53.0
+              ]
+            ]
+          },
+          "EIA_GAS_MIDWEST_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                27.0
+              ],
+              [
+                "2025-10-03",
+                29.0
+              ],
+              [
+                "2025-10-10",
+                30.0
+              ],
+              [
+                "2025-10-17",
+                29.0
+              ],
+              [
+                "2025-10-24",
+                25.0
+              ],
+              [
+                "2025-10-31",
+                20.0
+              ],
+              [
+                "2025-11-07",
+                12.0
+              ],
+              [
+                "2025-11-14",
+                -5.0
+              ],
+              [
+                "2025-11-21",
+                -9.0
+              ],
+              [
+                "2025-11-28",
+                -15.0
+              ],
+              [
+                "2025-12-05",
+                -58.0
+              ],
+              [
+                "2025-12-12",
+                -64.0
+              ],
+              [
+                "2025-12-19",
+                -63.0
+              ],
+              [
+                "2025-12-26",
+                -39.0
+              ],
+              [
+                "2026-01-02",
+                -44.0
+              ],
+              [
+                "2026-01-09",
+                -30.0
+              ],
+              [
+                "2026-01-16",
+                -38.0
+              ],
+              [
+                "2026-01-23",
+                -76.0
+              ],
+              [
+                "2026-01-30",
+                -92.0
+              ],
+              [
+                "2026-02-06",
+                -74.0
+              ],
+              [
+                "2026-02-13",
+                -53.0
+              ],
+              [
+                "2026-02-20",
+                -16.0
+              ],
+              [
+                "2026-02-27",
+                -44.0
+              ],
+              [
+                "2026-03-06",
+                -22.0
+              ],
+              [
+                "2026-03-13",
+                -1.0
+              ],
+              [
+                "2026-03-20",
+                -23.0
+              ],
+              [
+                "2026-03-27",
+                -1.0
+              ],
+              [
+                "2026-04-03",
+                8.0
+              ],
+              [
+                "2026-04-10",
+                13.0
+              ],
+              [
+                "2026-04-17",
+                33.0
+              ],
+              [
+                "2026-04-24",
+                25.0
+              ],
+              [
+                "2026-05-01",
+                23.0
+              ],
+              [
+                "2026-05-08",
+                24.0
+              ],
+              [
+                "2026-05-15",
+                29.0
+              ],
+              [
+                "2026-05-22",
+                34.0
+              ],
+              [
+                "2026-05-29",
+                34.0
+              ],
+              [
+                "2026-06-05",
+                37.0
+              ],
+              [
+                "2026-06-12",
+                28.0
+              ],
+              [
+                "2026-06-19",
+                34.0
+              ],
+              [
+                "2026-06-26",
+                34.0
+              ],
+              [
+                "2026-07-03",
+                23.0
+              ],
+              [
+                "2026-07-10",
+                20.0
+              ],
+              [
+                "2026-07-17",
+                17.0
+              ],
+              [
+                "2026-07-24",
+                23.0
+              ],
+              [
+                "2026-07-31",
+                20.0
+              ],
+              [
+                "2026-08-07",
+                20.0
+              ],
+              [
+                "2026-08-14",
+                19.0
+              ],
+              [
+                "2026-08-21",
+                18.0
+              ],
+              [
+                "2026-08-28",
+                24.0
+              ],
+              [
+                "2026-09-04",
+                18.0
+              ],
+              [
+                "2026-09-11",
+                26.0
+              ],
+              [
+                "2026-09-18",
+                25.0
+              ]
+            ]
+          },
+          "EIA_GAS_MOUNTAIN_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                3.0
+              ],
+              [
+                "2025-10-03",
+                5.0
+              ],
+              [
+                "2025-10-10",
+                5.0
+              ],
+              [
+                "2025-10-17",
+                3.0
+              ],
+              [
+                "2025-10-24",
+                4.0
+              ],
+              [
+                "2025-10-31",
+                1.0
+              ],
+              [
+                "2025-11-07",
+                3.0
+              ],
+              [
+                "2025-11-14",
+                1.0
+              ],
+              [
+                "2025-11-21",
+                1.0
+              ],
+              [
+                "2025-11-28",
+                -5.0
+              ],
+              [
+                "2025-12-05",
+                -11.0
+              ],
+              [
+                "2025-12-12",
+                -5.0
+              ],
+              [
+                "2025-12-19",
+                -6.0
+              ],
+              [
+                "2025-12-26",
+                -1.0
+              ],
+              [
+                "2026-01-02",
+                -8.0
+              ],
+              [
+                "2026-01-09",
+                -5.0
+              ],
+              [
+                "2026-01-16",
+                -9.0
+              ],
+              [
+                "2026-01-23",
+                -13.0
+              ],
+              [
+                "2026-01-30",
+                -16.0
+              ],
+              [
+                "2026-02-06",
+                -5.0
+              ],
+              [
+                "2026-02-13",
+                -2.0
+              ],
+              [
+                "2026-02-20",
+                -5.0
+              ],
+              [
+                "2026-02-27",
+                -4.0
+              ],
+              [
+                "2026-03-06",
+                2.0
+              ],
+              [
+                "2026-03-13",
+                2.0
+              ],
+              [
+                "2026-03-20",
+                2.0
+              ],
+              [
+                "2026-03-27",
+                5.0
+              ],
+              [
+                "2026-04-03",
+                -1.0
+              ],
+              [
+                "2026-04-10",
+                3.0
+              ],
+              [
+                "2026-04-17",
+                2.0
+              ],
+              [
+                "2026-04-24",
+                3.0
+              ],
+              [
+                "2026-05-01",
+                -2.0
+              ],
+              [
+                "2026-05-08",
+                3.0
+              ],
+              [
+                "2026-05-15",
+                4.0
+              ],
+              [
+                "2026-05-22",
+                3.0
+              ],
+              [
+                "2026-05-29",
+                5.0
+              ],
+              [
+                "2026-06-05",
+                4.0
+              ],
+              [
+                "2026-06-12",
+                4.0
+              ],
+              [
+                "2026-06-19",
+                1.0
+              ],
+              [
+                "2026-06-26",
+                3.0
+              ],
+              [
+                "2026-07-03",
+                6.0
+              ],
+              [
+                "2026-07-10",
+                4.0
+              ],
+              [
+                "2026-07-17",
+                0.0
+              ],
+              [
+                "2026-07-24",
+                -2.0
+              ],
+              [
+                "2026-07-31",
+                -1.0
+              ],
+              [
+                "2026-08-07",
+                2.0
+              ],
+              [
+                "2026-08-14",
+                -2.0
+              ],
+              [
+                "2026-08-21",
+                1.0
+              ],
+              [
+                "2026-08-28",
+                -2.0
+              ],
+              [
+                "2026-09-04",
+                3.0
+              ],
+              [
+                "2026-09-11",
+                2.0
+              ],
+              [
+                "2026-09-18",
+                3.0
+              ]
+            ]
+          },
+          "EIA_GAS_PACIFIC_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                2.0
+              ],
+              [
+                "2025-10-03",
+                2.0
+              ],
+              [
+                "2025-10-10",
+                3.0
+              ],
+              [
+                "2025-10-17",
+                4.0
+              ],
+              [
+                "2025-10-24",
+                5.0
+              ],
+              [
+                "2025-10-31",
+                2.0
+              ],
+              [
+                "2025-11-07",
+                3.0
+              ],
+              [
+                "2025-11-14",
+                1.0
+              ],
+              [
+                "2025-11-21",
+                -3.0
+              ],
+              [
+                "2025-11-28",
+                -4.0
+              ],
+              [
+                "2025-12-05",
+                -9.0
+              ],
+              [
+                "2025-12-12",
+                -2.0
+              ],
+              [
+                "2025-12-19",
+                -1.0
+              ],
+              [
+                "2025-12-26",
+                4.0
+              ],
+              [
+                "2026-01-02",
+                -3.0
+              ],
+              [
+                "2026-01-09",
+                -2.0
+              ],
+              [
+                "2026-01-16",
+                -2.0
+              ],
+              [
+                "2026-01-23",
+                -9.0
+              ],
+              [
+                "2026-01-30",
+                -19.0
+              ],
+              [
+                "2026-02-06",
+                1.0
+              ],
+              [
+                "2026-02-13",
+                -2.0
+              ],
+              [
+                "2026-02-20",
+                -12.0
+              ],
+              [
+                "2026-02-27",
+                -2.0
+              ],
+              [
+                "2026-03-06",
+                2.0
+              ],
+              [
+                "2026-03-13",
+                -1.0
+              ],
+              [
+                "2026-03-20",
+                -1.0
+              ],
+              [
+                "2026-03-27",
+                1.0
+              ],
+              [
+                "2026-04-03",
+                3.0
+              ],
+              [
+                "2026-04-10",
+                6.0
+              ],
+              [
+                "2026-04-17",
+                2.0
+              ],
+              [
+                "2026-04-24",
+                3.0
+              ],
+              [
+                "2026-05-01",
+                3.0
+              ],
+              [
+                "2026-05-08",
+                4.0
+              ],
+              [
+                "2026-05-15",
+                7.0
+              ],
+              [
+                "2026-05-22",
+                6.0
+              ],
+              [
+                "2026-05-29",
+                6.0
+              ],
+              [
+                "2026-06-05",
+                6.0
+              ],
+              [
+                "2026-06-12",
+                5.0
+              ],
+              [
+                "2026-06-19",
+                3.0
+              ],
+              [
+                "2026-06-26",
+                1.0
+              ],
+              [
+                "2026-07-03",
+                6.0
+              ],
+              [
+                "2026-07-10",
+                0.0
+              ],
+              [
+                "2026-07-17",
+                -5.0
+              ],
+              [
+                "2026-07-24",
+                -7.0
+              ],
+              [
+                "2026-07-31",
+                -3.0
+              ],
+              [
+                "2026-08-07",
+                -4.0
+              ],
+              [
+                "2026-08-14",
+                -4.0
+              ],
+              [
+                "2026-08-21",
+                -3.0
+              ],
+              [
+                "2026-08-28",
+                -8.0
+              ],
+              [
+                "2026-09-04",
+                5.0
+              ],
+              [
+                "2026-09-11",
+                -1.0
+              ],
+              [
+                "2026-09-18",
+                3.0
+              ]
+            ]
+          },
+          "EIA_GAS_SOUTH_CENTRAL_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                -4.0
+              ],
+              [
+                "2025-10-03",
+                15.0
+              ],
+              [
+                "2025-10-10",
+                21.0
+              ],
+              [
+                "2025-10-17",
+                33.0
+              ],
+              [
+                "2025-10-24",
+                27.0
+              ],
+              [
+                "2025-10-31",
+                14.0
+              ],
+              [
+                "2025-11-07",
+                22.0
+              ],
+              [
+                "2025-11-14",
+                -2.0
+              ],
+              [
+                "2025-11-21",
+                13.0
+              ],
+              [
+                "2025-11-28",
+                16.0
+              ],
+              [
+                "2025-12-05",
+                -55.0
+              ],
+              [
+                "2025-12-12",
+                -48.0
+              ],
+              [
+                "2025-12-19",
+                -52.0
+              ],
+              [
+                "2025-12-26",
+                13.0
+              ],
+              [
+                "2026-01-02",
+                -25.0
+              ],
+              [
+                "2026-01-09",
+                -1.0
+              ],
+              [
+                "2026-01-16",
+                -38.0
+              ],
+              [
+                "2026-01-23",
+                -89.0
+              ],
+              [
+                "2026-01-30",
+                -158.0
+              ],
+              [
+                "2026-02-06",
+                -108.0
+              ],
+              [
+                "2026-02-13",
+                -37.0
+              ],
+              [
+                "2026-02-20",
+                6.0
+              ],
+              [
+                "2026-02-27",
+                -41.0
+              ],
+              [
+                "2026-03-06",
+                9.0
+              ],
+              [
+                "2026-03-13",
+                26.0
+              ],
+              [
+                "2026-03-20",
+                -2.0
+              ],
+              [
+                "2026-03-27",
+                30.0
+              ],
+              [
+                "2026-04-03",
+                32.0
+              ],
+              [
+                "2026-04-10",
+                31.0
+              ],
+              [
+                "2026-04-17",
+                41.0
+              ],
+              [
+                "2026-04-24",
+                26.0
+              ],
+              [
+                "2026-05-01",
+                9.0
+              ],
+              [
+                "2026-05-08",
+                27.0
+              ],
+              [
+                "2026-05-15",
+                31.0
+              ],
+              [
+                "2026-05-22",
+                21.0
+              ],
+              [
+                "2026-05-29",
+                16.0
+              ],
+              [
+                "2026-06-05",
+                28.0
+              ],
+              [
+                "2026-06-12",
+                16.0
+              ],
+              [
+                "2026-06-19",
+                13.0
+              ],
+              [
+                "2026-06-26",
+                20.0
+              ],
+              [
+                "2026-07-03",
+                14.0
+              ],
+              [
+                "2026-07-10",
+                3.0
+              ],
+              [
+                "2026-07-17",
+                2.0
+              ],
+              [
+                "2026-07-24",
+                -9.0
+              ],
+              [
+                "2026-07-31",
+                -6.0
+              ],
+              [
+                "2026-08-07",
+                3.0
+              ],
+              [
+                "2026-08-14",
+                -13.0
+              ],
+              [
+                "2026-08-21",
+                -19.0
+              ],
+              [
+                "2026-08-28",
+                -10.0
+              ],
+              [
+                "2026-09-04",
+                -7.0
+              ],
+              [
+                "2026-09-11",
+                -5.0
+              ],
+              [
+                "2026-09-18",
+                2.0
+              ]
+            ]
+          }
+        },
+        "target_kind": "change",
+        "target_unit": "billion_cubic_feet"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": 71.5,
+        "current_priors": {
+          "EIA_GAS_EAST_20260925": 0.0,
+          "EIA_GAS_LOWER48_20260925": 0.0,
+          "EIA_GAS_MIDWEST_20260925": 0.0,
+          "EIA_GAS_MOUNTAIN_20260925": 0.0,
+          "EIA_GAS_PACIFIC_20260925": 0.0,
+          "EIA_GAS_SOUTH_CENTRAL_20260925": 0.0
+        },
+        "eligible": true,
+        "residual_observations": 306,
+        "residual_origins": 51,
+        "residual_sha256": "c20c7ca215d38ee86634ca12af35d6675652ca06bf5b60a4b8cf0c87f405ddb9"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.36326909783991224,
+        "interval_coverage": 0.3333333333333333,
+        "interval_quality": 0.29342126464436796,
+        "interval_score": 86.66666666666667,
+        "mae": 12.5,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.39320388349514557,
+        "raw_interval_quality": 0.29342126464436796,
+        "raw_predictive_quality": 0.39320388349514557,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-explicit"
+      },
+      "rows": 6,
+      "unit": "proxy-17-natural-gas-storage-change-20260924-explicit",
+      "validation_errors": [],
+      "variant": "explicit"
+    },
+    {
+      "answer_sha256": "ece446aca25735587f13bcba7e1bd16ee0fd1365c8f0c328aa8c8406747503d9",
+      "candidate": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.3953929961540784,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.15130998718026145,
+        "interval_score": 201.86666666666667,
+        "mae": 8.1,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.15130998718026145,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "candidate_minus_direct": -0.060609102083490796,
+      "candidate_minus_production": 0.17744813504006213,
+      "changed_interval_rows": 6,
+      "direct": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.4560020982375692,
+        "interval_coverage": 1.0,
+        "interval_quality": 0.3533403274585641,
+        "interval_score": 65.86666666666666,
+        "mae": 8.1,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.5,
+        "raw_interval_quality": 0.3533403274585641,
+        "raw_predictive_quality": 0.5,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "event": "proxy-17-natural-gas-storage-change-20260924",
+      "history": {
+        "history_sha256": "047e4f6d98598b36ac8876d1064d93226ae8eaac56fbf1ef90d894cb3a0ed402",
+        "series": {
+          "EIA_GAS_EAST_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_EAST_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                25.0
+              ],
+              [
+                "2025-10-03",
+                28.0
+              ],
+              [
+                "2025-10-10",
+                23.0
+              ],
+              [
+                "2025-10-17",
+                16.0
+              ],
+              [
+                "2025-10-24",
+                14.0
+              ],
+              [
+                "2025-10-31",
+                -4.0
+              ],
+              [
+                "2025-11-07",
+                5.0
+              ],
+              [
+                "2025-11-14",
+                -9.0
+              ],
+              [
+                "2025-11-21",
+                -13.0
+              ],
+              [
+                "2025-11-28",
+                -4.0
+              ],
+              [
+                "2025-12-05",
+                -45.0
+              ],
+              [
+                "2025-12-12",
+                -46.0
+              ],
+              [
+                "2025-12-19",
+                -46.0
+              ],
+              [
+                "2025-12-26",
+                -15.0
+              ],
+              [
+                "2026-01-02",
+                -39.0
+              ],
+              [
+                "2026-01-09",
+                -33.0
+              ],
+              [
+                "2026-01-16",
+                -32.0
+              ],
+              [
+                "2026-01-23",
+                -55.0
+              ],
+              [
+                "2026-01-30",
+                -75.0
+              ],
+              [
+                "2026-02-06",
+                -65.0
+              ],
+              [
+                "2026-02-13",
+                -49.0
+              ],
+              [
+                "2026-02-20",
+                -24.0
+              ],
+              [
+                "2026-02-27",
+                -42.0
+              ],
+              [
+                "2026-03-06",
+                -28.0
+              ],
+              [
+                "2026-03-13",
+                8.0
+              ],
+              [
+                "2026-03-20",
+                -31.0
+              ],
+              [
+                "2026-03-27",
+                -1.0
+              ],
+              [
+                "2026-04-03",
+                7.0
+              ],
+              [
+                "2026-04-10",
+                6.0
+              ],
+              [
+                "2026-04-17",
+                26.0
+              ],
+              [
+                "2026-04-24",
+                23.0
+              ],
+              [
+                "2026-05-01",
+                29.0
+              ],
+              [
+                "2026-05-08",
+                27.0
+              ],
+              [
+                "2026-05-15",
+                31.0
+              ],
+              [
+                "2026-05-22",
+                28.0
+              ],
+              [
+                "2026-05-29",
+                33.0
+              ],
+              [
+                "2026-06-05",
+                34.0
+              ],
+              [
+                "2026-06-12",
+                18.0
+              ],
+              [
+                "2026-06-19",
+                26.0
+              ],
+              [
+                "2026-06-26",
+                29.0
+              ],
+              [
+                "2026-07-03",
+                13.0
+              ],
+              [
+                "2026-07-10",
+                14.0
+              ],
+              [
+                "2026-07-17",
+                17.0
+              ],
+              [
+                "2026-07-24",
+                23.0
+              ],
+              [
+                "2026-07-31",
+                24.0
+              ],
+              [
+                "2026-08-07",
+                15.0
+              ],
+              [
+                "2026-08-14",
+                15.0
+              ],
+              [
+                "2026-08-21",
+                19.0
+              ],
+              [
+                "2026-08-28",
+                26.0
+              ],
+              [
+                "2026-09-04",
+                20.0
+              ],
+              [
+                "2026-09-11",
+                22.0
+              ],
+              [
+                "2026-09-18",
+                20.0
+              ]
+            ]
+          },
+          "EIA_GAS_LOWER48_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_LOWER48_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                52.0
+              ],
+              [
+                "2025-10-03",
+                80.0
+              ],
+              [
+                "2025-10-10",
+                81.0
+              ],
+              [
+                "2025-10-17",
+                86.0
+              ],
+              [
+                "2025-10-24",
+                74.0
+              ],
+              [
+                "2025-10-31",
+                33.0
+              ],
+              [
+                "2025-11-07",
+                45.0
+              ],
+              [
+                "2025-11-14",
+                -14.0
+              ],
+              [
+                "2025-11-21",
+                -12.0
+              ],
+              [
+                "2025-11-28",
+                -11.0
+              ],
+              [
+                "2025-12-05",
+                -178.0
+              ],
+              [
+                "2025-12-12",
+                -166.0
+              ],
+              [
+                "2025-12-19",
+                -168.0
+              ],
+              [
+                "2025-12-26",
+                -37.0
+              ],
+              [
+                "2026-01-02",
+                -120.0
+              ],
+              [
+                "2026-01-09",
+                -70.0
+              ],
+              [
+                "2026-01-16",
+                -120.0
+              ],
+              [
+                "2026-01-23",
+                -241.0
+              ],
+              [
+                "2026-01-30",
+                -359.0
+              ],
+              [
+                "2026-02-06",
+                -252.0
+              ],
+              [
+                "2026-02-13",
+                -143.0
+              ],
+              [
+                "2026-02-20",
+                -52.0
+              ],
+              [
+                "2026-02-27",
+                -131.0
+              ],
+              [
+                "2026-03-06",
+                -38.0
+              ],
+              [
+                "2026-03-13",
+                34.0
+              ],
+              [
+                "2026-03-20",
+                -54.0
+              ],
+              [
+                "2026-03-27",
+                33.0
+              ],
+              [
+                "2026-04-03",
+                49.0
+              ],
+              [
+                "2026-04-10",
+                60.0
+              ],
+              [
+                "2026-04-17",
+                103.0
+              ],
+              [
+                "2026-04-24",
+                79.0
+              ],
+              [
+                "2026-05-01",
+                63.0
+              ],
+              [
+                "2026-05-08",
+                85.0
+              ],
+              [
+                "2026-05-15",
+                101.0
+              ],
+              [
+                "2026-05-22",
+                92.0
+              ],
+              [
+                "2026-05-29",
+                95.0
+              ],
+              [
+                "2026-06-05",
+                108.0
+              ],
+              [
+                "2026-06-12",
+                73.0
+              ],
+              [
+                "2026-06-19",
+                76.0
+              ],
+              [
+                "2026-06-26",
+                87.0
+              ],
+              [
+                "2026-07-03",
+                61.0
+              ],
+              [
+                "2026-07-10",
+                41.0
+              ],
+              [
+                "2026-07-17",
+                32.0
+              ],
+              [
+                "2026-07-24",
+                28.0
+              ],
+              [
+                "2026-07-31",
+                33.0
+              ],
+              [
+                "2026-08-07",
+                36.0
+              ],
+              [
+                "2026-08-14",
+                16.0
+              ],
+              [
+                "2026-08-21",
+                15.0
+              ],
+              [
+                "2026-08-28",
+                30.0
+              ],
+              [
+                "2026-09-04",
+                40.0
+              ],
+              [
+                "2026-09-11",
+                44.0
+              ],
+              [
+                "2026-09-18",
+                53.0
+              ]
+            ]
+          },
+          "EIA_GAS_MIDWEST_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_MIDWEST_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                27.0
+              ],
+              [
+                "2025-10-03",
+                29.0
+              ],
+              [
+                "2025-10-10",
+                30.0
+              ],
+              [
+                "2025-10-17",
+                29.0
+              ],
+              [
+                "2025-10-24",
+                25.0
+              ],
+              [
+                "2025-10-31",
+                20.0
+              ],
+              [
+                "2025-11-07",
+                12.0
+              ],
+              [
+                "2025-11-14",
+                -5.0
+              ],
+              [
+                "2025-11-21",
+                -9.0
+              ],
+              [
+                "2025-11-28",
+                -15.0
+              ],
+              [
+                "2025-12-05",
+                -58.0
+              ],
+              [
+                "2025-12-12",
+                -64.0
+              ],
+              [
+                "2025-12-19",
+                -63.0
+              ],
+              [
+                "2025-12-26",
+                -39.0
+              ],
+              [
+                "2026-01-02",
+                -44.0
+              ],
+              [
+                "2026-01-09",
+                -30.0
+              ],
+              [
+                "2026-01-16",
+                -38.0
+              ],
+              [
+                "2026-01-23",
+                -76.0
+              ],
+              [
+                "2026-01-30",
+                -92.0
+              ],
+              [
+                "2026-02-06",
+                -74.0
+              ],
+              [
+                "2026-02-13",
+                -53.0
+              ],
+              [
+                "2026-02-20",
+                -16.0
+              ],
+              [
+                "2026-02-27",
+                -44.0
+              ],
+              [
+                "2026-03-06",
+                -22.0
+              ],
+              [
+                "2026-03-13",
+                -1.0
+              ],
+              [
+                "2026-03-20",
+                -23.0
+              ],
+              [
+                "2026-03-27",
+                -1.0
+              ],
+              [
+                "2026-04-03",
+                8.0
+              ],
+              [
+                "2026-04-10",
+                13.0
+              ],
+              [
+                "2026-04-17",
+                33.0
+              ],
+              [
+                "2026-04-24",
+                25.0
+              ],
+              [
+                "2026-05-01",
+                23.0
+              ],
+              [
+                "2026-05-08",
+                24.0
+              ],
+              [
+                "2026-05-15",
+                29.0
+              ],
+              [
+                "2026-05-22",
+                34.0
+              ],
+              [
+                "2026-05-29",
+                34.0
+              ],
+              [
+                "2026-06-05",
+                37.0
+              ],
+              [
+                "2026-06-12",
+                28.0
+              ],
+              [
+                "2026-06-19",
+                34.0
+              ],
+              [
+                "2026-06-26",
+                34.0
+              ],
+              [
+                "2026-07-03",
+                23.0
+              ],
+              [
+                "2026-07-10",
+                20.0
+              ],
+              [
+                "2026-07-17",
+                17.0
+              ],
+              [
+                "2026-07-24",
+                23.0
+              ],
+              [
+                "2026-07-31",
+                20.0
+              ],
+              [
+                "2026-08-07",
+                20.0
+              ],
+              [
+                "2026-08-14",
+                19.0
+              ],
+              [
+                "2026-08-21",
+                18.0
+              ],
+              [
+                "2026-08-28",
+                24.0
+              ],
+              [
+                "2026-09-04",
+                18.0
+              ],
+              [
+                "2026-09-11",
+                26.0
+              ],
+              [
+                "2026-09-18",
+                25.0
+              ]
+            ]
+          },
+          "EIA_GAS_MOUNTAIN_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_MOUNTAIN_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                3.0
+              ],
+              [
+                "2025-10-03",
+                5.0
+              ],
+              [
+                "2025-10-10",
+                5.0
+              ],
+              [
+                "2025-10-17",
+                3.0
+              ],
+              [
+                "2025-10-24",
+                4.0
+              ],
+              [
+                "2025-10-31",
+                1.0
+              ],
+              [
+                "2025-11-07",
+                3.0
+              ],
+              [
+                "2025-11-14",
+                1.0
+              ],
+              [
+                "2025-11-21",
+                1.0
+              ],
+              [
+                "2025-11-28",
+                -5.0
+              ],
+              [
+                "2025-12-05",
+                -11.0
+              ],
+              [
+                "2025-12-12",
+                -5.0
+              ],
+              [
+                "2025-12-19",
+                -6.0
+              ],
+              [
+                "2025-12-26",
+                -1.0
+              ],
+              [
+                "2026-01-02",
+                -8.0
+              ],
+              [
+                "2026-01-09",
+                -5.0
+              ],
+              [
+                "2026-01-16",
+                -9.0
+              ],
+              [
+                "2026-01-23",
+                -13.0
+              ],
+              [
+                "2026-01-30",
+                -16.0
+              ],
+              [
+                "2026-02-06",
+                -5.0
+              ],
+              [
+                "2026-02-13",
+                -2.0
+              ],
+              [
+                "2026-02-20",
+                -5.0
+              ],
+              [
+                "2026-02-27",
+                -4.0
+              ],
+              [
+                "2026-03-06",
+                2.0
+              ],
+              [
+                "2026-03-13",
+                2.0
+              ],
+              [
+                "2026-03-20",
+                2.0
+              ],
+              [
+                "2026-03-27",
+                5.0
+              ],
+              [
+                "2026-04-03",
+                -1.0
+              ],
+              [
+                "2026-04-10",
+                3.0
+              ],
+              [
+                "2026-04-17",
+                2.0
+              ],
+              [
+                "2026-04-24",
+                3.0
+              ],
+              [
+                "2026-05-01",
+                -2.0
+              ],
+              [
+                "2026-05-08",
+                3.0
+              ],
+              [
+                "2026-05-15",
+                4.0
+              ],
+              [
+                "2026-05-22",
+                3.0
+              ],
+              [
+                "2026-05-29",
+                5.0
+              ],
+              [
+                "2026-06-05",
+                4.0
+              ],
+              [
+                "2026-06-12",
+                4.0
+              ],
+              [
+                "2026-06-19",
+                1.0
+              ],
+              [
+                "2026-06-26",
+                3.0
+              ],
+              [
+                "2026-07-03",
+                6.0
+              ],
+              [
+                "2026-07-10",
+                4.0
+              ],
+              [
+                "2026-07-17",
+                0.0
+              ],
+              [
+                "2026-07-24",
+                -2.0
+              ],
+              [
+                "2026-07-31",
+                -1.0
+              ],
+              [
+                "2026-08-07",
+                2.0
+              ],
+              [
+                "2026-08-14",
+                -2.0
+              ],
+              [
+                "2026-08-21",
+                1.0
+              ],
+              [
+                "2026-08-28",
+                -2.0
+              ],
+              [
+                "2026-09-04",
+                3.0
+              ],
+              [
+                "2026-09-11",
+                2.0
+              ],
+              [
+                "2026-09-18",
+                3.0
+              ]
+            ]
+          },
+          "EIA_GAS_PACIFIC_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_PACIFIC_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                2.0
+              ],
+              [
+                "2025-10-03",
+                2.0
+              ],
+              [
+                "2025-10-10",
+                3.0
+              ],
+              [
+                "2025-10-17",
+                4.0
+              ],
+              [
+                "2025-10-24",
+                5.0
+              ],
+              [
+                "2025-10-31",
+                2.0
+              ],
+              [
+                "2025-11-07",
+                3.0
+              ],
+              [
+                "2025-11-14",
+                1.0
+              ],
+              [
+                "2025-11-21",
+                -3.0
+              ],
+              [
+                "2025-11-28",
+                -4.0
+              ],
+              [
+                "2025-12-05",
+                -9.0
+              ],
+              [
+                "2025-12-12",
+                -2.0
+              ],
+              [
+                "2025-12-19",
+                -1.0
+              ],
+              [
+                "2025-12-26",
+                4.0
+              ],
+              [
+                "2026-01-02",
+                -3.0
+              ],
+              [
+                "2026-01-09",
+                -2.0
+              ],
+              [
+                "2026-01-16",
+                -2.0
+              ],
+              [
+                "2026-01-23",
+                -9.0
+              ],
+              [
+                "2026-01-30",
+                -19.0
+              ],
+              [
+                "2026-02-06",
+                1.0
+              ],
+              [
+                "2026-02-13",
+                -2.0
+              ],
+              [
+                "2026-02-20",
+                -12.0
+              ],
+              [
+                "2026-02-27",
+                -2.0
+              ],
+              [
+                "2026-03-06",
+                2.0
+              ],
+              [
+                "2026-03-13",
+                -1.0
+              ],
+              [
+                "2026-03-20",
+                -1.0
+              ],
+              [
+                "2026-03-27",
+                1.0
+              ],
+              [
+                "2026-04-03",
+                3.0
+              ],
+              [
+                "2026-04-10",
+                6.0
+              ],
+              [
+                "2026-04-17",
+                2.0
+              ],
+              [
+                "2026-04-24",
+                3.0
+              ],
+              [
+                "2026-05-01",
+                3.0
+              ],
+              [
+                "2026-05-08",
+                4.0
+              ],
+              [
+                "2026-05-15",
+                7.0
+              ],
+              [
+                "2026-05-22",
+                6.0
+              ],
+              [
+                "2026-05-29",
+                6.0
+              ],
+              [
+                "2026-06-05",
+                6.0
+              ],
+              [
+                "2026-06-12",
+                5.0
+              ],
+              [
+                "2026-06-19",
+                3.0
+              ],
+              [
+                "2026-06-26",
+                1.0
+              ],
+              [
+                "2026-07-03",
+                6.0
+              ],
+              [
+                "2026-07-10",
+                0.0
+              ],
+              [
+                "2026-07-17",
+                -5.0
+              ],
+              [
+                "2026-07-24",
+                -7.0
+              ],
+              [
+                "2026-07-31",
+                -3.0
+              ],
+              [
+                "2026-08-07",
+                -4.0
+              ],
+              [
+                "2026-08-14",
+                -4.0
+              ],
+              [
+                "2026-08-21",
+                -3.0
+              ],
+              [
+                "2026-08-28",
+                -8.0
+              ],
+              [
+                "2026-09-04",
+                5.0
+              ],
+              [
+                "2026-09-11",
+                -1.0
+              ],
+              [
+                "2026-09-18",
+                3.0
+              ]
+            ]
+          },
+          "EIA_GAS_SOUTH_CENTRAL_20260925": {
+            "canonical_unit": "billion_cubic_feet",
+            "doc_id": "EIA_GAS_HISTORY_SOUTH_CENTRAL_20260924",
+            "header": "weekly_change_bcf",
+            "role": "change",
+            "values": [
+              [
+                "2025-09-26",
+                -4.0
+              ],
+              [
+                "2025-10-03",
+                15.0
+              ],
+              [
+                "2025-10-10",
+                21.0
+              ],
+              [
+                "2025-10-17",
+                33.0
+              ],
+              [
+                "2025-10-24",
+                27.0
+              ],
+              [
+                "2025-10-31",
+                14.0
+              ],
+              [
+                "2025-11-07",
+                22.0
+              ],
+              [
+                "2025-11-14",
+                -2.0
+              ],
+              [
+                "2025-11-21",
+                13.0
+              ],
+              [
+                "2025-11-28",
+                16.0
+              ],
+              [
+                "2025-12-05",
+                -55.0
+              ],
+              [
+                "2025-12-12",
+                -48.0
+              ],
+              [
+                "2025-12-19",
+                -52.0
+              ],
+              [
+                "2025-12-26",
+                13.0
+              ],
+              [
+                "2026-01-02",
+                -25.0
+              ],
+              [
+                "2026-01-09",
+                -1.0
+              ],
+              [
+                "2026-01-16",
+                -38.0
+              ],
+              [
+                "2026-01-23",
+                -89.0
+              ],
+              [
+                "2026-01-30",
+                -158.0
+              ],
+              [
+                "2026-02-06",
+                -108.0
+              ],
+              [
+                "2026-02-13",
+                -37.0
+              ],
+              [
+                "2026-02-20",
+                6.0
+              ],
+              [
+                "2026-02-27",
+                -41.0
+              ],
+              [
+                "2026-03-06",
+                9.0
+              ],
+              [
+                "2026-03-13",
+                26.0
+              ],
+              [
+                "2026-03-20",
+                -2.0
+              ],
+              [
+                "2026-03-27",
+                30.0
+              ],
+              [
+                "2026-04-03",
+                32.0
+              ],
+              [
+                "2026-04-10",
+                31.0
+              ],
+              [
+                "2026-04-17",
+                41.0
+              ],
+              [
+                "2026-04-24",
+                26.0
+              ],
+              [
+                "2026-05-01",
+                9.0
+              ],
+              [
+                "2026-05-08",
+                27.0
+              ],
+              [
+                "2026-05-15",
+                31.0
+              ],
+              [
+                "2026-05-22",
+                21.0
+              ],
+              [
+                "2026-05-29",
+                16.0
+              ],
+              [
+                "2026-06-05",
+                28.0
+              ],
+              [
+                "2026-06-12",
+                16.0
+              ],
+              [
+                "2026-06-19",
+                13.0
+              ],
+              [
+                "2026-06-26",
+                20.0
+              ],
+              [
+                "2026-07-03",
+                14.0
+              ],
+              [
+                "2026-07-10",
+                3.0
+              ],
+              [
+                "2026-07-17",
+                2.0
+              ],
+              [
+                "2026-07-24",
+                -9.0
+              ],
+              [
+                "2026-07-31",
+                -6.0
+              ],
+              [
+                "2026-08-07",
+                3.0
+              ],
+              [
+                "2026-08-14",
+                -13.0
+              ],
+              [
+                "2026-08-21",
+                -19.0
+              ],
+              [
+                "2026-08-28",
+                -10.0
+              ],
+              [
+                "2026-09-04",
+                -7.0
+              ],
+              [
+                "2026-09-11",
+                -5.0
+              ],
+              [
+                "2026-09-18",
+                2.0
+              ]
+            ]
+          }
+        },
+        "target_kind": "change",
+        "target_unit": "billion_cubic_feet"
+      },
+      "outside_intervals_identical": true,
+      "policy": {
+        "absolute_residual_q90": 71.5,
+        "current_priors": {
+          "EIA_GAS_EAST_20260925": 0.0,
+          "EIA_GAS_LOWER48_20260925": 0.0,
+          "EIA_GAS_MIDWEST_20260925": 0.0,
+          "EIA_GAS_MOUNTAIN_20260925": 0.0,
+          "EIA_GAS_PACIFIC_20260925": 0.0,
+          "EIA_GAS_SOUTH_CENTRAL_20260925": 0.0
+        },
+        "eligible": true,
+        "residual_observations": 306,
+        "residual_origins": 51,
+        "residual_sha256": "c20c7ca215d38ee86634ca12af35d6675652ca06bf5b60a4b8cf0c87f405ddb9"
+      },
+      "production": {
+        "claim_penalty_evaluated": false,
+        "composite_before_claim_penalty": 0.2179448611140163,
+        "interval_coverage": 0.0,
+        "interval_quality": 0.08435376505729088,
+        "interval_score": 390.66666666666674,
+        "mae": 21.333333333333332,
+        "naive_interval_score": 35.9901050843909,
+        "naive_mae": 8.1,
+        "naive_predictive_quality": 0.5,
+        "predictive_anchor": null,
+        "predictive_quality": 0.27519818799547,
+        "raw_interval_quality": 0.08435376505729088,
+        "raw_predictive_quality": 0.27519818799547,
+        "target_type": "regression",
+        "unit": "proxy-17-natural-gas-storage-change-20260924-transformed"
+      },
+      "rows": 6,
+      "unit": "proxy-17-natural-gas-storage-change-20260924-transformed",
+      "validation_errors": [],
+      "variant": "transformed"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "evaluation_only_locked_direct_outputs_no_model_calls_no_production_change"
+}

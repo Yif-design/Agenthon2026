@@ -1,0 +1,33 @@
+schema_version = "2.0"
+
+[task]
+id = "proxy-13-gdp-revision-magnitude-20230829-explicit"
+track = "analysis"
+title = "proxy-13-gdp-revision-magnitude (explicit)"
+split = "time_forward_test"
+family = "gdp_estimate_revision"
+target_type = "regression"
+cutoff_date = "2023-08-29"
+resolution_date = "2023-08-30"
+
+[provenance]
+license = "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED"
+data_source = "BEA via ALFRED"
+data_cutoff = "2023-08-29"
+redistributable = true
+manifest = "manifest.json"
+
+[scoring]
+verifier = "t4.faithful_analysis"
+metric = "analysis_composite"
+admissibility_gates = ["g0_integrity", "g1_schema", "g2_cutoff_resource", "g3_domain_semantics"]
+
+[scoring.params]
+faithfulness_threshold = 0.80
+interval_level = 0.90
+target_type = "regression"
+composite_weights = [0.7, 0.3]
+tau_citation = 0.5
+
+[agent]
+timeout_sec = 600.0

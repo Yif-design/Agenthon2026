@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_HD_2023Q1_explicit",
+  "entities": [
+    "SEC_HD_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior Q1 revenue USD 38908000000 and gross profit USD 13145000000; gross margin 33.784826 percent."
+}

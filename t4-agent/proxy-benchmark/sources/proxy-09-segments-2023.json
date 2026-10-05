@@ -1,0 +1,112 @@
+{
+  "cutoff": "2023-04-28",
+  "generator": "proxy-benchmark/build_segment_proxy.py",
+  "license": "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained",
+  "raw_sources": [
+    {
+      "accession": "0001018724-23-000008",
+      "filed": "2023-04-28",
+      "sha256": "dfc845bd64b36a9975f1a47e1892902ee8cde6b92735037512dd8240099ff5a9",
+      "ticker": "AMZN",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872423000008/amzn-20230331.htm"
+    },
+    {
+      "accession": "0001018724-23-000012",
+      "filed": "2023-08-04",
+      "sha256": "010549487c1a13b473f02fba0d08a0c9266b91567da981ff66a48a7590937f67",
+      "ticker": "AMZN",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872423000012/amzn-20230630.htm"
+    },
+    {
+      "accession": "0000950170-23-014423",
+      "filed": "2023-04-25",
+      "sha256": "55768a27efd654ea8f9d2068c6e1b3d748265c349f569420b15f515441bd7ced",
+      "ticker": "MSFT",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023014423/msft-20230331.htm"
+    },
+    {
+      "accession": "0000950170-23-035122",
+      "filed": "2023-07-27",
+      "sha256": "8516a20601bba95932ba4401af662314e98524ade32a868d756f4f520f2e7147",
+      "ticker": "MSFT",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.htm"
+    }
+  ],
+  "resolution": "2023-08-04",
+  "retrieved_at": "2026-10-03",
+  "segments": [
+    {
+      "outcome_growth_pct": 10.904205293564416,
+      "outcome_method": "direct Q2 inline XBRL segment facts",
+      "q1_2022_revenue_millions": 69244.0,
+      "q1_2023_revenue_millions": 76881.0,
+      "q2_2022_revenue_millions": 74430.0,
+      "q2_2023_revenue_millions": 82546.0,
+      "segment_member": "amzn:NorthAmericaSegmentMember",
+      "segment_name": "North America",
+      "signal_growth_pct": 11.029114435907793,
+      "ticker": "AMZN"
+    },
+    {
+      "outcome_growth_pct": 9.724736744873464,
+      "outcome_method": "direct Q2 inline XBRL segment facts",
+      "q1_2022_revenue_millions": 28759.0,
+      "q1_2023_revenue_millions": 29123.0,
+      "q2_2022_revenue_millions": 27065.0,
+      "q2_2023_revenue_millions": 29697.0,
+      "segment_member": "amzn:InternationalSegmentMember",
+      "segment_name": "International",
+      "signal_growth_pct": 1.265690740289993,
+      "ticker": "AMZN"
+    },
+    {
+      "outcome_growth_pct": 12.163736764780374,
+      "outcome_method": "direct Q2 inline XBRL segment facts",
+      "q1_2022_revenue_millions": 18441.0,
+      "q1_2023_revenue_millions": 21354.0,
+      "q2_2022_revenue_millions": 19739.0,
+      "q2_2023_revenue_millions": 22140.0,
+      "segment_member": "amzn:AmazonWebServicesSegmentMember",
+      "segment_name": "Amazon Web Services",
+      "signal_growth_pct": 15.7963234097934,
+      "ticker": "AMZN"
+    },
+    {
+      "outcome_growth_pct": 10.18674698795181,
+      "outcome_method": "fiscal-year segment revenue minus pre-cutoff nine-month segment revenue",
+      "q1_2022_revenue_millions": 15789.0,
+      "q1_2023_revenue_millions": 17516.0,
+      "q2_2022_revenue_millions": 16600.0,
+      "q2_2023_revenue_millions": 18291.0,
+      "segment_member": "msft:ProductivityAndBusinessProcessesMember",
+      "segment_name": "Productivity and Business Processes",
+      "signal_growth_pct": 10.937994806510854,
+      "ticker": "MSFT"
+    },
+    {
+      "outcome_growth_pct": 15.328782926360308,
+      "outcome_method": "fiscal-year segment revenue minus pre-cutoff nine-month segment revenue",
+      "q1_2022_revenue_millions": 18987.0,
+      "q1_2023_revenue_millions": 22081.0,
+      "q2_2022_revenue_millions": 20804.0,
+      "q2_2023_revenue_millions": 23993.0,
+      "segment_member": "msft:IntelligentCloudMember",
+      "segment_name": "Intelligent Cloud",
+      "signal_growth_pct": 16.295359983146373,
+      "ticker": "MSFT"
+    },
+    {
+      "outcome_growth_pct": -3.8448240094046016,
+      "outcome_method": "fiscal-year segment revenue minus pre-cutoff nine-month segment revenue",
+      "q1_2022_revenue_millions": 14584.0,
+      "q1_2023_revenue_millions": 13260.0,
+      "q2_2022_revenue_millions": 14461.0,
+      "q2_2023_revenue_millions": 13905.0,
+      "segment_member": "msft:MorePersonalComputingMember",
+      "segment_name": "More Personal Computing",
+      "signal_growth_pct": -9.078442128359843,
+      "ticker": "MSFT"
+    }
+  ],
+  "snapshot_version": "1.0.0"
+}

@@ -1,0 +1,75 @@
+{
+  "cutoff_date": "2023-08-29",
+  "download_date": "2026-10-03",
+  "generator": "proxy-benchmark/build_macro_proxies.py",
+  "generator_version": "1.0.0",
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "question_id": "proxy-13-gdp-revision-magnitude",
+  "raw_sources": [
+    {
+      "series_id": "A191RL1Q225SBEA",
+      "sha256": "ce97ede4a08575082341dbf65d87e903eca6b60fbac78fab4f7d3f28d8573c9e",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A191RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-29"
+    },
+    {
+      "series_id": "A191RL1Q225SBEA",
+      "sha256": "441f84d887c6437886f6dfb84b2d8754b2d0eb2c76cd0ec325324a59ae6b7a6f",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A191RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "A006RL1Q225SBEA",
+      "sha256": "49865a4009a6543f2f2286a24b6d958f6bc78efb89cc23b22a884d97f617fcfb",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A006RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-29"
+    },
+    {
+      "series_id": "A006RL1Q225SBEA",
+      "sha256": "2e9ab211062038b3ddc5e50559db97af93475c7e9c54ce1e654109a4c67eb7c1",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A006RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "A007RL1Q225SBEA",
+      "sha256": "47d60460a6d66a7ce74ceefae7065a9e1b74d9df94e740f24eaf0f27769848ce",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A007RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-29"
+    },
+    {
+      "series_id": "A007RL1Q225SBEA",
+      "sha256": "8706c449fd38476552f9d2da74f1c95eaa5cf0fa4eb0530b6d42cd301d101476",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A007RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "A008RL1Q225SBEA",
+      "sha256": "cc7a9302d288375eb9d0efee52145c45d88c2cd41ef036760713ac64069365ec",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A008RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-29"
+    },
+    {
+      "series_id": "A008RL1Q225SBEA",
+      "sha256": "5d129551b2d906886d72a1c1253c4c5855b944929f631fd57bb3d1494e0d4535",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A008RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "A011RL1Q225SBEA",
+      "sha256": "78e1f8513258619540331d7ed97be8f5c77c6fc74a384d0321ba7bf7e2a0dd24",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A011RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-29"
+    },
+    {
+      "series_id": "A011RL1Q225SBEA",
+      "sha256": "933124a00315839fcfb61ccea06da9b2cf511a740962d44c452a88067d35c7cd",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A011RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-30"
+    },
+    {
+      "series_id": "A822RL1Q225SBEA",
+      "sha256": "fd4514fe51f835a1da3c89a38e7cf306661f2058df46a9b45ece7b74ff710bbe",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A822RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-29"
+    },
+    {
+      "series_id": "A822RL1Q225SBEA",
+      "sha256": "f532956cabed50b3373d822238733640cb0c607d1d5bf02ed4ab56fb49e2ee63",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A822RL1Q225SBEA&cosd=2021-01-01&coed=2023-04-01&vintage_date=2023-08-30"
+    }
+  ],
+  "resolution_date": "2023-08-30",
+  "source_snapshot": "proxy-benchmark/sources/proxy-13-gdp-2023.json",
+  "source_snapshot_sha256": "485b29feb38c5bf94418aca82565a81d8f9f3f797e4f8198b3a193f35bbaa3d6",
+  "split": "time_forward_test",
+  "variant": "explicit"
+}

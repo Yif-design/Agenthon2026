@@ -1,0 +1,112 @@
+{
+  "entity_predictions": [
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_CRUDE_HISTORY_PADD5_20260923",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_CRUDE_PADD5_20260925",
+      "interval": {
+        "hi": 1.5814445153118704,
+        "level": 0.9,
+        "lo": -1.9726445153118704
+      },
+      "point_forecast": -0.19560000000000002
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_CRUDE_HISTORY_PADD4_20260923",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_CRUDE_PADD4_20260925",
+      "interval": {
+        "hi": 0.6470552594605585,
+        "level": 0.9,
+        "lo": -0.7426552594605584
+      },
+      "point_forecast": -0.04780000000000001
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_CRUDE_HISTORY_PADD3_20260923",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_CRUDE_PADD3_20260925",
+      "interval": {
+        "hi": 4.31590630012229,
+        "level": 0.9,
+        "lo": -2.7191063001222897
+      },
+      "point_forecast": 0.7984
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_CRUDE_HISTORY_PADD2_20260923",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_CRUDE_PADD2_20260925",
+      "interval": {
+        "hi": 3.1877534453671608,
+        "level": 0.9,
+        "lo": -2.097753445367161
+      },
+      "point_forecast": 0.5450000000000002
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_CRUDE_HISTORY_PADD1_20260923",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_CRUDE_PADD1_20260925",
+      "interval": {
+        "hi": 0.9111949974924104,
+        "level": 0.9,
+        "lo": -1.3319949974924103
+      },
+      "point_forecast": -0.2104
+    },
+    {
+      "claims": [
+        {
+          "claim": "EIA source.",
+          "doc_id": "EIA_CRUDE_HISTORY_US_20260923",
+          "span_end": 1,
+          "span_start": 0
+        }
+      ],
+      "entity_id": "EIA_CRUDE_US_20260925",
+      "interval": {
+        "hi": 4.700710780126969,
+        "level": 0.9,
+        "lo": -2.9215107801269693
+      },
+      "point_forecast": 0.8896000000000001
+    }
+  ],
+  "notes": {
+    "baseline_id": "prior-five-same-iso-week-mean"
+  },
+  "schema_version": "3",
+  "target_type": "regression",
+  "task_id": "proxy-16-crude-inventory-change-20260923-transformed"
+}

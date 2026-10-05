@@ -1,0 +1,17 @@
+{
+  "unit": "proxy-04-capex-intensity-20230331-explicit",
+  "target_type": "regression",
+  "mae": 6.227290553759307,
+  "naive_mae": 6.227290553759307,
+  "raw_predictive_quality": 0.5,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": null,
+  "predictive_quality": 0.5,
+  "interval_coverage": 0.875,
+  "interval_score": 46.23852864863293,
+  "naive_interval_score": 59.40713637910427,
+  "raw_interval_quality": 0.5623244111673391,
+  "interval_quality": 0.5,
+  "composite_before_claim_penalty": 0.5,
+  "claim_penalty_evaluated": false
+}

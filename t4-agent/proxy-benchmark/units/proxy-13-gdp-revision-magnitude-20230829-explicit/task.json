@@ -1,0 +1,65 @@
+{
+  "cutoff_date": "2023-08-29",
+  "entities": [
+    {
+      "corpus_ref": "corpus/GDP_A191RL1Q225SBEA_2023Q2.json",
+      "current_estimate_pct": 2.4,
+      "entity_id": "GDP_A191RL1Q225SBEA_2023Q2",
+      "estimate_stage": "advance",
+      "name": "Real GDP",
+      "series_id": "A191RL1Q225SBEA"
+    },
+    {
+      "corpus_ref": "corpus/GDP_A006RL1Q225SBEA_2023Q2.json",
+      "current_estimate_pct": 5.7,
+      "entity_id": "GDP_A006RL1Q225SBEA_2023Q2",
+      "estimate_stage": "advance",
+      "name": "Real personal consumption expenditures",
+      "series_id": "A006RL1Q225SBEA"
+    },
+    {
+      "corpus_ref": "corpus/GDP_A007RL1Q225SBEA_2023Q2.json",
+      "current_estimate_pct": 4.9,
+      "entity_id": "GDP_A007RL1Q225SBEA_2023Q2",
+      "estimate_stage": "advance",
+      "name": "Real goods consumption",
+      "series_id": "A007RL1Q225SBEA"
+    },
+    {
+      "corpus_ref": "corpus/GDP_A008RL1Q225SBEA_2023Q2.json",
+      "current_estimate_pct": 7.7,
+      "entity_id": "GDP_A008RL1Q225SBEA_2023Q2",
+      "estimate_stage": "advance",
+      "name": "Real services consumption",
+      "series_id": "A008RL1Q225SBEA"
+    },
+    {
+      "corpus_ref": "corpus/GDP_A011RL1Q225SBEA_2023Q2.json",
+      "current_estimate_pct": -4.2,
+      "entity_id": "GDP_A011RL1Q225SBEA_2023Q2",
+      "estimate_stage": "advance",
+      "name": "Real gross private domestic investment",
+      "series_id": "A011RL1Q225SBEA"
+    },
+    {
+      "corpus_ref": "corpus/GDP_A822RL1Q225SBEA_2023Q2.json",
+      "current_estimate_pct": 2.6,
+      "entity_id": "GDP_A822RL1Q225SBEA_2023Q2",
+      "estimate_stage": "advance",
+      "name": "Real government consumption and investment",
+      "series_id": "A822RL1Q225SBEA"
+    }
+  ],
+  "family": "gdp_estimate_revision",
+  "interval_level": 0.9,
+  "prompt": "Forecast the second-estimate minus advance-estimate annualized growth revision in percentage points.",
+  "resolution_date": "2023-08-30",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "name": "next_gdp_revision_pp",
+    "type": "regression",
+    "unit": "percentage_points"
+  },
+  "task_id": "proxy-13-gdp-revision-magnitude-20230829-explicit"
+}

@@ -1,0 +1,11 @@
+{
+  "doc_date": "2023-08-02",
+  "doc_id": "TREASURY_INDIRECT_30YEAR_20230802",
+  "entities": [
+    "TREASURY_30YEAR_20230810"
+  ],
+  "license": "Public domain (U.S. Treasury auction data)",
+  "source": "U.S. Treasury Fiscal Data",
+  "source_url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
+  "text": "Treasury auction history for 30-Year securities.\nauction_date | offering_amount_usd_bn | new_or_reopening | total_accepted_usd_bn | indirect_bidder_acceptance_share_pct\n2022-08-11 | 21.000 | new | 34.282159 | 43.259093\n2022-09-13 | 18.000 | reopening | 18.000010 | 72.075636\n2022-10-13 | 18.000 | reopening | 18.000001 | 69.091211\n2022-11-10 | 21.000 | new | 28.364253 | 51.684982\n2022-12-13 | 18.000 | reopening | 18.000021 | 61.490345\n2023-01-12 | 18.000 | reopening | 18.000041 | 74.571720\n2023-02-09 | 21.000 | new | 29.206565 | 46.850185\n2023-03-09 | 18.000 | reopening | 18.000000 | 70.698917\n2023-04-13 | 18.000 | reopening | 19.150872 | 64.889465\n2023-05-11 | 21.000 | new | 26.721296 | 56.847935\n2023-06-13 | 18.000 | reopening | 18.000018 | 72.889288\n2023-07-13 | 18.000 | reopening | 18.000002 | 68.953463\nThe average over the six most recent auctions is 63.521542 percent of total accepted."
+}

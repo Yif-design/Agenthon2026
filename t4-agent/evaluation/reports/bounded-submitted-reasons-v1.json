@@ -1,0 +1,61 @@
+{
+  "baseline_git_commit": "92c7779d2e326bd278703302fa72729f77eb01bb",
+  "change": "Add up to three exact-citation reasons built from validated RowResult facts, fixed method mechanisms, and final normalized answers; omit the field if any published cap cannot be proven.",
+  "date": "2026-10-01",
+  "decision": "accept",
+  "experiment": "bounded_submitted_reasons_v1",
+  "gates": {
+    "preflight_reason_rail_zero": true,
+    "preflight_schema_11_of_11": true,
+    "production_claim_rail_zero": true,
+    "production_reason_rail_zero": true,
+    "production_schema_11_of_11": true,
+    "proxy_all_gates": true,
+    "public_analysis_fields_identical_11_of_11": true,
+    "public_units_with_reasons_11_of_11": true,
+    "public_validation_errors_zero": true,
+    "static_limits_11_of_11": true,
+    "tests_passed": 141
+  },
+  "hypothesis": "Validated evidence facts plus deterministic calculator methods can supply bounded Final reasons that may earn a non-negative reasoning bonus without changing any analysis-scored field.",
+  "local_llm_run": false,
+  "local_nli_run": false,
+  "official_522_rail": {
+    "basic_finding_count": 0,
+    "claims": 286,
+    "deterministic_claim_finding_count": 0,
+    "reason_finding_count": 0,
+    "reasons": 31,
+    "schema_valid_units": 11,
+    "units": 11
+  },
+  "official_toolkit_version": "2.5.1",
+  "official_track4_commit": "ede7381d8c1ba9d8c84068f9d142f5e093a33892",
+  "production_proxy_difference": "Production reasons equal the proxy input in 10/11 units. COT production implications omit rank, a field the official reasoning judge does not read; premise, mechanism, point implication and citations are unchanged.",
+  "public_ab": {
+    "analysis_fields_identical_units": 11,
+    "reasons": 31,
+    "rows": 78,
+    "units": 11,
+    "units_with_reasons": 11,
+    "validation_error_units": 0
+  },
+  "quality_proxy": {
+    "calls": 1,
+    "completion_tokens": 1215,
+    "limitations": "One non-official weak-model proxy cannot observe hidden target reasons or certify the official Final reasoning score.",
+    "means": {
+      "answer_consistency": 1.0,
+      "evidence_grounding": 1.0,
+      "inferential_link": 1.0,
+      "target_reason_coverage": 1.0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "prompt_tokens": 22147,
+    "provider": "Google Gemini Developer API",
+    "thought_tokens": 0
+  },
+  "reason": "All structural and invariance gates pass. The official formula floors poor reasoning at zero without reducing analysis, while grounded consistent reasons can add up to 0.25 in Final.",
+  "rollback": "Set T4_ENABLE_SUBMITTED_REASONS=0.",
+  "schema_version": 1
+}

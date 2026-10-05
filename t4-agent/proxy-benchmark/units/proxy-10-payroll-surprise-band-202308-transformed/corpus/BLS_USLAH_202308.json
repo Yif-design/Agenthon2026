@@ -1,0 +1,8 @@
+{
+  "doc_date": "2023-08-31",
+  "doc_id": "ALFRED_USLAH_VINTAGE_20230831",
+  "entity_id": "BLS_USLAH_202308",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "text": "Series: Leisure and hospitality (USLAH).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted persons.\nFrozen reference change: 21333.333333 persons.\nClassification half-band: 8264.717512 persons.\nCutoff-vintage monthly levels:\n2022-12-01: 16316000.000 persons.\n2023-01-01: 16415000.000 persons.\n2023-02-01: 16472000.000 persons.\n2023-03-01: 16518000.000 persons.\n2023-04-01: 16529000.000 persons.\n2023-05-01: 16557000.000 persons.\n2023-06-01: 16576000.000 persons.\n2023-07-01: 16593000.000 persons.",
+  "title": "Cutoff-vintage payroll history for Leisure and hospitality"
+}

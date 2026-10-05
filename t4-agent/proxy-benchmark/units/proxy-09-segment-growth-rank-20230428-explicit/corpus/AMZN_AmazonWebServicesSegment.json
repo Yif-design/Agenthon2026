@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-04-28",
+  "doc_id": "PROXY_proxy-09-segment-growth-rank_AMZN_AmazonWebServicesSegment_explicit",
+  "entities": [
+    "AMZN_AmazonWebServicesSegment"
+  ],
+  "license": "Public SEC EDGAR inline XBRL filings; accessions and filing dates retained",
+  "source": "SEC EDGAR inline XBRL filings",
+  "text": "SEC inline XBRL segment facts for AMZN Amazon Web Services. Q1 2022 revenue USD 18441 million; Q1 2023 revenue USD 21354 million. Filed no later than 2023-04-28."
+}

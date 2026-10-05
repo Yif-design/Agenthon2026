@@ -1,0 +1,41 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "y": 0.4542926015204895
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "y": 0.0
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "y": 0.8965594530987336
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "y": 0.0
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "y": 9.807046695377938
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "y": 7.723132969034609
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "y": 7.748879405212444
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "y": 0.0
+    },
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "y": 0.0
+    }
+  ],
+  "task_id": "proxy-07-buyback-intensity-rank-20230331-transformed"
+}

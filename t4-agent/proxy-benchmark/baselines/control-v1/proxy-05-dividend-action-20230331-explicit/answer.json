@@ -1,0 +1,177 @@
+{
+  "task_id": "proxy-05-dividend-action-20230331-explicit",
+  "schema_version": "3",
+  "target_type": "classification",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "point_forecast": 0.1,
+      "interval": {
+        "level": 0.9,
+        "lo": -0.9,
+        "hi": 1.1
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_F_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 150,
+          "claim": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior Q1 regular dividend per share 0.100000; filed 2022-04-28."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 1.9,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.8999999999999999,
+        "hi": 2.9
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_HD_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 158,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior Q1 regular dividend per share 1.900000; filed 2022-05-24."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "point_forecast": 1.64,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.6399999999999999,
+        "hi": 2.6399999999999997
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_IBM_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 175,
+          "claim": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior Q1 regular dividend per share 1.640000; filed 2022-04-26."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "point_forecast": 1.38,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.3799999999999999,
+        "hi": 2.38
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_MCD_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 161,
+          "claim": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior Q1 regular dividend per share 1.380000; filed 2022-05-02."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 0.04,
+      "interval": {
+        "level": 0.9,
+        "lo": -0.96,
+        "hi": 1.04
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_NVDA_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 151,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior Q1 regular dividend per share 0.040000; filed 2022-05-27."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 1.075,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.07499999999999996,
+        "hi": 2.075
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_PEP_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 152,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior Q1 regular dividend per share 1.075000; filed 2022-04-26."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "point_forecast": 0.9,
+      "interval": {
+        "level": 0.9,
+        "lo": -0.09999999999999998,
+        "hi": 1.9
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_TGT_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 157,
+          "claim": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior Q1 regular dividend per share 0.900000; filed 2022-05-27."
+        }
+      ],
+      "label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "point_forecast": 2.24,
+      "interval": {
+        "level": 0.9,
+        "lo": 1.12,
+        "hi": 3.3600000000000003
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-05-dividend-action_SEC_WMT_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 151,
+          "claim": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior Q1 regular dividend per share 2.240000; filed 2022-06-03."
+        }
+      ],
+      "label": "unchanged"
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_F_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_IBM_2023Q1",
+      "SEC_MCD_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_PEP_2023Q1",
+      "SEC_TGT_2023Q1",
+      "SEC_WMT_2023Q1"
+    ],
+    "methods": {
+      "SEC_F_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_IBM_2023Q1": "generic_baseline",
+      "SEC_MCD_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_TGT_2023Q1": "generic_baseline",
+      "SEC_WMT_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

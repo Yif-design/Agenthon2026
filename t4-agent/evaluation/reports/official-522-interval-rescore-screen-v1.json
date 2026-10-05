@@ -1,0 +1,362 @@
+{
+  "baseline_git_commit": "9bccb59",
+  "dataset_sha256": {
+    "auction": "1dd97882feb1a754fa4ade81f06d77bca871d3c5dae2f8e2922dec8628bfbb1a",
+    "cot": "a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e",
+    "cpi": "2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40",
+    "cpi_confirmation": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb",
+    "eps": "d192f63d6008677a4cf69f2d4af0b5eae27125a256629e02849e0b9f223fa307",
+    "fomc": "d51d0b231c0df5312dae367e802aa445b06f921d13ba9e0a03e1b710162b4580",
+    "macro": "1dfd5172b99834966a4410b36fcaf4eb26ee9354dcd85a1d82ecc60cec8ceb6c",
+    "postearn": "d4cb45d4d9af39f07731b84ce7cec9b66accbe8e80c79459958686c4acb7f32d",
+    "postearn_confirmation": "7fa1418262baa7daae49166b1ff0d1b91fe720d647f336ac89697eaf86250d44"
+  },
+  "decision": "proceed_one_candidate_at_a_time",
+  "decision_rule": "Flag a rollback candidate only when current mean interval score is strictly higher on both test and confirmation. This screen does not mutate production.",
+  "experiment": "official_522_interval_rescore_screen_v1",
+  "families": {
+    "auction": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.9285714285714286,
+          "mean_full_width": 0.44831571163185185,
+          "mean_interval_score": 0.46974867756356614,
+          "rows": 70
+        },
+        "current_minus_predecessor_mean_interval_score": 0.006878679076014527,
+        "predecessor": {
+          "coverage": 0.8428571428571429,
+          "mean_full_width": 0.33939336080240623,
+          "mean_interval_score": 0.4628699984875516,
+          "rows": 70
+        }
+      },
+      "current_worse_on_confirmation": true,
+      "current_worse_on_test": true,
+      "decision": "rollback_candidate",
+      "policy_comparison": "current 2.5*recent pstdev vs predecessor 1.65*recent pstdev, both floor 0.15; fixed mean6 point",
+      "test": {
+        "current": {
+          "coverage": 0.9107142857142857,
+          "mean_full_width": 0.5228032885186918,
+          "mean_interval_score": 0.602777943250648,
+          "rows": 168
+        },
+        "current_minus_predecessor_mean_interval_score": 0.01751602561345844,
+        "predecessor": {
+          "coverage": 0.8273809523809523,
+          "mean_full_width": 0.3724398631193465,
+          "mean_interval_score": 0.5852619176371896,
+          "rows": 168
+        }
+      }
+    },
+    "cot": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.8431818181818181,
+          "mean_full_width": 22.6,
+          "mean_interval_score": 41.58761387076686,
+          "rows": 440
+        },
+        "current_minus_predecessor_mean_interval_score": -5.969893039779052,
+        "predecessor": {
+          "coverage": 0.6204545454545455,
+          "mean_full_width": 14.930883018967567,
+          "mean_interval_score": 47.55750691054591,
+          "rows": 440
+        }
+      },
+      "current_worse_on_confirmation": false,
+      "current_worse_on_test": false,
+      "decision": "no_rollback_signal",
+      "policy_comparison": "current fixed 11.3 pct-oi half-width vs predecessor dynamic max(4,1.65*history pstdev); fixed mean-reversion point",
+      "test": {
+        "current": {
+          "coverage": 0.8961538461538462,
+          "mean_full_width": 22.6,
+          "mean_interval_score": 31.555973630267005,
+          "rows": 520
+        },
+        "current_minus_predecessor_mean_interval_score": -2.961852946249202,
+        "predecessor": {
+          "coverage": 0.7076923076923077,
+          "mean_full_width": 14.556777686881544,
+          "mean_interval_score": 34.51782657651621,
+          "rows": 520
+        }
+      }
+    },
+    "cpi": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.9224489795918367,
+          "mean_full_width": 2.9889201852457092,
+          "mean_interval_score": 3.9671481665681143,
+          "rows": 245
+        },
+        "current_minus_predecessor_mean_interval_score": 0.3041101246601978,
+        "predecessor": {
+          "coverage": 0.8938775510204081,
+          "mean_full_width": 2.560807049336428,
+          "mean_interval_score": 3.6630380419079165,
+          "rows": 245
+        }
+      },
+      "current_worse_on_confirmation": true,
+      "current_worse_on_test": true,
+      "decision": "rollback_candidate",
+      "policy_comparison": "current 0.75 floor vs predecessor 0.35 floor; fixed 1.65 multiplier and current_mix point",
+      "test": {
+        "current": {
+          "coverage": 0.8901515151515151,
+          "mean_full_width": 4.48366469867067,
+          "mean_interval_score": 9.841363009087697,
+          "rows": 264
+        },
+        "current_minus_predecessor_mean_interval_score": 0.2062942350412662,
+        "predecessor": {
+          "coverage": 0.8522727272727273,
+          "mean_full_width": 4.1215385649622345,
+          "mean_interval_score": 9.635068774046431,
+          "rows": 264
+        }
+      }
+    },
+    "eps_yoy": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.9584245076586433,
+          "mean_full_width": 6.745838074398249,
+          "mean_interval_score": 9.566428884026259,
+          "rows": 457
+        },
+        "current_minus_predecessor_mean_interval_score": -9.37092341356674,
+        "predecessor": {
+          "coverage": 0.24726477024070023,
+          "mean_full_width": 0.5394091903719912,
+          "mean_interval_score": 18.937352297592998,
+          "rows": 457
+        }
+      },
+      "current_worse_on_confirmation": false,
+      "current_worse_on_test": false,
+      "decision": "no_rollback_signal",
+      "policy_comparison": "current max(2.75, 1.15*abs(prior EPS)) vs predecessor max(0.03, 0.15*abs(prior EPS)); fixed no-signal point",
+      "test": {
+        "current": {
+          "coverage": 0.9369369369369369,
+          "mean_full_width": 8.438103603603604,
+          "mean_interval_score": 16.63100900900901,
+          "rows": 444
+        },
+        "current_minus_predecessor_mean_interval_score": -19.967855855855863,
+        "predecessor": {
+          "coverage": 0.25225225225225223,
+          "mean_full_width": 0.7526486486486487,
+          "mean_interval_score": 36.59886486486487,
+          "rows": 444
+        }
+      }
+    },
+    "postearn": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.7959770114942529,
+          "mean_full_width": 16.6,
+          "mean_interval_score": 39.53049730701772,
+          "rows": 696
+        },
+        "current_minus_predecessor_mean_interval_score": -32.32373601144766,
+        "predecessor": {
+          "coverage": 0.367816091954023,
+          "mean_full_width": 5.0,
+          "mean_interval_score": 71.85423331846538,
+          "rows": 696
+        }
+      },
+      "current_worse_on_confirmation": false,
+      "current_worse_on_test": false,
+      "decision": "no_rollback_signal",
+      "policy_comparison": "current 8.3 percentage-point half-width vs predecessor 2.5; fixed zero abnormal-return point",
+      "test": {
+        "current": {
+          "coverage": 0.8159771754636234,
+          "mean_full_width": 16.6,
+          "mean_interval_score": 37.050308164132794,
+          "rows": 701
+        },
+        "current_minus_predecessor_mean_interval_score": -31.25619350316159,
+        "predecessor": {
+          "coverage": 0.3637660485021398,
+          "mean_full_width": 5.0,
+          "mean_interval_score": 68.30650166729438,
+          "rows": 701
+        }
+      }
+    }
+  },
+  "fomc_unchanged_control": {
+    "confirmation": {
+      "current": {
+        "coverage": 1.0,
+        "mean_full_width": 100.0,
+        "mean_interval_score": 100.0,
+        "rows": 30
+      },
+      "current_minus_predecessor_mean_interval_score": 0.0,
+      "predecessor": {
+        "coverage": 1.0,
+        "mean_full_width": 100.0,
+        "mean_interval_score": 100.0,
+        "rows": 30
+      }
+    },
+    "current_worse_on_confirmation": false,
+    "current_worse_on_test": false,
+    "decision": "no_rollback_signal",
+    "policy_comparison": "unchanged production half-width 50 bps compared with itself; negative-control integrity check",
+    "test": {
+      "current": {
+        "coverage": 0.9555555555555556,
+        "mean_full_width": 100.0,
+        "mean_interval_score": 102.22222222222223,
+        "rows": 90
+      },
+      "current_minus_predecessor_mean_interval_score": 0.0,
+      "predecessor": {
+        "coverage": 0.9555555555555556,
+        "mean_full_width": 100.0,
+        "mean_interval_score": 102.22222222222223,
+        "rows": 90
+      }
+    }
+  },
+  "generic_domains": {
+    "cot": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.9136363636363637,
+          "mean_full_width": 32.0,
+          "mean_interval_score": 42.62552394964052,
+          "rows": 440
+        },
+        "current_minus_predecessor_mean_interval_score": -8.789400242497791,
+        "predecessor": {
+          "coverage": 0.740909090909091,
+          "mean_full_width": 16.0,
+          "mean_interval_score": 51.41492419213831,
+          "rows": 440
+        }
+      },
+      "current_worse_on_confirmation": false,
+      "current_worse_on_test": false,
+      "decision": "no_rollback_signal",
+      "policy_comparison": "current generic final half-width scale 2.0 vs predecessor 1.0; fixed generic point and base interval",
+      "test": {
+        "current": {
+          "coverage": 0.9576923076923077,
+          "mean_full_width": 32.0,
+          "mean_interval_score": 36.24120286406438,
+          "rows": 520
+        },
+        "current_minus_predecessor_mean_interval_score": -0.9492810671187328,
+        "predecessor": {
+          "coverage": 0.7865384615384615,
+          "mean_full_width": 16.0,
+          "mean_interval_score": 37.19048393118311,
+          "rows": 520
+        }
+      }
+    },
+    "cpi": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.9224489795918367,
+          "mean_full_width": 4.011699228038076,
+          "mean_interval_score": 5.970738670822711,
+          "rows": 245
+        },
+        "current_minus_predecessor_mean_interval_score": -0.7228027318283239,
+        "predecessor": {
+          "coverage": 0.8040816326530612,
+          "mean_full_width": 2.005849614019038,
+          "mean_interval_score": 6.693541402651035,
+          "rows": 245
+        }
+      },
+      "current_worse_on_confirmation": false,
+      "current_worse_on_test": false,
+      "decision": "no_rollback_signal",
+      "policy_comparison": "current generic final half-width scale 2.0 vs predecessor 1.0; fixed generic point and base interval",
+      "test": {
+        "current": {
+          "coverage": 0.8446969696969697,
+          "mean_full_width": 4.26426110465333,
+          "mean_interval_score": 13.874926219285241,
+          "rows": 264
+        },
+        "current_minus_predecessor_mean_interval_score": -2.8615673333636824,
+        "predecessor": {
+          "coverage": 0.7462121212121212,
+          "mean_full_width": 2.132130552326665,
+          "mean_interval_score": 16.736493552648923,
+          "rows": 264
+        }
+      }
+    },
+    "macro_revision": {
+      "confirmation": {
+        "current": {
+          "coverage": 0.3577586206896552,
+          "mean_full_width": 118.84137931034472,
+          "mean_interval_score": 9693.71206896552,
+          "rows": 232
+        },
+        "current_minus_predecessor_mean_interval_score": -439.2714224137926,
+        "predecessor": {
+          "coverage": 0.29310344827586204,
+          "mean_full_width": 59.42068965517236,
+          "mean_interval_score": 10132.983491379313,
+          "rows": 232
+        }
+      },
+      "current_worse_on_confirmation": false,
+      "current_worse_on_test": false,
+      "decision": "no_rollback_signal",
+      "policy_comparison": "current generic final half-width scale 2.0 vs predecessor 1.0; fixed generic point and base interval",
+      "test": {
+        "current": {
+          "coverage": 0.34347826086956523,
+          "mean_full_width": 160.46326086956506,
+          "mean_interval_score": 15720.129130434785,
+          "rows": 460
+        },
+        "current_minus_predecessor_mean_interval_score": -634.6406521739136,
+        "predecessor": {
+          "coverage": 0.30217391304347824,
+          "mean_full_width": 80.23163043478253,
+          "mean_interval_score": 16354.769782608699,
+          "rows": 460
+        }
+      }
+    }
+  },
+  "hypothesis": "At least one coverage-selected accepted interval is worse than its predecessor on both forward test and confirmation mean official interval score.",
+  "hypothesis_supported": true,
+  "isolation_policy": "Hold point forecasts fixed within each comparison; change only interval half-width.",
+  "local_llm_run": false,
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "official_interval_score": "(hi-lo) + 20*max(lo-actual,0) + 20*max(actual-hi,0) at level 0.90",
+  "official_scorer_version": "5.2.2",
+  "production_change": "none",
+  "rollback_candidates": [
+    "cpi",
+    "auction"
+  ],
+  "schema_version": 1
+}

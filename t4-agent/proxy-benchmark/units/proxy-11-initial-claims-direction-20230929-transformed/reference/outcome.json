@@ -1,0 +1,29 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "CLAIMS_IURNSA_20231005",
+      "true_label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_IURSA_20231005",
+      "true_label": "flat"
+    },
+    {
+      "entity_id": "CLAIMS_CCNSA_20231005",
+      "true_label": "decrease"
+    },
+    {
+      "entity_id": "CLAIMS_CCSA_20231005",
+      "true_label": "decrease"
+    },
+    {
+      "entity_id": "CLAIMS_ICNSA_20231005",
+      "true_label": "decrease"
+    },
+    {
+      "entity_id": "CLAIMS_ICSA_20231005",
+      "true_label": "increase"
+    }
+  ],
+  "task_id": "proxy-11-initial-claims-direction-20230929-transformed"
+}

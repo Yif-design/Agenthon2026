@@ -1,0 +1,71 @@
+{
+  "baseline_git_commit": "848f18df6ec57cd9e1c7ed409591eb01441ff38a",
+  "decision": "proceed_to_implementation",
+  "decision_rule": "Require >=72 enhanced rows on the 78-row first-failure case, 9/9 on both small cases, no loss when every small batch fails, and identical clean behavior.",
+  "experiment": "context_recovery_scheduling_screen_v1",
+  "hypothesis": "Deferring single-row recovery until normal batches have used their efficient call opportunities increases enhanced-row coverage under the fixed 25-call budget.",
+  "model_api": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0
+  },
+  "results": {
+    "large_clean": {
+      "deferred": {
+        "batches": 26,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "rows": 78
+      },
+      "immediate": {
+        "batches": 26,
+        "calls": 25,
+        "enhanced_rows": 75,
+        "rows": 78
+      }
+    },
+    "large_first_batch_context": {
+      "deferred": {
+        "batches": 26,
+        "calls": 25,
+        "enhanced_rows": 72,
+        "rows": 78
+      },
+      "immediate": {
+        "batches": 26,
+        "calls": 25,
+        "enhanced_rows": 66,
+        "rows": 78
+      }
+    },
+    "small_all_batches_context": {
+      "deferred": {
+        "batches": 3,
+        "calls": 12,
+        "enhanced_rows": 9,
+        "rows": 9
+      },
+      "immediate": {
+        "batches": 3,
+        "calls": 12,
+        "enhanced_rows": 9,
+        "rows": 9
+      }
+    },
+    "small_first_batch_context": {
+      "deferred": {
+        "batches": 3,
+        "calls": 6,
+        "enhanced_rows": 9,
+        "rows": 9
+      },
+      "immediate": {
+        "batches": 3,
+        "calls": 6,
+        "enhanced_rows": 9,
+        "rows": 9
+      }
+    }
+  },
+  "schema_version": 1
+}

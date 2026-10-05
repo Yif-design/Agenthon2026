@@ -1,0 +1,3966 @@
+{
+  "source": "Federal Reserve policy statements and U.S. Treasury daily par-yield CSVs",
+  "built_at": "2026-09-26",
+  "statement_count": 188,
+  "event_count": 152,
+  "missing_target_dates": [
+    "2007-08-10",
+    "2007-08-17",
+    "2008-03-11",
+    "2010-05-09"
+  ],
+  "events": [
+    {
+      "decision_date": "2000-02-02",
+      "next_decision_date": "2000-03-21",
+      "start_date": "2000-02-03",
+      "resolution_date": "2000-03-20",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20000202/",
+      "statement_text_sha256": "f1904ee19c8e8ada3b4fad0393ce1a0a2712754b1bb58de7738a35b1fbc2d39e",
+      "target_midpoint_pct": 5.75,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 6.56,
+        "UST3Y": 6.56,
+        "UST5Y": 6.56,
+        "UST7Y": 6.63,
+        "UST10Y": 6.49,
+        "UST30Y": 6.17
+      },
+      "yield_changes_bps": {
+        "UST2Y": -4.0,
+        "UST3Y": -6.0,
+        "UST5Y": -11.0,
+        "UST7Y": -19.0,
+        "UST10Y": -31.0,
+        "UST30Y": -18.0
+      }
+    },
+    {
+      "decision_date": "2000-03-21",
+      "next_decision_date": "2000-05-16",
+      "start_date": "2000-03-22",
+      "resolution_date": "2000-05-15",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20000321/",
+      "statement_text_sha256": "c8e490cab0795cf4a3513185c076f87ade9bd03e114d1919278c57238970c52b",
+      "target_midpoint_pct": 6.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 6.5,
+        "UST3Y": 6.47,
+        "UST5Y": 6.41,
+        "UST7Y": 6.41,
+        "UST10Y": 6.13,
+        "UST30Y": 5.97
+      },
+      "yield_changes_bps": {
+        "UST2Y": 38.0,
+        "UST3Y": 35.0,
+        "UST5Y": 32.0,
+        "UST7Y": 31.0,
+        "UST10Y": 34.0,
+        "UST30Y": 20.0
+      }
+    },
+    {
+      "decision_date": "2000-05-16",
+      "next_decision_date": "2000-06-28",
+      "start_date": "2000-05-17",
+      "resolution_date": "2000-06-27",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20000516/",
+      "statement_text_sha256": "b8081f323731a7873851fcc7f33fd5c950046b478d9de6d69325aebdb442cda0",
+      "target_midpoint_pct": 6.5,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 6.9,
+        "UST3Y": 6.84,
+        "UST5Y": 6.74,
+        "UST7Y": 6.74,
+        "UST10Y": 6.48,
+        "UST30Y": 6.18
+      },
+      "yield_changes_bps": {
+        "UST2Y": -40.0,
+        "UST3Y": -41.0,
+        "UST5Y": -45.0,
+        "UST7Y": -41.0,
+        "UST10Y": -38.0,
+        "UST30Y": -23.0
+      }
+    },
+    {
+      "decision_date": "2000-06-28",
+      "next_decision_date": "2000-08-22",
+      "start_date": "2000-06-29",
+      "resolution_date": "2000-08-21",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20000628/",
+      "statement_text_sha256": "ded6037a524dbb728bbd9ee9823f5479406182df63d1fdb03cafc4183529b832",
+      "target_midpoint_pct": 6.5,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 6.37,
+        "UST3Y": 6.32,
+        "UST5Y": 6.21,
+        "UST7Y": 6.27,
+        "UST10Y": 6.04,
+        "UST30Y": 5.88
+      },
+      "yield_changes_bps": {
+        "UST2Y": -9.0,
+        "UST3Y": -9.0,
+        "UST5Y": -11.0,
+        "UST7Y": -21.0,
+        "UST10Y": -25.0,
+        "UST30Y": -17.0
+      }
+    },
+    {
+      "decision_date": "2000-08-22",
+      "next_decision_date": "2000-10-03",
+      "start_date": "2000-08-23",
+      "resolution_date": "2000-10-02",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20000822/",
+      "statement_text_sha256": "1b785ef8241aba438ee68bf38ebeb18f8c555b063d21ecb1aa95a4760e4b1776",
+      "target_midpoint_pct": 6.5,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 6.2,
+        "UST3Y": 6.16,
+        "UST5Y": 6.02,
+        "UST7Y": 5.99,
+        "UST10Y": 5.73,
+        "UST30Y": 5.68
+      },
+      "yield_changes_bps": {
+        "UST2Y": -22.0,
+        "UST3Y": -24.0,
+        "UST5Y": -16.0,
+        "UST7Y": -4.0,
+        "UST10Y": 10.0,
+        "UST30Y": 25.0
+      }
+    },
+    {
+      "decision_date": "2000-10-03",
+      "next_decision_date": "2000-11-15",
+      "start_date": "2000-10-04",
+      "resolution_date": "2000-11-14",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20001003/",
+      "statement_text_sha256": "354e4abbc6794ad5b8dfba9995e54beb621e3c87c176cb22577de7819f0c14b4",
+      "target_midpoint_pct": 6.5,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 6.03,
+        "UST3Y": 5.99,
+        "UST5Y": 5.94,
+        "UST7Y": 6.01,
+        "UST10Y": 5.9,
+        "UST30Y": 5.95
+      },
+      "yield_changes_bps": {
+        "UST2Y": -11.0,
+        "UST3Y": -17.0,
+        "UST5Y": -22.0,
+        "UST7Y": -20.0,
+        "UST10Y": -14.0,
+        "UST30Y": -14.0
+      }
+    },
+    {
+      "decision_date": "2000-11-15",
+      "next_decision_date": "2000-12-19",
+      "start_date": "2000-11-16",
+      "resolution_date": "2000-12-18",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20001115/",
+      "statement_text_sha256": "a0e64ac8875a342e794606b90fccd4f3d43e6169224659677c096d118d361687",
+      "target_midpoint_pct": 6.5,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 5.87,
+        "UST3Y": 5.76,
+        "UST5Y": 5.66,
+        "UST7Y": 5.74,
+        "UST10Y": 5.68,
+        "UST30Y": 5.75
+      },
+      "yield_changes_bps": {
+        "UST2Y": -54.0,
+        "UST3Y": -55.0,
+        "UST5Y": -56.0,
+        "UST7Y": -55.0,
+        "UST10Y": -51.0,
+        "UST30Y": -31.0
+      }
+    },
+    {
+      "decision_date": "2000-12-19",
+      "next_decision_date": "2001-01-03",
+      "start_date": "2000-12-20",
+      "resolution_date": "2001-01-02",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2000/20001219/",
+      "statement_text_sha256": "16b6c718e008aa6aa1360f2fb3b722ac3db33d17fe7c0a5af5ff057780ba1f33",
+      "target_midpoint_pct": 6.5,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 5.24,
+        "UST3Y": 5.12,
+        "UST5Y": 5.0,
+        "UST7Y": 5.13,
+        "UST10Y": 5.08,
+        "UST30Y": 5.42
+      },
+      "yield_changes_bps": {
+        "UST2Y": -37.0,
+        "UST3Y": -30.0,
+        "UST5Y": -24.0,
+        "UST7Y": -16.0,
+        "UST10Y": -16.0,
+        "UST30Y": -7.0
+      }
+    },
+    {
+      "decision_date": "2001-01-03",
+      "next_decision_date": "2001-01-31",
+      "start_date": "2001-01-04",
+      "resolution_date": "2001-01-30",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010103/",
+      "statement_text_sha256": "c2eae5d2d406c9f9e2ab89d647ee1fc4ad0221e5e76df4463fcd21219ed2aa22",
+      "target_midpoint_pct": 6.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.77,
+        "UST3Y": 4.78,
+        "UST5Y": 4.82,
+        "UST7Y": 5.07,
+        "UST10Y": 5.03,
+        "UST30Y": 5.44
+      },
+      "yield_changes_bps": {
+        "UST2Y": -7.0,
+        "UST3Y": -3.0,
+        "UST5Y": 9.0,
+        "UST7Y": 10.0,
+        "UST10Y": 21.0,
+        "UST30Y": 15.0
+      }
+    },
+    {
+      "decision_date": "2001-01-31",
+      "next_decision_date": "2001-03-20",
+      "start_date": "2001-02-01",
+      "resolution_date": "2001-03-19",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010131/",
+      "statement_text_sha256": "0a50a1936b0f3516f2939762b1f1cd58a33cf541fb129808fb0fdd057f027ea2",
+      "target_midpoint_pct": 5.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.55,
+        "UST3Y": 4.59,
+        "UST5Y": 4.78,
+        "UST7Y": 5.01,
+        "UST10Y": 5.1,
+        "UST30Y": 5.46
+      },
+      "yield_changes_bps": {
+        "UST2Y": -23.0,
+        "UST3Y": -19.0,
+        "UST5Y": -20.0,
+        "UST7Y": -18.0,
+        "UST10Y": -28.0,
+        "UST30Y": -16.0
+      }
+    },
+    {
+      "decision_date": "2001-03-20",
+      "next_decision_date": "2001-04-18",
+      "start_date": "2001-03-21",
+      "resolution_date": "2001-04-17",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010320/",
+      "statement_text_sha256": "8da694d23342791d5284f5b6d7fc256ce5d044ed77381d110f9ad0eaeca0a192",
+      "target_midpoint_pct": 5.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.21,
+        "UST3Y": 4.29,
+        "UST5Y": 4.49,
+        "UST7Y": 4.76,
+        "UST10Y": 4.77,
+        "UST30Y": 5.28
+      },
+      "yield_changes_bps": {
+        "UST2Y": 20.0,
+        "UST3Y": 28.0,
+        "UST5Y": 38.0,
+        "UST7Y": 36.0,
+        "UST10Y": 44.0,
+        "UST30Y": 37.0
+      }
+    },
+    {
+      "decision_date": "2001-04-18",
+      "next_decision_date": "2001-05-15",
+      "start_date": "2001-04-19",
+      "resolution_date": "2001-05-14",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010418/",
+      "statement_text_sha256": "bc93bef9ade09be2f6a4194b7682b138ba5b4de165e046a3f579148b9a418a34",
+      "target_midpoint_pct": 4.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.29,
+        "UST3Y": 4.5,
+        "UST5Y": 4.86,
+        "UST7Y": 5.15,
+        "UST10Y": 5.27,
+        "UST30Y": 5.77
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": 3.0,
+        "UST5Y": 8.0,
+        "UST7Y": 13.0,
+        "UST10Y": 19.0,
+        "UST30Y": 8.0
+      }
+    },
+    {
+      "decision_date": "2001-05-15",
+      "next_decision_date": "2001-06-27",
+      "start_date": "2001-05-16",
+      "resolution_date": "2001-06-26",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010515/",
+      "statement_text_sha256": "6d653d05dc7e83732e6d5e741d34737b4b3d8e211bdb30ef99742331d158c8b4",
+      "target_midpoint_pct": 4.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.25,
+        "UST3Y": 4.51,
+        "UST5Y": 4.95,
+        "UST7Y": 5.3,
+        "UST10Y": 5.48,
+        "UST30Y": 5.86
+      },
+      "yield_changes_bps": {
+        "UST2Y": -22.0,
+        "UST3Y": -21.0,
+        "UST5Y": -21.0,
+        "UST7Y": -22.0,
+        "UST10Y": -24.0,
+        "UST30Y": -21.0
+      }
+    },
+    {
+      "decision_date": "2001-06-27",
+      "next_decision_date": "2001-08-21",
+      "start_date": "2001-06-28",
+      "resolution_date": "2001-08-20",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010627/",
+      "statement_text_sha256": "007063699b31861caaa11aeb2ac2025723880d8053bfbbaa77933ee5e71984bc",
+      "target_midpoint_pct": 3.75,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.22,
+        "UST3Y": 4.48,
+        "UST5Y": 4.92,
+        "UST7Y": 5.23,
+        "UST10Y": 5.35,
+        "UST30Y": 5.68
+      },
+      "yield_changes_bps": {
+        "UST2Y": -48.0,
+        "UST3Y": -46.0,
+        "UST5Y": -37.0,
+        "UST7Y": -42.0,
+        "UST10Y": -44.0,
+        "UST30Y": -22.0
+      }
+    },
+    {
+      "decision_date": "2001-08-21",
+      "next_decision_date": "2001-09-17",
+      "start_date": "2001-08-22",
+      "resolution_date": "2001-09-14",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010821/",
+      "statement_text_sha256": "f8fffc09aaa9b89e82a6a28c63c7076cb9647c0bd7c432b1174ddfa542a258b6",
+      "target_midpoint_pct": 3.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.76,
+        "UST3Y": 4.03,
+        "UST5Y": 4.53,
+        "UST7Y": 4.81,
+        "UST10Y": 4.91,
+        "UST30Y": 5.44
+      },
+      "yield_changes_bps": {
+        "UST2Y": -89.0,
+        "UST3Y": -86.0,
+        "UST5Y": -61.0,
+        "UST7Y": -50.0,
+        "UST10Y": -34.0,
+        "UST30Y": -9.0
+      }
+    },
+    {
+      "decision_date": "2001-09-17",
+      "next_decision_date": "2001-10-02",
+      "start_date": "2001-09-18",
+      "resolution_date": "2001-10-01",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20010917/",
+      "statement_text_sha256": "834627d3b728d37fbde233c65948406843193efb9ebbf6d5d28b054cc8641e7b",
+      "target_midpoint_pct": 3.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.96,
+        "UST3Y": 3.31,
+        "UST5Y": 4.01,
+        "UST7Y": 4.46,
+        "UST10Y": 4.72,
+        "UST30Y": 5.55
+      },
+      "yield_changes_bps": {
+        "UST2Y": -14.0,
+        "UST3Y": -13.0,
+        "UST5Y": -11.0,
+        "UST7Y": -13.0,
+        "UST10Y": -17.0,
+        "UST30Y": -17.0
+      }
+    },
+    {
+      "decision_date": "2001-10-02",
+      "next_decision_date": "2001-11-06",
+      "start_date": "2001-10-03",
+      "resolution_date": "2001-11-05",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20011002/",
+      "statement_text_sha256": "b3adabe6c77b4e2af610d3b65babb37ded4edda5c43e68bb084bef3dea9d622b",
+      "target_midpoint_pct": 2.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.77,
+        "UST3Y": 3.14,
+        "UST5Y": 3.86,
+        "UST7Y": 4.29,
+        "UST10Y": 4.5,
+        "UST30Y": 5.32
+      },
+      "yield_changes_bps": {
+        "UST2Y": -31.0,
+        "UST3Y": -23.0,
+        "UST5Y": -15.0,
+        "UST7Y": -22.0,
+        "UST10Y": -19.0,
+        "UST30Y": -46.0
+      }
+    },
+    {
+      "decision_date": "2001-11-06",
+      "next_decision_date": "2001-12-11",
+      "start_date": "2001-11-07",
+      "resolution_date": "2001-12-10",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20011106/",
+      "statement_text_sha256": "63ab739f54c0f9f93a799780abd556c6e5a8f01d821ed7c044ffe895c0a62901",
+      "target_midpoint_pct": 2.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.32,
+        "UST3Y": 2.7,
+        "UST5Y": 3.47,
+        "UST7Y": 3.95,
+        "UST10Y": 4.22,
+        "UST30Y": 4.79
+      },
+      "yield_changes_bps": {
+        "UST2Y": 78.0,
+        "UST3Y": 93.0,
+        "UST5Y": 99.0,
+        "UST7Y": 100.0,
+        "UST10Y": 95.0,
+        "UST30Y": 79.0
+      }
+    },
+    {
+      "decision_date": "2001-12-11",
+      "next_decision_date": "2002-01-30",
+      "start_date": "2001-12-12",
+      "resolution_date": "2002-01-29",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2001/20011211/",
+      "statement_text_sha256": "b2a30aad8248d5c18e8269150e8ea1f97b451decc0112ac00adb602aeb83d7dd",
+      "target_midpoint_pct": 1.75,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.97,
+        "UST3Y": 3.48,
+        "UST5Y": 4.29,
+        "UST7Y": 4.78,
+        "UST10Y": 5.02,
+        "UST30Y": 5.47
+      },
+      "yield_changes_bps": {
+        "UST2Y": 8.0,
+        "UST3Y": 11.0,
+        "UST5Y": 6.0,
+        "UST7Y": -2.0,
+        "UST10Y": 0.0,
+        "UST30Y": -7.0
+      }
+    },
+    {
+      "decision_date": "2002-01-30",
+      "next_decision_date": "2002-03-19",
+      "start_date": "2002-01-31",
+      "resolution_date": "2002-02-15",
+      "statement_url": "https://www.federalreserve.gov/boarddocs/press/general/2002/20020130/",
+      "statement_text_sha256": "1193ba03ee0de9c2e1af23926578b4d80a23d74ffd40594430f8190ee7be621c",
+      "target_midpoint_pct": 1.75,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 3.16,
+        "UST3Y": 3.7,
+        "UST5Y": 4.42,
+        "UST7Y": 4.82,
+        "UST10Y": 5.07,
+        "UST30Y": 5.44
+      },
+      "yield_changes_bps": {
+        "UST2Y": -19.0,
+        "UST3Y": -20.0,
+        "UST5Y": -15.0,
+        "UST7Y": -16.0,
+        "UST10Y": -21.0,
+        "UST30Y": -7.0
+      }
+    },
+    {
+      "decision_date": "2006-01-31",
+      "next_decision_date": "2006-03-28",
+      "start_date": "2006-02-09",
+      "resolution_date": "2006-03-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20060131a.htm",
+      "statement_text_sha256": "45e173e121dc37cd5d1926368fa7eb90f823e0a1797a7dec6d032221d78259b0",
+      "target_midpoint_pct": 4.5,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.66,
+        "UST3Y": 4.62,
+        "UST5Y": 4.55,
+        "UST7Y": 4.55,
+        "UST10Y": 4.54,
+        "UST30Y": 4.51
+      },
+      "yield_changes_bps": {
+        "UST2Y": 6.0,
+        "UST3Y": 7.0,
+        "UST5Y": 14.0,
+        "UST7Y": 14.0,
+        "UST10Y": 16.0,
+        "UST30Y": 22.0
+      }
+    },
+    {
+      "decision_date": "2006-03-28",
+      "next_decision_date": "2006-05-10",
+      "start_date": "2006-03-29",
+      "resolution_date": "2006-05-09",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20060328a.htm",
+      "statement_text_sha256": "2165571fecd748fbb7117ab4b487d7793150e2b90f6f8982819d0bef19c54fd2",
+      "target_midpoint_pct": 4.75,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.82,
+        "UST3Y": 4.81,
+        "UST5Y": 4.79,
+        "UST7Y": 4.79,
+        "UST10Y": 4.81,
+        "UST30Y": 4.84
+      },
+      "yield_changes_bps": {
+        "UST2Y": 15.0,
+        "UST3Y": 17.0,
+        "UST5Y": 22.0,
+        "UST7Y": 26.0,
+        "UST10Y": 32.0,
+        "UST30Y": 36.0
+      }
+    },
+    {
+      "decision_date": "2006-05-10",
+      "next_decision_date": "2006-06-29",
+      "start_date": "2006-05-11",
+      "resolution_date": "2006-06-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20060510a.htm",
+      "statement_text_sha256": "2deab1e0e2cd84c762395fc7ae043a26f42912b4265c6c6bab67551bcabb3693",
+      "target_midpoint_pct": 5.0,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 4.99,
+        "UST3Y": 5.01,
+        "UST5Y": 5.04,
+        "UST7Y": 5.07,
+        "UST10Y": 5.14,
+        "UST30Y": 5.23
+      },
+      "yield_changes_bps": {
+        "UST2Y": 30.0,
+        "UST3Y": 25.0,
+        "UST5Y": 19.0,
+        "UST7Y": 16.0,
+        "UST10Y": 11.0,
+        "UST30Y": 5.0
+      }
+    },
+    {
+      "decision_date": "2006-06-29",
+      "next_decision_date": "2006-08-08",
+      "start_date": "2006-06-30",
+      "resolution_date": "2006-08-07",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20060629a.htm",
+      "statement_text_sha256": "776bef711cb04ab0f2d58bb05e89f64623fd1ef3221aadfd5917b70bd3e73245",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 5.16,
+        "UST3Y": 5.13,
+        "UST5Y": 5.1,
+        "UST7Y": 5.11,
+        "UST10Y": 5.15,
+        "UST30Y": 5.19
+      },
+      "yield_changes_bps": {
+        "UST2Y": -20.0,
+        "UST3Y": -24.0,
+        "UST5Y": -24.0,
+        "UST7Y": -24.0,
+        "UST10Y": -22.0,
+        "UST30Y": -19.0
+      }
+    },
+    {
+      "decision_date": "2006-08-08",
+      "next_decision_date": "2006-09-20",
+      "start_date": "2006-08-09",
+      "resolution_date": "2006-09-19",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20060808a.htm",
+      "statement_text_sha256": "e07c54d2320449e2d0db89eeb2679f81046515afef524e5b960da914354f1d8f",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.91,
+        "UST3Y": 4.88,
+        "UST5Y": 4.86,
+        "UST7Y": 4.87,
+        "UST10Y": 4.92,
+        "UST30Y": 5.05
+      },
+      "yield_changes_bps": {
+        "UST2Y": -12.0,
+        "UST3Y": -16.0,
+        "UST5Y": -17.0,
+        "UST7Y": -18.0,
+        "UST10Y": -18.0,
+        "UST30Y": -19.0
+      }
+    },
+    {
+      "decision_date": "2006-09-20",
+      "next_decision_date": "2006-10-25",
+      "start_date": "2006-09-21",
+      "resolution_date": "2006-10-24",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20060920a.htm",
+      "statement_text_sha256": "ebe448d98a3de6532c74c53e9a381eeec1493df3adcc4da64744bc740a885d37",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.71,
+        "UST3Y": 4.61,
+        "UST5Y": 4.6,
+        "UST7Y": 4.61,
+        "UST10Y": 4.65,
+        "UST30Y": 4.78
+      },
+      "yield_changes_bps": {
+        "UST2Y": 20.0,
+        "UST3Y": 23.0,
+        "UST5Y": 21.0,
+        "UST7Y": 20.0,
+        "UST10Y": 18.0,
+        "UST30Y": 17.0
+      }
+    },
+    {
+      "decision_date": "2006-10-25",
+      "next_decision_date": "2006-12-12",
+      "start_date": "2006-10-26",
+      "resolution_date": "2006-12-11",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20061025a.htm",
+      "statement_text_sha256": "378223034b6ff82f3b2a03978957d995cb2924e9d20e9c2c204eb3fe0c399227",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.81,
+        "UST3Y": 4.74,
+        "UST5Y": 4.69,
+        "UST7Y": 4.7,
+        "UST10Y": 4.73,
+        "UST30Y": 4.84
+      },
+      "yield_changes_bps": {
+        "UST2Y": -14.0,
+        "UST3Y": -19.0,
+        "UST5Y": -19.0,
+        "UST7Y": -20.0,
+        "UST10Y": -21.0,
+        "UST30Y": -21.0
+      }
+    },
+    {
+      "decision_date": "2006-12-12",
+      "next_decision_date": "2007-01-31",
+      "start_date": "2006-12-13",
+      "resolution_date": "2007-01-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20061212a.htm",
+      "statement_text_sha256": "b09e01ae82a1589920d64a3fc5abb203a5fb5eecac45b1b01121dedad5f3cccd",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.7,
+        "UST3Y": 4.6,
+        "UST5Y": 4.54,
+        "UST7Y": 4.55,
+        "UST10Y": 4.58,
+        "UST30Y": 4.69
+      },
+      "yield_changes_bps": {
+        "UST2Y": 28.0,
+        "UST3Y": 30.0,
+        "UST5Y": 32.0,
+        "UST7Y": 31.0,
+        "UST10Y": 30.0,
+        "UST30Y": 29.0
+      }
+    },
+    {
+      "decision_date": "2007-01-31",
+      "next_decision_date": "2007-03-21",
+      "start_date": "2007-02-01",
+      "resolution_date": "2007-03-20",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20070131a.htm",
+      "statement_text_sha256": "67735c6d7a87754369ab92da7d4fbb4da6856155ba4dff8d263aff9cf78ba9a8",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.96,
+        "UST3Y": 4.88,
+        "UST5Y": 4.84,
+        "UST7Y": 4.84,
+        "UST10Y": 4.84,
+        "UST30Y": 4.93
+      },
+      "yield_changes_bps": {
+        "UST2Y": -36.0,
+        "UST3Y": -37.0,
+        "UST5Y": -37.0,
+        "UST7Y": -35.0,
+        "UST10Y": -28.0,
+        "UST30Y": -22.0
+      }
+    },
+    {
+      "decision_date": "2007-03-21",
+      "next_decision_date": "2007-05-09",
+      "start_date": "2007-03-22",
+      "resolution_date": "2007-05-08",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20070321a.htm",
+      "statement_text_sha256": "dc5a4e91ade1a6ec9b5c1e86c4f9259995456093938b307f3117d9ab9e17a218",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.58,
+        "UST3Y": 4.51,
+        "UST5Y": 4.49,
+        "UST7Y": 4.52,
+        "UST10Y": 4.6,
+        "UST30Y": 4.78
+      },
+      "yield_changes_bps": {
+        "UST2Y": 10.0,
+        "UST3Y": 7.0,
+        "UST5Y": 5.0,
+        "UST7Y": 4.0,
+        "UST10Y": 3.0,
+        "UST30Y": 2.0
+      }
+    },
+    {
+      "decision_date": "2007-05-09",
+      "next_decision_date": "2007-06-18",
+      "start_date": "2007-05-10",
+      "resolution_date": "2007-06-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20070509a.htm",
+      "statement_text_sha256": "c7509265dad9809e2d8aab5401c178ccbc481a6334dd3f8a1a40a127d9f518cb",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.7,
+        "UST3Y": 4.6,
+        "UST5Y": 4.56,
+        "UST7Y": 4.58,
+        "UST10Y": 4.65,
+        "UST30Y": 4.83
+      },
+      "yield_changes_bps": {
+        "UST2Y": 35.0,
+        "UST3Y": 47.0,
+        "UST5Y": 54.0,
+        "UST7Y": 54.0,
+        "UST10Y": 51.0,
+        "UST30Y": 43.0
+      }
+    },
+    {
+      "decision_date": "2007-06-18",
+      "next_decision_date": "2007-08-07",
+      "start_date": "2007-06-19",
+      "resolution_date": "2007-08-06",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20070618a.htm",
+      "statement_text_sha256": "d9b44c25c4bbe604a134ca07495e2a7316b4ce4cee5a4b10a7124936c52939df",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.94,
+        "UST3Y": 4.98,
+        "UST5Y": 5.0,
+        "UST7Y": 5.03,
+        "UST10Y": 5.09,
+        "UST30Y": 5.2
+      },
+      "yield_changes_bps": {
+        "UST2Y": -48.0,
+        "UST3Y": -53.0,
+        "UST5Y": -48.0,
+        "UST7Y": -43.0,
+        "UST10Y": -37.0,
+        "UST30Y": -31.0
+      }
+    },
+    {
+      "decision_date": "2007-08-07",
+      "next_decision_date": "2007-08-10",
+      "start_date": "2007-08-08",
+      "resolution_date": "2007-08-09",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20070807a.htm",
+      "statement_text_sha256": "3244ccb01e454f3f2cce3f4793a2486840c659208af8ac17ce9e25934503ca7f",
+      "target_midpoint_pct": 5.25,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 4.64,
+        "UST3Y": 4.64,
+        "UST5Y": 4.69,
+        "UST7Y": 4.75,
+        "UST10Y": 4.84,
+        "UST30Y": 5.01
+      },
+      "yield_changes_bps": {
+        "UST2Y": -15.0,
+        "UST3Y": -13.0,
+        "UST5Y": -11.0,
+        "UST7Y": -9.0,
+        "UST10Y": -5.0,
+        "UST30Y": 1.0
+      }
+    },
+    {
+      "decision_date": "2007-09-18",
+      "next_decision_date": "2007-10-31",
+      "start_date": "2007-09-19",
+      "resolution_date": "2007-10-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20070918a.htm",
+      "statement_text_sha256": "ec42a8f938188224b98e07534fd51e5a1fa65f39920b544ebbf1c8a836c4d449",
+      "target_midpoint_pct": 4.75,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 4.0,
+        "UST3Y": 4.06,
+        "UST5Y": 4.2,
+        "UST7Y": 4.33,
+        "UST10Y": 4.53,
+        "UST30Y": 4.83
+      },
+      "yield_changes_bps": {
+        "UST2Y": -18.0,
+        "UST3Y": -21.0,
+        "UST5Y": -14.0,
+        "UST7Y": -13.0,
+        "UST10Y": -13.0,
+        "UST30Y": -15.0
+      }
+    },
+    {
+      "decision_date": "2007-10-31",
+      "next_decision_date": "2007-12-11",
+      "start_date": "2007-11-01",
+      "resolution_date": "2007-12-10",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20071031a.htm",
+      "statement_text_sha256": "49899ea607b824c4a7b74a0d7f9e0cced4f11b81b22c4e2f60fadef6f5d589d4",
+      "target_midpoint_pct": 4.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.77,
+        "UST3Y": 3.8,
+        "UST5Y": 4.02,
+        "UST7Y": 4.16,
+        "UST10Y": 4.36,
+        "UST30Y": 4.64
+      },
+      "yield_changes_bps": {
+        "UST2Y": -60.0,
+        "UST3Y": -61.0,
+        "UST5Y": -48.0,
+        "UST7Y": -36.0,
+        "UST10Y": -21.0,
+        "UST30Y": -4.0
+      }
+    },
+    {
+      "decision_date": "2007-12-11",
+      "next_decision_date": "2008-01-22",
+      "start_date": "2007-12-12",
+      "resolution_date": "2008-01-18",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20071211a.htm",
+      "statement_text_sha256": "c52ca025c9940fe4880b8c476bef03add90353d497e450c9684f76352627e0fa",
+      "target_midpoint_pct": 4.25,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 3.07,
+        "UST3Y": 3.12,
+        "UST5Y": 3.41,
+        "UST7Y": 3.68,
+        "UST10Y": 4.05,
+        "UST30Y": 4.51
+      },
+      "yield_changes_bps": {
+        "UST2Y": -71.0,
+        "UST3Y": -73.0,
+        "UST5Y": -55.0,
+        "UST7Y": -48.0,
+        "UST10Y": -39.0,
+        "UST30Y": -23.0
+      }
+    },
+    {
+      "decision_date": "2008-01-22",
+      "next_decision_date": "2008-01-30",
+      "start_date": "2008-01-23",
+      "resolution_date": "2008-01-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080122b.htm",
+      "statement_text_sha256": "3b118159ed0536b053c8ce0fea9eccaeaf7dc85d2d315ea226e22222f349fdbd",
+      "target_midpoint_pct": 3.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.09,
+        "UST3Y": 2.12,
+        "UST5Y": 2.64,
+        "UST7Y": 3.01,
+        "UST10Y": 3.51,
+        "UST30Y": 4.23
+      },
+      "yield_changes_bps": {
+        "UST2Y": 20.0,
+        "UST3Y": 21.0,
+        "UST5Y": 23.0,
+        "UST7Y": 22.0,
+        "UST10Y": 18.0,
+        "UST30Y": 11.0
+      }
+    },
+    {
+      "decision_date": "2008-01-30",
+      "next_decision_date": "2008-03-11",
+      "start_date": "2008-01-31",
+      "resolution_date": "2008-03-10",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080130a.htm",
+      "statement_text_sha256": "d6f53fe29cb75cff451784ee075625b3d586622cb0beeae6f78b1f7e3864620e",
+      "target_midpoint_pct": 3.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.17,
+        "UST3Y": 2.27,
+        "UST5Y": 2.82,
+        "UST7Y": 3.19,
+        "UST10Y": 3.67,
+        "UST30Y": 4.35
+      },
+      "yield_changes_bps": {
+        "UST2Y": -70.0,
+        "UST3Y": -60.0,
+        "UST5Y": -45.0,
+        "UST7Y": -35.0,
+        "UST10Y": -21.0,
+        "UST30Y": 10.0
+      }
+    },
+    {
+      "decision_date": "2008-03-18",
+      "next_decision_date": "2008-04-30",
+      "start_date": "2008-03-19",
+      "resolution_date": "2008-04-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080318a.htm",
+      "statement_text_sha256": "d810fd72c8b211fc6660391cfb98bb5174013cce151cf3990e19fabfd67ee86b",
+      "target_midpoint_pct": 2.25,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 1.54,
+        "UST3Y": 1.68,
+        "UST5Y": 2.36,
+        "UST7Y": 2.8,
+        "UST10Y": 3.38,
+        "UST30Y": 4.22
+      },
+      "yield_changes_bps": {
+        "UST2Y": 81.0,
+        "UST3Y": 87.0,
+        "UST5Y": 75.0,
+        "UST7Y": 62.0,
+        "UST10Y": 47.0,
+        "UST30Y": 33.0
+      }
+    },
+    {
+      "decision_date": "2008-04-30",
+      "next_decision_date": "2008-06-25",
+      "start_date": "2008-05-01",
+      "resolution_date": "2008-06-24",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080430a.htm",
+      "statement_text_sha256": "d9bd4c5deea7f9dfcee8165143111e4070e739584b68a1461ea21bd8f85ef130",
+      "target_midpoint_pct": 2.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 2.37,
+        "UST3Y": 2.53,
+        "UST5Y": 3.06,
+        "UST7Y": 3.36,
+        "UST10Y": 3.78,
+        "UST30Y": 4.49
+      },
+      "yield_changes_bps": {
+        "UST2Y": 50.0,
+        "UST3Y": 61.0,
+        "UST5Y": 46.0,
+        "UST7Y": 40.0,
+        "UST10Y": 32.0,
+        "UST30Y": 16.0
+      }
+    },
+    {
+      "decision_date": "2008-06-25",
+      "next_decision_date": "2008-08-05",
+      "start_date": "2008-06-26",
+      "resolution_date": "2008-08-04",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080625a.htm",
+      "statement_text_sha256": "dc2cc24e94a4d9e2b8c097f664bdf8809a37256e865807c305dc1685e12370bc",
+      "target_midpoint_pct": 2.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.68,
+        "UST3Y": 2.97,
+        "UST5Y": 3.44,
+        "UST7Y": 3.69,
+        "UST10Y": 4.07,
+        "UST30Y": 4.62
+      },
+      "yield_changes_bps": {
+        "UST2Y": -15.0,
+        "UST3Y": -16.0,
+        "UST5Y": -21.0,
+        "UST7Y": -14.0,
+        "UST10Y": -9.0,
+        "UST30Y": -4.0
+      }
+    },
+    {
+      "decision_date": "2008-08-05",
+      "next_decision_date": "2008-09-16",
+      "start_date": "2008-08-06",
+      "resolution_date": "2008-09-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080805a.htm",
+      "statement_text_sha256": "907936fe2a84d0207da8e8c014f40dd04575baf40587665d7e31bf9d21a689f7",
+      "target_midpoint_pct": 2.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.56,
+        "UST3Y": 2.85,
+        "UST5Y": 3.3,
+        "UST7Y": 3.62,
+        "UST10Y": 4.06,
+        "UST30Y": 4.68
+      },
+      "yield_changes_bps": {
+        "UST2Y": -78.0,
+        "UST3Y": -84.0,
+        "UST5Y": -71.0,
+        "UST7Y": -63.0,
+        "UST10Y": -59.0,
+        "UST30Y": -56.0
+      }
+    },
+    {
+      "decision_date": "2008-09-16",
+      "next_decision_date": "2008-10-08",
+      "start_date": "2008-09-17",
+      "resolution_date": "2008-10-07",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20080916a.htm",
+      "statement_text_sha256": "3ba98d4cc462288f18552246d43072e3522df063620a49678186977e4decd329",
+      "target_midpoint_pct": 2.0,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.64,
+        "UST3Y": 1.91,
+        "UST5Y": 2.52,
+        "UST7Y": 2.93,
+        "UST10Y": 3.41,
+        "UST30Y": 4.08
+      },
+      "yield_changes_bps": {
+        "UST2Y": -17.0,
+        "UST3Y": -22.0,
+        "UST5Y": -7.0,
+        "UST7Y": -2.0,
+        "UST10Y": 9.0,
+        "UST30Y": -7.0
+      }
+    },
+    {
+      "decision_date": "2008-10-08",
+      "next_decision_date": "2008-10-29",
+      "start_date": "2008-10-09",
+      "resolution_date": "2008-10-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20081008a.htm",
+      "statement_text_sha256": "e29bab5b5f53ab3ec43d4664f40fbbc43532bea12c027e3f4b45c3d0237dc436",
+      "target_midpoint_pct": 1.5,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 1.65,
+        "UST3Y": 1.93,
+        "UST5Y": 2.79,
+        "UST7Y": 3.25,
+        "UST10Y": 3.84,
+        "UST30Y": 4.14
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": -8.0,
+        "UST5Y": -4.0,
+        "UST7Y": -4.0,
+        "UST10Y": 5.0,
+        "UST30Y": 5.0
+      }
+    },
+    {
+      "decision_date": "2008-10-29",
+      "next_decision_date": "2008-12-16",
+      "start_date": "2008-10-30",
+      "resolution_date": "2008-12-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20081029a.htm",
+      "statement_text_sha256": "5a7d9598b780afc25d53aa2400500656c10214c0cb823a8458ac103280bde069",
+      "target_midpoint_pct": 1.0,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 1.59,
+        "UST3Y": 1.82,
+        "UST5Y": 2.84,
+        "UST7Y": 3.3,
+        "UST10Y": 4.0,
+        "UST30Y": 4.3
+      },
+      "yield_changes_bps": {
+        "UST2Y": -84.0,
+        "UST3Y": -80.0,
+        "UST5Y": -134.0,
+        "UST7Y": -138.0,
+        "UST10Y": -147.0,
+        "UST30Y": -132.0
+      }
+    },
+    {
+      "decision_date": "2008-12-16",
+      "next_decision_date": "2009-01-28",
+      "start_date": "2008-12-17",
+      "resolution_date": "2009-01-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20081216b.htm",
+      "statement_text_sha256": "7e7e6db855b5139259900a39b93d722a402c01e7b4b4de02e4689da7d655efb1",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 0.73,
+        "UST3Y": 0.98,
+        "UST5Y": 1.35,
+        "UST7Y": 1.7,
+        "UST10Y": 2.2,
+        "UST30Y": 2.66
+      },
+      "yield_changes_bps": {
+        "UST2Y": 14.0,
+        "UST3Y": 17.0,
+        "UST5Y": 24.0,
+        "UST7Y": 29.0,
+        "UST10Y": 39.0,
+        "UST30Y": 60.0
+      }
+    },
+    {
+      "decision_date": "2009-01-28",
+      "next_decision_date": "2009-03-18",
+      "start_date": "2009-01-29",
+      "resolution_date": "2009-03-17",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20090128a.htm",
+      "statement_text_sha256": "12f368ad02d7f991237954dee34046661816a369e8b2062cc4b6e3beac520e0b",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.95,
+        "UST3Y": 1.34,
+        "UST5Y": 1.87,
+        "UST7Y": 2.28,
+        "UST10Y": 2.87,
+        "UST30Y": 3.57
+      },
+      "yield_changes_bps": {
+        "UST2Y": 10.0,
+        "UST3Y": 11.0,
+        "UST5Y": 13.0,
+        "UST7Y": 36.0,
+        "UST10Y": 15.0,
+        "UST30Y": 26.0
+      }
+    },
+    {
+      "decision_date": "2009-03-18",
+      "next_decision_date": "2009-04-29",
+      "start_date": "2009-03-19",
+      "resolution_date": "2009-04-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20090318a.htm",
+      "statement_text_sha256": "279ed93d4abe2c7e7ddec6c737f2c23eabbba4719c9c344ca962a23d96faba55",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.87,
+        "UST3Y": 1.21,
+        "UST5Y": 1.64,
+        "UST7Y": 2.17,
+        "UST10Y": 2.61,
+        "UST30Y": 3.62
+      },
+      "yield_changes_bps": {
+        "UST2Y": 8.0,
+        "UST3Y": 18.0,
+        "UST5Y": 33.0,
+        "UST7Y": 41.0,
+        "UST10Y": 44.0,
+        "UST30Y": 35.0
+      }
+    },
+    {
+      "decision_date": "2009-04-29",
+      "next_decision_date": "2009-06-24",
+      "start_date": "2009-04-30",
+      "resolution_date": "2009-06-23",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20090429a.htm",
+      "statement_text_sha256": "03de689b0deb2c8badf8278e1fc1adecd89b45c1eb191c8c2c8aaab5ac05e008",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.91,
+        "UST3Y": 1.38,
+        "UST5Y": 2.02,
+        "UST7Y": 2.7,
+        "UST10Y": 3.16,
+        "UST30Y": 4.05
+      },
+      "yield_changes_bps": {
+        "UST2Y": 23.0,
+        "UST3Y": 36.0,
+        "UST5Y": 69.0,
+        "UST7Y": 61.0,
+        "UST10Y": 49.0,
+        "UST30Y": 32.0
+      }
+    },
+    {
+      "decision_date": "2009-06-24",
+      "next_decision_date": "2009-08-12",
+      "start_date": "2009-06-25",
+      "resolution_date": "2009-08-11",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20090624a.htm",
+      "statement_text_sha256": "12cdaebdaa96b4f15760c4494c7dc4c5f02bbede3fed5c7a6ced717a2deca449",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.12,
+        "UST3Y": 1.66,
+        "UST5Y": 2.58,
+        "UST7Y": 3.22,
+        "UST10Y": 3.55,
+        "UST30Y": 4.33
+      },
+      "yield_changes_bps": {
+        "UST2Y": 9.0,
+        "UST3Y": 12.0,
+        "UST5Y": 11.0,
+        "UST7Y": 10.0,
+        "UST10Y": 16.0,
+        "UST30Y": 11.0
+      }
+    },
+    {
+      "decision_date": "2009-08-12",
+      "next_decision_date": "2009-09-23",
+      "start_date": "2009-08-13",
+      "resolution_date": "2009-09-22",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20090812a.htm",
+      "statement_text_sha256": "02fbd138555ea2df8de8760094fb254c3c363ffc8ec64437b37fe96cffb681a1",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.12,
+        "UST3Y": 1.66,
+        "UST5Y": 2.58,
+        "UST7Y": 3.22,
+        "UST10Y": 3.59,
+        "UST30Y": 4.44
+      },
+      "yield_changes_bps": {
+        "UST2Y": -10.0,
+        "UST3Y": -12.0,
+        "UST5Y": -13.0,
+        "UST7Y": -13.0,
+        "UST10Y": -13.0,
+        "UST30Y": -24.0
+      }
+    },
+    {
+      "decision_date": "2009-09-23",
+      "next_decision_date": "2009-11-04",
+      "start_date": "2009-09-24",
+      "resolution_date": "2009-11-03",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20090923a.htm",
+      "statement_text_sha256": "f25c21dfb2b36b853d4dd8ee854aed29f9affffbba6533972637efa21a15adcc",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.93,
+        "UST3Y": 1.45,
+        "UST5Y": 2.37,
+        "UST7Y": 3.03,
+        "UST10Y": 3.4,
+        "UST30Y": 4.17
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 1.0,
+        "UST5Y": -1.0,
+        "UST7Y": 2.0,
+        "UST10Y": 10.0,
+        "UST30Y": 17.0
+      }
+    },
+    {
+      "decision_date": "2009-11-04",
+      "next_decision_date": "2009-12-16",
+      "start_date": "2009-11-05",
+      "resolution_date": "2009-12-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20091104a.htm",
+      "statement_text_sha256": "9f94e42198db327ee624e0f91600f98697d19f496c6007e25842389715579e4a",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.9,
+        "UST3Y": 1.44,
+        "UST5Y": 2.35,
+        "UST7Y": 3.06,
+        "UST10Y": 3.57,
+        "UST30Y": 4.41
+      },
+      "yield_changes_bps": {
+        "UST2Y": -2.0,
+        "UST3Y": -6.0,
+        "UST5Y": 0.0,
+        "UST7Y": 2.0,
+        "UST10Y": 3.0,
+        "UST30Y": 11.0
+      }
+    },
+    {
+      "decision_date": "2009-12-16",
+      "next_decision_date": "2010-01-27",
+      "start_date": "2009-12-17",
+      "resolution_date": "2010-01-26",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20091216a.htm",
+      "statement_text_sha256": "f1b1f3e94fc4d2fe945d4dc2d81bd618b53c880fa45c0af38a2b0236a8e4a915",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.77,
+        "UST3Y": 1.27,
+        "UST5Y": 2.24,
+        "UST7Y": 2.97,
+        "UST10Y": 3.5,
+        "UST30Y": 4.42
+      },
+      "yield_changes_bps": {
+        "UST2Y": 10.0,
+        "UST3Y": 13.0,
+        "UST5Y": 14.0,
+        "UST7Y": 14.0,
+        "UST10Y": 15.0,
+        "UST30Y": 14.0
+      }
+    },
+    {
+      "decision_date": "2010-01-27",
+      "next_decision_date": "2010-03-16",
+      "start_date": "2010-01-28",
+      "resolution_date": "2010-03-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20100127a.htm",
+      "statement_text_sha256": "73005f6d848e00a9de382aa9ad227671c269a8a88df39d8faaa08d0e620136a5",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.87,
+        "UST3Y": 1.44,
+        "UST5Y": 2.41,
+        "UST7Y": 3.15,
+        "UST10Y": 3.68,
+        "UST30Y": 4.57
+      },
+      "yield_changes_bps": {
+        "UST2Y": 9.0,
+        "UST3Y": 5.0,
+        "UST5Y": 1.0,
+        "UST7Y": 0.0,
+        "UST10Y": 3.0,
+        "UST30Y": 6.0
+      }
+    },
+    {
+      "decision_date": "2010-03-16",
+      "next_decision_date": "2010-04-28",
+      "start_date": "2010-03-17",
+      "resolution_date": "2010-04-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20100316a.htm",
+      "statement_text_sha256": "198a6d0dabc468053d56a52a7a2908ca516cbbe811338de6d43289d5daf66b5e",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.95,
+        "UST3Y": 1.47,
+        "UST5Y": 2.38,
+        "UST7Y": 3.1,
+        "UST10Y": 3.65,
+        "UST30Y": 4.56
+      },
+      "yield_changes_bps": {
+        "UST2Y": 8.0,
+        "UST3Y": 8.0,
+        "UST5Y": 8.0,
+        "UST7Y": 4.0,
+        "UST10Y": 6.0,
+        "UST30Y": 0.0
+      }
+    },
+    {
+      "decision_date": "2010-04-28",
+      "next_decision_date": "2010-05-09",
+      "start_date": "2010-04-29",
+      "resolution_date": "2010-05-07",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20100428a.htm",
+      "statement_text_sha256": "757be44594edf49f462750910c17a0e5b10ed5357266791b56c4580d352ce840",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.01,
+        "UST3Y": 1.58,
+        "UST5Y": 2.49,
+        "UST7Y": 3.19,
+        "UST10Y": 3.76,
+        "UST30Y": 4.6
+      },
+      "yield_changes_bps": {
+        "UST2Y": -18.0,
+        "UST3Y": -26.0,
+        "UST5Y": -32.0,
+        "UST7Y": -32.0,
+        "UST10Y": -31.0,
+        "UST30Y": -32.0
+      }
+    },
+    {
+      "decision_date": "2010-06-23",
+      "next_decision_date": "2010-08-10",
+      "start_date": "2010-06-24",
+      "resolution_date": "2010-08-09",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20100623a.htm",
+      "statement_text_sha256": "93266902ab75b0f346ffa9d8b24e34cad2b196ebd497d9c0a359957f604b9925",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.67,
+        "UST3Y": 1.1,
+        "UST5Y": 1.93,
+        "UST7Y": 2.59,
+        "UST10Y": 3.14,
+        "UST30Y": 4.09
+      },
+      "yield_changes_bps": {
+        "UST2Y": -13.0,
+        "UST3Y": -29.0,
+        "UST5Y": -39.0,
+        "UST7Y": -38.0,
+        "UST10Y": -28.0,
+        "UST30Y": -8.0
+      }
+    },
+    {
+      "decision_date": "2010-08-10",
+      "next_decision_date": "2010-09-21",
+      "start_date": "2010-08-11",
+      "resolution_date": "2010-09-20",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20100810a.htm",
+      "statement_text_sha256": "d10f2d31ede8adc49e6f8f9aea4b7cfc1798dfe90f76e10968dd08bc856335c0",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.54,
+        "UST3Y": 0.78,
+        "UST5Y": 1.44,
+        "UST7Y": 2.08,
+        "UST10Y": 2.72,
+        "UST30Y": 3.93
+      },
+      "yield_changes_bps": {
+        "UST2Y": -7.0,
+        "UST3Y": -5.0,
+        "UST5Y": -1.0,
+        "UST7Y": 2.0,
+        "UST10Y": 0.0,
+        "UST30Y": -6.0
+      }
+    },
+    {
+      "decision_date": "2010-09-21",
+      "next_decision_date": "2010-11-03",
+      "start_date": "2010-09-22",
+      "resolution_date": "2010-11-02",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20100921a.htm",
+      "statement_text_sha256": "49d0722afa11112a82b91bc0a1f2b25016b66f217747eb11ef40df463fc9b82e",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.44,
+        "UST3Y": 0.68,
+        "UST5Y": 1.33,
+        "UST7Y": 1.96,
+        "UST10Y": 2.56,
+        "UST30Y": 3.74
+      },
+      "yield_changes_bps": {
+        "UST2Y": -10.0,
+        "UST3Y": -17.0,
+        "UST5Y": -18.0,
+        "UST7Y": -9.0,
+        "UST10Y": 7.0,
+        "UST30Y": 19.0
+      }
+    },
+    {
+      "decision_date": "2010-11-03",
+      "next_decision_date": "2010-12-14",
+      "start_date": "2010-11-04",
+      "resolution_date": "2010-12-13",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20101103a.htm",
+      "statement_text_sha256": "54796edc73c645ac0f71d34b3b129e2c58f4a59a3daf15902aff3c28fe3bfe7e",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.33,
+        "UST3Y": 0.45,
+        "UST5Y": 1.04,
+        "UST7Y": 1.73,
+        "UST10Y": 2.53,
+        "UST30Y": 4.04
+      },
+      "yield_changes_bps": {
+        "UST2Y": 28.0,
+        "UST3Y": 53.0,
+        "UST5Y": 87.0,
+        "UST7Y": 91.0,
+        "UST10Y": 76.0,
+        "UST30Y": 35.0
+      }
+    },
+    {
+      "decision_date": "2010-12-14",
+      "next_decision_date": "2011-01-26",
+      "start_date": "2010-12-15",
+      "resolution_date": "2011-01-25",
+      "statement_url": "https://www.federalreserve.gov/newsevents/press/monetary/20101214a.htm",
+      "statement_text_sha256": "94d460c4dbc6611291935d198e07a48fc474e1b48545ca033b2ba2c264eb6c72",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.68,
+        "UST3Y": 1.08,
+        "UST5Y": 2.11,
+        "UST7Y": 2.88,
+        "UST10Y": 3.53,
+        "UST30Y": 4.59
+      },
+      "yield_changes_bps": {
+        "UST2Y": -6.0,
+        "UST3Y": -8.0,
+        "UST5Y": -15.0,
+        "UST7Y": -20.0,
+        "UST10Y": -18.0,
+        "UST30Y": -11.0
+      }
+    },
+    {
+      "decision_date": "2011-01-26",
+      "next_decision_date": "2011-03-15",
+      "start_date": "2011-01-27",
+      "resolution_date": "2011-03-14",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20110126a.htm",
+      "statement_text_sha256": "4037244610520b12c79dafde695d0c9999ea7432b1da6b7a5399cfa69f919cc1",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.59,
+        "UST3Y": 1.0,
+        "UST5Y": 1.98,
+        "UST7Y": 2.75,
+        "UST10Y": 3.42,
+        "UST30Y": 4.57
+      },
+      "yield_changes_bps": {
+        "UST2Y": 2.0,
+        "UST3Y": 7.0,
+        "UST5Y": 2.0,
+        "UST7Y": -5.0,
+        "UST10Y": -6.0,
+        "UST30Y": -5.0
+      }
+    },
+    {
+      "decision_date": "2011-03-15",
+      "next_decision_date": "2011-04-27",
+      "start_date": "2011-03-16",
+      "resolution_date": "2011-04-26",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20110315a.htm",
+      "statement_text_sha256": "02dfd08b4d0cbf633b63edc6dc5ef152c98fad349f3fa98b7b435e27d7576781",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.58,
+        "UST3Y": 0.98,
+        "UST5Y": 1.87,
+        "UST7Y": 2.56,
+        "UST10Y": 3.22,
+        "UST30Y": 4.38
+      },
+      "yield_changes_bps": {
+        "UST2Y": 7.0,
+        "UST3Y": 11.0,
+        "UST5Y": 18.0,
+        "UST7Y": 15.0,
+        "UST10Y": 12.0,
+        "UST30Y": 1.0
+      }
+    },
+    {
+      "decision_date": "2011-04-27",
+      "next_decision_date": "2011-06-22",
+      "start_date": "2011-04-28",
+      "resolution_date": "2011-06-21",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20110427a.htm",
+      "statement_text_sha256": "2c6a73140d4460ef8acc72d27ddeea71f870a22345bbb35fcb6f36dfdb3504db",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.62,
+        "UST3Y": 1.03,
+        "UST5Y": 2.0,
+        "UST7Y": 2.69,
+        "UST10Y": 3.34,
+        "UST30Y": 4.42
+      },
+      "yield_changes_bps": {
+        "UST2Y": -22.0,
+        "UST3Y": -34.0,
+        "UST5Y": -43.0,
+        "UST7Y": -42.0,
+        "UST10Y": -35.0,
+        "UST30Y": -21.0
+      }
+    },
+    {
+      "decision_date": "2011-06-22",
+      "next_decision_date": "2011-08-09",
+      "start_date": "2011-06-23",
+      "resolution_date": "2011-08-08",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20110622a.htm",
+      "statement_text_sha256": "c78ca2afa4257474b8794c6c4c20037d37fe0d46b3450ee0c39c01284e699550",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.35,
+        "UST3Y": 0.62,
+        "UST5Y": 1.48,
+        "UST7Y": 2.19,
+        "UST10Y": 2.93,
+        "UST30Y": 4.17
+      },
+      "yield_changes_bps": {
+        "UST2Y": -8.0,
+        "UST3Y": -17.0,
+        "UST5Y": -37.0,
+        "UST7Y": -44.0,
+        "UST10Y": -53.0,
+        "UST30Y": -49.0
+      }
+    },
+    {
+      "decision_date": "2011-08-09",
+      "next_decision_date": "2011-09-21",
+      "start_date": "2011-08-10",
+      "resolution_date": "2011-09-20",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20110809a.htm",
+      "statement_text_sha256": "2b8e66182eb2b9a17067e52fddabaef5dd7a1798f67de5f86cba8bbdf179756b",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.19,
+        "UST3Y": 0.33,
+        "UST5Y": 0.93,
+        "UST7Y": 1.52,
+        "UST10Y": 2.17,
+        "UST30Y": 3.54
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": -3.0,
+        "UST5Y": -8.0,
+        "UST7Y": -13.0,
+        "UST10Y": -22.0,
+        "UST30Y": -34.0
+      }
+    },
+    {
+      "decision_date": "2011-09-21",
+      "next_decision_date": "2011-11-02",
+      "start_date": "2011-09-22",
+      "resolution_date": "2011-11-01",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20110921a.htm",
+      "statement_text_sha256": "b5d3509234d5313eb3d0a706856f72de55e2aca2fe9f827984e9f1305d6358a8",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.2,
+        "UST3Y": 0.34,
+        "UST5Y": 0.79,
+        "UST7Y": 1.24,
+        "UST10Y": 1.72,
+        "UST30Y": 2.78
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 4.0,
+        "UST5Y": 11.0,
+        "UST7Y": 21.0,
+        "UST10Y": 29.0,
+        "UST30Y": 21.0
+      }
+    },
+    {
+      "decision_date": "2011-11-02",
+      "next_decision_date": "2011-12-13",
+      "start_date": "2011-11-03",
+      "resolution_date": "2011-12-12",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20111102a.htm",
+      "statement_text_sha256": "2d15c03c6636bbe544f4a21910a0592dd60e97d1ad73d6c564c0c2f2f24d831f",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.24,
+        "UST3Y": 0.39,
+        "UST5Y": 0.91,
+        "UST7Y": 1.48,
+        "UST10Y": 2.09,
+        "UST30Y": 3.1
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": -3.0,
+        "UST5Y": -4.0,
+        "UST7Y": -3.0,
+        "UST10Y": -6.0,
+        "UST30Y": -4.0
+      }
+    },
+    {
+      "decision_date": "2011-12-13",
+      "next_decision_date": "2012-01-25",
+      "start_date": "2011-12-14",
+      "resolution_date": "2012-01-24",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20111213a.htm",
+      "statement_text_sha256": "365df8b27560156c2ddc89e24d296f8e6f835d55b7f17fd92a41960a5e98ceff",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.25,
+        "UST3Y": 0.36,
+        "UST5Y": 0.86,
+        "UST7Y": 1.38,
+        "UST10Y": 1.92,
+        "UST30Y": 2.91
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 3.0,
+        "UST5Y": 6.0,
+        "UST7Y": 11.0,
+        "UST10Y": 16.0,
+        "UST30Y": 24.0
+      }
+    },
+    {
+      "decision_date": "2012-01-25",
+      "next_decision_date": "2012-03-13",
+      "start_date": "2012-01-26",
+      "resolution_date": "2012-03-12",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120125a.htm",
+      "statement_text_sha256": "f1cfb4be24ea8ad997fdeaff2740c38f58e3e1ea1711d412df938e0bfd0b955b",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.22,
+        "UST3Y": 0.31,
+        "UST5Y": 0.77,
+        "UST7Y": 1.34,
+        "UST10Y": 1.96,
+        "UST30Y": 3.1
+      },
+      "yield_changes_bps": {
+        "UST2Y": 11.0,
+        "UST3Y": 16.0,
+        "UST5Y": 15.0,
+        "UST7Y": 9.0,
+        "UST10Y": 8.0,
+        "UST30Y": 7.0
+      }
+    },
+    {
+      "decision_date": "2012-03-13",
+      "next_decision_date": "2012-04-25",
+      "start_date": "2012-03-14",
+      "resolution_date": "2012-04-24",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120313a.htm",
+      "statement_text_sha256": "ad7cecaa2dc3ce93592553e96b279e57b95dc3a1f033432c996c0b69ba8d65be",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.4,
+        "UST3Y": 0.6,
+        "UST5Y": 1.13,
+        "UST7Y": 1.69,
+        "UST10Y": 2.29,
+        "UST30Y": 3.43
+      },
+      "yield_changes_bps": {
+        "UST2Y": -13.0,
+        "UST3Y": -20.0,
+        "UST5Y": -27.0,
+        "UST7Y": -32.0,
+        "UST10Y": -29.0,
+        "UST30Y": -31.0
+      }
+    },
+    {
+      "decision_date": "2012-04-25",
+      "next_decision_date": "2012-06-20",
+      "start_date": "2012-04-26",
+      "resolution_date": "2012-06-19",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120425a.htm",
+      "statement_text_sha256": "36abc3385ba6c589dcaeb333bc2597765b675da0ef884ffad534d7c38ecafec1",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.26,
+        "UST3Y": 0.39,
+        "UST5Y": 0.83,
+        "UST7Y": 1.36,
+        "UST10Y": 1.98,
+        "UST30Y": 3.13
+      },
+      "yield_changes_bps": {
+        "UST2Y": 4.0,
+        "UST3Y": 0.0,
+        "UST5Y": -12.0,
+        "UST7Y": -27.0,
+        "UST10Y": -34.0,
+        "UST30Y": -40.0
+      }
+    },
+    {
+      "decision_date": "2012-06-20",
+      "next_decision_date": "2012-08-01",
+      "start_date": "2012-06-21",
+      "resolution_date": "2012-07-31",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120620a.htm",
+      "statement_text_sha256": "d7862be97ed2f1e8851889a3f90491ec922a93351335724f0d0c38fb12347886",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.32,
+        "UST3Y": 0.41,
+        "UST5Y": 0.73,
+        "UST7Y": 1.1,
+        "UST10Y": 1.63,
+        "UST30Y": 2.68
+      },
+      "yield_changes_bps": {
+        "UST2Y": -9.0,
+        "UST3Y": -11.0,
+        "UST5Y": -13.0,
+        "UST7Y": -12.0,
+        "UST10Y": -12.0,
+        "UST30Y": -12.0
+      }
+    },
+    {
+      "decision_date": "2012-08-01",
+      "next_decision_date": "2012-09-13",
+      "start_date": "2012-08-02",
+      "resolution_date": "2012-09-12",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120801a.htm",
+      "statement_text_sha256": "60b2e42c761ac9a8952be565450fb0409ff1a3de3fb8c0a6e9e2db813176bc0b",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.24,
+        "UST3Y": 0.31,
+        "UST5Y": 0.61,
+        "UST7Y": 0.98,
+        "UST10Y": 1.51,
+        "UST30Y": 2.55
+      },
+      "yield_changes_bps": {
+        "UST2Y": 1.0,
+        "UST3Y": 2.0,
+        "UST5Y": 9.0,
+        "UST7Y": 19.0,
+        "UST10Y": 26.0,
+        "UST30Y": 37.0
+      }
+    },
+    {
+      "decision_date": "2012-09-13",
+      "next_decision_date": "2012-10-24",
+      "start_date": "2012-09-14",
+      "resolution_date": "2012-10-23",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120913a.htm",
+      "statement_text_sha256": "4ab723fbec6a738f05d47432d3c7cd30f73d585b089878583a084aa655359975",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.27,
+        "UST3Y": 0.35,
+        "UST5Y": 0.72,
+        "UST7Y": 1.23,
+        "UST10Y": 1.88,
+        "UST30Y": 3.09
+      },
+      "yield_changes_bps": {
+        "UST2Y": 2.0,
+        "UST3Y": 6.0,
+        "UST5Y": 5.0,
+        "UST7Y": -2.0,
+        "UST10Y": -9.0,
+        "UST30Y": -18.0
+      }
+    },
+    {
+      "decision_date": "2012-10-24",
+      "next_decision_date": "2012-12-12",
+      "start_date": "2012-10-25",
+      "resolution_date": "2012-12-11",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20121024a.htm",
+      "statement_text_sha256": "e8a3cd67a64ee615b50fab05d9ad2419a8dc917c738d940263e2a23b3c4e7773",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.31,
+        "UST3Y": 0.43,
+        "UST5Y": 0.82,
+        "UST7Y": 1.28,
+        "UST10Y": 1.86,
+        "UST30Y": 2.98
+      },
+      "yield_changes_bps": {
+        "UST2Y": -7.0,
+        "UST3Y": -11.0,
+        "UST5Y": -18.0,
+        "UST7Y": -22.0,
+        "UST10Y": -20.0,
+        "UST30Y": -15.0
+      }
+    },
+    {
+      "decision_date": "2012-12-12",
+      "next_decision_date": "2013-01-30",
+      "start_date": "2012-12-13",
+      "resolution_date": "2013-01-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20121212a.htm",
+      "statement_text_sha256": "bb5cd05f17ebb33d471b28642d3e7b7386201aba9d8c1e2090662fdbcd4ac19c",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.27,
+        "UST3Y": 0.34,
+        "UST5Y": 0.7,
+        "UST7Y": 1.15,
+        "UST10Y": 1.74,
+        "UST30Y": 2.9
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 9.0,
+        "UST5Y": 20.0,
+        "UST7Y": 25.0,
+        "UST10Y": 29.0,
+        "UST30Y": 28.0
+      }
+    },
+    {
+      "decision_date": "2013-01-30",
+      "next_decision_date": "2013-03-20",
+      "start_date": "2013-01-31",
+      "resolution_date": "2013-03-19",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20130130a.htm",
+      "statement_text_sha256": "568685ecc1007b36b9edbc85b249b9de0b81bc53e5ab5079d9efea42c1f439ba",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.27,
+        "UST3Y": 0.42,
+        "UST5Y": 0.88,
+        "UST7Y": 1.38,
+        "UST10Y": 2.02,
+        "UST30Y": 3.17
+      },
+      "yield_changes_bps": {
+        "UST2Y": -3.0,
+        "UST3Y": -5.0,
+        "UST5Y": -9.0,
+        "UST7Y": -10.0,
+        "UST10Y": -10.0,
+        "UST30Y": -4.0
+      }
+    },
+    {
+      "decision_date": "2013-03-20",
+      "next_decision_date": "2013-05-01",
+      "start_date": "2013-03-21",
+      "resolution_date": "2013-04-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20130320a.htm",
+      "statement_text_sha256": "8ed90d7bb1b0c3a9ddb042d653de5178fe4393d92fddff9cedaf5419b1e636df",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.27,
+        "UST3Y": 0.38,
+        "UST5Y": 0.81,
+        "UST7Y": 1.3,
+        "UST10Y": 1.95,
+        "UST30Y": 3.15
+      },
+      "yield_changes_bps": {
+        "UST2Y": -5.0,
+        "UST3Y": -6.0,
+        "UST5Y": -13.0,
+        "UST7Y": -19.0,
+        "UST10Y": -25.0,
+        "UST30Y": -27.0
+      }
+    },
+    {
+      "decision_date": "2013-05-01",
+      "next_decision_date": "2013-06-19",
+      "start_date": "2013-05-02",
+      "resolution_date": "2013-06-18",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20130501a.htm",
+      "statement_text_sha256": "eacb2eb3c39d13a1ecb6afc7b48939f586c0f3318a21184c3319d7c353c98d7b",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.2,
+        "UST3Y": 0.3,
+        "UST5Y": 0.65,
+        "UST7Y": 1.07,
+        "UST10Y": 1.66,
+        "UST30Y": 2.82
+      },
+      "yield_changes_bps": {
+        "UST2Y": 7.0,
+        "UST3Y": 18.0,
+        "UST5Y": 42.0,
+        "UST7Y": 51.0,
+        "UST10Y": 54.0,
+        "UST30Y": 52.0
+      }
+    },
+    {
+      "decision_date": "2013-06-19",
+      "next_decision_date": "2013-07-31",
+      "start_date": "2013-06-20",
+      "resolution_date": "2013-07-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20130619a.htm",
+      "statement_text_sha256": "16704160e43ecb2c0e3fe538448772940a4ba0f4093b3cd11cd1ba76db225d97",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.33,
+        "UST3Y": 0.62,
+        "UST5Y": 1.31,
+        "UST7Y": 1.84,
+        "UST10Y": 2.41,
+        "UST30Y": 3.49
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": 0.0,
+        "UST5Y": 8.0,
+        "UST7Y": 18.0,
+        "UST10Y": 22.0,
+        "UST30Y": 18.0
+      }
+    },
+    {
+      "decision_date": "2013-07-31",
+      "next_decision_date": "2013-09-18",
+      "start_date": "2013-08-01",
+      "resolution_date": "2013-09-17",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20130731a.htm",
+      "statement_text_sha256": "dd79e4ebe20fd1c50cb3e452179111293e1a6b76c3b2fe4283654376bd30435d",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.35,
+        "UST3Y": 0.65,
+        "UST5Y": 1.49,
+        "UST7Y": 2.15,
+        "UST10Y": 2.74,
+        "UST30Y": 3.77
+      },
+      "yield_changes_bps": {
+        "UST2Y": 4.0,
+        "UST3Y": 13.0,
+        "UST5Y": 13.0,
+        "UST7Y": 11.0,
+        "UST10Y": 12.0,
+        "UST30Y": 7.0
+      }
+    },
+    {
+      "decision_date": "2013-09-18",
+      "next_decision_date": "2013-10-30",
+      "start_date": "2013-09-19",
+      "resolution_date": "2013-10-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20130918a.htm",
+      "statement_text_sha256": "3abe8fe3b678e255ce44618fa2b62ba6c7ee01fa9e0324c916d905587910f3b5",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.34,
+        "UST3Y": 0.69,
+        "UST5Y": 1.49,
+        "UST7Y": 2.13,
+        "UST10Y": 2.76,
+        "UST30Y": 3.8
+      },
+      "yield_changes_bps": {
+        "UST2Y": -3.0,
+        "UST3Y": -10.0,
+        "UST5Y": -20.0,
+        "UST7Y": -23.0,
+        "UST10Y": -23.0,
+        "UST30Y": -18.0
+      }
+    },
+    {
+      "decision_date": "2013-10-30",
+      "next_decision_date": "2013-12-18",
+      "start_date": "2013-10-31",
+      "resolution_date": "2013-12-17",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20131030a.htm",
+      "statement_text_sha256": "0b8b60abeb40a394bb32e369a8a4d7a7bb5a839cffc3f865f304a2bb24076112",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.31,
+        "UST3Y": 0.57,
+        "UST5Y": 1.31,
+        "UST7Y": 1.95,
+        "UST10Y": 2.57,
+        "UST30Y": 3.63
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 8.0,
+        "UST5Y": 21.0,
+        "UST7Y": 27.0,
+        "UST10Y": 28.0,
+        "UST30Y": 25.0
+      }
+    },
+    {
+      "decision_date": "2013-12-18",
+      "next_decision_date": "2014-01-29",
+      "start_date": "2013-12-19",
+      "resolution_date": "2014-01-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20131218a.htm",
+      "statement_text_sha256": "45af2a40121dfa385a7129cd7225bdb0af70b0066fd257804d0285e283746379",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.35,
+        "UST3Y": 0.7,
+        "UST5Y": 1.63,
+        "UST7Y": 2.35,
+        "UST10Y": 2.94,
+        "UST30Y": 3.91
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 5.0,
+        "UST5Y": -4.0,
+        "UST7Y": -13.0,
+        "UST10Y": -17.0,
+        "UST30Y": -23.0
+      }
+    },
+    {
+      "decision_date": "2014-01-29",
+      "next_decision_date": "2014-03-19",
+      "start_date": "2014-01-30",
+      "resolution_date": "2014-03-18",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20140129a.htm",
+      "statement_text_sha256": "219ec96efd4da6c59859666ec116159700caacb5ad33fc9a0bd547e16fedb1cc",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.36,
+        "UST3Y": 0.72,
+        "UST5Y": 1.55,
+        "UST7Y": 2.19,
+        "UST10Y": 2.72,
+        "UST30Y": 3.65
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": 3.0,
+        "UST5Y": 1.0,
+        "UST7Y": -3.0,
+        "UST10Y": -4.0,
+        "UST30Y": -3.0
+      }
+    },
+    {
+      "decision_date": "2014-03-19",
+      "next_decision_date": "2014-04-30",
+      "start_date": "2014-03-20",
+      "resolution_date": "2014-04-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20140319a.htm",
+      "statement_text_sha256": "d8048eb70a6a4add369a60e56cfaf63c969e999ad6f44f4a4f8f2ba87e8d8e3a",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.45,
+        "UST3Y": 0.9,
+        "UST5Y": 1.73,
+        "UST7Y": 2.31,
+        "UST10Y": 2.79,
+        "UST30Y": 3.67
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 1.0,
+        "UST5Y": 1.0,
+        "UST7Y": -2.0,
+        "UST10Y": -8.0,
+        "UST30Y": -18.0
+      }
+    },
+    {
+      "decision_date": "2014-04-30",
+      "next_decision_date": "2014-06-18",
+      "start_date": "2014-05-01",
+      "resolution_date": "2014-06-17",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20140430a.htm",
+      "statement_text_sha256": "9f1915d4b3b2f4ce85573f408d394a90918708f27d8b1cd98677e3d85ce02574",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.41,
+        "UST3Y": 0.86,
+        "UST5Y": 1.66,
+        "UST7Y": 2.21,
+        "UST10Y": 2.63,
+        "UST30Y": 3.41
+      },
+      "yield_changes_bps": {
+        "UST2Y": 10.0,
+        "UST3Y": 13.0,
+        "UST5Y": 11.0,
+        "UST7Y": 6.0,
+        "UST10Y": 3.0,
+        "UST30Y": 3.0
+      }
+    },
+    {
+      "decision_date": "2014-06-18",
+      "next_decision_date": "2014-07-30",
+      "start_date": "2014-06-19",
+      "resolution_date": "2014-07-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20140618a.htm",
+      "statement_text_sha256": "8e77dbb5b19ee7933d6771af6fa650873559cecb9596c644c880a26a5d3194ce",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.48,
+        "UST3Y": 0.94,
+        "UST5Y": 1.71,
+        "UST7Y": 2.22,
+        "UST10Y": 2.64,
+        "UST30Y": 3.47
+      },
+      "yield_changes_bps": {
+        "UST2Y": 6.0,
+        "UST3Y": 6.0,
+        "UST5Y": -1.0,
+        "UST7Y": -8.0,
+        "UST10Y": -17.0,
+        "UST30Y": -25.0
+      }
+    },
+    {
+      "decision_date": "2014-07-30",
+      "next_decision_date": "2014-09-17",
+      "start_date": "2014-07-31",
+      "resolution_date": "2014-09-16",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20140730a.htm",
+      "statement_text_sha256": "df3d7c7b88673a7601cfad238feca91ff6cdfbe1347773ed8ebc91397f2aa7d6",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.53,
+        "UST3Y": 1.02,
+        "UST5Y": 1.76,
+        "UST7Y": 2.24,
+        "UST10Y": 2.58,
+        "UST30Y": 3.32
+      },
+      "yield_changes_bps": {
+        "UST2Y": 2.0,
+        "UST3Y": 2.0,
+        "UST5Y": 2.0,
+        "UST7Y": 2.0,
+        "UST10Y": 2.0,
+        "UST30Y": 4.0
+      }
+    },
+    {
+      "decision_date": "2014-09-17",
+      "next_decision_date": "2014-10-29",
+      "start_date": "2014-09-18",
+      "resolution_date": "2014-10-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20140917a.htm",
+      "statement_text_sha256": "f7a35e06b791a038083e9f1e7772f513e71081356492a2019d076c6359a5fd97",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.59,
+        "UST3Y": 1.1,
+        "UST5Y": 1.85,
+        "UST7Y": 2.32,
+        "UST10Y": 2.63,
+        "UST30Y": 3.36
+      },
+      "yield_changes_bps": {
+        "UST2Y": -17.0,
+        "UST3Y": -26.0,
+        "UST5Y": -32.0,
+        "UST7Y": -35.0,
+        "UST10Y": -33.0,
+        "UST30Y": -30.0
+      }
+    },
+    {
+      "decision_date": "2014-10-29",
+      "next_decision_date": "2014-12-17",
+      "start_date": "2014-10-30",
+      "resolution_date": "2014-12-16",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20141029a.htm",
+      "statement_text_sha256": "f330d6b20f7d4ea20c604e08696188662aad3cbb4a7a67de34e0b3016c614616",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.48,
+        "UST3Y": 0.91,
+        "UST5Y": 1.58,
+        "UST7Y": 2.02,
+        "UST10Y": 2.32,
+        "UST30Y": 3.04
+      },
+      "yield_changes_bps": {
+        "UST2Y": 10.0,
+        "UST3Y": 8.0,
+        "UST5Y": -5.0,
+        "UST7Y": -17.0,
+        "UST10Y": -25.0,
+        "UST30Y": -35.0
+      }
+    },
+    {
+      "decision_date": "2014-12-17",
+      "next_decision_date": "2015-01-28",
+      "start_date": "2014-12-18",
+      "resolution_date": "2015-01-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20141217a.htm",
+      "statement_text_sha256": "4ac319e1ae02d777c57dd94c2cc6d8b4a7122c90597e4078e3df6b373689aab8",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.67,
+        "UST3Y": 1.1,
+        "UST5Y": 1.68,
+        "UST7Y": 2.01,
+        "UST10Y": 2.22,
+        "UST30Y": 2.82
+      },
+      "yield_changes_bps": {
+        "UST2Y": -13.0,
+        "UST3Y": -23.0,
+        "UST5Y": -34.0,
+        "UST7Y": -39.0,
+        "UST10Y": -39.0,
+        "UST30Y": -42.0
+      }
+    },
+    {
+      "decision_date": "2015-01-28",
+      "next_decision_date": "2015-03-18",
+      "start_date": "2015-01-29",
+      "resolution_date": "2015-03-17",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20150128a.htm",
+      "statement_text_sha256": "9b69a5c15b7099d069b083cc9987efcb409745a856a23d217c198c2e8d5eb398",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.51,
+        "UST3Y": 0.84,
+        "UST5Y": 1.28,
+        "UST7Y": 1.59,
+        "UST10Y": 1.77,
+        "UST30Y": 2.33
+      },
+      "yield_changes_bps": {
+        "UST2Y": 19.0,
+        "UST3Y": 23.0,
+        "UST5Y": 28.0,
+        "UST7Y": 28.0,
+        "UST10Y": 29.0,
+        "UST30Y": 28.0
+      }
+    },
+    {
+      "decision_date": "2015-03-18",
+      "next_decision_date": "2015-04-29",
+      "start_date": "2015-03-19",
+      "resolution_date": "2015-04-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20150318a.htm",
+      "statement_text_sha256": "654513332890bd7568f4cbcf2ad7e377c061a84e1813fb2dd4b5871d49ee928a",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.63,
+        "UST3Y": 0.99,
+        "UST5Y": 1.48,
+        "UST7Y": 1.79,
+        "UST10Y": 1.98,
+        "UST30Y": 2.54
+      },
+      "yield_changes_bps": {
+        "UST2Y": -7.0,
+        "UST3Y": -9.0,
+        "UST5Y": -9.0,
+        "UST7Y": -4.0,
+        "UST10Y": 2.0,
+        "UST30Y": 14.0
+      }
+    },
+    {
+      "decision_date": "2015-04-29",
+      "next_decision_date": "2015-06-17",
+      "start_date": "2015-04-30",
+      "resolution_date": "2015-06-16",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20150429a.htm",
+      "statement_text_sha256": "dc9c5fc1110d1c994cb14d787f18753356ddbfcc6f7f5eeeaac9740a648d1113",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.58,
+        "UST3Y": 0.91,
+        "UST5Y": 1.43,
+        "UST7Y": 1.79,
+        "UST10Y": 2.05,
+        "UST30Y": 2.75
+      },
+      "yield_changes_bps": {
+        "UST2Y": 13.0,
+        "UST3Y": 17.0,
+        "UST5Y": 25.0,
+        "UST7Y": 28.0,
+        "UST10Y": 27.0,
+        "UST30Y": 31.0
+      }
+    },
+    {
+      "decision_date": "2015-06-17",
+      "next_decision_date": "2015-07-29",
+      "start_date": "2015-06-18",
+      "resolution_date": "2015-07-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20150617a.htm",
+      "statement_text_sha256": "7898ee4760be3e6afb49236c9bcb353ea3989052494c3bac49a9dc0886fccbb5",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.66,
+        "UST3Y": 1.03,
+        "UST5Y": 1.65,
+        "UST7Y": 2.08,
+        "UST10Y": 2.35,
+        "UST30Y": 3.14
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 0.0,
+        "UST5Y": -4.0,
+        "UST7Y": -9.0,
+        "UST10Y": -9.0,
+        "UST30Y": -18.0
+      }
+    },
+    {
+      "decision_date": "2015-07-29",
+      "next_decision_date": "2015-09-17",
+      "start_date": "2015-07-30",
+      "resolution_date": "2015-09-16",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20150729a.htm",
+      "statement_text_sha256": "9aa5da0c4afea77824b9d5ff9812282c30ed6c9b82ae11be8a9a9ff1ae8a66f3",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.72,
+        "UST3Y": 1.07,
+        "UST5Y": 1.62,
+        "UST7Y": 2.02,
+        "UST10Y": 2.28,
+        "UST30Y": 2.96
+      },
+      "yield_changes_bps": {
+        "UST2Y": 10.0,
+        "UST3Y": 6.0,
+        "UST5Y": 0.0,
+        "UST7Y": -1.0,
+        "UST10Y": 2.0,
+        "UST30Y": 12.0
+      }
+    },
+    {
+      "decision_date": "2015-09-17",
+      "next_decision_date": "2015-10-28",
+      "start_date": "2015-09-18",
+      "resolution_date": "2015-10-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20150917a.htm",
+      "statement_text_sha256": "146d84f6b6910c2e9b7bc88f25dc845530ca343f864b3e24d854ca1ecf9c8c66",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.69,
+        "UST3Y": 0.97,
+        "UST5Y": 1.45,
+        "UST7Y": 1.83,
+        "UST10Y": 2.13,
+        "UST30Y": 2.93
+      },
+      "yield_changes_bps": {
+        "UST2Y": -4.0,
+        "UST3Y": -5.0,
+        "UST5Y": -7.0,
+        "UST7Y": -8.0,
+        "UST10Y": -8.0,
+        "UST30Y": -7.0
+      }
+    },
+    {
+      "decision_date": "2015-10-28",
+      "next_decision_date": "2015-12-16",
+      "start_date": "2015-10-29",
+      "resolution_date": "2015-12-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20151028a.htm",
+      "statement_text_sha256": "027f4afb1d1845a5a07fc088fb271a3b94bf18217e18afc2690cd8ae3b634508",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.75,
+        "UST3Y": 1.05,
+        "UST5Y": 1.53,
+        "UST7Y": 1.9,
+        "UST10Y": 2.19,
+        "UST30Y": 2.96
+      },
+      "yield_changes_bps": {
+        "UST2Y": 23.0,
+        "UST3Y": 24.0,
+        "UST5Y": 18.0,
+        "UST7Y": 16.0,
+        "UST10Y": 9.0,
+        "UST30Y": 4.0
+      }
+    },
+    {
+      "decision_date": "2015-12-16",
+      "next_decision_date": "2016-01-27",
+      "start_date": "2015-12-17",
+      "resolution_date": "2016-01-26",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20151216a.htm",
+      "statement_text_sha256": "8ac8e9b95058aa882700cd082e88056e44145b8ba94d68ceefdb48e1d39a3163",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 1.0,
+        "UST3Y": 1.33,
+        "UST5Y": 1.73,
+        "UST7Y": 2.05,
+        "UST10Y": 2.24,
+        "UST30Y": 2.94
+      },
+      "yield_changes_bps": {
+        "UST2Y": -15.0,
+        "UST3Y": -26.0,
+        "UST5Y": -28.0,
+        "UST7Y": -29.0,
+        "UST10Y": -23.0,
+        "UST30Y": -15.0
+      }
+    },
+    {
+      "decision_date": "2016-01-27",
+      "next_decision_date": "2016-03-16",
+      "start_date": "2016-01-28",
+      "resolution_date": "2016-03-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20160127a.htm",
+      "statement_text_sha256": "b370d0e772e1641f000570b2fd95c0c138dcac1cf98b183727dcae2a30d22510",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.83,
+        "UST3Y": 1.05,
+        "UST5Y": 1.4,
+        "UST7Y": 1.75,
+        "UST10Y": 2.0,
+        "UST30Y": 2.79
+      },
+      "yield_changes_bps": {
+        "UST2Y": 15.0,
+        "UST3Y": 11.0,
+        "UST5Y": 10.0,
+        "UST7Y": 3.0,
+        "UST10Y": -3.0,
+        "UST30Y": -6.0
+      }
+    },
+    {
+      "decision_date": "2016-03-16",
+      "next_decision_date": "2016-04-27",
+      "start_date": "2016-03-17",
+      "resolution_date": "2016-04-26",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20160316a.htm",
+      "statement_text_sha256": "403d2da0db7e7d2f7114616afd35f1be6d940e3e4c76b01432d643c36f08fd77",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.87,
+        "UST3Y": 1.04,
+        "UST5Y": 1.39,
+        "UST7Y": 1.7,
+        "UST10Y": 1.91,
+        "UST30Y": 2.69
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 0.0,
+        "UST5Y": 1.0,
+        "UST7Y": 2.0,
+        "UST10Y": 3.0,
+        "UST30Y": 7.0
+      }
+    },
+    {
+      "decision_date": "2016-04-27",
+      "next_decision_date": "2016-06-15",
+      "start_date": "2016-04-28",
+      "resolution_date": "2016-06-14",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20160427a.htm",
+      "statement_text_sha256": "4ce183439f1dd2706e83519defcce64deba684cd727705d1926124cd9b57f23a",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.78,
+        "UST3Y": 0.93,
+        "UST5Y": 1.28,
+        "UST7Y": 1.6,
+        "UST10Y": 1.84,
+        "UST30Y": 2.68
+      },
+      "yield_changes_bps": {
+        "UST2Y": -4.0,
+        "UST3Y": -8.0,
+        "UST5Y": -13.0,
+        "UST7Y": -18.0,
+        "UST10Y": -22.0,
+        "UST30Y": -25.0
+      }
+    },
+    {
+      "decision_date": "2016-06-15",
+      "next_decision_date": "2016-07-27",
+      "start_date": "2016-06-16",
+      "resolution_date": "2016-07-26",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20160615a.htm",
+      "statement_text_sha256": "e1db5d0abe783f8279ffd610ccd798154dda3eb9cb972a50366fddb2a529d9b7",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.7,
+        "UST3Y": 0.81,
+        "UST5Y": 1.1,
+        "UST7Y": 1.37,
+        "UST10Y": 1.57,
+        "UST30Y": 2.39
+      },
+      "yield_changes_bps": {
+        "UST2Y": 5.0,
+        "UST3Y": 6.0,
+        "UST5Y": 5.0,
+        "UST7Y": 3.0,
+        "UST10Y": 0.0,
+        "UST30Y": -11.0
+      }
+    },
+    {
+      "decision_date": "2016-07-27",
+      "next_decision_date": "2016-09-21",
+      "start_date": "2016-07-28",
+      "resolution_date": "2016-09-20",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20160727a.htm",
+      "statement_text_sha256": "de6e5080b14f07540c2f3ab322e55b66d7d151da2a5fa42e828501fc2f538726",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.72,
+        "UST3Y": 0.82,
+        "UST5Y": 1.09,
+        "UST7Y": 1.35,
+        "UST10Y": 1.52,
+        "UST30Y": 2.23
+      },
+      "yield_changes_bps": {
+        "UST2Y": 7.0,
+        "UST3Y": 11.0,
+        "UST5Y": 11.0,
+        "UST7Y": 15.0,
+        "UST10Y": 17.0,
+        "UST30Y": 20.0
+      }
+    },
+    {
+      "decision_date": "2016-09-21",
+      "next_decision_date": "2016-11-02",
+      "start_date": "2016-09-22",
+      "resolution_date": "2016-11-01",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20160921a.htm",
+      "statement_text_sha256": "25413b1da7a78166c40a9371185eb3e9a1a80d211f52660aa300560ac67a1194",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.79,
+        "UST3Y": 0.91,
+        "UST5Y": 1.18,
+        "UST7Y": 1.46,
+        "UST10Y": 1.63,
+        "UST30Y": 2.34
+      },
+      "yield_changes_bps": {
+        "UST2Y": 4.0,
+        "UST3Y": 8.0,
+        "UST5Y": 12.0,
+        "UST7Y": 15.0,
+        "UST10Y": 20.0,
+        "UST30Y": 24.0
+      }
+    },
+    {
+      "decision_date": "2016-11-02",
+      "next_decision_date": "2016-12-14",
+      "start_date": "2016-11-03",
+      "resolution_date": "2016-12-13",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20161102a.htm",
+      "statement_text_sha256": "66a55c249fb70209406dcdb06262b18423d602ba59004ce60c49441f18bdc348",
+      "target_midpoint_pct": 0.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.81,
+        "UST3Y": 0.98,
+        "UST5Y": 1.26,
+        "UST7Y": 1.58,
+        "UST10Y": 1.82,
+        "UST30Y": 2.6
+      },
+      "yield_changes_bps": {
+        "UST2Y": 36.0,
+        "UST3Y": 48.0,
+        "UST5Y": 66.0,
+        "UST7Y": 68.0,
+        "UST10Y": 66.0,
+        "UST30Y": 54.0
+      }
+    },
+    {
+      "decision_date": "2016-12-14",
+      "next_decision_date": "2017-02-01",
+      "start_date": "2016-12-15",
+      "resolution_date": "2017-01-31",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20161214a.htm",
+      "statement_text_sha256": "0130d45a9dc207d69667ac7fa2248edef589839ad0c5ca5a985ea86bcd89585d",
+      "target_midpoint_pct": 0.625,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 1.29,
+        "UST3Y": 1.61,
+        "UST5Y": 2.1,
+        "UST7Y": 2.42,
+        "UST10Y": 2.6,
+        "UST30Y": 3.16
+      },
+      "yield_changes_bps": {
+        "UST2Y": -10.0,
+        "UST3Y": -15.0,
+        "UST5Y": -20.0,
+        "UST7Y": -18.0,
+        "UST10Y": -15.0,
+        "UST30Y": -11.0
+      }
+    },
+    {
+      "decision_date": "2017-02-01",
+      "next_decision_date": "2017-03-15",
+      "start_date": "2017-02-02",
+      "resolution_date": "2017-03-14",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20170201a.htm",
+      "statement_text_sha256": "ee358f018b475f7a829faf4c74099b47d51f339430e64154ae3225109aaf8d5c",
+      "target_midpoint_pct": 0.625,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.21,
+        "UST3Y": 1.48,
+        "UST5Y": 1.92,
+        "UST7Y": 2.27,
+        "UST10Y": 2.48,
+        "UST30Y": 3.09
+      },
+      "yield_changes_bps": {
+        "UST2Y": 19.0,
+        "UST3Y": 20.0,
+        "UST5Y": 21.0,
+        "UST7Y": 15.0,
+        "UST10Y": 12.0,
+        "UST30Y": 8.0
+      }
+    },
+    {
+      "decision_date": "2017-03-15",
+      "next_decision_date": "2017-05-03",
+      "start_date": "2017-03-16",
+      "resolution_date": "2017-05-02",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20170315a.htm",
+      "statement_text_sha256": "14229e03ef8b98e7e91359e5dffc4199668bb9fc266557b46dc3a2c6ed94b040",
+      "target_midpoint_pct": 0.875,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 1.35,
+        "UST3Y": 1.63,
+        "UST5Y": 2.05,
+        "UST7Y": 2.34,
+        "UST10Y": 2.53,
+        "UST30Y": 3.14
+      },
+      "yield_changes_bps": {
+        "UST2Y": -8.0,
+        "UST3Y": -18.0,
+        "UST5Y": -24.0,
+        "UST7Y": -25.0,
+        "UST10Y": -24.0,
+        "UST30Y": -17.0
+      }
+    },
+    {
+      "decision_date": "2017-05-03",
+      "next_decision_date": "2017-06-14",
+      "start_date": "2017-05-04",
+      "resolution_date": "2017-06-13",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20170503a.htm",
+      "statement_text_sha256": "0c24d6e9d4345c0fe4f78e763bab2402d27484df6f16208d14185d92e066ea10",
+      "target_midpoint_pct": 0.875,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.32,
+        "UST3Y": 1.51,
+        "UST5Y": 1.88,
+        "UST7Y": 2.17,
+        "UST10Y": 2.36,
+        "UST30Y": 3.0
+      },
+      "yield_changes_bps": {
+        "UST2Y": 6.0,
+        "UST3Y": 0.0,
+        "UST5Y": -9.0,
+        "UST7Y": -15.0,
+        "UST10Y": -15.0,
+        "UST30Y": -13.0
+      }
+    },
+    {
+      "decision_date": "2017-06-14",
+      "next_decision_date": "2017-07-26",
+      "start_date": "2017-06-15",
+      "resolution_date": "2017-07-25",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20170614a.htm",
+      "statement_text_sha256": "dc9722d556bb7763a36b5edf2658a35b0581423644144e63ca249d3315dd01cd",
+      "target_midpoint_pct": 1.125,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 1.35,
+        "UST3Y": 1.49,
+        "UST5Y": 1.76,
+        "UST7Y": 1.98,
+        "UST10Y": 2.16,
+        "UST30Y": 2.78
+      },
+      "yield_changes_bps": {
+        "UST2Y": 5.0,
+        "UST3Y": 7.0,
+        "UST5Y": 14.0,
+        "UST7Y": 17.0,
+        "UST10Y": 17.0,
+        "UST30Y": 13.0
+      }
+    },
+    {
+      "decision_date": "2017-07-26",
+      "next_decision_date": "2017-09-20",
+      "start_date": "2017-07-27",
+      "resolution_date": "2017-09-19",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20170726a.htm",
+      "statement_text_sha256": "1850a8f1a6b2701d8fd5bba07d6b41d5685b7a14b6a52cbba7e194c583d2ad17",
+      "target_midpoint_pct": 1.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.36,
+        "UST3Y": 1.52,
+        "UST5Y": 1.84,
+        "UST7Y": 2.12,
+        "UST10Y": 2.32,
+        "UST30Y": 2.93
+      },
+      "yield_changes_bps": {
+        "UST2Y": 4.0,
+        "UST3Y": 3.0,
+        "UST5Y": 0.0,
+        "UST7Y": -5.0,
+        "UST10Y": -8.0,
+        "UST30Y": -12.0
+      }
+    },
+    {
+      "decision_date": "2017-09-20",
+      "next_decision_date": "2017-11-01",
+      "start_date": "2017-09-21",
+      "resolution_date": "2017-10-31",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20170920a.htm",
+      "statement_text_sha256": "0ccf0504773c09f7bc8a64985a105e8b8cba3851f3d0f40174034d38f175beb5",
+      "target_midpoint_pct": 1.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.45,
+        "UST3Y": 1.59,
+        "UST5Y": 1.89,
+        "UST7Y": 2.11,
+        "UST10Y": 2.27,
+        "UST30Y": 2.8
+      },
+      "yield_changes_bps": {
+        "UST2Y": 15.0,
+        "UST3Y": 14.0,
+        "UST5Y": 12.0,
+        "UST7Y": 12.0,
+        "UST10Y": 11.0,
+        "UST30Y": 8.0
+      }
+    },
+    {
+      "decision_date": "2017-11-01",
+      "next_decision_date": "2017-12-13",
+      "start_date": "2017-11-02",
+      "resolution_date": "2017-12-12",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20171101a.htm",
+      "statement_text_sha256": "cabb3a83d0ac01cc5580edd8bf7a1c4bbd3474dd0cc83ed91fa09ffdd399cc42",
+      "target_midpoint_pct": 1.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.61,
+        "UST3Y": 1.73,
+        "UST5Y": 2.0,
+        "UST7Y": 2.21,
+        "UST10Y": 2.35,
+        "UST30Y": 2.83
+      },
+      "yield_changes_bps": {
+        "UST2Y": 22.0,
+        "UST3Y": 22.0,
+        "UST5Y": 18.0,
+        "UST7Y": 11.0,
+        "UST10Y": 5.0,
+        "UST30Y": -4.0
+      }
+    },
+    {
+      "decision_date": "2017-12-13",
+      "next_decision_date": "2018-01-31",
+      "start_date": "2017-12-14",
+      "resolution_date": "2018-01-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20171213a.htm",
+      "statement_text_sha256": "c5396c318f4a50829038b538efde2399024b6d403aa451693df83d4e90fc4e56",
+      "target_midpoint_pct": 1.375,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 1.82,
+        "UST3Y": 1.92,
+        "UST5Y": 2.14,
+        "UST7Y": 2.27,
+        "UST10Y": 2.35,
+        "UST30Y": 2.71
+      },
+      "yield_changes_bps": {
+        "UST2Y": 31.0,
+        "UST3Y": 35.0,
+        "UST5Y": 37.0,
+        "UST7Y": 38.0,
+        "UST10Y": 38.0,
+        "UST30Y": 27.0
+      }
+    },
+    {
+      "decision_date": "2018-01-31",
+      "next_decision_date": "2018-03-21",
+      "start_date": "2018-02-01",
+      "resolution_date": "2018-03-20",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20180131a.htm",
+      "statement_text_sha256": "0be1d31ccca576ed690309846601d7d3230d43d3cec29765f1b1c4a18ba49496",
+      "target_midpoint_pct": 1.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.16,
+        "UST3Y": 2.33,
+        "UST5Y": 2.56,
+        "UST7Y": 2.72,
+        "UST10Y": 2.78,
+        "UST30Y": 3.01
+      },
+      "yield_changes_bps": {
+        "UST2Y": 18.0,
+        "UST3Y": 16.0,
+        "UST5Y": 13.0,
+        "UST7Y": 10.0,
+        "UST10Y": 11.0,
+        "UST30Y": 11.0
+      }
+    },
+    {
+      "decision_date": "2018-03-21",
+      "next_decision_date": "2018-05-02",
+      "start_date": "2018-03-22",
+      "resolution_date": "2018-05-01",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20180321a.htm",
+      "statement_text_sha256": "d86dc0bb7bd0379be0ceb344879dd0eb4db847c8e948d81e24e9ef0152e3f42c",
+      "target_midpoint_pct": 1.625,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 2.29,
+        "UST3Y": 2.43,
+        "UST5Y": 2.63,
+        "UST7Y": 2.76,
+        "UST10Y": 2.83,
+        "UST30Y": 3.06
+      },
+      "yield_changes_bps": {
+        "UST2Y": 21.0,
+        "UST3Y": 23.0,
+        "UST5Y": 19.0,
+        "UST7Y": 17.0,
+        "UST10Y": 14.0,
+        "UST30Y": 7.0
+      }
+    },
+    {
+      "decision_date": "2018-05-02",
+      "next_decision_date": "2018-06-13",
+      "start_date": "2018-05-03",
+      "resolution_date": "2018-06-12",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20180502a.htm",
+      "statement_text_sha256": "437b9bd6badcefc31f2099c64bfad52f9e3648b25d83a7119dcb64547c7739ff",
+      "target_midpoint_pct": 1.625,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.49,
+        "UST3Y": 2.62,
+        "UST5Y": 2.78,
+        "UST7Y": 2.9,
+        "UST10Y": 2.94,
+        "UST30Y": 3.12
+      },
+      "yield_changes_bps": {
+        "UST2Y": 5.0,
+        "UST3Y": 5.0,
+        "UST5Y": 3.0,
+        "UST7Y": 1.0,
+        "UST10Y": 2.0,
+        "UST30Y": -3.0
+      }
+    },
+    {
+      "decision_date": "2018-06-13",
+      "next_decision_date": "2018-08-01",
+      "start_date": "2018-06-14",
+      "resolution_date": "2018-07-31",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20180613a.htm",
+      "statement_text_sha256": "aa28c3ac5d4d72320980d3b2764e631290e890eafb0a6285a4d30cd334c4206b",
+      "target_midpoint_pct": 1.875,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 2.59,
+        "UST3Y": 2.69,
+        "UST5Y": 2.81,
+        "UST7Y": 2.9,
+        "UST10Y": 2.94,
+        "UST30Y": 3.05
+      },
+      "yield_changes_bps": {
+        "UST2Y": 8.0,
+        "UST3Y": 8.0,
+        "UST5Y": 4.0,
+        "UST7Y": 2.0,
+        "UST10Y": 2.0,
+        "UST30Y": 3.0
+      }
+    },
+    {
+      "decision_date": "2018-08-01",
+      "next_decision_date": "2018-09-26",
+      "start_date": "2018-08-02",
+      "resolution_date": "2018-09-25",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20180801a.htm",
+      "statement_text_sha256": "91612b134d91f0165f3e0abb27488d9043b1cf789c9d5fea2eeaffe10be0b433",
+      "target_midpoint_pct": 1.875,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.66,
+        "UST3Y": 2.76,
+        "UST5Y": 2.85,
+        "UST7Y": 2.93,
+        "UST10Y": 2.98,
+        "UST30Y": 3.12
+      },
+      "yield_changes_bps": {
+        "UST2Y": 17.0,
+        "UST3Y": 15.0,
+        "UST5Y": 14.0,
+        "UST7Y": 13.0,
+        "UST10Y": 12.0,
+        "UST30Y": 11.0
+      }
+    },
+    {
+      "decision_date": "2018-09-26",
+      "next_decision_date": "2018-11-08",
+      "start_date": "2018-09-27",
+      "resolution_date": "2018-11-07",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20180926a.htm",
+      "statement_text_sha256": "2ec4beefe3bbd76bf9e5752c9939a6769f59546f73ce57629542045982c0788c",
+      "target_midpoint_pct": 2.125,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 2.83,
+        "UST3Y": 2.89,
+        "UST5Y": 2.96,
+        "UST7Y": 3.02,
+        "UST10Y": 3.06,
+        "UST30Y": 3.19
+      },
+      "yield_changes_bps": {
+        "UST2Y": 13.0,
+        "UST3Y": 14.0,
+        "UST5Y": 11.0,
+        "UST7Y": 13.0,
+        "UST10Y": 16.0,
+        "UST30Y": 24.0
+      }
+    },
+    {
+      "decision_date": "2018-11-08",
+      "next_decision_date": "2018-12-19",
+      "start_date": "2018-11-09",
+      "resolution_date": "2018-12-18",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20181108a.htm",
+      "statement_text_sha256": "f391a9a9280b2a88be27ce85753843b0a448ce639d5a54b0d626a261715ce7eb",
+      "target_midpoint_pct": 2.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.94,
+        "UST3Y": 3.01,
+        "UST5Y": 3.05,
+        "UST7Y": 3.13,
+        "UST10Y": 3.19,
+        "UST30Y": 3.4
+      },
+      "yield_changes_bps": {
+        "UST2Y": -29.0,
+        "UST3Y": -37.0,
+        "UST5Y": -40.0,
+        "UST7Y": -39.0,
+        "UST10Y": -37.0,
+        "UST30Y": -33.0
+      }
+    },
+    {
+      "decision_date": "2018-12-19",
+      "next_decision_date": "2019-01-30",
+      "start_date": "2018-12-20",
+      "resolution_date": "2019-01-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20181219a.htm",
+      "statement_text_sha256": "68d9893fecca7c5dc028dc2162dde63c79e412165856cae33c9aa05b25bdcb74",
+      "target_midpoint_pct": 2.375,
+      "policy_direction": 1,
+      "start_yields_pct": {
+        "UST2Y": 2.67,
+        "UST3Y": 2.65,
+        "UST5Y": 2.65,
+        "UST7Y": 2.72,
+        "UST10Y": 2.79,
+        "UST30Y": 3.02
+      },
+      "yield_changes_bps": {
+        "UST2Y": -11.0,
+        "UST3Y": -11.0,
+        "UST5Y": -10.0,
+        "UST7Y": -11.0,
+        "UST10Y": -7.0,
+        "UST30Y": 2.0
+      }
+    },
+    {
+      "decision_date": "2019-01-30",
+      "next_decision_date": "2019-03-20",
+      "start_date": "2019-01-31",
+      "resolution_date": "2019-03-19",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20190130a.htm",
+      "statement_text_sha256": "0c10ca992e2721315241734995f536fdaf835543bd5daf826e7140b124a17cd8",
+      "target_midpoint_pct": 2.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.45,
+        "UST3Y": 2.43,
+        "UST5Y": 2.43,
+        "UST7Y": 2.51,
+        "UST10Y": 2.63,
+        "UST30Y": 2.99
+      },
+      "yield_changes_bps": {
+        "UST2Y": 1.0,
+        "UST3Y": -1.0,
+        "UST5Y": -1.0,
+        "UST7Y": 0.0,
+        "UST10Y": -2.0,
+        "UST30Y": 3.0
+      }
+    },
+    {
+      "decision_date": "2019-03-20",
+      "next_decision_date": "2019-05-01",
+      "start_date": "2019-03-21",
+      "resolution_date": "2019-04-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20190320a.htm",
+      "statement_text_sha256": "e6f75e5dc36f0bec10e204341578ccd1d0f63bad35ce4415f36cb290d66da74a",
+      "target_midpoint_pct": 2.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.41,
+        "UST3Y": 2.34,
+        "UST5Y": 2.34,
+        "UST7Y": 2.44,
+        "UST10Y": 2.54,
+        "UST30Y": 2.96
+      },
+      "yield_changes_bps": {
+        "UST2Y": -14.0,
+        "UST3Y": -10.0,
+        "UST5Y": -6.0,
+        "UST7Y": -5.0,
+        "UST10Y": -3.0,
+        "UST30Y": -3.0
+      }
+    },
+    {
+      "decision_date": "2019-05-01",
+      "next_decision_date": "2019-06-19",
+      "start_date": "2019-05-02",
+      "resolution_date": "2019-06-18",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20190501a.htm",
+      "statement_text_sha256": "2a476e9a6850b1bb31d7e5f223df6fc1b5195b698cdc1efae17996bdbdd798fe",
+      "target_midpoint_pct": 2.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 2.35,
+        "UST3Y": 2.32,
+        "UST5Y": 2.34,
+        "UST7Y": 2.44,
+        "UST10Y": 2.55,
+        "UST30Y": 2.94
+      },
+      "yield_changes_bps": {
+        "UST2Y": -49.0,
+        "UST3Y": -52.0,
+        "UST5Y": -51.0,
+        "UST7Y": -51.0,
+        "UST10Y": -49.0,
+        "UST30Y": -39.0
+      }
+    },
+    {
+      "decision_date": "2019-06-19",
+      "next_decision_date": "2019-07-31",
+      "start_date": "2019-06-20",
+      "resolution_date": "2019-07-30",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20190619a.htm",
+      "statement_text_sha256": "f950e71445b31a562c3dff129d7016c0768683f5ac431e7002758a58509606f3",
+      "target_midpoint_pct": 2.375,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.72,
+        "UST3Y": 1.69,
+        "UST5Y": 1.74,
+        "UST7Y": 1.87,
+        "UST10Y": 2.01,
+        "UST30Y": 2.53
+      },
+      "yield_changes_bps": {
+        "UST2Y": 13.0,
+        "UST3Y": 13.0,
+        "UST5Y": 10.0,
+        "UST7Y": 6.0,
+        "UST10Y": 5.0,
+        "UST30Y": 5.0
+      }
+    },
+    {
+      "decision_date": "2019-07-31",
+      "next_decision_date": "2019-09-18",
+      "start_date": "2019-08-01",
+      "resolution_date": "2019-09-17",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20190731a.htm",
+      "statement_text_sha256": "8b0a1be286c44b1069e7363741b6e4f4f9f56c36d1f1cfef6e4c42774b409f19",
+      "target_midpoint_pct": 2.125,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 1.73,
+        "UST3Y": 1.67,
+        "UST5Y": 1.68,
+        "UST7Y": 1.77,
+        "UST10Y": 1.9,
+        "UST30Y": 2.44
+      },
+      "yield_changes_bps": {
+        "UST2Y": -1.0,
+        "UST3Y": 1.0,
+        "UST5Y": -2.0,
+        "UST7Y": -2.0,
+        "UST10Y": -9.0,
+        "UST30Y": -17.0
+      }
+    },
+    {
+      "decision_date": "2019-09-18",
+      "next_decision_date": "2019-10-11",
+      "start_date": "2019-09-19",
+      "resolution_date": "2019-10-10",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20190918a.htm",
+      "statement_text_sha256": "64b066035b4320b4a8d1c10ad1c7abe60deac2a8bf3457cef02cea1b66defb54",
+      "target_midpoint_pct": 1.875,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 1.74,
+        "UST3Y": 1.68,
+        "UST5Y": 1.66,
+        "UST7Y": 1.73,
+        "UST10Y": 1.79,
+        "UST30Y": 2.22
+      },
+      "yield_changes_bps": {
+        "UST2Y": -21.0,
+        "UST3Y": -19.0,
+        "UST5Y": -18.0,
+        "UST7Y": -16.0,
+        "UST10Y": -12.0,
+        "UST30Y": -6.0
+      }
+    },
+    {
+      "decision_date": "2019-10-11",
+      "next_decision_date": "2019-10-30",
+      "start_date": "2019-10-15",
+      "resolution_date": "2019-10-29",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20191011a.htm",
+      "statement_text_sha256": "25605d970b218ec66b1b3963027983e979e97143b2d07bb8d441c5eb8b85a2d1",
+      "target_midpoint_pct": 1.875,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.61,
+        "UST3Y": 1.6,
+        "UST5Y": 1.59,
+        "UST7Y": 1.68,
+        "UST10Y": 1.77,
+        "UST30Y": 2.23
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 5.0,
+        "UST5Y": 7.0,
+        "UST7Y": 6.0,
+        "UST10Y": 7.0,
+        "UST30Y": 10.0
+      }
+    },
+    {
+      "decision_date": "2019-10-30",
+      "next_decision_date": "2019-12-11",
+      "start_date": "2019-10-31",
+      "resolution_date": "2019-12-10",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20191030a.htm",
+      "statement_text_sha256": "6d2a953a3b5decdf1794941a66b8df264426beaf41a134647f84400200a7b81b",
+      "target_midpoint_pct": 1.625,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 1.52,
+        "UST3Y": 1.52,
+        "UST5Y": 1.51,
+        "UST7Y": 1.6,
+        "UST10Y": 1.69,
+        "UST30Y": 2.17
+      },
+      "yield_changes_bps": {
+        "UST2Y": 13.0,
+        "UST3Y": 15.0,
+        "UST5Y": 17.0,
+        "UST7Y": 18.0,
+        "UST10Y": 16.0,
+        "UST30Y": 9.0
+      }
+    },
+    {
+      "decision_date": "2019-12-11",
+      "next_decision_date": "2020-01-29",
+      "start_date": "2019-12-12",
+      "resolution_date": "2020-01-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20191211a.htm",
+      "statement_text_sha256": "26808ebf751feed1ec30a60f902437af74cc5cc8e3fa6ab886ed4404e38aa99b",
+      "target_midpoint_pct": 1.625,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.66,
+        "UST3Y": 1.69,
+        "UST5Y": 1.73,
+        "UST7Y": 1.84,
+        "UST10Y": 1.9,
+        "UST30Y": 2.32
+      },
+      "yield_changes_bps": {
+        "UST2Y": -21.0,
+        "UST3Y": -24.0,
+        "UST5Y": -26.0,
+        "UST7Y": -28.0,
+        "UST10Y": -25.0,
+        "UST30Y": -22.0
+      }
+    },
+    {
+      "decision_date": "2020-01-29",
+      "next_decision_date": "2020-03-03",
+      "start_date": "2020-01-30",
+      "resolution_date": "2020-03-02",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200129a.htm",
+      "statement_text_sha256": "a9478fd696b0f6ae7463ea370787111189934b501417229b6d79ffa6e9f0dac5",
+      "target_midpoint_pct": 1.625,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 1.41,
+        "UST3Y": 1.37,
+        "UST5Y": 1.39,
+        "UST7Y": 1.49,
+        "UST10Y": 1.57,
+        "UST30Y": 2.04
+      },
+      "yield_changes_bps": {
+        "UST2Y": -57.0,
+        "UST3Y": -52.0,
+        "UST5Y": -51.0,
+        "UST7Y": -48.0,
+        "UST10Y": -47.0,
+        "UST30Y": -38.0
+      }
+    },
+    {
+      "decision_date": "2020-03-03",
+      "next_decision_date": "2020-03-15",
+      "start_date": "2020-03-04",
+      "resolution_date": "2020-03-13",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200303a.htm",
+      "statement_text_sha256": "5f5c595757ac69c74fd2ec79e2939f4270c677e8da19d1886c5fbbab1c87d70d",
+      "target_midpoint_pct": 1.125,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 0.67,
+        "UST3Y": 0.68,
+        "UST5Y": 0.75,
+        "UST7Y": 0.9,
+        "UST10Y": 1.02,
+        "UST30Y": 1.67
+      },
+      "yield_changes_bps": {
+        "UST2Y": -18.0,
+        "UST3Y": -10.0,
+        "UST5Y": -5.0,
+        "UST7Y": -1.0,
+        "UST10Y": -8.0,
+        "UST30Y": -11.0
+      }
+    },
+    {
+      "decision_date": "2020-03-15",
+      "next_decision_date": "2020-03-23",
+      "start_date": "2020-03-16",
+      "resolution_date": "2020-03-20",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm",
+      "statement_text_sha256": "0e508ab38b7257537cbb64df0c1ceb601ad6c854faf8dd6bdfbdb8795615f948",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": -1,
+      "start_yields_pct": {
+        "UST2Y": 0.36,
+        "UST3Y": 0.43,
+        "UST5Y": 0.49,
+        "UST7Y": 0.67,
+        "UST10Y": 0.73,
+        "UST30Y": 1.34
+      },
+      "yield_changes_bps": {
+        "UST2Y": 1.0,
+        "UST3Y": -2.0,
+        "UST5Y": 3.0,
+        "UST7Y": 15.0,
+        "UST10Y": 19.0,
+        "UST30Y": 21.0
+      }
+    },
+    {
+      "decision_date": "2020-03-23",
+      "next_decision_date": "2020-04-29",
+      "start_date": "2020-03-24",
+      "resolution_date": "2020-04-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200323a.htm",
+      "statement_text_sha256": "e251c72cda933a2b49c344feb2d4e247cbc4ca43f6d58462cc57bed47bbf8736",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.38,
+        "UST3Y": 0.44,
+        "UST5Y": 0.52,
+        "UST7Y": 0.75,
+        "UST10Y": 0.84,
+        "UST30Y": 1.39
+      },
+      "yield_changes_bps": {
+        "UST2Y": -18.0,
+        "UST3Y": -18.0,
+        "UST5Y": -15.0,
+        "UST7Y": -23.0,
+        "UST10Y": -22.0,
+        "UST30Y": -19.0
+      }
+    },
+    {
+      "decision_date": "2020-04-29",
+      "next_decision_date": "2020-06-10",
+      "start_date": "2020-04-30",
+      "resolution_date": "2020-06-09",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200429a.htm",
+      "statement_text_sha256": "a72ffd67ad88c9ead2822e95a4bb61155d7eba7893be39516f60978f2b1fa459",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.2,
+        "UST3Y": 0.24,
+        "UST5Y": 0.36,
+        "UST7Y": 0.53,
+        "UST10Y": 0.64,
+        "UST30Y": 1.28
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": 1.0,
+        "UST5Y": 4.0,
+        "UST7Y": 12.0,
+        "UST10Y": 20.0,
+        "UST30Y": 31.0
+      }
+    },
+    {
+      "decision_date": "2020-06-10",
+      "next_decision_date": "2020-07-29",
+      "start_date": "2020-06-11",
+      "resolution_date": "2020-07-28",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200610a.htm",
+      "statement_text_sha256": "acfe867f347f255181a89505eb24bb883207d90c4bfe3ca84f0e8fae9006ab03",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.19,
+        "UST3Y": 0.22,
+        "UST5Y": 0.32,
+        "UST7Y": 0.51,
+        "UST10Y": 0.66,
+        "UST30Y": 1.41
+      },
+      "yield_changes_bps": {
+        "UST2Y": -5.0,
+        "UST3Y": -6.0,
+        "UST5Y": -6.0,
+        "UST7Y": -7.0,
+        "UST10Y": -7.0,
+        "UST30Y": -19.0
+      }
+    },
+    {
+      "decision_date": "2020-07-29",
+      "next_decision_date": "2020-09-16",
+      "start_date": "2020-07-30",
+      "resolution_date": "2020-09-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200729a.htm",
+      "statement_text_sha256": "3f80230c68a3561ebaeb37493b508020c0806bdb3f3922fcb537483f7b71f66a",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.11,
+        "UST3Y": 0.14,
+        "UST5Y": 0.23,
+        "UST7Y": 0.4,
+        "UST10Y": 0.55,
+        "UST30Y": 1.2
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 2.0,
+        "UST5Y": 4.0,
+        "UST7Y": 6.0,
+        "UST10Y": 13.0,
+        "UST30Y": 23.0
+      }
+    },
+    {
+      "decision_date": "2020-09-16",
+      "next_decision_date": "2020-11-05",
+      "start_date": "2020-09-17",
+      "resolution_date": "2020-11-04",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200916a.htm",
+      "statement_text_sha256": "b9b2aae41354796b9e7eccab340821f4392756049c5c8bff4b4dd2f6c19a8925",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.13,
+        "UST3Y": 0.16,
+        "UST5Y": 0.28,
+        "UST7Y": 0.47,
+        "UST10Y": 0.69,
+        "UST30Y": 1.43
+      },
+      "yield_changes_bps": {
+        "UST2Y": 1.0,
+        "UST3Y": 2.0,
+        "UST5Y": 5.0,
+        "UST7Y": 8.0,
+        "UST10Y": 9.0,
+        "UST30Y": 12.0
+      }
+    },
+    {
+      "decision_date": "2020-11-05",
+      "next_decision_date": "2020-12-16",
+      "start_date": "2020-11-06",
+      "resolution_date": "2020-12-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20201105a.htm",
+      "statement_text_sha256": "b1397d6ea190f265e7de47b19feeba4e88458ede1d36dd66571a3e01414eebc6",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.16,
+        "UST3Y": 0.21,
+        "UST5Y": 0.36,
+        "UST7Y": 0.59,
+        "UST10Y": 0.83,
+        "UST30Y": 1.6
+      },
+      "yield_changes_bps": {
+        "UST2Y": -5.0,
+        "UST3Y": -3.0,
+        "UST5Y": 1.0,
+        "UST7Y": 5.0,
+        "UST10Y": 9.0,
+        "UST30Y": 5.0
+      }
+    },
+    {
+      "decision_date": "2020-12-16",
+      "next_decision_date": "2021-01-27",
+      "start_date": "2020-12-17",
+      "resolution_date": "2021-01-26",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20201216a.htm",
+      "statement_text_sha256": "5402c10d171e91e81e4098211377f962bcace9ed2c98ba6bf960c3914cf829f6",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.13,
+        "UST3Y": 0.19,
+        "UST5Y": 0.38,
+        "UST7Y": 0.66,
+        "UST10Y": 0.94,
+        "UST30Y": 1.68
+      },
+      "yield_changes_bps": {
+        "UST2Y": -2.0,
+        "UST3Y": -1.0,
+        "UST5Y": 4.0,
+        "UST7Y": 8.0,
+        "UST10Y": 11.0,
+        "UST30Y": 12.0
+      }
+    },
+    {
+      "decision_date": "2021-01-27",
+      "next_decision_date": "2021-03-17",
+      "start_date": "2021-01-28",
+      "resolution_date": "2021-03-16",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210127a.htm",
+      "statement_text_sha256": "f40723e097f1846e673c11924e4e263b9850887984c807165407e61eeb7cf2b1",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.12,
+        "UST3Y": 0.18,
+        "UST5Y": 0.42,
+        "UST7Y": 0.75,
+        "UST10Y": 1.07,
+        "UST30Y": 1.81
+      },
+      "yield_changes_bps": {
+        "UST2Y": 3.0,
+        "UST3Y": 15.0,
+        "UST5Y": 41.0,
+        "UST7Y": 53.0,
+        "UST10Y": 55.0,
+        "UST30Y": 57.0
+      }
+    },
+    {
+      "decision_date": "2021-03-17",
+      "next_decision_date": "2021-04-28",
+      "start_date": "2021-03-18",
+      "resolution_date": "2021-04-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210317a.htm",
+      "statement_text_sha256": "0b5b657112af9e5a196e52550bc2354b39aaaac738892cf47c8c64a568add885",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.16,
+        "UST3Y": 0.33,
+        "UST5Y": 0.86,
+        "UST7Y": 1.35,
+        "UST10Y": 1.71,
+        "UST30Y": 2.45
+      },
+      "yield_changes_bps": {
+        "UST2Y": 1.0,
+        "UST3Y": 3.0,
+        "UST5Y": 2.0,
+        "UST7Y": -3.0,
+        "UST10Y": -8.0,
+        "UST30Y": -16.0
+      }
+    },
+    {
+      "decision_date": "2021-04-28",
+      "next_decision_date": "2021-06-16",
+      "start_date": "2021-04-29",
+      "resolution_date": "2021-06-15",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210428a.htm",
+      "statement_text_sha256": "4d5df2b3ddc62038508cdb4690821eeda016e2ef6d9c92a3a2ecd1459e88ae96",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.16,
+        "UST3Y": 0.35,
+        "UST5Y": 0.86,
+        "UST7Y": 1.32,
+        "UST10Y": 1.65,
+        "UST30Y": 2.31
+      },
+      "yield_changes_bps": {
+        "UST2Y": 0.0,
+        "UST3Y": -1.0,
+        "UST5Y": -7.0,
+        "UST7Y": -11.0,
+        "UST10Y": -14.0,
+        "UST30Y": -11.0
+      }
+    },
+    {
+      "decision_date": "2021-06-16",
+      "next_decision_date": "2021-07-28",
+      "start_date": "2021-06-17",
+      "resolution_date": "2021-07-27",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210616a.htm",
+      "statement_text_sha256": "f83d5096ab8d39ef9f1eaa7ebb8a3eb736409000a8e27e3da470df1b282719ac",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.23,
+        "UST3Y": 0.43,
+        "UST5Y": 0.9,
+        "UST7Y": 1.27,
+        "UST10Y": 1.52,
+        "UST30Y": 2.11
+      },
+      "yield_changes_bps": {
+        "UST2Y": -3.0,
+        "UST3Y": -6.0,
+        "UST5Y": -19.0,
+        "UST7Y": -26.0,
+        "UST10Y": -27.0,
+        "UST30Y": -22.0
+      }
+    },
+    {
+      "decision_date": "2021-07-28",
+      "next_decision_date": "2021-09-22",
+      "start_date": "2021-07-29",
+      "resolution_date": "2021-09-21",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210728a.htm",
+      "statement_text_sha256": "abc4ba0d288b526bf34bbce513d1c5942c735ca31b760d0913caf00f02666fb1",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.2,
+        "UST3Y": 0.37,
+        "UST5Y": 0.73,
+        "UST7Y": 1.04,
+        "UST10Y": 1.28,
+        "UST30Y": 1.91
+      },
+      "yield_changes_bps": {
+        "UST2Y": 2.0,
+        "UST3Y": 9.0,
+        "UST5Y": 11.0,
+        "UST7Y": 9.0,
+        "UST10Y": 5.0,
+        "UST30Y": -5.0
+      }
+    },
+    {
+      "decision_date": "2021-09-22",
+      "next_decision_date": "2021-11-03",
+      "start_date": "2021-09-23",
+      "resolution_date": "2021-11-02",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210922a.htm",
+      "statement_text_sha256": "db702e993f32cb69b5962a134a814b12e62188ce2a280fd38bd93e2c17f80982",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.27,
+        "UST3Y": 0.53,
+        "UST5Y": 0.94,
+        "UST7Y": 1.22,
+        "UST10Y": 1.41,
+        "UST30Y": 1.92
+      },
+      "yield_changes_bps": {
+        "UST2Y": 19.0,
+        "UST3Y": 20.0,
+        "UST5Y": 21.0,
+        "UST7Y": 20.0,
+        "UST10Y": 15.0,
+        "UST30Y": 4.0
+      }
+    },
+    {
+      "decision_date": "2021-11-03",
+      "next_decision_date": "2021-12-15",
+      "start_date": "2021-11-04",
+      "resolution_date": "2021-12-14",
+      "statement_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20211103a.htm",
+      "statement_text_sha256": "99226f79f9f4be151b5169a44c606a4ecf3096ca08a0ffa0e541a274c1599d8d",
+      "target_midpoint_pct": 0.125,
+      "policy_direction": 0,
+      "start_yields_pct": {
+        "UST2Y": 0.41,
+        "UST3Y": 0.69,
+        "UST5Y": 1.1,
+        "UST7Y": 1.37,
+        "UST10Y": 1.53,
+        "UST30Y": 1.96
+      },
+      "yield_changes_bps": {
+        "UST2Y": 26.0,
+        "UST3Y": 29.0,
+        "UST5Y": 13.0,
+        "UST7Y": 2.0,
+        "UST10Y": -9.0,
+        "UST30Y": -14.0
+      }
+    }
+  ]
+}

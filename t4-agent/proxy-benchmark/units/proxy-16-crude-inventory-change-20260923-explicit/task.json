@@ -1,0 +1,85 @@
+{
+  "cutoff_date": "2026-09-23",
+  "entities": [
+    {
+      "corpus_ref": "corpus/EIA_CRUDE_US_20260925.json",
+      "entity_id": "EIA_CRUDE_US_20260925",
+      "last_week_change_mmbbl": 2.969,
+      "latest_stock_mmbbl": 426.398,
+      "name": "United States",
+      "padd_number": 0,
+      "region": "US",
+      "seasonal_change_mean_mmbbl": 0.8896000000000001,
+      "unit": "million_barrels_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_CRUDE_PADD1_20260925.json",
+      "entity_id": "EIA_CRUDE_PADD1_20260925",
+      "last_week_change_mmbbl": 0.176,
+      "latest_stock_mmbbl": 8.372,
+      "name": "East Coast (PADD 1)",
+      "padd_number": 1,
+      "region": "PADD1",
+      "seasonal_change_mean_mmbbl": -0.2104,
+      "unit": "million_barrels_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_CRUDE_PADD2_20260925.json",
+      "entity_id": "EIA_CRUDE_PADD2_20260925",
+      "last_week_change_mmbbl": 4.407,
+      "latest_stock_mmbbl": 104.07,
+      "name": "Midwest (PADD 2)",
+      "padd_number": 2,
+      "region": "PADD2",
+      "seasonal_change_mean_mmbbl": 0.5450000000000002,
+      "unit": "million_barrels_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_CRUDE_PADD3_20260925.json",
+      "entity_id": "EIA_CRUDE_PADD3_20260925",
+      "last_week_change_mmbbl": -2.093,
+      "latest_stock_mmbbl": 244.08,
+      "name": "Gulf Coast (PADD 3)",
+      "padd_number": 3,
+      "region": "PADD3",
+      "seasonal_change_mean_mmbbl": 0.7984,
+      "unit": "million_barrels_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_CRUDE_PADD4_20260925.json",
+      "entity_id": "EIA_CRUDE_PADD4_20260925",
+      "last_week_change_mmbbl": -0.091,
+      "latest_stock_mmbbl": 23.319,
+      "name": "Rocky Mountain (PADD 4)",
+      "padd_number": 4,
+      "region": "PADD4",
+      "seasonal_change_mean_mmbbl": -0.04780000000000001,
+      "unit": "million_barrels_change"
+    },
+    {
+      "corpus_ref": "corpus/EIA_CRUDE_PADD5_20260925.json",
+      "entity_id": "EIA_CRUDE_PADD5_20260925",
+      "last_week_change_mmbbl": 0.569,
+      "latest_stock_mmbbl": 46.558,
+      "name": "West Coast (PADD 5)",
+      "padd_number": 5,
+      "region": "PADD5",
+      "seasonal_change_mean_mmbbl": -0.19560000000000002,
+      "unit": "million_barrels_change"
+    }
+  ],
+  "family": "energy_inventory_change",
+  "interval_level": 0.9,
+  "prompt": "Forecast the next weekly change in commercial crude-oil inventories excluding the Strategic Petroleum Reserve for the United States and each listed PADD region. A positive value is a stock build and a negative value is a draw. Use only information public with the EIA release on 2026-09-23 and return million barrels with a 90% interval.",
+  "resolution_date": "2026-09-30",
+  "schema_variant": "explicit",
+  "schema_version": "3",
+  "target": {
+    "definition": "target-week commercial crude stock minus the prior-week stock, excluding SPR",
+    "horizon": "next EIA weekly petroleum release",
+    "name": "weekly_crude_inventory_change_mmbbl",
+    "type": "regression",
+    "unit": "million_barrels_change"
+  },
+  "task_id": "proxy-16-crude-inventory-change-20260923-explicit"
+}

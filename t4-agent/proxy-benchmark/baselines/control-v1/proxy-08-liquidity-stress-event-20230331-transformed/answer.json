@@ -1,0 +1,257 @@
+{
+  "task_id": "proxy-08-liquidity-stress-event-20230331-transformed",
+  "schema_version": "3",
+  "target_type": "classification",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_WMT_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 238,
+          "claim": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior current assets scaled currency units 83220000000; current liabilities scaled currency units 96530000000; cash scaled currency units 11817000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_TGT_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 243,
+          "claim": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior current assets scaled currency units 17953000000; current liabilities scaled currency units 20724000000; cash scaled currency units 1112000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_PEP_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 238,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior current assets scaled currency units 22342000000; current liabilities scaled currency units 25824000000; cash scaled currency units 6561000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_NVDA_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 236,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior current assets scaled currency units 29575000000; current liabilities scaled currency units 5562000000; cash scaled currency units 3887000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_MCD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 245,
+          "claim": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior current assets scaled currency units 4656400000; current liabilities scaled currency units 4234600000; cash scaled currency units 2335700000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_KO_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 236,
+          "claim": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior current assets scaled currency units 22156000000; current liabilities scaled currency units 18787000000; cash scaled currency units 7681000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_IBM_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 261,
+          "claim": "SEC XBRL facts for INTERNATIONAL BUSINESS MACHINES CORP (IBM); facts include original accession and filed date.\nPrior current assets scaled currency units 31330000000; current liabilities scaled currency units 34056000000; cash scaled currency units 9934000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_HD_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 244,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior current assets scaled currency units 33867000000; current liabilities scaled currency units 30387000000; cash scaled currency units 2844000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_GM_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_GM_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 247,
+          "claim": "SEC XBRL facts for GENERAL MOTORS COMPANY (GM); facts include original accession and filed date.\nPrior current assets scaled currency units 88594000000; current liabilities scaled currency units 79555000000; cash scaled currency units 16349000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_F_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 238,
+          "claim": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior current assets scaled currency units 106142000000; current liabilities scaled currency units 90352000000; cash scaled currency units 21013000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_CVNA_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_CVNA_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 234,
+          "claim": "SEC XBRL facts for CARVANA CO. (CVNA); facts include original accession and filed date.\nPrior current assets scaled currency units 5070000000; current liabilities scaled currency units 3741000000; cash scaled currency units 247000000."
+        }
+      ],
+      "label": "stress_screen"
+    },
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -1.0,
+        "hi": 1.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-08-liquidity-stress-event_SEC_AMZN_2023Q1_transformed",
+          "span_start": 0,
+          "span_end": 243,
+          "claim": "SEC XBRL facts for AMAZON COM INC (AMZN); facts include original accession and filed date.\nPrior current assets scaled currency units 133876000000; current liabilities scaled currency units 139508000000; cash scaled currency units 36393000000."
+        }
+      ],
+      "label": "stress_screen"
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_WMT_2023Q1",
+      "SEC_TGT_2023Q1",
+      "SEC_PEP_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_MCD_2023Q1",
+      "SEC_KO_2023Q1",
+      "SEC_IBM_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_GM_2023Q1",
+      "SEC_F_2023Q1",
+      "SEC_CVNA_2023Q1",
+      "SEC_AMZN_2023Q1"
+    ],
+    "methods": {
+      "SEC_WMT_2023Q1": "generic_baseline",
+      "SEC_TGT_2023Q1": "generic_baseline",
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_MCD_2023Q1": "generic_baseline",
+      "SEC_KO_2023Q1": "generic_baseline",
+      "SEC_IBM_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_GM_2023Q1": "generic_baseline",
+      "SEC_F_2023Q1": "generic_baseline",
+      "SEC_CVNA_2023Q1": "generic_baseline",
+      "SEC_AMZN_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}

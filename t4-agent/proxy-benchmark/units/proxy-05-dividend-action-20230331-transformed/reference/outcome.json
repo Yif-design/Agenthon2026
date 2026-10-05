@@ -1,0 +1,37 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "true_label": "increase"
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "true_label": "increase"
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "true_label": "increase"
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "true_label": "unchanged"
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "true_label": "increase"
+    },
+    {
+      "entity_id": "SEC_IBM_2023Q1",
+      "true_label": "increase"
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "true_label": "increase"
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "true_label": "increase"
+    }
+  ],
+  "task_id": "proxy-05-dividend-action-20230331-transformed"
+}

@@ -1,0 +1,8 @@
+{
+  "doc_date": "2023-08-31",
+  "doc_id": "ALFRED_USGOVT_VINTAGE_20230831",
+  "entity_id": "BLS_USGOVT_202308",
+  "source": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+  "text": "Series: Government (USGOVT).\nALFRED vintage date: 2023-08-31; values are seasonally adjusted thousand persons.\nFrozen reference change: 32.666667 thousand persons.\nClassification half-band: 8.462745 thousand persons.\nCutoff-vintage monthly levels:\n2022-12-01: 22331.000 thousand persons.\n2023-01-01: 22450.000 thousand persons.\n2023-02-01: 22505.000 thousand persons.\n2023-03-01: 22565.000 thousand persons.\n2023-04-01: 22603.000 thousand persons.\n2023-05-01: 22629.000 thousand persons.\n2023-06-01: 22686.000 thousand persons.\n2023-07-01: 22701.000 thousand persons.",
+  "title": "Cutoff-vintage payroll history for Government"
+}

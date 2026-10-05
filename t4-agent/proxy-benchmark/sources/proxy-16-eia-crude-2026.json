@@ -1,0 +1,2856 @@
+{
+  "cutoff_release_date": "2026-09-23",
+  "cutoff_week_ending": "2026-09-18",
+  "definition": "Weekly ending stocks excluding SPR of commercial crude oil",
+  "license": "Public domain (U.S. Energy Information Administration data)",
+  "raw_sources": [
+    {
+      "bytes": 2355,
+      "release_date": "2021-10-06",
+      "sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2021/2021_10_06/csv/table4.csv",
+      "week_ending": "2021-10-01"
+    },
+    {
+      "bytes": 2353,
+      "release_date": "2022-10-05",
+      "sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2022/2022_10_05/csv/table4.csv",
+      "week_ending": "2022-09-30"
+    },
+    {
+      "bytes": 2321,
+      "release_date": "2023-10-04",
+      "sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2023/2023_10_04/csv/table4.csv",
+      "week_ending": "2023-09-29"
+    },
+    {
+      "bytes": 2311,
+      "release_date": "2024-10-02",
+      "sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2024/2024_10_02/csv/table4.csv",
+      "week_ending": "2024-09-27"
+    },
+    {
+      "bytes": 2304,
+      "release_date": "2025-10-01",
+      "sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_10_01/csv/table4.csv",
+      "week_ending": "2025-09-26"
+    },
+    {
+      "bytes": 2308,
+      "release_date": "2025-10-08",
+      "sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_10_08/csv/table4.csv",
+      "week_ending": "2025-10-03"
+    },
+    {
+      "bytes": 2297,
+      "release_date": "2025-10-16",
+      "sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_10_16/csv/table4.csv",
+      "week_ending": "2025-10-10"
+    },
+    {
+      "bytes": 2313,
+      "release_date": "2025-10-22",
+      "sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_10_22/csv/table4.csv",
+      "week_ending": "2025-10-17"
+    },
+    {
+      "bytes": 2318,
+      "release_date": "2025-10-29",
+      "sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_10_29/csv/table4.csv",
+      "week_ending": "2025-10-24"
+    },
+    {
+      "bytes": 2306,
+      "release_date": "2025-11-05",
+      "sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_11_05/csv/table4.csv",
+      "week_ending": "2025-10-31"
+    },
+    {
+      "bytes": 2309,
+      "release_date": "2025-11-13",
+      "sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_11_13/csv/table4.csv",
+      "week_ending": "2025-11-07"
+    },
+    {
+      "bytes": 2309,
+      "release_date": "2025-11-19",
+      "sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_11_19/csv/table4.csv",
+      "week_ending": "2025-11-14"
+    },
+    {
+      "bytes": 2319,
+      "release_date": "2025-11-26",
+      "sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_11_26/csv/table4.csv",
+      "week_ending": "2025-11-21"
+    },
+    {
+      "bytes": 2306,
+      "release_date": "2025-12-03",
+      "sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_12_03/csv/table4.csv",
+      "week_ending": "2025-11-28"
+    },
+    {
+      "bytes": 2308,
+      "release_date": "2025-12-10",
+      "sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_12_10/csv/table4.csv",
+      "week_ending": "2025-12-05"
+    },
+    {
+      "bytes": 2308,
+      "release_date": "2025-12-17",
+      "sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_12_17/csv/table4.csv",
+      "week_ending": "2025-12-12"
+    },
+    {
+      "bytes": 2311,
+      "release_date": "2025-12-29",
+      "sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_12_29/csv/table4.csv",
+      "week_ending": "2025-12-19"
+    },
+    {
+      "bytes": 2307,
+      "release_date": "2025-12-31",
+      "sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2025/2025_12_31/csv/table4.csv",
+      "week_ending": "2025-12-26"
+    },
+    {
+      "bytes": 2310,
+      "release_date": "2026-01-07",
+      "sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_01_07/csv/table4.csv",
+      "week_ending": "2026-01-02"
+    },
+    {
+      "bytes": 2301,
+      "release_date": "2026-01-14",
+      "sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_01_14/csv/table4.csv",
+      "week_ending": "2026-01-09"
+    },
+    {
+      "bytes": 2296,
+      "release_date": "2026-01-22",
+      "sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_01_22/csv/table4.csv",
+      "week_ending": "2026-01-16"
+    },
+    {
+      "bytes": 2305,
+      "release_date": "2026-01-28",
+      "sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_01_28/csv/table4.csv",
+      "week_ending": "2026-01-23"
+    },
+    {
+      "bytes": 2310,
+      "release_date": "2026-02-04",
+      "sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_02_04/csv/table4.csv",
+      "week_ending": "2026-01-30"
+    },
+    {
+      "bytes": 2302,
+      "release_date": "2026-02-11",
+      "sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_02_11/csv/table4.csv",
+      "week_ending": "2026-02-06"
+    },
+    {
+      "bytes": 2309,
+      "release_date": "2026-02-19",
+      "sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_02_19/csv/table4.csv",
+      "week_ending": "2026-02-13"
+    },
+    {
+      "bytes": 2313,
+      "release_date": "2026-02-25",
+      "sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_02_25/csv/table4.csv",
+      "week_ending": "2026-02-20"
+    },
+    {
+      "bytes": 2301,
+      "release_date": "2026-03-04",
+      "sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_03_04/csv/table4.csv",
+      "week_ending": "2026-02-27"
+    },
+    {
+      "bytes": 2308,
+      "release_date": "2026-03-11",
+      "sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_03_11/csv/table4.csv",
+      "week_ending": "2026-03-06"
+    },
+    {
+      "bytes": 2295,
+      "release_date": "2026-03-18",
+      "sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_03_18/csv/table4.csv",
+      "week_ending": "2026-03-13"
+    },
+    {
+      "bytes": 2297,
+      "release_date": "2026-03-25",
+      "sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_03_25/csv/table4.csv",
+      "week_ending": "2026-03-20"
+    },
+    {
+      "bytes": 2302,
+      "release_date": "2026-04-01",
+      "sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_04_01/csv/table4.csv",
+      "week_ending": "2026-03-27"
+    },
+    {
+      "bytes": 2300,
+      "release_date": "2026-04-08",
+      "sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_04_08/csv/table4.csv",
+      "week_ending": "2026-04-03"
+    },
+    {
+      "bytes": 2311,
+      "release_date": "2026-04-15",
+      "sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_04_15/csv/table4.csv",
+      "week_ending": "2026-04-10"
+    },
+    {
+      "bytes": 2300,
+      "release_date": "2026-04-22",
+      "sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_04_22/csv/table4.csv",
+      "week_ending": "2026-04-17"
+    },
+    {
+      "bytes": 2320,
+      "release_date": "2026-04-29",
+      "sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_04_29/csv/table4.csv",
+      "week_ending": "2026-04-24"
+    },
+    {
+      "bytes": 2312,
+      "release_date": "2026-05-06",
+      "sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_05_06/csv/table4.csv",
+      "week_ending": "2026-05-01"
+    },
+    {
+      "bytes": 2317,
+      "release_date": "2026-05-13",
+      "sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_05_13/csv/table4.csv",
+      "week_ending": "2026-05-08"
+    },
+    {
+      "bytes": 2318,
+      "release_date": "2026-05-20",
+      "sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_05_20/csv/table4.csv",
+      "week_ending": "2026-05-15"
+    },
+    {
+      "bytes": 2329,
+      "release_date": "2026-05-28",
+      "sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_05_28/csv/table4.csv",
+      "week_ending": "2026-05-22"
+    },
+    {
+      "bytes": 2324,
+      "release_date": "2026-06-03",
+      "sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_06_03/csv/table4.csv",
+      "week_ending": "2026-05-29"
+    },
+    {
+      "bytes": 2332,
+      "release_date": "2026-06-10",
+      "sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_06_10/csv/table4.csv",
+      "week_ending": "2026-06-05"
+    },
+    {
+      "bytes": 2334,
+      "release_date": "2026-06-17",
+      "sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_06_17/csv/table4.csv",
+      "week_ending": "2026-06-12"
+    },
+    {
+      "bytes": 2331,
+      "release_date": "2026-06-24",
+      "sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_06_24/csv/table4.csv",
+      "week_ending": "2026-06-19"
+    },
+    {
+      "bytes": 2333,
+      "release_date": "2026-07-01",
+      "sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_07_01/csv/table4.csv",
+      "week_ending": "2026-06-26"
+    },
+    {
+      "bytes": 2334,
+      "release_date": "2026-07-08",
+      "sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_07_08/csv/table4.csv",
+      "week_ending": "2026-07-03"
+    },
+    {
+      "bytes": 2325,
+      "release_date": "2026-07-15",
+      "sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_07_15/csv/table4.csv",
+      "week_ending": "2026-07-10"
+    },
+    {
+      "bytes": 2326,
+      "release_date": "2026-07-22",
+      "sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_07_22/csv/table4.csv",
+      "week_ending": "2026-07-17"
+    },
+    {
+      "bytes": 2332,
+      "release_date": "2026-07-29",
+      "sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_07_29/csv/table4.csv",
+      "week_ending": "2026-07-24"
+    },
+    {
+      "bytes": 2331,
+      "release_date": "2026-08-05",
+      "sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_08_05/csv/table4.csv",
+      "week_ending": "2026-07-31"
+    },
+    {
+      "bytes": 2331,
+      "release_date": "2026-08-12",
+      "sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_08_12/csv/table4.csv",
+      "week_ending": "2026-08-07"
+    },
+    {
+      "bytes": 2324,
+      "release_date": "2026-08-19",
+      "sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_08_19/csv/table4.csv",
+      "week_ending": "2026-08-14"
+    },
+    {
+      "bytes": 2323,
+      "release_date": "2026-08-26",
+      "sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_08_26/csv/table4.csv",
+      "week_ending": "2026-08-21"
+    },
+    {
+      "bytes": 2329,
+      "release_date": "2026-09-02",
+      "sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_09_02/csv/table4.csv",
+      "week_ending": "2026-08-28"
+    },
+    {
+      "bytes": 2325,
+      "release_date": "2026-09-10",
+      "sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_09_10/csv/table4.csv",
+      "week_ending": "2026-09-04"
+    },
+    {
+      "bytes": 2319,
+      "release_date": "2026-09-16",
+      "sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_09_16/csv/table4.csv",
+      "week_ending": "2026-09-11"
+    },
+    {
+      "bytes": 2313,
+      "release_date": "2026-09-23",
+      "sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_09_23/csv/table4.csv",
+      "week_ending": "2026-09-18"
+    },
+    {
+      "bytes": 2330,
+      "release_date": "2026-09-30",
+      "sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_09_30/csv/table4.csv",
+      "week_ending": "2026-09-25"
+    }
+  ],
+  "resolution_release_date": "2026-09-30",
+  "retrieved_at": "2026-10-03",
+  "rows": [
+    {
+      "observations": [
+        {
+          "change_million_barrels": 2.346,
+          "release_date": "2021-10-06",
+          "source_sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+          "stock_million_barrels": 420.887,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "change_million_barrels": -1.356,
+          "release_date": "2022-10-05",
+          "source_sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+          "stock_million_barrels": 429.203,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "change_million_barrels": -2.224,
+          "release_date": "2023-10-04",
+          "source_sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+          "stock_million_barrels": 414.063,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "change_million_barrels": 3.89,
+          "release_date": "2024-10-02",
+          "source_sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+          "stock_million_barrels": 416.931,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "change_million_barrels": 1.792,
+          "release_date": "2025-10-01",
+          "source_sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+          "stock_million_barrels": 416.546,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "change_million_barrels": 3.715,
+          "release_date": "2025-10-08",
+          "source_sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+          "stock_million_barrels": 420.261,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "change_million_barrels": 3.524,
+          "release_date": "2025-10-16",
+          "source_sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+          "stock_million_barrels": 423.785,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "change_million_barrels": -0.961,
+          "release_date": "2025-10-22",
+          "source_sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+          "stock_million_barrels": 422.824,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "change_million_barrels": -6.858,
+          "release_date": "2025-10-29",
+          "source_sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+          "stock_million_barrels": 415.966,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "change_million_barrels": 5.202,
+          "release_date": "2025-11-05",
+          "source_sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+          "stock_million_barrels": 421.168,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "change_million_barrels": 6.413,
+          "release_date": "2025-11-13",
+          "source_sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+          "stock_million_barrels": 427.581,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "change_million_barrels": -3.426,
+          "release_date": "2025-11-19",
+          "source_sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+          "stock_million_barrels": 424.155,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "change_million_barrels": 2.775,
+          "release_date": "2025-11-26",
+          "source_sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+          "stock_million_barrels": 426.929,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "change_million_barrels": 0.574,
+          "release_date": "2025-12-03",
+          "source_sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+          "stock_million_barrels": 427.503,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "change_million_barrels": -1.813,
+          "release_date": "2025-12-10",
+          "source_sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+          "stock_million_barrels": 425.691,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "change_million_barrels": -1.274,
+          "release_date": "2025-12-17",
+          "source_sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+          "stock_million_barrels": 424.417,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "change_million_barrels": 0.405,
+          "release_date": "2025-12-29",
+          "source_sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+          "stock_million_barrels": 424.822,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "change_million_barrels": -1.934,
+          "release_date": "2025-12-31",
+          "source_sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+          "stock_million_barrels": 422.888,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "change_million_barrels": -3.831,
+          "release_date": "2026-01-07",
+          "source_sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+          "stock_million_barrels": 419.056,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "change_million_barrels": 3.391,
+          "release_date": "2026-01-14",
+          "source_sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+          "stock_million_barrels": 422.447,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "change_million_barrels": 3.602,
+          "release_date": "2026-01-22",
+          "source_sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+          "stock_million_barrels": 426.049,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "change_million_barrels": -2.296,
+          "release_date": "2026-01-28",
+          "source_sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+          "stock_million_barrels": 423.754,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "change_million_barrels": -3.455,
+          "release_date": "2026-02-04",
+          "source_sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+          "stock_million_barrels": 420.299,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "change_million_barrels": 8.53,
+          "release_date": "2026-02-11",
+          "source_sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+          "stock_million_barrels": 428.829,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "change_million_barrels": -9.014,
+          "release_date": "2026-02-19",
+          "source_sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+          "stock_million_barrels": 419.815,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "change_million_barrels": 15.989,
+          "release_date": "2026-02-25",
+          "source_sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+          "stock_million_barrels": 435.804,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "change_million_barrels": 3.475,
+          "release_date": "2026-03-04",
+          "source_sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+          "stock_million_barrels": 439.279,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "change_million_barrels": 3.824,
+          "release_date": "2026-03-11",
+          "source_sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+          "stock_million_barrels": 443.103,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "change_million_barrels": 6.156,
+          "release_date": "2026-03-18",
+          "source_sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+          "stock_million_barrels": 449.259,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "change_million_barrels": 6.926,
+          "release_date": "2026-03-25",
+          "source_sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+          "stock_million_barrels": 456.185,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "change_million_barrels": 5.451,
+          "release_date": "2026-04-01",
+          "source_sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+          "stock_million_barrels": 461.636,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "change_million_barrels": 3.081,
+          "release_date": "2026-04-08",
+          "source_sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+          "stock_million_barrels": 464.717,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "change_million_barrels": -0.913,
+          "release_date": "2026-04-15",
+          "source_sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+          "stock_million_barrels": 463.804,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "change_million_barrels": 1.925,
+          "release_date": "2026-04-22",
+          "source_sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+          "stock_million_barrels": 465.729,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "change_million_barrels": -6.233,
+          "release_date": "2026-04-29",
+          "source_sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+          "stock_million_barrels": 459.495,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "change_million_barrels": -2.314,
+          "release_date": "2026-05-06",
+          "source_sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+          "stock_million_barrels": 457.182,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "change_million_barrels": -4.305,
+          "release_date": "2026-05-13",
+          "source_sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+          "stock_million_barrels": 452.876,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "change_million_barrels": -7.864,
+          "release_date": "2026-05-20",
+          "source_sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+          "stock_million_barrels": 445.013,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "change_million_barrels": -3.327,
+          "release_date": "2026-05-28",
+          "source_sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+          "stock_million_barrels": 441.686,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "change_million_barrels": -7.974,
+          "release_date": "2026-06-03",
+          "source_sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+          "stock_million_barrels": 433.712,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "change_million_barrels": -7.228,
+          "release_date": "2026-06-10",
+          "source_sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+          "stock_million_barrels": 426.485,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "change_million_barrels": -8.262,
+          "release_date": "2026-06-17",
+          "source_sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+          "stock_million_barrels": 418.222,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "change_million_barrels": -6.088,
+          "release_date": "2026-06-24",
+          "source_sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+          "stock_million_barrels": 412.134,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "change_million_barrels": -3.775,
+          "release_date": "2026-07-01",
+          "source_sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+          "stock_million_barrels": 408.359,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "change_million_barrels": 2.998,
+          "release_date": "2026-07-08",
+          "source_sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+          "stock_million_barrels": 411.357,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "change_million_barrels": -1.693,
+          "release_date": "2026-07-15",
+          "source_sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+          "stock_million_barrels": 409.665,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "change_million_barrels": 2.011,
+          "release_date": "2026-07-22",
+          "source_sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+          "stock_million_barrels": 411.675,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "change_million_barrels": -7.167,
+          "release_date": "2026-07-29",
+          "source_sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+          "stock_million_barrels": 404.508,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "change_million_barrels": 2.479,
+          "release_date": "2026-08-05",
+          "source_sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+          "stock_million_barrels": 406.987,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "change_million_barrels": 17.422,
+          "release_date": "2026-08-12",
+          "source_sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+          "stock_million_barrels": 424.41,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "change_million_barrels": 4.405,
+          "release_date": "2026-08-19",
+          "source_sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+          "stock_million_barrels": 428.815,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "change_million_barrels": 0.095,
+          "release_date": "2026-08-26",
+          "source_sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+          "stock_million_barrels": 428.91,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "change_million_barrels": -4.45,
+          "release_date": "2026-09-02",
+          "source_sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+          "stock_million_barrels": 424.46,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "change_million_barrels": -0.39,
+          "release_date": "2026-09-10",
+          "source_sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+          "stock_million_barrels": 424.069,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "change_million_barrels": -0.64,
+          "release_date": "2026-09-16",
+          "source_sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+          "stock_million_barrels": 423.429,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "change_million_barrels": 2.969,
+          "release_date": "2026-09-23",
+          "source_sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+          "stock_million_barrels": 426.398,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "change_million_barrels": 0.922,
+          "release_date": "2026-09-30",
+          "source_sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+          "stock_million_barrels": 427.32,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "padd_number": 0,
+      "region_code": "US",
+      "region_name": "United States",
+      "series_id": "WCESTUS1"
+    },
+    {
+      "observations": [
+        {
+          "change_million_barrels": -0.986,
+          "release_date": "2021-10-06",
+          "source_sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+          "stock_million_barrels": 7.858,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "change_million_barrels": -0.101,
+          "release_date": "2022-10-05",
+          "source_sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+          "stock_million_barrels": 8.118,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "change_million_barrels": 0.395,
+          "release_date": "2023-10-04",
+          "source_sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+          "stock_million_barrels": 7.186,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "change_million_barrels": 0.635,
+          "release_date": "2024-10-02",
+          "source_sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+          "stock_million_barrels": 8.721,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "change_million_barrels": -0.995,
+          "release_date": "2025-10-01",
+          "source_sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+          "stock_million_barrels": 7.01,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "change_million_barrels": -0.352,
+          "release_date": "2025-10-08",
+          "source_sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+          "stock_million_barrels": 6.658,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "change_million_barrels": 1.431,
+          "release_date": "2025-10-16",
+          "source_sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+          "stock_million_barrels": 8.089,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "change_million_barrels": -0.457,
+          "release_date": "2025-10-22",
+          "source_sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+          "stock_million_barrels": 7.633,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "change_million_barrels": 0.43,
+          "release_date": "2025-10-29",
+          "source_sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+          "stock_million_barrels": 8.063,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "change_million_barrels": 0.056,
+          "release_date": "2025-11-05",
+          "source_sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+          "stock_million_barrels": 8.119,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "change_million_barrels": 0.185,
+          "release_date": "2025-11-13",
+          "source_sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+          "stock_million_barrels": 8.303,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "change_million_barrels": 0.133,
+          "release_date": "2025-11-19",
+          "source_sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+          "stock_million_barrels": 8.436,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "change_million_barrels": -1.112,
+          "release_date": "2025-11-26",
+          "source_sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+          "stock_million_barrels": 7.325,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "change_million_barrels": 1.139,
+          "release_date": "2025-12-03",
+          "source_sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+          "stock_million_barrels": 8.464,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "change_million_barrels": -0.558,
+          "release_date": "2025-12-10",
+          "source_sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+          "stock_million_barrels": 7.906,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "change_million_barrels": -0.106,
+          "release_date": "2025-12-17",
+          "source_sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+          "stock_million_barrels": 7.799,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "change_million_barrels": -0.404,
+          "release_date": "2025-12-29",
+          "source_sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+          "stock_million_barrels": 7.395,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "change_million_barrels": -0.157,
+          "release_date": "2025-12-31",
+          "source_sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+          "stock_million_barrels": 7.238,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "change_million_barrels": -0.353,
+          "release_date": "2026-01-07",
+          "source_sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+          "stock_million_barrels": 6.885,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "change_million_barrels": 0.175,
+          "release_date": "2026-01-14",
+          "source_sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+          "stock_million_barrels": 7.06,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "change_million_barrels": -0.22,
+          "release_date": "2026-01-22",
+          "source_sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+          "stock_million_barrels": 6.84,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "change_million_barrels": 0.434,
+          "release_date": "2026-01-28",
+          "source_sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+          "stock_million_barrels": 7.274,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "change_million_barrels": -0.108,
+          "release_date": "2026-02-04",
+          "source_sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+          "stock_million_barrels": 7.166,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "change_million_barrels": 0.783,
+          "release_date": "2026-02-11",
+          "source_sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+          "stock_million_barrels": 7.949,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "change_million_barrels": -0.492,
+          "release_date": "2026-02-19",
+          "source_sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+          "stock_million_barrels": 7.457,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "change_million_barrels": 0.853,
+          "release_date": "2026-02-25",
+          "source_sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+          "stock_million_barrels": 8.31,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "change_million_barrels": 0.771,
+          "release_date": "2026-03-04",
+          "source_sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+          "stock_million_barrels": 9.081,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "change_million_barrels": -1.042,
+          "release_date": "2026-03-11",
+          "source_sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+          "stock_million_barrels": 8.039,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "change_million_barrels": 0.316,
+          "release_date": "2026-03-18",
+          "source_sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+          "stock_million_barrels": 8.355,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "change_million_barrels": 0.328,
+          "release_date": "2026-03-25",
+          "source_sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+          "stock_million_barrels": 8.683,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "change_million_barrels": -0.629,
+          "release_date": "2026-04-01",
+          "source_sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+          "stock_million_barrels": 8.054,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "change_million_barrels": 0.211,
+          "release_date": "2026-04-08",
+          "source_sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+          "stock_million_barrels": 8.265,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "change_million_barrels": -0.553,
+          "release_date": "2026-04-15",
+          "source_sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+          "stock_million_barrels": 7.712,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "change_million_barrels": 0.142,
+          "release_date": "2026-04-22",
+          "source_sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+          "stock_million_barrels": 7.855,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "change_million_barrels": -0.246,
+          "release_date": "2026-04-29",
+          "source_sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+          "stock_million_barrels": 7.609,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "change_million_barrels": 0.853,
+          "release_date": "2026-05-06",
+          "source_sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+          "stock_million_barrels": 8.462,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "change_million_barrels": -0.77,
+          "release_date": "2026-05-13",
+          "source_sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+          "stock_million_barrels": 7.692,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "change_million_barrels": -0.009,
+          "release_date": "2026-05-20",
+          "source_sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+          "stock_million_barrels": 7.683,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "change_million_barrels": 0.917,
+          "release_date": "2026-05-28",
+          "source_sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+          "stock_million_barrels": 8.6,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "change_million_barrels": -0.462,
+          "release_date": "2026-06-03",
+          "source_sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+          "stock_million_barrels": 8.137,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "change_million_barrels": -0.321,
+          "release_date": "2026-06-10",
+          "source_sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+          "stock_million_barrels": 7.816,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "change_million_barrels": 0.076,
+          "release_date": "2026-06-17",
+          "source_sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+          "stock_million_barrels": 7.892,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "change_million_barrels": 0.586,
+          "release_date": "2026-06-24",
+          "source_sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+          "stock_million_barrels": 8.478,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "change_million_barrels": -0.556,
+          "release_date": "2026-07-01",
+          "source_sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+          "stock_million_barrels": 7.922,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "change_million_barrels": 0.343,
+          "release_date": "2026-07-08",
+          "source_sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+          "stock_million_barrels": 8.265,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "change_million_barrels": -0.241,
+          "release_date": "2026-07-15",
+          "source_sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+          "stock_million_barrels": 8.025,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "change_million_barrels": -0.233,
+          "release_date": "2026-07-22",
+          "source_sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+          "stock_million_barrels": 7.792,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "change_million_barrels": -0.651,
+          "release_date": "2026-07-29",
+          "source_sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+          "stock_million_barrels": 7.141,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "change_million_barrels": 0.475,
+          "release_date": "2026-08-05",
+          "source_sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+          "stock_million_barrels": 7.617,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "change_million_barrels": 0.253,
+          "release_date": "2026-08-12",
+          "source_sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+          "stock_million_barrels": 7.869,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "change_million_barrels": -0.043,
+          "release_date": "2026-08-19",
+          "source_sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+          "stock_million_barrels": 7.826,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "change_million_barrels": 0.597,
+          "release_date": "2026-08-26",
+          "source_sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+          "stock_million_barrels": 8.423,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "change_million_barrels": 0.111,
+          "release_date": "2026-09-02",
+          "source_sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+          "stock_million_barrels": 8.534,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "change_million_barrels": -0.146,
+          "release_date": "2026-09-10",
+          "source_sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+          "stock_million_barrels": 8.388,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "change_million_barrels": -0.193,
+          "release_date": "2026-09-16",
+          "source_sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+          "stock_million_barrels": 8.195,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "change_million_barrels": 0.176,
+          "release_date": "2026-09-23",
+          "source_sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+          "stock_million_barrels": 8.372,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "change_million_barrels": -0.378,
+          "release_date": "2026-09-30",
+          "source_sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+          "stock_million_barrels": 7.994,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "padd_number": 1,
+      "region_code": "PADD1",
+      "region_name": "East Coast (PADD 1)",
+      "series_id": "WCESTP11"
+    },
+    {
+      "observations": [
+        {
+          "change_million_barrels": 2.317,
+          "release_date": "2021-10-06",
+          "source_sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+          "stock_million_barrels": 113.437,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "change_million_barrels": 1.999,
+          "release_date": "2022-10-05",
+          "source_sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+          "stock_million_barrels": 110.222,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "change_million_barrels": -1.017,
+          "release_date": "2023-10-04",
+          "source_sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+          "stock_million_barrels": 101.873,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "change_million_barrels": 1.082,
+          "release_date": "2024-10-02",
+          "source_sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+          "stock_million_barrels": 103.44,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "change_million_barrels": -1.656,
+          "release_date": "2025-10-01",
+          "source_sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+          "stock_million_barrels": 101.583,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "change_million_barrels": -0.869,
+          "release_date": "2025-10-08",
+          "source_sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+          "stock_million_barrels": 100.714,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "change_million_barrels": 1.309,
+          "release_date": "2025-10-16",
+          "source_sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+          "stock_million_barrels": 102.024,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "change_million_barrels": -0.417,
+          "release_date": "2025-10-22",
+          "source_sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+          "stock_million_barrels": 101.606,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "change_million_barrels": 2.141,
+          "release_date": "2025-10-29",
+          "source_sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+          "stock_million_barrels": 103.747,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "change_million_barrels": 0.764,
+          "release_date": "2025-11-05",
+          "source_sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+          "stock_million_barrels": 104.511,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "change_million_barrels": -0.586,
+          "release_date": "2025-11-13",
+          "source_sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+          "stock_million_barrels": 103.925,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "change_million_barrels": -1.81,
+          "release_date": "2025-11-19",
+          "source_sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+          "stock_million_barrels": 102.115,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "change_million_barrels": -1.21,
+          "release_date": "2025-11-26",
+          "source_sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+          "stock_million_barrels": 100.905,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "change_million_barrels": 0.056,
+          "release_date": "2025-12-03",
+          "source_sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+          "stock_million_barrels": 100.96,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "change_million_barrels": 1.085,
+          "release_date": "2025-12-10",
+          "source_sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+          "stock_million_barrels": 102.046,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "change_million_barrels": 0.046,
+          "release_date": "2025-12-17",
+          "source_sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+          "stock_million_barrels": 102.092,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "change_million_barrels": 2.257,
+          "release_date": "2025-12-29",
+          "source_sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+          "stock_million_barrels": 104.349,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "change_million_barrels": 0.848,
+          "release_date": "2025-12-31",
+          "source_sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+          "stock_million_barrels": 105.197,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "change_million_barrels": 0.001,
+          "release_date": "2026-01-07",
+          "source_sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+          "stock_million_barrels": 105.198,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "change_million_barrels": 1.434,
+          "release_date": "2026-01-14",
+          "source_sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+          "stock_million_barrels": 106.631,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "change_million_barrels": 1.881,
+          "release_date": "2026-01-22",
+          "source_sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+          "stock_million_barrels": 108.512,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "change_million_barrels": -0.476,
+          "release_date": "2026-01-28",
+          "source_sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+          "stock_million_barrels": 108.036,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "change_million_barrels": -2.279,
+          "release_date": "2026-02-04",
+          "source_sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+          "stock_million_barrels": 105.757,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "change_million_barrels": 0.712,
+          "release_date": "2026-02-11",
+          "source_sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+          "stock_million_barrels": 106.469,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "change_million_barrels": 0.043,
+          "release_date": "2026-02-19",
+          "source_sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+          "stock_million_barrels": 106.512,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "change_million_barrels": 0.73,
+          "release_date": "2026-02-25",
+          "source_sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+          "stock_million_barrels": 107.242,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "change_million_barrels": 1.04,
+          "release_date": "2026-03-04",
+          "source_sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+          "stock_million_barrels": 108.282,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "change_million_barrels": 0.756,
+          "release_date": "2026-03-11",
+          "source_sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+          "stock_million_barrels": 109.038,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "change_million_barrels": 0.916,
+          "release_date": "2026-03-18",
+          "source_sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+          "stock_million_barrels": 109.954,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "change_million_barrels": 2.498,
+          "release_date": "2026-03-25",
+          "source_sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+          "stock_million_barrels": 112.451,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "change_million_barrels": 1.538,
+          "release_date": "2026-04-01",
+          "source_sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+          "stock_million_barrels": 113.989,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "change_million_barrels": 0.622,
+          "release_date": "2026-04-08",
+          "source_sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+          "stock_million_barrels": 114.611,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "change_million_barrels": -2.225,
+          "release_date": "2026-04-15",
+          "source_sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+          "stock_million_barrels": 112.387,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "change_million_barrels": 1.448,
+          "release_date": "2026-04-22",
+          "source_sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+          "stock_million_barrels": 113.834,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "change_million_barrels": 0.569,
+          "release_date": "2026-04-29",
+          "source_sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+          "stock_million_barrels": 114.403,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "change_million_barrels": -2.339,
+          "release_date": "2026-05-06",
+          "source_sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+          "stock_million_barrels": 112.064,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "change_million_barrels": -0.849,
+          "release_date": "2026-05-13",
+          "source_sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+          "stock_million_barrels": 111.215,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "change_million_barrels": -2.706,
+          "release_date": "2026-05-20",
+          "source_sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+          "stock_million_barrels": 108.509,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "change_million_barrels": -4.716,
+          "release_date": "2026-05-28",
+          "source_sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+          "stock_million_barrels": 103.794,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "change_million_barrels": -0.842,
+          "release_date": "2026-06-03",
+          "source_sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+          "stock_million_barrels": 102.952,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "change_million_barrels": -0.638,
+          "release_date": "2026-06-10",
+          "source_sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+          "stock_million_barrels": 102.314,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "change_million_barrels": -4.51,
+          "release_date": "2026-06-17",
+          "source_sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+          "stock_million_barrels": 97.804,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "change_million_barrels": -0.53,
+          "release_date": "2026-06-24",
+          "source_sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+          "stock_million_barrels": 97.273,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "change_million_barrels": 0.784,
+          "release_date": "2026-07-01",
+          "source_sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+          "stock_million_barrels": 98.058,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "change_million_barrels": -0.115,
+          "release_date": "2026-07-08",
+          "source_sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+          "stock_million_barrels": 97.942,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "change_million_barrels": -0.058,
+          "release_date": "2026-07-15",
+          "source_sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+          "stock_million_barrels": 97.885,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "change_million_barrels": -0.816,
+          "release_date": "2026-07-22",
+          "source_sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+          "stock_million_barrels": 97.068,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "change_million_barrels": -0.127,
+          "release_date": "2026-07-29",
+          "source_sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+          "stock_million_barrels": 96.941,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "change_million_barrels": 2.631,
+          "release_date": "2026-08-05",
+          "source_sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+          "stock_million_barrels": 99.573,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "change_million_barrels": 2.321,
+          "release_date": "2026-08-12",
+          "source_sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+          "stock_million_barrels": 101.893,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "change_million_barrels": -1.512,
+          "release_date": "2026-08-19",
+          "source_sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+          "stock_million_barrels": 100.382,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "change_million_barrels": 0.813,
+          "release_date": "2026-08-26",
+          "source_sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+          "stock_million_barrels": 101.195,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "change_million_barrels": -0.711,
+          "release_date": "2026-09-02",
+          "source_sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+          "stock_million_barrels": 100.484,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "change_million_barrels": -0.381,
+          "release_date": "2026-09-10",
+          "source_sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+          "stock_million_barrels": 100.103,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "change_million_barrels": -0.441,
+          "release_date": "2026-09-16",
+          "source_sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+          "stock_million_barrels": 99.663,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "change_million_barrels": 4.407,
+          "release_date": "2026-09-23",
+          "source_sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+          "stock_million_barrels": 104.07,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "change_million_barrels": 1.04,
+          "release_date": "2026-09-30",
+          "source_sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+          "stock_million_barrels": 105.11,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "padd_number": 2,
+      "region_code": "PADD2",
+      "region_name": "Midwest (PADD 2)",
+      "series_id": "WCESTP21"
+    },
+    {
+      "observations": [
+        {
+          "change_million_barrels": 0.073,
+          "release_date": "2021-10-06",
+          "source_sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+          "stock_million_barrels": 227.843,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "change_million_barrels": -0.934,
+          "release_date": "2022-10-05",
+          "source_sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+          "stock_million_barrels": 240.843,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "change_million_barrels": -1.644,
+          "release_date": "2023-10-04",
+          "source_sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+          "stock_million_barrels": 236.353,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "change_million_barrels": 2.466,
+          "release_date": "2024-10-02",
+          "source_sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+          "stock_million_barrels": 237.011,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "change_million_barrels": 4.031,
+          "release_date": "2025-10-01",
+          "source_sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+          "stock_million_barrels": 238.342,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "change_million_barrels": 6.124,
+          "release_date": "2025-10-08",
+          "source_sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+          "stock_million_barrels": 244.467,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "change_million_barrels": 0.116,
+          "release_date": "2025-10-16",
+          "source_sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+          "stock_million_barrels": 244.582,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "change_million_barrels": -0.283,
+          "release_date": "2025-10-22",
+          "source_sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+          "stock_million_barrels": 244.299,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "change_million_barrels": -9.986,
+          "release_date": "2025-10-29",
+          "source_sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+          "stock_million_barrels": 234.313,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "change_million_barrels": 3.164,
+          "release_date": "2025-11-05",
+          "source_sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+          "stock_million_barrels": 237.478,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "change_million_barrels": 5.837,
+          "release_date": "2025-11-13",
+          "source_sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+          "stock_million_barrels": 243.315,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "change_million_barrels": -2.057,
+          "release_date": "2025-11-19",
+          "source_sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+          "stock_million_barrels": 241.257,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "change_million_barrels": 5.764,
+          "release_date": "2025-11-26",
+          "source_sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+          "stock_million_barrels": 247.021,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "change_million_barrels": -0.477,
+          "release_date": "2025-12-03",
+          "source_sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+          "stock_million_barrels": 246.544,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "change_million_barrels": -3.738,
+          "release_date": "2025-12-10",
+          "source_sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+          "stock_million_barrels": 242.806,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "change_million_barrels": -1.09,
+          "release_date": "2025-12-17",
+          "source_sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+          "stock_million_barrels": 241.716,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "change_million_barrels": -0.654,
+          "release_date": "2025-12-29",
+          "source_sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+          "stock_million_barrels": 241.062,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "change_million_barrels": -2.885,
+          "release_date": "2025-12-31",
+          "source_sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+          "stock_million_barrels": 238.177,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "change_million_barrels": -2.561,
+          "release_date": "2026-01-07",
+          "source_sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+          "stock_million_barrels": 235.616,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "change_million_barrels": 2.163,
+          "release_date": "2026-01-14",
+          "source_sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+          "stock_million_barrels": 237.779,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "change_million_barrels": 0.265,
+          "release_date": "2026-01-22",
+          "source_sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+          "stock_million_barrels": 238.044,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "change_million_barrels": -0.153,
+          "release_date": "2026-01-28",
+          "source_sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+          "stock_million_barrels": 237.891,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "change_million_barrels": -1.329,
+          "release_date": "2026-02-04",
+          "source_sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+          "stock_million_barrels": 236.562,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "change_million_barrels": 5.838,
+          "release_date": "2026-02-11",
+          "source_sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+          "stock_million_barrels": 242.4,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "change_million_barrels": -8.101,
+          "release_date": "2026-02-19",
+          "source_sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+          "stock_million_barrels": 234.299,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "change_million_barrels": 13.921,
+          "release_date": "2026-02-25",
+          "source_sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+          "stock_million_barrels": 248.22,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "change_million_barrels": 2.226,
+          "release_date": "2026-03-04",
+          "source_sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+          "stock_million_barrels": 250.446,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "change_million_barrels": 6.906,
+          "release_date": "2026-03-11",
+          "source_sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+          "stock_million_barrels": 257.352,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "change_million_barrels": 2.893,
+          "release_date": "2026-03-18",
+          "source_sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+          "stock_million_barrels": 260.245,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "change_million_barrels": 5.662,
+          "release_date": "2026-03-25",
+          "source_sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+          "stock_million_barrels": 265.907,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "change_million_barrels": 2.699,
+          "release_date": "2026-04-01",
+          "source_sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+          "stock_million_barrels": 268.607,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "change_million_barrels": 2.667,
+          "release_date": "2026-04-08",
+          "source_sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+          "stock_million_barrels": 271.274,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "change_million_barrels": -0.26,
+          "release_date": "2026-04-15",
+          "source_sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+          "stock_million_barrels": 271.014,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "change_million_barrels": 1.122,
+          "release_date": "2026-04-22",
+          "source_sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+          "stock_million_barrels": 272.136,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "change_million_barrels": -6.049,
+          "release_date": "2026-04-29",
+          "source_sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+          "stock_million_barrels": 266.087,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "change_million_barrels": -1.986,
+          "release_date": "2026-05-06",
+          "source_sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+          "stock_million_barrels": 264.101,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "change_million_barrels": -0.941,
+          "release_date": "2026-05-13",
+          "source_sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+          "stock_million_barrels": 263.16,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "change_million_barrels": -3.995,
+          "release_date": "2026-05-20",
+          "source_sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+          "stock_million_barrels": 259.165,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "change_million_barrels": -0.008,
+          "release_date": "2026-05-28",
+          "source_sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+          "stock_million_barrels": 259.157,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "change_million_barrels": -6.657,
+          "release_date": "2026-06-03",
+          "source_sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+          "stock_million_barrels": 252.5,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "change_million_barrels": -3.856,
+          "release_date": "2026-06-10",
+          "source_sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+          "stock_million_barrels": 248.644,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "change_million_barrels": -4.83,
+          "release_date": "2026-06-17",
+          "source_sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+          "stock_million_barrels": 243.814,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "change_million_barrels": -3.979,
+          "release_date": "2026-06-24",
+          "source_sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+          "stock_million_barrels": 239.835,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "change_million_barrels": -2.337,
+          "release_date": "2026-07-01",
+          "source_sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+          "stock_million_barrels": 237.498,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "change_million_barrels": -0.286,
+          "release_date": "2026-07-08",
+          "source_sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+          "stock_million_barrels": 237.212,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "change_million_barrels": -2.089,
+          "release_date": "2026-07-15",
+          "source_sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+          "stock_million_barrels": 235.123,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "change_million_barrels": 4.676,
+          "release_date": "2026-07-22",
+          "source_sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+          "stock_million_barrels": 239.799,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "change_million_barrels": -6.515,
+          "release_date": "2026-07-29",
+          "source_sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+          "stock_million_barrels": 233.284,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "change_million_barrels": -2.729,
+          "release_date": "2026-08-05",
+          "source_sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+          "stock_million_barrels": 230.555,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "change_million_barrels": 14.68,
+          "release_date": "2026-08-12",
+          "source_sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+          "stock_million_barrels": 245.235,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "change_million_barrels": 8.41,
+          "release_date": "2026-08-19",
+          "source_sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+          "stock_million_barrels": 253.645,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "change_million_barrels": -2.22,
+          "release_date": "2026-08-26",
+          "source_sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+          "stock_million_barrels": 251.424,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "change_million_barrels": -6.363,
+          "release_date": "2026-09-02",
+          "source_sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+          "stock_million_barrels": 245.061,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "change_million_barrels": 2.426,
+          "release_date": "2026-09-10",
+          "source_sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+          "stock_million_barrels": 247.488,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "change_million_barrels": -1.315,
+          "release_date": "2026-09-16",
+          "source_sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+          "stock_million_barrels": 246.172,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "change_million_barrels": -2.093,
+          "release_date": "2026-09-23",
+          "source_sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+          "stock_million_barrels": 244.08,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "change_million_barrels": 3.417,
+          "release_date": "2026-09-30",
+          "source_sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+          "stock_million_barrels": 247.497,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "padd_number": 3,
+      "region_code": "PADD3",
+      "region_name": "Gulf Coast (PADD 3)",
+      "series_id": "WCESTP31"
+    },
+    {
+      "observations": [
+        {
+          "change_million_barrels": -0.438,
+          "release_date": "2021-10-06",
+          "source_sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+          "stock_million_barrels": 23.055,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "change_million_barrels": -0.551,
+          "release_date": "2022-10-05",
+          "source_sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+          "stock_million_barrels": 23.142,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "change_million_barrels": 0.04,
+          "release_date": "2023-10-04",
+          "source_sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+          "stock_million_barrels": 23.509,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "change_million_barrels": 0.628,
+          "release_date": "2024-10-02",
+          "source_sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+          "stock_million_barrels": 22.584,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "change_million_barrels": 0.082,
+          "release_date": "2025-10-01",
+          "source_sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+          "stock_million_barrels": 22.819,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "change_million_barrels": -0.378,
+          "release_date": "2025-10-08",
+          "source_sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+          "stock_million_barrels": 22.441,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "change_million_barrels": 0.661,
+          "release_date": "2025-10-16",
+          "source_sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+          "stock_million_barrels": 23.102,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "change_million_barrels": 0.411,
+          "release_date": "2025-10-22",
+          "source_sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+          "stock_million_barrels": 23.513,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "change_million_barrels": -0.152,
+          "release_date": "2025-10-29",
+          "source_sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+          "stock_million_barrels": 23.361,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "change_million_barrels": 0.266,
+          "release_date": "2025-11-05",
+          "source_sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+          "stock_million_barrels": 23.627,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "change_million_barrels": 0.884,
+          "release_date": "2025-11-13",
+          "source_sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+          "stock_million_barrels": 24.51,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "change_million_barrels": 0.091,
+          "release_date": "2025-11-19",
+          "source_sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+          "stock_million_barrels": 24.602,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "change_million_barrels": 0.015,
+          "release_date": "2025-11-26",
+          "source_sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+          "stock_million_barrels": 24.617,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "change_million_barrels": 0.386,
+          "release_date": "2025-12-03",
+          "source_sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+          "stock_million_barrels": 25.004,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "change_million_barrels": 0.08,
+          "release_date": "2025-12-10",
+          "source_sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+          "stock_million_barrels": 25.084,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "change_million_barrels": 0.111,
+          "release_date": "2025-12-17",
+          "source_sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+          "stock_million_barrels": 25.195,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "change_million_barrels": -0.455,
+          "release_date": "2025-12-29",
+          "source_sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+          "stock_million_barrels": 24.74,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "change_million_barrels": 0.002,
+          "release_date": "2025-12-31",
+          "source_sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+          "stock_million_barrels": 24.742,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "change_million_barrels": -0.334,
+          "release_date": "2026-01-07",
+          "source_sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+          "stock_million_barrels": 24.408,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "change_million_barrels": 0.119,
+          "release_date": "2026-01-14",
+          "source_sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+          "stock_million_barrels": 24.527,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "change_million_barrels": 0.229,
+          "release_date": "2026-01-22",
+          "source_sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+          "stock_million_barrels": 24.756,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "change_million_barrels": -1.044,
+          "release_date": "2026-01-28",
+          "source_sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+          "stock_million_barrels": 23.712,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "change_million_barrels": 0.013,
+          "release_date": "2026-02-04",
+          "source_sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+          "stock_million_barrels": 23.724,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "change_million_barrels": 0.214,
+          "release_date": "2026-02-11",
+          "source_sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+          "stock_million_barrels": 23.938,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "change_million_barrels": -0.043,
+          "release_date": "2026-02-19",
+          "source_sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+          "stock_million_barrels": 23.895,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "change_million_barrels": 0.123,
+          "release_date": "2026-02-25",
+          "source_sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+          "stock_million_barrels": 24.018,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "change_million_barrels": 0.406,
+          "release_date": "2026-03-04",
+          "source_sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+          "stock_million_barrels": 24.424,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "change_million_barrels": 0.039,
+          "release_date": "2026-03-11",
+          "source_sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+          "stock_million_barrels": 24.463,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "change_million_barrels": 0.693,
+          "release_date": "2026-03-18",
+          "source_sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+          "stock_million_barrels": 25.155,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "change_million_barrels": 0.079,
+          "release_date": "2026-03-25",
+          "source_sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+          "stock_million_barrels": 25.235,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "change_million_barrels": 0.274,
+          "release_date": "2026-04-01",
+          "source_sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+          "stock_million_barrels": 25.508,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "change_million_barrels": -0.138,
+          "release_date": "2026-04-08",
+          "source_sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+          "stock_million_barrels": 25.371,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "change_million_barrels": 0.445,
+          "release_date": "2026-04-15",
+          "source_sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+          "stock_million_barrels": 25.816,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "change_million_barrels": 0.437,
+          "release_date": "2026-04-22",
+          "source_sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+          "stock_million_barrels": 26.252,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "change_million_barrels": -0.152,
+          "release_date": "2026-04-29",
+          "source_sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+          "stock_million_barrels": 26.1,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "change_million_barrels": -0.248,
+          "release_date": "2026-05-06",
+          "source_sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+          "stock_million_barrels": 25.852,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "change_million_barrels": -0.295,
+          "release_date": "2026-05-13",
+          "source_sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+          "stock_million_barrels": 25.557,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "change_million_barrels": 0.292,
+          "release_date": "2026-05-20",
+          "source_sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+          "stock_million_barrels": 25.849,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "change_million_barrels": -0.422,
+          "release_date": "2026-05-28",
+          "source_sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+          "stock_million_barrels": 25.428,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "change_million_barrels": -1.03,
+          "release_date": "2026-06-03",
+          "source_sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+          "stock_million_barrels": 24.397,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "change_million_barrels": -0.539,
+          "release_date": "2026-06-10",
+          "source_sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+          "stock_million_barrels": 23.858,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "change_million_barrels": -0.346,
+          "release_date": "2026-06-17",
+          "source_sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+          "stock_million_barrels": 23.512,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "change_million_barrels": -0.529,
+          "release_date": "2026-06-24",
+          "source_sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+          "stock_million_barrels": 22.983,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "change_million_barrels": -0.415,
+          "release_date": "2026-07-01",
+          "source_sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+          "stock_million_barrels": 22.568,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "change_million_barrels": 0.077,
+          "release_date": "2026-07-08",
+          "source_sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+          "stock_million_barrels": 22.645,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "change_million_barrels": -0.16,
+          "release_date": "2026-07-15",
+          "source_sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+          "stock_million_barrels": 22.485,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "change_million_barrels": -0.241,
+          "release_date": "2026-07-22",
+          "source_sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+          "stock_million_barrels": 22.244,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "change_million_barrels": -0.057,
+          "release_date": "2026-07-29",
+          "source_sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+          "stock_million_barrels": 22.187,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "change_million_barrels": 0.181,
+          "release_date": "2026-08-05",
+          "source_sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+          "stock_million_barrels": 22.368,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "change_million_barrels": 0.448,
+          "release_date": "2026-08-12",
+          "source_sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+          "stock_million_barrels": 22.816,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "change_million_barrels": -0.207,
+          "release_date": "2026-08-19",
+          "source_sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+          "stock_million_barrels": 22.61,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "change_million_barrels": -0.085,
+          "release_date": "2026-08-26",
+          "source_sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+          "stock_million_barrels": 22.524,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "change_million_barrels": 0.189,
+          "release_date": "2026-09-02",
+          "source_sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+          "stock_million_barrels": 22.714,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "change_million_barrels": 0.398,
+          "release_date": "2026-09-10",
+          "source_sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+          "stock_million_barrels": 23.112,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "change_million_barrels": 0.298,
+          "release_date": "2026-09-16",
+          "source_sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+          "stock_million_barrels": 23.409,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "change_million_barrels": -0.091,
+          "release_date": "2026-09-23",
+          "source_sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+          "stock_million_barrels": 23.319,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "change_million_barrels": -0.823,
+          "release_date": "2026-09-30",
+          "source_sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+          "stock_million_barrels": 22.496,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "padd_number": 4,
+      "region_code": "PADD4",
+      "region_name": "Rocky Mountain (PADD 4)",
+      "series_id": "WCESTP41"
+    },
+    {
+      "observations": [
+        {
+          "change_million_barrels": 1.38,
+          "release_date": "2021-10-06",
+          "source_sha256": "1926d18dfa05db4a6ffe300f176f4942ef278a558360f29fc419a7f4eab96d5a",
+          "stock_million_barrels": 48.694,
+          "week_ending": "2021-10-01"
+        },
+        {
+          "change_million_barrels": -1.769,
+          "release_date": "2022-10-05",
+          "source_sha256": "74be1be745b57d7a1dde9e9dc409701c1b1559a7627a30de9928730f41a40c18",
+          "stock_million_barrels": 46.878,
+          "week_ending": "2022-09-30"
+        },
+        {
+          "change_million_barrels": 0.002,
+          "release_date": "2023-10-04",
+          "source_sha256": "9e51f9ca560511688227389d0fc01a851979450c2b8a9cadca5a3efd58f1076f",
+          "stock_million_barrels": 45.141,
+          "week_ending": "2023-09-29"
+        },
+        {
+          "change_million_barrels": -0.921,
+          "release_date": "2024-10-02",
+          "source_sha256": "47ac813fbb8e16c2f52b7a6369dd57370652a0a68d66eb4cf698ff032489b2f1",
+          "stock_million_barrels": 45.175,
+          "week_ending": "2024-09-27"
+        },
+        {
+          "change_million_barrels": 0.33,
+          "release_date": "2025-10-01",
+          "source_sha256": "f4522567fd6e40c052bda5d907db876641c1c8b765ccd830fc6673a050afeeae",
+          "stock_million_barrels": 46.792,
+          "week_ending": "2025-09-26"
+        },
+        {
+          "change_million_barrels": -0.811,
+          "release_date": "2025-10-08",
+          "source_sha256": "72c86df23ec819e549a98a00cbea6f30289e1f996f6a5e00052a3c5815b8e0ce",
+          "stock_million_barrels": 45.981,
+          "week_ending": "2025-10-03"
+        },
+        {
+          "change_million_barrels": 0.007,
+          "release_date": "2025-10-16",
+          "source_sha256": "6e03317cdbe20d879b37d857fff462f217b3e1d9acbf701bd79eb498928eff17",
+          "stock_million_barrels": 45.988,
+          "week_ending": "2025-10-10"
+        },
+        {
+          "change_million_barrels": -0.215,
+          "release_date": "2025-10-22",
+          "source_sha256": "0e009c6fcbe2ac274f519ba9fe8d5878a48335c947992e1c81dd4e3bd3c19b40",
+          "stock_million_barrels": 45.773,
+          "week_ending": "2025-10-17"
+        },
+        {
+          "change_million_barrels": 0.709,
+          "release_date": "2025-10-29",
+          "source_sha256": "a28647286910f00b749ce1b6f991f3ecd2f283c145c1ab09bdc56b014073ef10",
+          "stock_million_barrels": 46.482,
+          "week_ending": "2025-10-24"
+        },
+        {
+          "change_million_barrels": 0.952,
+          "release_date": "2025-11-05",
+          "source_sha256": "3ee773ad95b705f91f2f66ad87b2bed7c095ea96623b0ab9a71f2e96fabb4eff",
+          "stock_million_barrels": 47.434,
+          "week_ending": "2025-10-31"
+        },
+        {
+          "change_million_barrels": 0.093,
+          "release_date": "2025-11-13",
+          "source_sha256": "a71b64950bcc00db51d08ebcb15c19cf0e9cec3282be91db4b3a2464805ac66b",
+          "stock_million_barrels": 47.527,
+          "week_ending": "2025-11-07"
+        },
+        {
+          "change_million_barrels": 0.217,
+          "release_date": "2025-11-19",
+          "source_sha256": "7e3d8679124e72c8354f967591be33182de8f43bb1ae7b1cf1012af3f27bd240",
+          "stock_million_barrels": 47.745,
+          "week_ending": "2025-11-14"
+        },
+        {
+          "change_million_barrels": -0.683,
+          "release_date": "2025-11-26",
+          "source_sha256": "a01d768e95cef39c8f29d41eb733ef0f6973028abd18c41121c46e655a0e8c17",
+          "stock_million_barrels": 47.062,
+          "week_ending": "2025-11-21"
+        },
+        {
+          "change_million_barrels": -0.531,
+          "release_date": "2025-12-03",
+          "source_sha256": "fcd75a79942050cd87a7ce23fd212eec5561bf4162f6966d23bf4df02d8ee229",
+          "stock_million_barrels": 46.531,
+          "week_ending": "2025-11-28"
+        },
+        {
+          "change_million_barrels": 1.319,
+          "release_date": "2025-12-10",
+          "source_sha256": "ab3f43de5e8b5fb5ecbfc739cb7dee051a0d81c4b7e8a14002ff633a4eecc03e",
+          "stock_million_barrels": 47.85,
+          "week_ending": "2025-12-05"
+        },
+        {
+          "change_million_barrels": -0.235,
+          "release_date": "2025-12-17",
+          "source_sha256": "4b1996e1d98cc57e2ad98fa4781481083788aaa5c7b0bd9e51ef19e710c77c17",
+          "stock_million_barrels": 47.615,
+          "week_ending": "2025-12-12"
+        },
+        {
+          "change_million_barrels": -0.338,
+          "release_date": "2025-12-29",
+          "source_sha256": "cfa111289cc4a6a6131ffe3070c4eee26d2c3e6d04e342a228eede50590acc51",
+          "stock_million_barrels": 47.277,
+          "week_ending": "2025-12-19"
+        },
+        {
+          "change_million_barrels": 0.257,
+          "release_date": "2025-12-31",
+          "source_sha256": "8d902f6a24a4d4cd30cb1c376116660ff6659d946118b82a6f9b2869e464ec13",
+          "stock_million_barrels": 47.534,
+          "week_ending": "2025-12-26"
+        },
+        {
+          "change_million_barrels": -0.584,
+          "release_date": "2026-01-07",
+          "source_sha256": "5957def117ef496ea951198198fddfd2b70826ffd930f792e072452864992cee",
+          "stock_million_barrels": 46.95,
+          "week_ending": "2026-01-02"
+        },
+        {
+          "change_million_barrels": -0.5,
+          "release_date": "2026-01-14",
+          "source_sha256": "91f4d72dca1d0f24d869a168e48b9e0fbcba259f2c7d5502363c6565fbc96298",
+          "stock_million_barrels": 46.45,
+          "week_ending": "2026-01-09"
+        },
+        {
+          "change_million_barrels": 1.448,
+          "release_date": "2026-01-22",
+          "source_sha256": "3f6a0f9117bdd3a5a8c71e086c12fee4fbb16bb0eef2b8e43a195f2a223f2d8a",
+          "stock_million_barrels": 47.898,
+          "week_ending": "2026-01-16"
+        },
+        {
+          "change_million_barrels": -1.056,
+          "release_date": "2026-01-28",
+          "source_sha256": "4410abd1941ef324727652f616e811fa33bf0fdd3917275272c1d412818c16d5",
+          "stock_million_barrels": 46.841,
+          "week_ending": "2026-01-23"
+        },
+        {
+          "change_million_barrels": 0.249,
+          "release_date": "2026-02-04",
+          "source_sha256": "32557b4b10663e501847c77cd17396d11887611aebd11205f9dbb76d6b5a67ec",
+          "stock_million_barrels": 47.09,
+          "week_ending": "2026-01-30"
+        },
+        {
+          "change_million_barrels": 0.983,
+          "release_date": "2026-02-11",
+          "source_sha256": "049c3efd779f8395b6261bd3fe82a597a53f787c3d70752ba69bef2d21f36db0",
+          "stock_million_barrels": 48.073,
+          "week_ending": "2026-02-06"
+        },
+        {
+          "change_million_barrels": -0.421,
+          "release_date": "2026-02-19",
+          "source_sha256": "a48ceff2c8ff9cdeaff6bb55ebe560dc5ee0af5b0827efa3dc9f26eca8570ff4",
+          "stock_million_barrels": 47.652,
+          "week_ending": "2026-02-13"
+        },
+        {
+          "change_million_barrels": 0.362,
+          "release_date": "2026-02-25",
+          "source_sha256": "620b7f2871ad0d7db10b9bfe4a36f89d228275622e25f7cae816cd27743f1ed7",
+          "stock_million_barrels": 48.014,
+          "week_ending": "2026-02-20"
+        },
+        {
+          "change_million_barrels": -0.967,
+          "release_date": "2026-03-04",
+          "source_sha256": "c258ca37445ee1110f4bc9d0cb55a1beddfc4110959f9f9edd372bee55f850dd",
+          "stock_million_barrels": 47.047,
+          "week_ending": "2026-02-27"
+        },
+        {
+          "change_million_barrels": -2.835,
+          "release_date": "2026-03-11",
+          "source_sha256": "1a8069f14cf72ae53e0a3de42d3234ae9a09dfbfe627725377dc9235c2b531a6",
+          "stock_million_barrels": 44.212,
+          "week_ending": "2026-03-06"
+        },
+        {
+          "change_million_barrels": 1.338,
+          "release_date": "2026-03-18",
+          "source_sha256": "0a5b57e0d7065e1ba516cb2d209b1b62a8f723021b62c80e9f5c41491d1dc07f",
+          "stock_million_barrels": 45.55,
+          "week_ending": "2026-03-13"
+        },
+        {
+          "change_million_barrels": -1.641,
+          "release_date": "2026-03-25",
+          "source_sha256": "ba507308cbcf424c3932500c06a1a29cd065f4bae3297ce9064d30b228ddf04b",
+          "stock_million_barrels": 43.908,
+          "week_ending": "2026-03-20"
+        },
+        {
+          "change_million_barrels": 1.569,
+          "release_date": "2026-04-01",
+          "source_sha256": "419aaf85ddf8110a17857f5725ebf50e081fa3add8cdc005bb5687f952024b8c",
+          "stock_million_barrels": 45.477,
+          "week_ending": "2026-03-27"
+        },
+        {
+          "change_million_barrels": -0.281,
+          "release_date": "2026-04-08",
+          "source_sha256": "34369f764b66ad916350cd910d949290e822711452628d7e5fbe0186487f4ec8",
+          "stock_million_barrels": 45.196,
+          "week_ending": "2026-04-03"
+        },
+        {
+          "change_million_barrels": 1.679,
+          "release_date": "2026-04-15",
+          "source_sha256": "ce3edcba89d5ec228832fbd9200cef6b3ab09a22e6b6841fdc646c60c16f8f74",
+          "stock_million_barrels": 46.875,
+          "week_ending": "2026-04-10"
+        },
+        {
+          "change_million_barrels": -1.224,
+          "release_date": "2026-04-22",
+          "source_sha256": "335bdad948d91ef3f07a2d342bd7cfb528ccd576946d30dfa7335b13fdb4e3fb",
+          "stock_million_barrels": 45.651,
+          "week_ending": "2026-04-17"
+        },
+        {
+          "change_million_barrels": -0.354,
+          "release_date": "2026-04-29",
+          "source_sha256": "b862053bafdd17524ad7fd1a72eb39241080045ddccf318300c01b6979dd2ada",
+          "stock_million_barrels": 45.297,
+          "week_ending": "2026-04-24"
+        },
+        {
+          "change_million_barrels": 1.406,
+          "release_date": "2026-05-06",
+          "source_sha256": "5bf52ccc851d0aea8d2d26c3bcbf19e93b7a5445a8e1b529d265134db7552f15",
+          "stock_million_barrels": 46.703,
+          "week_ending": "2026-05-01"
+        },
+        {
+          "change_million_barrels": -1.451,
+          "release_date": "2026-05-13",
+          "source_sha256": "1aed9660b77ee61d0592da8819b9f01719d8e5ae68ff517d6b9c91837a5b6de1",
+          "stock_million_barrels": 45.252,
+          "week_ending": "2026-05-08"
+        },
+        {
+          "change_million_barrels": -1.446,
+          "release_date": "2026-05-20",
+          "source_sha256": "7162cb292265a9d0caf31d36b382b7e9109677fb76428b7b1f969f2632fa18b7",
+          "stock_million_barrels": 43.807,
+          "week_ending": "2026-05-15"
+        },
+        {
+          "change_million_barrels": 0.901,
+          "release_date": "2026-05-28",
+          "source_sha256": "aac765e467662674e54cb841a08d2cabf25884e3573dc652daeeddd1d002b213",
+          "stock_million_barrels": 44.708,
+          "week_ending": "2026-05-22"
+        },
+        {
+          "change_million_barrels": 1.018,
+          "release_date": "2026-06-03",
+          "source_sha256": "e422fec56a5f7db7618e22bc1a0e5cfd1dcd28fe1c2b56b8ee0c1b38f5eda41d",
+          "stock_million_barrels": 45.726,
+          "week_ending": "2026-05-29"
+        },
+        {
+          "change_million_barrels": -1.873,
+          "release_date": "2026-06-10",
+          "source_sha256": "ead8c53551ed6f31a439f3bd2d7ff122c18dda45ddb8cc0e70f38f444da9c345",
+          "stock_million_barrels": 43.853,
+          "week_ending": "2026-06-05"
+        },
+        {
+          "change_million_barrels": 1.348,
+          "release_date": "2026-06-17",
+          "source_sha256": "e29588c58905a1588acffb56fcdc17128e0c6975930bb2b7186ff96de9727fd9",
+          "stock_million_barrels": 45.2,
+          "week_ending": "2026-06-12"
+        },
+        {
+          "change_million_barrels": -1.635,
+          "release_date": "2026-06-24",
+          "source_sha256": "8110e760943bc5cf469ce64b893d730dd59d1fa5082c9d5d1c6f02e54c01490a",
+          "stock_million_barrels": 43.565,
+          "week_ending": "2026-06-19"
+        },
+        {
+          "change_million_barrels": -1.252,
+          "release_date": "2026-07-01",
+          "source_sha256": "77e79e3628153158f7944b524820d59c99938a982f99cab12dde17ed7cb32722",
+          "stock_million_barrels": 42.313,
+          "week_ending": "2026-06-26"
+        },
+        {
+          "change_million_barrels": 2.98,
+          "release_date": "2026-07-08",
+          "source_sha256": "4aa059232f5cb0dc9afb1bcd6b0b1c3899199191ddd53d8414fe38b6b21ccbd0",
+          "stock_million_barrels": 45.293,
+          "week_ending": "2026-07-03"
+        },
+        {
+          "change_million_barrels": 0.854,
+          "release_date": "2026-07-15",
+          "source_sha256": "7a01269c231d93c025a1acc7426f63371d3459897f67864911c104c85d18df36",
+          "stock_million_barrels": 46.147,
+          "week_ending": "2026-07-10"
+        },
+        {
+          "change_million_barrels": -1.376,
+          "release_date": "2026-07-22",
+          "source_sha256": "b20fb34601bc6a47dfff5531fc18707c32b615427d2f8de5bce1b49065384052",
+          "stock_million_barrels": 44.772,
+          "week_ending": "2026-07-17"
+        },
+        {
+          "change_million_barrels": 0.182,
+          "release_date": "2026-07-29",
+          "source_sha256": "d674116e0dfc987d8c6e0274c9a15e70a84abb05c01c25e0a93e57d98e83c261",
+          "stock_million_barrels": 44.954,
+          "week_ending": "2026-07-24"
+        },
+        {
+          "change_million_barrels": 1.921,
+          "release_date": "2026-08-05",
+          "source_sha256": "23c1479d69b5d81b2eab147e8cfa8cbe48c80e083b1ab58aae418dd0ee703277",
+          "stock_million_barrels": 46.875,
+          "week_ending": "2026-07-31"
+        },
+        {
+          "change_million_barrels": -0.28,
+          "release_date": "2026-08-12",
+          "source_sha256": "420dc7e607f29f5f0790fdbd836b58bb341187c2bf9a26be106f0b2318b8ba4c",
+          "stock_million_barrels": 46.595,
+          "week_ending": "2026-08-07"
+        },
+        {
+          "change_million_barrels": -2.243,
+          "release_date": "2026-08-19",
+          "source_sha256": "9a6f6a3d12fb4a844271b7566e4c714e34bc9bfe7041dd287bfd5236cdf94341",
+          "stock_million_barrels": 44.352,
+          "week_ending": "2026-08-14"
+        },
+        {
+          "change_million_barrels": 0.991,
+          "release_date": "2026-08-26",
+          "source_sha256": "5c13350a2a0c387b661384fe2e1e3d617af197a8f75647e56ae99d25d0d3a8af",
+          "stock_million_barrels": 45.343,
+          "week_ending": "2026-08-21"
+        },
+        {
+          "change_million_barrels": 2.324,
+          "release_date": "2026-09-02",
+          "source_sha256": "c57298e748abd998c45f37039db2b080fea77ecc3f0203546cdd947809d341db",
+          "stock_million_barrels": 47.667,
+          "week_ending": "2026-08-28"
+        },
+        {
+          "change_million_barrels": -2.688,
+          "release_date": "2026-09-10",
+          "source_sha256": "e407d41fbe39d4c2c4ef86aa63a198a1457c26727b21ba183f60d3d89b698e43",
+          "stock_million_barrels": 44.979,
+          "week_ending": "2026-09-04"
+        },
+        {
+          "change_million_barrels": 1.01,
+          "release_date": "2026-09-16",
+          "source_sha256": "4916f2275736b27c993617de91381a37f08b4d58e8c585c0684deac32e8acbbc",
+          "stock_million_barrels": 45.989,
+          "week_ending": "2026-09-11"
+        },
+        {
+          "change_million_barrels": 0.569,
+          "release_date": "2026-09-23",
+          "source_sha256": "b25afd686b1f2ca08c41484bfd3349548488a88ee7a8499fd0a47f3761668923",
+          "stock_million_barrels": 46.558,
+          "week_ending": "2026-09-18"
+        },
+        {
+          "change_million_barrels": -2.334,
+          "release_date": "2026-09-30",
+          "source_sha256": "5c275144fd510c44c0758bd467a541ba52456150fa1da1762de0b69bb3b7923a",
+          "stock_million_barrels": 44.224,
+          "week_ending": "2026-09-25"
+        }
+      ],
+      "padd_number": 5,
+      "region_code": "PADD5",
+      "region_name": "West Coast (PADD 5)",
+      "series_id": "WCESTP51"
+    }
+  ],
+  "snapshot_version": "1.0.0",
+  "target_week_ending": "2026-09-25",
+  "units": "million barrels"
+}

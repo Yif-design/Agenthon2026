@@ -1,0 +1,17 @@
+{
+  "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+  "target_type": "regression",
+  "mae": 9.036958868285323,
+  "naive_mae": 9.03695893372256,
+  "raw_predictive_quality": 0.5000000018102672,
+  "naive_predictive_quality": 0.5,
+  "predictive_anchor": null,
+  "predictive_quality": 0.5000000018102672,
+  "interval_coverage": 0.6666666666666666,
+  "interval_score": 25.366323763704177,
+  "naive_interval_score": 25.366324303574846,
+  "raw_interval_quality": 0.5000000053207421,
+  "interval_quality": 0.5000000018102672,
+  "composite_before_claim_penalty": 0.5000000018102672,
+  "claim_penalty_evaluated": false
+}

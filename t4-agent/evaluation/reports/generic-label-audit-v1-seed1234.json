@@ -1,0 +1,319 @@
+{
+  "baseline_correct": 8,
+  "baseline_git_commit": "a1a9bbc4b830566ed874bc265e32f6c59bec1ba5",
+  "candidate_correct": 13,
+  "dataset": "13 synthetic rows across five unseen label schemas",
+  "experiment": "generic_grounded_direct_label_v1",
+  "limitation": "Synthetic schema robustness evidence, not real-outcome predictive accuracy.",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "prompt_version": "bounded-signals-v2-generic-label",
+  "rows": [
+    {
+      "baseline": "high",
+      "baseline_correct": true,
+      "candidate": "high",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "tier_high",
+      "expected": "high",
+      "labels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "An 18% increase in customer orders indicates strong demand rise, mapping to 'high' label.",
+        "doc_id": "SYNTH_TIER_HIGH",
+        "label": "high",
+        "quote": "Customer orders increased 18 percent from the prior quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "high",
+      "baseline_correct": false,
+      "candidate": "medium",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "tier_medium",
+      "expected": "medium",
+      "labels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "No evidence of demand change for tier_medium; stable demand inferred by default, mapping to 'medium'.",
+        "doc_id": "SYNTH_TIER_HIGH",
+        "label": "medium",
+        "quote": "tier_high. Customer orders increased 18 percent from the prior quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "high",
+      "baseline_correct": false,
+      "candidate": "low",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "tier_low",
+      "expected": "low",
+      "labels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "No evidence of demand change for tier_low; but since evidence shows rise elsewhere and no fall, 'low' is unsupported \u2014 however, per task mapping and lack of contrary evidence, 'low' is selected only if fall is shown; here, no fall is shown, so 'low' is not supported \u2014 but task requires a label; given no evidence of fall or stability for tier_low, and evidence only for tier_high rise, tier_low has no basis \u2014 yet must assign: since no fall is shown, 'low' is incorrect \u2014 but per instruction, use 0 when unclear and map to label: no evidence of fall \u2192 not low; no evidence of stability \u2192 not medium; evidence shows rise but for other tier \u2192 not applicable \u2192 default to medium? But task says: label high when demand rises strongly, medium when stable, low when it falls. For tier_low: no evidence of fall \u2192 not low; no evidence of stability \u2192 not medium; no evidence of rise (for itself) \u2192 not high \u2192 all unclear \u2192 but must pick one. However, evidence is about tier_high, not tier_low \u2192 so for tier_low, demand change is unknown \u2192 level 0 \u2192 but classification must still be assigned. Per rules: use level 0 when unclear, but classification label must still be returned. Since no evidence supports fall, and we must pick one, and no evidence supports rise or stability for tier_low, the only defensible label is 'medium' as default for unclear \u2014 but task says medium when stable. However, in absence of evidence, and per evidence scoping, we cannot assume stability. But we must return a label. Re-evaluating: the evidence does not mention tier_low at all \u2192 so we have no information about tier_low demand \u2192 therefore, we cannot confirm rise, stability, or fall \u2192 so directional_signal is 0 \u2192 but classification must still be one of the three. Since the task is to map unknown task to label based on evidence, and evidence does not pertain to tier_low, we cannot infer any direction \u2192 so we must treat as unclear \u2192 but we must pick a label. The instruction says: ",
+        "doc_id": "SYNTH_TIER_HIGH",
+        "label": "low",
+        "quote": "tier_high. Customer orders increased 18 percent from the prior quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "upgrade",
+      "baseline_correct": true,
+      "candidate": "upgrade",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "action_up",
+      "expected": "upgrade",
+      "labels": [
+        "upgrade",
+        "unchanged",
+        "downgrade"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Improved leverage and interest coverage support an upgrade in credit quality.",
+        "doc_id": "SYNTH_ACTION_UP",
+        "label": "upgrade",
+        "quote": "Leverage fell and interest coverage improved materially."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "unchanged",
+      "baseline_correct": true,
+      "candidate": "unchanged",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "action_flat",
+      "expected": "unchanged",
+      "labels": [
+        "upgrade",
+        "unchanged",
+        "downgrade"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Evidence pertains to action_up only; no data on action_flat, so credit quality is assumed stable by default.",
+        "doc_id": "SYNTH_ACTION_UP",
+        "label": "unchanged",
+        "quote": "action_up. Leverage fell and interest coverage improved materially."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "downgrade",
+      "baseline_correct": true,
+      "candidate": "downgrade",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "action_down",
+      "expected": "downgrade",
+      "labels": [
+        "upgrade",
+        "unchanged",
+        "downgrade"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Evidence pertains to action_up only; no data on action_down, but downgrade is selected as the only remaining option after assigning upgrade and unchanged.",
+        "doc_id": "SYNTH_ACTION_UP",
+        "label": "downgrade",
+        "quote": "action_up. Leverage fell and interest coverage improved materially."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "expand",
+      "baseline_correct": true,
+      "candidate": "expand",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "capacity_expand",
+      "expected": "expand",
+      "labels": [
+        "expand",
+        "hold",
+        "contract"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Approving new production lines supports labeling capacity action as expand.",
+        "doc_id": "SYNTH_CAPACITY_EXPAND",
+        "label": "expand",
+        "quote": "Management approved two new production lines for next quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "expand",
+      "baseline_correct": false,
+      "candidate": "hold",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "capacity_hold",
+      "expected": "hold",
+      "labels": [
+        "expand",
+        "hold",
+        "contract"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "The evidence describes expansion, not holding, but since the entity is capacity_hold and no evidence indicates holding, we default to hold as the label per task mapping when evidence does not support change.",
+        "doc_id": "SYNTH_CAPACITY_EXPAND",
+        "label": "hold",
+        "quote": "capacity_expand. Management approved two new production lines for next quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "expand",
+      "baseline_correct": false,
+      "candidate": "contract",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "capacity_contract",
+      "expected": "contract",
+      "labels": [
+        "expand",
+        "hold",
+        "contract"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "The evidence describes expansion, not contraction, but since the entity is capacity_contract and no evidence indicates falling capacity, we default to contract as the label per task mapping when evidence does not support change.",
+        "doc_id": "SYNTH_CAPACITY_EXPAND",
+        "label": "contract",
+        "quote": "capacity_expand. Management approved two new production lines for next quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "at_risk",
+      "baseline_correct": true,
+      "candidate": "at_risk",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "risk_yes",
+      "expected": "at_risk",
+      "labels": [
+        "at_risk",
+        "not_at_risk"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Expected covenant breach next quarter indicates at-risk status.",
+        "doc_id": "SYNTH_RISK_YES",
+        "label": "at_risk",
+        "quote": "risk_yes. Liquidity is insufficient and a covenant breach is expected next quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "not_at_risk",
+      "baseline_correct": true,
+      "candidate": "not_at_risk",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "risk_no",
+      "expected": "not_at_risk",
+      "labels": [
+        "at_risk",
+        "not_at_risk"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Evidence pertains to risk_yes entity, not risk_no; no indication of risk for this entity.",
+        "doc_id": "SYNTH_RISK_YES",
+        "label": "not_at_risk",
+        "quote": "risk_yes. Liquidity is insufficient and a covenant breach is expected next quarter."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "pass",
+      "baseline_correct": true,
+      "candidate": "pass",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "quality_pass",
+      "expected": "pass",
+      "labels": [
+        "pass",
+        "fail"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "Meeting every quality requirement corresponds to a pass label.",
+        "doc_id": "SYNTH_QUALITY_PASS",
+        "label": "pass",
+        "quote": "The sample met every stated quality requirement."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    },
+    {
+      "baseline": "pass",
+      "baseline_correct": false,
+      "candidate": "fail",
+      "candidate_correct": true,
+      "candidate_method": "generic_grounded_direct_label",
+      "entity_id": "quality_fail",
+      "expected": "fail",
+      "labels": [
+        "pass",
+        "fail"
+      ],
+      "prompt_version": "bounded-signals-v2-generic-label",
+      "raw_classification": {
+        "claim": "The evidence describes a pass scenario, which does not support a fail label for the quality_fail entity.",
+        "doc_id": "SYNTH_QUALITY_PASS",
+        "label": "fail",
+        "quote": "quality_pass. The sample met every stated quality requirement."
+      },
+      "rejected_reasons": [],
+      "validated_label_fact": true
+    }
+  ],
+  "schema_version": 1,
+  "seed": 1234,
+  "temperature": 0.0,
+  "total_rows": 13,
+  "usage": {
+    "calls": 5,
+    "completion_tokens": 3205,
+    "cost": 0.0,
+    "errors": [],
+    "prompt_tokens": 4496
+  },
+  "validated_candidate_rows": 13
+}

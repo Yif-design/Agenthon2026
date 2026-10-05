@@ -1,0 +1,181 @@
+{
+  "baseline_git_commit": "b6b1605bcb278ad3326a4e3a72a6f8a434fb0653",
+  "contract_comparison": {
+    "official_alignment": {
+      "classification_label_required_and_vocabulary_checked": true,
+      "closed_target_types": true,
+      "interval_required_finite_ordered_and_exact_level": true,
+      "optional_rank_must_be_complete_permutation": true,
+      "point_inside_interval_required": false,
+      "quantity_domain_checked": false,
+      "quantity_unit_checked": false,
+      "regression_and_ranking_point_required": true,
+      "source": "starter-repos/track4-analysis-public/qfbench2_track_analysis/alignment.py",
+      "supplied_point_must_be_finite": true
+    },
+    "production_validator": {
+      "classification_label_required_and_vocabulary_checked": true,
+      "closed_target_types": false,
+      "interval_required_finite_ordered_and_exact_level": true,
+      "optional_rank_must_be_complete_permutation": true,
+      "point_inside_interval_required": true,
+      "quantity_domain_checked": false,
+      "quantity_unit_checked": false,
+      "regression_and_ranking_point_required": true,
+      "source": "t4agent/validate.py",
+      "supplied_point_must_be_finite": true
+    }
+  },
+  "date": "2026-09-30",
+  "decision": "reject_metadata_driven_target_spec",
+  "decision_rule": "Implement a central metadata-driven TargetSpec only if at least 80% of tasks expose an explicit unit across at least two target types and every domain-bound task exposes authoritative bounds; otherwise do not infer a global contract from free-form prompt text.",
+  "experiment": "target_contract_inventory_v1",
+  "follow_up": "Keep explicit field-name unit compatibility and family calculators. A future prompt parser requires a separately labeled paraphrase benchmark and cannot inherit this metadata gate.",
+  "hypothesis": "Official task targets expose enough machine-readable unit and domain metadata to support a shared TargetSpec without heuristic prompt interpretation.",
+  "local_llm_run": false,
+  "model_api_calls": 0,
+  "production_change": "none",
+  "schema_version": 1,
+  "scope": "L2 target quantity contract preflight",
+  "summary": {
+    "explicit_domain_or_bounds_rate": 0.0,
+    "explicit_unit_rate": 0.0,
+    "target_types": {
+      "classification": 5,
+      "ranking": 1,
+      "regression": 5
+    },
+    "target_types_with_any_explicit_unit": 0,
+    "tasks": 11,
+    "tasks_with_explicit_domain_or_bounds": 0,
+    "tasks_with_explicit_unit": 0
+  },
+  "units": [
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "labels",
+        "name",
+        "type"
+      ],
+      "target_name": "eps_outcome",
+      "target_type": "classification",
+      "task_id": "t4-EXAMPLE-eps-beat",
+      "task_sha256": "e92f32e0b2ac988fac6db9d9becabf20c72117f374dcf8aed7adaa24db9d1802"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "name",
+        "type"
+      ],
+      "target_name": "bid_to_cover_ratio",
+      "target_type": "regression",
+      "task_id": "t4-auction-btc-202411-us7",
+      "task_sha256": "d5a97aff5d6ad7535d74da6529adc9d8e402ec4e59704bbd8b0f78237f77b5d7"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "name",
+        "type"
+      ],
+      "target_name": "net_positioning_change_pct_oi_rank",
+      "target_type": "ranking",
+      "task_id": "t4-cotpos-202411-us10",
+      "task_sha256": "9946b3514e356f14fda845a8ee38a5a77adf93e378418752b97ba4172c91a13d"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "name",
+        "type"
+      ],
+      "target_name": "cpi_component_mom_first_print",
+      "target_type": "regression",
+      "task_id": "t4-cpicomp-202410-us11",
+      "task_sha256": "d56db7bae48be37149f1e627852f0856369c90131c468b7b50ef5fa0a3bb0067"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "labels",
+        "name",
+        "type"
+      ],
+      "target_name": "credit_event_12m",
+      "target_type": "classification",
+      "task_id": "t4-credit-event-2023",
+      "task_sha256": "af48128eba8dbc8f762903fe822002ae1a7709e7d054b0ac8afb57a7eb92ee65"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "name",
+        "type"
+      ],
+      "target_name": "eps_yoy_growth_pct",
+      "target_type": "regression",
+      "task_id": "t4-eps-growth-2024Q3-banks",
+      "task_sha256": "19e8646418a0ace0d2439238efc3d9a65780fc704694f500a938e96ed251a164"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "labels",
+        "name",
+        "type"
+      ],
+      "target_name": "eps_yoy_direction",
+      "target_type": "classification",
+      "task_id": "t4-eps-yoy-2023Q2-mixed",
+      "task_sha256": "b5716d262da1081d92c6e200adf98177973bde029f01cb446ea0e83f111bf83c"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "name",
+        "type"
+      ],
+      "target_name": "yield_change_bps_intermeeting",
+      "target_type": "regression",
+      "task_id": "t4-fomc-curve-20220728",
+      "task_sha256": "bc763a179cee45d305f9cdab2923816378aed4178aba6f036e0a4dde7a0b8f0b"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "name",
+        "type"
+      ],
+      "target_name": "yield_change_bps_intermeeting",
+      "target_type": "regression",
+      "task_id": "t4-fomc-curve-20240918",
+      "task_sha256": "802a3039ad05a327d367fc4a42d351818cb3a3b40abf693519590900aab77fdf"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "labels",
+        "name",
+        "type"
+      ],
+      "target_name": "next_estimate_revision_direction",
+      "target_type": "classification",
+      "task_id": "t4-macrorev-20240930-us6",
+      "task_sha256": "4e67ab232c978a4f0042abab88e10cbfec0bb05725b877f15d6cb9b7ab50af50"
+    },
+    {
+      "explicit_quantity_metadata": {},
+      "target_keys": [
+        "labels",
+        "name",
+        "type"
+      ],
+      "target_name": "earnings_reaction",
+      "target_type": "classification",
+      "task_id": "t4-postearn-20240201-megacap",
+      "task_sha256": "67951ea959a046574f4e9528996b7737525f63ada52887141a340457a3b3537c"
+    }
+  ]
+}

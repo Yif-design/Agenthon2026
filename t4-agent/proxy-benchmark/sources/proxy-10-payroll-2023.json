@@ -1,0 +1,521 @@
+{
+  "cutoff_date": "2023-08-31",
+  "license": "BLS data are U.S. government works; ALFRED redistribution metadata recorded",
+  "release_url": "https://www.bls.gov/news.release/archives/empsit_09012023.htm",
+  "resolution_date": "2023-09-01",
+  "resolution_release_timestamp": "2023-09-01T08:30:00-04:00",
+  "retrieved_at": "2026-10-03",
+  "rows": [
+    {
+      "cutoff_raw_sha256": "48b76a1f38d5d23ed17c84935364901a92d9a8cb0537d9300ce483823178ce79",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 154535.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 155007.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 155255.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 155472.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 155689.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 155970.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 156155.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 156342.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Total nonfarm payrolls",
+      "resolution_august_level_thousands": 156419.0,
+      "resolution_july_level_thousands": 156232.0,
+      "resolution_raw_sha256": "00ef015edd11a330019af93f9dd543943c57d0bf25a7a870a3cc2abaef634d2a",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "PAYEMS"
+    },
+    {
+      "cutoff_raw_sha256": "72f6d4b1059ea693d50def29ff577c11254856686286f17089e6df5b1967dc47",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USCONS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 7859.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 7885.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 7899.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 7890.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 7901.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 7926.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 7952.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 7971.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Construction",
+      "resolution_august_level_thousands": 7993.0,
+      "resolution_july_level_thousands": 7971.0,
+      "resolution_raw_sha256": "5061682adcc5e798bff15bbcf8c6b37293ad4f595dafc36a5204e349344dd663",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USCONS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USCONS"
+    },
+    {
+      "cutoff_raw_sha256": "2bdaa0d98870d43d304314f86172679226a9dbbec4cade34c71e96198d600bd0",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=MANEMP&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 12974.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 12985.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 12988.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 12976.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 12985.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 12981.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 12987.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 12985.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Manufacturing",
+      "resolution_august_level_thousands": 12997.0,
+      "resolution_july_level_thousands": 12981.0,
+      "resolution_raw_sha256": "a260bbe0798f344354898c8d88edb2b8a2b5f0840bc6f71cf29afc5afd941505",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=MANEMP&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "MANEMP"
+    },
+    {
+      "cutoff_raw_sha256": "20a41a7e339d08b415819a1bc67f1a501d022c4a674d9303001373857e812b31",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USTPU&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 28767.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 28828.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 28864.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 28867.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 28850.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 28898.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 28867.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 28885.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Trade, transportation, and utilities",
+      "resolution_august_level_thousands": 28848.0,
+      "resolution_july_level_thousands": 28868.0,
+      "resolution_raw_sha256": "a7e880dc78ad6d33c87726a1a82167e2998dd5a72764f3aa482991c75d6169d8",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USTPU&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USTPU"
+    },
+    {
+      "cutoff_raw_sha256": "2df16fad9d9fb51083fb07b7f05619db6ebf68174d3dddd0211117cd81c9f4b7",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USWTRADE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 6028.8,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 6037.7,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 6044.4,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 6047.9,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 6046.4,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 6054.1,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 6045.9,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 6063.8,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Wholesale trade",
+      "resolution_august_level_thousands": 6070.1,
+      "resolution_july_level_thousands": 6065.4,
+      "resolution_raw_sha256": "6c6ec1403d7bf0f34f27f0528f931f3e7397adcb9a5681de6047f42dc6536ef2",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USWTRADE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USWTRADE"
+    },
+    {
+      "cutoff_raw_sha256": "a6c69f0cbc02e7266e3372bb2c11174392df5bdcfdbb59070e660501335f0ae3",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USINFO&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 3120.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 3097.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 3089.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 3092.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 3095.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 3091.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 3086.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 3074.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Information",
+      "resolution_august_level_thousands": 3051.0,
+      "resolution_july_level_thousands": 3066.0,
+      "resolution_raw_sha256": "0a7a6c1eea091389b4185ff2671959a6d9d4b76ed913f7aefdc89db17880ca06",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USINFO&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USINFO"
+    },
+    {
+      "cutoff_raw_sha256": "356e6a48dda9b3b34595226ceffc648d6e8cc894faeb0e2052be007c518fe85c",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USFIRE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 9101.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 9100.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 9100.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 9095.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 9122.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 9135.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 9144.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 9163.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Financial activities",
+      "resolution_august_level_thousands": 9158.0,
+      "resolution_july_level_thousands": 9154.0,
+      "resolution_raw_sha256": "e34cd8eb1a34d59e710611684bd021d81f7587ec8dd76dc2f3fb8444bab3d4c8",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USFIRE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USFIRE"
+    },
+    {
+      "cutoff_raw_sha256": "648716bd81d6164e9cc2e521a5cb1644a7262149dfeb9b422f237433244ef7d8",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USPBS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 22814.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 22858.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 22879.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 22924.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 22972.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 23017.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 23040.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 23032.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Professional and business services",
+      "resolution_august_level_thousands": 23015.0,
+      "resolution_july_level_thousands": 22996.0,
+      "resolution_raw_sha256": "9b2a8d419e4b9390b856e5dc4ae95e583dc4d1dfb1901e606714903cd557cfe0",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USPBS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USPBS"
+    },
+    {
+      "cutoff_raw_sha256": "f3e9616e2d166bc315600f4507b8adfb7be21ab82ca14535f8b4af3ed4a901ff",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USEHS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 24827.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 24938.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 25002.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 25072.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 25149.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 25237.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 25308.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 25408.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Education and health services",
+      "resolution_august_level_thousands": 25520.0,
+      "resolution_july_level_thousands": 25418.0,
+      "resolution_raw_sha256": "6f4d5d6854c159e65c19f192906306ac1373a56d7b6f439dee0acaa41cdaaf2e",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USEHS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USEHS"
+    },
+    {
+      "cutoff_raw_sha256": "fdf279c5f53c83e17fd0180df86737a78fc7d7010e4aa746969479e682bd7dd0",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USLAH&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 16316.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 16415.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 16472.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 16518.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 16529.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 16557.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 16576.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 16593.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Leisure and hospitality",
+      "resolution_august_level_thousands": 16655.0,
+      "resolution_july_level_thousands": 16615.0,
+      "resolution_raw_sha256": "2a1869ea1bc4af12cd851c99fd5006adca5f018981573661843bfce69bc096f1",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USLAH&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USLAH"
+    },
+    {
+      "cutoff_raw_sha256": "6c291f30614475e6b7dc977733ebd7125297f1f51ddbcc9bb9b73695e3071740",
+      "cutoff_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USGOVT&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+      "cutoff_vintage": [
+        {
+          "level_thousands": 22331.0,
+          "month": "2022-12-01"
+        },
+        {
+          "level_thousands": 22450.0,
+          "month": "2023-01-01"
+        },
+        {
+          "level_thousands": 22505.0,
+          "month": "2023-02-01"
+        },
+        {
+          "level_thousands": 22565.0,
+          "month": "2023-03-01"
+        },
+        {
+          "level_thousands": 22603.0,
+          "month": "2023-04-01"
+        },
+        {
+          "level_thousands": 22629.0,
+          "month": "2023-05-01"
+        },
+        {
+          "level_thousands": 22686.0,
+          "month": "2023-06-01"
+        },
+        {
+          "level_thousands": 22701.0,
+          "month": "2023-07-01"
+        }
+      ],
+      "name": "Government",
+      "resolution_august_level_thousands": 22658.0,
+      "resolution_july_level_thousands": 22650.0,
+      "resolution_raw_sha256": "c4894e1d03884a330aeb37ce2067dbed23ec25e26ce6128521d9c7dacaae1054",
+      "resolution_url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USGOVT&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+      "series_id": "USGOVT"
+    }
+  ],
+  "snapshot_version": "1.0.0",
+  "source_urls": [
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USCONS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USCONS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=MANEMP&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=MANEMP&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USTPU&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USTPU&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USWTRADE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USWTRADE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USINFO&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USINFO&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USFIRE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USFIRE&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USPBS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USPBS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USEHS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USEHS&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USLAH&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USLAH&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USGOVT&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-08-31",
+    "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=USGOVT&cosd=2022-12-01&coed=2023-08-01&vintage_date=2023-09-01"
+  ],
+  "target_month": "2023-08-01",
+  "units": "thousands of persons, seasonally adjusted"
+}

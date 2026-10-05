@@ -1,0 +1,87 @@
+{
+  "calls": 1,
+  "candidate_contradictions": 0,
+  "cases": 6,
+  "completion_tokens": 928,
+  "date": "2026-10-01",
+  "decision": "mixed_or_does_not_support_candidate",
+  "experiment": "reason_evidence_relevance_quality_proxy_v1",
+  "gates": {
+    "all_cases_returned_once": true,
+    "candidate_strictly_preferred_more_often": false,
+    "candidate_zero_contradictions": true
+  },
+  "items": [
+    {
+      "candidate_was": "B",
+      "case_id": "t4-credit-event-2023:BBBY",
+      "contradiction_A": false,
+      "contradiction_B": false,
+      "grounding_preference": "B",
+      "link_preference": "B",
+      "note": "Reason B provides a concrete financial fact (net cash used in operating activities, specific debt defaults) that is directly relevant to the task of predicting a credit event. Reason A's premise is a boilerplate statement about financial statement adjustments and lacks specific financial distress indicators. Both premises support the mechanism and answer implication equally well, but B's premise is superior in grounding."
+    },
+    {
+      "candidate_was": "A",
+      "case_id": "t4-credit-event-2023:BBY",
+      "contradiction_A": false,
+      "contradiction_B": false,
+      "grounding_preference": "B",
+      "link_preference": "B",
+      "note": "Reason B cites credit ratings and outlook, which are direct indicators of creditworthiness and thus relevant to predicting a credit event. Reason A discusses restricted cash, which is less directly indicative of immediate credit risk compared to credit ratings. Both premises support the mechanism and answer implication equally well, but B's premise is superior in grounding."
+    },
+    {
+      "candidate_was": "A",
+      "case_id": "t4-eps-yoy-2023Q2-mixed:AMD",
+      "contradiction_A": false,
+      "contradiction_B": false,
+      "grounding_preference": "A",
+      "link_preference": "A",
+      "note": "Reason A provides specific EPS figures for the current and prior comparable periods, which are concrete financial facts directly relevant to the task of predicting year-over-year EPS change. Reason B's premise is a generic list of filing sections and does not contain specific financial data. Both premises support the mechanism and answer implication equally well, but A's premise is superior in grounding."
+    },
+    {
+      "candidate_was": "B",
+      "case_id": "t4-eps-yoy-2023Q2-mixed:DOW",
+      "contradiction_A": false,
+      "contradiction_B": false,
+      "grounding_preference": "A",
+      "link_preference": "A",
+      "note": "Reason A references the calculation of earnings per share for specific periods, which is a concrete financial fact directly relevant to the task. Reason B discusses the treatment of restricted stock units and options in EPS calculations, which is more of an accounting detail than a direct indicator of the EPS trend itself. Both premises support the mechanism and answer implication equally well, but A's premise is superior in grounding."
+    },
+    {
+      "candidate_was": "B",
+      "case_id": "t4-postearn-20240201-megacap:AAPL",
+      "contradiction_A": false,
+      "contradiction_B": false,
+      "grounding_preference": "B",
+      "link_preference": "tie",
+      "note": "Reason B provides specific financial data (sales, cost of sales, gross margin, operating income, net income, EPS) for the company, which are concrete financial facts relevant to the earnings release reaction. Reason A's premise is a boilerplate statement about the 10-K filing and lacks specific financial data. Both premises support the mechanism and answer implication equally well, but B's premise is superior in grounding."
+    },
+    {
+      "candidate_was": "A",
+      "case_id": "t4-postearn-20240201-megacap:AMZN",
+      "contradiction_A": false,
+      "contradiction_B": false,
+      "grounding_preference": "B",
+      "link_preference": "tie",
+      "note": "Reason B references guidance provided in a previous earnings release, which is a forward-looking statement directly relevant to market reaction to earnings. Reason A also mentions guidance but frames it within a broader discussion of unpredictable factors. Both premises support the mechanism and answer implication equally well, but B's premise is slightly more focused on specific forward-looking guidance."
+    }
+  ],
+  "latency_seconds": 4.127418403048068,
+  "limitations": "One non-official proxy cannot observe hidden target reasons or certify the official reasoning score.",
+  "local_llm_run": false,
+  "model": "gemini-2.5-flash-lite",
+  "preferences": {
+    "baseline": 5,
+    "candidate": 5,
+    "tie": 2
+  },
+  "production_change": "none_from_broad_candidate",
+  "prompt_tokens": 4081,
+  "provider": "Google Gemini Developer API",
+  "schema_version": 1,
+  "seed": 20261001,
+  "temperature": 0,
+  "thinking_budget": 0,
+  "thought_tokens": 0
+}

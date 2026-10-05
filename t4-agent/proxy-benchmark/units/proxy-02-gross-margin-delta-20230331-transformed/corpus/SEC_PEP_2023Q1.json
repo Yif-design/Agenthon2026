@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_PEP_2023Q1_transformed",
+  "entities": [
+    "SEC_PEP_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior Q1 revenue scaled currency units 16200000000 and gross profit scaled currency units 8767000000; gross margin 54.117284 percent."
+}

@@ -1,0 +1,71 @@
+{
+  "baseline_git_commit": "08eaaafdb1dbce0241304c1db59e6b2eef1f7893",
+  "cases": [
+    {
+      "baseline_top1": "DISTRACTOR",
+      "candidate_added_tokens": 6,
+      "candidate_top1": "MATCH",
+      "target_type": "classification"
+    },
+    {
+      "baseline_top1": "DISTRACTOR",
+      "candidate_added_tokens": 6,
+      "candidate_top1": "MATCH",
+      "target_type": "regression"
+    },
+    {
+      "baseline_top1": "DISTRACTOR",
+      "candidate_added_tokens": 6,
+      "candidate_top1": "MATCH",
+      "target_type": "ranking"
+    }
+  ],
+  "decision": "accept",
+  "decision_rule": "Require 3/3 target types to move from wrong to correct top-1, byte-identical template and semantic-schema queries, <=24 prompt terms, byte-identical public outputs, 11/11 schema/smoke and no model calls.",
+  "experiment": "generic_prompt_query_priority_v1",
+  "hypothesis": "For opaque generic schemas only, bounded non-template prompt terms can replace the broad fallback rubric and retrieve task-defined evidence across target types without changing semantic-schema or known-family paths.",
+  "layer": "L2 unknown-family retrieval",
+  "model_api": {
+    "input_tokens": 0,
+    "model": null,
+    "output_tokens": 0,
+    "provider": null,
+    "requests": 0
+  },
+  "official_snapshot": {
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "toolkit_tag": "v2.4.4",
+    "toolkit_tag_object": "1bc80b542359832fd50341992459687456459450",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "track4_open_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ]
+  },
+  "reason": "All three opaque-schema target types recover the task-defined top result, prompt terms stay within 24, template and semantic-schema paths remain unchanged, and every public output byte and existing validation result is preserved.",
+  "results": {
+    "baseline_correct": 0,
+    "bounded_prompt_terms_added": 24,
+    "candidate_correct": 3,
+    "semantic_schema_query_identical": true,
+    "template_query_identical": true,
+    "total": 3
+  },
+  "schema_version": 1,
+  "validation": {
+    "model_requests_added": 0,
+    "public_outputs_byte_identical": 11,
+    "public_rows": 78,
+    "public_units": 11,
+    "python": "3.13.15",
+    "schema_valid_units": 11,
+    "smoke_admissible_units": 11,
+    "smoke_basis": "Candidate bytes equal the 08eaaaf baseline already verified by toolkit 2.4.4.",
+    "smoke_toolkit": "qfbench2-common==2.4.4",
+    "tests": "113 passed",
+    "validation_error_units": 0
+  }
+}

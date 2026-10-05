@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-03",
+  "baseline_commit": "62d5b8a5e0aaee22a41d69bf0ab94fb542affea8",
+  "official_toolkit_version": "2.6.0",
+  "official_track4_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "practice_outcomes": {
+    "path": "evaluation/realized/public_all_realized.json",
+    "tracked": false,
+    "sha256": "0cd90a6caec80c6edf21cb4ff461baaa8588e9940c21bd1dffef69aa093fe5bf",
+    "units": 11,
+    "entities": 78,
+    "role": "diagnostic_only"
+  },
+  "configurations": [
+    {
+      "id": "offline",
+      "model": null,
+      "calls": 0,
+      "mean_predictive_quality": 0.31216828775534206,
+      "mean_interval_coverage": 0.5454447068083431,
+      "mean_composite_before_faithfulness_gate": 0.105787577107606
+    },
+    {
+      "id": "nemotron-free-nothink-signal",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "mean_predictive_quality": 0.3803501059371603,
+      "mean_interval_coverage": 0.5605962219598584,
+      "mean_composite_before_faithfulness_gate": 0.15806030438033328
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v3",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v4",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v5",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294,
+      "auction_time_forward_report": "evaluation/reports/auction-model-comparison-v1.json"
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v6",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1",
+        "artifact_availability_gates_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294,
+      "public_outputs_byte_identical_to_v5": true
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v7",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1",
+        "artifact_availability_gates_v1",
+        "eps_yoy_interval_calibration_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.7090810704447068,
+      "mean_composite_before_faithfulness_gate": 0.19593909225912115,
+      "eps_yoy_time_forward_report": "evaluation/reports/eps-yoy-interval-calibration-v1.json",
+      "public_diagnostic_report": "evaluation/reports/eps-yoy-interval-public-diagnostic-v1.json"
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-accepted-calibration-v8",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1",
+        "artifact_availability_gates_v1",
+        "eps_yoy_interval_calibration_v1",
+        "bank_eps_interval_calibration_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.720444706808343,
+      "mean_composite_before_faithfulness_gate": 0.1938936377136666,
+      "bank_eps_time_forward_report": "evaluation/reports/bank-eps-interval-calibration-v1.json",
+      "bank_eps_nli_report": "evaluation/reports/nli/bank-eps-interval-ensemble.json"
+    },
+    {
+      "id": "nemotron-free-nothink-signal-plus-official-522-bank-revert-v9",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "thinking": false,
+      "calls": 9,
+      "prompt_tokens": 83198,
+      "completion_tokens": 5951,
+      "cost_usd": 0.0,
+      "accepted_changes": [
+        "credit_probability_support_v1",
+        "postearn_interval_calibration_v1",
+        "cot_positioning_mean_reversion_v1",
+        "cpi_interval_floor_v1",
+        "auction_recent_mean_calibration_v1",
+        "artifact_availability_gates_v1",
+        "eps_yoy_interval_calibration_v1",
+        "bank_eps_interval_official_522_revert_v1"
+      ],
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.7090810704447068,
+      "mean_composite_before_faithfulness_gate": 0.19593909225912115,
+      "eps_yoy_time_forward_report": "evaluation/reports/eps-yoy-interval-calibration-v1.json",
+      "public_diagnostic_report": "evaluation/reports/eps-yoy-interval-public-diagnostic-v1.json",
+      "official_522_bank_rescore_report": "evaluation/reports/bank-eps-interval-official-522-rescore-v1.json",
+      "official_522_claim_rail_report": "evaluation/reports/bank-eps-interval-official-522-claim-rail-v1.json",
+      "current_official_score_available": false,
+      "current_official_score_reason": "Public units ship neither resolved outcomes nor declared naive answers for participant scoring."
+    }
+  ],
+  "cross_family_outcome_benchmarks": {
+    "generic_explicit_unit_compatibility_v1": {
+      "path": "evaluation/reports/generic-unit-compatibility-v1.json",
+      "sha256": "dcf32f597a20f5acac8bd520a70485df2c3495f821832d68c912da3bdcd0c4b8",
+      "target_types": [
+        "regression",
+        "ranking"
+      ],
+      "domains": [
+        "cpi",
+        "cot",
+        "auction",
+        "macro_revision",
+        "fomc"
+      ],
+      "role": "transformed_unknown_schema_real_outcome_test",
+      "decision": "accept"
+    },
+    "generic_dated_table_direct_observation_v1": {
+      "path": "evaluation/reports/generic-dated-table-extractor-v1.json",
+      "sha256": "99bfcada5ea9653f2960059cd44e638c5b1ed48f928b3321d25759fac5e6b0c6",
+      "target_types": [
+        "regression",
+        "ranking"
+      ],
+      "domains": [
+        "auction_bid_to_cover",
+        "quarterly_diluted_eps"
+      ],
+      "role": "transformed_unknown_schema_time_forward_test_and_confirmation",
+      "decision": "accept",
+      "nli_report": "evaluation/reports/nli/dated-table-direct-ensemble.json"
+    },
+    "official_522_interval_rescore_screen_v1": {
+      "path": "evaluation/reports/official-522-interval-rescore-screen-v1.json",
+      "sha256": "cf4394e23871147aaea3f6f7d2283a0a938c65bfbea6e679c42a3ceee8293eca",
+      "families": [
+        "eps_yoy",
+        "cpi",
+        "cot",
+        "auction",
+        "postearn",
+        "generic",
+        "fomc_control"
+      ],
+      "role": "official_5.2.2_mean_interval_score_forward_screen",
+      "decision": "proceed_one_candidate_at_a_time",
+      "rollback_candidates": [
+        "cpi",
+        "auction"
+      ],
+      "production_change": "none"
+    },
+    "proxy_18_cot_control_v1": {
+      "path": "evaluation/reports/proxy-18-cot-control-v1.json",
+      "sha256": "5deaf9be2442b4d257f3c5776669c310156f0cd03fed98d1200b534f4e9e69b3",
+      "source_snapshot": "proxy-benchmark/sources/proxy-18-cot-2023.json",
+      "source_snapshot_sha256": "9428ac2f750afa7f8b7395691e1fb29f57d366dd23abd84e43a88d3fdf8c94db",
+      "target_type": "ranking",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "role": "first_runnable_proxy_schema_invariance_control",
+      "decision": "infrastructure_accept_hypothesis_reject",
+      "production_change": "none"
+    },
+    "proxy_15_auction_control_v1": {
+      "path": "evaluation/reports/proxy-15-auction-control-v1.json",
+      "sha256": "087fe4d27d7c3aa5fda51d3f40ec99ffd7c2dafac4d6648a01fcf5be3eed5d0e",
+      "source_snapshot": "proxy-benchmark/sources/proxy-15-auctions-2023.json",
+      "source_snapshot_sha256": "0c7e7cc0819e1dc77726d45b79a5353962f5ab2d7d1509f8d10ba9427564846d",
+      "target_type": "regression",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "role": "second_runnable_proxy_schema_invariance_control",
+      "decision": "infrastructure_accept_hypothesis_reject",
+      "production_change": "none"
+    },
+    "target_semantic_table_alias_proxy15_v1": {
+      "path": "evaluation/reports/target-semantic-table-alias-proxy15-v1.json",
+      "sha256": "a4971dcab13a035bc473e8c0fa8df822766e6a725998636b33e5c2a97345ed42",
+      "based_on": "proxy_15_auction_control_v1",
+      "role": "target_semantic_alias_candidate",
+      "decision": "reject_and_rollback",
+      "production_change": "none"
+    },
+    "proxy_16_energy_control_v1": {
+      "path": "evaluation/reports/proxy-16-energy-control-v1.json",
+      "sha256": "0ecc2da42f426adc2a5a66bb3782a60d887833f82d53d4ea550d9d21cc79a092",
+      "source_snapshot": "proxy-benchmark/sources/proxy-16-eia-crude-2026.json",
+      "source_snapshot_sha256": "16a1c0e4cd11f6a2177ca715fb9655fbc69297536e71578f80b3b20d466041ad",
+      "target_type": "regression",
+      "split": "confirmation",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "role": "third_runnable_proxy_and_second_regression_family_control",
+      "decision": "accept_benchmark_infrastructure",
+      "production_change": "none"
+    }
+  },
+  "family_outcome_benchmarks": {
+    "cpi_core_food_mean12_confirmation_v1": {
+      "path": "evaluation/reports/cpi-core-food-mean12-confirmation-v1.json",
+      "sha256": "573cbb51f57278a076f7865259a1ba9376adfe37880cb211b3b5d7f94395b089",
+      "dataset": "evaluation/datasets/cpi/components_2024_2025_confirmation.json",
+      "dataset_sha256": "794cdfbc72ff46a0db76cf7f470e85f9b3b76da898e18ab7bc80084cc8380cdb",
+      "rows": 42,
+      "role": "locked_time_forward_confirmation",
+      "decision": "accept",
+      "artifact_available_date": "2026-02-01"
+    },
+    "bank_eps_interval_calibration_v1": {
+      "path": "evaluation/reports/bank-eps-interval-calibration-v1.json",
+      "dataset": "SEC Company Concept API, us-gaap:EarningsPerShareDiluted",
+      "rows": 158,
+      "role": "time_forward_train_dev_test_and_locked_confirmation",
+      "decision": "accept",
+      "nli_report": "evaluation/reports/nli/bank-eps-interval-ensemble.json",
+      "public_ab_report": "evaluation/reports/bank-eps-interval-public-ab-v1.json"
+    },
+    "cpi_interval_official_522_revert_v1": {
+      "path": "evaluation/reports/cpi-interval-official-522-revert-v1.json",
+      "sha256": "95de5aedae1e6164e50e95a20c18250dc71432d3d5bbfc85330dfb04a7afec09",
+      "dataset": "evaluation/datasets/cpi/components_2015_2023.json plus components_2024_2025_confirmation.json",
+      "rows": 509,
+      "role": "official_5.2.2_forward_test_and_locked_confirmation",
+      "decision": "accept_revert",
+      "public_ab_report": "evaluation/reports/cpi-interval-official-522-public-ab-v1.json",
+      "claim_rail_report": "evaluation/reports/cpi-interval-official-522-claim-rail-v1.json"
+    },
+    "auction_interval_official_522_revert_v1": {
+      "path": "evaluation/reports/auction-interval-official-522-revert-v1.json",
+      "sha256": "6d4b6fb715167fb6157b26ff23b009ae3c4ea6bcfdd8543dbbc221a524067697",
+      "dataset": "evaluation/datasets/auction/nominal_coupon_2010_2024-10-31.json",
+      "rows": 238,
+      "role": "official_5.2.2_forward_test_and_locked_confirmation",
+      "decision": "accept_revert",
+      "public_ab_report": "evaluation/reports/auction-interval-official-522-public-ab-v1.json",
+      "claim_rail_report": "evaluation/reports/auction-interval-official-522-claim-rail-v1.json"
+    }
+  },
+  "cross_family_engineering_benchmarks": {
+    "adaptive_batch_v1": {
+      "screen_report": "evaluation/reports/adaptive-batch-screen-v1.json",
+      "screen_sha256": "79751cb670f36c12ffba17ed7bb3dd8ae557b589a7b1c0a454d8ca61d97b6520",
+      "remote_ab_report": "evaluation/reports/adaptive-batch-remote-ab-v1.json",
+      "remote_ab_sha256": "d5d5553349bba0d1364ed5f27ecd6ec5beabd74d765da6d2f936d421dd6da3ee",
+      "public_ab_report": "evaluation/reports/adaptive-batch-public-ab-v1.json",
+      "public_ab_sha256": "b50b494298e54831df2fc839f6b65bb9f26035fc7db642cce20778aea961d57c",
+      "nli_report": "evaluation/reports/nli/adaptive-batch-ensemble.json",
+      "nli_sha256": "2a18f63e19c9dd18ea66392dd558b7010572f1b863603ddfe7ee55308f9141b1",
+      "scope": "L1/L2 cross-family House request scheduling",
+      "decision": "accept"
+    },
+    "bounded_submitted_reasons_v1": {
+      "path": "evaluation/reports/bounded-submitted-reasons-v1.json",
+      "sha256": "3d570833cfb83dfe7fee473d98f7e7114242e4dddf23c17db8cb0ceffec6744b",
+      "scope": "L1/L2 cross-family Final reasoning bonus",
+      "public_units": 11,
+      "public_rows": 78,
+      "public_reasons": 31,
+      "analysis_fields_identical_units": 11,
+      "official_522_reason_rail_findings": 0,
+      "decision": "accept",
+      "rollback": "T4_ENABLE_SUBMITTED_REASONS=0"
+    },
+    "reason_evidence_relevance_v1": {
+      "path": "evaluation/reports/reason-evidence-relevance-final-v1.json",
+      "sha256": "160d07aca7fe25f629fb571d73b5d26466cc1ebf4a74a00958d92f75f3474a87",
+      "screen_report": "evaluation/reports/reason-evidence-relevance-screen-v1.json",
+      "screen_sha256": "36f9dc0a4286e5fc6d9da8efe956753b2628bac585cd06908f34a795a2bad571",
+      "public_ab_report": "evaluation/reports/reason-evidence-relevance-public-ab-v1.json",
+      "public_ab_sha256": "b64b09f78ce8baf922c54343c936170d90a79ccd6c66dd8a1802e969ec46ca94",
+      "official_rail_report": "evaluation/reports/reason-evidence-relevance-official-522-rail-v1.json",
+      "official_rail_sha256": "aa6213d79ef4d92e0e6e3c416edcb3695b18c0519f56a71d38d7baec474a7036",
+      "broad_proxy_report": "evaluation/reports/reason-evidence-relevance-quality-proxy-broad-v1.json",
+      "broad_proxy_sha256": "022bfe71dfc9eb96b02153829ff752f271cd15dbd87f3d94c765f08a38514d1e",
+      "scope": "L1/L2 cross-family Final reason evidence selection",
+      "changed_public_reasons": 4,
+      "analysis_fields_identical_units": 11,
+      "official_522_reason_findings": 0,
+      "decision": "accept",
+      "rollback": "T4_ENABLE_REASON_RELEVANCE=0"
+    },
+    "toolkit_260_submission_compatibility_v1": {
+      "path": "evaluation/reports/toolkit-260-submission-compatibility-v1.json",
+      "sha256": "9600fbd48b09a455d45e2fa2b63251a5c44a1d12a1bdbba968eb85ec18b42e36",
+      "scope": "L1 official contract and submission packaging compatibility",
+      "official_toolkit_version": "2.6.0",
+      "official_scorer_version": "5.2.2",
+      "production_prediction_change": "none",
+      "decision": "accept_local_submission_template_fix"
+    }
+  },
+  "official_scorer_version": "5.2.2",
+  "configuration_metrics_semantics": "Historical pre-5.2 public-practice diagnostics; not current official scores.",
+  "official_shared_commit": "bd01548e34d21fd660d88fd06157078fb25ece4e",
+  "experiments": {
+    "corpus_recent6_prior_screen_v1": {
+      "path": "evaluation/reports/corpus-recent6-prior-screen-v1.json",
+      "sha256": "22fe67c415937a5ecffa6bf88811b7412af005803f54ac59d1274a5de98cf671",
+      "target_type": "regression",
+      "proxy_families": [
+        "proxy-15",
+        "proxy-16"
+      ],
+      "schema_cases": 4,
+      "role": "fixed_corpus_prior_cross_family_screen",
+      "decision": "reject_prior_candidate",
+      "production_change": "none"
+    }
+  }
+}

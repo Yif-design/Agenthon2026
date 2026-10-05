@@ -1,0 +1,60 @@
+{
+  "experiment": "proxy-15-auction-control-v1",
+  "hypothesis": "The current control will identify indirect accepted divided by total accepted in both schema variants, with transformed composite no more than 0.05 below explicit.",
+  "python": "3.13.15",
+  "model_api_calls": 0,
+  "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
+  "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "toolkit_tag": "v2.6.0",
+  "results": [
+    {
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-explicit",
+      "target_type": "regression",
+      "mae": 9.036958868285323,
+      "naive_mae": 9.03695893372256,
+      "raw_predictive_quality": 0.5000000018102672,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.5000000018102672,
+      "interval_coverage": 0.6666666666666666,
+      "interval_score": 25.366323763704177,
+      "naive_interval_score": 25.366324303574846,
+      "raw_interval_quality": 0.5000000053207421,
+      "interval_quality": 0.5000000018102672,
+      "composite_before_claim_penalty": 0.5000000018102672,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "same_tenor_recent_history"
+      ],
+      "fallback_rows": 0
+    },
+    {
+      "unit": "proxy-15-auction-indirect-bidder-share-20230802-transformed",
+      "target_type": "regression",
+      "mae": 131.85645943432556,
+      "naive_mae": 9.03695893372256,
+      "raw_predictive_quality": 0.06414039093093625,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": null,
+      "predictive_quality": 0.06414039093093625,
+      "interval_coverage": 1.0,
+      "interval_score": 344.0,
+      "naive_interval_score": 25.366324303574846,
+      "raw_interval_quality": 0.06867524902656466,
+      "interval_quality": 0.06867524902656466,
+      "composite_before_claim_penalty": 0.06550084835962477,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 3
+    }
+  ],
+  "decision": "reject_schema_robustness_hypothesis",
+  "finding": "The explicit unit matches the recent-six baseline, while the transformed unit treats tenor months as the forecast target. The benchmark exposes a general target-aware numeric-field selection weakness.",
+  "limitations": [
+    "One announcement batch with three coupon securities only.",
+    "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+    "The explicit route labels its structural share estimate as bid-to-cover even though the supplied ratio is indirect acceptance share."
+  ]
+}

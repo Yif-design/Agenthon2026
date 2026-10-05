@@ -1,0 +1,1246 @@
+{
+  "schema_version": 2,
+  "model_id": "cross-encoder/nli-deberta-v3-large",
+  "model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.14.0+cpu",
+    "transformers": "5.17.0",
+    "qfbench2-common": "2.4.4"
+  },
+  "aggregation_scope": "Each case calls the official check_answer sequentially while reusing one loaded model; every distinct citation premise score is retained for exact ensemble aggregation.",
+  "total_elapsed_seconds": 42.03677495799997,
+  "cases": [
+    {
+      "case_id": "t4-generic-dated-level-synthetic",
+      "unit_id": "t4-generic-dated-level-synthetic",
+      "answer_sha256": "d26e9ca6798d599095f3596380c65422fbb25fc9c7785688e32c0a99e118455f",
+      "elapsed_seconds": 5.740824663000012,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "ALPHA",
+          "hypothesis": "The metric ratio of Alpha (ALPHA) is 2.61. The 90% prediction interval for the metric ratio of Alpha (ALPHA) is -4.44089e-16 to 5.22.",
+          "score": 0.75680011510849,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d930cc4bf531c22bad613bbf45934bfc4c223c08de3645add89397e3dbb5e263",
+              "premise_chars": 17,
+              "score": 0.75680011510849
+            },
+            {
+              "premise_sha256": "c259b7adbe25286c680e0ef31d8fb4a41c3ca8482c13989bda2f0684ae56095c",
+              "premise_chars": 73,
+              "score": 0.2744545638561249
+            }
+          ]
+        },
+        {
+          "entity_id": "BETA",
+          "hypothesis": "The metric ratio of Beta (BETA) is 1.96. The 90% prediction interval for the metric ratio of Beta (BETA) is -0.04 to 3.96.",
+          "score": 0.7079847455024719,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "9c46176f82fb1c1e93d1b57685078d66b994d502bb978bcf6637736a37641d01",
+              "premise_chars": 17,
+              "score": 0.7079847455024719
+            },
+            {
+              "premise_sha256": "b562b7260111fd827f1c27b69cb295ac84055dc360d390f2dba51e1677db1ebe",
+              "premise_chars": 73,
+              "score": 0.5933245420455933
+            }
+          ]
+        },
+        {
+          "entity_id": "GAMMA",
+          "hypothesis": "The metric ratio of Gamma (GAMMA) is 3.11. The 90% prediction interval for the metric ratio of Gamma (GAMMA) is -4.44089e-16 to 6.22.",
+          "score": 0.7936622500419617,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e74789ea0d54125bf7ddc932e7f974792f62976bff2e46734e0ddaeb8a229eff",
+              "premise_chars": 17,
+              "score": 0.7936622500419617
+            },
+            {
+              "premise_sha256": "edcfb7d119a932dcb18382c01f73c263159f603344a5162464f7e55d522a4b2e",
+              "premise_chars": 73,
+              "score": 0.48998314142227173
+            }
+          ]
+        },
+        {
+          "entity_id": "DELTA",
+          "hypothesis": "The metric ratio of Delta (DELTA) is 0.97. The 90% prediction interval for the metric ratio of Delta (DELTA) is -1.03 to 2.97.",
+          "score": 0.6390870213508606,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8220a77d6c52cb9df563cb43e0227bbbcd24698691323445e68c724070b31719",
+              "premise_chars": 17,
+              "score": 0.6390870213508606
+            },
+            {
+              "premise_sha256": "77e361bab7d69a2ecec7b41371367ecfd643788ec80bace78280a5c27be20dd1",
+              "premise_chars": 73,
+              "score": 0.40866827964782715
+            }
+          ]
+        },
+        {
+          "entity_id": "EPSILON",
+          "hypothesis": "The metric ratio of Epsilon (EPSILON) is 4.24. The 90% prediction interval for the metric ratio of Epsilon (EPSILON) is 0 to 8.48.",
+          "score": 0.7953703999519348,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d46d17a5600d63408c37cb63adfec4164a0b743f24a4ea20a2b9b15b99fac736",
+              "premise_chars": 17,
+              "score": 0.7953703999519348
+            },
+            {
+              "premise_sha256": "1a61f300e2f8440a9b7041e7e45e4a109c85cd91854c419c34e405e8c7103692",
+              "premise_chars": 73,
+              "score": 0.16594739258289337
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-generic-dated-change-synthetic",
+      "unit_id": "t4-generic-dated-change-synthetic",
+      "answer_sha256": "fc259f8e49270385c9a38fa5271243806451688dea3b5c755c8470acd37189f6",
+      "elapsed_seconds": 4.31912506499998,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "TWO_YEAR",
+          "hypothesis": "The rate change bps of Two Year (TWO_YEAR) is -6. The 90% prediction interval for the rate change bps of Two Year (TWO_YEAR) is -12 to 0.",
+          "score": 0.7003669142723083,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f1ddd6838a4b7b462dc7012c96a82fbc03beaa47adca13bd6d96c775f857ed2b",
+              "premise_chars": 18,
+              "score": 0.7003669142723083
+            },
+            {
+              "premise_sha256": "ccf9b20f611af355c9a80f5d79356f556fbb52a6be5c9e3c29414638a9045f5a",
+              "premise_chars": 79,
+              "score": 0.34049466252326965
+            }
+          ]
+        },
+        {
+          "entity_id": "THREE_YEAR",
+          "hypothesis": "The rate change bps of Three Year (THREE_YEAR) is -5. The 90% prediction interval for the rate change bps of Three Year (THREE_YEAR) is -10 to 0.",
+          "score": 0.6796952486038208,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5e7f5283859ecf7dfaf8e174785ee7f0dbe5715ed64347de20cac37743f64410",
+              "premise_chars": 18,
+              "score": 0.6796952486038208
+            },
+            {
+              "premise_sha256": "58d050e9d1fafb2e7def4b36a265a127e9bf6d56862aff486c7150468e59f8c4",
+              "premise_chars": 79,
+              "score": 0.29829296469688416
+            }
+          ]
+        },
+        {
+          "entity_id": "FIVE_YEAR",
+          "hypothesis": "The rate change bps of Five Year (FIVE_YEAR) is -6. The 90% prediction interval for the rate change bps of Five Year (FIVE_YEAR) is -12 to 0.",
+          "score": 0.7070872783660889,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f1ddd6838a4b7b462dc7012c96a82fbc03beaa47adca13bd6d96c775f857ed2b",
+              "premise_chars": 18,
+              "score": 0.7070872783660889
+            },
+            {
+              "premise_sha256": "c7add66ad4d7bb40246551f6565c0246132b14d931f78cb32e8bc003cb2a3e11",
+              "premise_chars": 79,
+              "score": 0.35695379972457886
+            }
+          ]
+        },
+        {
+          "entity_id": "TEN_YEAR",
+          "hypothesis": "The rate change bps of Ten Year (TEN_YEAR) is -6. The 90% prediction interval for the rate change bps of Ten Year (TEN_YEAR) is -12 to 0.",
+          "score": 0.712041437625885,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "f1ddd6838a4b7b462dc7012c96a82fbc03beaa47adca13bd6d96c775f857ed2b",
+              "premise_chars": 18,
+              "score": 0.712041437625885
+            },
+            {
+              "premise_sha256": "3db6c6116e267dc5e3c793762287bf6e29e861093d832ad3d2252b3c2fe712e5",
+              "premise_chars": 79,
+              "score": 0.32846540212631226
+            }
+          ]
+        },
+        {
+          "entity_id": "THIRTY_YEAR",
+          "hypothesis": "The rate change bps of Thirty Year (THIRTY_YEAR) is -5. The 90% prediction interval for the rate change bps of Thirty Year (THIRTY_YEAR) is -10 to 0.",
+          "score": 0.66072678565979,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "5e7f5283859ecf7dfaf8e174785ee7f0dbe5715ed64347de20cac37743f64410",
+              "premise_chars": 18,
+              "score": 0.66072678565979
+            },
+            {
+              "premise_sha256": "73cd4c0ae313b1ed36c82db1d3734ede3569be9c7a8a5d70f3dd339a8432fa38",
+              "premise_chars": 79,
+              "score": 0.3553350269794464
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "t4-adaptive-batch-classification-synthetic",
+      "unit_id": "t4-adaptive-batch-classification-synthetic",
+      "answer_sha256": "be0d0f5ddec98b33533d8c5be70d6ab95aa228c2b89c0903066d3fe042fb0231",
+      "elapsed_seconds": 31.976825229999974,
+      "tau_citation": 0.5,
+      "faithfulness_threshold": 0.8,
+      "single_member_faithfulness": 1.0,
+      "single_member_gate_pass": true,
+      "predictions": [
+        {
+          "entity_id": "ENTITY_000",
+          "hypothesis": "The future order direction of Entity 000 (ENTITY_000) is UP. The 90% prediction interval for the future order direction of Entity 000 (ENTITY_000) is -1 to 1.",
+          "score": 0.7713751792907715,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "02dee42faab0b6889e32ddb6b7870b90d233ef3af474bac747ba8cf938378b59",
+              "premise_chars": 57,
+              "score": 0.7713751792907715
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_001",
+          "hypothesis": "The future order direction of Entity 001 (ENTITY_001) is DOWN. The 90% prediction interval for the future order direction of Entity 001 (ENTITY_001) is -1 to 1.",
+          "score": 0.8795386552810669,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4eb474e7d08273886d0b9a712dd9052ea35b8acd58591c90405b82c6e0d24030",
+              "premise_chars": 59,
+              "score": 0.8795386552810669
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_002",
+          "hypothesis": "The future order direction of Entity 002 (ENTITY_002) is UP. The 90% prediction interval for the future order direction of Entity 002 (ENTITY_002) is -1 to 1.",
+          "score": 0.7698591947555542,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "2a003d1d2dac4d4ddb4292a82dac6ce96ac342f2f280584fb9c57170fade0544",
+              "premise_chars": 57,
+              "score": 0.7698591947555542
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_003",
+          "hypothesis": "The future order direction of Entity 003 (ENTITY_003) is DOWN. The 90% prediction interval for the future order direction of Entity 003 (ENTITY_003) is -1 to 1.",
+          "score": 0.8667334318161011,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a0836ff0bbcc3429b588a5fb3262dcbedf98a5654951274be1ae2656fcad2a90",
+              "premise_chars": 59,
+              "score": 0.8667334318161011
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_004",
+          "hypothesis": "The future order direction of Entity 004 (ENTITY_004) is UP. The 90% prediction interval for the future order direction of Entity 004 (ENTITY_004) is -1 to 1.",
+          "score": 0.7788109183311462,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "ae053738023b9fb10d90260ef5f3c9ec06df6fff5f25bbbc0407faed1118118e",
+              "premise_chars": 57,
+              "score": 0.7788109183311462
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_005",
+          "hypothesis": "The future order direction of Entity 005 (ENTITY_005) is DOWN. The 90% prediction interval for the future order direction of Entity 005 (ENTITY_005) is -1 to 1.",
+          "score": 0.8446096777915955,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "594c733a9cf7c403b2489a12294211c2b65b91b637baed32569df2dc9b2ccab9",
+              "premise_chars": 59,
+              "score": 0.8446096777915955
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_006",
+          "hypothesis": "The future order direction of Entity 006 (ENTITY_006) is UP. The 90% prediction interval for the future order direction of Entity 006 (ENTITY_006) is -1 to 1.",
+          "score": 0.7526863813400269,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "63c2287b71318a6b618f3cc1d7f1c894d3fcbf81e9b2298448c2c53568b999da",
+              "premise_chars": 57,
+              "score": 0.7526863813400269
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_007",
+          "hypothesis": "The future order direction of Entity 007 (ENTITY_007) is DOWN. The 90% prediction interval for the future order direction of Entity 007 (ENTITY_007) is -1 to 1.",
+          "score": 0.8768969178199768,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "55f6b726a593e106c6c8fd157319789de82aced5496c535fcdea137c3657d9fe",
+              "premise_chars": 59,
+              "score": 0.8768969178199768
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_008",
+          "hypothesis": "The future order direction of Entity 008 (ENTITY_008) is UP. The 90% prediction interval for the future order direction of Entity 008 (ENTITY_008) is -1 to 1.",
+          "score": 0.753235399723053,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8554c5da78eb725b1d82f5fc12e2828b06e0a518b6e522cd6bfdda4a696fd262",
+              "premise_chars": 57,
+              "score": 0.753235399723053
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_009",
+          "hypothesis": "The future order direction of Entity 009 (ENTITY_009) is DOWN. The 90% prediction interval for the future order direction of Entity 009 (ENTITY_009) is -1 to 1.",
+          "score": 0.8876217603683472,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e4c31e00916e17653137ffd59970238db023af48750aa646cf31223791af8ff8",
+              "premise_chars": 59,
+              "score": 0.8876217603683472
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_010",
+          "hypothesis": "The future order direction of Entity 010 (ENTITY_010) is UP. The 90% prediction interval for the future order direction of Entity 010 (ENTITY_010) is -1 to 1.",
+          "score": 0.7798109650611877,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "48674564537ca4963542fdfde0bd8fbe537e0a9ef25d331d3141616d82d7e833",
+              "premise_chars": 57,
+              "score": 0.7798109650611877
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_011",
+          "hypothesis": "The future order direction of Entity 011 (ENTITY_011) is DOWN. The 90% prediction interval for the future order direction of Entity 011 (ENTITY_011) is -1 to 1.",
+          "score": 0.8795381784439087,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d0fd23ae1c8c3e8b7d310fd3f0cbe385722532460299c927b7c41b0aff33c70a",
+              "premise_chars": 59,
+              "score": 0.8795381784439087
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_012",
+          "hypothesis": "The future order direction of Entity 012 (ENTITY_012) is UP. The 90% prediction interval for the future order direction of Entity 012 (ENTITY_012) is -1 to 1.",
+          "score": 0.749765157699585,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "509720fa39aa02cf63596d1cae1a141ab3c2c827f3ab5b8caed078d0a105488e",
+              "premise_chars": 57,
+              "score": 0.749765157699585
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_013",
+          "hypothesis": "The future order direction of Entity 013 (ENTITY_013) is DOWN. The 90% prediction interval for the future order direction of Entity 013 (ENTITY_013) is -1 to 1.",
+          "score": 0.8781307339668274,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "cbfbcafdb26dc118b290623967d6c798ab95b13c8d2b96c6a49ab85a2ec87686",
+              "premise_chars": 59,
+              "score": 0.8781307339668274
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_014",
+          "hypothesis": "The future order direction of Entity 014 (ENTITY_014) is UP. The 90% prediction interval for the future order direction of Entity 014 (ENTITY_014) is -1 to 1.",
+          "score": 0.7663891911506653,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "34e39b61ed5151163a8eeea6e3a3a28862e40520f7a4e5f5afedc7fe7f960fe6",
+              "premise_chars": 57,
+              "score": 0.7663891911506653
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_015",
+          "hypothesis": "The future order direction of Entity 015 (ENTITY_015) is DOWN. The 90% prediction interval for the future order direction of Entity 015 (ENTITY_015) is -1 to 1.",
+          "score": 0.8642661571502686,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e4744a49c59343bb5693a83c4197e3388ad3567c7d24af0d13b7753efe5013f0",
+              "premise_chars": 59,
+              "score": 0.8642661571502686
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_016",
+          "hypothesis": "The future order direction of Entity 016 (ENTITY_016) is UP. The 90% prediction interval for the future order direction of Entity 016 (ENTITY_016) is -1 to 1.",
+          "score": 0.7477076053619385,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8171f06c51ad7ab5a2d9b9dc9d0e6039d6cd4127197f2fdf8f9637767b3bb736",
+              "premise_chars": 57,
+              "score": 0.7477076053619385
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_017",
+          "hypothesis": "The future order direction of Entity 017 (ENTITY_017) is DOWN. The 90% prediction interval for the future order direction of Entity 017 (ENTITY_017) is -1 to 1.",
+          "score": 0.8645418882369995,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "1b52f729edf48bc87381c104286a2005b6bb1509c5851abd746f17c65a2f0d2b",
+              "premise_chars": 59,
+              "score": 0.8645418882369995
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_018",
+          "hypothesis": "The future order direction of Entity 018 (ENTITY_018) is UP. The 90% prediction interval for the future order direction of Entity 018 (ENTITY_018) is -1 to 1.",
+          "score": 0.7440736889839172,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "e63bee7f8a3e7e16746b1305f1da2a9cc850623d16d71d4792a94716cb4ae231",
+              "premise_chars": 57,
+              "score": 0.7440736889839172
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_019",
+          "hypothesis": "The future order direction of Entity 019 (ENTITY_019) is DOWN. The 90% prediction interval for the future order direction of Entity 019 (ENTITY_019) is -1 to 1.",
+          "score": 0.8480381965637207,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "16751e013c2e88b4d92c76a615e04d86e74c989024db24441190fde8d34a8baf",
+              "premise_chars": 59,
+              "score": 0.8480381965637207
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_020",
+          "hypothesis": "The future order direction of Entity 020 (ENTITY_020) is UP. The 90% prediction interval for the future order direction of Entity 020 (ENTITY_020) is -1 to 1.",
+          "score": 0.7732807993888855,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8bd21d602d7f44240ef3fd68b05d4b20d4082c934afd187a6c425ed6f486e491",
+              "premise_chars": 57,
+              "score": 0.7732807993888855
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_021",
+          "hypothesis": "The future order direction of Entity 021 (ENTITY_021) is DOWN. The 90% prediction interval for the future order direction of Entity 021 (ENTITY_021) is -1 to 1.",
+          "score": 0.8710352182388306,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "9f1d242d01d98a4d6b6e54523c5af66e1d460249fa7226d3d2cdf6a85b1bf893",
+              "premise_chars": 59,
+              "score": 0.8710352182388306
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_022",
+          "hypothesis": "The future order direction of Entity 022 (ENTITY_022) is UP. The 90% prediction interval for the future order direction of Entity 022 (ENTITY_022) is -1 to 1.",
+          "score": 0.7628823518753052,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "114e2cb54e1e70006b497189d7b1a24d39ac466b0c7dbb9bc5f524d76c7b6220",
+              "premise_chars": 57,
+              "score": 0.7628823518753052
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_023",
+          "hypothesis": "The future order direction of Entity 023 (ENTITY_023) is DOWN. The 90% prediction interval for the future order direction of Entity 023 (ENTITY_023) is -1 to 1.",
+          "score": 0.8748785853385925,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "2f175d230a2ddc926e20db35f77c8ec3ab86e278f87380b413688e52eab6a1b9",
+              "premise_chars": 59,
+              "score": 0.8748785853385925
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_024",
+          "hypothesis": "The future order direction of Entity 024 (ENTITY_024) is UP. The 90% prediction interval for the future order direction of Entity 024 (ENTITY_024) is -1 to 1.",
+          "score": 0.7528550624847412,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "938a9b6fea2d55e45e5e6ba884253ec12c35ced246d3d4a334d6a850d86018c3",
+              "premise_chars": 57,
+              "score": 0.7528550624847412
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_025",
+          "hypothesis": "The future order direction of Entity 025 (ENTITY_025) is DOWN. The 90% prediction interval for the future order direction of Entity 025 (ENTITY_025) is -1 to 1.",
+          "score": 0.8551286458969116,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8551fa7cd2b4031da91320cc5d63f165aeccabbf2b5c5b7035d9f3268e9d8c43",
+              "premise_chars": 59,
+              "score": 0.8551286458969116
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_026",
+          "hypothesis": "The future order direction of Entity 026 (ENTITY_026) is UP. The 90% prediction interval for the future order direction of Entity 026 (ENTITY_026) is -1 to 1.",
+          "score": 0.7553592324256897,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "31ec2b8c30bbf7deee164542d03477c789c958f298b7cfaca6069d4c04cf98ae",
+              "premise_chars": 57,
+              "score": 0.7553592324256897
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_027",
+          "hypothesis": "The future order direction of Entity 027 (ENTITY_027) is DOWN. The 90% prediction interval for the future order direction of Entity 027 (ENTITY_027) is -1 to 1.",
+          "score": 0.8678348064422607,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "660aa36d21aabafe97699458596a73b17ff022c25cdba8af58be9c91197c8186",
+              "premise_chars": 59,
+              "score": 0.8678348064422607
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_028",
+          "hypothesis": "The future order direction of Entity 028 (ENTITY_028) is UP. The 90% prediction interval for the future order direction of Entity 028 (ENTITY_028) is -1 to 1.",
+          "score": 0.760711669921875,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a16d95c04020ed73c234eb0bca0437a2d467900ce2fc0fc08796e36df502ded5",
+              "premise_chars": 57,
+              "score": 0.760711669921875
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_029",
+          "hypothesis": "The future order direction of Entity 029 (ENTITY_029) is DOWN. The 90% prediction interval for the future order direction of Entity 029 (ENTITY_029) is -1 to 1.",
+          "score": 0.8774117231369019,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d1f0b5ca454d77d85dbe791cdd040ce1b8d1fe772534d5a6d6250bdbeb68d3e0",
+              "premise_chars": 59,
+              "score": 0.8774117231369019
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_030",
+          "hypothesis": "The future order direction of Entity 030 (ENTITY_030) is UP. The 90% prediction interval for the future order direction of Entity 030 (ENTITY_030) is -1 to 1.",
+          "score": 0.7753461599349976,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4288489172a4ddaf7e91ea1feba3b3255235db2cfe11a4f231857614a6cf1e06",
+              "premise_chars": 57,
+              "score": 0.7753461599349976
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_031",
+          "hypothesis": "The future order direction of Entity 031 (ENTITY_031) is DOWN. The 90% prediction interval for the future order direction of Entity 031 (ENTITY_031) is -1 to 1.",
+          "score": 0.8523780107498169,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "69602532bef09261d13e28789c3fe9a116e5378831ad61b6eddbc9e131419afb",
+              "premise_chars": 59,
+              "score": 0.8523780107498169
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_032",
+          "hypothesis": "The future order direction of Entity 032 (ENTITY_032) is UP. The 90% prediction interval for the future order direction of Entity 032 (ENTITY_032) is -1 to 1.",
+          "score": 0.7517226934432983,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "c98634410159bb3754893d6e4b6acdaa621750c2054b9754028d0679a5a8e5b6",
+              "premise_chars": 57,
+              "score": 0.7517226934432983
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_033",
+          "hypothesis": "The future order direction of Entity 033 (ENTITY_033) is DOWN. The 90% prediction interval for the future order direction of Entity 033 (ENTITY_033) is -1 to 1.",
+          "score": 0.8536919355392456,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "fd5fe677fb29716303e8d1a71f21564907cba392eb15852a848b1e8a50ca4291",
+              "premise_chars": 59,
+              "score": 0.8536919355392456
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_034",
+          "hypothesis": "The future order direction of Entity 034 (ENTITY_034) is UP. The 90% prediction interval for the future order direction of Entity 034 (ENTITY_034) is -1 to 1.",
+          "score": 0.7496938705444336,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "832606ad5466457f6b5494bb7383de86beb41e87522e49d0298b117ed8c19790",
+              "premise_chars": 57,
+              "score": 0.7496938705444336
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_035",
+          "hypothesis": "The future order direction of Entity 035 (ENTITY_035) is DOWN. The 90% prediction interval for the future order direction of Entity 035 (ENTITY_035) is -1 to 1.",
+          "score": 0.8661618828773499,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "002704af50bba3e2e3e464e0377a33dcbc3250372d0c7f73baecc64521f990ad",
+              "premise_chars": 59,
+              "score": 0.8661618828773499
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_036",
+          "hypothesis": "The future order direction of Entity 036 (ENTITY_036) is UP. The 90% prediction interval for the future order direction of Entity 036 (ENTITY_036) is -1 to 1.",
+          "score": 0.772807240486145,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "1718d64216fc091ebcd6228bc2abb8240bd03e1cb839f3511fb8813038418f7b",
+              "premise_chars": 57,
+              "score": 0.772807240486145
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_037",
+          "hypothesis": "The future order direction of Entity 037 (ENTITY_037) is DOWN. The 90% prediction interval for the future order direction of Entity 037 (ENTITY_037) is -1 to 1.",
+          "score": 0.8732014298439026,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "dd8d6e5385ac6a8693573e28186267f210b23c2cc9e215d59752f3831e7ebcd2",
+              "premise_chars": 59,
+              "score": 0.8732014298439026
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_038",
+          "hypothesis": "The future order direction of Entity 038 (ENTITY_038) is UP. The 90% prediction interval for the future order direction of Entity 038 (ENTITY_038) is -1 to 1.",
+          "score": 0.770756721496582,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "710683ec5f7c6b9242c9bd0c9eb304cad818e7a8ecf71befa69e4d80190f2c87",
+              "premise_chars": 57,
+              "score": 0.770756721496582
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_039",
+          "hypothesis": "The future order direction of Entity 039 (ENTITY_039) is DOWN. The 90% prediction interval for the future order direction of Entity 039 (ENTITY_039) is -1 to 1.",
+          "score": 0.8649032711982727,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d379729f06618f59ff434c695b6bff2c2f4fb73faf747d880f8436260d67256f",
+              "premise_chars": 59,
+              "score": 0.8649032711982727
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_040",
+          "hypothesis": "The future order direction of Entity 040 (ENTITY_040) is UP. The 90% prediction interval for the future order direction of Entity 040 (ENTITY_040) is -1 to 1.",
+          "score": 0.7489390969276428,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "21012033b3f53b11400c31cc21a6128362902c2bf843a4e189eb29a45be97f61",
+              "premise_chars": 57,
+              "score": 0.7489390969276428
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_041",
+          "hypothesis": "The future order direction of Entity 041 (ENTITY_041) is DOWN. The 90% prediction interval for the future order direction of Entity 041 (ENTITY_041) is -1 to 1.",
+          "score": 0.8423797488212585,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8354b5a96d8b79f0c6e0cf7eb2f7ac297d78441dd0a0c185dc2eb77ad12ac7d5",
+              "premise_chars": 59,
+              "score": 0.8423797488212585
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_042",
+          "hypothesis": "The future order direction of Entity 042 (ENTITY_042) is UP. The 90% prediction interval for the future order direction of Entity 042 (ENTITY_042) is -1 to 1.",
+          "score": 0.7324737906455994,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "09e98f4578739908000de38ff1d86065ee8fca8e87f74fcb5a75aef12d767766",
+              "premise_chars": 57,
+              "score": 0.7324737906455994
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_043",
+          "hypothesis": "The future order direction of Entity 043 (ENTITY_043) is DOWN. The 90% prediction interval for the future order direction of Entity 043 (ENTITY_043) is -1 to 1.",
+          "score": 0.8599412441253662,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8fb1451cf18f6cf9748c1e373b713128d2a280a74ca7000635d760de5cb2e2a7",
+              "premise_chars": 59,
+              "score": 0.8599412441253662
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_044",
+          "hypothesis": "The future order direction of Entity 044 (ENTITY_044) is UP. The 90% prediction interval for the future order direction of Entity 044 (ENTITY_044) is -1 to 1.",
+          "score": 0.7565203905105591,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0eac3aa35c6be3620df8b314bac83a217e6ee8cc479b3e88eabcdaaf86ebd0b0",
+              "premise_chars": 57,
+              "score": 0.7565203905105591
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_045",
+          "hypothesis": "The future order direction of Entity 045 (ENTITY_045) is DOWN. The 90% prediction interval for the future order direction of Entity 045 (ENTITY_045) is -1 to 1.",
+          "score": 0.8563281893730164,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "a35a44f176f3f602d52c9bda14528687109f9055bfdfd905b773dcc69b711e6d",
+              "premise_chars": 59,
+              "score": 0.8563281893730164
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_046",
+          "hypothesis": "The future order direction of Entity 046 (ENTITY_046) is UP. The 90% prediction interval for the future order direction of Entity 046 (ENTITY_046) is -1 to 1.",
+          "score": 0.7335616946220398,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8cb5be80255a2d337db3d6924994596281ca3d37351afcd858c7fa5e4c0172c8",
+              "premise_chars": 57,
+              "score": 0.7335616946220398
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_047",
+          "hypothesis": "The future order direction of Entity 047 (ENTITY_047) is DOWN. The 90% prediction interval for the future order direction of Entity 047 (ENTITY_047) is -1 to 1.",
+          "score": 0.8614537715911865,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "fbcf50ac9d2df98fb34668413289f72cf003a56b697d8d91a98223b5f2cd8678",
+              "premise_chars": 59,
+              "score": 0.8614537715911865
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_048",
+          "hypothesis": "The future order direction of Entity 048 (ENTITY_048) is UP. The 90% prediction interval for the future order direction of Entity 048 (ENTITY_048) is -1 to 1.",
+          "score": 0.7698140144348145,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "36be5fc64a5fb1fd1712d3ec6e231de3e29440a3aefab0cf7dbaf4cad7eb3ddb",
+              "premise_chars": 57,
+              "score": 0.7698140144348145
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_049",
+          "hypothesis": "The future order direction of Entity 049 (ENTITY_049) is DOWN. The 90% prediction interval for the future order direction of Entity 049 (ENTITY_049) is -1 to 1.",
+          "score": 0.8598937392234802,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "b5dfa221d3709ff084751479fbdd60d1ff0a5b3fc430769764ba8172e8c10488",
+              "premise_chars": 59,
+              "score": 0.8598937392234802
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_050",
+          "hypothesis": "The future order direction of Entity 050 (ENTITY_050) is UP. The 90% prediction interval for the future order direction of Entity 050 (ENTITY_050) is -1 to 1.",
+          "score": 0.7524344325065613,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "0be3afcf125017f0ab15d77213d56c2d38291d780fe874525e340ffff81c1c75",
+              "premise_chars": 57,
+              "score": 0.7524344325065613
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_051",
+          "hypothesis": "The future order direction of Entity 051 (ENTITY_051) is DOWN. The 90% prediction interval for the future order direction of Entity 051 (ENTITY_051) is -1 to 1.",
+          "score": 0.8403706550598145,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "80947ec6c6666fde6cbd095e003d49d6e8c290f0bde6237bb2412f505220176f",
+              "premise_chars": 59,
+              "score": 0.8403706550598145
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_052",
+          "hypothesis": "The future order direction of Entity 052 (ENTITY_052) is UP. The 90% prediction interval for the future order direction of Entity 052 (ENTITY_052) is -1 to 1.",
+          "score": 0.7189313173294067,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "df5d9872370c3c7242b810429452a145c15a6ec10a2b4ddba9bb781dd5aa6246",
+              "premise_chars": 57,
+              "score": 0.7189313173294067
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_053",
+          "hypothesis": "The future order direction of Entity 053 (ENTITY_053) is DOWN. The 90% prediction interval for the future order direction of Entity 053 (ENTITY_053) is -1 to 1.",
+          "score": 0.8437158465385437,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "65b50503c48cfacbbe0910212e45d83a5db6a8d4964955f061e0d9de8a2b79af",
+              "premise_chars": 59,
+              "score": 0.8437158465385437
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_054",
+          "hypothesis": "The future order direction of Entity 054 (ENTITY_054) is UP. The 90% prediction interval for the future order direction of Entity 054 (ENTITY_054) is -1 to 1.",
+          "score": 0.7354605197906494,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d7065d077cf5d901bc16cf364a3ea1714fd5c29dbb0dc89ff8a79989ceaf8afb",
+              "premise_chars": 57,
+              "score": 0.7354605197906494
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_055",
+          "hypothesis": "The future order direction of Entity 055 (ENTITY_055) is DOWN. The 90% prediction interval for the future order direction of Entity 055 (ENTITY_055) is -1 to 1.",
+          "score": 0.8651860952377319,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "3c1dd61fbc3ad735893158c40c2f3950933209742f03e4582bb3c491051d5c0d",
+              "premise_chars": 59,
+              "score": 0.8651860952377319
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_056",
+          "hypothesis": "The future order direction of Entity 056 (ENTITY_056) is UP. The 90% prediction interval for the future order direction of Entity 056 (ENTITY_056) is -1 to 1.",
+          "score": 0.7623928189277649,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "bad060b16068dc5d1827825e85f8fb3ea771d597e2d45fd059e4c2d213aafd85",
+              "premise_chars": 57,
+              "score": 0.7623928189277649
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_057",
+          "hypothesis": "The future order direction of Entity 057 (ENTITY_057) is DOWN. The 90% prediction interval for the future order direction of Entity 057 (ENTITY_057) is -1 to 1.",
+          "score": 0.854759156703949,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "3af48b3a2804ec53aa866ac68c2078e6b96aecb02f40d34d74490fa2a8e21e00",
+              "premise_chars": 59,
+              "score": 0.854759156703949
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_058",
+          "hypothesis": "The future order direction of Entity 058 (ENTITY_058) is UP. The 90% prediction interval for the future order direction of Entity 058 (ENTITY_058) is -1 to 1.",
+          "score": 0.7622317671775818,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "04eee7bd6d7e0f4925a354640fe1440bfa118c261487fba58410f12bfa3a545b",
+              "premise_chars": 57,
+              "score": 0.7622317671775818
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_059",
+          "hypothesis": "The future order direction of Entity 059 (ENTITY_059) is DOWN. The 90% prediction interval for the future order direction of Entity 059 (ENTITY_059) is -1 to 1.",
+          "score": 0.8662946820259094,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4504ffa64193ad8b32ddf97370e6786b660a85fe05c0e1e64e599d092d22421b",
+              "premise_chars": 59,
+              "score": 0.8662946820259094
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_060",
+          "hypothesis": "The future order direction of Entity 060 (ENTITY_060) is UP. The 90% prediction interval for the future order direction of Entity 060 (ENTITY_060) is -1 to 1.",
+          "score": 0.7530242204666138,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "112fe091ede85ed632be32450285c93914003c0a518886bda70817f4729f6032",
+              "premise_chars": 57,
+              "score": 0.7530242204666138
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_061",
+          "hypothesis": "The future order direction of Entity 061 (ENTITY_061) is DOWN. The 90% prediction interval for the future order direction of Entity 061 (ENTITY_061) is -1 to 1.",
+          "score": 0.8330874443054199,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8764f7b66cfa6ee585eae2b9e024a32e5c5a88445e1992f51e69ed183a2ca854",
+              "premise_chars": 59,
+              "score": 0.8330874443054199
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_062",
+          "hypothesis": "The future order direction of Entity 062 (ENTITY_062) is UP. The 90% prediction interval for the future order direction of Entity 062 (ENTITY_062) is -1 to 1.",
+          "score": 0.7229782342910767,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "27a083204e67fc8d3c0baa086342db063ed37a85ab060de5b623be23f447dbf8",
+              "premise_chars": 57,
+              "score": 0.7229782342910767
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_063",
+          "hypothesis": "The future order direction of Entity 063 (ENTITY_063) is DOWN. The 90% prediction interval for the future order direction of Entity 063 (ENTITY_063) is -1 to 1.",
+          "score": 0.8574894070625305,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "aa3d2ae612a777eb116c7f7aa53c9856bcf8041f841bb5ef061fa7d07cd97ba0",
+              "premise_chars": 59,
+              "score": 0.8574894070625305
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_064",
+          "hypothesis": "The future order direction of Entity 064 (ENTITY_064) is UP. The 90% prediction interval for the future order direction of Entity 064 (ENTITY_064) is -1 to 1.",
+          "score": 0.7620632648468018,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "03bec9a0e9dc60bd26568e68c60a99590c306849d78b195648bb870a1bddc4f6",
+              "premise_chars": 57,
+              "score": 0.7620632648468018
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_065",
+          "hypothesis": "The future order direction of Entity 065 (ENTITY_065) is DOWN. The 90% prediction interval for the future order direction of Entity 065 (ENTITY_065) is -1 to 1.",
+          "score": 0.8256778717041016,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "ab36a06dcfdcbd41bb12c472a8c5c394ebadd0fca812827f8e8d07a2ee980df6",
+              "premise_chars": 59,
+              "score": 0.8256778717041016
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_066",
+          "hypothesis": "The future order direction of Entity 066 (ENTITY_066) is UP. The 90% prediction interval for the future order direction of Entity 066 (ENTITY_066) is -1 to 1.",
+          "score": 0.7657994627952576,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "6f8eaf1ea8811b5e6de7fa58560aa0f54b5b5083a3624c449fd1b1c15990b5ff",
+              "premise_chars": 57,
+              "score": 0.7657994627952576
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_067",
+          "hypothesis": "The future order direction of Entity 067 (ENTITY_067) is DOWN. The 90% prediction interval for the future order direction of Entity 067 (ENTITY_067) is -1 to 1.",
+          "score": 0.851433515548706,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "9ff888257325a19e80f22b0eed40dd8bc3730961983557143ed20e65df0ad7a8",
+              "premise_chars": 59,
+              "score": 0.851433515548706
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_068",
+          "hypothesis": "The future order direction of Entity 068 (ENTITY_068) is UP. The 90% prediction interval for the future order direction of Entity 068 (ENTITY_068) is -1 to 1.",
+          "score": 0.7810571193695068,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "4c50868fd4f9defcdbb56e3c1b8a8c1b9fefed35b0a4d9914886050398224b30",
+              "premise_chars": 57,
+              "score": 0.7810571193695068
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_069",
+          "hypothesis": "The future order direction of Entity 069 (ENTITY_069) is DOWN. The 90% prediction interval for the future order direction of Entity 069 (ENTITY_069) is -1 to 1.",
+          "score": 0.8627650737762451,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "24748f013b88f1cb386c8270b2d2766bc7865e23fdf5dfee4cf8ca757a01fdc0",
+              "premise_chars": 59,
+              "score": 0.8627650737762451
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_070",
+          "hypothesis": "The future order direction of Entity 070 (ENTITY_070) is UP. The 90% prediction interval for the future order direction of Entity 070 (ENTITY_070) is -1 to 1.",
+          "score": 0.7751510739326477,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "cb3176bea57d65ed62b4cf45739f1a2cbd35836375e9181c65a0d6f1fa0ec4cc",
+              "premise_chars": 57,
+              "score": 0.7751510739326477
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_071",
+          "hypothesis": "The future order direction of Entity 071 (ENTITY_071) is DOWN. The 90% prediction interval for the future order direction of Entity 071 (ENTITY_071) is -1 to 1.",
+          "score": 0.8239675760269165,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "018697e09694423391aa1d0ea24387c356bca148662676841be6ef76acf5bd83",
+              "premise_chars": 59,
+              "score": 0.8239675760269165
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_072",
+          "hypothesis": "The future order direction of Entity 072 (ENTITY_072) is UP. The 90% prediction interval for the future order direction of Entity 072 (ENTITY_072) is -1 to 1.",
+          "score": 0.7441668510437012,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "d849e794f8517ca48c5037bb0c75b33d04e6fda03b9319a49511d73ccfefaf28",
+              "premise_chars": 57,
+              "score": 0.7441668510437012
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_073",
+          "hypothesis": "The future order direction of Entity 073 (ENTITY_073) is DOWN. The 90% prediction interval for the future order direction of Entity 073 (ENTITY_073) is -1 to 1.",
+          "score": 0.8516973853111267,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "6ee4faf1675120572f4dc13256193c6cf6b20788d0f3513162d1b898a503aeab",
+              "premise_chars": 59,
+              "score": 0.8516973853111267
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_074",
+          "hypothesis": "The future order direction of Entity 074 (ENTITY_074) is UP. The 90% prediction interval for the future order direction of Entity 074 (ENTITY_074) is -1 to 1.",
+          "score": 0.7301337122917175,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "8166a30cb9ef90fa3aa63ae89227db77d3de3a24f84704c577b193ed9f56c6af",
+              "premise_chars": 57,
+              "score": 0.7301337122917175
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_075",
+          "hypothesis": "The future order direction of Entity 075 (ENTITY_075) is DOWN. The 90% prediction interval for the future order direction of Entity 075 (ENTITY_075) is -1 to 1.",
+          "score": 0.8602731227874756,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "eace48e96bac3e7b21687421c988e438e7e2cf010448d47aadaf889be3f32a08",
+              "premise_chars": 59,
+              "score": 0.8602731227874756
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_076",
+          "hypothesis": "The future order direction of Entity 076 (ENTITY_076) is UP. The 90% prediction interval for the future order direction of Entity 076 (ENTITY_076) is -1 to 1.",
+          "score": 0.7492778301239014,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "6f729c0d5e02810189d2bc71fa400d20796a311d813ed6fd527a7a31907d9616",
+              "premise_chars": 57,
+              "score": 0.7492778301239014
+            }
+          ]
+        },
+        {
+          "entity_id": "ENTITY_077",
+          "hypothesis": "The future order direction of Entity 077 (ENTITY_077) is DOWN. The 90% prediction interval for the future order direction of Entity 077 (ENTITY_077) is -1 to 1.",
+          "score": 0.8480426669120789,
+          "supported": true,
+          "citation_scores": [
+            {
+              "premise_sha256": "3f2bdfed76e3201057a8a9fe7a50fef3e606b9ff78bb8bc5305577a7a384fd1d",
+              "premise_chars": 59,
+              "score": 0.8480426669120789
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

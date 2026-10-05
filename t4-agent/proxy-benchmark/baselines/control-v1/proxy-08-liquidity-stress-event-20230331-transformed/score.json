@@ -1,0 +1,16 @@
+{
+  "unit": "proxy-08-liquidity-stress-event-20230331-transformed",
+  "raw_accuracy": 0.08333333333333333,
+  "naive_accuracy": 0.9166666666666666,
+  "raw_predictive_quality": 0.08333333333333333,
+  "naive_predictive_quality": 0.9166666666666666,
+  "predictive_anchor": 0.9166666666666666,
+  "predictive_quality": 0.045454545454545456,
+  "interval_coverage": null,
+  "interval_score": null,
+  "naive_interval_score": null,
+  "raw_interval_quality": null,
+  "interval_quality": null,
+  "composite_before_claim_penalty": 0.045454545454545456,
+  "claim_penalty_evaluated": false
+}

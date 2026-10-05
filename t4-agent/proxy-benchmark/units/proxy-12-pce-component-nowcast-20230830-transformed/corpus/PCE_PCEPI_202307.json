@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-08-30",
+  "doc_id": "PROXY_proxy-12-pce-component-nowcast_PCE_PCEPI_202307_transformed",
+  "entities": [
+    "PCE_PCEPI_202307"
+  ],
+  "license": "Underlying U.S. government data; source and vintage recorded via FRED/ALFRED",
+  "source": "BEA via ALFRED",
+  "text": "Headline PCE price scaled_index (PCEPI); cutoff ALFRED vintage 2023-08-30.\nmonth | scaled_index\n2022-01-01 | 119.469000\n2022-02-01 | 120.178000\n2022-03-01 | 121.321000\n2022-04-01 | 121.563000\n2022-05-01 | 122.300000\n2022-06-01 | 123.512000\n2022-07-01 | 123.397000\n2022-08-01 | 123.728000\n2022-09-01 | 124.154000\n2022-10-01 | 124.676000\n2022-11-01 | 124.889000\n2022-12-01 | 125.141000\n2023-01-01 | 125.874000\n2023-02-01 | 126.240000\n2023-03-01 | 126.385000\n2023-04-01 | 126.814000\n2023-05-01 | 126.973000\n2023-06-01 | 127.178000"
+}

@@ -1,0 +1,70 @@
+{
+  "experiment": "proxy-10-payroll-control-v1",
+  "hypothesis": "The pure-label classification benchmark remains runnable and economically equivalent after field renaming, unit scaling, and roster reversal, with transformed composite no more than 0.10 below explicit.",
+  "python": "3.13.15",
+  "model_api_calls": 0,
+  "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
+  "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "toolkit_tag": "v2.6.0",
+  "results": [
+    {
+      "unit": "proxy-10-payroll-surprise-band-202308-explicit",
+      "raw_accuracy": 0.2727272727272727,
+      "naive_accuracy": 0.2727272727272727,
+      "raw_predictive_quality": 0.2727272727272727,
+      "naive_predictive_quality": 0.2727272727272727,
+      "predictive_anchor": 0.2727272727272727,
+      "predictive_quality": 0.5,
+      "interval_coverage": null,
+      "interval_score": null,
+      "naive_interval_score": null,
+      "raw_interval_quality": null,
+      "interval_quality": null,
+      "composite_before_claim_penalty": 0.5,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 11
+    },
+    {
+      "unit": "proxy-10-payroll-surprise-band-202308-transformed",
+      "raw_accuracy": 0.2727272727272727,
+      "naive_accuracy": 0.2727272727272727,
+      "raw_predictive_quality": 0.2727272727272727,
+      "naive_predictive_quality": 0.2727272727272727,
+      "predictive_anchor": 0.2727272727272727,
+      "predictive_quality": 0.5,
+      "interval_coverage": null,
+      "interval_score": null,
+      "naive_interval_score": null,
+      "raw_interval_quality": null,
+      "interval_quality": null,
+      "composite_before_claim_penalty": 0.5,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 11
+    }
+  ],
+  "decision": "accept_benchmark_infrastructure",
+  "finding": "Both variants ran without model access and matched the declared always-inline naive at composite 0.5000. The transformed schema did not degrade this control, so the pair adds classification coverage without selecting a production change.",
+  "limitations": [
+    "One historical Employment Situation release with eleven related payroll series.",
+    "The current control predicts inline for every entity and therefore does not demonstrate useful classification skill.",
+    "The local score excludes the official claim contradiction penalty and reasoning bonus."
+  ],
+  "benchmark_validation": {
+    "series": 11,
+    "positive_surprise": 3,
+    "inline": 3,
+    "negative_surprise": 5,
+    "schema_variants": 2,
+    "interval_leg": false,
+    "generated_files_checked": 35,
+    "second_build_byte_identical": true,
+    "local_validator_errors": 0,
+    "official_schema_answers_checked": 2
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "doc_date": "2023-03-31",
+  "doc_id": "PROXY_proxy-02-gross-margin-delta_SEC_KO_2023Q1_explicit",
+  "entities": [
+    "SEC_KO_2023Q1"
+  ],
+  "license": "Public SEC EDGAR XBRL company facts; accession and filing dates retained",
+  "source": "SEC EDGAR company facts",
+  "text": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior Q1 revenue USD 10491000000 and gross profit USD 6400000000; gross margin 61.004671 percent."
+}

@@ -1,0 +1,139 @@
+{
+  "cutoff_date": "2023-08-31",
+  "entities": [
+    {
+      "benchmark_flow_persons": 32666.666666666664,
+      "corpus_ref": "corpus/BLS_USGOVT_202308.json",
+      "dispersion_persons": 16925.49030965491,
+      "display_scale": "persons",
+      "entity_id": "BLS_USGOVT_202308",
+      "industry_key": "CES-G41",
+      "name": "Government",
+      "terminal_delta_persons": 15000.0,
+      "tolerance_persons": 8462.745154827455
+    },
+    {
+      "benchmark_flow_persons": 21333.333333333332,
+      "corpus_ref": "corpus/BLS_USLAH_202308.json",
+      "dispersion_persons": 16529.435024289916,
+      "display_scale": "persons",
+      "entity_id": "BLS_USLAH_202308",
+      "industry_key": "CES-G42",
+      "name": "Leisure and hospitality",
+      "terminal_delta_persons": 17000.0,
+      "tolerance_persons": 8264.717512144958
+    },
+    {
+      "benchmark_flow_persons": 86333.33333333333,
+      "corpus_ref": "corpus/BLS_USEHS_202308.json",
+      "dispersion_persons": 12202.003478482084,
+      "display_scale": "persons",
+      "entity_id": "BLS_USEHS_202308",
+      "industry_key": "CES-G43",
+      "name": "Education and health services",
+      "terminal_delta_persons": 100000.0,
+      "tolerance_persons": 6101.001739241042
+    },
+    {
+      "benchmark_flow_persons": 20000.0,
+      "corpus_ref": "corpus/BLS_USPBS_202308.json",
+      "dispersion_persons": 19756.855350316593,
+      "display_scale": "persons",
+      "entity_id": "BLS_USPBS_202308",
+      "industry_key": "CES-G44",
+      "name": "Professional and business services",
+      "terminal_delta_persons": -8000.0,
+      "tolerance_persons": 9878.427675158297
+    },
+    {
+      "benchmark_flow_persons": 13666.666666666666,
+      "corpus_ref": "corpus/BLS_USFIRE_202308.json",
+      "dispersion_persons": 10828.203913853857,
+      "display_scale": "persons",
+      "entity_id": "BLS_USFIRE_202308",
+      "industry_key": "CES-G45",
+      "name": "Financial activities",
+      "terminal_delta_persons": 19000.0,
+      "tolerance_persons": 5414.101956926928
+    },
+    {
+      "benchmark_flow_persons": -7000.0,
+      "corpus_ref": "corpus/BLS_USINFO_202308.json",
+      "dispersion_persons": 5459.4464513864,
+      "display_scale": "persons",
+      "entity_id": "BLS_USINFO_202308",
+      "industry_key": "CES-G46",
+      "name": "Information",
+      "terminal_delta_persons": -12000.0,
+      "tolerance_persons": 5000.0
+    },
+    {
+      "benchmark_flow_persons": 5800.000000000182,
+      "corpus_ref": "corpus/BLS_USWTRADE_202308.json",
+      "dispersion_persons": 8091.095929065451,
+      "display_scale": "persons",
+      "entity_id": "BLS_USWTRADE_202308",
+      "industry_key": "CES-G47",
+      "name": "Wholesale trade",
+      "terminal_delta_persons": 17900.000000000546,
+      "tolerance_persons": 5000.0
+    },
+    {
+      "benchmark_flow_persons": 11666.666666666666,
+      "corpus_ref": "corpus/BLS_USTPU_202308.json",
+      "dispersion_persons": 27813.366091383712,
+      "display_scale": "persons",
+      "entity_id": "BLS_USTPU_202308",
+      "industry_key": "CES-G48",
+      "name": "Trade, transportation, and utilities",
+      "terminal_delta_persons": 18000.0,
+      "tolerance_persons": 13906.683045691856
+    },
+    {
+      "benchmark_flow_persons": 0.0,
+      "corpus_ref": "corpus/BLS_MANEMP_202308.json",
+      "dispersion_persons": 6952.2178715380705,
+      "display_scale": "persons",
+      "entity_id": "BLS_MANEMP_202308",
+      "industry_key": "CES-G49",
+      "name": "Manufacturing",
+      "terminal_delta_persons": -2000.0,
+      "tolerance_persons": 5000.0
+    },
+    {
+      "benchmark_flow_persons": 23333.333333333332,
+      "corpus_ref": "corpus/BLS_USCONS_202308.json",
+      "dispersion_persons": 11742.609969205692,
+      "display_scale": "persons",
+      "entity_id": "BLS_USCONS_202308",
+      "industry_key": "CES-G50",
+      "name": "Construction",
+      "terminal_delta_persons": 19000.0,
+      "tolerance_persons": 5871.304984602846
+    },
+    {
+      "benchmark_flow_persons": 217666.66666666666,
+      "corpus_ref": "corpus/BLS_PAYEMS_202308.json",
+      "dispersion_persons": 33663.77875402582,
+      "display_scale": "persons",
+      "entity_id": "BLS_PAYEMS_202308",
+      "industry_key": "CES-G51",
+      "name": "Total nonfarm payrolls",
+      "terminal_delta_persons": 187000.0,
+      "tolerance_persons": 16831.88937701291
+    }
+  ],
+  "interval_level": 0.9,
+  "prompt": "Classify the next workforce flow against benchmark_flow_persons: positive_surprise when the deviation exceeds +tolerance_persons, negative_surprise below -tolerance_persons, and inline otherwise.",
+  "schema_version": "3",
+  "target": {
+    "labels": [
+      "positive_surprise",
+      "inline",
+      "negative_surprise"
+    ],
+    "name": "workforce_deviation_class",
+    "type": "classification"
+  },
+  "task_id": "proxy-10-payroll-surprise-band-202308-transformed"
+}

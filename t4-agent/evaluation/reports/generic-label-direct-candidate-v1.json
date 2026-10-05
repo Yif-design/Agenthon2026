@@ -1,0 +1,69 @@
+{
+  "baseline_git_commit": "a1a9bbc4b830566ed874bc265e32f6c59bec1ba5",
+  "dataset": "13 synthetic rows across five unseen label schemas",
+  "decision": "defer_and_reject_current_candidate",
+  "experiment": "generic_grounded_direct_label_v1",
+  "hypothesis": "Ask the existing generic-classification extraction call for one allowed label with an exact entity-scoped quote.",
+  "limitation": "Synthetic schema robustness evidence only; no real-outcome predictive claim.",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "production_change": "none; all candidate code was rolled back",
+  "prompt_version": "bounded-signals-v2-generic-label",
+  "reason": "Production-shaped runs were unstable (6/13, 13/13, 11/13). Diagnostics found BM25 query tokens such as action_flat did not match sentence-final action_flat. because the tokenizer retained trailing periods, so several rows received the first entity document. Fix and independently validate retrieval before retesting label selection.",
+  "runs": [
+    {
+      "baseline_correct": 8,
+      "candidate_correct": 6,
+      "report": "generic-label-audit-v1.json",
+      "seed": 1234,
+      "sha256": "455559cc82b1a558b5bd8af3cd75606bcd6b82a4c6a1852f57cb00199153cc95",
+      "total_rows": 13,
+      "usage": {
+        "calls": 4,
+        "completion_tokens": 1094,
+        "cost": 0.0,
+        "errors": [
+          "model returned content without one JSON object",
+          "consecutive model failures reached retry limit"
+        ],
+        "prompt_tokens": 2852
+      },
+      "validated_candidate_rows": 3
+    },
+    {
+      "baseline_correct": 8,
+      "candidate_correct": 13,
+      "report": "generic-label-audit-v1-seed1234.json",
+      "seed": 1234,
+      "sha256": "0487fb94afd061610610623f97964c52422db75950e4fcedd0c598bc6bae0fa8",
+      "total_rows": 13,
+      "usage": {
+        "calls": 5,
+        "completion_tokens": 3205,
+        "cost": 0.0,
+        "errors": [],
+        "prompt_tokens": 4496
+      },
+      "validated_candidate_rows": 13
+    },
+    {
+      "baseline_correct": 8,
+      "candidate_correct": 11,
+      "report": "generic-label-audit-v1-seed5678.json",
+      "seed": 5678,
+      "sha256": "327ea88e21061dcbb6294b433674d6bc3fe36b9823f38e7dfa8f8da1edc3364d",
+      "total_rows": 13,
+      "usage": {
+        "calls": 8,
+        "completion_tokens": 3619,
+        "cost": 0.0,
+        "errors": [
+          "model returned content without one JSON object"
+        ],
+        "prompt_tokens": 6507
+      },
+      "validated_candidate_rows": 13
+    }
+  ],
+  "schema_version": 1,
+  "temperature": 0.0
+}

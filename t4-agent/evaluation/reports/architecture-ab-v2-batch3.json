@@ -1,0 +1,202 @@
+{
+  "experiment": "architecture_ab_v2_batch3",
+  "date": "2026-09-27",
+  "baseline_commit": "b57290f94ef76c80059786c2b36e3b2a9002770a",
+  "role": "representative development screen; not held-out acceptance",
+  "hypothesis": "Direct batches of at most three entities remove complete-roster failures and match or beat the current architecture across classification, regression, and ranking representatives.",
+  "tasks": [
+    "t4-cotpos-202411-us10",
+    "t4-eps-growth-2024Q3-banks",
+    "t4-macrorev-20240930-us6"
+  ],
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "temperature": 0.0,
+  "seed": 1234,
+  "thinking": false,
+  "batch_size": 3,
+  "top_k": 3,
+  "request_summary": {
+    "tasks": 3,
+    "entities": 30,
+    "valid_direct_rows": 27,
+    "fallback_rows": 3,
+    "calls": 11,
+    "prompt_tokens": 63191,
+    "completion_tokens": 5766,
+    "cost_usd": 0.0,
+    "mean_latency_s": 39.26942958232636,
+    "errors": []
+  },
+  "raw_output_sha256": "88adb4da9f5d327f8fa38e5ed29a4fc6b17c24e32101f47eb28b27b30c0e4856",
+  "row_validation": {
+    "valid": 27,
+    "fallback": 3,
+    "invalid_quote": 2,
+    "invalid_label": 0,
+    "invalid_numeric": 0
+  },
+  "representative_subset": {
+    "baseline": {
+      "units": 3,
+      "entities": 30,
+      "mean_predictive_quality": 0.5001726106584764,
+      "mean_interval_coverage": 0.8972222222222221,
+      "mean_composite_before_faithfulness_gate": 0.34595416079426683,
+      "tasks": [
+        {
+          "task_id": "t4-cotpos-202411-us10",
+          "family": "positioning_shift",
+          "target_type": "ranking",
+          "entities": 10,
+          "predictive_quality": 0.7515151515151515,
+          "interval_coverage": 0.9,
+          "composite_before_faithfulness_gate": 0.526060606060606,
+          "mae": 5.48835730673,
+          "rmse": 6.7286360317140534
+        },
+        {
+          "task_id": "t4-eps-growth-2024Q3-banks",
+          "family": "eps_growth_regression",
+          "target_type": "regression",
+          "entities": 8,
+          "predictive_quality": 0.16566934712694437,
+          "interval_coverage": 0.875,
+          "composite_before_faithfulness_gate": 0.10846854298886104,
+          "mae": 15.267242953461666,
+          "rmse": 21.624763584595243
+        },
+        {
+          "task_id": "t4-macrorev-20240930-us6",
+          "family": "macro_revision_direction",
+          "target_type": "classification",
+          "entities": 12,
+          "predictive_quality": 0.5833333333333334,
+          "interval_coverage": 0.9166666666666666,
+          "composite_before_faithfulness_gate": 0.4033333333333333,
+          "mae": 461.76554166666705,
+          "rmse": 836.6492472089459,
+          "label_accuracy": 0.5833333333333334
+        }
+      ]
+    },
+    "direct": {
+      "units": 3,
+      "entities": 30,
+      "mean_predictive_quality": 0.2700943988408851,
+      "mean_interval_coverage": 0.18611111111111112,
+      "mean_composite_before_faithfulness_gate": -0.02510058747804708,
+      "tasks": [
+        {
+          "task_id": "t4-cotpos-202411-us10",
+          "family": "positioning_shift",
+          "target_type": "ranking",
+          "entities": 10,
+          "predictive_quality": 0.3936165298559887,
+          "interval_coverage": 0.1,
+          "composite_before_faithfulness_gate": 0.035531570899192066,
+          "mae": 7.56872777313,
+          "rmse": 9.100534809059866
+        },
+        {
+          "task_id": "t4-eps-growth-2024Q3-banks",
+          "family": "eps_growth_regression",
+          "target_type": "regression",
+          "entities": 8,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.375,
+          "composite_before_faithfulness_gate": -0.1575,
+          "mae": 26.988858893161023,
+          "rmse": 46.674931641309556
+        },
+        {
+          "task_id": "t4-macrorev-20240930-us6",
+          "family": "macro_revision_direction",
+          "target_type": "classification",
+          "entities": 12,
+          "predictive_quality": 0.4166666666666667,
+          "interval_coverage": 0.08333333333333333,
+          "composite_before_faithfulness_gate": 0.04666666666666669,
+          "mae": 428.1738749999999,
+          "rmse": 853.4768880446348,
+          "label_accuracy": 0.4166666666666667
+        }
+      ]
+    },
+    "hybrid": {
+      "units": 3,
+      "entities": 30,
+      "mean_predictive_quality": 0.38333333333333336,
+      "mean_interval_coverage": 0.8972222222222221,
+      "mean_composite_before_faithfulness_gate": 0.26416666666666666,
+      "tasks": [
+        {
+          "task_id": "t4-cotpos-202411-us10",
+          "family": "positioning_shift",
+          "target_type": "ranking",
+          "entities": 10,
+          "predictive_quality": 0.7333333333333334,
+          "interval_coverage": 0.9,
+          "composite_before_faithfulness_gate": 0.5133333333333333,
+          "mae": 5.885327773129999,
+          "rmse": 7.320014093503882
+        },
+        {
+          "task_id": "t4-eps-growth-2024Q3-banks",
+          "family": "eps_growth_regression",
+          "target_type": "regression",
+          "entities": 8,
+          "predictive_quality": 0.0,
+          "interval_coverage": 0.875,
+          "composite_before_faithfulness_gate": -0.007500000000000007,
+          "mae": 20.647632730393152,
+          "rmse": 33.538355218678
+        },
+        {
+          "task_id": "t4-macrorev-20240930-us6",
+          "family": "macro_revision_direction",
+          "target_type": "classification",
+          "entities": 12,
+          "predictive_quality": 0.4166666666666667,
+          "interval_coverage": 0.9166666666666666,
+          "composite_before_faithfulness_gate": 0.2866666666666667,
+          "mae": 443.6280416666669,
+          "rmse": 825.5556200103605,
+          "label_accuracy": 0.4166666666666667
+        }
+      ]
+    }
+  },
+  "all_11_with_unselected_units_unchanged": {
+    "baseline": {
+      "units": 11,
+      "entities": 78,
+      "mean_predictive_quality": 0.3864107119977663,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.18775727407730294,
+      "faithfulness_status": "not evaluated; official ensemble-NLI gate and private scorer are unavailable"
+    },
+    "direct": {
+      "units": 11,
+      "entities": 78,
+      "mean_predictive_quality": 0.32366210877478685,
+      "mean_interval_coverage": 0.4696871310507674,
+      "mean_composite_before_faithfulness_gate": 0.08656052454849009,
+      "faithfulness_status": "not evaluated; official ensemble-NLI gate and private scorer are unavailable"
+    },
+    "hybrid": {
+      "units": 11,
+      "entities": 78,
+      "mean_predictive_quality": 0.35454545454545455,
+      "mean_interval_coverage": 0.6636265249901613,
+      "mean_composite_before_faithfulness_gate": 0.16545159386068475,
+      "faithfulness_status": "not evaluated; official ensemble-NLI gate and private scorer are unavailable"
+    }
+  },
+  "smoke": {
+    "direct_combined": "11/11",
+    "hybrid_combined": "11/11"
+  },
+  "decision": "reject",
+  "reason": "Batching improved valid-row coverage to 27/30 but direct and hybrid remained worse than the current architecture on all three-target-type aggregate quality and composite.",
+  "next_action": "Stop tuning direct batch size; proceed to the next shared-capability or highest-impact family hypothesis under the macro-first rule."
+}

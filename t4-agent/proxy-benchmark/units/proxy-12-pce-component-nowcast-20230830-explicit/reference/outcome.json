@@ -1,0 +1,37 @@
+{
+  "outcomes": [
+    {
+      "entity_id": "PCE_PCEPI_202307",
+      "y": 0.213093871388792
+    },
+    {
+      "entity_id": "PCE_PCEPILFE_202307",
+      "y": 0.21589686832630406
+    },
+    {
+      "entity_id": "PCE_DGDSRG3M086SBEA_202307",
+      "y": -0.2516940948693258
+    },
+    {
+      "entity_id": "PCE_DDURRG3M086SBEA_202307",
+      "y": -0.6513041590422652
+    },
+    {
+      "entity_id": "PCE_DNDGRG3M086SBEA_202307",
+      "y": -0.014777340252603022
+    },
+    {
+      "entity_id": "PCE_DSERRG3M086SBEA_202307",
+      "y": 0.44531398285907464
+    },
+    {
+      "entity_id": "PCE_DNRGRG3M086SBEA_202307",
+      "y": 0.11481689002379447
+    },
+    {
+      "entity_id": "PCE_DFXARG3M086SBEA_202307",
+      "y": 0.2354257476515631
+    }
+  ],
+  "task_id": "proxy-12-pce-component-nowcast-20230830-explicit"
+}

@@ -1,0 +1,56 @@
+{
+  "experiment": "proxy-18-cot-control-v1",
+  "hypothesis": "A transformed but economically equivalent schema will expose material field-name dependence in the current control.",
+  "python": "3.13.15",
+  "model_api_calls": 0,
+  "scoring_semantics": "Track 4 5.2.2 predictive and interval metrics before claim penalty",
+  "official_track_commit": "1c744e1d6725340643a533f436517d72b53ca0e1",
+  "toolkit_tag": "v2.6.0",
+  "results": [
+    {
+      "unit": "proxy-18-cot-positioning-rank-20230926-explicit",
+      "raw_spearman": 0.33333333333333326,
+      "raw_predictive_quality": 0.6666666666666666,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": 0.5,
+      "predictive_quality": 0.6666666666666666,
+      "interval_coverage": 1.0,
+      "interval_score": 22.6,
+      "naive_interval_score": 9.596005473825892,
+      "raw_interval_quality": 0.2980495664788936,
+      "interval_quality": 0.2980495664788936,
+      "composite_before_claim_penalty": 0.5560815366103347,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "net_position_mean_reversion"
+      ],
+      "fallback_rows": 0
+    },
+    {
+      "unit": "proxy-18-cot-positioning-rank-20230926-transformed",
+      "raw_spearman": 0.38181818181818183,
+      "raw_predictive_quality": 0.6909090909090909,
+      "naive_predictive_quality": 0.5,
+      "predictive_anchor": 0.5,
+      "predictive_quality": 0.6909090909090909,
+      "interval_coverage": 0.7,
+      "interval_score": 16.26522024450506,
+      "naive_interval_score": 9.596005473825892,
+      "raw_interval_quality": 0.3710576435294037,
+      "interval_quality": 0.3710576435294037,
+      "composite_before_claim_penalty": 0.5949536566951847,
+      "claim_penalty_evaluated": false,
+      "methods": [
+        "generic_baseline"
+      ],
+      "fallback_rows": 10
+    }
+  ],
+  "decision": "reject_hypothesized_degradation",
+  "finding": "The route and units changed, but transformed composite did not decrease on this event. One event cannot establish schema robustness; expand the proxy benchmark before changing production.",
+  "limitations": [
+    "One time-forward event and one family only.",
+    "The local score excludes the official claim contradiction penalty and reasoning bonus.",
+    "The transformed generic point is emitted in fraction-like scale while the target is percentage points; ranking is scale-invariant but interval scoring is not."
+  ]
+}

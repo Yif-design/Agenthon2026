@@ -1,0 +1,90 @@
+{
+  "dataset": "evaluation/datasets/fomc/events_2022_2026.json",
+  "source": "Federal Reserve FOMC annual indexes and policy-actions table; U.S. Treasury daily par-yield CSVs",
+  "hypothesis": "Scale the fixed 50 bps half-width by one quarter of the absolute FOMC target-rate change.",
+  "development_period": "2022-01-01/2025-12-31",
+  "confirmation_period": "2026-01-01/2026-09-15",
+  "excluded_from_selection_and_confirmation": [
+    "2022-07-27",
+    "2024-09-18"
+  ],
+  "candidate_battery": [
+    {
+      "scale": 0.0,
+      "events": 30,
+      "observations": 180,
+      "coverage": 0.85,
+      "calibration_loss": 0.050000000000000044,
+      "mean_full_width_bps": 100.0
+    },
+    {
+      "scale": 0.25,
+      "events": 30,
+      "observations": 180,
+      "coverage": 0.8888888888888888,
+      "calibration_loss": 0.011111111111111183,
+      "mean_full_width_bps": 109.58333333333333
+    },
+    {
+      "scale": 0.5,
+      "events": 30,
+      "observations": 180,
+      "coverage": 0.9222222222222223,
+      "calibration_loss": 0.022222222222222254,
+      "mean_full_width_bps": 119.16666666666667
+    },
+    {
+      "scale": 0.75,
+      "events": 30,
+      "observations": 180,
+      "coverage": 0.9277777777777778,
+      "calibration_loss": 0.02777777777777779,
+      "mean_full_width_bps": 128.75
+    },
+    {
+      "scale": 1.0,
+      "events": 30,
+      "observations": 180,
+      "coverage": 0.9555555555555556,
+      "calibration_loss": 0.05555555555555558,
+      "mean_full_width_bps": 138.33333333333334
+    }
+  ],
+  "selected_scale": 0.25,
+  "confirmation": {
+    "baseline": {
+      "events": 5,
+      "observations": 30,
+      "coverage": 1.0,
+      "calibration_loss": 0.09999999999999998,
+      "mean_full_width_bps": 100.0
+    },
+    "candidate": {
+      "events": 5,
+      "observations": 30,
+      "coverage": 1.0,
+      "calibration_loss": 0.09999999999999998,
+      "mean_full_width_bps": 100.0
+    }
+  },
+  "public_diagnostic_after_lock": {
+    "baseline": {
+      "events": 2,
+      "observations": 12,
+      "coverage": 0.0,
+      "calibration_loss": 0.9,
+      "mean_full_width_bps": 100.0
+    },
+    "candidate": {
+      "events": 2,
+      "observations": 12,
+      "coverage": 0.16666666666666666,
+      "calibration_loss": 0.7333333333333334,
+      "mean_full_width_bps": 131.25
+    }
+  },
+  "decision_rule": "Require strictly lower calibration loss on the one-time 2026 confirmation set.",
+  "decision": "reject",
+  "decision_reason": "The 2026 confirmation meetings all held the target range unchanged, so the candidate was identical to the baseline and supplied no independent evidence.",
+  "production_change": "none"
+}

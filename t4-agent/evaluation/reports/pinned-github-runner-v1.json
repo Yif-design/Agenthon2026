@@ -1,0 +1,42 @@
+{
+  "baseline_ci": {
+    "conclusion": "success",
+    "image_digest": "sha256:0c39604cf6b7c3c1873c1a9de14c69f1048db1f7ae5a8722d182ff6895dd5556",
+    "run_id": 36359635379,
+    "runner_label": "ubuntu-latest"
+  },
+  "baseline_git_commit": "6e2e6ec6935eab65e6c5aa743eef213bfb002d15",
+  "candidate_ci": {
+    "anonymous_manifest_status": 200,
+    "conclusion": "success",
+    "container_command_smoke": "passed",
+    "image_digest": "sha256:34f936e0704ac8119ecfab65abb342fa2ed871bf3491f5654b6466add5851c50",
+    "registry_digest_match": true,
+    "run_id": 36359823626,
+    "runner_image_log": "Image: ubuntu-24.04",
+    "tests": "77 passed"
+  },
+  "candidate_git_commit": "b643828f0f8e2da767cd1604580a811bf3217a93",
+  "change": "Replace runs-on ubuntu-latest with the explicit ubuntu-24.04 runner label.",
+  "decision": "accept",
+  "experiment": "pinned_github_runner_v1",
+  "external_evidence": {
+    "agenthon_final_verification_closes": "2026-10-25T23:59:59-12:00",
+    "migration_begins": "2026-10-19",
+    "migration_completes": "2026-11-19",
+    "published_mitigation": "specify ubuntu-24.04",
+    "published_risk": "system libraries, compilers and prebuilt binaries may differ",
+    "source": "https://github.com/actions/runner-images/issues/14748"
+  },
+  "hypothesis": "Pinning the image workflow to ubuntu-24.04 prevents the announced ubuntu-latest migration during Final + Verification from changing the build environment, without changing agent behavior.",
+  "layer": "L1 submission build reproducibility",
+  "reason": "The explicit runner is GitHub's documented mitigation, the candidate ran on Ubuntu 24.04, and all tests, build, command-contract and anonymous-registry gates passed.",
+  "runtime_behavior": {
+    "agent_code_changed": false,
+    "dockerfile_changed": false,
+    "model_requests_changed": false,
+    "predictions_changed": false,
+    "target_platform": "linux/amd64"
+  },
+  "schema_version": 1
+}

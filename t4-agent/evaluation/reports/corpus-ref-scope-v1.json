@@ -1,0 +1,76 @@
+{
+  "baseline_git_commit": "09ea323e63ec4d26f9fce372cb0410451692ded6",
+  "candidate": {
+    "corpus_ref_root_preserves_shared_scope": true,
+    "corpus_ref_subtree_uses_path_component_boundary": true,
+    "cutoff_filter_preserved": true,
+    "duplicate_doc_ids_rejected": true,
+    "model_requests_added": 0,
+    "prompt_tokens_added": 0,
+    "recursive_json_index": true,
+    "relative_doc_paths_retained": true,
+    "root_manifest_ignored": true,
+    "unsafe_paths_rejected": [
+      "../private/",
+      "corpus/../../private",
+      "/input/corpus/entity",
+      "corpus\\entity"
+    ]
+  },
+  "date": "2026-09-28",
+  "decision": "accept",
+  "decision_reason": "The candidate closes a documented cross-family hidden-shape gap, rejects unsafe or ambiguous scopes, adds no model cost, and leaves every public answer byte-identical to the smoke-verified baseline.",
+  "experiment": "corpus_ref_scope_v1",
+  "hypothesis": "Recursively indexing the frozen corpus and intersecting retrieval with a safely resolved entity corpus_ref prevents empty retrieval and cross-entity evidence when a unit stores documents in entity subtrees, without changing flat public-unit behavior.",
+  "layer": "L2 shared retrieval and document scope",
+  "limitations": [
+    "No published unit currently exercises a non-root corpus_ref, so the improvement is established by official format documentation plus synthetic tests rather than hidden outcomes.",
+    "The published authoring guide still describes flat citation files; nested hidden-unit scorer support cannot be independently verified from public data.",
+    "Predictive quality is unchanged on the public set."
+  ],
+  "official_references": [
+    {
+      "finding": "Some families give each row its own subtree and corpus_ref points at that entity's filings.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/CATEGORIES.md"
+    },
+    {
+      "finding": "The documented strong baseline scopes each entity's retrieval with corpus_ref.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/baselines/README.md"
+    },
+    {
+      "finding": "The published-unit authoring guide describes the current flat corpus/<doc_id>.json layout; the implementation therefore preserves root corpus_ref behavior.",
+      "url": "https://github.com/Agenthon-2026/track4-analysis-public/blob/main/docs/AUTHORING-GUIDE.md"
+    }
+  ],
+  "official_snapshots": {
+    "open_track4_issues_changed": false,
+    "qfbench2_tag": "v2.4.4",
+    "shared_toolkit_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491"
+  },
+  "public_ab": {
+    "answers_byte_identical": 11,
+    "baseline_and_candidate_returncodes_zero": 11,
+    "comparison_artifact": "evaluation/reports/corpus-ref-public-ab-v1.json",
+    "comparison_sha256": "6993d77f67cae34003891d21f9e348dc82777ad3283c3dfcdc1de7de5379eb9c",
+    "model_mode": "disabled",
+    "rows": 78,
+    "smoke_evidence": "The 11 candidate answers are byte-identical to the current committed baseline answers already recorded as 11/11 smoke-admissible. A fresh qfbench2-smoke invocation was unavailable because this shell lacks the required Python 3.13 qfbench2-common executable; no new smoke result is claimed.",
+    "units": 11
+  },
+  "synthetic_ab": {
+    "candidate_entity_a_allowed_documents": 1,
+    "candidate_nested_pre_cutoff_documents_indexed": 3,
+    "expected_entity_a_allowed_documents": 1,
+    "legacy_nested_pre_cutoff_documents_indexed": 0,
+    "post_cutoff_documents_excluded": 1,
+    "prefix_collision_documents_excluded": 1,
+    "unsafe_path_cases_rejected": 4,
+    "unsafe_path_cases_total": 4
+  },
+  "tests": {
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "pytest": "61 passed"
+  }
+}

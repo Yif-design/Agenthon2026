@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "experiment": "generic_fraction_percent_scale_v1",
+  "baseline_git_commit": "b6d4542",
+  "hypothesis": "For unknown regression and ranking schemas, explicitly declared fraction/decimal fields must be scaled by 100 for percent targets, and explicit percent fields by 0.01 for fraction targets.",
+  "scope": "L2 unknown-family scalar selection across regression and ranking",
+  "dataset_sha256": {
+    "cpi": "2a4f72da454d964a322bd359a9f4c12aa8112277bbc6071e4ef59aa2ca2f0f40",
+    "cot": "a0edbd3ce9c7851b2251d0d29245e284d903d2341e2c8510a383d207729ab10e",
+    "auction": "1dd97882feb1a754fa4ade81f06d77bca871d3c5dae2f8e2922dec8628bfbb1a",
+    "macro_revision": "1dfd5172b99834966a4410b36fcaf4eb26ee9354dcd85a1d82ecc60cec8ceb6c",
+    "fomc": "dc15b069e70a2ae8221055a1d62ba0a40f653dbf4d461a6a296e497e5e5b148b"
+  },
+  "time_splits": {
+    "cpi": "2022-2023 test rows",
+    "cot": "2022-2023 test groups",
+    "auction": "2024 confirmation control",
+    "macro_revision": "2021-2022 test control",
+    "fomc": "2019-2021 test control"
+  },
+  "transform": "Only field identifiers and their numerical representation change; outcomes are untouched.",
+  "results": {
+    "native_reference": {
+      "cpi": {
+        "rows": 264,
+        "mae": 1.4923047994067637,
+        "rmse": 3.356960949054327,
+        "selection_reasons": {
+          "target_token_match": 264
+        }
+      },
+      "cot": {
+        "groups": 96,
+        "rows": 960,
+        "mean_spearman": -0.04141414141414141,
+        "mae": 6.96284294229097,
+        "selection_reasons": {
+          "target_token_match": 960
+        }
+      }
+    },
+    "fraction_baseline": {
+      "cpi": {
+        "rows": 264,
+        "mae": 1.28555212152045,
+        "rmse": 2.511955238676696,
+        "selection_reasons": {
+          "target_token_match": 264
+        }
+      },
+      "cot": {
+        "groups": 96,
+        "rows": 960,
+        "mean_spearman": -0.04141414141414141,
+        "mae": 4.9979498653562,
+        "selection_reasons": {
+          "target_token_match": 960
+        }
+      }
+    },
+    "fraction_candidate": {
+      "cpi": {
+        "rows": 264,
+        "mae": 1.4923047994067637,
+        "rmse": 3.356960949054327,
+        "selection_reasons": {
+          "scaled_fraction_to_percent": 264
+        }
+      },
+      "cot": {
+        "groups": 96,
+        "rows": 960,
+        "mean_spearman": -0.04141414141414141,
+        "mae": 6.96284294229097,
+        "selection_reasons": {
+          "scaled_fraction_to_percent": 959,
+          "target_token_match": 1
+        }
+      }
+    }
+  },
+  "reference_restored": {
+    "cpi": true,
+    "cot": true
+  },
+  "strict_improvement": {
+    "cpi_mae": false,
+    "cpi_rmse": false,
+    "cot_mae": false,
+    "cot_rank_noninferior": true
+  },
+  "controls": {
+    "auction": {
+      "baseline": {
+        "rows": 70,
+        "mae": 0.0884761904761905,
+        "rmse": 0.1102637530564566,
+        "selection_reasons": {
+          "target_token_match": 70
+        }
+      },
+      "candidate": {
+        "rows": 70,
+        "mae": 0.0884761904761905,
+        "rmse": 0.1102637530564566,
+        "selection_reasons": {
+          "target_token_match": 70
+        }
+      }
+    },
+    "macro_revision": {
+      "baseline": {
+        "rows": 460,
+        "mae": 885.170717173913,
+        "rmse": 2668.137287838649,
+        "selection_reasons": {
+          "target_token_match": 460
+        }
+      },
+      "candidate": {
+        "rows": 460,
+        "mae": 885.170717173913,
+        "rmse": 2668.137287838649,
+        "selection_reasons": {
+          "target_token_match": 460
+        }
+      }
+    },
+    "fomc": {
+      "baseline": {
+        "rows": 156,
+        "mae": 14.224358974358974,
+        "rmse": 20.042422956037974,
+        "selection_reasons": {
+          "no_unambiguous_baseline": 156
+        }
+      },
+      "candidate": {
+        "rows": 156,
+        "mae": 14.224358974358974,
+        "rmse": 20.042422956037974,
+        "selection_reasons": {
+          "no_unambiguous_baseline": 156
+        }
+      }
+    }
+  },
+  "controls_unchanged": {
+    "auction": true,
+    "macro_revision": true,
+    "fomc": true
+  },
+  "synthetic_checks": {
+    "fraction_to_pct": true,
+    "decimal_to_percent": true,
+    "pct_to_fraction": true,
+    "percent_to_decimal": true,
+    "bare_ratio_unchanged": true,
+    "unspecified_unchanged": true,
+    "fraction_rejected_for_bps": true
+  },
+  "decision_rule": "Advance only if candidate fraction encoding restores native CPI and COT metrics, strictly improves fraction-encoded CPI MAE/RMSE and COT MAE with non-inferior rank correlation, leaves auction/macro/FOMC exactly unchanged, and passes every synthetic control.",
+  "decision": "reject",
+  "model_api_calls": 0,
+  "local_llm_run": false,
+  "limitations": [
+    "The transformed schemas proxy unknown tasks and are not hidden competition units.",
+    "No scale is inferred from value magnitude; conversion requires explicit fraction/decimal and percent identifiers.",
+    "This evaluates numeric selection and scaling, not citation entailment."
+  ],
+  "date": "2026-09-29",
+  "official_state": {
+    "shared_main": "95a0de3d9a814f3883c151b7efdbbcf579139244",
+    "track4_main": "7b2bce1d80d96f5d5667d7f67bfaa945fa5d1491",
+    "toolkit_tag": "v2.4.4",
+    "open_track4_issues": [
+      1,
+      2,
+      13,
+      14,
+      16
+    ]
+  },
+  "production_change": "none; candidate rejected before production code",
+  "decision_reason": "Explicit conversion restored native encodings and passed every reliability control, but it strictly worsened real-outcome CPI and COT MAE versus the unconverted near-zero baseline."
+}

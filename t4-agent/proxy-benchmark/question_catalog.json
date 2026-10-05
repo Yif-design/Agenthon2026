@@ -1,0 +1,1073 @@
+{
+  "catalog_version": "1.0.0",
+  "status": "fully_materialized",
+  "question_count": 20,
+  "schema_variants_per_question": 2,
+  "target_type_counts": {
+    "classification": 6,
+    "regression": 8,
+    "ranking": 6
+  },
+  "design_constraints": {
+    "interval_level": 0.9,
+    "required_variants": [
+      "explicit",
+      "transformed"
+    ],
+    "required_views": [
+      "development",
+      "time_forward_test",
+      "confirmation",
+      "leave_one_family_out"
+    ],
+    "official_practice_used_for_selection": false
+  },
+  "build_plan": {
+    "wave_1": [
+      "proxy-02-gross-margin-delta",
+      "proxy-05-dividend-action",
+      "proxy-08-liquidity-stress-event",
+      "proxy-09-segment-growth-rank",
+      "proxy-10-payroll-surprise-band",
+      "proxy-13-gdp-revision-magnitude",
+      "proxy-15-auction-indirect-bidder-share",
+      "proxy-16-crude-inventory-change",
+      "proxy-18-cot-positioning-rank",
+      "proxy-19-fx-volatility-rank"
+    ],
+    "wave_2": [
+      "proxy-01-revenue-surprise-band",
+      "proxy-03-free-cash-flow-margin",
+      "proxy-04-capex-intensity",
+      "proxy-06-share-dilution-direction",
+      "proxy-07-buyback-intensity-rank",
+      "proxy-11-initial-claims-direction",
+      "proxy-12-pce-component-nowcast",
+      "proxy-14-yield-curve-steepening-rank",
+      "proxy-17-natural-gas-storage-change",
+      "proxy-20-cross-asset-return-quintile"
+    ]
+  },
+  "questions": [
+    {
+      "id": "proxy-01-revenue-surprise-band",
+      "title": "Quarterly revenue surprise band",
+      "relationship_to_public_families": "near_neighbor_control",
+      "domain": "corporate_fundamentals",
+      "target": {
+        "type": "classification",
+        "name": "revenue_surprise_band",
+        "labels": [
+          "above_band",
+          "within_band",
+          "below_band"
+        ],
+        "point_semantics": "reported revenue minus the pre-cutoff reference estimate, as percent of the estimate",
+        "interval_semantics": "90% interval on revenue surprise percent"
+      },
+      "question": "Classify each issuer's next reported Q1 revenue against a frozen prior-year comparable reference and a plus/minus 2 percent band.",
+      "entity_roster": "8-20 US issuers reporting in the same calendar window",
+      "cutoff_rule": "calendar quarter-end, before the target Q1 filing",
+      "resolution_rule": "first-filed Q1 revenue compared with the prior-year Q1 value frozen as the reference",
+      "visible_inputs": [
+        "prior-year comparable revenue",
+        "reference construction rule"
+      ],
+      "corpus_design": "SEC XBRL company facts with accession and filing dates",
+      "naive_answer": "within_band",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "estimate-versus-guidance distinction",
+        "fiscal/calendar quarter",
+        "USD scale"
+      ],
+      "schema_transform": [
+        "rename estimate and prior fields",
+        "encode USD millions versus billions",
+        "reorder roster"
+      ]
+    },
+    {
+      "id": "proxy-02-gross-margin-delta",
+      "title": "Quarterly gross-margin change",
+      "relationship_to_public_families": "novel",
+      "domain": "corporate_fundamentals",
+      "target": {
+        "type": "regression",
+        "name": "gross_margin_change_bps",
+        "point_semantics": "next-quarter gross margin minus prior-year-quarter gross margin in basis points",
+        "interval_semantics": "90% interval on the basis-point change"
+      },
+      "question": "Forecast the year-over-year change in gross margin for each issuer's next quarterly report.",
+      "entity_roster": "8-15 issuers across inventory- and service-heavy sectors",
+      "cutoff_rule": "30-60 days before the next quarterly filing",
+      "resolution_rule": "first-filed revenue and cost of revenue for the target quarter",
+      "visible_inputs": [
+        "historical revenue and cost of revenue",
+        "pricing and input-cost commentary",
+        "segment mix"
+      ],
+      "corpus_design": "mixed XBRL-derived tables and filing prose",
+      "naive_answer": "no year-over-year margin change",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "derived arithmetic",
+        "percent versus basis points",
+        "GAAP scope consistency"
+      ],
+      "schema_transform": [
+        "supply margin as fraction in one variant",
+        "rename cost fields",
+        "add operating-margin distractor"
+      ]
+    },
+    {
+      "id": "proxy-03-free-cash-flow-margin",
+      "title": "Forward free-cash-flow margin",
+      "relationship_to_public_families": "novel",
+      "domain": "corporate_cash_flow",
+      "target": {
+        "type": "regression",
+        "name": "free_cash_flow_margin_pct",
+        "point_semantics": "next-quarter operating cash flow less capital expenditure, divided by revenue, in percent",
+        "interval_semantics": "90% interval on margin percent"
+      },
+      "question": "Forecast each issuer's next-quarter free-cash-flow margin from pre-cutoff filings and working-capital commentary.",
+      "entity_roster": "6-12 nonfinancial issuers",
+      "cutoff_rule": "before the target quarter is reported",
+      "resolution_rule": "first-filed quarterly cash-flow statement and revenue",
+      "visible_inputs": [
+        "historical operating cash flow",
+        "capital expenditures",
+        "revenue",
+        "working-capital discussion"
+      ],
+      "corpus_design": "multi-table filing evidence where cash flow and revenue appear in different sections",
+      "naive_answer": "same-quarter-prior-year free-cash-flow margin",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "multi-step arithmetic",
+        "YTD-to-quarter conversion",
+        "capex sign conventions"
+      ],
+      "schema_transform": [
+        "positive versus negative capex encoding",
+        "USD scale changes",
+        "opaque but documented field aliases"
+      ]
+    },
+    {
+      "id": "proxy-04-capex-intensity",
+      "title": "Capital-expenditure intensity",
+      "relationship_to_public_families": "novel",
+      "domain": "corporate_investment",
+      "target": {
+        "type": "regression",
+        "name": "capex_to_revenue_pct",
+        "point_semantics": "next-quarter capital expenditure divided by revenue, in percent",
+        "interval_semantics": "90% interval on capex intensity"
+      },
+      "question": "Forecast next-quarter capital-expenditure intensity for each company.",
+      "entity_roster": "8-16 issuers with different investment cycles",
+      "cutoff_rule": "after the prior filing and before the target-quarter filing",
+      "resolution_rule": "first-filed property-and-equipment cash outflow divided by quarterly revenue",
+      "visible_inputs": [
+        "historical capex",
+        "revenue",
+        "capacity plans",
+        "management investment guidance"
+      ],
+      "corpus_design": "filing tables plus forward-looking capacity commentary",
+      "naive_answer": "prior-year-quarter intensity",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "quarter versus YTD",
+        "guidance range",
+        "denominator matching"
+      ],
+      "schema_transform": [
+        "provide raw numerator/denominator versus derived history",
+        "rename PPE fields",
+        "add acquisition-spend distractor"
+      ]
+    },
+    {
+      "id": "proxy-05-dividend-action",
+      "title": "Next dividend action",
+      "relationship_to_public_families": "novel",
+      "domain": "corporate_actions",
+      "target": {
+        "type": "classification",
+        "name": "dividend_action",
+        "labels": [
+          "increase",
+          "unchanged",
+          "decrease_or_suspend"
+        ],
+        "point_semantics": "forecast percent change in regular dividend per share",
+        "interval_semantics": "90% interval on dividend change percent"
+      },
+      "question": "Classify each issuer's reported Q1 regular per-share distribution relative to prior-year Q1.",
+      "entity_roster": "10-25 established dividend payers",
+      "cutoff_rule": "calendar quarter-end, before the target Q1 filing",
+      "resolution_rule": "first-filed Q1 declared or cash-paid common dividend per share",
+      "visible_inputs": [
+        "prior-year comparable per-share dividend"
+      ],
+      "corpus_design": "SEC XBRL company facts with declared-dividend tag preferred and cash-paid tag as documented fallback",
+      "naive_answer": "unchanged dividend",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "regular versus special dividend",
+        "split adjustments",
+        "declaration versus payment date"
+      ],
+      "schema_transform": [
+        "per-share dollars versus percent history",
+        "remove obvious dividend field name",
+        "shuffle corporate-action distractors"
+      ]
+    },
+    {
+      "id": "proxy-06-share-dilution-direction",
+      "title": "Diluted share-count direction",
+      "relationship_to_public_families": "novel",
+      "domain": "capital_structure",
+      "target": {
+        "type": "classification",
+        "name": "diluted_share_change",
+        "labels": [
+          "increase",
+          "flat",
+          "decrease"
+        ],
+        "point_semantics": "year-over-year percent change in diluted weighted-average shares",
+        "interval_semantics": "90% interval on share-count change percent"
+      },
+      "question": "Predict whether diluted weighted-average shares in the next quarter will rise, remain within the stated flat band, or fall year over year.",
+      "entity_roster": "10-20 issuers with buybacks, issuance or equity compensation",
+      "cutoff_rule": "before the target-quarter filing",
+      "resolution_rule": "first-filed diluted weighted-average shares for the target quarter",
+      "visible_inputs": [
+        "share-count history",
+        "repurchase authorization and activity",
+        "equity issuance",
+        "stock compensation"
+      ],
+      "corpus_design": "multiple filing sections with potentially conflicting share quantities",
+      "naive_answer": "flat",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "basic versus diluted shares",
+        "period-average versus period-end",
+        "authorization versus execution"
+      ],
+      "schema_transform": [
+        "rename share concepts",
+        "express counts in thousands versus millions",
+        "add treasury-stock distractors"
+      ]
+    },
+    {
+      "id": "proxy-07-buyback-intensity-rank",
+      "title": "Share-repurchase intensity ranking",
+      "relationship_to_public_families": "novel",
+      "domain": "capital_return",
+      "target": {
+        "type": "ranking",
+        "name": "next_quarter_buyback_intensity_rank",
+        "point_semantics": "next-quarter repurchase dollars divided by cutoff market-cap proxy",
+        "interval_semantics": "90% interval on repurchase intensity percent"
+      },
+      "question": "Rank issuers by next reported Q1 executed common-stock repurchases divided by Q1 revenue.",
+      "entity_roster": "8-15 issuers with active or recently active programs",
+      "cutoff_rule": "before the target-quarter filing",
+      "resolution_rule": "first-filed Q1 repurchase cash outflow divided by first-filed Q1 revenue",
+      "visible_inputs": [
+        "prior-year Q1 executed repurchases",
+        "prior-year Q1 revenue"
+      ],
+      "corpus_design": "entity-scoped filings plus one frozen denominator table",
+      "naive_answer": "rank by prior-year Q1 repurchases divided by revenue",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "authorization versus actual purchases",
+        "whole-roster ordering",
+        "scale invariance"
+      ],
+      "schema_transform": [
+        "raw dollars and denominator versus derived intensity",
+        "reverse row order",
+        "rename authorization fields"
+      ]
+    },
+    {
+      "id": "proxy-08-liquidity-stress-event",
+      "title": "Next-quarter liquidity stress screen",
+      "relationship_to_public_families": "novel",
+      "domain": "credit_and_liquidity",
+      "target": {
+        "type": "classification",
+        "name": "liquidity_stress_12m",
+        "labels": [
+          "stress_event",
+          "no_stress_event"
+        ],
+        "point_semantics": "forecast probability of a defined liquidity stress event",
+        "interval_semantics": "90% interval on probability in [0,1]"
+      },
+      "question": "Classify the next reported Q1 balance sheet as stress_screen only when current ratio is below 1 and cash/current liabilities is below 0.1.",
+      "entity_roster": "10-30 issuers spanning leverage and maturity profiles",
+      "cutoff_rule": "quarter-end filing cutoff",
+      "resolution_rule": "mechanical screen on first-filed Q1 current assets, current liabilities and cash",
+      "visible_inputs": [
+        "prior-year current assets",
+        "prior-year current liabilities",
+        "prior-year cash",
+        "fixed screen thresholds"
+      ],
+      "corpus_design": "SEC XBRL company facts; this is a ratio screen and does not claim a realized default or covenant event",
+      "naive_answer": "no_stress_screen",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "boilerplate versus active warning",
+        "waiver versus breach",
+        "probability calibration"
+      ],
+      "schema_transform": [
+        "ratio fields versus raw components",
+        "indirect label names",
+        "missing optional liquidity fields"
+      ]
+    },
+    {
+      "id": "proxy-09-segment-growth-rank",
+      "title": "Business-segment growth ranking",
+      "relationship_to_public_families": "novel",
+      "domain": "segment_fundamentals",
+      "target": {
+        "type": "ranking",
+        "name": "next_quarter_segment_growth_rank",
+        "point_semantics": "next-quarter year-over-year segment revenue growth percent",
+        "interval_semantics": "90% interval on growth percent"
+      },
+      "question": "Within each issuer, rank reported business segments by next-quarter year-over-year revenue growth.",
+      "entity_roster": "six reportable segments across Amazon and Microsoft",
+      "cutoff_rule": "after both Q1 filings and before either Q2/FY filing",
+      "resolution_rule": "Amazon direct Q2 segment growth; Microsoft April-June growth derived as fiscal year minus pre-cutoff nine-month facts",
+      "visible_inputs": [
+        "Q1 segment revenue for 2022 and 2023",
+        "inline-XBRL segment identity"
+      ],
+      "corpus_design": "dimensioned SEC inline XBRL facts with separate issuer and segment entities",
+      "naive_answer": "rank by Q1 year-over-year segment growth",
+      "source_ids": [
+        "sec-edgar"
+      ],
+      "stressors": [
+        "shared-document entity scope",
+        "segment renaming",
+        "cross-row consistency"
+      ],
+      "schema_transform": [
+        "segment IDs without company ticker",
+        "field aliases",
+        "row permutation"
+      ]
+    },
+    {
+      "id": "proxy-10-payroll-surprise-band",
+      "title": "Nonfarm-payroll first-print surprise",
+      "relationship_to_public_families": "novel",
+      "domain": "labor_macro",
+      "target": {
+        "type": "classification",
+        "name": "payroll_surprise_band",
+        "labels": [
+          "positive_surprise",
+          "inline",
+          "negative_surprise"
+        ],
+        "point_semantics": "first-print payroll change minus frozen reference expectation, in thousands",
+        "interval_semantics": "90% interval on surprise in thousands"
+      },
+      "question": "Predict whether the next nonfarm-payroll first print will be above, within, or below a stated band around a frozen reference expectation.",
+      "entity_roster": "total payrolls and selected major industry aggregates",
+      "cutoff_rule": "the day before the Employment Situation release",
+      "resolution_rule": "values in the first published release, before later revisions",
+      "visible_inputs": [
+        "cutoff-vintage payroll levels and monthly changes",
+        "recent change volatility",
+        "reference expectation"
+      ],
+      "corpus_design": "entity-scoped ALFRED cutoff-vintage history; first-print values remain hidden in the outcome snapshot",
+      "naive_answer": "inline / zero surprise",
+      "source_ids": [
+        "bls-release",
+        "fred-alfred"
+      ],
+      "stressors": [
+        "first print versus revised history",
+        "thousands versus persons",
+        "shared macro evidence"
+      ],
+      "schema_transform": [
+        "industry codes versus names",
+        "expectation under opaque field",
+        "alternative scale encoding"
+      ]
+    },
+    {
+      "id": "proxy-11-initial-claims-direction",
+      "title": "Weekly initial-claims direction",
+      "relationship_to_public_families": "novel",
+      "domain": "labor_macro",
+      "target": {
+        "type": "classification",
+        "name": "initial_claims_wow_direction",
+        "labels": [
+          "increase",
+          "flat",
+          "decrease"
+        ],
+        "point_semantics": "week-over-week change in the next reported initial-claims first print, in thousands",
+        "interval_semantics": "90% interval on the change in thousands"
+      },
+      "question": "Predict the direction and magnitude of the next weekly initial unemployment-claims first print.",
+      "entity_roster": "US total and Census regions when consistently available",
+      "cutoff_rule": "before the weekly release",
+      "resolution_rule": "first published claims value for the target week",
+      "visible_inputs": [
+        "recent first-print claims",
+        "seasonal factors",
+        "continuing claims",
+        "holiday calendar facts"
+      ],
+      "corpus_design": "dated release tables with revised prior weeks",
+      "naive_answer": "zero change / flat",
+      "source_ids": [
+        "dol-claims",
+        "fred-alfred"
+      ],
+      "stressors": [
+        "weekly seasonality",
+        "revisions",
+        "first print versus latest vintage"
+      ],
+      "schema_transform": [
+        "levels versus changes",
+        "persons versus thousands",
+        "date-column aliases"
+      ]
+    },
+    {
+      "id": "proxy-12-pce-component-nowcast",
+      "title": "PCE component first-print nowcast",
+      "relationship_to_public_families": "near_neighbor_control",
+      "domain": "inflation_macro",
+      "target": {
+        "type": "regression",
+        "name": "pce_component_mom_first_print_pct",
+        "point_semantics": "seasonally adjusted month-over-month percent change in the first BEA print",
+        "interval_semantics": "90% interval on monthly percent change"
+      },
+      "question": "Forecast first-print monthly PCE inflation for selected components.",
+      "entity_roster": "8-15 PCE components with stable vintage histories",
+      "cutoff_rule": "before the Personal Income and Outlays release",
+      "resolution_rule": "first BEA release for the target month",
+      "visible_inputs": [
+        "prior PCE vintages",
+        "related CPI/PPI facts",
+        "component weights where public"
+      ],
+      "corpus_design": "BEA and BLS release tables with related but nonidentical concepts",
+      "naive_answer": "recent-three-month mean",
+      "source_ids": [
+        "bea-release",
+        "bls-release",
+        "fred-alfred"
+      ],
+      "stressors": [
+        "PCE versus CPI mapping",
+        "first print",
+        "percent versus index level"
+      ],
+      "schema_transform": [
+        "series codes versus names",
+        "decimal versus percent",
+        "unrelated price-index fields"
+      ]
+    },
+    {
+      "id": "proxy-13-gdp-revision-magnitude",
+      "title": "GDP estimate revision magnitude",
+      "relationship_to_public_families": "near_neighbor_control",
+      "domain": "macro_revisions",
+      "target": {
+        "type": "regression",
+        "name": "next_gdp_revision_pp",
+        "point_semantics": "next estimate minus latest pre-cutoff annualized growth estimate, in percentage points",
+        "interval_semantics": "90% interval on revision percentage points"
+      },
+      "question": "Forecast the magnitude and sign of the next published revision to quarterly real GDP growth.",
+      "entity_roster": "headline GDP and selected contribution components",
+      "cutoff_rule": "after one GDP vintage and before the next scheduled estimate",
+      "resolution_rule": "first subsequent BEA estimate for the same reference quarter",
+      "visible_inputs": [
+        "current vintage",
+        "historical same-stage revisions",
+        "source-data updates mentioned by BEA"
+      ],
+      "corpus_design": "multiple BEA vintage releases for the same reference period",
+      "naive_answer": "zero revision",
+      "source_ids": [
+        "bea-release",
+        "fred-alfred"
+      ],
+      "stressors": [
+        "reference period versus release date",
+        "annualized versus quarterly rates",
+        "revision stage"
+      ],
+      "schema_transform": [
+        "levels and contributions together",
+        "stage names versus ordinal codes",
+        "percentage-point aliases"
+      ]
+    },
+    {
+      "id": "proxy-14-yield-curve-steepening-rank",
+      "title": "Yield-curve move ranking",
+      "relationship_to_public_families": "near_neighbor_control",
+      "domain": "rates",
+      "target": {
+        "type": "ranking",
+        "name": "maturity_yield_change_rank",
+        "point_semantics": "yield change from cutoff close to a fixed post-event close, in basis points",
+        "interval_semantics": "90% interval on basis-point change"
+      },
+      "question": "Rank Treasury maturities by their yield change over a defined post-event horizon.",
+      "entity_roster": "2Y, 3Y, 5Y, 7Y, 10Y, 20Y and 30Y maturities",
+      "cutoff_rule": "pre-event market close",
+      "resolution_rule": "official/FRED close at the stated horizon",
+      "visible_inputs": [
+        "starting curve",
+        "recent curve changes",
+        "FOMC or Treasury event text"
+      ],
+      "corpus_design": "shared macro corpus and dated maturity table",
+      "naive_answer": "equal zero changes with deterministic tie floor",
+      "source_ids": [
+        "fred-alfred",
+        "federal-reserve",
+        "treasury-auction"
+      ],
+      "stressors": [
+        "whole-curve coherence",
+        "maturity numeric identity",
+        "ranking metric versus rank integer"
+      ],
+      "schema_transform": [
+        "tenors as months",
+        "random row order",
+        "percent levels versus bps target"
+      ]
+    },
+    {
+      "id": "proxy-15-auction-indirect-bidder-share",
+      "title": "Treasury indirect-bidder share",
+      "relationship_to_public_families": "near_neighbor_control",
+      "domain": "treasury_auctions",
+      "target": {
+        "type": "regression",
+        "name": "indirect_bidder_acceptance_share_pct",
+        "point_semantics": "indirect bidder accepted amount divided by total accepted amount, in percent",
+        "interval_semantics": "90% interval on bidder share percent"
+      },
+      "question": "Forecast indirect-bidder acceptance share for announced Treasury coupon auctions.",
+      "entity_roster": "3Y, 10Y and 30Y securities in one Treasury announcement batch",
+      "cutoff_rule": "after announcement and before auction result",
+      "resolution_rule": "Treasury auction result table",
+      "visible_inputs": [
+        "offering size",
+        "security term",
+        "recent same-term results",
+        "market-rate context"
+      ],
+      "corpus_design": "auction announcement plus historical result tables",
+      "naive_answer": "recent-six same-term mean share",
+      "source_ids": [
+        "treasury-auction",
+        "fred-alfred"
+      ],
+      "stressors": [
+        "accepted versus tendered denominator",
+        "term matching",
+        "ratio versus percent"
+      ],
+      "schema_transform": [
+        "raw accepted amounts versus share history",
+        "term aliases",
+        "percentage fraction encoding"
+      ]
+    },
+    {
+      "id": "proxy-16-crude-inventory-change",
+      "title": "Weekly commercial crude inventory change",
+      "relationship_to_public_families": "novel",
+      "domain": "energy_inventories",
+      "target": {
+        "type": "regression",
+        "name": "weekly_crude_inventory_change_mmbbl",
+        "point_semantics": "next weekly commercial crude-oil inventory change in million barrels",
+        "interval_semantics": "90% interval on million-barrel change"
+      },
+      "question": "Forecast next week's change in US commercial crude inventories for the defined regions or total.",
+      "entity_roster": "US total and selected PADD regions",
+      "cutoff_rule": "after the prior weekly report and before the next report",
+      "resolution_rule": "first EIA weekly petroleum release for the target week",
+      "visible_inputs": [
+        "recent inventories",
+        "imports",
+        "refinery inputs",
+        "production",
+        "seasonal calendar"
+      ],
+      "corpus_design": "EIA tables and report prose with multiple petroleum products",
+      "naive_answer": "seasonal recent-history mean change",
+      "source_ids": [
+        "eia-release"
+      ],
+      "stressors": [
+        "stock level versus weekly change",
+        "thousand versus million barrels",
+        "product distractors"
+      ],
+      "schema_transform": [
+        "raw levels versus prepared changes",
+        "PADD codes versus names",
+        "unit conversion"
+      ]
+    },
+    {
+      "id": "proxy-17-natural-gas-storage-change",
+      "title": "Weekly natural-gas storage change",
+      "relationship_to_public_families": "novel",
+      "domain": "energy_inventories",
+      "target": {
+        "type": "regression",
+        "name": "weekly_working_gas_change_bcf",
+        "point_semantics": "next reported weekly working-gas storage change in Bcf",
+        "interval_semantics": "90% interval on Bcf change"
+      },
+      "question": "Forecast the next weekly working-gas storage injection or withdrawal by region.",
+      "entity_roster": "Lower 48 total and five storage regions",
+      "cutoff_rule": "after the prior storage report and before the next release",
+      "resolution_rule": "first EIA storage release for the target week",
+      "visible_inputs": [
+        "recent storage",
+        "five-year range",
+        "seasonal week",
+        "regional history"
+      ],
+      "corpus_design": "shared EIA report with region-specific table rows",
+      "naive_answer": "same-week five-year average change",
+      "source_ids": [
+        "eia-release"
+      ],
+      "stressors": [
+        "injection versus withdrawal sign",
+        "region ownership",
+        "level versus change"
+      ],
+      "schema_transform": [
+        "signed change versus action and magnitude",
+        "region codes",
+        "Bcf versus million cubic feet"
+      ]
+    },
+    {
+      "id": "proxy-18-cot-positioning-rank",
+      "title": "Cross-market positioning-change ranking",
+      "relationship_to_public_families": "near_neighbor_control",
+      "domain": "futures_positioning",
+      "target": {
+        "type": "ranking",
+        "name": "next_report_net_position_change_pct_oi_rank",
+        "point_semantics": "next-report change in defined trader net position as percent of open interest",
+        "interval_semantics": "90% interval on percentage-point change"
+      },
+      "question": "Rank futures markets by the next COT report's change in net positioning as a share of open interest.",
+      "entity_roster": "10-20 futures markets across rates, FX, energy, metals and agriculture",
+      "cutoff_rule": "after a COT publication and before the next as-of date",
+      "resolution_rule": "next publicly released COT report",
+      "visible_inputs": [
+        "multiple recent reports",
+        "open interest",
+        "trader long and short positions"
+      ],
+      "corpus_design": "dated CFTC tables with as-of and publication dates",
+      "naive_answer": "zero change / previous ordering",
+      "source_ids": [
+        "cftc-cot"
+      ],
+      "stressors": [
+        "as-of versus release date",
+        "trader category",
+        "point metric versus rank"
+      ],
+      "schema_transform": [
+        "raw long/short/OI versus derived net percent",
+        "market code aliases",
+        "row permutation"
+      ]
+    },
+    {
+      "id": "proxy-19-fx-volatility-rank",
+      "title": "Cross-currency realized-volatility ranking",
+      "relationship_to_public_families": "novel",
+      "domain": "market_risk",
+      "target": {
+        "type": "ranking",
+        "name": "forward_realized_volatility_rank",
+        "point_semantics": "annualized realized volatility over the fixed post-cutoff horizon",
+        "interval_semantics": "90% interval on annualized volatility percent"
+      },
+      "question": "Rank major currencies by realized volatility over the next fixed horizon using only pre-cutoff official series and macro evidence.",
+      "entity_roster": "6-12 major bilateral USD exchange-rate series",
+      "cutoff_rule": "end of a common trading day",
+      "resolution_rule": "realized volatility from the next 20 eligible daily observations",
+      "visible_inputs": [
+        "pre-cutoff daily returns",
+        "recent volatility",
+        "scheduled policy-event text"
+      ],
+      "corpus_design": "FRED/Board time-series tables plus shared central-bank event documents where available",
+      "naive_answer": "rank by trailing-20-day volatility",
+      "source_ids": [
+        "fred-alfred",
+        "federal-reserve"
+      ],
+      "stressors": [
+        "price convention inversion",
+        "nonstationarity",
+        "whole-roster comparison"
+      ],
+      "schema_transform": [
+        "direct versus inverse quote with explicit metadata",
+        "opaque series codes",
+        "random row order"
+      ]
+    },
+    {
+      "id": "proxy-20-cross-asset-return-quintile",
+      "title": "Cross-asset forward-return quintile",
+      "relationship_to_public_families": "novel",
+      "domain": "cross_asset_forecasting",
+      "target": {
+        "type": "ranking",
+        "name": "forward_return_quintile_rank",
+        "point_semantics": "forward fixed-horizon percentage return used to order the roster",
+        "interval_semantics": "90% interval on forward return percent"
+      },
+      "question": "Order a public-series cross-asset roster by forward return and derive quintile membership, following the relative-forecasting structure used in M6.",
+      "entity_roster": "20-30 redistributable public price or total-return series spanning rates, FX and commodities",
+      "cutoff_rule": "common month-end with all features available",
+      "resolution_rule": "percentage return over the next fixed four-week horizon",
+      "visible_inputs": [
+        "trailing returns",
+        "volatility",
+        "macro release facts",
+        "asset-class metadata"
+      ],
+      "corpus_design": "shared official macro releases plus per-series cutoff-safe histories",
+      "naive_answer": "equal/zero return forecast with trailing-return tie-break diagnostic",
+      "source_ids": [
+        "fred-alfred",
+        "federal-reserve",
+        "eia-release",
+        "cftc-cot"
+      ],
+      "stressors": [
+        "relative rather than absolute forecasting",
+        "overconfidence",
+        "regime shifts",
+        "large roster"
+      ],
+      "schema_transform": [
+        "series codes versus descriptive names",
+        "return decimals versus percent",
+        "field and row permutation"
+      ]
+    }
+  ],
+  "materialized_questions": [
+    {
+      "id": "proxy-01-revenue-surprise-band",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-01-control-v1.json"
+    },
+    {
+      "id": "proxy-02-gross-margin-delta",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-02-control-v1.json"
+    },
+    {
+      "id": "proxy-03-free-cash-flow-margin",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-03-control-v1.json"
+    },
+    {
+      "id": "proxy-04-capex-intensity",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-04-control-v1.json"
+    },
+    {
+      "id": "proxy-05-dividend-action",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-05-control-v1.json"
+    },
+    {
+      "id": "proxy-06-share-dilution-direction",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-06-control-v1.json"
+    },
+    {
+      "id": "proxy-07-buyback-intensity-rank",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-07-control-v1.json"
+    },
+    {
+      "id": "proxy-08-liquidity-stress-event",
+      "origin": "2023-03-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-08-control-v1.json"
+    },
+    {
+      "id": "proxy-09-segment-growth-rank",
+      "origin": "2023-04-28",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-09-control-v1.json"
+    },
+    {
+      "id": "proxy-10-payroll-surprise-band",
+      "origin": "2023-08-31",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-10-payroll-control-v1.json"
+    },
+    {
+      "id": "proxy-11-initial-claims-direction",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-11-control-v1.json"
+    },
+    {
+      "id": "proxy-12-pce-component-nowcast",
+      "origin": "2023-08-30",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-12-control-v1.json"
+    },
+    {
+      "id": "proxy-13-gdp-revision-magnitude",
+      "origin": "2023-08-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-13-control-v1.json"
+    },
+    {
+      "id": "proxy-14-yield-curve-steepening-rank",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-14-control-v1.json"
+    },
+    {
+      "id": "proxy-15-auction-indirect-bidder-share",
+      "origin": "2023-08-02",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-15-auction-control-v1.json"
+    },
+    {
+      "id": "proxy-16-crude-inventory-change",
+      "origin": "2026-09-23",
+      "split": "confirmation",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-16-energy-control-v1.json"
+    },
+    {
+      "id": "proxy-17-natural-gas-storage-change",
+      "origin": "2026-09-24",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-17-gas-control-v1.json"
+    },
+    {
+      "id": "proxy-18-cot-positioning-rank",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-18-cot-control-v1.json"
+    },
+    {
+      "id": "proxy-19-fx-volatility-rank",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-19-fx-control-v1.json"
+    },
+    {
+      "id": "proxy-20-cross-asset-return-quintile",
+      "origin": "2023-09-29",
+      "split": "time_forward_test",
+      "variants": [
+        "explicit",
+        "transformed"
+      ],
+      "unit_count": 2,
+      "control_report": "evaluation/reports/proxy-20-control-v1.json"
+    }
+  ],
+  "materialization": {
+    "updated_at": "2026-10-03",
+    "question_ids": [
+      "proxy-01-revenue-surprise-band",
+      "proxy-02-gross-margin-delta",
+      "proxy-03-free-cash-flow-margin",
+      "proxy-04-capex-intensity",
+      "proxy-05-dividend-action",
+      "proxy-06-share-dilution-direction",
+      "proxy-07-buyback-intensity-rank",
+      "proxy-08-liquidity-stress-event",
+      "proxy-09-segment-growth-rank",
+      "proxy-10-payroll-surprise-band",
+      "proxy-11-initial-claims-direction",
+      "proxy-12-pce-component-nowcast",
+      "proxy-13-gdp-revision-magnitude",
+      "proxy-14-yield-curve-steepening-rank",
+      "proxy-15-auction-indirect-bidder-share",
+      "proxy-16-crude-inventory-change",
+      "proxy-17-natural-gas-storage-change",
+      "proxy-18-cot-positioning-rank",
+      "proxy-19-fx-volatility-rank",
+      "proxy-20-cross-asset-return-quintile"
+    ],
+    "question_count": 20,
+    "runnable_schema_cases": 40,
+    "splits": {
+      "time_forward_test": 38,
+      "confirmation": 2
+    }
+  }
+}

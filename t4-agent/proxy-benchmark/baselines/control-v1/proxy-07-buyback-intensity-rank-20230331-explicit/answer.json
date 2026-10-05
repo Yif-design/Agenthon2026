@@ -1,0 +1,197 @@
+{
+  "task_id": "proxy-07-buyback-intensity-rank-20230331-explicit",
+  "schema_version": "3",
+  "target_type": "ranking",
+  "entity_predictions": [
+    {
+      "entity_id": "SEC_AMZN_2023Q1",
+      "point_forecast": 2666000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 5332000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_AMZN_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 175,
+          "claim": "SEC XBRL facts for AMAZON COM INC (AMZN); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 2666000000; revenue USD 116444000000."
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "entity_id": "SEC_F_2023Q1",
+      "point_forecast": 0.0,
+      "interval": {
+        "level": 0.9,
+        "lo": -2.0,
+        "hi": 2.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_F_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 161,
+          "claim": "SEC XBRL facts for Ford Motor Co (F); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 0; revenue USD 34476000000."
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "entity_id": "SEC_HD_2023Q1",
+      "point_forecast": 2308000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 4616000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_HD_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 178,
+          "claim": "SEC XBRL facts for The Home Depot, Inc. (HD); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 2308000000; revenue USD 38908000000."
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "entity_id": "SEC_KO_2023Q1",
+      "point_forecast": 546000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 1092000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_KO_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 169,
+          "claim": "SEC XBRL facts for COCA COLA CO (KO); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 546000000; revenue USD 10491000000."
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "entity_id": "SEC_MCD_2023Q1",
+      "point_forecast": 1506500000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 3013000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_MCD_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 180,
+          "claim": "SEC XBRL facts for McDONALD’S CORPORATION (MCD); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 1506500000; revenue USD 5665600000."
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "entity_id": "SEC_NVDA_2023Q1",
+      "point_forecast": 1996000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 3992000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_NVDA_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 170,
+          "claim": "SEC XBRL facts for NVIDIA CORP (NVDA); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 1996000000; revenue USD 8288000000."
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "entity_id": "SEC_PEP_2023Q1",
+      "point_forecast": 193000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 386000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_PEP_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 171,
+          "claim": "SEC XBRL facts for PepsiCo, Inc. (PEP); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 193000000; revenue USD 16200000000."
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "entity_id": "SEC_TGT_2023Q1",
+      "point_forecast": 181000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 362000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_TGT_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 176,
+          "claim": "SEC XBRL facts for Target Corporation (TGT); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 181000000; revenue USD 25170000000."
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "entity_id": "SEC_WMT_2023Q1",
+      "point_forecast": 2408000000.0,
+      "interval": {
+        "level": 0.9,
+        "lo": 0.0,
+        "hi": 4816000000.0
+      },
+      "claims": [
+        {
+          "doc_id": "PROXY_proxy-07-buyback-intensity-rank_SEC_WMT_2023Q1_explicit",
+          "span_start": 0,
+          "span_end": 172,
+          "claim": "SEC XBRL facts for WALMART INC. (WMT); facts include original accession and filed date.\nPrior Q1 executed common-stock repurchases USD 2408000000; revenue USD 140288000000."
+        }
+      ],
+      "rank": 2
+    }
+  ],
+  "evidence_trace": "t4-agent: cutoff-safe BM25 retrieval, minimal observable deterministic models, House-compatible coarse signal extraction only when required, exact-span citation grounding. model_calls=0, prompt_tokens=0, completion_tokens=0.",
+  "notes": {
+    "agent": "t4-agent",
+    "fallback_rows": [
+      "SEC_AMZN_2023Q1",
+      "SEC_F_2023Q1",
+      "SEC_HD_2023Q1",
+      "SEC_KO_2023Q1",
+      "SEC_MCD_2023Q1",
+      "SEC_NVDA_2023Q1",
+      "SEC_PEP_2023Q1",
+      "SEC_TGT_2023Q1",
+      "SEC_WMT_2023Q1"
+    ],
+    "methods": {
+      "SEC_AMZN_2023Q1": "generic_baseline",
+      "SEC_F_2023Q1": "generic_baseline",
+      "SEC_HD_2023Q1": "generic_baseline",
+      "SEC_KO_2023Q1": "generic_baseline",
+      "SEC_MCD_2023Q1": "generic_baseline",
+      "SEC_NVDA_2023Q1": "generic_baseline",
+      "SEC_PEP_2023Q1": "generic_baseline",
+      "SEC_TGT_2023Q1": "generic_baseline",
+      "SEC_WMT_2023Q1": "generic_baseline"
+    },
+    "model_errors": [],
+    "rejected_fact_counts": {}
+  }
+}
