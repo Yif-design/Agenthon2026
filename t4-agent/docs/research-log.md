@@ -2815,3 +2815,14 @@ separately authorized.
 
 Report: `evaluation/reports/compact-table-numeric-identity-audit-v1.json` (SHA-256
 `f21f75f2694d4f204d70ae554421a6201de059cac7c4910086333133613f0b75`).
+
+
+Release record for the accepted compact-table evaluation infrastructure: commit
+`78eb5c0ec8d78aa812941e42ba85ef9c372f0892` was pushed to `codex/t4-agent-skeleton`. GitHub Actions
+run `37208573314` passed 205 tests on Python 3.13.15, passed the pinned submission-packer smoke,
+built and pushed Linux/amd64, and passed the container command smoke. The immutable image is
+`ghcr.io/yif-design/agenthon2026-t4@sha256:bdd024139408be345fbb3e87a58970810eec7d23e79b9c0ff4f9eed1ccc9ea1c`.
+Anonymous manifest and config requests returned HTTP 200; the resolved digest matched exactly, the
+manifest is OCI, and the config reports Linux, amd64 and `qfbench2.interface_version=2.0`. The
+compressed layers total 46,358,514 bytes. The development submission template and readiness note
+now point to that digest. No formal competition submission was performed.

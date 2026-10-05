@@ -8,7 +8,7 @@
   "image": {
     "registry": "ghcr.io",
     "repository": "yif-design/agenthon2026-t4",
-    "digest": "sha256:2f7db615b85d35c904ad01890bdac4308147f47ad1577f439771de2de2db7eca"
+    "digest": "sha256:bdd024139408be345fbb3e87a58970810eec7d23e79b9c0ff4f9eed1ccc9ea1c"
   },
   "image_access": "public",
   "models": [
